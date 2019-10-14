@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Songhay Studio: getting back to tf.exe - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Songhay Studio: getting back to tf.exe</h1>
+<p>I’ve not used tf.exe, of the “<a href="https://msdn.microsoft.com/en-us/library/ms253088.aspx">Command-line tools for TFS</a>,” since I lost my virtual machines <a href="http://songhayblog.azurewebsites.net/Entry/Show/the-songhay-home-drive-on-a-new-vm">in 2012</a>. So I’ll leave a note-to-self so it won’t take so long, having taken some time today to think about and need this. For my custom shell, I need to add a path to TFS:</p>
+<pre><code class="language-plaintext">@set PATH=^
+    …
+    %ProgramFiles(x86)%\Microsoft Visual Studio 12.0\Common7\IDE;^
+    …;
+</code></pre>
+<p>These are the commands I’ll need (as I tend to forget them for lack of daily use):</p>
+<ul>
+<li>The equivalent to <strong>Pending Changes</strong> in Visual Studio Team Explorer: <code>tf status</code>.</li>
+<li>Check-in with comment: <code>tf checkin /comment:&quot;my comment&quot;</code>.</li>
+<li>MSDN support: <code>tf msdn [command]</code>.</li>
+</ul>
+<p>I did notice today that <code>tf status</code> makes no distinction between promoted/un-promoted items. I do recall doing some TFS management/reporting from (strangely enough) Visual Studio integration tests (<code>vstest</code>). In those days, I had to hunt around for TFS libraries. Now <a href="http://www.nuget.org/packages/Microsoft.TeamFoundation.Common/">we have NuGet</a> Package <code>Microsoft.TeamFoundation.Common</code>.</p>
+<p>I do remind myself that there exists <a href="https://visualstudiogallery.msdn.microsoft.com/f017b10c-02b4-4d6d-9845-58a06545627f">Microsoft Visual Studio Team Foundation Server 2013 Power Tools</a>. I’ve used earlier versions of such “Power Tools”; I’ve no call for this right now.</p>
+<p>I’ll need another note for my <a href="https://sliksvn.com/support-category/sliksvn-client/">Slick SVN</a> hooks into my CodePlex stuff!</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-03-24T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Songhay Studio: a bit of a struggle with cookies in .NET - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Songhay Studio: a bit of a struggle with cookies in .NET</h1>
+<p>I’ve finally come to terms with cookies. This, yet again, would be very, very strange and suspicion-inspiring to any dude that has worked with ASP.NET for as long as I have. They would certainly ask the question, “You have worked with ASP.NET for over 10 years and you’ve never used them?” My answer to this question would be quickly forgotten because it is likely to be misinterpreted as pretentious or hurtful (yes, developers are <em>quite</em> emotional).</p>
+<p>First of all, I’ve been a Web 1.0 specialist for the longest. When I worked with classic, pre-.NET ASP at UCLA for eight years, all of the sites I worked on were read-only, document-based sites. I was key in making all UCLA hospitals go paperless by serving PDF-based policies to the nurses—no cookies needed. I was also the guy that wrote the new-employee quiz at UCLA (over 20,000 employees) that required session state, which I hand-rolled with GUIDs on SQL Server—no cookies needed.</p>
+<p>When ASP.NET Web Forms came out, I made the “mistake” of discovering and hating the fact that this technology was not HTML compliant <em>for years</em>. This compliance is actually important when you need to treat UI like a proper data format—so XHTML is a proper XML format (and rendering XHTML allowed me to use ASP.NET HTTP handlers, .ASHX pages, to render XHTML via XML and XSLT). When I shunned ASP.NET Web Forms, I allowed the mass of Web Forms lovers to consider me an idiot because I knew nothing intimate about the technology—including its historical relationship to Cookies.</p>
+<p>Cookies are complicated and unintuitive because they were (and probably still are) a big-ass security hole. Some guy on StackOverflow.com <a href="http://stackoverflow.com/questions/8992415/are-cookies-a-security-risk">says it</a> best:</p>
+<blockquote>
+<p>Cookies can be easily modified, added and deleted by users and should be treated as untrusted user input. They are just as prone to XSS and SQL injection [vulnerabilities] as any other user input.</p>
+</blockquote>
+<p>So here’s my flippant remarks:</p>
+<ul>
+<li>When you have to use cookies use “Http-Only” cookies (use <code>System.Web.HttpCookie</code>).</li>
+<li>Never trust the browser to “manage” cookies (this includes Silverlight—do not use <code>System.Net.Cookie</code>—and that weird <code>CookieContainer</code>).</li>
+<li>Use the <code>System.Windows.Browser.HtmlDocument.Cookies</code> string to read cookies data (treat as read-only—in Silverlight you see this string in <code>HtmlPage.Document.Cookies</code>).</li>
+<li>Expose cookie “management” to the client through a (RESTful, JSON-based) service.</li>
+</ul>
+<p>My flippant remarks above flippantly reveal that there are (at least) three different ways cookies are represented in .NET and cookies are presented as a single, delimited string or as a collection of objects (quite non-straightforward).</p>
+<p>So here in the studio, I had to use cookies, following my own guidance. On the server side I defined <code>ClientCookieWrapper</code>. This class has a public <code>SetCookie()</code> method and a private <code>GetCookie()</code> method. The intent behind these accessors is to say, ‘Use <code>SetCookie()</code> in a service call to update/generate/delete cookies; use <code>GetCookie()</code> to fill in <code>ClientCookieWrapper</code> properties specific to the application domain. Here’s what <code>ClientCookieWrapper.SetCookie()</code> looks like:</p>
+<pre><code class="language-c#">public void SetCookie(string selected)
+{
+    var cookieValue = this._defaultCookieValue.Replace(&quot;:selected=&quot;, &quot;=&quot;);
+    cookieValue = cookieValue.Replace(string.Format(&quot;{0}=&quot;, selected), string.Format(&quot;{0}:selected=&quot;, selected));
+    var cookie = this.GenerateCookie(cookieValue);
+    HttpContext.Current.Response.Cookies.Add(cookie);
+}
+
+Now, `ClientCookieWrapper.GetCookie()`:
+
+HttpCookie GetCookie()
+{
+    HttpCookie cookie = this.CurrentCookie;
+    if (!HttpContext.Current.Request.Cookies.AllKeys.Contains(this.CookieKey))
+    {
+        cookie = this.GenerateCookie(this._defaultCookieValue);
+        HttpContext.Current.Response.Cookies.Add(cookie);
+    }
+    return cookie;
+}
+
+Both of these methods share this:
+
+HttpCookie GenerateCookie(string defaultCookieValue)
+{
+    var expires = DateTime.UtcNow.AddDays(15);
+    var cookieValue = string.Format(&quot;{0};expires={1}&quot;, defaultCookieValue, expires.ToString(&quot;R&quot;));
+    var cookie = new HttpCookie(this.CookieKey, cookieValue);
+    cookie.Expires = expires;
+    return cookie;
+}
+
+Finally, on the client side (which happens to be Silverlight), I can do this (with that service call I’ve not shown in this article set up):
+
+void DoConnectionChangeCommand()
+{
+    if (this.ConnectionName == null) return;
+
+    if (!HtmlPage.Document.Cookies.StartsWith(cookieKey))
+                throw new NotSupportedException(&quot;The expected cookie format was not found.&quot;);
+
+    this.DoRiaOperationSetCookie(this.ConnectionName.Name, () =&gt;
+            {
+                var currentUri = HtmlPage.Document.DocumentUri;
+                var location = currentUri.GetComponents(
+                    UriComponents.SchemeAndServer | UriComponents.Path, UriFormat.SafeUnescaped);
+                HtmlPage.Window.Navigate(new Uri(location.TrimEnd('/')), &quot;_self&quot;);
+            });
+}
+</code></pre>
+<p>We see that <code>DoRiaOperationSetCookie()</code> will call the server and set the cookie—and when it runs successfully, it will navigate to the default page of the client.</p>
+<p>Now, two sentences of history: In 2005 <a href="http://www.hanselman.com/blog/HttpOnlyCookiesOnASPNET11.aspx">Scott Hanselman introduces a hack</a> to make cookies more secure (in the ASP.NET 1.1 timeframe). In 2008, Jeff Atwood jumps on the bandwagon in “<a href="http://blog.codinghorror.com/protecting-your-cookies-httponly/">Protecting Your Cookies: HttpOnly</a>.”</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2014-09-18T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

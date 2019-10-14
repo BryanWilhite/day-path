@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>I finally, finally, finally converted my Blog to Angular modern… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>I finally, finally, finally converted my Blog to Angular modern…</h1>
+<p>Meh. Blow a party whistle. And I am <em>far</em> from “done,” by the way. I now understand why <a href="https://www.hanselman.com/blog/">Scott Hanselman</a> would stay with ASP.NET Web Forms and no SPA-action for his Blog. I have been dealing with this ‘challenge’ <em>actively</em> since the summer of 2017. These are challenges I set up for myself (not really understanding that each of these challenges had at least three challenges wrapped inside):</p>
+<ul>
+<li>maintain a private-sector day job (compared to a government or academic job)</li>
+<li>convert from Visual Studio web-building workflows to Visual Studio Code workflows</li>
+<li>convert my .NET 4.x investments to .NET Core in general and .NET Standard 2.0 in particular</li>
+<li>maintain a private-sector day job</li>
+<li>migrate from a few huge Team Foundation Server solutions to many, many Git repositories</li>
+<li>migrate to a Node.js based development culture</li>
+<li>migrate from Angular JS to Angular</li>
+<li>maintain a private-sector day job</li>
+<li>establish a Visual Studio Team Services CI/CD pipeline for multiple Git repositories</li>
+</ul>
+<p>It is clear—abundantly clear—that I am not converting from Angular JS to Angular in a vacuum. I am converting multiple production pipelines over to a new paradigm as well as converting from Angular JS to Angular. This is the downside of being a developer with legacy load, struggling to stay out of technical debt.</p>
+<h2>many, many Git repositories</h2>
+<p>I will attempt to list the Git repositories I built for this mega-conversion in the proper chronological order to explain (even to myself) what the hell I was doing. Each of these repositories contain their own histories, detailing more of my joy and pain—and pain. It may help to mention that I have been using Team Foundation Services to host a few huge Team Foundation Server (TFS) solutions that I have been building up for over a decade. Most of these GitHub repositories draw from these TFS solutions:</p>
+<p><a href="https://github.com/BryanWilhite/SonghayCore">SonghayCore</a>: all my Blog sites have run on top this Core so this had to move first. <a href="https://github.com/BryanWilhite/SonghayCore/graphs/contributors">My contributions</a> show I started this process in the summer of 2016. It may help to mention that I use the assets in this repository for my day job.</p>
+<p><a href="https://github.com/BryanWilhite/Songhay.Cloud.BlobStorage">Songhay.Cloud.BlobStorage</a>: all of my MVC-era Blog sites have run on top Azure Storage, abstracted into a repository. <a href="https://github.com/BryanWilhite/Songhay.Cloud.BlobStorage/graphs/contributors">My contributions</a> show I started this process in the autumn of 2017. For the reader who would prefer to not get into this ‘trap’ I have set up for myself, it may help to mention that this month Microsoft has announced “<a href="https://azure.microsoft.com/en-us/blog/azure-storage-static-web-hosting-public-preview/">Static website hosting for Azure Storage now in public preview</a>” which <em>should</em> do well with a <a href="https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review/">static website generator</a>.</p>
+<p><a href="https://github.com/BryanWilhite/Songhay.Social">Songhay.Social</a>: this repository supports the Tweeted Links posts, a Blog post made of Twitter statuses which has been totally dominating my Blog posting for the last few years. <a href="https://github.com/BryanWilhite/Songhay.Social/graphs/contributors">My contributions</a> show I started this process in the winter of this year.</p>
+<p><a href="https://github.com/BryanWilhite/Songhay.Feeds">Songhay.Feeds</a>: this repository is the solution to generating RSS feeds in a JSON format for UI display via a back-end <a href="https://docs.microsoft.com/en-us/azure/app-service/web-sites-create-web-jobs">Azure job</a>. The RSS feed for my Blog is now broken as this is functionality is not running in the cloud as of this writing. <a href="https://github.com/BryanWilhite/Songhay.Feeds/graphs/contributors">My contributions</a> show I started this process in the winter of this year.</p>
+<p><a href="https://github.com/BryanWilhite/dotnet-core">dotnet-core</a>: I started this repository <a href="https://github.com/BryanWilhite/dotnet-core/graphs/contributors">in the fall of 2017</a> to teach myself .NET Core and ASP.NET Core. I am passionate about learning in public, demystifying this process for less experienced developers.</p>
+<p><a href="https://github.com/BryanWilhite/nodejs">nodejs</a>: I started this repository <a href="https://github.com/BryanWilhite/nodejs/graphs/contributors">in the spring of 2017</a> to, as aforementioned, ‘migrate to a Node.js based development culture.’</p>
+<p><a href="https://github.com/BryanWilhite/angular.io-index-app">angular.io-index-app</a>: this repository represents my intention to standardize my studio around an Index app for SPA solutions. This Blog as of this writing is currently running off of a ‘seed’ based on this Index app. I started this repository <a href="https://github.com/BryanWilhite/angular.io-index-app/graphs/contributors">in the autumn of 2017</a><em>after</em> experimenting with <a href="https://github.com/BryanWilhite/aurelia-index-app">aurelia-index-app</a>.</p>
+<p><a href="https://github.com/BryanWilhite/Songhay.Blog">Songhay.Blog</a>: as of this writing this repository is the engine behind this Blog site, started <a href="https://github.com/BryanWilhite/Songhay.Blog/graphs/contributors">in the spring of 2018</a>. It is quite intimidating (to me) to see that all of the repositories mentioned above made this repository possible.</p>
+<p>Since I am clearly not as bright as Scott Hanselman, I have been laboring under the assumption that like a fictional Jedi I have to waste years of my real life trying to build my own light saber, using patterns and practices that both conform and deviate from the norm. The principle I am trying to uphold is simple but has been quite brutal (on me): my technical Blog should be built by me. When I started this Blog there was nothing in the ASP.NET MVC world for blogging on the scale of, say, WordPress. It follows quite naturally that I followed <a href="http://songhayblog.azurewebsites.net/blog/entry/replacing-my-nblog-with-a-read-only-angular-js-seed-over-web-api">the example of Chris Fulstow</a> and went out on my own… I do not recommend doing this. Today, I would recommend a <a href="https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review/">static website generator</a>. But do understand that I make this recommendation <em>after</em> learning about ASP.NET MVC by building my own Blog site(s).</p>
+<p>Going forward my plan is to continue posting Tweeted Links—like <a href="http://songhayblog.azurewebsites.net/blog/entry/the-2018-front-end-performance-checklist-and-other-tweeted-links">my latest one</a> as of this writing—and Blog posts detailing how I am finishing this Blog site. Writing about what I am doing motivates me to work—even when no one is reading about what I am writing. I understand this weird thing about myself so it has been quite uncomfortable to endure about three years without a technical blogging platform. I welcome myself back. I hope Bing search bots will index this thing correctly.</p>
+<p>@<a href="https://twitter.com/bryanwilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2018-06-29T23:41:58.862Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

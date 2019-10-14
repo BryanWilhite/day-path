@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Introducing node modules and bower components to Visual Studio (2013) - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <p>Node modules and bower components (with gulp) are the building blocks of building formal production pipelines for Web apps. My use of NAnt for many years is conceptually related to what can be built with node/bower. As of today’s writing you some artisanal JavaScript hipster may visit songhaysystem.com and think it a bit lacking (more than a bit)—sorry, mate, I’m back here getting my node/bower pipes flowing…</p>
+<p>Getting node on Windows is way, <em>way</em> easier than I assumed (or saw a few years ago). We just go <a href="https://nodejs.org/">nodejs.org</a>, download a binary and execute and installer. The installer will give us shortcuts for the Node console and <strong>Node.js command prompt</strong>. I’ve not been using the command prompt because of what comes with the Windows version of Git. Yes, we’ll need to install Git (because bower has a relationship with it—where do you think all those packages are stored?). The story for Git is just like Node’s—we start with <a href="http://git-scm.com/">http://git-scm.com/</a> to get our installer. After Git is installed, look for the <strong>Git Bash</strong> shortcut. I’ve been working in the Git Bash shell for my work with node modules and bower components.</p>
+<h2>The System Image</h2>
+<p>Here’s a rough sketch of my basic node/bower layout:</p>
+<pre><code class="language-plaintext">%programfiles%\nodejs
+%userprofile%\AppData\Roaming\npm
+..\Projects\bower_components
+..\Projects\node_modules
+..\Projects\.bowerrc
+..\Projects\bower.json
+..\Projects\.tfignore
+</code></pre>
+<p>The first two folders, <code>\nodejs</code> and <code>\npm</code>, come by default after doing the installs mentioned above. The <code>\Projects</code> folder is where all of my Visual Studio projects and Solution files reside (btw: my solutions are not in separate folders—all of my projects sit side-by-side and all <code>*.sln</code> files are in <code>\Projects</code>). Most my manual setup takes place in <code>\Projects</code>. The first command to run (from Git bash in <code>\Projects</code>) is <code>touch .bowerrc</code>. Then write an unspectacular thing like this inside <code>.bowerrc</code>:</p>
+<pre><code class="language-json">{
+    &quot;directory&quot;: &quot;bower_components/&quot;,
+    &quot;analytics&quot;: true
+}
+</code></pre>
+<p>(This is a bit of overkill, but it’s a reminder that I can change the location of the default bower components folder.) Now, I can run that classic line in the “Install Bower” section of <a href="http://bower.io/">http://bower.io/</a> and my other basic packages:</p>
+<pre><code class="language-console">npm install -g bower
+npm install -g bower-json
+npm install -g gulp
+</code></pre>
+<p>(I really don’t think I need the <code>-g</code> option because my <code>\Projects</code> folder should be only place bower and gulp will work.) This completes the ground floor of the node modules I’ll need to get started.</p>
+<h2>The Bower Basics</h2>
+<p>Instead of doing the cool <code>bower install &lt;package&gt;</code> thing, let’s setup <code>bower.json</code> up front (as listed in the <code>\Projects</code> folder above):</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;songhay-system&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;dependencies&quot;: {
+        &quot;angular-seed&quot;: &quot;*&quot;,
+        &quot;angular-ui-bootstrap-bower&quot;: &quot;*&quot;,
+        &quot;bootstrap&quot;: &quot;*&quot;,
+        &quot;bower-breeze&quot;: &quot;*&quot;,
+        &quot;jquery&quot;: &quot;*&quot;,
+        &quot;jquery-legacy&quot;: &quot;jquery#^1&quot;,
+        &quot;jquery-ui&quot;: &quot;*&quot;,
+        &quot;moment&quot;: &quot;*&quot;,
+        &quot;slickgrid&quot;: &quot;*&quot;,
+        &quot;underscore&quot;: &quot;*&quot;
+    },
+    &quot;authors&quot;: [
+      { &quot;name&quot;: &quot;Bryan Wilhite&quot;, &quot;email&quot;: &quot;rasx@songhaysystem.net&quot;, &quot;homepage&quot;: &quot;http://songhaysystem.com&quot; }
+    ]
+}
+</code></pre>
+<p>Now all I have to do is run <code>bower install</code> (from the <code>\Projects</code> folder) and my output looks like this:
+<a href="https://www.flickr.com/photos/wilhite/16941208490/" title="songhay bower"><img alt="songhay bower" src="https://farm9.staticflickr.com/8715/16941208490_395bdb5945_z_d.jpg"></a></p>
+<p>It’s not perfect (why those “<code>invalid-meta</code>” lines?) but it’s a start.</p>
+<h2>The Importance of .tfignore</h2>
+<p>In the same manner that Git folks have <code>.gitignore</code>, Microsoft’s TFS (finally!) has <code>.tfignore</code>. I have had at least two, useless, soul-sucking arguments with self-described “senior” Microsoft developers who resisted using NuGet packages because there was no <code>.tfignore</code>. Now there is and I can get some soul back! Here’s my <code>.tfignore</code> file:</p>
+<pre><code class="language-plaintext"># info:
+# &lt;https://msdn.microsoft.com/en-us/library/ms245454.aspx?f=255&amp;MSPPError=-2147217396&gt;#tfignore
+\bower_components
+\node_modules
+\packages
+!\packages\repositories.config
+</code></pre>
+<p>According to <a href="http://stackoverflow.com/questions/24143925/get-tfs-to-ignore-my-packages-folder">a stackoverflow.com article</a>, my <code>.tfignore</code> file can be overridden by NuGet. So a <code>NuGet.config</code> file has to be added to the <code>\.nuget</code> folder of your Visual Studio project root:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+  &lt;solution&gt;
+    &lt;add key=&quot;disableSourceControlIntegration&quot; value=&quot;true&quot; /&gt;
+  &lt;/solution&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h2>Related Links</h2>
+<ul>
+<li>“<a href="http://www.hanselman.com/blog/IntroducingGulpGruntBowerAndNpmSupportForVisualStudio.aspx">Introducing Gulp, Grunt, Bower, and npm support for Visual Studio</a>” by Scott Hanselman</li>
+<li>“<a href="http://www.iambacon.co.uk/blog/getting-started-with-grunt-sass-and-task-runner-explorer-visual-studio">Getting started with Grunt, SASS and Task Runner Explorer</a>” by Colin Bacon</li>
+<li>“<a href="https://www.youtube.com/watch?v=vkRv0r_tNXY&amp;feature=youtube_gdata_player">Crash Course in Node, Bower, and Grunt</a>”</li>
+<li>“<a href="https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4">Gulp vs Grunt. Why one? Why the Other?</a>”</li>
+<li>“<a href="https://www.youtube.com/watch?v=-_9N9aY8aNc&amp;feature=youtube_gdata_player">Initializing Bower and NPM</a>”</li>
+<li>“<a href="https://www.youtube.com/watch?v=dwSLFai8ovQ&amp;feature=youtube_gdata_player">Gulp—The Basics</a>”</li>
+<li>“<a href="https://www.youtube.com/watch?v=LmdT2zhFmn4&amp;feature=youtube_gdata_player">Gulp.js Build System #1—Fundamentals</a>”</li>
+<li>“<a href="http://stackoverflow.com/questions/14079833/how-to-change-bowers-default-components-folder">How to change bower’s default components folder?</a>”</li>
+<li>“<a href="http://enzolutions.com/articles/2014/10/24/how-to-validate-bower-files/">How to validate Bower files</a>”</li>
+<li>“<a href="http://blog.millermedeiros.com/node-js-as-a-build-script/">Node.js as a build script</a>”</li>
+<li>“<a href="https://msdn.microsoft.com/en-us/library/ms245454.aspx?f=255&amp;MSPPError=-2147217396">Customize which files are ignored by version control</a>”</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-04-14T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

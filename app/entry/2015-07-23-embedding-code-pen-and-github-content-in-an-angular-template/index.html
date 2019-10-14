@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Embedding Code Pen and GitHub Content in an Angular Template - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Embedding Code Pen and GitHub Content in an Angular Template</h1>
+<p>My desire to make my notes public and still useful (to me) led me to embedding Code Pen and GitHub “gists” in my entries. This embedding stuff used to be drop-dead simple on every other Blog platform—but now, since I am building my own thing, my technology mix (yet again) has hit a bit of a brick wall. My current Blog platform is based on Angular JS—and by default Angular “sanitizes” the HTML it displays. This means it will not, by default, display embedding.</p>
+<p>The solution to this problem is in <a href="http://codepen.io/rasx/pen/xGaXrN">my Code Pen</a> below:</p>
+<!-- cSpell:disable -->
+<iframe height="265" style="width: 100%;" scrolling="no" title="Embedding Code Pen and GitHub Content in an Angular Template" src="https://codepen.io/rasx/embed/xGaXrN?height=265&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+See the Pen <a href='https://codepen.io/rasx/pen/xGaXrN'>Embedding Code Pen and GitHub Content in an Angular Template</a> by Bryan Wilhite
+  (<a href='https://codepen.io/rasx'>@rasx</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<!-- cSpell:enable -->
+<p>See the Pen <a href="http://codepen.io/rasx/pen/xGaXrN/">Embedding Code Pen and GitHub Content in an Angular Template</a> by Bryan Wilhite (<a href="http://codepen.io/rasx">@rasx</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p>K. Scott Allen covers the Angular theory behind this issue quite well in, “<a href="http://odetocode.com/blogs/scott/archive/2014/09/10/a-journey-with-trusted-html-in-angularjs.aspx">A Journey With Trusted HTML in AngularJS</a>.” I am using <code>angular-embed-codepen</code> <a href="https://github.com/jvandemo/angular-embed-codepen">by Jurgen Van de Moere</a> and <code>angular-gist</code> <a href="https://github.com/scottcorgan/angular-gist">by Scott Corgan</a>. Both of these projects are bower packages and I must point out that there are other GitHub projects similar to <code>angular-gist</code> but the ones I’ve seen take a dependency on jQuery.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-07-23T21:13:13.284Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

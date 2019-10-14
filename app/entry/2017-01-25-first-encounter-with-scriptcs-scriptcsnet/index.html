@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>First Encounter with scriptcs => @scriptcsnet - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>First Encounter with scriptcs =&gt; @scriptcsnet</h1>
+<p>One of <a href="https://www.dotnetrocks.com/?show=1110">Glenn Block’s</a> post-MEF, post-Microsoft projects is <a href="http://scriptcs.net/">scriptcs</a>. I am currently using scriptcs as the engine of my epub publication pipeline in an effort to use my C# skills and delay (again) the need for me to learn/use Python.</p>
+<p>scriptcs is useful to me when it just works on Windows <em>and</em> Linux. I understand now that I am asking for a tall order because <em>my</em> Linux world is split between mono and .NET Core (in serious need of .NET Standard compliance) and scriptcs is trying to live in this world.</p>
+<p><strong>The current scriptcs release has no concept of “present working directory.”</strong> Glenn (?) let me know <a href="https://twitter.com/scriptcsnet/status/822746581761859584">via @scriptcsnet</a> that “it’s coming in 0.17.0, avail in our dev branch…” I wrote a workaround that Glenn is <em>not</em> impressed with <code>EnvironmentUtilities.GetScriptFolder()</code>, interrogating command-line arguments:</p>
+<pre><code class="language-c#">using System.IO;
+public static class EnvironmentUtilities
+{
+    public static void ExitWithError(string errorMessage, int errorNumber=1)
+    {
+        try
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(errorMessage);
+        }
+        finally
+        {
+            Console.ResetColor();
+            Environment.Exit(errorNumber);
+        }
+    }
+    public static string GetScriptFolder()
+    {
+        var pathToScript = Environment
+            .GetCommandLineArgs()
+            .FirstOrDefault(i =&gt; i.EndsWith(&quot;.csx&quot;));
+        if(pathToScript == null)
+            throw new Exception(&quot;GetScriptFolder(): The expected command-line argument is not here.&quot;);
+        pathToScript = Path.GetFullPath(pathToScript);
+        var folder = Path.GetDirectoryName(pathToScript);
+        Console.WriteLine(&quot;GetScriptFolder(): script folder: {0}&quot;, folder);
+        return folder;
+    }
+}
+</code></pre>
+<p><strong>The current scriptcs release cannot handle NuGet 3.x.</strong> Glenn informed me <a href="https://twitter.com/scriptcsnet/status/824083354249105412">via @scriptcsnet</a> that a fix for this should be on the dev branch. This issue exists for me on both Windows and Linux (and I am using the dev branch on Linux.) I have a horrible workaround for this that involves raiding NuGet package folders (under C# projects) for .NET Standard-ish DLLs and shoving them into a <code>\scriptcs-bin</code> folder, allowing me to use the Rosyln-derived <code>#r</code> directive. Here is my ‘loader’ script, chock full of these directives:</p>
+<pre><code class="language-c#">#r &quot;Newtonsoft.Json.dll&quot;
+#r &quot;System.IO&quot;
+#r &quot;System.Runtime.dll&quot;
+#r &quot;Markdig.dll&quot;
+#load &quot;scriptcs-environment-utilities.csx&quot;
+#load &quot;publication-context.csx&quot;
+#load &quot;publication-chapter.csx&quot;
+var csxRoot = EnvironmentUtilities.GetScriptFolder();
+var pubContext = new PublicationContext(csxRoot);
+pubContext.GenerateChapters();
+</code></pre>
+<p><strong>scriptcs or Rosyln cannot properly parse classes with private members on Linux.</strong> A class as simple as the following will not ‘compile’ (or interpret) properly on Linux:</p>
+<pre><code class="language-c#">public class Foo
+{
+    public string Fubar { get; set; }
+    string _foo;
+}
+</code></pre>
+<p>I kept getting an <code>ArgumentOutOfRangeException</code> error message that can easily make one think of a simple runtime array index problem. But the catch is the error throws during initialization/interpretation time (which suggests to me that Rosyln is having trouble parsing something).</p>
+<p>I saw the error go away when I did this:</p>
+<pre><code class="language-c#">public class Foo
+{
+    public string Fubar { get; set; }
+    internal string _foo;
+}
+</code></pre>
+<p>but <em>not</em> this:</p>
+<pre><code class="language-c#">public class Foo
+{
+    public string Fubar { get; set; }
+    private string _foo;
+}
+</code></pre>
+<p>I want to say that the Rosyln I am using on Linux is from mono.</p>
+<h2>Related Links</h2>
+<ul>
+<li>“<a href="https://github.com/scriptcs/scriptcs/wiki/Building-on-Mac-and-Linux">Building on Mac and Linux</a>”</li>
+<li>“<a href="https://github.com/scriptcs-contrib/svm/wiki/Installing%20svm%20on%20Linux">Installing svm on Linux</a>”</li>
+<li>“<a href="https://github.com/scriptcs/scriptcs/wiki/1.0">Recently the decision was made to aim for a 1.0 release including… [possibly] Running on .NET core</a>”</li>
+<li>“<a href="http://www.strathweb.com/2016/03/roslyn-scripting-on-coreclr-net-cli-and-dnx-and-in-memory-assemblies/">Roslyn scripting on CoreCLR (.NET CLI and DNX) and in memory assemblies</a>”</li>
+<li>“<a href="http://www.strathweb.com/2015/11/running-c-scripts-and-snippets-in-visual-studio-code-with-scriptcs/">Running C# scripts and snippets in Visual Studio Code with scriptcs</a>”</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2017-01-26T03:01:43.830Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

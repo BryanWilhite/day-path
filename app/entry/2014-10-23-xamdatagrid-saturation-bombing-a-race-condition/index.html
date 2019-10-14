@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>XamDataGrid: saturation-bombing a race condition - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>XamDataGrid: saturation-bombing a race condition</h1>
+<p>Everything I am going to write in this post is based on the assumption that any user interaction related to filtering the <code>XamDataGrid</code> grid will cause the <code>XamDataGrid.RecordManager.FilteredInDataItems</code> to change—but the change is not instantaneous: the change occurs within an unknown period of time. Send me a Tweet with some great news should you consider it known!</p>
+<p>I can use Prism-based messaging to send the “current” <code>FilteredInDataItems</code> payload to the backing View Model for processing—in my squalid case, the ‘processing’ has to do with setting the background color of rows (by setting a View Model Boolean “flag”) based on irregular data (not on regular position). In Prism parlance we “publish” a message (or “event”—which is a questionable term to me), it follows that I have <code>BombFilteredInDataItems()</code> in my view hosting the <code>XamDataGrid</code>:</p>
+<pre><code class="language-c#">void BombFilteredInDataItems(string key)
+{
+    Action sendPrismMessage = () =&gt;
+    {
+        if (!FrameworkDispatcherUtility.HasCurrentWindowsApplication()) return;
+        var collection = this.FxGrid.RecordManager.FilteredInDataItems;
+        var data = new KeyValuePair&lt;string, ICollectionView&gt;(string.Format(&quot;MyView:{0}&quot;, key), collection);
+        this._eventAggregator.Publish&lt;KeyValuePair&lt;string, ICollectionView&gt;&gt;(data);
+    };
+
+    Task.Delay(150)
+            .ContinueWith(_ =&gt; sendPrismMessage(), TaskScheduler.FromCurrentSynchronizationContext());
+
+    Task.Delay(250)
+            .ContinueWith(_ =&gt; sendPrismMessage(), TaskScheduler.FromCurrentSynchronizationContext());
+}
+</code></pre>
+<p>This <code>BombFilteredInDataItems()</code> method contains an action (the actual intent of the method), which is fired twice around a 100ms interval. Do you not see the non-deterministic desperation here? Not the kind of post an “intelligent” developer should share in public, eh?</p>
+<p>So I call this embarrassment ‘saturation bombing a race condition’ as (<code>BombFilteredInDataItems()</code> is in a race with the “current” state of <code>FilteredInDataItems</code>). According to Joe Albhari, stated in his excellent “<a href="http://channel9.msdn.com/Events/TechEd/Australia/2013/DEV422">Becoming a C# Time Lord</a>” talk, 50ms is a “long-running operation” so this saturation bombing around 100ms is on the order of eons of computing time. This is as close to hacking as I would like to get (in the enterprise context). I would prefer that the grid would ‘know’ when its <code>FilteredInDataItems</code> payload is “current” perhaps having a throttled collection-changed event (like <code>ObservableCollection&lt;T&gt;.CollectionChanged</code> but mixed with Reactive Extensions).</p>
+<p>For my sanity, I must introduce the concept of “user idle time” which suggests that this idea of waiting for inactivity is not new (see “<a href="http://stackoverflow.com/questions/1037595/c-sharp-detect-time-of-last-user-interaction-with-the-os">Detect time of last user interaction with the OS</a>”). It should follow that idle time with respect to the user can be reborn as idle time with respect to an Observable Collection.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2014-10-23T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

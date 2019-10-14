@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Underscore.js Grouping in Angular JS - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Underscore.js Grouping in Angular JS</h1>
+<p>This <a href="http://codepen.io/rasx/pen/BjCkH">codepen.io sample</a> does <em>not</em> reveal that <code>_.groupBy()</code> produces <em>an object</em> with properties (as group names) and a second property that’s an array, representing the named group. In Chrome, I’ve seen a <em>strong suggestion</em> that the property names are in ascending order by default so Angular JS can display them in this ‘order’ with the object-property syntax.</p>
+<pre><code class="language-html">&lt;div ng-repeat=&quot;(key, value) in myObj&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<p>But, <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">Angular people warn</a> that Angular JS <code>orderBy</code> has no effect on this form:</p>
+<blockquote>
+<p>We now rely on the order returned by the browser when running for key in myObj. It seems that browsers generally follow the strategy of providing keys in the order in which they were defined, although there are exceptions…If this is not desired, the recommended workaround is to convert your object into an array that is sorted into the order that you prefer before providing it to ngRepeat. You could do this with a filter such as toArrayFilter or implement a $watch on the object yourself.</p>
+</blockquote>
+<p>To me this effectively means that Underscore JS <code>_.groupBy()</code> output is incompatible with Angular JS. So I might have rolled out of bed this morning with the assumption that I can do this:</p>
+<pre><code class="language-javascript">$scope.groups = _($scope.vm.data)
+        .groupBy(this.indexGroupingSelected.value);
+
+…when, in fact (after a many, *many* hours of experimenting), I retreat to this:
+
+$scope.groups = _($scope.vm.data)
+        .chain()
+        .groupBy(this.indexGroupingSelected.value)
+        .pairs()
+        .map(function(i) {
+            return {
+                groupName: i[0],
+                group: i[1]
+            };
+        })
+        .value();
+</code></pre>
+<p>So, instead of that cool object-property syntax, we have plain-old Angular verbosity (that’s easier for me to understand six months from now):</p>
+<pre><code class="language-html">&lt;div data-ng-repeat=&quot;i in groups | orderBy: 'groupName' : true &quot;&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li data-ng-repeat=&quot;j in i.group&quot;&gt;
+            
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-03-16T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

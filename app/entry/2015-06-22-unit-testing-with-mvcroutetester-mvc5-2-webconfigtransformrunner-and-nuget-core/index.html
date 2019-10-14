@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Unit Testing with MvcRouteTester.Mvc5.2, WebConfigTransformRunner and Nuget.Core - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Unit Testing with MvcRouteTester.Mvc5.2, WebConfigTransformRunner and Nuget.Core</h1>
+<p>After researching this, I understand why there are no articles entitled “Unit Testing with <code>WebConfigTransformRunner</code>.” This <a href="https://github.com/erichexter/WebConfigTransformRunner">NuGet package</a> contains an <code>*.exe</code>: it is not meant to be referenced in Visual Studio as a Class library. To make this matter even more challenging, Phil Haack and his crew have very little documentation on <code>NuGet.Core</code>—and getting Anthony Steele’s MVC Route Tester in play was no walk in park either.</p>
+<p>So let me state the original desire, since the previous paragraph flippantly starts off somewhere in the middle: I want to unit-test XML document transforms (XDT) on my <code>Web.config</code> files and I want to test <em>attribute-based</em> MVC routes. I also want to use Visual Studio Test (<code>vstest.console.exe</code>) projects so automated-testing hipsters can howl at me with derisive laughter.</p>
+<h2>Testing with MvcRouteTester.Mvc5.2</h2>
+<p>Speaking of ease, my <code>ShouldRouteToIndexController()</code> Visual Studio Test method shows that I can test routes with just three lines of code:</p>
+<pre><code class="language-c#">[TestMethod]
+[TestProperty(&quot;jsonPath&quot;, @&quot;Songhay.Blog.Tests\ShouldRouteToIndexController.json&quot;)]
+public void ShouldRouteToIndexController()
+{
+    var jsonPath = this.TestContext.Properties[&quot;jsonPath&quot;].ToString();
+    jsonPath = Path.Combine(this.TestContext.ShouldGetProjectsFolder(this.GetType()), jsonPath);
+    this.TestContext.ShouldTestRoutes(typeof(IndexController), jsonPath);
+}
+</code></pre>
+<p>Some programmers like to brag about so few lines of code—and then we like to go further and proclaim it’s really just <em>one</em> line of code. In my example above, <code>TestContext.ShouldTestRoutes()</code>, an extension method I wrote, is <em>really</em> doing the test—all the other stuff is there to serve this single line. The intention is to load <code>ShouldRouteToIndexController.json</code> into <code>TestContext.ShouldTestRoutes()</code>, making this test very reusable and very data driven. The JSON data look like this:</p>
+<pre><code class="language-json">[
+    {
+        &quot;route&quot;: &quot;/&quot;,
+        &quot;controller&quot;: &quot;Index&quot;,
+        &quot;action&quot;: &quot;Index&quot;,
+        &quot;isNonRoute&quot;: false
+    },
+    {
+        &quot;route&quot;: &quot;/entry/show/FOO&quot;,
+        &quot;controller&quot;: &quot;Index&quot;,
+        &quot;action&quot;: &quot;RedirectToAngularSeed&quot;,
+        &quot;isNonRoute&quot;: false
+    },
+    {
+        &quot;route&quot;: &quot;/entry/show&quot;,
+        &quot;controller&quot;: &quot;Index&quot;,
+        &quot;action&quot;: null,
+        &quot;isNonRoute&quot;: true
+    }
+]
+</code></pre>
+<p>These data are loaded into that big one-liner. I’ve the <a href="https://gist.github.com/BryanWilhite/d72a8cf8cfd07c0e3c91">GitHub Gist</a> of <code>TestContext.ShouldTestRoutes()</code>:</p>
+<script src="https://gist.github.com/BryanWilhite/d72a8cf8cfd07c0e3c91.js"></script>
+<p>My Gist would not be possible without Anthony Steele’s <a href="https://www.nuget.org/packages/MvcRouteTester.Mvc5.2/">MvcRouteTester.Mvc5.2</a>. It was a bit of an ordeal to realize that I needed this package because there are <em>four different versions</em> of MVC Route Tester. Anthony himself <a href="https://twitter.com/AnthonySteele/status/612189239900549120">is quite irritated by this</a> as he as to compile multiple versions of MVC Route Tester for <em>every</em> major version of ASP.NET MVC:</p>
+<blockquote>
+<p>The whole thing of needing a new build for each MVC version is a pain. We are in need of a very different approach...</p>
+</blockquote>
+<h2>Testing with WebConfigTransformRunner and Nuget.Core</h2>
+<p>Eric Hexter gives us <code>WebConfigTransformRunner</code> as an <code>*.exe</code> via a NuGet package. Clearly this package is optimized for the command line. But I still wanted to use it for automated testing and clearly take my childish, one-line-of-code bragging rights. So I’ve wrapped up Eric’s runner in yet another reusable extension method <code>TestContext.ShouldTransformWebConfig()</code>, pictured below:
+<a href="https://www.flickr.com/photos/wilhite/18947684476/in/dateposted-public/" title="TestContext.ShouldTransformWebConfig()"><img alt="TestContext.ShouldTransformWebConfig()" src="https://farm1.staticflickr.com/544/18947684476_d90890ebb3_z_d.jpg"></a></p>
+<p>Before we show <a href="https://gist.github.com/BryanWilhite/c6126bfd6e37b676981f">the Gist of this extension method</a>, let’s have a look inside the collapsed region <code>test properties</code>:
+<a href="https://www.flickr.com/photos/wilhite/18786244970/in/dateposted-public/" title="TestContext.ShouldTransformWebConfig()"><img alt="TestContext.ShouldTransformWebConfig()" src="https://farm1.staticflickr.com/302/18786244970_c8a92eae6f_z_d.jpg"></a></p>
+<p><a href="https://gist.github.com/BryanWilhite/1baba5e63d57c608da83">I’ve written another extension method</a>, <code>ShouldGetNuGetPackageFile()</code>, calling on <code>NuGet.Core</code>:</p>
+<script src="https://gist.github.com/BryanWilhite/1baba5e63d57c608da83.js"></script>
+<p>This extension method would not be possible without <code>DefaultPackagePathResolver</code> in the <code>NuGet.Core</code> <a href="https://www.nuget.org/packages/NuGet.Core/">package</a>. It digs into the NuGet packages and finds the path to Hexter’s executable. This path fills the <code>pathToWebConfigTransformRunnerExe</code> argument in <a href="https://gist.github.com/BryanWilhite/c6126bfd6e37b676981f">the Gist</a> of the <code>ShouldTransformWebConfig()</code> extension method:</p>
+<script src="https://gist.github.com/BryanWilhite/c6126bfd6e37b676981f.js"></script>
+<p>I understand how one can be overcome by my use of extension methods. In my extension method <code>ShouldTransformWebConfig()</code>, we have—wow—another interesting extension method, <code>StartProcessAndWaitForExit()</code> which actually runs Hexter’s executable. I should have written this years ago! <a href="https://gist.github.com/BryanWilhite/d63e5d36f1e14dac867a.js">Here’s the gist</a> for <code>StartProcessAndWaitForExit()</code>:</p>
+<script src="https://gist.github.com/BryanWilhite/d63e5d36f1e14dac867a.js"></script>
+<p>After <code>WebConfigTransformRunner</code> runs, its output is tested with the contents of the <code>xPaths</code> argument. This type of argument makes the testing, again, data driven. Inside that collapsed region, <code>test properties</code>, my other, <em>other</em> extension method, <code>ShouldLoadListOfStrings()</code> (a simple wrapper for <code>File.ReadAllLines(path)</code>), loads simple text file, <code>ShouldTransformWebConfigXPaths.txt</code>, data-driving this test with these old-school XPath statements:</p>
+<pre><code class="language-xpath">//system.webServer/staticContent/mimeMap[@fileExtension='.json']
+//system.webServer/staticContent/mimeMap[@fileExtension='.opml']
+</code></pre>
+<h2>Okay folks, one last extension method for today…</h2>
+<p>Do notice that none of these automated tests used absolute paths. All of the paths to set up the tests were relative. This is possible (in part) because I set up my Visual Studio projects folder like this:</p>
+<pre><code class="language-plaintext">[root]
+    \packages
+    \Project.Shared
+    \Project.Shared.Tests
+    \Project.One
+    \Project.One.Tests
+    \Project.Two
+    \Project.Two.Tests
+    Solution.One.sln
+    Solution.Two.sln
+</code></pre>
+<p>I am sure that Microsoft have very great reasoning around why Visual Studio prefers to wrap each <code>*.sln</code> file in its own folder by default. But my intent is to share Project <em>source code</em> across multiple projects. Today I am under the impression that the best way to do this is with the folder layout above—so, for example, both solutions, <code>Solution.One</code> and <code>Solution.Two</code>, can easily share <code>Project.Shared</code>.</p>
+<p>This conventional folder layout leads to my last extension method for today, <code>TestContext.ShouldGetProjectsFolder()</code>. It is used in both the tests mentioned in this article. This is a simple wrapper around one of my very old utility-class (or “helper” class) methods <code>FrameworkAssemblyUtility.GetAssemblyDirectory()</code> (a simple wrapper around <code>Path.GetDirectoryName(targetAssembly.Location)</code>):</p>
+<pre><code class="language-c#">/// &lt;summary&gt;
+/// Test context extensions: should get projects folder.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;context&quot;&gt;The context.&lt;/param&gt;
+/// &lt;param name=&quot;typeInAssembly&quot;&gt;The type in assembly.&lt;/param&gt;
+public static string ShouldGetProjectsFolder(this TestContext context, Type typeInAssembly)
+{
+    Assert.IsNotNull(typeInAssembly, &quot;The expected type instance is not here.&quot;);
+    var assembly = typeInAssembly.Assembly;
+    var path = FrameworkAssemblyUtility.GetAssemblyDirectory(assembly);
+    path = path.Remove(path.IndexOf(typeInAssembly.Namespace));
+    context.ShouldFindFolder(path);
+    return path;
+}
+</code></pre>
+<p>I am embarrassed to admit that it took me <em>years</em> to really trim the cognitive load to write something as straight-forward as <code>ShouldGetProjectsFolder()</code>. It will be reused in all of my automated tests that depend on static files—I prefer this approach over the ceremony around <a href="https://msdn.microsoft.com/en-us/library/ms182475.aspx">Deployment Item</a> setup.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-06-22T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

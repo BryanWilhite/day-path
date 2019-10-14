@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>You cannot use the desktop version of Microsoft Word on files in an OneDrive folder… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>You cannot use the desktop version of Microsoft Word on files in an OneDrive folder…</h1>
+<p>Here’s the statement: the current release of OneDrive conflicts with the Desktop version of Word (and probably any other desktop Office product) because these 2013-era applications lock files while they are being edited.</p>
+<p>When OneDrive ‘decides’ to perform a sync operation it often fails to “merge” a locked office document. OneDrive will then generate multiple copies of the Office document, terrifying the user who is unsure which version is the correct version.</p>
+<p>This file-locking issue has always been a problem—even in the SkyDrive era. And it must be understood that this issue will emerge when Office is opening the document from a cloud URL or when opening from local disk (under an OneDrive root). As soon as the document is saved (uploaded) the problem looms.</p>
+<p>So I see two ways to work around this issue. One way is through a PowerShell script that copies my Word document to a temporary location outside of the OneDrive root folder, opens Office Word, waits for Word to close and then moves the edited file on top of the original under the OneDrive root:</p>
+<p>The other way is to somehow have the ability to temporarily turn off OneDrive synching, edit my Office document and turn it back on again. I am flippantly certain that <a href="https://blog.onedrive.com/the-new-onedrive-api/">the OneDrive API</a> does not provide this facility:</p>
+<pre><code class="language-powershell">$path = $args[0]
+if(($path -eq $null) -or -not(Test-Path $path))
+{
+    Write-Warning &quot;Cannot find file $path. Exiting script.&quot;
+    exit
+}
+$root = $PWD.Path
+$document = [System.IO.Path]::GetFileName($path)
+Write-Output &quot;Opening $document [at $root]...&quot;
+Copy-Item -Destination &quot;$env:USERPROFILE\Desktop&quot; -Path $path
+Push-Location -Path &quot;$env:USERPROFILE\Desktop&quot;
+Start-Process -FilePath $document -Verb open -Wait
+Write-Warning &quot;Waiting for Office Application to close/unlock the $document…&quot;
+Start-Sleep -Seconds 5
+Move-Item -Confirm -Destination $root -Path $document
+</code></pre>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-07-09T16:39:19.660Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

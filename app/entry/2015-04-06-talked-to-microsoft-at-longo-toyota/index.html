@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Talked to Microsoft …at Longo Toyota! - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Talked to Microsoft …at Longo Toyota!</h1>
+<p>It would be very romantic to say that I self-sabotaged by first serious contact with Microsoft by getting my car serviced on the same day as my phone screen (in part because my youngest son does not want me to leave California for Microsoft Land). But I really, <em>really</em> did not think that my car would be held (with me waiting) from 11am to 4pm! So when the interviewer called he <em>did</em> offer to reschedule but I went ahead and frustrated myself anyway. I interviewed with Microsoft while walking the lots, waiting rooms and offices of Longo Toyota! Very stupid.</p>
+<p>After the standard, “tell me a <em>little</em> bit about yourself” stuff (which I answer with a <em>lot</em> about myself), the interview moved to a <a href="http://collabedit.com/">collabedit.com</a> session where I was asked to remove all the duplicate characters from a string. This felt like the first <em>easy</em> question of a series of questions. But I failed to answer it. I do not blame the noise of air hammers, the PA system blaring, the people walking around me at Longo Toyota. There was <em>no</em> way I was going to come up with this answer on the phone:</p>
+<p>(new string(input.ToCharArray().Distinct().ToArray()))</p>
+<p>This was not the answer told to me by the interviewer. This is not the answer I looked up on the Internet. My experience as a developer tells me that this <em>is</em> the answer. However, on the phone impromptu, I was <em>not</em> going remember that string has a <code>ToCharArray()</code> method and I was <em>not</em> going to remember that LINQ to objects has a <code>Distinct()</code> extension method. In fact, immediately after the interview, I pulled out my computer and wrote this solution in LINQPad within an hour:</p>
+<pre><code class="language-c#">var input = &quot;Microsoft Windows&quot;;
+    input.Dump(&quot;input&quot;);
+
+var placeholder = &quot;*&quot;;
+
+var duplicates = input
+        .ToCharArray() //would never have remembered this on the call!
+        .Select((c,i) =&gt; new { Char=c, Index=i })
+        .GroupBy(i =&gt; i.Char) //should have remembered this!
+        .Where(i =&gt; i.Count() &gt; 1)
+        .ToArray();
+
+duplicates.Dump(&quot;duplicate data&quot;);
+
+var output = input;
+
+duplicates.ForEachInEnumerable(i =&gt;
+    {
+        i.Skip(1).ForEachInEnumerable(j =&gt;
+        {
+            output = (j.Index &lt; output.Length) ?
+                output.Insert(j.Index, placeholder)
+                :
+                string.Concat(output, placeholder);
+            output = output.Remove(j.Index + 1, 1);
+        });
+    });
+
+output.Dump(&quot;output with placeholder&quot;);
+
+output.Replace(placeholder, string.Empty).Dump(&quot;final output&quot;);
+</code></pre>
+<p>As one of my comments denote in the code above, I <em>should</em> have remembered <code>GroupBy()</code> because it was, as they say, right on “the tip of my tongue” (during the call)—but it was still involved in the <em>wrong</em> answer. According to the elite-programmer conceptual model of the interviewer, I definitely took too long to discover the wrong answer anyway.</p>
+<p>So I returned to my <em>real</em> programming world after the Microsoft interview. After looking on StackOverflow.com, I was reminded of <code>IEnumerable.Distinct()</code> (I just forgot about this method on the phone call in spite of the fact that I’ve used it many, many times before), the use of interactive IntelliSense in LINQPad reminded me of <code>ToCharArray()</code> and then from experience I knew immediately to do this:</p>
+<p>(new string(input.ToCharArray().Distinct().ToArray()))</p>
+<p>I am not upset with myself about not remembering because I <em>understand</em> the question posed to me (I took about an hour instead of few seconds)—and <em>most importantly</em> I need to understand such a question for my <em>personal</em> practice.</p>
+<p>It would be great to have all of my understanding just a few seconds away from some other person’s command. But I’m not that kind of work-on-command guy (according to the ideals of the <a href="http://en.wikipedia.org/wiki/Age_of_Enlightenment">French Enlightenment</a>, by the way, <em>no one</em> should be that guy). It would also be great to live in a world where intelligence is not tested in such mechanical and unimaginative ways. In fact, I do argue that my intelligence was not tested but my response speed to a relatively arbitrary problem. After 18 years of doing interviews, I get very, <em>very</em> frustrated and disrespectful of the whole random-access, speed-test process and desire the meeting to be over… there is nothing like the triumphant will of a twirling cog in an impersonal corporation ready to oblige me.
+<a href="http://songhayblog.azurewebsites.net/Entry/Show/windows-10-minimum-hardware-requirements-for-pc-and-other-tweeted-links" title="rapping to @shanselman aboiut my botched Microsoft interview"><img alt="rapping to @shanselman aboiut my botched Microsoft interview" src="https://farm9.staticflickr.com/8823/17058379165_828802c701_o_d.png"></a></p>
+<p>So here are some points I need to make to remember this first contact with Microsoft:</p>
+<ul>
+<li>Since I applied for more than one Microsoft position, I did not know what position I was interviewing for and the interviewer gave no details of the job description. I should have journaled the positions I applied for…</li>
+<li>I contacted Microsoft directly so I was not warned about the interview style through professional recruiters (who are often wrong anyway). I <em>do</em> feel that the interviewer should have warned me that interview will <em>require</em> a computer with a live connection to the Internet <em>before</em> the interview date.</li>
+<li>My Windows Phone was unable to share Internet and handle a phone call at the same time; my notebook could not connect to the Longo public Wi-Fi. I had to do the CollabEdit.com session through my phone! Very frustrating!</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-04-06T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>New Azure Web Sites Features - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>New Azure Web Sites Features</h1>
+<p>Three days ago, in “<a href="http://weblogs.asp.net/scottgu/archive/2012/09/17/announcing-great-improvements-to-windows-azure-web-sites.aspx">Announcing: Great Improvements to Windows Azure Web Sites</a>,” Scott Guthrie is making Internet history:</p>
+<blockquote>
+<p>With today’s release we are introducing a new low-cost “shared” scaling mode for Windows Azure Web Sites. A web-site running in shared mode is deployed in a shared/multi-tenant hosting environment. Unlike the free tier, though, a web-site in shared mode has no quotas/upper-limit around the amount of bandwidth it can serve. The first 5 GB/month of bandwidth you serve with a shared web-site is free, and then you pay the standard “pay as you go” Windows Azure outbound bandwidth rate for outbound bandwidth above 5 GB.</p>
+<p>A web-site running in shared mode also now supports the ability to map multiple custom DNS domain names, using both CNAMEs and A-records, to it. The new A-record support we are introducing with today’s release provides the ability for you to support “naked domains” with your web-sites (e.g. <a href="http://microsoft.com">http://microsoft.com</a> in addition to <a href="http://www.microsoft.com).">http://www.microsoft.com).</a> We will also in the future enable SNI based SSL as a built-in feature with shared mode web-sites (this functionality isn’t supported with today’s release – but will be coming later this year to both the shared and reserved tiers).</p>
+<p>You pay for a shared mode web-site using the standard “pay as you go” model that we support with other features of Windows Azure (meaning no up-front costs, and you pay only for the hours that the feature is enabled). A web-site running in shared mode costs only 1.3 cents/hr during the preview (so on average $9.36/month).</p>
+</blockquote>
+<p>With this announcement Microsoft is finally addressing a relatively ancient problem of how poorly Microsoft-based shared hosting competed with, say, DreamHost.com. We can complain and say that Microsoft has “over-engineered” its solution and it’s late—but plenty of people can say this about my work! In defense of Microsoft (and me)—like a multibillion dollar company actually needs defending—Microsoft has the best solution (better than Amazon offerings—and, to me, Google is just an advertising company with some custom Linux stuff that most “serious” Linux people don’t respect). Microsoft has a complete technical statement that coheres with the massive legacy load Microsoft has to carry (and I have quite a hefty legacy load too).</p>
+<p>This news from “the Gu” allows me to tabulate my plans for Azure migration:
+&lt;
+table class=&quot;WordWalkingStickTable&quot;&gt;<tr><td></p>
+<p>wordwalkingstick.com
+[songhayindex.azurewebsites.net]
+&lt;
+/td&gt;<td></p>
+<p>Shared site with custom “naked” domain.
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>slbiggestbox.azurewebsites.net
+&lt;
+/td&gt;<td></p>
+<p>Free site.
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>songhaywebformssample.azurewebsites.net
+&lt;
+/td&gt;<td></p>
+<p>Free site.
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>daypath.wordwalkingstick.com
+[songhayblog.azurewebsites.net]
+&lt;
+/td&gt;<td></p>
+<p>Shared site with custom subdomain.
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>songhaysystem.com
+[songhaysystem.azurewebsites.net]
+&lt;
+/td&gt;<td></p>
+<p>Shared site with custom “naked” domain.
+&lt;
+/td&gt;</tr></table></p>
+<h2>Phil Haack’s Old Hosting Service</h2>
+<p>I’m currently running wordwalkingstick.com with the same hosting company serving Phil Haack’s blog. I chose this host because I thought Phil chose this company carefully—but after using this host for a little over year it seems that Phil just said “whatever, it’s cheap and more reliable than others.” Windows Azure is special. Some of the best people in the entire IT industry are working on it. To me this is Scott Guthrie’s (and Mark Russinovich’s) master opus—never just “whatever.”</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-09-21T02:52:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

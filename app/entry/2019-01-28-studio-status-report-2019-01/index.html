@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>studio status report: 2019-01 - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>studio status report: 2019-01</h1>
+<h2>the day job brings some new Angular research topics</h2>
+<p>Do <code>rxjs</code> observables invoke for every subscriber? The answer to this question (at work) looks like it’s <em>yes</em> which means <code>HttpClient.post()</code> will invoke <code>post()</code> for every subscriber. This default behavior is <em>not</em> what I would expect and the <code>shared()</code> method [<a href="https://github.com/ReactiveX/rxjs/blob/01a09789a0a9484c368b7bd6ed37f94d25490a00/doc/operators.md#multicasting-operators">docs</a>] is supposed to meet my expectations. A <a href="https://stackblitz.com/edit/rxjs-observable-share?file=app%2Fapp.component.ts">StackBlitz example</a> out there is not really helping me at the moment.</p>
+<p>I have yet to release my flippant remarks on <code>BehaviorSubject</code> which is the core of the observable store service (which is kind of like the Angular answer to WPF event aggregation?). This is kind of a big deal for me as this topic addresses the bigger topic of Redux as an intermediate step towards robust, full-featured state management.</p>
+<h2>NPM packaging research still underway</h2>
+<p><a href="https://github.com/BryanWilhite/nodejs/tree/master/npm-package">Research</a> on NPM packaging and modules has led up to the need to include TypeScript in the mix. Ideally, “<a href="https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c">Step by step: Building and publishing an NPM Typescript package</a>” or “<a href="https://medium.com/cameron-nokes/the-30-second-guide-to-publishing-a-typescript-package-to-npm-89d93ff7bccd">The 30-second guide to publishing a TypeScript package to NPM</a>” will get me moving.</p>
+<h2>Azure spending rate crisis apparently over</h2>
+<p>Moving an App Service without its <a href="https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans">App Service Plan</a> to another Resource Group can force Microsoft to silently change the plan of the service. This change can cost money.</p>
+<h2>outstanding issues</h2>
+<p>Microsoft’s Edward Thomson <a href="https://twitter.com/ethomson/status/1063003088569753600">did not get back to me</a> for the YAML issue I was having so I lodged an issue on GitHub and <a href="https://github.com/Microsoft/azure-pipelines-tasks/issues/9235#issuecomment-451982478">got some not-so-great news</a>. But, according to the rules of the game, this matter is resolved-by-workaround.</p>
+<p>The ‘git on Windows is not working with GitHub credentials’ error is still alive and well:</p>
+<pre><code class="language-console">git push &lt;shows GitHub authentication prompt&gt;
+fatal: MissingMethodException encountered.
+    Method not found: 'System.Threading.Tasks.Task`1&lt;System.Net.Http.HttpResponseMessage&gt; Microsoft.Alm.Authentication.INetwork.HttpPostAsync(Microsoft.Alm.Authentication.TargetUri, System.Net.Http.HttpContent, Microsoft.Alm.Authentication.NetworkRequestOptions)'.
+</code></pre>
+<p>@<a href="https://twitter.com/bryanwilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2019-01-28T23:01:04.897Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Connecting to my Ubuntu VM on Azure - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Connecting to my Ubuntu VM on Azure</h1>
+<p>There are at least four (Windows) ways to connect to a Linux VM on Azure (today).</p>
+<ul>
+<li>PuTTY and WinSCP (over SSH)</li>
+<li>Windows Remote Desktop (to <code>xrdp</code>)</li>
+<li>Windows File Manager (to <code>samba</code>)</li>
+<li>(probably) Windows 10 Bash shell (with <code>ssh</code>)</li>
+</ul>
+<h2>PuTTY and WinSCP (over SSH)</h2>
+<p>I may have to come back and update these notes but I’m almost certain that Azure sets up VMs with SSH by default. So use of PuTTY and WinSCP is straightforward. (I did notice that the default, 15-second timeout of WinSCP was too fast for Azure so I had to change that—under <strong>Connection &gt; Timeouts &gt; Server response timeout</strong> with <strong>Advanced options</strong> checked.)</p>
+<h2>Windows Remote Desktop (to xrdp)</h2>
+<p>For this, I followed the instructions from “<a href="http://www.tweaking4all.com/software/linux-software/use-xrdp-remote-access-ubuntu-14-04/">How to use xRDP for remote access to Ubuntu 14.04</a>” or “<a href="https://blogs.technet.microsoft.com/uktechnet/2013/11/12/running-a-remote-desktop-on-a-windows-azure-linux-vm/">Running a Remote Desktop on a Windows Azure Linux VM</a>.” I was unable to connect using Remote Desktop. I noticed that, according to <code>service –status-all</code>, <code>xrdp</code> was not running—even after commanding it to run.</p>
+<p>I also noticed that the Azure Portal could no longer restart or detect updates from my Linux VM. After reading “<a href="https://acom-swtest-2.azurewebsites.net/en-us/documentation/articles/virtual-machines-linux-update-agent/?rnd=1">How to update the Azure Linux Agent on a VM to the latest version from Github</a>,” I got <code>walinuxagent</code> restarted and fixed the problem.</p>
+<h2>Windows File Manager (to samba)</h2>
+<p>The instructions in “<a href="http://www.howtogeek.com/176471/how-to-share-files-between-windows-and-linux/">How to Share Files Between Windows and Linux</a>” did not work with Azure until I read “<a href="http://askubuntu.com/questions/8184/firewall-settings-for-personal-file-sharing">Firewall Settings for Personal File Sharing</a>” and added <a href="http://michaelsync.net/2015/09/28/where-is-the-endpoint-setting-for-vm-in-new-azure-portal">Inbound security rules</a> to the Azure Resource Group associated with the VM.</p>
+<h2>Windows 10 Bash shell (with ssh)</h2>
+<p>“<a href="https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu">How To Use SSH to Connect to a Remote Server in Ubuntu</a>” should work <em>natively</em> on Windows 10, according to <a href="http://www.theverge.com/2016/3/30/11331014/microsoft-windows-linux-ubuntu-bash">recent news</a>, providing an experience similar to using PuTTY.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2016-05-01T05:40:21.531Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

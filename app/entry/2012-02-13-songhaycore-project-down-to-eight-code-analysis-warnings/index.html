@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>SonghayCore Project Down to Eight Code Analysis Warnings! - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>SonghayCore Project Down to Eight Code Analysis Warnings!</h1>
+<p><a href="http://www.flickr.com/photos/wilhite/6864575675/in/photostream/" title="SonghayCore Project Down to Eight Code Analysis Warnings!"><img alt="SonghayCore Project Down to Eight Code Analysis Warnings!" src="http://farm8.staticflickr.com/7055/6864575675_53809bbdc6.jpg"></a></p>
+<p>The <code>SonghayCore</code> Project is essentially the .NET 4+ version of the Songhay Project. As we’ve seen in a previous episode, <code>SonghayCore</code> started this week with 147 Code Analysis warnings. Now, most of them have gone away. Here are the highlights:</p>
+<ul>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/ms182151.aspx">CA1032: Implement standard exception constructors</a>” is straightforward common sense—my ignorance deserves this warning.</li>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/ms182302.aspx">CA2104: Do not declare read only mutable reference types</a>”—this warning in my code is indicative of my lack of experience with certain embarrassingly intermediate topics. It inspires me to stay in shape with renewing study! “A mutable type is a type whose instance data can be modified. The <code>System.Text.StringBuilder</code> class is an example of a mutable reference type. It contains members that can change the value of an instance of the class.”</li>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/0fss9skc.aspx">CA1819: Properties should not return arrays</a>” came for my code because I have types (like my <acronym title="Outline Processor Markup Language">OPML</acronym> types) that need to be serialized into <acronym title="Extensible Markup Language">XML</acronym>. I suppressed this warning. This is one of these intimate topics that someone relevant from Microsoft should address. “<a href="http://social.msdn.microsoft.com/Forums/is/asmxandxml/thread/c29ec71d-52da-4a37-9291-fb95e28018f4">XmlSerialization and CA1819 Warning</a>” is indicative of such intimacy.</li>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/ms182175.aspx">CA1056: URI properties should not be strings</a>” came (again) because of my OPML library and because of my support for Open Packaging Conventions <acronym title="Universal Resource Identifier">URI</acronym>s (used in Silverlight, <acronym title="Windows Presentation Foundation">WPF</acronym> and other <acronym title="Extensible Application Markup Language">XAML</acronym>-based technologies). I suppressed these.</li>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/bb386042.aspx">CA1308: Normalize strings to uppercase</a>” was suppressed because of my <code>ToTitleCase()</code> method in <code>Songhay.Globalization.TextInfoUtility</code>. My official Justification: “This member is not making a security decision based on the result.”</li>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/ms182144.aspx">CA1006: Do not nest generic types in member signatures</a>” comes a warning to me as Microsoft saying “you have bas taste”—I agree. So in shame I wrote a Collection class to avoid such nesting.</li>
+</ul>
+<p>By the way, folks, that collection I wrote looks like this:</p>
+<pre><code class="language-c#">using System.Collections.ObjectModel;
+namespace Songhay.Collections
+{
+    using Models;
+    /// &lt;summary&gt;
+    /// Wrapper Collection for &lt;see cref=&quot;Songhay.Models.RemoteResource&quot;/&gt;.
+    /// &lt;/summary&gt;
+    public class RemoteResourceCollection : Collection&lt;RemoteResource&gt;
+    {
+    }
+}
+</code></pre>
+<p>Based on precious hours of research, I assume that these, scant 13 lines of code is the appropriate alternative to the quite serious business dating back to 2009 in “<a href="http://brendan.enrick.com/post/Implementing-IEnumerable-and-IEnumerator.aspx">Implementing IEnumerable and IEnumerator</a>.” Even farther back on the timeline, in 2007, a Microsoft MVP from Skopje, Macedonia wrote “<a href="http://sharpsource.blogspot.com/2007/05/decimalcollection.html">DecimalCollection</a>.” This post shows how a custom collection should be based on <code>CollectionBase</code>. However, in this part of the 21<sup>st</sup> century, <code>CollectionBase</code> is considered <a href="http://stackoverflow.com/questions/5704776/is-the-collectionbase-class-still-supported">obsolete</a> under the influence of generics.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-02-13T16:33:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

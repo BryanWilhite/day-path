@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Silverlight Page Navigating with MVVM Light Messaging and Songhay NavigationBookmarkData - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Silverlight Page Navigating with MVVM Light Messaging and Songhay NavigationBookmarkData</h1>
+<p>While Silverlight was deep in the cryogenic freezer in Redmond in the Windows-8-summer of 2012, I was working on my minimalist masterpiece, GenericWeb Editor (<a href="http://www.flickr.com/photos/wilhite/7654180068/in/photostream">see screenshot</a>). This editor (an internal tool) replaces the work I sold (by work-for-hire) to UCLA, <a href="http://kintespace.com/rasxlog/?p=1775">dating back to before 2009</a>—when I was not using Silverlight in any serious way. In those days, I was web-page centric—so the Silverlight/WPF concept of the Navigation Page was very welcome. The problem is that, apart from the default “<a href="http://msdn.microsoft.com/en-us/library/cc838245(v=vs.95).aspx">Silverlight Navigation Application</a>,” there is not much guidance in this area.</p>
+<p>My design goals center around this strong point: any Navigation Application has to know about the locations/indicators in its domain. This implies that there are <em>known</em> Navigation locations and <em>unknown</em> locations. There are two types of known indicators: keys and patterns. My intent is to make Navigation data-centric—data-driven… So I’ve made for myself the <code>NavigationBookmarkData</code> class to express this intent. This class defines the following conventions:
+&lt;
+table class=&quot;WordWalkingStickTable&quot;&gt;<tr><td></p>
+<p>Get Data Format</p>
+</td>
+<td>
+A pattern for getting data by a unique identifier: `"#/{0}/{1}"`.
+</td></tr><tr><td>
+<p>New Data Format</p>
+</td>
+<td>
+A pattern for adding data: `"#/{0}/New"`
+</td></tr><tr><td>
+<p>Delete Confirmation Key</p>
+</td>
+<td>
+A key for the conventional application Delete Confirmation: `"DeleteConfirmation"`
+</td></tr><tr><td>
+<p>Entity Association Selection Key</p>
+</td>
+<td>
+A key for the conventional application Entity Association Selection: `"EntityAssociationSelection"`
+</td></tr><tr><td>
+<p>Entity Associations Key</p>
+</td>
+<td>
+A key for the conventional application Entity Associations: `"EntityAssociations"`
+</td></tr><tr><td>
+<p>Error Message Key</p>
+</td>
+<td>
+A key for the conventional application Error Message : `"ErrorMessage"`
+</td></tr><tr><td>
+<p>Index Key</p>
+</td>
+<td>
+A key for the conventional application Index: `"#/"`.
+</td></tr><tr><td>
+<p>Information Message Key</p>
+</td>
+<td>
+A key for the conventional application Information Message : `"InformationMessage"`
+</td></tr><tr><td>
+<p>Search Key</p>
+</td>
+<td>
+A key for the conventional application Search: `"Search"`
+</td></tr></table>
+<h2>Using NavigationBookmarkData</h2>
+<p>All Navigation commands are ‘tested’ by <code>NavigationBookmarkData</code> to determine whether the Navigation location exists. Passing <code>NavigationBookmarkData</code> tests means that a Bookmark is found and a call to <code>HtmlPage.Window.NavigateToBookmark(bookmark)</code> can be made. In my early designs, I would have considered a call to <code>NavigateToBookmark</code> as ‘indirect’—why can’t I touch the Navigation Frame directly? Calling out to the <code>HtmlPage.Window</code> is indeed the start of round trip from the internals of the Silverlight application out to the hosting Web browser and then back to the Silverlight application. Why do this? I do this because this design makes “deep linking” in Silverlight possible. This design has only one way to handle Navigation commands: through changing the “hash tag” of the browser location—classic, Web 2.0, single-page-app navigation.</p>
+<h2>Navigation Frame Eventing</h2>
+<p>My Generic Web Editor Navigation Frame handles the <code>Frame.Navigating</code> event by sending an MVVM Light message of type <code>LightNavigationMessage&lt;NavigatingCancelEventArgs&gt;</code>. This event is fired by typing in a hash location in the browser or by an internal Navigation command. My conventional <code>LightNavigationMessage&lt;T&gt;</code> checks the location to determine whether it is “well formed”; when it is well-formed then the location is parsed. The message is received in the Client View Model like this:</p>
+<pre><code class="language-c#">Messenger.Default.Register&lt;LightNavigationMessage&lt;NavigatingCancelEventArgs&gt;&gt;(this,
+        message =&gt;
+        {
+            if(!message.IsExpectedMessage(LightMessageSource.View, &quot;ClientFrame&quot;)) return;
+            this.HandleClientNavigating(message);
+        });
+</code></pre>
+<p>The <code>HandleClientNavigating()</code> routine uses <code>LightNavigationMessage&lt;NavigatingCancelEventArgs&gt;</code> to either cancel the navigation (with the reference to <code>NavigatingCancelEventArgs</code>) or use the parsed data in the message to invoke a command in the application. It is important to point out that the code I am writing is still not doing any explicit Navigation Page handling. When a Navigation message is received, a command (like a RIA operation, calling the server) is invoked. It is the Silverlight <code>UriMapper</code> that handles Navigation. My <code>UriMapper</code> looks like this:</p>
+<pre><code class="language-xml">&lt;navigation:Frame.UriMapper&gt;
+    &lt;uriMapper:UriMapper&gt;
+        &lt;uriMapper:UriMapping Uri=&quot;&quot; MappedUri=&quot;/Views/IndexPage.xaml&quot;/&gt;
+        &lt;uriMapper:UriMapping Uri=&quot;/&quot; MappedUri=&quot;/Views/IndexPage.xaml&quot;/&gt;
+        &lt;uriMapper:UriMapping Uri=&quot;/{key}/{id}&quot; MappedUri=&quot;/Views/{key}Page.xaml&quot;/&gt;
+        &lt;uriMapper:UriMapping Uri=&quot;/{key}&quot; MappedUri=&quot;/Views/{key}Page.xaml&quot;/&gt;
+    &lt;/uriMapper:UriMapper&gt;
+&lt;/navigation:Frame.UriMapper&gt;
+</code></pre>
+<p>The <code>UriMapper</code> has a conventional relationship with the <code>NavigationBookmarkData</code> Bookmark keys thought the declaration of the <code>{key}</code> placeholder above. It follows that the same key is used to display a page and invoke an application command thought this loose convention.</p>
+<h2>Yes, it can get more complicated…</h2>
+<p>In the spring of 2012, I was working on the <a href="http://slbiggestbox.azurewebsites.net/">Silverlight BiggestBox</a>, my personal teaching/practice tool for Silverlight. Because of <acronym title="Managed Exensibility Framework">MEF</acronym> (and inexperience) I developed a more complication Navigation strategy. I touched upon this in “<a href="http://songhayblog.azurewebsites.net/entry/show/implementing-inavigationcontentloader-with-an-abstract-class">Implementing INavigationContentLoader with an abstract class…</a>” I would like to take some the ideas shared here and revisit the BiggestBox.</p>
+<h2>Related Resources</h2>
+<table class="WordWalkingStickTable"><tr><td>
+<p>“<a href="http://www.silverlightshow.net/items/The-Silverlight-3-Navigation-Framework.aspx">The Silverlight Navigation Framework</a>”</p>
+</td>
+<td>
+Some history from Martin Mihaylov (2009)… There’s a very well-done explanation of `JournalOwnership`: “If you don't want your Frame to integrate with the browser, to use the built-in history journal and to implement your own logic around the go-back and go-forward actions, this property allows you to do so.”
+</td></tr><tr><td>
+<p>“<a href="http://firstfloorsoftware.com/blog/animated-page-navigation-in-sl3/">Animated page navigation in SL3</a>”</p>
+</td>
+<td>
+“While working recently on a navigation application, there was this requirement for animated page transitions. Moving from one page to another must look pretty and if possible should include advanced animations with pages flying in, fading out, etc.”
+<p>“So I started investigating if and how this was possible with the navigation framework. And the answer is that it is very, very easy and it does not require a single line of code.”</p>
+<p>This solution uses the <code>TransitionalContentControl</code> by the way…</p>
+</td></tr><tr><td>
+<p>“<a href="http://msdn.microsoft.com/en-us/library/system.windows.controls.page.onnavigatedto(v=VS.95).aspx">Page.OnNavigatedTo Method</a>”</p>
+</td>
+<td>
+“Typically, you use the `OnNavigatedTo` method instead of creating an event handler for the Loaded event. The `OnNavigatedTo` method is preferable because it is only called once for each time the page becomes active. The Silverlight framework raises the `Loaded` event each time the element is added to the visual tree, which potentially can happen more than once when activating a page.”
+</td></tr><tr><td>
+<p>“<a href="http://msdn.microsoft.com/en-us/library/system.windows.navigation.navigationservice(v=vs.95).aspx">NavigationService Class</a>”</p>
+</td>
+<td>
+Thanks for asking, yes, I use `NavigationService` in my GenericWeb Editor at the `Page` level: “You use the NavigationService class from within a Silverlight page. It enables you to access the navigation service used by the hosting frame and launch new navigation requests. You can retrieve the navigation service through the NavigationService property of the Page class.”
+</td></tr><tr><td>
+<p>“<a href="http://dotnetslackers.com/articles/silverlight/The-DataForm-Control-in-Silverlight-3-Revisited.aspx">The DataForm Control in Silverlight 3</a>”</p>
+</td>
+<td>
+This 2009 Dino Esposito is a great overview of this Silverlight Toolkit control. I mention it here because I notice that a `DataForm` control loading in a Navigation Page sometimes appears disabled. I thought that Dino h could show me an event or a property I could set to stop this annoying thing from happening.
+</td></tr><tr><td>
+<p>“<a href="http://www.davidpoll.com/2009/07/12/silverlight-3-navigation-navigating-to-pages-in-referenced-assemblies/">Silverlight 3 Navigation: Navigating to Pages in referenced assemblies</a>”</p>
+</td>
+<td>
+“Dividing your pages across multiple assemblies doesn’t have to degrade user experience, and once you’re familiar with the style of URI that the navigation framework expects for such pages, it’s no more complex than standard navigation within your Silverlight application.”
+</td></tr><tr><td>
+<p>“<a href="http://forums.silverlight.net/forums/t/91029.aspx">Silverlight 3 Navigation framework with on demand assemblies</a>”</p>
+</td>
+<td>
+“The Silverlight 3 Beta of Navigation does not support on-demand loaded assemblies. You could load data, services, and things like that, but XAML pages must be in the DLLs that are packaged in the XAP for the Frame control to find them.”
+</td></tr><tr><td>
+<p>“<a href="http://wildermuth.com/2008/04/05/HtmlWindow_Navigate_and_enableHtmlAccess">HtmlWindow.Navigate and enableHtmlAccess</a>”</p>
+</td>
+<td>
+Shawn Wildermuth in 2008: “So the lesson learned here is to use `HtmlPage.IsEnabled` to test to see if your particular host allows access to the HTML of the page (including support for `HtmlWindow.Navigate`).”
+</td></tr><tr><td>
+<p>“<a href="http://www.wintellect.com/CS/blogs/rrobinson/archive/2009/02/03/htmlpage-popupwindow-vs-htmlwindow-navigate.aspx">HtmlPage.PopupWindow vs. HtmlWindow.Navigate</a>”</p>
+</td>
+<td>
+This might have changed since Silverlight 2: “…I decided to have another look at `HtmlWindow.Navigate()` which seems to more accurately mirror the behavior that I would expect out of something that purports to wrap `window.open()`. Going this route, we lose the strong typing of the `HtmlPopupWindowOptions`, but in exchange we get exactly what we are expecting when calling `window.open()`.”
+</td></tr></table>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-11-13T00:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

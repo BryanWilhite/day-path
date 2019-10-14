@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Put F# on the TODO list? - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Put F# on the TODO list?</h1>
+<p>Warning: I am going to knowingly ramble… so you may not want to read this… this, a note to self…</p>
+<p>According to <em>.NET Rocks!</em> episode #846, “<a href="http://www.dotnetrocks.com/default.aspx?showNum=846">Yan Cui Builds Games in F#</a>,” I think I was given a real and present reason to use F# in the very near future. It has something to do with <em>tuples</em>. In “<a href="http://theburningmonk.com/2010/01/learning-f-part-4/">Learning F# – Part 4</a>,” Yan writes:</p>
+<blockquote>
+<p>A tuple (pro­nounced “two-pull”) is an ordered collection of data, and an easy way to group common pieces of data together. …A tuple type is described by a list of the tuple’s elements’ types, separated by asterisks…</p>
+</blockquote>
+<p>I am familiar with tuples from a .NET Generics point of view but what Yan is doing here is defining them from a data access point of view. So: we can see in this stackoverflow.com question, “<a href="http://stackoverflow.com/questions/2118688/return-tuple-from-ef-select">Return Tuple from EF select</a>,” that Entity Framework can work with tuples through LINQ to Objects. What would be interesting to me is seeing the way toward using tuples with the <code>SqlQuery&lt;T&gt;()</code> method of the Entity Framework. <a href="http://www.markzhou.com/blog/post/2011/06/02/Use-dynamic-type-in-Entity-Framework-41-SqlQuery()-method.aspx">Mark Zhou</a> writes:</p>
+<blockquote>
+<p>…if you want to use the dynamic type or anonymous type as its return type, you will probably get your code compiled but receive exceptions during runtime. …The reason is that the Entity Framework does the type mapping using Reflection. Additionally, Entity Framework searches each property on your returning type, and do mapping by matching the property name and the SQL returning column name, if your type doesn’t have any public property (public fields don’t work) defined, there will be no mappings [happening].</p>
+</blockquote>
+<p>However, in the middle of writing/rambling this stuff I dropped off and ran a test:</p>
+<pre><code class="language-c#">[TestMethod]
+public void ShouldSelectIntoTuples()
+{
+    var context = new GenericWebEntities(connectionStringSonghay);
+    var sql = @&quot;
+SELECT
+    [Item1] = DocumentId
+,   [Item2] = Title
+FROM
+    Document
+ORDER BY
+    Title
+&quot;;
+    var data = context.Database.SqlQuery&lt;Tuple&lt;int, string&gt;&gt;(sql);
+    Assert.IsNotNull(data, &quot;The expected data is not here.&quot;);
+    Assert.IsNotNull(data.Count() &gt; 0, &quot;The expected data is not here.&quot;);
+}
+</code></pre>
+<p>It turns out that this test fails because <code>SqlQuery&lt;T&gt;()</code> requires types with parameter-less constructors. So I dropped back to this:</p>
+<pre><code class="language-c#">[TestMethod]
+public void ShouldSelectIntoProjectionClass()
+{
+    var context = new GenericWebEntities(connectionStringSonghay);
+    var sql = @&quot;
+SELECT
+    [Column1] = DocumentId
+    ,   [Column2] = Title
+FROM
+    Document
+ORDER BY
+    Title
+&quot;;
+    var data = context.Database.SqlQuery&lt;TwoColumnProjection&lt;int, string&gt;&gt;(sql);
+    Assert.IsNotNull(data, &quot;The expected data is not here.&quot;);
+    Assert.IsNotNull(data.Count() &gt; 0, &quot;The expected data is not here.&quot;);
+}
+</code></pre>
+<p><a href="http://www.amazon.com/Programming-comprehensive-writing-complex-problems/dp/0596153643%3FSubscriptionId%3D1SW6D7X6ZXXR92KVX0G2%26tag%3Dthekintespacec00%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0596153643" title="Programming F#: A comprehensive guide for writing simple code to solve complex problems (Animal Guide)"><img alt="Programming F#: A comprehensive guide for writing simple code to solve complex problems (Animal Guide)" src="http://ecx.images-amazon.com/images/I/41DsEYWRNML._SL160_.jpg" style="float:left;margin:16px;"></a></p>
+<p>And this works! This success led me look into stuff like “<a href="http://www.fidelitydesign.net/?p=71">Understanding Tuples in .NET 4.0 and .NET 2.0/3.0/3.5</a>” by Matthew Abbot, which actually shows me implementations of tuple that uses a parameter-less constructor. But what’s the advantage of this custom tuple implementation over my <code>TwoColumnProjection</code> class? I’m thinking I should just spit out <code>TwoColumnProjection&lt;&gt;</code> all the way to <code>FiveColumnProjection&lt;&gt;</code> and call it a day. These generic projection classes can be handy tools for dealing with legacy database tables that are not automatically represented by EF entities (e.g. a crappy many-to-many table without a primary key that I am unable to change for stupid-ass reasons or, more commonly, stored procedures projecting from a temporary table). It must be mentioned, however, that I am writing this without testing the level productivity of EF Complex Types—what Julie Lerman covers in “Importing Stored Procedures that Return Types Other than Entities” of the article, “<a href="http://msdn.microsoft.com/en-us/data/gg699321.aspx">Stored Procedures in the Entity Framework</a>.”</p>
+<p>So what does this have to do with F#? Well, just like the <a href="http://en.wikipedia.org/wiki/Chewbacca_defense">Chewbacca Defense</a>, it turns out that it’s nothing… it has nothing to do with this case—because the tuples that ship from Microsoft are not currently supported by Entity Framework’s <code>SqlQuery&lt;T&gt;()</code>. This means that I can’t start using tuples as general-purpose data-transfer objects (with <code>SqlQuery&lt;T&gt;()</code>). This use of tuples would have encouraged me to use F# because tuple syntax in F# is so much simpler (but the implementation of EF in F# <a href="http://blogs.msdn.com/b/visualstudio/archive/2011/04/04/f-code-first-development-with-entity-framework-4-1.aspx">looks weird</a> to me)… This crazy jaunt <em>did</em> help me see that I should use a bunch of generic projection classes.</p>
+<h2>F# and the Linked List</h2>
+<p>I get this weird feeling that I’m going to need to take Linked Lists seriously. A stackoverlflow.com question like “<a href="http://stackoverflow.com/questions/169973/when-should-i-use-a-list-vs-a-linkedlist">When should I use a List vs a LinkedList</a>[?]” is just the tip of the iceberg. In “<a href="http://diditwith.net/2008/03/03/WhyILoveFListsTheBasics.aspx">Why I Love F#: Lists—The Basics</a>” Dustin Campbell reveals what’s deep at the core of F#: the <em>immutable</em> linked list:</p>
+<blockquote>
+<p>And there you have it. Believe it or not, appending two immutable lists can actually be faster and more memory efficient than appending mutable lists because fewer nodes have to be copied.</p>
+</blockquote>
+<p>This strongly suggests to me that Linked List usage is related to satisfying the need for massive, write-only, in-memory sets of data—sounds like some part of that gaming stuff Yan was talking about on <em>.NET Rocks!</em></p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2013-02-25T00:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

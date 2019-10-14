@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Replacing my NBlog with a read-only Angular JS seed over Web API… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Replacing my NBlog with a read-only Angular JS seed over Web API…</h1>
+<p>I’m going to move away from “powering” this Blog with NBlog. Don’t get me wrong. <a href="https://github.com/ChrisFulstow/NBlog">Chris Fulstow’s NBlog</a> was and <em>is</em> a powerful educational tool for ASP.NET MVC. So when I write about replacing it, it is not because of NBlog in particular. It is because of the CMS-application concept in general.</p>
+<p>[Route(&quot;Entry/Show/{id}&quot;)]
+public ActionResult RedirectToAngularSeed(string id)
+{
+return RedirectPermanent(string.Format(&quot;~/#/entry/{0}&quot;, id));
+}</p>
+<p>The CMS can be thought of as a user-super-friendly way to uphold one of the original, Berners-Lee-ist ideals of a read-write Web. So my move can be regarded (poorly) as a failure to celebrate these ideals for the sake of “oversimplification.”</p>
+<p>My real-world experience with WordPress has taught me to separate the <em>reading</em> concern from the <em>writing</em> concern in a CMS solution. Further, I am convinced and giddy that the typical CMS design violates the DRY Principle in bulk when we start to treat our Blogging platform(s) “like cattle instead of like pets.”</p>
+<p>More than a few pro-level bloggers out there have more than one Blog and (assuming they use a standard CMS) they have to maintain <em>multiple</em> editing interfaces for <em>multiple</em> blogs. I would rather have the option of using <em>one</em> editing interface for <em>multiple</em> Blog sites. The near-insane amount of security patches for WordPress almost always have <em>nothing</em> to do with <em>reading</em> a Blog (which is what most people do to a Blog).</p>
+<p>Working with NBlog has taught me that JSON is a first-class Web resource: it represents a document—including an HTML document. So in the near future my Blog will use an Angular JS seed to <em>read</em> JSON documents from Azure Blob storage, using a similar repository pattern featured in NBlog. I will go slightly beyond the version of NBlog I’m using, and add my own JSON-based <em>indexing</em> solution with some primitive taxonomy support (compared to WordPress). This is not a fork of NBlog.</p>
+<p>So how will I “publish” to my new <code>Songhay.Blog</code>—and how will the index be updated? Well, my Blog may fall silent (again) for a while but I’ll be sure to, ahem, Blog about this in future.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-06-29T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

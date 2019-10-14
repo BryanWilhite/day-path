@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>ASP.NET Web API Ready State (4/2017) - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>ASP.NET Web API Ready State (4/2017)</h1>
+<p>I need to record my personal satisfaction with ASP.NET Web API ‘readiness’ (as in battle-ready state), after about four years of working toward this <em>feeling</em>. The trigger for this emotional outburst came with understanding how <a href="https://msdn.microsoft.com/en-us/library/ff359101.aspx">claims-based security</a> can be used with ASP/NET Web API. Now I can make a little list of highlights for this ready state:</p>
+<ul>
+<li>Using claims-based authentication to ‘spawn’ a generic/shared user without LDAP or AD</li>
+<li>Sharing routes among services with an abstract <code>ApiController</code> class</li>
+<li>Moving legacy databases to SQL Azure</li>
+<li>Automated testing of API controllers with <a href="http://owin.org/">OWIN</a></li>
+<li>Using the <code>EnableCors</code> attribute to support Cross-Origin Resource Sharing</li>
+<li>Leveraging <code>JObject</code> with Web API</li>
+<li>Extending <code>DefaultContractResolver</code> to handle circular references in data access models</li>
+<li>Building a <code>JObject</code> Repository to back an API (with <a href="https://autofac.org/">Autofac</a>)</li>
+<li><code>IHttpActionResult</code>, attribute-based routing and other ‘basics’</li>
+<li>My use of ‘business domain’ (<code>*.Foo.Models</code> =&gt; <code>*.Foo.ModelContext</code> and/or <code>*.Foo.Models</code> =&gt; <code>*.Foo.Repository</code>) namespaces for data access (with Autofac).</li>
+</ul>
+<p>And now the punchline: All of these learnings have to migrated to ASP.NET Core. Before this great migration, I will need to write notes about each of these items to preserve my progress in these areas and prevent relearning-bottlenecks in future.</p>
+<h2>Related Links</h2>
+<ul>
+<li>“<a href="https://msdn.microsoft.com/en-us/library/ff359101.aspx">An Introduction to Claims</a>”</li>
+<li>“<a href="https://channel9.msdn.com/Blogs/Technology-and-Friends/tf426">Raffaele Rialdi on Security in ASP.NET Core</a>”</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2017-04-28T00:38:01.260Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

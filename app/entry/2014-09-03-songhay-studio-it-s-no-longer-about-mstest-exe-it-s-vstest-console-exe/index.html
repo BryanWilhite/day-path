@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Songhay Studio: It’s No Longer about MSTEST.EXE; it’s vstest.console.exe… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Songhay Studio: It’s No Longer about MSTEST.EXE; it’s vstest.console.exe…</h1>
+<p>Yes, I feel like I’m the only one in the world (outside of Redmond) using the default testing tools shipping with Visual Studio. So it should be no surprise to not even notice that MSTEST.EXE is no longer recommended—this is the new deal:</p>
+<pre><code class="language-console">&quot;%ProgramFiles(x86)%\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe&quot;
+</code></pre>
+<p>Also there is an “enable code coverage” option I have not tried out yet:
+<a href="https://www.flickr.com/photos/wilhite/15056654695/" title="vstest.console.exe EnableCodeCoverage"><img alt="vstest.console.exe EnableCodeCoverage" src="https://farm6.staticflickr.com/5580/15056654695_9b65db23d8_o_d.png"></a></p>
+<h2>Related Links</h2>
+<table class="WordWalkingStickTable"><tr><td>
+“[MSTest.exe Command-Line Options](http://msdn.microsoft.com/en-us/library/ms182489.aspx)”
+</td><td>
+“For example, for ordered tests, the test container is the `.orderedtest` file that defines the ordered test. For unit tests, it is the assembly built from the test project that contains the unit test source files.”
+</td></tr><tr><td>
+“[Using VSTest.Console from the Command Line](http://msdn.microsoft.com/en-us/library/jj155800(v=vs.110).aspx)”
+</td><td>
+“You can use the `VSTest.Console.exe` program to run automated unit and coded UI tests from a command line. `VSTest.Console.exe` is optimized for performance and is used in place of `MSTest.exe` in Visual Studio 2012.”
+</td></tr><tr><td>
+“[New Unit Test functionality in VS2012 Update 2: Test Playlist](http://www.codewrecks.com/blog/index.php/2013/03/14/new-unit-test-functionality-in-vs2012-update-2-test-playlist/)”
+</td><td>
+Do not confuse a “playlist” with an “ordered test”—it feels like “playlist” tests must be ‘true’ unit tests (no dependencies on other tests).
+</td></tr><tr><td>
+“[How to manage unit tests in Visual Studio 2012 Update 1: Part 1–Using Traits in the Unit Test Explorer](http://blogs.msdn.com/b/visualstudioalm/archive/2012/11/09/how-to-manage-unit-tests-in-visual-studio-2012-update-1-part-1-using-traits-in-the-unit-test-explorer.aspx)”
+</td><td>
+“Traits are not only useful as a grouping mechanism in the Test Explorer, it also part of what can control which tests you run. This has been a big request—because it means the developer can focus on the tests relevant to the work, and not be bothered with running other, perhaps long-running tests, which would otherwise slow down the whole development experience.”
+</td></tr><tr><td>
+“[How To Unit Test Async Methods with MSTest, XUnit and VS11 Beta](http://www.richard-banks.org/2012/03/how-to-unit-test-async-methods-with.html)”
+</td><td>
+“`MSTest` finally got some love with the Visual Studio 11 Beta and one of those changes was to enable tests to run asynchronously using the `async` and `await` keywords.”
+</td></tr><tr><td>
+“[Gotchas: MSTest’s [DeploymentItem] attribute](http://www.ademiller.com/blogs/tech/2007/10/gotchas-mstests-deploymentitem-attribute/)”
+</td><td>
+“Essentially it seemed far too easy to create a test that worked fine on the local developer’s machine and failed either on the CI server or in someone else’s development environment. In fact 25% of our unit test related build breaks were caused by this issue and some of them took a while to track down!”
+</td></tr></table>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2014-09-03T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

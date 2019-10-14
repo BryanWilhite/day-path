@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>The typography of bootstrap… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>The typography of bootstrap…</h1>
+<p>The bootstrap folks depend on <a href="http://necolas.github.io/normalize.css/">Normalize CSS</a> to, ahem, <em>normalize</em> font sizes. <a href="http://csswizardry.com/2011/05/font-sizing-with-rem-could-be-avoided/">According to Harry Roberts of csswizardry.com</a>, Normalize CSS is stating correctly, <code>font-size:100%;</code>, making the default font size 16px. According to Brian Cray of <a href="http://pxtoem.com/">pxtoem.com</a>, 16px ≈ 12pt—which is very traditional for a default font size. Harry has plenty to say about my pre-bootstrap use of <code>font-size:62.5%;</code>:</p>
+<blockquote>
+<p>The main reason people reset the font-size to 10px is point one; to make maths easier. If your quasi-base is 10px and you want an actual base of 12px it’s simply 1.2em. The maths is easier, we can work with units of ten more easily, but that comes at the cost of maintainability.</p>
+<p>The main reason, I feel, behind using the 62.5% method is laziness, and that’s a good thing. Good developers are lazy. However that laziness is misguided; it’s actually causing you more work. You have to define font-sizes on all elements rather than just once and letting them inherit and you have to tackle those horrible inheritance issues when an explicitly sized element is placed inside another one.</p>
+</blockquote>
+<p>Brian Cray insists that <code>(points per inch / pixels per inch) = (72pt / 96px)</code> which sounds right to me for Microsoft Windows (and maybe Linux); he also suggests to me that <code>(96px / 16px) = 6em</code>. So, when Cray writes <code>16px * (72pt / 96px) = 12pt</code>, I can also assert that <code>72pt / 6em = 12pt / 1em</code>.</p>
+<p>So, for <code>font-size:100%;</code>, we have a relationship between em values (<code>Xem</code>) and points values(<code>Ypt</code>): <code>Xem = (1em / 12pt) * Ypt</code>. The following table summarizes:</p>
+<table class="WordWalkingStickTable"><tr><td>
+**Points**
+</td><td>
+**Ems**
+</td></tr><tr><td>
+6pt
+</td><td>
+.5em
+</td></tr><tr><td>
+7pt
+</td><td>
+.563em
+</td></tr><tr><td>
+8pt
+</td><td>
+.625em
+</td></tr><tr><td>
+9pt
+</td><td>
+.75em
+</td></tr><tr><td>
+10pt
+</td><td>
+.813em
+</td></tr><tr><td>
+11pt
+</td><td>
+.875em
+</td></tr><tr><td>
+12pt
+</td><td>
+1em
+</td></tr><tr><td>
+14pt
+</td><td>
+1.125em
+</td></tr><tr><td>
+16pt
+</td><td>
+1.313em
+</td></tr><tr><td>
+18pt
+</td><td>
+1.5em
+</td></tr><tr><td>
+20pt
+</td><td>
+1.667em
+</td></tr><tr><td>
+22pt
+</td><td>
+1.83em
+</td></tr><tr><td>
+24pt
+</td><td>
+2em
+</td></tr><tr><td>
+26pt
+</td><td>
+2.167em
+</td></tr><tr><td>
+28pt
+</td><td>
+2.333em
+</td></tr><tr><td>
+36pt
+</td><td>
+3em
+</td></tr><tr><td>
+48pt
+</td><td>
+4em
+</td></tr><tr><td>
+72pt
+</td><td>
+6em
+</td></tr><tr><td>
+96pt
+</td><td>
+8em
+</td></tr></table>
+<h2>Bootstrap encourages the use of font classes for sizing</h2>
+<p>The table above looks great and it suggests a clean, crisp relationship between ems and points. But I have found that fuzzy type and weird line-height problems (that can cause unwanted drop shadows in boxes with border radius) when I explicitly set small font sizes (below 1em). Moreover, setting these values can get in the way of the responsive intentions baked into the Bootstrap framework. The assumption here is that <a href="http://getbootstrap.com/css/">Bootstrap would rather have us use classes</a> like <code>.small</code> or <code>.h4</code> to specify font size:</p>
+<blockquote>
+<p>For de-emphasizing inline or blocks of text, use the <code>&lt;small&gt;</code> tag to set text at 85% the size of the parent. Heading elements receive their own <code>font-size</code> for nested <code>&lt;small&gt;</code> elements.</p>
+<p>You may alternatively use an inline element with .small in place of any <code>&lt;small&gt;</code>.</p>
+</blockquote>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-02-02T08:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

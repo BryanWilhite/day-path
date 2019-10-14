@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Some Ex-Silverlight-Guy Closure - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Some Ex-Silverlight-Guy Closure</h1>
+<p>I don’t even want to bother going into the details. But last year I was unable to properly record many of my findings from working with Telerik controls and Silverlight over RIA services. All I have now are a few scraps from the past and will try to piece them together:</p>
+<h2>Place RadControls for Silverlight Next to the Silverlight Toolkit</h2>
+<p>The assertion above is basically saying that it is possible to work with Telerik controls side-by-side with Microsoft’s “<a href="http://silverlight.codeplex.com/">Silverlight Toolkit</a>.” This was concern of mine because of the large XAP file sizes as a consequence—but the final product I was working on was delivered in an Intranet (in an enterprise still using many, many Windows XP machines—so using HTML 5 was seriously out of the question).</p>
+<h2>Avoid “Unbound Mode” for the Telerik RadGridView</h2>
+<p>I’m sure Telerik has moved on over a year but it must be said that I had serious trouble trying to use the <code>RadGridView</code> like a ‘tiny’ grid without a formal data source to bind to—the idea was to add new rows from code-behind, probably from MVVM Light messages. Eventually I learned to use the ‘tiny’ DataGrid from the Silverlight toolkit.</p>
+<h2>Do Send Messaging around DomainService SubmittedChangesEventArgs</h2>
+<p>One of the out-of-the box benefits of RIA Services was the paging data with the “Domain Service” concept. You could declare, in XAML, a <code>RadDataPager</code> with an associated <code>DomainDataSource</code> as described in “<a href="http://blogs.telerik.com/xamlteam/posts/10-03-10/q1-2010-new-feature-paging-with-radgridview-for-silverlight-and-wpf.aspx">Q1 2010 New Feature: Paging with RadGridView for Silverlight and WPF</a>.” (There were I vaguely recall, by the way, two different <code>DomainDataSource</code> controls—one from a Microsoft toolkit and the other from Telerik—I found out the hard way to use the one from Telerik.) This out-of-the-box stuff was at first very opaque to me until I discovered eventing around <code>DomainDataSource</code>, specifically <code>DomainDataSource.SubmittedChanges</code>. I am almost certain that I used the event data, specifically <code>SubmittedChangesEventArgs.ChangeSet</code>, to drive MVVM light messaging from View to View Model. The <code>EntityChangeSet</code> concept was the bee’s knees to me—until my ‘great discovery’ chronicled in “<a href="http://songhayblog.azurewebsites.net/Entry/Show/songhay-studio-ux-and-ddd-my-new-acronym-umbrella">Songhay Studio: UX and DDD, my new acronym umbrella….</a>”</p>
+<p>What is more is my very strong suspicion that Telerik dropped RIA services entirely for Silverlight and is <a href="http://demos.telerik.com/silverlight/">now recommending</a> the <code>DataServiceDataSource</code>.</p>
+<h2>The Desire to Experience an Elegant Solution for Many-to-Many Relations</h2>
+<p>One of the lasting issues taken away from my Silverlight project from last year is the UX around representing many-to-many relations. My ‘big discovery’ then was something like, ‘Hey! The classic master-detail visualization (one-to-many relations) is covered quite well with a grid and a form—but what about many-to-many relations? Today, there is still no satisfactory answer. But this question may be moot in the context of DDD. It may be that we are not supposed to visualize many-many relations for editing scenarios—to need to do so likely reeks of an anemic domain model.</p>
+<h2>Pack a Visual in a Message and Send It to a View Model?</h2>
+<p>Using MVVM Light messaging or Prism eventing to send a portion of a View (e.g. a <code>UserControl</code>) to a View Model is like picking up and dropping an entire refrigerator on a guest in your home simply because he asked for a can of soda pop! Surely is this one of <a href="http://songhayblog.azurewebsites.net/Entry/Show/the-fat-getter-and-other-mvvm-anti-patterns">my MVVM anti-patterns</a>?</p>
+<p>There were a handful of cases where I struggled with <code>RadGridView</code> issues and ended up taking that piece of the grid and sending it to the View Model for processing. After working with WPF for over a year such an impasse has not emerged at all.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2014-09-22T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

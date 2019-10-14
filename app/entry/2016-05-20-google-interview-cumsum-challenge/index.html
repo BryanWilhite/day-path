@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Google Interview CUMSUM Challenge - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Google Interview CUMSUM Challenge</h1>
+<p>I am told that there are more than a few former Microsoft employees working fulltime at Google. I talked to one in fact. He was prepared to share a Google Doc with me and test me out but I had to reschedule and the second guy was clearly non-Microsoft. He works on a Google-customized version of Eclipse every day (I historically preferred NetBeans). His team officially does not recognize <code>git</code> culture as he proudly pronounced the word <em>Perforce</em>. Most importantly, when I attempted to work on his coding challenge he stopped me. He did <em>not</em> want me to use LINQ (from my point of view he wanted me to re-implement LINQ <em>in</em> <em>addition to</em> working on the challenge he presented).</p>
+<p>He presented me with the challenge of implementing the <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/cumsum.html">CUMSUM function from the R programming language</a>. Long story short: after his rejection of LINQ, I refused to participate further in the interview. (It might help to mention that Google contacted <em>me</em>—I would not volunteer to run this experiment on <em>them</em>.)</p>
+<p>Microsoft products like <a href="https://www.typescriptlang.org/">Typescript</a> are being used at Google but the penetration of Microsoft cultural awareness is not as deep as I would prefer (optimism on my part). Unless I am applying for a job to work on the .NET Framework itself, I do <em>not</em> expect an interviewer to stop me from using LINQ. Should I have been able to solve the problem within the time pressure allotted, I <em>still</em> would have been taken aback by the Google-cultural distance from Microsoft technologies. Additionally, this was the second live-coding interview under my belt (my first was actually <a href="http://songhayblog.azurewebsites.net/">with Microsoft</a>) and I am even more convinced that this approach is too adversarial and ultimately meaningless (I would give a take-home test and follow it up with in-depth questions about the code—<em>and then</em> resort to live coding a variation based on the take-home original—probably too time-consuming for busy, <em>expensive</em> engineers—and, yes, I have conducted developer interviews).</p>
+<p>As is customary, after my failure during the interview, I took some time with LINQPad to solve the problem alone. The interviewer supplied me with the signature of this function and two examples of output:</p>
+<pre><code class="language-c#">//cumsum(int[] array, int startPos, int count);
+var set = new[] { 4, 1, 0, 3, 2 };
+cumsum(set, 3, 4) == new[] { 3, 5, 9, 10 };
+cumsum(set, 4, 2) == new[] { 2, 6 };
+</code></pre>
+<p>He also mentioned that <code>count</code> can extend beyond the upper bound of the array, leading me to add that the logic should <em>wrap around</em> the end of the array, pulling items from the beginning. I stated <em>within the allotted time</em> of the interview that I would work on developing a generic function that can perform this ‘wrap’ operation. What I failed to do was produce this function seconds after my statement (which means that I am not worthy of Google). Anyway, this is my wrapping extension method using LINQ:</p>
+<pre><code class="language-c#">public static IEnumerable&lt;T&gt; Wrap&lt;T&gt;(this IEnumerable&lt;T&gt; enumerable, int startPos, int count)
+{
+    if (enumerable == null) return Enumerable.Empty&lt;T&gt;();
+    var length = enumerable.Count();
+    if(startPos &gt; length) throw new ArgumentException(&quot;The start position is larger than the length of the enumerable.&quot;, &quot;startPos&quot;);
+    var wrappedSet = enumerable
+        .Skip(startPos)
+        .Union(enumerable.Take(length - startPos));
+    return wrappedSet;
+}
+</code></pre>
+<p>In LINQPad I can run this:</p>
+<pre><code class="language-c#">var set = new[] { 4, 1, 0, 3, 2 };
+set.Wrap(3, 4).Dump();
+</code></pre>
+<p>and <code>Dump()</code> out this:</p>
+<pre><code class="language-c#">new[] { 3, 2, 4, 1 }
+</code></pre>
+<p>Now, I have no idea why anyone would want to do this because I am not an R programmer or a serious student of statistics (and it has been decades since I wrote the words <em>Eigen values</em>). My ignorance does not stop me from moving to the next step in the form of another LINQ extension method:</p>
+<pre><code class="language-c#">public static IEnumerable&lt;Tint&gt; ToCulmulativeSum(this IEnumerable&lt;Tint&gt; enumerable, int startPos, int count)
+{
+    if (enumerable == null) return Enumerable.Empty&lt;Tint&gt;();
+    var wrappedSet = enumerable.Wrap(startPos, count);
+    wrappedSet.Dump(&quot;wrapped set&quot;);
+    return wrappedSet
+        .Select((x, i) =&gt; x + wrappedSet.Take(i).Sum());
+}
+</code></pre>
+<p>This <code>ToCulmulativeSum()</code> method is the correct solution by my standards—but, as whined about earlier, it is not sufficient for Google. In order to be a “smart” developer, I would have to implement every single LINQ extension method used in the examples above. Money cannot buy everything and this is intellectually (and aesthetically) satisfying enough for me:</p>
+<pre><code class="language-c#">var set = new[] { 4, 1, 0, 3, 2 };
+set.ToCulmulativeSum(3, 4).Dump();
+set.ToCulmulativeSum(4, 2).Dump();
+</code></pre>
+<p>As soon as <a href="http://ahmetalpbalkan.github.io/go-linq/">Google owns a programming language that has LINQ-like syntax</a> that most Google employees use every day, all of this stuff here will suddenly be OK. I doubt that Google will use C# in spite of its open-source status.</p>
+<p>It may be of interest to mention that I would likely not be able to solve this problem again in another interview. I tend to fail to memorize solutions to problems that I have already written down. Programmers in the real world are experts at looking stuff up—even the stuff we’ve written down in the past. The luxury of memorizing even 5% of what we have learned comes from socializing with—and even dearly <em>befriending</em>—others who truly love to hear about these little adventures. Some of us do not have this luxury—and we literally pay for it in terms of velocity of career growth.</p>
+<h2>Related Links</h2>
+<ul>
+<li>
+<p><a href="https://golang.org/">The Go Programming Language</a></p>
+</li>
+<li>
+<p><code>go-linq</code>: “<a href="http://ahmetalpbalkan.github.io/go-linq/">.NET's Language Integrated Query (LINQ) library for Go</a>”</p>
+</li>
+<li>
+<p>“<a href="http://techcrunch.com/2016/05/10/please-dont-learn-to-code/">countless times I was refused even an interview because I didn’t have a computer science degree</a>”</p>
+</li>
+<li>
+<p>“<a href="http://www.elidedbranches.com/2016/05/brief-thoughts-on-take-home-interviews.html">Thoughts on Take Home Interviews</a>”</p>
+</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2016-05-21T05:11:53.218Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

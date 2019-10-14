@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Songhay Data Access Ready for CodePlex.com! - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Songhay Data Access Ready for CodePlex.com!</h1>
+<p><a href="http://www.flickr.com/photos/wilhite/6705622765/in/photostream/" title="Yoda Mug"><img alt="Yoda Mug" src="http://farm8.staticflickr.com/7006/6705622765_8d6e05522e_m.jpg" style="float:right;margin:16px;"></a></p>
+<p>I actually need this for my current work:</p>
+<ul>
+<li>I removed the <code>Songhay.DataAccess.Runner</code> namespace from the <code>Songhay.DataAccess</code> project.</li>
+<li>I’ve renamed the old <code>Songhay.DataAccess.Runner</code> project to <code>Songhay.DataAccess.Runner-Console</code> (this might be a new convention going forward).</li>
+<li>I’ve generated a new <code>Songhay.DataAccess.Runner</code> project with the removed assets from the <code>Songhay.DataAccess</code> project</li>
+</ul>
+<p>Now that the DAR stuff is cleanly separated from the <code>System.Data.Common</code> stuff, my generic data access routines that date back to .NET 2.0 is ready for the public.
+<a href="http://songhaydataaccess.codeplex.com/" title="Songhay Data Access"><img alt="Songhay Data Access" src="http://farm8.staticflickr.com/7154/6762510791_99721a18ff_o.png"></a></p>
+<h2>Songhay Data Access</h2>
+<p><a href="http://songhaydataaccess.codeplex.com/">Songhay Data Access</a> is a set of static helper classes defining routines around <code>System.Data.Common</code>. As of this writing Songhay Data Access has been used with SQLite, MySQL and SQL Server, but, in theory, this set of libraries will work with <em>any</em> database that has an ADO.NET provider written for it.</p>
+<p>Here are some of the highlights:</p>
+<ul>
+<li>Gets a <code>Common.DbConnection</code> object from a provider name and connection string (in <code>CommonDbms</code>).</li>
+<li>Converts a generic Dictionary into an array of <code>IDataParameter</code> (in <code>CommonParameter</code>).</li>
+<li>Returns a string or an object with an <code>IDbConnection</code> and a SQL statement (in <code>CommonScalar</code>).</li>
+<li>Returns an instance of <code>IDataReader</code> with an <code>IDbConnection</code> and a SQL statement (in <code>CommonReader</code>).</li>
+<li>Returns an <code>XPathDocument</code> with an <code>IDbConnection</code> and a SQL statement (in <code>CommonReader</code>).</li>
+<li>Full support for parsing Nullable generics with overloads for custom default values (in <code>FrameworkTypeUtility</code>).</li>
+</ul>
+<p>Most “normal” .NET developers, starting out with .NET 1.x or 2.x, live almost exclusively in the world of <code>System.Data.SqlClient</code> to meet data-access needs. I was drawn to <code>System.Data.Common</code> from the very beginning because Microsoft’s work in this namespace represents ‘the sequel’ to <a href="http://en.wikipedia.org/wiki/ODBC">ODBC</a>—of the olden days of <acronym title="Microsoft Component Object Model">COM</acronym> when <a href="http://en.wikipedia.org/wiki/Don_Box">Don Box</a> was but a young Jedi. Writing helpers for <code>System.Data.Common</code> seems like, um, “common” sense to me, while investing heavily in <code>System.Data.SqlClient</code> is a bold declaration that all databases on your watch will be SQL Server for ever more.</p>
+<p>I was very pleased to find out that the <a href="http://msdn.microsoft.com/en-us/library/system.data.entityclient.entitycommand(v=vs.110).aspx">Entity Framework</a> is based on <code>System.Data.Common</code>. Songhay Data Access is my tiny alternative to the Entity Framework, when I need to get as close to the <acronym title="Database Management System">DBMS</acronym> as .NET will allow.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-02-01T00:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

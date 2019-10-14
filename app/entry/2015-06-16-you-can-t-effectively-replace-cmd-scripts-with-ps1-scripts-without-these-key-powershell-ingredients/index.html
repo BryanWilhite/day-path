@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>You can’t effectively replace *.cmd scripts with *.ps1 scripts without these key Powershell ingredients… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>You can’t effectively replace *.cmd scripts with *.ps1 scripts without these key Powershell ingredients…</h1>
+<p>I stopped experimenting with PowerShell years ago because I was ignorant of the following (or the following was not released around 2007–08):</p>
+<h2>#1:</h2>
+<p>The <code>$PSScriptRoot</code> automatic variable. Without this variable it is very difficult to make flexible, <em>generic</em> scripts, using relative paths (especially for dot-sourcing). There are workarounds that do not use this automatic variable but I never ran across them in introductory talks about PowerShell from the early 2000s. One caveat: <code>$PSScriptRoot</code> will be empty when inspected from the Shell or in ISE—it only has a value while running from a script.</p>
+<h2>#2</h2>
+<p>The <code>$env:</code> drive as a direct replacement of CMD console environment variables. I am sure the <code>$env:</code> drive was around since PowerShell 1.0 but it took me way too long to see that, say, <code>$env:USERPROFILE</code> is the same as <code>%USERPROFILE%</code>—<em>and</em> it can be easily interpolated in a string.</p>
+<h2>#3</h2>
+<p>The line continuation character ```. Few know about the <code>*.cmd</code> file line continuation character, <code>^</code> and, once it’s in play, I could not leave it behind in PowerShell—so I’m glad to see the <code>*.ps1</code> equivalent.</p>
+<h2>#4</h2>
+<p>Apparently undocumented <code>New-Object</code> constructor syntax. As of this writing, this form of <code>-TypeName</code> syntax is not documented (by MSDN—excluding some Blog or forum post):</p>
+<pre><code class="language-powershell">$uri = New-Object System.Uri(&quot;./&quot;, [System.UriKind]::Relative)
+
+#or:
+
+$uri = New-Object -TypeName System.Uri(&quot;./&quot;, [System.UriKind]::Relative)
+</code></pre>
+<p>What is apparently encouraged is this syntax:</p>
+<pre><code class="language-powershell">New-Object `
+        -TypeName System.Uri `
+        -ArgumentList (&quot;./&quot;, [System.UriKind]::Relative)
+</code></pre>
+<p>As a C# guy struggling to relate to PowerShell, I take the first form.</p>
+<h2>#5</h2>
+<p>The <code>&amp;</code> operator. Here is a function from <a href="https://gist.github.com/BryanWilhite/e54408801bc9bef3fc83">my IIS functions</a> that uses PowerShell to call TAKEOWN and ICACLS:</p>
+<pre><code class="language-powershell">function Restore-PermissionsForWebServerGroup($Path)
+{
+    if(-not(Test-Path $Path))
+    {
+        Write-Warning &quot;Path $Path was not found. Unable to restore permissions.&quot;
+        return
+    }
+    &amp; TAKEOWN /f $Path /a
+    &amp; ICACLS $Path /reset /t
+    &amp; ICACLS $Path `
+        /grant IIS_IUSRS:(CI)(OI)(IO)(RX) `
+        /t /l /q
+}
+</code></pre>
+<p>I really should have listed this as #1. This <code>&amp;</code> operator is the bridge to the CMD past on the way to a PowerShell future!</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-06-16T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

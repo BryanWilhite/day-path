@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Songhay Studio: Web Index Design Study - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Songhay Studio: Web Index Design Study</h1>
+<p>I’ve been using my <a href="http://codepen.io/rasx/">CodePen.io site</a> to study the next Web Index designs for kintespace.com and my <a href="http://songhayblog.azurewebsites.net/">Day Path Blog</a>. This sketch represents the start of my study:
+<a href="https://www.flickr.com/photos/wilhite/15862686532/" title="Songhay Index Layouts"><img alt="Songhay Index Layouts" src="https://farm8.staticflickr.com/7535/15862686532_546811787a_z_d.jpg" style="display:block;margin:16px;margin-left:auto;margin-right:auto"></a></p>
+<p>I’m seeing two designs: the <em>Inline Header Index</em> and the <em>Block Header Index</em>. The uppercase letters in the sketch represent the groupings and the lowercase letters represent the tiles that are in each group. My design borrows heavily from the current Netflix layout, the tiles of the Windows 8.x Start Menu and the ubiquitous Windows File Explorer.</p>
+<h2>The Block Header Index</h2>
+<p>My Code Pen for the <em>Block Header Index</em> stays true to the original blackboard sketch:</p>
+<!-- cSpell:disable -->
+<iframe height="265" style="width: 100%;" scrolling="no" title="index: block headers" src="https://codepen.io/rasx/embed/RNWaad?height=265&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+See the Pen <a href='https://codepen.io/rasx/pen/RNWaad'>index: block headers</a> by Bryan Wilhite
+  (<a href='https://codepen.io/rasx'>@rasx</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<!-- cSpell:enable -->
+<p>There is not much to write home about here. The code and markup should speak for itself.</p>
+<h2>The Inline Header Index</h2>
+<p>My Code Pen for the <em>Inline Header Index</em> strays very far from the original blackboard sketch:</p>
+<!-- cSpell:disable -->
+<iframe height="265" style="width: 100%;" scrolling="no" title="index: inline headers" src="https://codepen.io/rasx/embed/zxqxMv?height=265&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+See the Pen <a href='https://codepen.io/rasx/pen/zxqxMv'>index: inline headers</a> by Bryan Wilhite
+  (<a href='https://codepen.io/rasx'>@rasx</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<!-- cSpell:enable -->
+<p>The differing began with my failure to understand that <code>inline</code> displays do not scroll and cannot overflow. Perhaps what I am writing here can be easier understood when we see this block overflow from the Netflix user experience:
+<a href="https://www.flickr.com/photos/wilhite/15511519364/" title="Netflix Block Overflow"><img alt="Netflix Block Overflow" src="https://farm9.staticflickr.com/8574/15511519364_3680c606f4_z_d.jpg" style="display:block;margin:16px;margin-left:auto;margin-right:auto"></a></p>
+<p>What I am trying to show you above is one row of DVD ‘tiles’ with overflow arrows on each end of the row. Is it possible to have two or more rows—a winding ‘snake’ of DVD ‘tiles, spanning several rows—terminated by overflow arrows? According to my understanding of HTML/CSS, the answer today is <em>no</em>.</p>
+<p>So what I have instead are represented by the yellow inline boxes below:
+<a href="https://www.flickr.com/photos/wilhite/15948182307/" title="Songhay Index - the Inline Header Index"><img alt="Songhay Index - the Inline Header Index" src="https://farm8.staticflickr.com/7556/15948182307_da98f207d5_z_d.jpg" style="display:block;margin:16px;margin-left:auto;margin-right:auto"></a></p>
+<p>The yellow boxes represent groups, inline blocks, that overflow horizontally. I assume that Netflix did the proper UX research and concluded that that the visual assault of horizontal and vertical scrollbars would confuse users.</p>
+<p>Apart from the majority of visitors deep-linking directly from Google, Twitter and Pinterest, kintespace.com already has a reputation for being confusing (when trying to find content from the “home” page). I assume (today) that my <em>Inline Header Index</em> design would be an improvement. So I am declaring here that I prefer this yellow-block design with the “crazy” scrollbars.</p>
+<h2>What’s wrong with the current index designs?</h2>
+<p>All of my web designs are works in progress. I have never been able to declare any of my web sites “finished.” That being said, it must also be said that kintespace.com in particular has been suffering from severe neglect. This site is <em>still</em> based on the hub and spokes paradigm of the 1990s. My design update (scheduled for 2015) is an Angular JS app that indexes, searches and presents content—so <em>hub and spokes</em> will be replaced by HTML5 <em>app</em>. This “app” should address these issues:</p>
+<p><strong>No “jumbo-tron” splash.</strong> The seductive, glossy-magazine effect is sorely lacking from all of my designs. I avoided this expression of compelling beauty for years of concern for bandwidth, lack of early support for responsive design and lack of an automated workflow to avoid making all of this beauty by hand.</p>
+<p><strong>No maximum width on tile flows.</strong> This is just lack of design experience on my part. I gave myself the challenge of designing with little help from CSS frameworks. This means I’ll be making crass mistakes for quite some time.</p>
+<p><strong>Monotonous tiles.</strong> Without Angular JS in my toolbox I had no viable grouping strategy for tiles. I especially wanted a design that supports data-driven, dynamic grouping (again, to avoid making things pretty <em>by hand</em>). Now I have Angular JS. I spent 2014 fitting it into my practice.</p>
+<p><strong>Colors wrong.</strong> Again, this is just lack of design experience on my part. I’ve been <a href="http://kintespace.com/rasxlog/?p=879">whining about this since 2008</a>—so I should just call myself untalented, hire a consultant and move on? The one thing I can say in my defense is that I deliberately avoided using gradients for lack of browser support for too long. Color theory is just not comfortably in my practice to date.</p>
+<p><strong>Borrowing too little from Microsoft design specs.</strong> The top-level “<a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh781237.aspx">Microsoft design principles</a>” and the more detailed “<a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh465424.aspx">Guidelines for Windows Runtime apps</a>” should be regular, bedtime reading for me. Just because I won’t follow these guidelines lines blindly does not mean I shouldn’t know about them.</p>
+<p>I’ve spent most of my IT career away from visual design and user experience research. I don’t want this historical fact to become tragic because I got into IT to explore and do visual design and user experience research. I’ve spent a mere five years working with teams who were consciously concerned about UI and UX. Along with the recent advances in IT technology, this ‘official’ concern has finally allowed me to really crank up the UI/UX practice.</p>
+<p>I look forward to cranking it up more.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-01-02T08:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

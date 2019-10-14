@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>MegaFunk.com HTML5 Gallery Design Released - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>MegaFunk.com HTML5 Gallery Design Released</h1>
+<p><a href="http://www.amazon.com/Apple-iPad-MD531LL-Wi-Fi-White/dp/B00746W9F2%3FSubscriptionId%3D1SW6D7X6ZXXR92KVX0G2%26tag%3Dthekintespacec00%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00746W9F2" title="Apple iPad Mini MD531LL/A (16GB, Wi-Fi, White)"><img alt="Apple iPad Mini MD531LL/A (16GB, Wi-Fi, White)" src="http://ecx.images-amazon.com/images/I/317qBBOVKJL.jpg" style="float:right;margin:16px;"></a></p>
+<p>I can find two other HTML-5, responsive, “Gallery” designs out there. <a href="http://codecanyon.net/item/html5-responsive-slider-gallery/2994539">One is for sale</a> and <a href="http://wpmu.org/responsive-wordpress-gallery-plugin/">the other is for WordPress</a>. Neither addresses paging thumbnails (visuals covered in “<a href="http://songhayblog.azurewebsites.net/entry/show/design-notes-xhtml5-responsive-gallery">Design Notes: XHTML5 Responsive Gallery</a>”)—but both of them look much better than <a href="http://songhay.blob.core.windows.net/design-megafunk/gallery.html">what I’ve done so far</a>…</p>
+<p>Nevertheless, I should be pleased at the relative improvement over my earlier work. I was walking around a shopping mall in Century City today—going from the Apple Store to the Sony Store—testing my work on iPad and Android tablets and the design responded well with only one naked failure: the character I am using for an “up arrow” (▲) shows up as a box on a Sony Android tablet.</p>
+<h2>Setting a large “view port”…</h2>
+<p>Overriding my preference for using <code>device-width</code>, this <code>meta</code> element is in play:</p>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=528; height=device-height;&quot; /&gt;
+</code></pre>
+<p>Instead of making the MegaFunk.com menu responsive, a minimum width of <code>528px</code> is set to prevent the menu items from stacking. This causes pan-and-scan swiping and zooming on smartphones and even a little on the iPad.</p>
+<p>What I don’t like my design’s response to the iPad is the lack of centering as it feels like it’s drifting out of view…</p>
+<h2>Translating the View Model concept to JavaScript</h2>
+<p>I have already fallen deeply in love with <a href="http://knockoutjs.com/">Knockout.js</a> back in the summer of 2011, so I am aware of its Silverlight-like, <acronym title="Model">MVVM</acronym> design possibilities (what gets us super-close is the relatively new <a href="http://www.breezejs.com/">breeze.js</a><em>plus</em> Knockout). What I failed to do with Knockout was formally establish when <em>not</em> to use it—<em>and</em> prepare my Javascript/jQuery to be “progressively enhanced” with Knockout just in case it’s needed later.</p>
+<p>My deliberate use of the View Model concept is this formal preparation. My JavaScript View Model is just an object that is concerned with a visual container (or two) and its name has the suffix <code>ViewModel</code>. It should follow that the complexity in a Single Page Application (SPA) can be measured by how many <code>*ViewModel</code> objects there are.</p>
+<p>Once these View Model objects are adorned with Knockout observables, then we are in what we Silverlight folks called a “two-way binding” world…</p>
+<h2>The ‘Ready’ function with jQuery</h2>
+<p>A very powerful concept (for me at the moment) that allows me to break blocks of jQuery into smaller logical groups is the <em>ready</em> concept. Back in the old <acronym title="Asynchronous JavaScript and XML">AJAX</acronym> days, I used the <em>format</em> concept. But with the advent of jQuery, we’re setting events, animations and visual formatting. So I’ve rolled these tasks up (per visual) into <em>ready</em> functions.</p>
+<p>In the case of my gallery, I use <code>readyMegaGallery``()</code>. This is called inside of <code>$(window.document).ready(``)</code> like this:</p>
+<pre><code class="language-javascript">$(window.document).ready(function () {
+    var flow = $('#GalleryContainer');
+    ```html
+    if (flow.length &gt; 0) {
+        $.g```
+        etJSON('./data/browse.json').then(function (data) {
+            galleryViewModel.setGalleries(data);
+            readyMegaGallery(data);
+        });
+    }
+});
+</code></pre>
+<p>We can see that this <em>ready</em> concept is in line with <code>jQuery.ready</code>.</p>
+<h2>New jQuery tricks (for me)…</h2>
+<p>I mistakenly thought that <code>jQuery.next()</code> would select the next sibling matching its selector without regard for its contiguity. I was wrong: what we must use is <code>jQuery.nextAll('.MyClass:first')</code> where the class, <code>.MyClass</code>, in the selector may indicate contiguous sibling or not.</p>
+<p>Another awesome first for me is <code>jQuery.index()</code>. My approach to responsive design is to build a grid system out of <em>tiles</em>. Locating these arrays of tiles by an <em>index</em> is solved by <code>jQuery.index()</code>. I will need more tile tricks that are inspired by classic file explorers that group, sort and filter.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-12-20T00:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

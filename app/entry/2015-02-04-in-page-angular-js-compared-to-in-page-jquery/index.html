@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>In-page Angular JS compared to in-page jQuery - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>In-page Angular JS compared to in-page jQuery</h1>
+<p>It makes sense to me to compare Angular JS to jQuery. I need to see this to literally see the way to migrate a jQuery-centric site to an Angular one. The gulf between how I’ve been doing jQuery and the Angular 1.x “seed” is huge—so this is way to bridge the gap with an interim step.</p>
+<p>So, in my ASP.NET MVC <code>*.cshtml</code> page, I would see something like this:</p>
+<pre><code class="language-cshtml">@section ScriptContent
+{
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        /*jslint browser: true, nomen: true, passfail: false, plusplus:true, vars: true, unparam: true, white: false */
+        /*global window, jQuery, angular, _ */}
+        (function ($) {
+            &quot;use strict&quot;;
+
+            var loadPageData = function () {
+            var uri = '@Url.Content(&quot;~/MyMvc/Data&quot;)';
+
+            $.ajax({
+                    type: 'POST',
+                    url: uri
+                }).done(function (data) {
+                    loadPageDataCallback(data);
+                });
+            };
+
+            var loadPageDataCallback = function (result) {
+                                //do call-back stuff…
+                            };
+
+            $('#MyButton).click(function () {
+                                //do button click stuff…
+                            };
+
+            loadPageData();
+        }(jQuery));
+    &lt;/script&gt;
+}
+</code></pre>
+<p>Before planting a full-blown angular seed with routing (yes, use <code>ng-controller</code> directly on elements) and partials, we can take this interim step:</p>
+<pre><code class="language-cshtml">@section ScriptContent
+{
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        /*jslint browser: true, nomen: true, passfail: false, plusplus:true, vars: true, unparam: true, white: false */
+        /*global window, jQuery, angular, _ */
+        (function ($) {
+            &quot;use strict&quot;;
+
+            var rxApp = angular.module('rxApp', ['rxApp.services', 'rxApp.controllers']);
+
+            /* Services */
+            var dataService = {
+                getData: function ($http) {
+                    if (!$http) { return; }
+                    var uri = '@Url.Content(&quot;~/MyMvc/Data&quot;)';
+                    return $http.post(uri).then(
+                        function (result) {
+                            return result.data;
+                        });
+                }
+            };
+
+            var services = angular.module('rxApp.services', []);
+            services
+                .factory('dataService', ['$http', function ($http) { return dataService; }])
+            ;
+
+            /* Controllers */
+            var doPageController = function ($scope, $http, dataService) {
+                $scope.vm = {
+                    data: null
+                    myButtonClick: function() {
+                        //do button-click stuff
+                    }
+                };
+
+            dataService.getData($http).then(function (data) {
+                    $scope.vm.data = data;
+                });
+            };
+
+            var controllers = angular.module('rxApp.controllers', []);
+            controllers
+                .controller('pageController', ['$scope', '$http', 'dataService', doPageController])
+                ;
+        }(jQuery));
+    &lt;/script&gt;
+}
+</code></pre>
+<p>So, for every jQuery script block we find (I assume one block per <code>*.cshtml</code> page), we can replace it with an Angular app (yes, very redundant across MVC pages), one controller and maybe one or more services. When we make a proper seed—to consolidate these multiple <code>rxApp</code> instances on every MVC page—we’ll have much better idea about the controllers (and any long-lasting jQuery dependencies). We should have a more informed plan around replacing MVC pages with Angular partials.</p>
+<p>Writing this Blog post has allowed me to see how my jQuery patterns translate to Angular patterns. To me, it looks like the all of the jQuery code roughly translates to the Angular controller. So a hard-core jQuery person might ask about the usefulness of the extra lines of code around the Angular controller. To me, it makes sense because Angular people are building a <a href="https://docs.angularjs.org/guide/module">module-system</a> around the controller that allows for code reuse and dependency injection (primarily for automated testing purposes).</p>
+<p>Hard-core Angular (1.x) people may not tolerate my failure to use <a href="https://docs.angularjs.org/guide/directive">directives</a> in my example above. Directives are the most innovative and web-evolutionary thing ever to come out of a JavaScript framework—and I’m not using them here! In fact, last year I watched a shocking video, “<a href="https://www.youtube.com/watch?v=gNmWybAyBHI">Angular 2.0 Core by Igor Minar &amp; Tobias Bosch at ng-europe 2014</a>” that ended with this slide:
+<a href="https://www.youtube.com/watch?v=gNmWybAyBHI" title="Angular 2.0 Core by Igor Minar &amp; Tobias Bosch at ng-europe 2014"><img alt="Angular 2.0 Core by Igor Minar & Tobias Bosch at ng-europe 2014" src="https://farm8.staticflickr.com/7389/16425440926_7c219d5424_o_d.png" style="display:block;margin:16px;margin-left:auto;margin-right:auto"></a></p>
+<p>It looks like they are killing everything in Angular 1.x <em>except</em> directives (watch the video to get past the drama)! What might be a cool Stack Overflow question is seeing how my jQuery block translates into Angular 2.0.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-02-04T08:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

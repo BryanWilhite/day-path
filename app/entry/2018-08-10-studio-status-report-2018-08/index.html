@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>studio status report: 2018-08 - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>studio status report: 2018-08</h1>
+<p>Going forward from here my passive-voice intention is to keep track of myself monthly. My work habits have always included keeping a private journal. In the “early years,” one Microsoft Word document per year was enough. As my software-development surface area grew, Microsoft OneNote became my secondary journal tool. From Microsoft OneNote, Markdown and GitHub-based cultural habits sinks in. This journal file is part my latest journal tooling.</p>
+<h2>the work on the new SonghaySystem.com has started</h2>
+<p>GitHub is <a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues">tracking the progress</a> with a level detail designed to handle the possibility of short-term memory loss from a guy that is not in his twenties with lots of spare time.</p>
+<p><a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/7">Issue #7</a> is the first (?) public mention of the B-Roll player (its YouTube-related features) running on modern Angular. This is a studio milestone. Insert dramatic film-score music here. It looks likes the last time I mentioned this product under development was <a href="http://songhayblog.azurewebsites.net/blog/entry/my-autofac-packages-drama">in 2016</a>.</p>
+<h2>I have turned off CI on VSTS</h2>
+<p>After discovering that adding Node-based builds to an ASP.NET Core Solution skyrocketed to 11 minutes, I started turning off Continuous Integration (CI) on VSTS. Moreover, I finally see that <code>dotnet test</code> tasks can specify multiple test projects like this:</p>
+<p><strong>/*Tests.csproj
+!</strong>/Songhay.GenericWeb.Mvvm*/*.csproj</p>
+<p>This discovery allows me to remove all of those <code>IgnoreAttribute</code> declarations and target more precisely.</p>
+<p>The new <a href="https://twitter.com/BryanWilhite/status/1024687355158884354">VSTS UI looks great</a> but it still does not allow me to see at a glance the CI state of builds.</p>
+<h2>Flickr seems to allow uploads again</h2>
+<p><a href="https://www.youtube.com/watch?v=pIboZj-gb7Q">Triangulation 351: SmugMug and Flickr</a> features Don MacAskill, Founder of SmugMug, detailing their commitment to keep the brand and continue to develop the existing base.</p>
+<p>The studio currently depends on Flickr to archive and serve screenshots. I suspect that there is another more dedicated service that is much better suited for screenshots. The social sharing site, <a href="https://imgur.com/">Imgur</a>, is not that service.</p>
+<p><a href="https://snag.gy/">SNAGGY</a> is closer to what I am thinking about but there is this caveat: “If you make an account, your images will be stored as long as they have been viewed at least once in the last 6 months. Pro accounts, an upcoming feature, will have unlimited storage lifetime.”</p>
+<p>The guidance in “ <a href="https://www.dropbox.com/help/photos-videos/screenshots">Share and save screenshots with Dropbox</a>” look like it’s worth a try <em>but</em> my use of <a href="https://chocolatey.org/packages/greenshot">Greenshot</a> clashes with the workflow.</p>
+<h2>an Azure-based screenshot solution?</h2>
+<p>What might be a great, simple, <em>central</em> solution to sharing screenshots involves throwing images (using the new <a href="https://azure.microsoft.com/en-us/features/storage-explorer/">Azure Storage Explorer</a>) on a BLOB container. All legacy screenshots can be moved there.</p>
+<p>@ <a href="https://twitter.com/bryanwilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2018-08-10T17:25:50.039Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

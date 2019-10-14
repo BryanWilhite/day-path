@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>my little git tricks - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>my little git tricks</h1>
+<p>The title of this post is trying to tell you that I am <em>not</em> a git expert. These are my cross-platform notes for the subset of git I’ve needed to use so far:</p>
+<p><strong>I added a new <code>Develop</code> branch in Visual Studio and the remote cannot see it.</strong> From the command line push upstream with the <code>-u</code> switch:</p>
+<pre><code class="language-bash">git push -u origin Develop
+</code></pre>
+<p>For detail, see <a href="https://stackoverflow.com/questions/2765421/how-do-i-push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too">the StackOverflow post</a>. And recall that the <code>-u</code> or <code>--set-upstream</code> sets the origin for the argument-less <code>git pull</code> command—which means that you should only use the <code>-u</code> option only once.</p>
+<p><strong>I need to merge <code>master</code> with <code>Develop</code>.</strong> What’s important to remember in this scenario is the fundamental concept of git: your local repository is a clone of the remote. This means that a merge operation occurs between branches on your local machine. This explains why you need to checkout and pull from the source branch of the merge:</p>
+<pre><code class="language-bash">git checkout Develop
+git pull
+git checkout master
+git pull
+git merge --no-ff --no-commit Develop
+
+git status
+
+git commit -m &quot;merging with Develop branch&quot;
+
+git push
+</code></pre>
+<p>For detail, see <a href="https://stackoverflow.com/a/29048781/22944">the StackOverflow answer</a>. These commands also arise in the context of responding to a pull request. <a href="https://stackoverflow.com/questions/7200614/how-to-merge-remote-master-to-local-branch">Recall that</a><code>git pull</code> is basically the same as <code>git fetch; git merge origin/master</code>.</p>
+<p><strong>I added a Develop branch on the remote web client but my local repository cannot see it.</strong> I need to <code>fetch</code> the remote repository:</p>
+<pre><code class="language-bash">git ls-remote origin
+
+git fetch
+
+git branch -a
+</code></pre>
+<p><strong>I forgot to git-ignore folder <code>foo</code> and I need to delete it from the remote repository.</strong> This is done with <code>git rm</code>:</p>
+<pre><code class="language-bash">git rm -r --cached ~/foo
+</code></pre>
+<p><strong>I need to know the status of the remote server.</strong> When <code>git status</code> returns, “Your branch is up-to-date,” but you are not sure this is accurate, I should try:</p>
+<pre><code class="language-bash">git remote update
+git status
+</code></pre>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2017-06-12T21:23:14.566Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

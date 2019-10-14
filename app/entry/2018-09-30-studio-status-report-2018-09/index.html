@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>studio status report: 2018-09 - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>studio status report: 2018-09</h1>
+<p>This report is a <em>extremely</em> late as this writing occurs on the <em>last</em> day of the month.</p>
+<h2>the work on the new SonghaySystem.com continues</h2>
+<p>The prime suspect for the lateness of this report is the work represented by <code>Songhay.Dashboard</code><a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/16">issue #16</a>. This single issue got out of control, exploding to 44 comments (all made by me), spanning over 28 days. This issue essentially contains the start of the modern Angular version of the <code>Songhay.Player</code> client (the b-roll player), its curated YouTube Channel experience.</p>
+<p>In order to make this experience possible these learnings were discovered (in issue-entry order):</p>
+<ul>
+<li>Angular Module lazy loading</li>
+<li>the active use of Typescript “duck typing” to ‘sketch’ out models without declaring a formal <code>interface</code></li>
+<li>the Angular <code>@ViewChild</code> pattern replaces most jQuery selector patterns</li>
+<li>Angular’s <code>this.location.replaceState('/not-found')</code> replaces <code>$location.path(&quot;/not-found&quot;).replace()</code></li>
+<li>the Angular <code>EventEmitter</code> pattern for data services</li>
+<li>Matias Niemelä and his <code>AnimationBuilder</code> (and the bug with <code>AnimationPlayer</code> [<a href="https://twitter.com/BryanWilhite/status/1038139182017724416">Twitter</a>])</li>
+<li>using SASS maps to generate media queries</li>
+<li><code>Map</code> should not be used with <code>*ngFor</code> [<a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/16#issuecomment-423879367">ref</a>]</li>
+<li>the importance of <code>ChangeDetectionStrategy.OnPush</code> for improving performance [<a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/16#issuecomment-424426156">ref</a>]</li>
+<li>using the CSS <code>transform</code> property to scale SVG icons [<a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/16#issuecomment-424499360">ref</a>]</li>
+</ul>
+<h2>major changes to Angular core <code>AppDataService</code></h2>
+<p>Currently <code>AppDataService</code> [<a href="https://github.com/BryanWilhite/Songhay.Dashboard/blob/6e8b3f943fa837f1e6d8ae95b6839a080f9cbdc8/Songhay.Dashboard/ClientApp/src/app/songhay/core/services/songhay-app-data.service.ts">GitHub</a>] is thrown down next to the Dashboard App source for two mutually exclusive reasons:</p>
+<ul>
+<li>the use of GraphQL has not been adopted (which promises to eliminate <em>all</em> of this code)</li>
+<li>the use of local NPM packages (likely with the <code>songhay-core</code><a href="https://github.com/BryanWilhite/songhay-core">repo</a>) has not been exploited</li>
+</ul>
+<p><code>AppDataService</code> was re-factored, adding the <code>loadJson()</code> method [<a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/16#issuecomment-418229660">ref</a>] so it can be used like this:</p>
+<pre><code class="language-c#">@Injectable()
+    export class YouTubePresentationDataServices {
+        constructor(client: Http) {
+            this.presentationDataService = new AppDataService(client);
+            this.videosDataService = new AppDataService(client);
+        }
+
+        presentationDataService: AppDataService;
+
+        videosDataService: AppDataService;
+
+        loadPresentation(id): Promise&lt;Response&gt; {
+                    const uri = `${YouTubeScalars.rxYouTubeApiRootUri} ${id}`;
+                    return this.presentationDataService.loadJson&lt;{}&gt;(uri, json =&gt; {});
+                }
+
+        loadVideos(id): Promise&lt;Response&gt; {
+                    const uri = `${YouTubeScalars.rxYouTubeApiRootUri} ${
+                        YouTubeScalars.rxYouTubeApiVideosPath
+                    } ${id}`;
+
+        return this.videosDataService.loadJson&lt;{}&gt;(uri, json =&gt; {});
+        }
+    }
+</code></pre>
+<p>What this is saying most importantly is that there is only <code>AppDataService</code> per server call. This will not scale well in more sophisticated Apps, especially where there is no control over the server. The plan is to let GraphQL come to the rescue in near future.</p>
+<p><code>AppDataService</code> has these remaining issues (which should be added to the <code>songhay-core</code><a href="https://github.com/BryanWilhite/songhay-core">repo</a>)):</p>
+<ul>
+<li>work in <code>Songhay.Dashboard</code> (including <code>MapObjectUtility.getMap</code> [<a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/16#issuecomment-418186425">ref</a>]) should be migrated to <code>songhay-core</code></li>
+<li>the <code>async</code>-<code>await</code> pattern should be used</li>
+</ul>
+<p>One of the promises of GraphQL is the elimination of the need to have real server running in order to build a client. While this promise is deliberately prioritized to be out of my reach for the short term, I need a service running which means I need <a href="https://github.com/BryanWilhite/Songhay.Affiliates/commit/e92d76fef079eb06b2604e990e3cc10466df1c3b">CORS running</a>.</p>
+<p>Got some great <a href="https://twitter.com/ethomson/status/1045631647553671170">help</a> from Edward Thomson from Microsoft to get YAML-based builds working [<a href="https://github.com/BryanWilhite/Songhay.Affiliates/issues/3#issuecomment-425545706">ref</a>]. This step forward is a significant move toward adding critical automation to the Songhay System.</p>
+<p>@<a href="https://twitter.com/bryanwilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2018-09-30T22:50:14.344Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

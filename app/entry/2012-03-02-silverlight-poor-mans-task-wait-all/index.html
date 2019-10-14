@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Silverlight 4: Poor Man’s Task Wait-All - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Silverlight 4: Poor Man’s Task Wait-All</h1>
+<p>Silverlight 4 does not have the Task Parallel Library. <a href="http://blogs.msdn.com/b/pfxteam/archive/2011/09/01/10204554.aspx">According to Danny Shih</a> (and what I see in <acronym title="Microsoft Developer Network">MSDN</acronym> documentation) it is now in Silverlight 5. For SL4, you can, however, <a href="http://nuget.org/packages/System.Threading.Tasks">download a NuGet Package</a> (translated from Mono) to compensate—or you can:</p>
+<ul>
+<li>Make a Boolean array of <code>false</code> items equal to the number of asynchronous tasks.</li>
+<li>In the complete-handler for each task, mark one item in the Boolean array <code>true</code> and check to see whether all items in the array are <code>true</code>.</li>
+<li>When all items in the array are true the wait is over.</li>
+</ul>
+<p>My scribble looks like this:</p>
+<pre><code class="language-c#">var asyncOperationsList = new bool[] { false, false };
+var asyncOperationsComplete = new Action(() =&gt;
+{
+    if(asyncOperationsList.Count(i =&gt; i) != asyncOperationsList.Count()) return;
+    /* wait is over! */
+});
+
+//Catalog the XAP downloaded by the Application Loader, the BiggestBox Index:
+uri = new Uri(Application.Current.
+    Host.InitParams[&quot;LoaderInfoXapPath&quot;], UriKind.Relative);
+this.AddToAggregateCatalog(CompositionUtility.DownloadCatalog(uri,
+    new Action&lt;object, AsyncCompletedEventArgs&gt;(
+    (o, args) =&gt;
+    {
+        asyncOperationsList[0] = true;
+        asyncOperationsComplete();
+    })));
+//Catalog the XAP with the BiggestBox Index Part:
+uri = new Uri(Application.Current
+    .Host.InitParams[&quot;BiggestBoxIndexXapPath&quot;], UriKind.Relative);
+this.AddToAggregateCatalog(
+    CompositionUtility.DownloadCatalog(uri,
+        new Action&lt;object, AsyncCompletedEventArgs&gt;(
+        (o, args) =&gt;
+        {
+            asyncOperationsList[1] = true;
+            asyncOperationsComplete();
+        })));
+</code></pre>
+<p>I then formalized my hack with this limited-edition, commemorative class:</p>
+<pre><code class="language-c#">/// &lt;summary&gt;
+/// Defines the grouping and completion-tracking of asynchronous operations.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;
+/// This class is a poor substitute for what is lacking in Silverlight 4
+/// (and older) with regard to features in the Task Parallel Library.
+/// &lt;/remarks&gt;
+public class AsyncOperationGroup
+{
+    /// &lt;summary&gt;
+    /// Initializes a new instance of the &lt;see cref=&quot;AsyncOperationGroup&quot;/&gt; class.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;numberOfOperations&quot;&gt;The number of operations.&lt;/param&gt;
+    /// &lt;param name=&quot;completionAction&quot;&gt;The completion action.&lt;/param&gt;
+    public AsyncOperationGroup(byte numberOfOperations, Action completionAction)
+    {
+        if(completionAction == null) throw new ArgumentNullException(&quot;completionAction&quot;, &quot;The completion action is null.&quot;);
+        this._completionAction = completionAction;
+        this._asyncOperationCompletionList = new bool[numberOfOperations];
+    }
+    /// &lt;summary&gt;
+    /// Marks the operation complete.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;operationOrdinal&quot;&gt;The zero-based operation ordinal.&lt;/param&gt;
+    public void MarkOperationComplete(byte operationOrdinal)
+    {
+        if(operationOrdinal &gt;= this._asyncOperationCompletionList.Length)
+            throw new ArgumentException(&quot;The ordinal is not in the completion list.&quot;, &quot;operationOrdinal&quot;);
+        this._asyncOperationCompletionList[operationOrdinal] = true;
+        if(this._asyncOperationCompletionList.Count(i =&gt; i) != this._asyncOperationCompletionList.Count()) return;
+        this._completionAction.Invoke();
+    }
+    Action _completionAction;
+    bool[] _asyncOperationCompletionList;
+}
+</code></pre>
+<p>So now my code-smell wafts like this:</p>
+<pre><code class="language-c#">byte numberOfOperations = 2;
+var catalogs = new DeploymentCatalog[numberOfOperations];
+var operations = new AsyncOperationGroup(numberOfOperations,
+() =&gt;
+{
+    this.AddToAggregateCatalog(catalogs[0]);
+    this.AddToAggregateCatalog(catalogs[1]);
+    base.Compose();
+    this.AddToCompositionBatch(this);
+    //etc…
+});
+
+//Catalog the XAP downloaded by the Application Loader, the BiggestBox Index:
+var uri0 = new Uri(Application.Current.
+    Host.InitParams[&quot;LoaderInfoXapPath&quot;], UriKind.Relative);
+catalogs[0] = CompositionUtility.DownloadCatalog(uri0,
+(s, args) =&gt;
+{
+    operations.MarkOperationComplete(0);
+});
+
+//Catalog the XAP with the BiggestBox Index Part:
+var uri1 = new Uri(Application.Current
+    .Host.InitParams[&quot;BiggestBoxIndexXapPath&quot;], UriKind.Relative);
+catalogs[1] = CompositionUtility.DownloadCatalog(uri1,
+(s, args) =&gt;
+{
+    operations.MarkOperationComplete(1);
+});
+</code></pre>
+<p>So, now I have my first real-world reason why Silverlight 5 is desirable.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-03-02T23:51:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

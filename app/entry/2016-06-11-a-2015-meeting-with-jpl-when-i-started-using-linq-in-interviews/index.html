@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>A 2015 meeting with JPL when I started using LINQ in interviews… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>A 2015 meeting with JPL when I started using LINQ in interviews…</h1>
+<p>Some younger people in Pasadena working for JPL interviewed me for a Web developer position. Even though the drive from Mar Vista to Pasadena would have been just as horrible as driving from Mar Vista to Newport Beach (a commute I did for over a year and a half)—and even though it is clear that JPL is not a Microsoft .NET shop—, I could not pass up the chance to work with such an historical and interplanetary organization.</p>
+<p>I like the fact that JPL gave me a take-home “test” which has two coding questions that I will reflect on here. The take-home “test” is different from live coding in that I am allowed to work like I work most of the time; whereas the live coding is more of social performance that I have almost no opportunity to practice in real life. I would have to start a YouTube channel and record myself live coding to immediately do something about developing this ceremonial skill which sounds right now a bit time-consuming.</p>
+<p>So here is the first JPL question:</p>
+<blockquote>
+<ol>
+<li>Write a program that prints the numbers from 1 to 100. But for multiples of three print “JPL” instead of the number and for the multiples of five print “NASA”. For numbers which are multiples of both three and five print “JPL NASA”. Implement in the language of your choice, or in pseudo-code.</li>
+</ol>
+</blockquote>
+<p>This is my answer (written in LINQPad):</p>
+<pre><code class="language-c#">Enumerable
+    .Range(1, 100)
+    .Select(i =&gt;
+    {
+        string JPL = &quot;JPL&quot;, NASA = &quot;NASA&quot;;
+
+Func&lt;bool&gt; isMultipleOf3 = () =&gt; ((i % 3) == 0);
+        Func&lt;bool&gt; isMultipleOf5 = () =&gt; ((i % 5) == 0);
+
+if(isMultipleOf3() &amp;&amp; isMultipleOf5()) return string.Format(&quot;{0} {1}&quot;, JPL, NASA);
+        else if(isMultipleOf3()) return JPL;
+        else if(isMultipleOf5()) return NASA;
+        else return i.ToString();
+    })
+    .Dump();
+</code></pre>
+<p>This answer is an attempt to show the interviewers that I am interested in solving problems with a traditional imperative language—but I am using the functional programming aspects of this language. This is an effort to demonstrate my ability to find compromise between two worlds: the functional and the imperative.</p>
+<p>Next question:</p>
+<blockquote>
+<ol start="2">
+<li>You have some data stored in a potentially infinite tree structure. You need to traverse and pull out a piece of data in each node within the tree and put that into a list or an array. How would you go about doing this?</li>
+</ol>
+</blockquote>
+<p>The first issue is to flatten the tree structure. This can be done with recursion. In C#, we can define an extension method like this:</p>
+<pre><code class="language-c#">public static IEnumerable&lt;TSource&gt; Flatten&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, IEnumerable&lt;TSource&gt;&gt; childGetter)
+{
+    if (source == null) return Enumerable.Empty&lt;TSource&gt;();
+    var flattenedList = new List&lt;TSource&gt;(source);
+    source.ForEachInEnumerable(i =&gt;
+    {
+        var children = childGetter(i);
+        if (children != null) flattenedList.AddRange(children.Flatten(childGetter));
+    });
+    return flattenedList;
+}
+</code></pre>
+<p>I suppose with a near-infinite tree, we can use <code>Lazy&lt;TSource&gt;</code> instead of just <code>TSource</code> denoted above. <code>TSource</code> is, of course, the type of the tree structure. Let's say <code>TSource</code> is <code>MenuDisplayItemModel</code>:</p>
+<pre><code class="language-c#">var tree = new []
+{
+    new MenuDisplayItemModel
+    {
+        ItemName = &quot;item-1-1&quot;,
+        ChildItems = new []
+        {
+            new MenuDisplayItemModel { ItemName = &quot;item-2-1&quot; },
+            new MenuDisplayItemModel { ItemName = &quot;item-2-2&quot; },
+            new MenuDisplayItemModel
+            {
+                ItemName = &quot;item-2-3&quot;,
+                ChildItems = new[]
+                {
+                    new MenuDisplayItemModel { ItemName = &quot;item-3-1&quot; },
+                    new MenuDisplayItemModel { ItemName = &quot;item-3-2&quot; },
+                }
+            },
+        }
+    },
+    new MenuDisplayItemModel { ItemName = &quot;item-1-2&quot; },
+};
+tree.Flatten(i =&gt; i.ChildItems).Select(i =&gt;i.ItemName).Dump();
+</code></pre>
+<p>The folks interviewing me at JPL were ‘too impressed’ with what I am trying to do here—‘impressed’ with the answer to the first question but the second question is incomplete (I really did not handle the “infinite” nature of the data source—some kind of read-only, forward-only, paging deal? I crammed too much into this Microsoft-specific <code>Lazy&lt;T&gt;</code> thing…). They responded to my work with questions about whether my fellow, JPL coworkers would understand the “style” of programming here. This reaction told me that functional programming was not a “thing” with these interviewers—in addition to their non-investment in Microsoft. The JPL job I applied for was specified as an ASP.NET MVC job—but when you actually look at what web technology is currently in play (and when you ask about the history) you should find very little Microsoft-based work.</p>
+<p>This interview was the first time I took the opportunity to use LINQ. I plan to take this opportunity again and again. I prefer to openly celebrate the relative freedom of using LINQPad on the fly (over working more formally in Visual Studio). This flagrant preference of mine will not work in all situations:</p>
+<ul>
+<li>I will be dismissed as one who is Microsoft-biased.</li>
+<li>I will be dismissed as one who is too dependent on one programming language instead of pseudo-coding the suggestion that I am “open” to multiple programming languages.</li>
+<li>I will be dismissed as one who is using functional programming techniques “unnecessarily” instead of respecting the traditional, C++ imperative approach.</li>
+</ul>
+<p>All of these dismissals work in my favor (even though such a thing is not pleasant) it allows me to truly escape a “bad cultural fit.”</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2016-06-11T07:06:04.118Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

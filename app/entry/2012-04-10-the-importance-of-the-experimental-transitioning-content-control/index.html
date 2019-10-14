@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>The Importance of the “Experimental” Transitioning Content Control - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>The Importance of the “Experimental” Transitioning Content Control</h1>
+<p>The <code>TransitioningContentControl</code>, developed by <a href="https://twitter.com/">Ruurd Boeke</a>, is one of the few Silverlight controls striving for what I am calling “data-driven animation.” You can load content from a database—let’s say an Observable Collection of data—, display one item from this Collection in the <code>TransitioningContentControl</code> and then <em>transition</em> to the next item in the Collection—to be displayed in the <code>TransitioningContentControl</code>. This transition is, by default, a story-board animation. Awe… some!
+<a href="http://wordwalkingstick.com/silverlightbiggestbox/" title="TransitioningContentControl with UserControl Collection Sample"><img alt="TransitioningContentControl with UserControl Collection Sample" src="http://farm6.staticflickr.com/5034/7065171509_b2503321d3.jpg"></a></p>
+<h2>Workflow…</h2>
+<ul>
+<li>Compose a “<a href="http://en.wikipedia.org/wiki/Previsualization">previz</a>” storyboard in a separate file (I open a XAML-only file in Expression Blend among my “packed XAML” samples in my <a href="http://wordwalkingstick.com/silverlightbiggestbox/">Silverlight BiggestBox</a>).</li>
+<li>Edit a copy of the <code>TransitioningContentControl</code> style in the actual layout.</li>
+<li>Add a new, named <code>VisualState</code> to the <code>VisualStateGroup x:Name=&quot;PresentationStates&quot;</code> in the Template setter of your copy of the <code>TransitioningContentControl</code> style.</li>
+<li>Set the <code>Setter Property=&quot;Transition&quot;</code> value to the name of this <code>VisualState</code> in the <code>TransitioningContentControl</code> style.</li>
+<li>When the transition is triggered, ensure that it does not trigger again <em>during</em> the transition. This will cause an exception. Use the <code>TransitionCompleted</code> event in a strategy to avoid this exception.</li>
+</ul>
+<p>Composing the “<a href="http://en.wikipedia.org/wiki/Previsualization">previz</a>” storyboard is the first time in my Microsoft developer life that a business need demands the use of storyboard composition (within the Expression Blend 4 timeframe of course).</p>
+<h2>Now some critiques…</h2>
+<ul>
+<li>You should not <em>need</em> to use a style to customize the transition animation. This should not be the only way of customizing the transition.</li>
+<li>Silverlight, animation-based behaviors, like the <code>FluidMoveBehavior</code> should be pluggable/Blendable into the control.</li>
+<li>No MSDN documentation (still considered “experimental”?).</li>
+</ul>
+<h2>Beyond the Transitioning Content Control?</h2>
+<p>Expression Blend Architect Kenny Young suggested years ago that Behaviors allow developers to avoid resorting to building storyboards by hand for relatively simple animations. Animating the event when an item is added/removed to/from a <code>ListBox</code> should be considered a ‘simple’ animation. A Behavior should handle this.</p>
+<p>The Transitioning Content Control does not support behaviors out of the box. In fact, to customize the animations that come with this control requires knowledge of “<a href="http://msdn.microsoft.com/en-us/library/ms745683.aspx">templating</a>” <em>and</em> building storyboards. This would explain to me why this control might still be considered “experimental.”</p>
+<p>So I tried for several days to avoid using this control by trying several techniques based on Behaviors. These are some of my findings:</p>
+<ul>
+<li>The <code>FluidMoveBehavior</code> can be configured to animate <code>Self</code> or <code>Children</code>. I have been unable to get the expected results from <code>FluidMoveBehavior</code> in ‘self-mode’… There is an old sample marked “<a href="http://www.kirupa.com/blend_silverlight/fluidmove_pg4.htm">Download AppliesTo: Self Example</a>” by Microsoft’s Kirupa Chinnathambi that shows <code>Self</code> working for Silverlight 3—however, when I upgrade the sample to Silverlight 4 it <em>stops</em> working! By the way, where the hell is Kenny Young?</li>
+<li>One workaround that <em>should</em> deal with this <code>FluidMoveBehavior</code> in ‘self-mode’ issue involves using an <code>ItemsControl</code> that is meant to only hold <em>one</em> item. Then <code>ItemsControl.ItemsPanel</code> can hold this behavior in its template. I tried this without success (but was probably confused with drowsy, late-night frustration).</li>
+</ul>
+<h2>Related Links</h2>
+<ul>
+<li>“<a href="http://jesseliberty.com/2009/04/29/animated-visual-state-transitions-with-the-transitioning-content-control/">Animated Visual State Transitions with the Transitioning Content Control</a> [Jesse Liberty]”</li>
+<li>“<a href="http://www.kirupa.com/blend_silverlight/fluidmove_pg4.htm">Using the FluidMove Behavior—Page 4</a>”</li>
+<li>“<a href="http://forums.silverlight.net/t/195397.aspx/1">ItemsControl.Items must not be a UIElement type when an ItemTemplate is set.</a>” This error came to me from trying to bind the currently selected item of a <code>ListBox</code> to a <code>UserControl</code> (which inherits <code>UIElement</code>).</li>
+<li>“<code>InitialTag</code> Specify the tag that this element will appear to come from. Select Element for a stand-alone scenario. Select <code>DataContext</code> for a data-bound scenario. The <code>FluidMoveBehavior</code> action will attempt to locate an element that has been previously tagged with the same data using a <code>FluidMoveSetTagBehavior</code> action.” [<a href="http://msdn.microsoft.com/en-us/library/ff723946(v=expression.40).aspx">MSDN</a>]</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-04-10T18:34:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

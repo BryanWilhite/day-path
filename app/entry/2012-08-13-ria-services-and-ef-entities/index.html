@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>RIA Services and EF Entities - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>RIA Services and EF Entities</h1>
+<p><a href="http://www.amazon.com/exec/obidos/ASIN/1449312969/thekintespacec00A/" title="Buy this product at Amazon.com!"><img alt="Amazon.com product" src="http://kintespace.com/bitmaps/blog_ef4_dbcontext_book.jpg" style="float:right;margin:16px;"></a></p>
+<p>Currently, my <em>preferred</em> technical plan for Data Access depends on using RIA Services and Entity Framework (EF). This decision promises to lead me to a design that allows me to build Web services (for that SOA buzzword-ism) and have bright and clear data access patterns for Silverlight, “Metro” UI and HTML clients. In the recently-made-ancient Silverlight world, using the <code>DataForm</code> and RIA Services with EF entities gives me a modern, scalable equivalent to the classic design experience that made Microsoft Access world famous in the 1990s. My decision to use ASP.NET MVC/RIA Services/EF is also my 21<sup>st</sup>-century update to the ASP/<acronym title="Extensible Stylesheet Language Transformations">XSLT</acronym> Data Access stack I built in the 1990s. To mark the calendar correctly, I need to remind myself that RIA Services was announced in 2009—and like Silverlight—it matters little to me that the term “RIA Services” might be considered “dead” right about now—even to Nikhil Kothari himself.
+<a href="http://www.amazon.com/exec/obidos/ASIN/0596807260/thekintespacec00A/" title="Buy this product at Amazon.com!"><img alt="Amazon.com product" src="http://kintespace.com/bitmaps/blog_ef4_book.jpg" style="float:left;margin:16px;"></a></p>
+<p>What is important is that the patterns, practices and design-time/maintenance expectations surrounding this technology will live longer than the technology itself. In the same manner that I looked for a technical/practical equivalent (or superior) to Microsoft Access, I will look for the same with regard to RIA Services (<a href="http://www.asp.net/web-api">Web API</a>?). This implies that I should “never be happy” with any technology, keeping a critical eye on what’s desired for v-next. In keeping with such healthy criticism, these notes go into a few bits about my current relations with RIA Services/EF:</p>
+<h2>RIA Services is not “dead” just because the brand name “Silverlight” is no longer premier.</h2>
+<p>Here’s a bottom line: there’s a RIA services framework for JavaScript. (See “<a href="http://jeffhandley.com/archive/2011/04/13/RIAJS-jQuery-client-for-WCF-RIA-Services.aspx">RIA/JS—jQuery client for WCF RIA Services</a>”.) This implies that that RIA Services is giving developer’s something they need and it is not locked in the world of Silverlight. Lenni Lobel in “<a href="http://blog.tallan.com/2012/02/19/wcf-data-services-vs-wcf-ria-services-%E2%80%93-making-the-right-choice/">WCF Data Services vs. WCF RIA Services–Making the Right Choice</a>” makes a great opening argument:</p>
+<blockquote>
+<p>The answer extends a bit beyond the standard “it depends on your scenario” response, since WCF RIA Services offers a lot more than just data access functionality. It also features client-side self-tracking entities, client-side validation, automatic server-to-client code generation, and more.</p>
+</blockquote>
+<p>I’ll be looking for similar client-side greatness for the hot, new ASP.NET Web API—and even on the server side, I need to see an implementation (or a superior replacement) of what Microsoft calls a “<a href="http://msdn.microsoft.com/en-us/library/ee707373(v=VS.91).aspx">Domain Service</a>”:</p>
+<blockquote>
+<p>Domain services are Windows Communication Foundation (WCF) services that encapsulate the business logic of a WCF RIA Services application. A domain service exposes a set of related operations in the form of a service layer. When you define a domain service, you specify the data operations that are permitted through the domain service.</p>
+</blockquote>
+<p>So a future question coming from me might be, ‘How does ASP.NET Web API eliminate or incorporate the need for a Domain Service?’ Here’s <a href="http://forums.silverlight.net/p/245432/613499.aspx/1?WCF+Web+API+vs+RIA+Services+Endpoints+JSON+SOAP+OData+">a quote</a> from a Silverlight forums, all-star Colin Blair:</p>
+<blockquote>
+<p>In general, it is important to keep in mind that there is a single WCF team at Microsoft. WCF Web API, WCF RIA Services, and WCF Data Services are all interrelated technologies. What you are seeing in WCF Web API is a new iteration of the base WCF technology itself and it has been built using what was learned in WCF Data Services and WCF RIA Services. So, you are seeing some overlap there because some of what you see in WCF RIA Services V1 has migrated into WCF Web API.</p>
+<p>What I expect to see is a WCF RIA Services V2 built using the WCF Web API but that is not going to happen until the WCF Web API is completed and it is currently still in preview. My recommendation is to stick with what you are currently doing, don't try to jump ahead of the WCF team.</p>
+</blockquote>
+<h2>Using RIA Services with EF drags EF behind the current version.</h2>
+<p>The Entity Framework Team is working faster than Nikhil Kothari can have spare time for projects other than <a href="http://www.nikhilk.net/NewWindowsAzure.aspx">Windows-Azure-related tasks</a>. Nikhil certainly works faster than me! My effort to write what’s written here means I’ve caught up with him back in 2010! …so there’s this NuGet package, <code>RIAServices.EntityFramework</code>, that requires <code>EntityFramework</code> 4.1.10715.0. As of this writing, we have the latest Entity Framework 4.3.1.</p>
+<h2>By default, an EF Entity cannot be a property of another object.</h2>
+<p>Somewhere between these two articles, “<a href="http://blogs.msdn.com/b/digital_ruminations/archive/2009/11/18/composition-support-in-ria-services.aspx">Composition Support in RIA Services</a>” and “<a href="http://weblogs.asp.net/manavi/archive/2010/12/11/entity-association-mapping-with-code-first-part-1-one-to-one-associations.aspx">Associations in EF Code First CTP5: Part 1—Complex Types</a>,” my fuzziness around the complex type (or Complex Object) and the <a href="http://msdn.microsoft.com/en-us/library/ee707346(v=VS.91).aspx">compositional hierarchy</a> may sharpen into focus. It’s all a blur to me but I <em>feel</em> like the subject matter in these articles has something to do with RIA Services ignoring a property of a Complex Object when this property is an Entity type. Feelings change…</p>
+<p>While I’m here it may also help very little to mention that RIA Services ignore the properties of a Complex Object that are interfaces as an interface simply cannot be serialized. To confuse myself further, I quote Colin Blair in “<a href="http://www.riaservicesblog.net/Blog/post/Interlude-e28093-Entities-do-not-have-children.aspx">Interlude–Entities do not have children</a>”:</p>
+<blockquote>
+<p>In RIA Services, every entity should be considered a top level entity. There is no such thing as a parent child relationship in RIA Services; all entities are equal to each other.</p>
+</blockquote>
+<p>This <a href="http://msdn.microsoft.com/en-us/library/ee382831(v=vs.110).aspx">quote</a> from <acronym title="Microsoft Developer Network">MSDN</acronym> may yet again make me dizzy:</p>
+<blockquote>
+<p>Complex types cannot participate in associations. Neither end of an association can be a complex type, and therefore navigation properties cannot be defined on complex types.</p>
+</blockquote>
+<p>What this last quote twists me toward is the definite possibility that a Complex Object cannot have “navigation properties” and since an Entity is likely to have such properties they cannot be members of a Complex Object. This stackoverflow.com post, “<a href="http://stackoverflow.com/questions/9335650/ria-services-invoke-operation-return-complex-type-with-entity-properties">RIA Services Invoke Operation return Complex Type with Entity properties</a>,” appears to support this twist.</p>
+<h2>Do not forget to use System.ServiceModel.DomainServices.Client for the Client</h2>
+<p>When you don’t use <code>System.ServiceModel.DomainServices.Client</code> on the Client, you will not be able to use LINQ extensions on <code>EntityQuery&lt;T&gt;</code>. …I don’t think most people still using RIA Services will run into this problem because this problem should appear when trying to re-factor a mature Silverlight project to support RIA Services. Following samples like “<a href="http://www.silverlight.net/learn/advanced-techniques/wcf-ria-services/wcf-ria-services-(silverlight-quickstart)">WCF RIA Services</a>” or “<a href="http://msdn.microsoft.com/en-us/library/ee707376(VS.91).aspx">Walkthrough: Creating a RIA Services Solution</a>” where you check “Enable WCF RIA Services” in the “New Silverlight Application dialog box” should give you a client-side reference to <code>System.ServiceModel.DomainServices.Client</code> for free.</p>
+<h2>The standalone MetadataType classes can have members of type object for convenience.</h2>
+<p>What’s important are matching member names, not types. Writing these classes by hand can be rather tedious so specifying object for each member is convenient. In “<a href="http://www.nikhilk.net/RIA-Services-Fluent-Metadata-API.aspx">Fluent API for .NET RIA Services Metadata</a>,” Nikhil Kothari suggests that we use a fluent (lambda-based) API instead of going through this tedium of building “ugly buddy” classes. And yes, according to a forum post, “<a href="http://forums.silverlight.net/p/242023/603456.aspx/1?Announcement+FluentMetadata+for+WCF+RIA+Services">Announcement: FluentMetadata for WCF RIA Services</a>,” there is NuGet package for this: <code>FluentMetadata</code>.</p>
+<h2>For “Include” associations to work as expected use the attribute and the method call.</h2>
+<p>This one may be obvious to many, many others. But Jeff Handley took some <a href="http://forums.silverlight.net/p/221917/532286.aspx">forum time</a> to post this:</p>
+<blockquote>
+<p><code>.Include()</code> within your Query method tells Entity Framework to include the data in the query.</p>
+<p><code>[Include]</code> on your metadata tells RIA Services to include the child data in serialization.</p>
+<p>RIA Services cannot infer whether or not to include child entities in serialization because some DALs support lazy loading of child entities. So we don't traverse child properties for their data unless the [Include] attribute is present.</p>
+</blockquote>
+<h2>Don’t be ‘fooled’ by child entity counts of zero.</h2>
+<p>Madeleine of South Africa in “<a href="http://madsdevblog.blogspot.com/2011/02/eager-loading-ef4-entities-with-ria.html">Eager loading EF4 entities with RIA services using Silverlight 4.0</a>” writes:</p>
+<blockquote>
+<p>The first stumbling block when trying to access these navigation properties from the client side was due to the fact that LazyLoading was enabled by default.</p>
+</blockquote>
+<p>So often “by default,” when you are debugging code with entities, the entity navigation properties will give zero counts for data that you know is there. You can insure that children are loaded by explicitly loading the children (with, say <code>.ToList()</code>—see “For ‘Include’ associations to work as expected use the attribute and the method call.” above).</p>
+<h2>You want JSON from your RIA Service? …you’ll need to write a little *.svc file.</h2>
+<p>For me, “<a href="http://blogs.msdn.com/b/davrous/archive/2010/12/03/how-to-open-a-wcf-ria-services-application-to-other-type-of-clients-the-soap-endpoint-3-5.aspx">How to open a WCF RIA Services application to other type of clients: the SOAP endpoint (3/5)</a>” by David Rousset of Microsoft France, sold me on RIA Services. The information in this article provides me with the ability to live in two worlds at the same time: the Microsoft world before 2010 (largely, the SOAP world) and the bright future world of 2010.</p>
+<p>There is also a <acronym title="Representational State Transfer">REST</acronym> world that has been thriving before 2010—a <acronym title="JavaScript Object Notation">JSON</acronym>-based REST world. Sandrino Di Mattia in “<a href="http://blogs.realdolmen.com/experts/2010/09/01/things-you-can-do-with-wcf-ria-services-and-a-regular-svc-file/">Things you can do with WCF RIA Services and a regular .svc file</a>” and stackoverflow.com’s “<a href="http://stackoverflow.com/questions/5119924/problems-exposing-a-ria-services-as-soap-json-etc">Problems exposing a RIA services as SOAP, Json, etc</a>” delve into the details of exposing a RIA service as RESTful JSON. The stackoverflow.com folks provide a very important bit of information:</p>
+<blockquote>
+<p>An INVOKE-decorated method is exposed as JSON only if it has the property <code>HasSideEffect=false</code>.</p>
+</blockquote>
+<p>This attribute decoration is the equivalent of <code>[HttpGet]</code> (with <code>JsonRequestBehavior.AllowGet</code>) in ASP.NET MVC.</p>
+<p>Sandrino’s work, by the way, helped me get rid of this error message:Parser Error Message: The CLR Type 'System.ServiceModel.DomainServices.Hosting.DomainServiceHostFactory' could not be loaded during service compilation.This was due to how the <code>&lt;%@ ServiceHost`` …&gt;</code> declaration is written in the *.svc file.</p>
+<p>This wonderful ability to expose JSON from a RIA Service via a *.svc file is , by the way again, the solution to the problem surfaced in “<a href="http://forums.silverlight.net/t/208798.aspx/1">Can Generic types be returned from RIA Service[?]</a>.”</p>
+<p>Now that we know we can use a *.svc file with RIA Services, the following excerpt from <a href="http://goldytech.wordpress.com/2010/11/13/silverlight-enabled-wcf-service-deployment-on-iis/">a</a> is either out of date or questionable:</p>
+<blockquote>
+<p>Both WCF RIA service (Domain Service) and Silverlight enabled WCF service works on the core principles of WCF technology. The difference is that lot of code is generated by RIA Services framework and there is no physical .svc file in your project whereas in the Silverlight enabled WCF service you have .svc file with you and things are more under your control.</p>
+</blockquote>
+<h2>RIA Services only supports output caching for GET [Query] operations.</h2>
+<p>This is not really a problem for me but Mathew Charles took some time in “<a href="http://blogs.msdn.com/b/digital_ruminations/archive/2011/01/05/ria-services-output-caching.aspx">RIA Services Output Caching</a>” to highlight an “important feature of RIA Services—our integration with ASP.NET output caching.” What’s notable for me from this article is that “…caching is only enabled for query methods, and only if they use <span style="font-variant:small-caps;">get</span>.” I have no idea (today) why one would need to cache a <span style="font-variant:small-caps;">post</span> operation but this is just today…</p>
+<h2>Obscure error: The &quot;CreateRiaClientFilesTask&quot; task was not given a value for the required parameter…</h2>
+<p>The “&quot;CreateRiaClientFilesTask&quot; task was not given a value for the required parameter” error was a problem for me. This is also a bit fuzzy to me but I think this problem was related to having Silverlight 5 stuff installing over the SL4 stuff. This issue is suggested in a <a href="http://social.microsoft.com/Forums/en-US/Offtopic/thread/01e396fe-2a01-4687-8914-9e8dab52ec7a/">forum post</a>—and another <a href="http://forums.silverlight.net/t/235423.aspx/1">forum post</a>.</p>
+<h2>RIA Services had support for Windows Azure in 2011 but…</h2>
+<p>I am not quite sure that RIA services just works with the latest version of Azure table storage (the 2012/Windows 8 time frame). I will start with articles like “<a href="http://blogs.msdn.com/b/kylemc/archive/2010/11/01/ria-services-and-windows-azure-table-storage.aspx">RIA Services and Windows Azure Table Storage</a>” by Kyle McClellan or Jeff Handley’s <a href="http://jeffhandley.com/archive/2011/04/13/MIX11Releases.aspx">2011 coverage</a> of this topic and then see how things go with the new Windows Azure.</p>
+<h2>Related Resources</h2>
+<ul>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/ee707344(v=VS.91).aspx">WCF RIA Services</a>”</li>
+<li>“<a href="https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=Technology&amp;f%5B0%5D.Value=WCF%20RIA%20Services&amp;f%5B1%5D.Type=Affiliation&amp;f%5B1%5D.Value=Microsoft">MSDN Samples Gallery Getting Started—WCF RIA Services</a>”</li>
+<li>“<a href="http://channel9.msdn.com/Events/MIX/MIX10/CL09">Developing with WCF RIA Services Quickly and Effectively</a>”</li>
+<li>“<a href="http://blogs.msdn.com/b/brada/archive/2009/03/19/what-is-net-ria-services.aspx">What is .NET RIA Services?</a>”</li>
+<li>“<a href="http://www.nikhilk.net/RIA-Services-MIX10-Slides-Code.aspx">MIX10 Talk—Slides and Code</a>”</li>
+<li>“<a href="http://weblogs.asp.net/scottgu/archive/2010/05/17/silverlight-4-tools-for-vs-2010-and-wcf-ria-services-released.aspx">Silverlight 4 Tools for VS 2010 and WCF RIA Services Released</a>”</li>
+<li>“<a href="http://www.nikhilk.net/RIA-Services-V1.aspx">RIA Services—v1 Shipped!</a>”</li>
+<li>“<a href="http://www.codeproject.com/Articles/82298/A-Sample-Silverlight-4-Application-Using-MEF-MVVM">A Sample Silverlight 4 Application Using MEF, MVVM, and WCF RIA Services</a>”</li>
+<li>“<a href="http://thedatafarm.com/blog/data-access/ria-services-and-entity-framework-pocos/">RIA Services and Entity Framework POCOs</a>”</li>
+<li>“<a href="http://www.codeproject.com/Articles/133414/POCO-Entities-Through-RIA-Services">POCO Entities Through RIA Services</a>”</li>
+<li>“<a href="http://msdn.microsoft.com/en-us/library/gg602754(v=vs.91).aspx">How to: Create a Domain Service that uses POCO-defined Entities</a>”</li>
+<li>“<a href="http://varunpuranik.wordpress.com/2011/06/29/wcf-ria-services-support-for-ef-4-1-and-ef-code-first/">WCF RIA Services Support for EF 4.1 (and EF Code-First)</a>”</li>
+<li>“<a href="http://jeffhandley.com/archive/2011/06/30/RIAServicesCodeFirst.aspx">RIA Services EF Code First Support</a>”</li>
+<li>“<a href="http://www.silverlightshow.net/items/WCF-RIA-Services-Part-3-Updating-Data.aspx">WCF RIA Services Part 3: Updating Data</a>”</li>
+<li>“<a href="http://jeffhandley.com/archive/2011/04/13/RIAJS-jQuery-client-for-WCF-RIA-Services.aspx">RIA/JS—jQuery client for WCF RIA Services</a>”</li>
+<li>“<a href="http://blogs.msdn.com/b/brada/archive/2010/03/16/silverlight-4-ria-services-ready-for-business-exposing-odata-services.aspx">Silverlight 4 + RIA Services</a>”</li>
+<li>“<a href="http://blogs.msdn.com/b/brada/archive/2010/04/12/silverlight-4-ria-services-ready-for-business-ajax-endpoint.aspx">Silverlight 4 + RIA Services—Ready for Business: Ajax Endpoint</a>”</li>
+<li>“<a href="http://blog.larud.net/archive/2011/07/04/simple-wcf-ria-services-ef-4-1-scaffolding-aspx">Simple WCF Ria Services EF 4.1 Scaffolding</a>”</li>
+<li>“<a href="http://www.codeproject.com/Articles/344078/ASP-NET-WebAPI-Getting-Started-with-MVC4-and-WebAP">ASP.NET WebAPI: Getting Started with MVC4 and WebAPI</a>”</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-08-13T23:10:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>PowerShell so far… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>PowerShell so far…</h1>
+<p>I’ve finally had the opportunity to work with PowerShell full time around Internet Information Services configuration on Windows Server 2012. I would like to roll up a few PowerShell highlights glimmering over the last few weeks. I’ve been playing with PowerShell for over ten years but now I can refresh my resume with new, sustained experience (under the influence of my extensive C# development).</p>
+<h2>Before considering modules, look into “dot-sourcing”…</h2>
+<p>This is what the cool PowerShell kids call “dot-sourcing”:</p>
+<p>Clear-Host
+. E:\Scripts\My-Functions.ps1</p>
+<p>$x = Get-MyValue()</p>
+<p>The Scripting Guy <a href="http://blogs.technet.com/b/heyscriptingguy/archive/2009/12/23/hey-scripting-guy-december-23-2009.aspx">makes it plain</a>, “use the dot sourcing operator to run the script so that the functions from the script are part of the calling scope. To dot source the script, you use the dot source operator (a period) followed by the path to the script containing the functions you wish to include in your current scope.”</p>
+<h2>Use $null, $true, $false…</h2>
+<p>As a C# guy this trips me up quite a bit. These <a href="https://technet.microsoft.com/en-us/library/hh847768.aspx"><em>automatic variables</em></a>, <code>$null</code>, <code>$true</code>, <code>$false</code>, are just the tip of the PowerShell iceberg.</p>
+<h2>No ternary operations…</h2>
+<p><a href="http://alex-taran.blogspot.com/2014/07/ternary-operation-powershell.html">Alexander Taran</a> and I were looking for the same thing. It’s not there.</p>
+<h2>No need to .Trim() PowerShell “here” strings…</h2>
+<p>The <code>.Length</code> property below will return <em>0</em>:</p>
+<p>@&quot;
+&quot;@.Length</p>
+<h2>Arrays do not sort with piping without .GetEnumerator()</h2>
+<p>The importance of <code>.GetEnumerator()</code> in PowerShell can be quite disconcerting to a C# person like me. I simply to do not use <code>.GetEnumerator()</code> explicitly in C# because I’m a LINQ guy with little need to implement <code>IEnumerable</code>.</p>
+<p>So let’s reverse an array in PowerShell:</p>
+<pre><code class="language-powershell">$a = &quot;A,B,C&quot;.Split(',')
+    [System.Array]::Reverse($a)
+    foreach ($i in $a) { $i }
+</code></pre>
+<p>This approach is <em>not</em> PowerShell-native because of the desperate call out to the .NET <code>System.Array</code>. The following approach is native:</p>
+<pre><code class="language-powershell">$a = &quot;A,B,C&quot;.Split(',')
+    foreach ($i in $a.GetEnumerator() | sort -Descending) { $i }
+</code></pre>
+<p>The piping to <code>sort</code> in <code>foreach</code> is possible only because of the rather non-obvious call to <code>.GetEnumerator()</code>. In “<a href="http://blogs.technet.com/b/heyscriptingguy/archive/2014/09/28/weekend-scripter-sorting-powershell-hash-tables.aspx">Weekend Scripter: Sorting PowerShell Hash Tables</a>” the Scripting Guy kind of explains why this is an issue—his title of his article leads to my next note (below). He does a better job in this tips of the week:</p>
+<blockquote>
+<p>…in the preceding command the hash table is sent as a single object; thus there’s nothing for the Sort-Object cmdlet to sort. If we want to sort a hash table by Name we need to use the <code>GetEnumerator</code> method, which effectively sends each entry in the hash table across the pipeline as a separate object…</p>
+</blockquote>
+<h2>Generate PowerShell Objects from ordered hash tables to sort object properties…</h2>
+<p>PowerShell allows us to make objects on the fly (kind of like anonymous objects in C#) which can be piped into a CSV file for Excel. The <code>-Property</code> argument of <code>New-Object</code> takes <code>IDictionary</code> which is another way of saying <em>hash table</em>. Unless the hash table is ordered, <code>New-Object</code> will generate the properties in “random” order. In the following example (which might not be the best way), I am generating an ordered hash table from a regular hash table and passing it to <code>New-Object</code>:</p>
+<pre><code class="language-powershell">$orderedHash = [ordered]@{}
+    foreach($i in $hash.Keys.GetEnumerator() | sort) { $orderedHash.Add($i, $hash[$i]) }
+    $o = New-Object -Property $orderedHash -TypeName psobject
+</code></pre>
+<h2>Do not use ConvertTo-Csv to write a CSV file, use Export-Csv instead…</h2>
+<p>In “<a href="http://blogs.technet.com/b/heyscriptingguy/archive/2014/02/04/use-powershell-to-create-csv-file-to-open-in-excel.aspx">Use PowerShell to Create CSV File to Open in Excel</a>,” the Scripting Guy shows me how to send the contents of <code>$o</code> above to Excel:</p>
+<pre><code class="language-powershell">$o | Export-Csv -Path &quot;my_excel_data.csv&quot; -Encoding UTF8 -NoTypeInformation
+</code></pre>
+<p>I’ve noticed that Excel (2010) only supports encodings that are UTF8 or ASCII.</p>
+<h2>Treat a PowerShell array like a C# List<T> by using +=…</h2>
+<p>The following function I wrote for IIS inventory reporting demonstrates how we <em>append</em> to a PowerShell array (<code>$paths</code>):</p>
+<pre><code class="language-powershell">function Get-WebApplicationPowerShellPaths()
+{
+    $sites = Get-Website
+    $apps = Get-WebApplication
+    $paths = @()
+    foreach($i in $apps)
+    {
+        $site = $sites | where { $i.PhysicalPath.StartsWith($_.PhysicalPath) }
+        $paths += &quot;IIS:\Sites\$($site.Name)\$($i.path.Substring(1))&quot;
+    }
+    return $paths
+}
+</code></pre>
+<p>A C# person would likely use <code>List&lt;string&gt;.Add()</code> and might have trouble finding the PowerShell equivalent.</p>
+<h2>String-interpolate object properties with $()…</h2>
+<p>The function above demonstrates how the <code>$()</code> syntax is used inside of a string to reach object properties and make object method calls: <code>&quot;IIS:\Sites\$($site.Name)\$($i.path.Substring(1))&quot;</code>.</p>
+<p>For those familiar with the Razor syntax of ASP.NET MVC, we see that <code>$()</code> is similar to <code>@()</code> for string interpolation.</p>
+<h2>Test-Path works on more than just ‘traditional’ drives…</h2>
+<p>The following is PowerShell-awesome to me:</p>
+<pre><code class="language-powershell">if (Test-Path &quot;IIS:\Sites\$Site\$AppName&quot;)
+{
+    Write-Host -ForegroundColor Cyan &quot;Web application $AppName already exists. Removing...&quot;
+    Remove-WebApplication -Site $Site -Name $AppName
+    if (Test-Path &quot;$PhysicalPath\Web.config&quot;) { Remove-Item &quot;$PhysicalPath\Web.config&quot; }
+}
+</code></pre>
+<p>This test, <code>if (Test-Path &quot;IIS:\Sites\$Site\$AppName&quot;)</code>, checks to see whether an IIS web app exists or not!</p>
+<h2>Pipe a stream of hash tables with @{} and ForEach-Object…</h2>
+<p>It is easy for me to confuse a hash table with a PowerShell object because this:</p>
+<pre><code class="language-powershell">@{
+    PropertyOne = &quot;one-1&quot;;
+    PropertyTwo = &quot;one-2&quot;;
+    PropertyThree = &quot;one-3&quot;;
+}
+</code></pre>
+<p>…or this:</p>
+<pre><code class="language-powershell">@{
+    &quot;PropertyOne&quot; = &quot;one-1&quot;;
+    &quot;PropertyTwo&quot; = &quot;one-2&quot;;
+    &quot;PropertyThree&quot; = &quot;one-3&quot;;
+}
+</code></pre>
+<p>…allows me to do this:</p>
+<p>$data[0].PropertyOne -eq $data[0][&quot;PropertyOne&quot;]</p>
+<p>So it is this hash-table dot syntax, <code>$data[0].PropertyOne</code>, that makes me erroneously think I am generating “anonymous objects” on the fly. But this weirdness (from a C# perspective) is very cool when I use an array of hash tables with <code>ForEach-Object</code>:</p>
+<pre><code class="language-powershell">$data =
+@{
+    &quot;PropertyOne&quot; = &quot;one-1&quot;;
+    &quot;PropertyTwo&quot; = &quot;one-2&quot;;
+    &quot;PropertyThree&quot; = &quot;one-3&quot;;
+},
+@{
+    PropertyOne = &quot;two-1&quot;;
+    PropertyTwo = &quot;two-2&quot;;
+    PropertyThree = &quot;two-3&quot;;
+},
+@{
+    PropertyOne = &quot;three-1&quot;;
+    PropertyTwo = &quot;three-2&quot;;
+    PropertyThree = &quot;three-3&quot;;
+}
+$data | ForEach-Object `
+{
+    $_.PropertyOne
+    $_.PropertyTwo
+    $_.PropertyThree
+}
+</code></pre>
+<p>For my personal benefit, I must point out that this:</p>
+<pre><code class="language-powershell">$data | ForEach-Object `
+    {
+        $_.PropertyOne
+        $_.PropertyTwo
+        $_.PropertyThree
+    }
+</code></pre>
+<p>…and this:</p>
+<pre><code class="language-powershell">$data | ForEach-Object { New-Object -Property $_ -TypeName psobject } | ForEach-Object `
+    {
+        $_.PropertyOne
+        $_.PropertyTwo
+        $_.PropertyThree
+    }
+</code></pre>
+<p>…do the same thing. But the former is more efficient (and easier to read) than the latter. (By the way, I am almost certain that Jeffrey Snover (or someone else) pointed this out publically years ago in writing or in person but I failed to understand its importance. Moreover, I am under the impression that there is a <em>fundamental</em> relationship between hash tables and PowerShell objects.)</p>
+<h2>Generate an empty text file with PowerShell…</h2>
+<p>Do this:</p>
+<pre><code class="language-powershell">&quot;&quot; | Set-Content &quot;default.html&quot; -Encoding UTF8
+</code></pre>
+<h2>Don’t forget about Select-Xml and XPath queries when reading XML files…</h2>
+<p>In the example below, I use <code>Select-Xml</code> with an XPath query to read a <code>web.config</code> file:</p>
+<pre><code class="language-powershell">$configPath = &quot;$($Element.PhysicalPath)\Web.config&quot;
+    $node = (Select-Xml -Path $configPath -XPath configuration/system.web).Node
+    $compilation = $node.SelectSingleNode(&quot;./compilation&quot;)
+    $httpRuntime = $node.SelectSingleNode(&quot;./httpRuntime&quot;)
+    &quot;$($compilation.Name):$($compilation.Attributes['debug'].Name):$($compilation.Attributes['debug'].Value)&quot;
+    &quot;$($compilation.Name):$($compilation.Attributes['targetFramework'].Name):$($compilation.Attributes['targetFramework'].Value)&quot;
+    &quot;$($httpRuntime.Name):$($httpRuntime.Attributes['targetFramework'].Name):$($httpRuntime.Attributes['targetFramework'].Value)&quot;
+</code></pre>
+<p>By the way, resorting to <code>Select-Xml</code> to read a value (or the value is empty/null) because <code>Get-WebConfigurationValue</code> is not working could mean that the <code>web.config</code> is not valid with respect to IIS (try browsing the site as a brute-force way to ‘validate’ <code>web.config</code>).</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-06-05T07:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

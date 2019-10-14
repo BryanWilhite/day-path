@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Angular JS and checkbox array support - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Angular JS and checkbox array support</h1>
+<p>What I am seeing so far is Angular JS supporting one-way <code>checkbox</code> arrays—from the Model to the View via <code>ngRepeat</code>. There seems to be no support the other way around. So when we declare, <code>&lt;input name=&quot;checkSelections[]&quot; type=&quot;checkbox&quot; ng-model=&quot;foo&quot;&gt;</code>, Angular JS does not see the <code>checkSelection[]</code> array syntax and assumes <code>foo</code> is an array.</p>
+<p>To further confuse ourselves, we could do something like this:</p>
+<pre><code class="language-html">&lt;input name=&quot;checkSelections[]&quot; type=&quot;checkbox&quot; ng-model=&quot;foo[0]&quot;&gt;
+&lt;input name=&quot;checkSelections[]&quot; type=&quot;checkbox&quot; ng-model=&quot;foo[1]&quot;&gt;
+&lt;input name=&quot;checkSelections[]&quot; type=&quot;checkbox&quot; ng-model=&quot;foo[2]&quot;&gt;
+</code></pre>
+<p>Clicking on the second <code>checkbox</code>, would give us something almost useless: <code>foo = {&quot;1&quot; : true }</code>. To declare <code>ngTrueValue</code> or <code>ngFalseValue</code>, by the way, would cause an error. Any traditional <code>value=&quot;bar&quot;</code> declarations are ignored.</p>
+<p>Apart from the confusion mentioned, it looks like Angular JS 1.x has no support for checkbox arrays (groups)—which has had server-side support for decades. It would not surprise me to find that none of the client-side frameworks has support for it out of the box.</p>
+<h2>Related Links</h2>
+<ul>
+<li><code>ng-true-value</code> and <code>ng-false-value</code> for Angular check boxes [<a href="https://docs.angularjs.org/api/ng/input/input%5Bcheckbox%5D">docs.angularjs.org</a>]</li>
+<li>AngularJS Form Validation with <code>ngMessages</code> <a href="https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages">[scotch.io]</a></li>
+<li>Handling Checkboxes and Radio Buttons in Angular Forms <a href="https://scotch.io/tutorials/handling-checkboxes-and-radio-buttons-in-angular-forms">[scotch.io]</a></li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-09-22T04:23:38.345Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

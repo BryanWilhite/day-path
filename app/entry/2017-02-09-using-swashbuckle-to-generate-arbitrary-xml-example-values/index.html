@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Using Swashbuckle to Generate Arbitrary XML Example Values - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Using Swashbuckle to Generate Arbitrary XML Example Values</h1>
+<p>These notes follow a previous entry, “<a href="http://songhayblog.azurewebsites.net/entry/using-swashbuckle-to-support-swaggerfied-xml-production-and-consumption">Using Swashbuckle to Support Swaggerfied XML Production and Consumption</a>,” continuing to challenge of producing Swagger UI output like this:</p>
+<div style="text-align:center">
+<p><a href="https://www.flickr.com/photos/wilhite/32768627106/in/dateposted-public/"><img src="https://farm4.staticflickr.com/3829/32768627106_141f2fe4a0_o_d.png" alt="Swashbuckle Swagger UI with produces Example Value in Arbitrary XML" title="!*m82"></a></p>
+</div>
+<p>and this:</p>
+<div style="text-align:center">
+<p><a href="https://www.flickr.com/photos/wilhite/32768627276/in/dateposted-public/"><img src="https://farm3.staticflickr.com/2539/32768627276_e1a5e59894_o_d.png" alt="Swashbuckle Swagger UI with consumes Example Value in Arbitrary XML" title="!*m82"></a></p>
+</div>
+<p>The way this is done is by building a new <a href="https://github.com/domaindrivendev/Swashbuckle/blob/2ed189b041e0e7849ec59a2fa2c0078e540a8359/Swashbuckle.Core/Swagger/SwaggerDocument.cs#L162"><code>Swashbuckle.Swagger.Schema</code></a> and using it on <code>Response.schema</code> for Swagger <code>produces</code> and <code>Parameter.schema</code> for Swagger <code>consumes</code>. These operations can be tacked on the end of <a href="https://gist.github.com/BryanWilhite/1a0e8c14a5002995aa5eb7984bfa5cd0">the blocks of code we saw earlier</a> in <code>IOperationFilter.Apply()</code>.</p>
+<p>I have centralized this code in extension methods. So, for <code>consumes</code>, I have this extension method:</p>
+<pre><code class="language-c#">public static Parameter WithAbbreviatedSchema(this Parameter parameter)
+{
+    if (parameter == null) return null;
+    if (parameter.schema == null) return null;
+
+parameter.schema.SetAbbreviatedSchema(isConsumingSchema: true);
+
+return parameter;
+}
+</code></pre>
+<p>For <code>produces</code>, I have:</p>
+<pre><code class="language-c#">public static Response WithAbbreviatedSchema(this Response response)
+{
+    if (response == null) return null;
+    if (response.schema == null) response.schema = new Schema();
+
+response.schema.SetAbbreviatedSchema(isConsumingSchema: false);
+
+return response;
+}
+</code></pre>
+<p>This simple pattern I am showing leads to, “What the hell is <code>SetAbbreviatedSchema()</code>?” Here is the answer:</p>
+<pre><code class="language-c#">public static void SetAbbreviatedSchema(this Schema schema, bool isConsumingSchema)
+{
+    if (schema == null) return;
+
+    var oneSpace = &quot; &quot;;
+        var sendingPartyId = isConsumingSchema ? &quot;CONSUMING_MODE&quot; : &quot;PRODUCING_MODE&quot;;
+        var topLevelTitle = isConsumingSchema ? &quot;in:PAYLOAD&quot; : &quot;out:PAYLOAD&quot;;
+
+    schema.properties = new Dictionary&lt;string, Schema&gt; {
+        {
+            &quot;HEADER&quot;,
+            new Schema
+            {
+                properties = new Dictionary&lt;string, Schema&gt;
+                {
+                    { &quot;PROPERTY_ONE&quot;, new Schema { type = &quot;string&quot;, example = sendingPartyId } },
+                    { &quot;PROPERTY_TWO&quot;, new Schema { type = &quot;string&quot;, example = oneSpace } },
+                    { &quot;PROPERTY_THREE&quot;, new Schema { type = &quot;string&quot;, example = oneSpace } },
+                },
+                type = &quot;object&quot;
+            }
+        },
+        {
+            &quot;BODY&quot;,
+            new Schema
+            {
+                properties = new Dictionary&lt;string, Schema&gt;
+                {
+                    { &quot;PROPERTY_ONE&quot;, new Schema { type = &quot;string&quot;, example = oneSpace } },
+                    { &quot;PROPERTY_TWO&quot;, new Schema { type = &quot;string&quot;, example = oneSpace } },
+                },
+                type = &quot;object&quot;
+            }
+        }
+    };
+    schema.title = topLevelTitle;
+    schema.type = &quot;object&quot;;
+}
+</code></pre>
+<p>All of these extension methods are wonderful but Swashbuckle will ignore all of this work for <code>consumes</code> unless we make sure that <code>Parameter.schema.@ref</code> is set to <code>null</code>. This, for me, leads to a final extension method:</p>
+<pre><code class="language-c#">public static Parameter WitNullSchemaReference(this Parameter parameter)
+{
+    if (parameter == null) return null;
+    if (parameter.schema == null) return null;
+    parameter.schema.@ref = null;
+    return parameter;
+}
+</code></pre>
+<p>We can now return to the implementation of <code>IOperationFilter</code>, <code>SwaggerContentTypeOperationFilter</code>, from <a href="http://songhayblog.azurewebsites.net/entry/using-swashbuckle-to-support-swaggerfied-xml-production-and-consumption">my previous post</a> with its <code>ApplyConsumption()</code> method:</p>
+<pre><code class="language-c#">static void ApplyConsumption(SwaggerContentTypeAttribute swaggerAttribute, Parameter swaggerParameter)
+{
+    switch (swaggerAttribute.Tag)
+    {
+        case &quot;ConsumeXml&quot;:
+            swaggerParameter.WitNullSchemaReference().WithAbbreviatedSchema();
+            break;
+    }
+}
+</code></pre>
+<p>and its <code>ApplyProduction()</code> method:</p>
+<pre><code class="language-c#">static void ApplyProduction(SwaggerContentTypeAttribute swaggerAttribute, Operation operation)
+{
+    Response okResponse = null;
+
+switch (swaggerAttribute.Tag)
+    {
+        case &quot;ConsumeXml&quot;:
+            okResponse = new Response()
+                .WithOkDescription()
+                .WithAbbreviatedSchema();
+            break;
+    }
+
+if (okResponse != null) operation.responses.Add(okResponse.To200Pair());
+}
+</code></pre>
+<p>Now, for the question, “What is going on with that <code>topLevelTitle</code> variable in <code>SetAbbreviatedSchema()</code>?” This question refers to this (shown above):</p>
+<pre><code class="language-c#">var topLevelTitle = isConsumingSchema ? &quot;in:PAYLOAD&quot; : &quot;out:PAYLOAD&quot;;
+</code></pre>
+<p>This line is a hack to get around the current situation with Swagger/Swashbuckle where <code>Schema</code> definitions are considered duplicates when they have the same <code>Schema.title</code>.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2017-02-10T00:29:42.561Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

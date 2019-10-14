@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Working in markdown, leaving behind typing a typeface… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Working in markdown, leaving behind typing a typeface…</h1>
+<p><a href="https://en.wikipedia.org/wiki/Markdown#History">Markdown</a> has been around since 2004. <a href="https://en.wikipedia.org/wiki/GitHub#History">GitHub</a> has been around since 2009. <a href="https://en.wikipedia.org/wiki/Visual_Studio_Code#History">Visual Studio Code</a> has been around since 2015. So it kind of makes sense to me that I can take these three things and finally decide I have enough stuff to move out of Microsoft Word in 2017.</p>
+<p>From an aesthetic point of view, Microsoft Word gave me the beauty of typing a typeface in real time, giving me the 1980s-era, grand illusion of laying out a <em>print document</em>. This would be the first pleasurable thing lost when moving to a typical Markdown editor. From a technical point of view, there may be edge cases where Microsoft Word towers over a typical Markdown editor. In 2017, I look forward to finding them.</p>
+<p>Microsoft Word falls down flat when it comes to long-term archival storage. The <a href="https://en.wikipedia.org/wiki/Office_Open_XML">Office Open XML</a> format is profoundly verbose—and, again, I look forward to finding out that Markdown cannot effectively replace it. Right off the bat, Markdown does not natively support the concept of attributes. My work with Microsoft Word for example shows how Word styles can be used to generate <code>class</code> attribute in HTML. The Daring Fireball crew themselves <a href="https://daringfireball.net/projects/markdown/syntax#html">say</a>, “For any markup that is not covered by Markdown’s syntax, you simply use HTML itself.”</p>
+<p>Marius Schulz <a href="https://blog.mariusschulz.com/2015/10/11/parsing-markdown-in-net">reminds me</a> that the .NET framework has <code>CommonMark.NET</code>, a <a href="https://www.nuget.org/packages/CommonMark.NET/">NuGet package</a> (from 2014) ready for me translate a folder full of <code>*.md</code> files into HTML (it does not convert HTML into Markdown—which make sense <em>by definition</em> since Markdown is a <em>subset</em> of HTML). This encourages me to set up Git repos for my blog posts and other writing projects (the popular e-reader formats out there are HTML formats so working from Markdown positions closer to these formats).</p>
+<p><a href="http://pandoc.org/MANUAL.html">Pandoc</a>, by the way, provides this command:</p>
+<pre><code class="language-bash">pandoc test.html -o test.md --parse-raw
+</code></pre>
+<p>This is an attempt to convert HTML to Markdown. I have not tried this bit yet. As of this writing, the HTML you see in <a href="https://github.com/BryanWilhite/Blog/blob/master/2016-12/Working%20in%20markdown%2C%20leaving%20behind%20typing%20a%20typeface.md">this post is generated from markdown in my GitHub repository</a>.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2016-12-30T21:38:46.899Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

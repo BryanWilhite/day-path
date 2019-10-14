@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>I’ve moved to NBlog, away from BlogEngine.NET - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>I’ve moved to NBlog, away from BlogEngine.NET</h1>
+<p>The original, default tagline for Chris Fulstow’s <a href="https://github.com/ChrisFulstow/NBlog">NBlog</a> was, “A blog platform for the discerning .NET developer…” My translation of this is, “This Blog platform does not have a complex administration backend so you have to be a developer to properly customize NBlog.” NBlog is also called “light”—it has about 360 files (for the <code>*.Web</code> project). I mention all of these things not to be what they call “snarky.” I mention these things out of true appreciation. NBlog is what I turned to when I got pissed off with the state of .NET blogging platforms and wanted to ‘build my own’—instead of starting with nothing I started with NBlog and it has a lot to teach me (especially the <a href="http://openid.net/">OpenID</a> stuff).</p>
+<p>360 files sounds like a hell of a lot but take a count of <a href="http://dotnetblogengine.net/">BlogEngine.NET</a>—which I consider small (one of the smallest)—and this “innovative open source blogging platform” takes us well above a thousand. So NBlog by comparison is profoundly minimalist. These are some of the things that I immediately notice are missing from NBlog:</p>
+<ul>
+<li>The concept of “tagging” in particular and “taxonomy” in general.</li>
+<li>The ability to schedule posts.</li>
+<li>Full support for HTML <em>and</em><a href="http://daringfireball.net/projects/markdown/">MarkDown</a> at the same time.</li>
+</ul>
+<p>On the other hand, Chris Fulstow introduces me to some solutions that I may find useful:</p>
+<ul>
+<li><a href="https://github.com/jetheredge/SquishIt">Squishit</a> might be the way to go when I am unable to run MVC on .NET 4.5.</li>
+<li>I’ve got to see how Chris is using <a href="http://code.google.com/p/autofac/">Autofac</a>—it might be doing some things <acronym title="Managed Exensibility Framework">MEF</acronym> is not giving to ASP.NET MVC.</li>
+<li>And what is “<a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>”?</li>
+</ul>
+<p>BTW: NBlog supports <a href="http://disqus.com/">DISQUS</a>. I don’t have is enabled for my Blog right now.</p>
+<h2>Stuff I might take out of my copy of NBlog</h2>
+<p>I will definitely take <a href="http://quartznet.sourceforge.net/">Quartz.net</a> support out of NBlog (which implies that I won’t need <a href="http://sharpbox.codeplex.com/">SharpBox</a>). I actually use Quartz.net and don’t see it as “core” functionality. The <a href="http://wpl.codeplex.com/">AntiXSS</a> support from Microsoft for NBlog is known to be <a href="http://eksith.wordpress.com/2012/02/13/antixss-4-2-breaks-everything/">nothing short of a minor failure</a> for Microsoft. I noticed that it was mangling my <acronym title="Extensible Hypertext Markup Language">XHTML</acronym> output. I’m curious as why Chris chose Google’s <a href="http://code.google.com/p/google-code-prettify/">Prettify</a> over other JavaScript syntax-highlighting solutions.</p>
+<h2>Awesome Azure Blog Storage Support for NBlog</h2>
+<p>What is totally awesome about NBlog is its support for Windows Azure Blob Storage. “<a href="http://blog.spontaneouspublicity.com/running-nblog-on-windows-azure">Running NBlog on Windows Azure</a>” from Spontaneous Publicity is a short, straight-forward note about how to set it up. This message is key:</p>
+<blockquote>
+<p>NBlog uses a repository pattern for persisting settings and blob entries. Currently it offers providers for Json file storage, Sql database, and MongoDb. I could have opted to attempt to use the Sql repository to use Sql Azure—but I like the simplicity of storing data as .json files so I chose to use Azure Blob Storage. … Getting NBlog up and running on Azure really was as simple as replacing the repository by creating one class: AzureBlobRepository. … And that is basically all of the changes needed to run NBlog on Windows Azure. I think the simplicity of this change speaks to the power of the repository pattern when used correctly.</p>
+</blockquote>
+<p>It is because NBlog is so perfectly devoted to the <a href="http://blog.lowendahl.net/?p=249">Repository Pattern</a> that blob support comes so easily. This is the first time in my near-20-year career that another programmer actually made my life easier because they refused to bend the rules around a formal design pattern.</p>
+<p>It must be mentioned that BlogEngine.NET supports Windows Azure but almost all of the documentation around this assume that we mean to use SQL Azure, which is an extravagant expense as far as I’m concerned.</p>
+<h2>JSON-encoding snarky-ness</h2>
+<p>When I uploaded <code>Config.json</code> to Azure Blob Storage, I got Json.NET exceptions complaining about “line 1, position 1.” The fix for me was saving the JSON file in what Notepad++ calls “ANSI as UTF-8” (this format is obtained in Notepad++ via the <strong>Encoding &gt; Encode in UTF without BOM</strong> command). Evidently Json.NET was having BOM (Byte Order Mark) problems. I also noticed that <code>Config.json</code> was formatted with UNIX line endings—a side-effect of using GitHub.com without Phil Haack—so the BOM madness might be related to Git “goodness.”</p>
+<p>To my typographic horror by the way, I noticed that the default, NBlog entry files were JSON in the ancient ANSI format! This explains why I had no BOM madness with these.</p>
+<h2>NBlog is pro-MarkDown</h2>
+<p>By default NBlog assumes that you are going to write posts in MarkDown. This is the correct assumption because this engine is designed for programmers—and the typical programmer does not require the advanced typographic features of HTML that MarkDown does not support.</p>
+<p>I had to change NBlog to use MarkDown <em>or</em> HTML—not both. <a href="http://blog.stackoverflow.com/2008/06/three-markdown-gotcha/">Research tells me</a> that the people behind MarkDown made a conscious choice to only support a subset of HTML:</p>
+<blockquote>
+<p>I think this is a symptom of Markdown’s being designed for blog posts. You can paste in big chunks of foreign HTML verbatim without having to double-check them, but it’s pretty much impossible to write whole pages in Markdown. Again Gruber’s not interested; dunno about Fortin.</p>
+</blockquote>
+<h2>A brief list of changes I made to NBlog:</h2>
+<p>For my benefit (because I’m not forking on GitHub.com right about now), here are my changes:</p>
+<ul>
+<li>I added to two configuration settings to <code>Web.config</code>: <code>NBlogTenantRoot</code> and <code>NBlogCloudStorage</code>. This was done to favor configuration over conventions about how NBlog, by default, sets up repository names/locations.</li>
+<li>I refactored the Name getter in <code>HttpTenantSelector</code> to prefer the setting <code>NBlogTenantRoot</code> before falling back to defaults.</li>
+<li>I refactored the constructor of <code>AzureBlobRepository</code> to use the setting <code>NBlogCloudStorage</code> for a connection string. The connection string concept may not have been available to early adopters of Windows Azure Blob Storage—and the <code>RoleEnvironment</code> concept was there instead.</li>
+<li>I made a small change to <code>AzureBlobRepository.Save()</code> to explicitly set the MIME type <code>application/json</code>.</li>
+</ul>
+<p>BTW: “<a href="http://blogs.msdn.com/b/webdev/archive/2012/10/12/blogengine-net-and-windows-azure-web-sites.aspx">BlogEngine.NET and Windows Azure Web Sites</a>”—I find the timing of this news hilarious…</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-10-15T00:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

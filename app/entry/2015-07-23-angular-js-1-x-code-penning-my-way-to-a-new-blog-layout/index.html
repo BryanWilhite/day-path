@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Angular JS 1.x: code-penning my way to a new Blog layout - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Angular JS 1.x: code-penning my way to a new Blog layout</h1>
+<p>There are three CodePen presentations I have written that take me step-by-step to a new layout for this Blog. First, I start with <a href="http://codepen.io/rasx/pen/raVaxL">the basic layout</a> (something just beyond Photoshop):</p>
+<!-- cSpell:disable -->
+<iframe height="265" style="width: 100%;" scrolling="no" title="Songhay Studio: Day Path Index Layout" src="https://codepen.io/rasx/embed/raVaxL?height=265&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+See the Pen <a href='https://codepen.io/rasx/pen/raVaxL'>Songhay Studio: Day Path Index Layout</a> by Bryan Wilhite
+  (<a href='https://codepen.io/rasx'>@rasx</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<!-- cSpell:enable -->
+<p>Then, I <a href="http://codepen.io/rasx/pen/XJYJye">‘pen’ the live JSON payload</a> that will drive the Blog index:</p>
+<!-- cSpell:disable -->
+<iframe height="265" style="width: 100%;" scrolling="no" title="Songhay Studio: Day Path Index JSON" src="https://codepen.io/rasx/embed/XJYJye?height=265&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+See the Pen <a href='https://codepen.io/rasx/pen/XJYJye'>Songhay Studio: Day Path Index JSON</a> by Bryan Wilhite
+  (<a href='https://codepen.io/rasx'>@rasx</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<!-- cSpell:enable -->
+<p>This second CodePen effectively shows what I decided upon after writing “<a href="http://songhayblog.azurewebsites.net/Entry/Show/songhay-studio-web-index-design-study">Songhay Studio: Web Index Design Study</a>”: I’ve decided to use the <a href="https://angular-ui.github.io/bootstrap/">Accordion from Angular UI</a> to visually group index data (one might call this a UX capitulation for a cliché instead of trying something new).</p>
+<p>Finally, I take the learnings from the first and second CodePen presentations to make <a href="http://codepen.io/rasx/pen/rVMJVW">the third and final CodePen presentation</a>:</p>
+<!-- cSpell:disable -->
+<iframe height="265" style="width: 100%;" scrolling="no" title="Songhay Studio: Day Path Index Layout with Grouping" src="https://codepen.io/rasx/embed/rVMJVW?height=265&theme-id=0&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+See the Pen <a href='https://codepen.io/rasx/pen/rVMJVW'>Songhay Studio: Day Path Index Layout with Grouping</a> by Bryan Wilhite
+  (<a href='https://codepen.io/rasx'>@rasx</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<!-- cSpell:enable -->
+<p>So what I am seeing here is an ‘armadillo’ index grouping (each collapsed Accordion reminds me of the scales of an armadillo or a pill bug). This grouping summary defines the first feature of the Index HTML5 App to be standardized across all Songhay System web sites indexing content. Literally, for my health, I will make the concept count that gets me to this new moment in Internet time:</p>
+<p>First, I had to work with NBlog (to actually see MVC in real life) and see the need to generate an index offline instead of generating one on the fly (especially from static JSON data). Second, I had to choose an HTML5 App platform which left me stuck with Angular 1.x (with no plans/desire to move to Angular 2.x, respecting <a href="http://eisenbergeffect.bluespire.com/leaving-angular/">the public observations of Rob Eisenberg</a>). Third was my move away from <a href="http://960.gs/">960.gs</a> to Bootstrap (it took me quite some time to realize that Bootstrap is not just a grid system but a <em>responsive</em> <a href="http://getbootstrap.com/css/">grid system</a>). Fourth, I had to choose CodePen.io over jsFiddle. Sixth is surely a bunch of personal-life issues not worth mentioning here…</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2015-07-23T20:26:13.917Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>My XAML Navigation System in Layers - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>My XAML Navigation System in Layers</h1>
+<h2>Layer 1: the Frame</h2>
+<p>At the core of my stinky onion is the <code>Frame</code> control, hosted in a <code>UserControl</code>. I prefer to have one <code>Frame</code> per application, which implies that the <code>UserControl</code> is my conventional <code>Client</code> control (Microsoft culture has called this <code>Main</code> or <code>Home</code>—in the ASP.NET MVC space). Anyway, because I call my default visual “Client”, the navigation frame is called <code>ClientFrame</code>:</p>
+<pre><code class="language-xml">&lt;navigation:Frame x:Name=&quot;ClientFrame&quot;
+    BorderThickness=&quot;0&quot;&gt;
+    &lt;navigation:Frame.UriMapper&gt;
+        &lt;uriMapper:UriMapper&gt;
+            &lt;uriMapper:UriMapping Uri=&quot;&quot; MappedUri=&quot;/Views/IndexPage.xaml&quot;/&gt;
+            &lt;uriMapper:UriMapping Uri=&quot;/&quot; MappedUri=&quot;/Views/IndexPage.xaml&quot;/&gt;
+            &lt;uriMapper:UriMapping Uri=&quot;/{key}/{id}&quot; MappedUri=&quot;/Views/{key}Page.xaml&quot;/&gt;
+            &lt;uriMapper:UriMapping Uri=&quot;/{key}&quot; MappedUri=&quot;/Views/{key}Page.xaml&quot;/&gt;
+        &lt;/uriMapper:UriMapper&gt;
+    &lt;/navigation:Frame.UriMapper&gt;
+&lt;/navigation:Frame&gt;
+</code></pre>
+<p>This declaration comes with several implications:</p>
+<ul>
+<li>The only content to be loaded in a Frame is a <code>System.Windows.Controls.Page</code>. To need an exception to this rule suggests that the application is getting too complex.</li>
+<li>The default Page is <code>IndexPage.xaml</code>. This strongly suggests that this page is some kind of human-readable summary of the application domain.</li>
+<li>Every <code>Page</code> name in the application should end with ‘Page.’</li>
+<li>Visuals representing the Domain can be located by a “key” or a key with an ID.</li>
+</ul>
+<p>It is my intent that all of these keys should be stored in <code>NavigationBookmarkData</code> (see below).</p>
+<h2>Layer 2: Frame Eventing in Code Behind</h2>
+<p>My <a href="http://pastebin.com/rGsCYRsS">PasteBin.com code sample</a> shows (almost) all of the eventing required for a navigation <code>Frame</code>. The table below summarizes:</p>
+<table class="WordWalkingStickTable"><tr><td>
+`ClientFrame.Navigated`
+</td><td>
+This event is primarily used to extract the `Page.NavigationService` from the `Frame.Content`. The Navigation Service is then used by the Client to support an application-wide “back button” command. The “back button” concept lives on quite strongly in Windows Phone (and Windows 8).
+</td></tr><tr><td>
+`ClientFrame.Navigating`
+</td><td>
+This event is handled to allow the application to cancel navigation. When a service layer is built into the application, this event can be used to start service calls related to the navigation target.
+<p>The <a href="http://msdn.microsoft.com/en-us/library/system.windows.navigation.navigatingcanceleventargs.aspx">data associated</a> with this event, <code>NavigatingCancelEventArgs</code>, can also be used to extract the target URI of navigation.</p>
+<p>Because I use MVVM Light, I have written an Extension Method, <code>Page.SendLightNavigationMessage()</code>, to allow this event to be handled in a decoupled manner, using the Messaging system in MVVM Light.</p>
+</td></tr><tr><td>
+`ClientFrame.NavigationFailed`
+</td><td>
+The conventional error “window” is used here.
+</td></tr></table>
+<h2>Layer 3: <code>NavigationBookmarkData</code></h2>
+<p>Back in 2012, in “<a href="http://songhayblog.azurewebsites.net/entry/show/silverlight-page-navigating-with-mvvm-light-messaging-with-lightnavigationmessage-navigatingcanceleventargs-and-songhay-navigationbookmarkdata">Silverlight Page Navigating with MVVM Light Messaging and Songhay NavigationBookmarkData</a>,” I went into detail about this class definition. <a href="http://pastebin.com/9YN1cwEL">Another PasteBin.com sample</a> for this class is available.</p>
+<h2>Layer 4: Handling <code>NavigatingCancelEventArgs</code></h2>
+<p>It’s the <code>NavigationBookmarkData</code> that can be used to determine whether a Navigation should or should not be cancelled. My <code>ClientViewModel</code> has concerns for Messaging and Navigating. Messaging logic supports the <code>LightNavigationMessage&lt;NavigatingCancelEventArgs&gt;</code> sent by Client <code>UserControl</code>. Navigating logic handles this ‘light-navigation’ message by evaluating it with the <code>NavigationBookmarkData</code>. A rough sketch of the handler illustrates:</p>
+<pre><code class="language-c#">void HandleClientNavigating(LightNavigationMessage&lt;NavigatingCancelEventArgs&gt; message)
+{
+    navigationBookmarks.SetBookmarkContext(message.TargetLocation);
+    string category = (message.RelativeUriSegments.Length &gt; 1) ?
+        message.RelativeUriSegments[1] : null;
+    int? id = (message.RelativeUriSegments.Length &gt; 2) ?
+        FrameworkTypeUtility.ParseInt32(message.RelativeUriSegments[2]) : null;
+    if(category == &quot;category1&quot; &amp;&amp; id.HasValue) this.DoRiaOperationGetMyData(id.Value);
+    else if(navigationBookmarks.IsBookmarkUnknown()) message.Content.Cancel = true;
+    else throw new NotImplementedException(&quot;Page is not yet supported.&quot;);
+}
+</code></pre>
+<p>First the handler puts the navigating location in ‘context’ so the <code>NavigationBookmarkData</code> can ‘validate’ it. The <code>LightNavigationMessage</code> class contains logic to split the navigating location into an array of <code>RelativeUriSegments</code> (see <a href="http://pastebin.com/BErvgkt8">PasteBin.com listing</a>). This array can contain a key and/or ID, according to the conventions declared on Layer 1, the <code>ClientFrame</code>.</p>
+<p>When we have <code>&quot;category1&quot;</code> and an ID we can then call the RIA service (in <code>DoRiaOperationGetMyData()</code>). The navigation system built into the .NET Framework (on Level 1) will display the page at the navigating target location. This page of course contains visuals bound to the data returned by the RIA operation.</p>
+<p>However, when it is clear that the “bookmark” (or the navigation target location) set in context is unknown (<code>if(navigationBookmarks.IsBookmarkUnknown())</code>), then the navigation is cancelled.</p>
+<h2>Layer 5: Actually Doing the Navigation</h2>
+<p>MVVM Commanding is what starts the funky Navigation going through each layer of our onion. The commanding eventually reaches logic that looks like this:</p>
+<pre><code class="language-c#">void DoNavigation(string category, int id)
+{
+    var format = this._bookmarks.GetPatternForGetDataFormat();
+    var bookmark = string.Format(format, category, id);
+    HtmlPage.Window.NavigateToBookmark(bookmark);
+}
+</code></pre>
+<p>So Layer 1 uses what comes in the box with the .NET Framework and Layer 5, with its call to <code>HtmlPage.Window.NavigateToBookmark()</code>, is also using what ships from Microsoft. Or should I say what <em>shipped</em> from Microsoft?</p>
+<p>The “death” of Silverlight in general strongly suggests that <code>HtmlPage.Window.NavigateToBookmark()</code> is dead (while the <code>Frame</code> lives on) in particular.</p>
+<h2>Related Links</h2>
+<table class="WordWalkingStickTable"><tr><td>
+“[Windows 8 Metro Style Apps – Implementing Navigation with XAML](http://www.markermetro.com/2011/11/technical/windows-8-metro-style-apps-implementing-navigation-with-xaml/)”
+</td><td>
+This article shows that Windows 8 app design goes ‘back’ to calling `Frame.Navigate()` directly.
+</td></tr><tr><td>
+“[Navigation in Silverlight Without Using Navigation Framework](http://www.c-sharpcorner.com/uploadfile/37db1d/navigation-in-silverlight-without-using-navigation-framework/)”
+</td><td>
+“Silverlight 3 introduces Navigation Framework which takes care of this, but let's first try to achieve navigation and state management without this framework; or you can say, the way it is done in Silverlight 2.”
+</td></tr><tr><td>
+“[On-demand loading of assemblies with Silverlight Navigation – Revisited for Silverlight 4 Beta](http://www.davidpoll.com/2010/02/01/on-demand-loading-of-assemblies-with-silverlight-navigation-revisited-for-silverlight-4-beta/)”
+</td><td>
+“With Silverlight 4’s INavigationContentLoader extensibility point, we can address this scenario much more effectively, and are no longer locked into the workarounds and strict constraints that Silverlight 3’s navigation feature placed on us. In this post, I’ll walk through the use of another ContentLoader I’ve been working on and look at how it simplifies building multi-xap applications.”
+</td></tr><tr><td>
+“[Using MEF in Metro-style applications](http://andyonwpf.blogspot.com/2012/04/using-mef-in-metro-style-applications.html)”
+</td><td>
+“The good news is that MEF is included in the .Net base class libraries as part of the Metro-style application profile so is included in-the-box for all such applications. Unfortunately if you look at the documentation you will see references to ‘Assembly.GetExecutingAssembly()’ that is not available in the Metro-profile…”
+</td></tr><tr><td>
+“[Navigation Overview](http://msdn.microsoft.com/en-us/library/ms750478.aspx) [.NET 4.5]”
+</td><td>
+Introduces the `NavigationWindow` and `FragmentNavigation` concepts.
+</td></tr><tr><td>
+“[WinRT: MVVM Navigation and a MVVM Example App](http://mikaelkoskinen.net/winrt-mvvm-navigation-and-a-mvvm-example-app/)”
+</td><td>
+“If you’re using some container to create your view models, the `NavigationService`-instance can be registered into it as a singleton. If you’re using a simple `ViewModelLocator` without a container, the `NavigationService` can be added as a property to the App-class and it can be accessed when creating the view models. In either case, the `NavigationService` should be passed to the VM through the constructor, after which navigation from a view model is a straightforward task.”
+</td></tr><tr><td>
+“[How to I get access NavigationService in a WIndows Phone app without going through a PhoneApplicationPage?](http://stackoverflow.com/questions/8751787/how-to-i-get-access-navigationservice-in-a-windows-phone-app-without-going-throu)”
+</td><td>
+“You can get it from the app’s `PhoneApplicationFrame`. It will be accessible from anywhere in the app since every Windows Phone app has a Frame.”
+<pre><code class="language-c#">((PhoneApplicationFrame)Application.Current
+        .RootVisual).Navigate(...);
+</code></pre>
+</td></tr><tr><td>
+“[NavigationService for WinRT](http://dotnetbyexample.blogspot.com/2012/06/navigationservice-for-winrt.html)”
+</td><td>
+“So the string type methods allow you to specify the page to navigate by string. Before you all think I really lost my marbles this time, re-introducing weakly typed navigation just as the Windows team introduced strongly typed: I specifically added this as to allow navigation to be initiated from a `ViewModel` contained in an assembly not containing the XAML code. This also enables you to test code as well. This is the way I built my solutions for Windows Phone, and I intend to go on this way in Windows 8. ;-)”
+</td></tr></table>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2013-05-29T00:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

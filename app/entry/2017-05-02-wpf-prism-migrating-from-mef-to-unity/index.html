@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>WPF Prism: Migrating from MEF to Unity - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>WPF Prism: Migrating from MEF to Unity</h1>
+<p>The Songhay System made historical, Desktop, investments in <a href="https://www.hanselminutes.com/148/mef-managed-extensibility-framework-with-glenn-block">Glenn Block’s MEF</a> that must be converted over to Prism. This move is primarily under the influence of <a href="https://github.com/brianlagunas">Brian Lagunas</a>, his work on the open source manifestation of Prism. Lagunas made a simple, technical statement that I cannot ignore: <a href="http://stackoverflow.com/questions/216565/why-exactly-isnt-mef-a-di-ioc-container">MEF is not an IoC container</a>. Additionally, when you examine <a href="https://github.com/PrismLibrary/Prism-Samples-Wpf">the code samples for Prism 6.x</a> we can see that MEF does not exist in the present of Prism (even though there is a ‘polite’ <a href="https://www.nuget.org/packages/Prism.Mef/">NuGet package for MEF under Prism 6</a>). It must also be mentioned that the only prominent MEF supporter I can see today is <a href="https://github.com/pwlodek">Piotr Włodek</a>. He is a powerhouse behind <a href="https://github.com/pwlodek/MefContrib">MEFContrib</a> but I am not seeing .NET Core or .NET Standard teams <em>at Microsoft</em> packing up MEF <em>in NuGet</em> for a cross-platform future.</p>
+<p><a href="https://www.flickr.com/photos/wilhite/34415141695/in/dateposted-public/"><img src="https://farm3.staticflickr.com/2848/34415141695_8456bc59ef_m_d.jpg" style="float:right;margin:16px;"></a> (<strong>Sidebar:</strong> the <a href="https://www.nuget.org/packages/System.Composition/">System.Composition 1.0.31 package</a> from Microsoft <em>is</em> MEF in a NuGet package. However, crack open this package and you will find it kind of empty. <a href="https://www.flickr.com/photos/wilhite/34415141695/in/dateposted-public/">My screenshot shows</a> that this package calls out to GAC dependencies which is an automation convenience but shows no sign of movement toward .NET Standard.)</p>
+<h2>Migrating from <code>BiggestBox</code> to <code>StudioFloor</code></h2>
+<p>You can see the results of this migration in <a href="https://github.com/BryanWilhite/Songhay.StudioFloor">my <code>Songhay.StudioFloor</code> GitHub repo</a>. This <code>StudioFloor</code> project is renamed from the <code>BiggestBox</code> project I had on CodePlex for several years.</p>
+<h2>Migration Step 0: Switch to .NET 4.6.1 for .NET Standard 1.4</h2>
+<p>My first step of migration has nothing to do with MEF. The .NET Standard initiative is relatively new compared to my MEF-era WPF work. The aggressively optimistic assumption here is that PCL will be replaced <em>entirely</em> by .NET Standard.</p>
+<div style="text-align:center">
+<p><a href="https://twitter.com/migueldeicaza/status/853754791972962304"><img alt="Miguel de Icaza on .NET Standard 2.0" src="https://farm5.staticflickr.com/4185/33571835814_7cb660074d_o_d.png"></a></p>
+</div>
+<p>By staring at a chart via <a href="https://twitter.com/terrajobst">Immo Landwerth</a> I saved <a href="http://songhayblog.azurewebsites.net/entry/songhay-studio-net-standard-with-songhay-standard-core">in a previous Blog post</a>, I can see that I need to start with .NET Standard 1.4 and look forward to .NET Standard 2.0. Version 1.4 supports the latest version of the Universal Windows Platform (UWP) and the UWP support is still a goal here in the Songhay System. This goal ‘forces’ the Songhay System to move from .NET 4.5.2 to 4.6.1.</p>
+<h2>Migration Step 1: Replace MEF <code>[Export]</code> Attributes for Non-Views with Unity Statements</h2>
+<p>The equivalent of the MEF <code>[Export(IFoo)]</code> declaration for type <code>Foo</code> is this statement:</p>
+<pre><code class="language-c#">this._container.RegisterType&lt;IFoo, Foo&gt;(new ContainerControlledLifetimeManager());
+</code></pre>
+<p>It is important to use <code>ContainerControlledLifetimeManager</code> to match the static-ish nature of the <code>[Export]</code> attributes. This step applies to non-views, primarily Prism services and View-Model-first View models.</p>
+<h2>Migration Step 2: Replace MEF <code>[Export]</code> Attributes for Navigation Views with Prism Statement</h2>
+<p>With Unity in play, there is a need to register a view for navigation in <code>IModule.Initialize()</code>:</p>
+<pre><code class="language-c#">this._container.RegisterTypeForNavigation&lt;FooView&gt;();
+</code></pre>
+<h2>Migration Step 3: Use Prism XAML Declarations for View-First Patterns</h2>
+<p>This is this Prism XAML declarations for a View-first scenario:</p>
+<pre><code class="language-xml">&lt;UserControl x:Class=&quot;MyApp.Views.FooView&quot;
+    x…mlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    x…mlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    x…mlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;
+    x…mlns:prism=&quot;http://prismlibrary.com/&quot;
+    prism:ViewModelLocator.AutoWireViewModel=&quot;True&quot;&gt;
+</code></pre>
+<p>My experience informs me that there is no special Prism code needed in the View and the View Model to get this scenario working. This is where Unity has a clear, conventions-based advantage over MEF.</p>
+<p>Now, there was a time when I preferred the C#-equivalent of this XAML declaration (stated in the constructor of the View):</p>
+<pre><code class="language-c#">ViewModelLocator.SetAutoWireViewModel(this, true);
+</code></pre>
+<p>BTW: Brian Lagunas has written <a href="https://github.com/PrismLibrary/Prism-Samples-Wpf/blob/master/9-ChangeConvention/ViewModelLocator/Bootstrapper.cs">a code sample to show how to change the default conventions</a> around <code>ViewModelLocator</code>.</p>
+<h2>Migration Step 4: Use the <code>GetInstance()</code> Anti-Pattern for View-Model-First Scenarios</h2>
+<p>Like an animal, <a href="https://github.com/BryanWilhite/Songhay.Mvvm/blob/master/Songhay.Mvvm/Extensions/IViewExtensions.cs">I have written <code>GetInstance()</code> extension methods</a> intended to be used to a View that needs to find its View Model in the IoC container Microsoft calls <code>ServiceLocator.Current</code>. So, when the View Model (say <code>IFooViewModel</code>) is instanced first I make this statement in the constructor of the View:</p>
+<pre><code class="language-c#">this.GetInstance&lt;IFooViewModel&gt;();
+</code></pre>
+<p>Sometimes several View models are grouped in the IoC container under one interface (say <code>IEditorViewModel</code>). I can now use <code>nameof</code> to get the right View-Model instance for the right View.</p>
+<pre><code class="language-c#">this.GetInstance&lt;IEditorViewModel&gt;($&quot;{nameof(FooView)}Model&quot;);
+</code></pre>
+<p>Or, to reduce performance for the sake of copy-and-paste, I have done this:</p>
+<pre><code class="language-c#">this.GetInstance&lt;IEditorViewModel&gt;($&quot;{this.GetType().Name}Model&quot;);
+</code></pre>
+<p>And yes, my <code>GetInstance()</code> extension methods are based on <code>ServiceLocator.Current.GetInstance()</code> which has been considered for years <a href="http://blog.ploeh.dk/2010/02/03/ServiceLocatorisanAnti-Pattern/">an anti-pattern</a>. It has also been considered for years <a href="http://blog.gauffin.org/2012/09/service-locator-is-not-an-anti-pattern/"><em>not</em> an anti-pattern</a>.</p>
+<p>My only concerns are these:</p>
+<ul>
+<li>
+<p>Injecting something like <code>IUnityContainer</code> into the constructor of a WPF View to avoid using <code>ServiceLocator.Current.GetInstance()</code> should break the Visual Studio design-time experience which has been dependent on a parameter-less constructor in every View.</p>
+</li>
+<li>
+<p>My real-world experience with <a href="http://agilefromthegroundup.blogspot.com/2011/03/strangulation-pattern-of-choice-for.html">strangulation</a> of some rather horrifying WPF applications absolutely requires the use of this anti-pattern when I use Prism to run legacy crap next to the new crap.</p>
+</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2017-05-02T20:35:16.473Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

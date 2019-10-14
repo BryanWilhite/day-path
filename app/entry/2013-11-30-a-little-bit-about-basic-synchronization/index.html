@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>A little bit about basic synchronization… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>A little bit about basic synchronization…</h1>
+<p>Would you be willing to commute 100 miles a day for four months just to learn <em>a little bit</em> about threads? Clearly I must be willing—or maybe, as one sly fox told me, I must be “crazy.” In general, I am “crazy” about learning—mind-numbing labor while being self-held captive in a centrally-chilled glass barn is deadly to me. There are two kinds of publican labor in my limited-American experience: work that enhances your career growth and work that maintains income. My Herculean struggle with this 100-miles-per-day commute has revealed to me an issue that I have never before seen first-hand in the wild in over 20 years of IT work. This fact alone makes my “crazy” choices worth my while.</p>
+<p>I’ve only <em>heard</em> about concurrency/threading issues from other (more experienced) people. In fact, I was on the phone <em>over two years ago</em> with <a href="http://www.lab49.com/">Lab49</a> and I was asked a phone-screen question about the <code>Monitor.Pulse()</code> method. I had absolutely no idea what this Lab49 guy was talking about. It was liberating. I was elated. I didn’t get the job.</p>
+<p>It wasn’t until my crazy, miserable commuting began when I had the privilege of seeing diagnostic debug log entries like these:</p>
+<p>INFO start Foo()
+…
+INFO end Foo()
+INFO start Foo()
+…
+INFO end Foo()
+INFO start Foo()
+…
+INFO start Foo()
+… //exception thrown here
+INFO end Foo()</p>
+<p>The method <code>Foo()</code> would look like this:</p>
+<p>public void Foo()
+{
+this.LogStart();
+//do stuff…
+this.LogEnd();
+}</p>
+<p>And the logging functions (I know I’m digressing, by the way) look like this:</p>
+<p>[Conditional(&quot;DEBUG&quot;)]
+void LogStart()
+{
+var methodName = new StackFrame(1).GetMethod().Name;
+YourFavoriteLogger.Info(string.Format(&quot;start {0}()&quot;, methodName));
+}
+[Conditional(&quot;DEBUG&quot;)]
+void LogEnd()
+{
+var methodName = new StackFrame(1).GetMethod().Name;
+YourFavoriteLogger.Info(string.Format(&quot;end {0}()&quot;), methodName);
+}</p>
+<p>There are so many ways to make this logging code more <a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a> but remember I’m losing at up to four hours of my work days to sitting on a freeway with a bunch of giant trucks hurtling by. I have to wake up at 5am! I am not quite my best folks!</p>
+<p>Back to the main point:</p>
+<p>INFO start Foo()
+…
+INFO end Foo()
+INFO start Foo()
+…
+INFO end Foo()
+INFO start Foo()
+…
+INFO start Foo()
+… //exception thrown here
+INFO end Foo()</p>
+<p>Notice that we have two, successive <code>start Foo()</code> entries. We have more starts than stops. This implies that <code>Foo()</code> was called <em>from another thread</em>. Welcome to the hell of multithreaded programming! And, as Winston Churchill said, “If you are going <em>through</em> hell, keep going.”</p>
+<p>Somehow two (or more) threads are competing for the same method. When I brought this up to this young guy with lots of C++ experience (his commute is about 40 minutes a day, by the way), he told me to do something like this:</p>
+<p>public void Foo()
+{
+this.LogStart();
+lock(Locker)
+{
+//do stuff…
+}
+this.LogEnd();
+}
+static readonly object Locker = new object();</p>
+<p>The young C++ guy mumbled something about <code>lock</code> being shorthand for <code>Monitor.Enter</code>. When I Googled around with these terms I eventually found <em>the man</em>: Mr. LINQPad himself: <a href="http://www.albahari.com/threading/">Joe Albahari</a>. Joe puts it like <a href="http://www.albahari.com/threading/part2.aspx">this</a>:</p>
+<blockquote>
+<p>C#’s lock statement is in fact a syntactic shortcut for a call to the methods Monitor.Enter and Monitor.Exit, with a try/finally block.</p>
+</blockquote>
+<p>Remember <code>Monitor.Pulse()</code>? I do. I have finally seen <em>in real-world practice</em> the way into the world of threading. While I was being rejected by Lab49 I asked about any books that I would need to read to learn about threading. So, back in 2010, <a href="http://kintespace.com/rasxlog/?p=2204">I had the books</a> but I did not have the emotional, visceral understanding of this technical subject until I started working as a consultant for PIMCO (and—what do one or two PIMCO WPF guys think of Lab49? ‘I know some folks over there. They’re a little budget-ey but Ok…’). Wow, what a crazy world we live in…</p>
+<p>Speaking of the “real world,” it turns out that the need to log locking surfaced. So, based on some input from a Java-, server-based guy, we have something like this:</p>
+<p>public void Foo()
+{
+this.LogStart();
+if(!Monitor.TryEnter(Locker))
+{
+YourFavoriteLogger.Info(string.Format(&quot;Thread {0} fails to enter.&quot;,
+Thread.CurrentThread.ManagedThreadId.ToString());
+}
+lock(Locker)
+{
+YourFavoriteLogger.Info(string.Format(&quot;Thread {0} enters.&quot;,
+Thread.CurrentThread.ManagedThreadId.ToString());
+//do stuff…
+YourFavoriteLogger.Info(string.Format(&quot;Thread {0} exits.&quot;,
+Thread.CurrentThread.ManagedThreadId.ToString());
+}
+this.LogEnd();
+}
+static readonly object Locker = new object();</p>
+<p>This pattern (I have discovered recently) can cause false positives to be logged (when we are looking for more starts than stops in our example above): should an exception occur after <code>this.LogStart()</code> but before <code>this.LogEnd()</code> a threading newbie like me will assume that multiple threads are competing instead of one thread failing. To avoid this daft oversight, this pattern should work:</p>
+<p>public void Foo()
+{
+this.LogStart();
+if(!Monitor.TryEnter(Locker))
+{
+YourFavoriteLogger.Info(string.Format(&quot;Thread {0} fails to enter.&quot;,
+Thread.CurrentThread.ManagedThreadId.ToString());
+}
+Monitor.Enter(Locker)
+try
+{
+YourFavoriteLogger.Info(string.Format(&quot;Thread {0} enters.&quot;,
+Thread.CurrentThread.ManagedThreadId.ToString());
+//do stuff…
+YourFavoriteLogger.Info(string.Format(&quot;Thread {0} exits.&quot;,
+Thread.CurrentThread.ManagedThreadId.ToString());
+}
+finally
+{
+Monitor.Exit(Locker);
+this.LogEnd();
+}
+}
+static readonly object Locker = new object();</p>
+<p>This may be overkill someday but today I’m calling it educational.</p>
+<h2>Related Links</h2>
+<table class="WordWalkingStickTable"><tr><td>
+<p>“<a href="http://stackoverflow.com/questions/2416793/why-is-lock-much-slower-than-monitor-tryenter">Why is lock much slower than Monitor.TryEnter?</a>”
+&lt;
+/td&gt;<td></p>
+<p>“…it’s important to point out that lock and Monitor.TryEnter are not functionally equivalent.”
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>“<a href="http://yow.eventer.com/yow-2011-1004/asynchrony-in-c-5-deep-dive-by-joe-albahari-1067">Asynchrony in C# 5: Deep Dive by Joe Albahari</a>”
+&lt;
+/td&gt;<td></p>
+<p>A streaming talk from YOW 2011.
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>“<a href="http://www.albahari.com/threading/part4.aspx">Threading in C#—Part 4—Advanced Threading</a>”
+&lt;
+/td&gt;<td></p>
+<p>“Here’s how to use Wait and Pulse…”
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>“<a href="http://www.dzhang.com/blog/2012/08/29/synchronization-in-async-csharp-methods">Synchronization in async C# methods</a>”
+&lt;
+/td&gt;<td></p>
+<p>“The following results in a compile-time error because you cannot use <code>await</code> inside a <code>lock</code> block…”
+&lt;
+/td&gt;</tr><tr><td></p>
+<p>“<a href="http://www.albahari.com/threading/part2.aspx">Threading in C#—Part 2 - Basic Synchronization</a>”
+&lt;
+/td&gt;<td></p>
+<p>“Only one thread can lock the synchronizing object (in this case, <code>_locker</code>) at a time, and any contending threads are blocked until the lock is released. If more than one thread contends the lock, they are queued on a ‘ready queue’ and granted the lock on a first-come, first-served basis (a caveat is that nuances in the behavior of Windows and the CLR mean that the fairness of the queue can sometimes be violated). ...C#’s <code>lock</code> statement is in fact a syntactic shortcut for a call to the methods <code>Monitor.Enter</code> and <code>Monitor.Exit</code>, with a try/finally block.”
+&lt;
+/td&gt;</tr></table></p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2013-11-30T08:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

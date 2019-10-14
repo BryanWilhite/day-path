@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>studio status report: 2019-06 - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>studio status report: 2019-06</h1>
+<p>I missed last month 😒🤷‍️😁</p>
+<h2>month-4 was all about upgrading <code>SonghayCore</code> 🐰🕳</h2>
+<p>I have started using GitHub projects to batch issues together to mark a NuGet release. My first project, <a href="https://github.com/BryanWilhite/SonghayCore/projects/1">version 3.1.3 release</a>, records the miserable but compelling details around moving <a href="https://github.com/BryanWilhite/SonghayCore"><code>SonghayCore</code></a> into <a href="https://github.com/BryanWilhite/SonghayCore/issues/20#issuecomment-489815352">the .NET Core multi-targeting space</a>.</p>
+<p>The feeling around doing this work is that of optimistic relief that <a href="https://github.com/BryanWilhite/SonghayCore"><code>SonghayCore</code></a> has never been more stable and it should be far easier to maintain going forward. This should prevent me from falling into a costly rabbit hole while trying to dig pits of success. Too much of my time <em>on this planet</em> has been spent on building infrastructure instead of publications and presentations for <em>people</em>.</p>
+<h2>WebJobs <em>and</em> Azure durable functions</h2>
+<p>Month 5 was about understanding that the main reason why one would continue to use WebJobs instead of dropping everything and running to <a href="https://mikhail.io/2018/12/making-sense-of-azure-durable-functions/">Azure Durable Functions</a> (for its <em>orchestration</em> feature), is the need for a local file system. I have assigned myself to <a href="https://github.com/BryanWilhite/Songhay.Feeds/issues/14">a GitHub issue</a> that will explore this matter further.</p>
+<p>The plan is to move the YouTube player WebJob to Azure durable functions (because it should <em>not</em> depend on a local file system) but the steps toward this goal start with <a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/issues/1">yet another issue</a> I have self assigned.</p>
+<p>More Azure function links:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-best-practices">https://docs.microsoft.com/en-us/azure/azure-functions/functions-best-practices</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code">https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code</a></li>
+<li><a href="https://azure.microsoft.com/en-us/blog/introducing-azure-functions-2-0/">https://azure.microsoft.com/en-us/blog/introducing-azure-functions-2-0/</a> [2.0 does not support full framework]</li>
+</ul>
+<h2>the <code>songhay-ng-workspace</code> is considered awesome</h2>
+<p><a href="https://github.com/BryanWilhite/songhay-ng-workspace"><code>songhay-ng-workspace</code></a> is the <em>best</em> UI/UX work this studio has to offer. There is quite a long way to go but this repo makes a strong statement around core data access with the Observable Data Store, the Index experience and introduces the YouTube portion of our b-roll player.</p>
+<h2><code>the-funky-knowledge-base</code> is the first 11ty experiment</h2>
+<p><a href="https://github.com/BryanWilhite/the-funky-knowledge-base"><code>the-funky-knowledge-base</code></a> should find its final home on GitHub. It will be converted from JSON static files to markdown. It is likely that it will replace most of my use Microsoft OneNote. Some OneNote issues:</p>
+<ul>
+<li>there is no “pro” command to paste plain text</li>
+<li>there is no “pro” command to purge previous versions of a page; I assume this purging will prevent certain syncing errors</li>
+<li>there is no concept of a <em>character</em> style (from Microsoft Word) there are only <em>paragraph</em> styles</li>
+</ul>
+<p>Success with 11ty will place this technology at the center of Songhay Publications: the static web site will be the go-to publication format of this studio. kintespace.com will deliberately be a patchwork mosaic of static websites (tracked by gen-web-based analytics).</p>
+<h2>proposing Microsoft Sway as a publication solution for kintespace.com</h2>
+<p>Yes, the 11ty-based static web site is the go-to publication format but Microsoft Sway might do well as a replacement for the PDF-based presentations of visual artists (on kintespace.com).</p>
+<p>My renewed interest in Sway was announced <a href="https://twitter.com/BryanWilhite/status/1123661538437390336">in a month-5 tweet</a>.</p>
+<h2>how to download an MP3 file from Azure BLOB Storage with ASP.NET Core 2.2</h2>
+<pre><code class="language-c#">/// &lt;summary&gt;
+/// Gets the presentation BLOB for progressive audio.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;presentationKey&quot;&gt;The presentation key.&lt;/param&gt;
+/// &lt;param name=&quot;subFolder&quot;&gt;The sub folder.&lt;/param&gt;
+/// &lt;param name=&quot;blobName&quot;&gt;Name of the BLOB.&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+[HttpGet]
+[Route(&quot;audio/{presentationKey}/{subFolder}/{blobName}&quot;)]
+public async Task&lt;IActionResult&gt; GetPresentationBlobForProgressiveAudio(string presentationKey, string subFolder, string blobName)
+{
+  var repo = this._blobRepositoryForProgressiveAudioContent;
+  var id = repo.GetPresentationBlobId(presentationKey, subFolder, blobName);
+  var result = await repo.GetBlobAsync(id);
+  if (result?.BlobStream == null) return this.NotFound();
+  if (result.BlobStream.Position &gt; 0) result.BlobStream.Seek(0, SeekOrigin.Begin);
+
+  return this.File(result.BlobStream, result.BlobContentType, result.BlobFileName);
+}
+</code></pre>
+<p>The most important line here is:</p>
+<pre><code class="language-c#">if (result.BlobStream.Position &gt; 0) result.BlobStream.Seek(0, SeekOrigin.Begin);
+</code></pre>
+<p>Without this line, a file of 0-bytes will be saved by callers of this API.</p>
+<h2>the wonderful return of Daz3D to regular studio work</h2>
+<p>Month 5 saw the return of <a href="https://www.daz3d.com/">Daz3D</a> to my studio work. The manga-publication production pipeline is revived which is almost the whole point of my existence. Using my kintespace account on InstaGram, I reminded myself that I have not touched Daz since 2003! Here are some points:</p>
+<ul>
+<li>My developer-honed journal-writing skills really help here (not my thing that much in 2003)</li>
+<li>Daz technology has improved: <a href="http://docs.daz3d.com/doku.php/artzone/pub/software/dform/start">DForm</a> and <a href="http://docs.daz3d.com/doku.php/artzone/pub/software/puppeteer/start">Puppeteer</a> did not exist in 2003</li>
+<li>the availability of comic-book-style shaders, like <a href="https://www.daz3d.com/visual-style-shaders">Visual-Style</a> and <a href="https://www.daz3d.com/manga-style-shaders">Manga-Style</a>, (and my mature appreciation of them)</li>
+<li>Daz has been helped tremendously by YouTube folks like <a href="https://www.youtube.com/user/wphosting">WP Guru</a> and <a href="https://www.youtube.com/channel/UCuk28jyQ5x2MZl0_k2-gXJg">esha</a>—which helps me tremendously.</li>
+<li>the gulf between Daz and Blender is almost gone—definitely not the case in 2003.</li>
+</ul>
+<p>Most importantly, I have matured tremendously when it comes to this kind of production. After being beaten to death by multi-hundred-million-dollar, photorealistic CGI for a decade, I am no longer fascinated by replicating reality. I now see that tweening and animating can inform and produce <em>stills</em> meant for a Manga publication. So stills an animation is not necessarily an either-or thing—it is a both-and thing.</p>
+<p>And, by the way, OneNote really, really helps here because it is the best at handing a bunch of screenshots.🤷‍</p>
+<h2>sketching out a development schedule (revision 1)</h2>
+<p>Today the studio development schedule looks like this:</p>
+<ul>
+<li>update SonghaySystem.com with my new <code>@songhay/player-video-you-tube</code> and <code>@songhay/index</code></li>
+<li>get 11ty pipelines running with the FunkyKB</li>
+<li>consider converting the Day Path blog to 11ty (with <code>@songhay/index</code> as a side-car app) and convert to HTTPs by default</li>
+<li>use the learnings from existing npm packages to build <code>@songhay/player-audio-???</code></li>
+<li>move the kinté space blog to an 11ty pipeline (this has been another emergency <em>for years</em>)</li>
+<li>set up automated social-media posting with Azure logic apps (and Azure functions orchestration)</li>
+<li>modernize the kinté hits page into a progressive web app</li>
+<li>use the learnings of previous work to upgrade and re-release the kinté space</li>
+</ul>
+<p>@<a href="https://twitter.com/bryanwilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2019-06-06T18:35:09.842Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

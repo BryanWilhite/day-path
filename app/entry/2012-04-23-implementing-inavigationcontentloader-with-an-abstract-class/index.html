@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Implementing INavigationContentLoader with an abstract class… - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Implementing <code>INavigationContentLoader</code> with an abstract class…</h1>
+<p>You’ve read the title. So, let me back up… In “<a href="http://www.davidpoll.com/2009/11/30/opening-up-silverlight-4-navigation-introduction-to-inavigationcontentloader/">Opening up Silverlight 4 Navigation: Introduction to INavigationContentLoader</a>,” David Poll explains:</p>
+<blockquote>
+<p>If you haven’t noticed by now (or been following my previous blog posts), I happen to really enjoy exploring the Navigation feature in Silverlight. A while back, I <a href="http://www.davidpoll.com/tag/navigation">posted a number of workarounds and tips</a> for some desirable scenarios using the Navigation feature in Silverlight 3. Then… I went silent. And the reason: I’ve been waiting for an extensibility point to be opened up in Silverlight navigation. In the <a href="http://www.silverlight.net/getstarted/silverlight-4-beta/">Silverlight 4 beta</a>, that extensibility point has arrived as the INavigationContentLoader.</p>
+</blockquote>
+<p>Unlike David Poll, I was not in-the-loop-enough to “wait” for <a href="http://msdn.microsoft.com/en-us/library/cc838245(v=vs.95).aspx">Silverlight Navigation</a> to open up. I just noticed that I was unable to define <code>UriMapper</code> programmatically—this discovery is reinforced by <a href="http://msdn.microsoft.com/en-us/library/system.windows.navigation.urimapper(v=vs.95).aspx">the documentation</a>—notice that:</p>
+<ul>
+<li><code>UriMapper.UriMappings</code> is read-only.</li>
+<li>The <code>UriMapper</code> constructor takes no arguments (like, say, a collection of <code>UriMappings</code>).</li>
+</ul>
+<p>This effectively implies that you <em>must</em> define <code>UriMapper</code> in <acronym title="Extensible Application Markup Language">XAML</acronym>. Losing precious hours of my time, I notice that:</p>
+<ul>
+<li>You ‘should’ define <code>UriMapper</code> in <code>App.xaml</code> so it can recognize pages that might be loaded after initialization of the application domain.</li>
+<li>You can’t define <code>UriMapper</code> in <code>App.xaml</code> when you are using a generic application loader (because the <em>generic</em> loader is <em>not</em> supposed to know about the pages it is loading).<a href="http://www.flickr.com/photos/wilhite/6958975678/in/photostream" title="Silverlight Deep Linking with MEF"><img alt="Silverlight Deep Linking with MEF" src="http://farm9.staticflickr.com/8141/6958975678_778010bf8e.jpg"></a></li>
+</ul>
+<p>It turns out that I need to implement <code>INavigationContentLoader</code> because it has no dependency on <code>UriMapper</code> (and its associated conventions) and because it is friendly to my <acronym title="Managed Exensibility Framework">MEF</acronym>-based composition. By wildly misinterpreting the work of David Poll (and, perhaps, the life’s work of Jeffrey Richter), I actually find it useful to implement an interface with an abstract class. I call it <code>NavigationContentLoader</code>. My reasons for doing this is because the <code>CancelLoad()</code> and <code>EndLoad()</code> members of <code>INavigationContentLoader</code> can have a default implementation (copied directly from David Poll). I mark methods <code>BeginLoad()</code> and <code>CanLoad()</code> abstract—declaring the intent that these members <em>must</em> be implemented. This intent becomes content in <code>BiggestBoxNavigationContentLoader</code>.</p>
+<h2>Concerns of <code>BiggestBoxNavigationContentLoader…</code></h2>
+<p>The <code>INavigationContentLoader</code> interface brings us the concept of the “current URI,” the current <a href="http://en.wikipedia.org/wiki/Fragment_identifier">fragment identifier</a> representing a resource in the Silverlight application and the “target URI,” the next fragment identifier. It follows that the <code>BiggestBoxNavigationContentLoader</code> is concerned with:</p>
+<ul>
+<li>Mapping the “target URI” (of <code>INavigationContentLoader</code>) to type names of pages (to be used by <code>BiggestBoxCompositionHost.MefHost.GetPage()</code>).</li>
+<li>Parsing the “target URI” to map to type names of pages—and to extract parameters (user-control or packed-XAML sample names).</li>
+<li>‘Caching’ “target URI” parameter (user-control or packed-XAML sample name) to be inspected by the current page during the <code>OnNavigatedTo()</code> call (when the page finds a name it can use then the page loads a sample into a child window).</li>
+</ul>
+<h2>Supporting Deep Linking in a MEF-Composed Silverlight Application</h2>
+<p>This ‘caching’ behavior is very important because of the need to support “<a href="http://en.wikipedia.org/wiki/Deep_linking">deep linking</a>” into the Silverlight application. This support is challenging because a deep link can indicate a resource in the Silverlight application that is not currently available because of the asynchrony of <acronym title="Managed Exensibility Framework">MEF</acronym> Composition. It follows that such an indicator has to be ‘cached’ until the application is composed.</p>
+<p>It was tempting to try a simpler approach to solving this problem but these issues made such ease impossible:</p>
+<ul>
+<li>Reloading the same URI with <code>HtmlPage.Window.Navigate()</code> is ignored by the current instance of <code>Frame.ContentLoader</code> (which would be my <code>BiggestBoxNavigationContentLoader</code>).</li>
+<li>Silverlight does not call the <code>Page.OnNavigatedTo()</code> method when <code>Page</code> is setting <code>Frame.Content</code> programmatically. I threw together the <code>IComposableView</code> interface, with its <code>DoNavigateFrom()</code> and <code>DoNavigateTo()</code> methods in direct response to this issue by design.</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-04-23T15:33:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

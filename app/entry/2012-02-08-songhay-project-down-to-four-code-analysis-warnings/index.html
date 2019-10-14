@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Songhay Project Down to Four Code-Analysis Warnings! - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Songhay Project Down to Four Code-Analysis Warnings!</h1>
+<p><a href="http://www.flickr.com/photos/wilhite/6843864037/in/photostream/" title="Songhay Project Down to Four Code-Analysis Warnings!"><img alt="Songhay Project Down to Four Code-Analysis Warnings!" src="http://farm8.staticflickr.com/7039/6843864037_152398c6e7.jpg"></a></p>
+<p>My <code>Songhay</code> project was started before .NET 2.0 (probably in the .NET 1.1 timeframe). It’s a dependency in <em>all</em> of <a href="http://www.codeplex.com/site/users/view/rasx">my CodePlex.com projects</a>. I started the day with over 60 warnings and whittled them down to <em>four</em>. Here are my notes along the way:</p>
+<ul>
+<li>Jeremy Jameson in “<a href="http://blogs.msdn.com/b/jjameson/archive/2009/04/02/ca1704-code-analysis-warning-and-using-custom-dictionaries-in-visual-studio.aspx">CA1704 Code Analysis Warning and Using Custom Dictionaries in Visual Studio</a>” led me to <a href="http://msdn.microsoft.com/en-us/library/bb514188.aspx">using a custom dictionary</a> for Code Analysis.</li>
+<li>I got a whole boat load of “<a href="http://msdn.microsoft.com/en-us/library/ms182160.aspx">CA1059: Members should not expose certain concrete types</a>” errors because I return <code>XPathDocument</code> quite a bit in the <code>Songhay.Xml</code> namespace. I suppressed these using the justification directly from Microsoft: “It is safe to suppress a message from this rule if the specific functionality provided by the concrete type is required.”</li>
+<li>I got a metric ton of “<a href="http://msdn.microsoft.com/en-us/library/ms182190.aspx">CA1305: Specify IFormatProvider</a>” warnings because I’m an ugly American (in recovery). This leads me to the topic of “<a href="http://msdn.microsoft.com/en-us/library/kzwcbskc.aspx">Culture-Insensitive String Operations</a>” which is rather funny when taken out of context.</li>
+<li>I got one “<a href="http://msdn.microsoft.com/en-us/library/ms182276.aspx">CA1815: Override equals and operator equals on value types</a>” warning. This one was awesome because it helped me learn about why <code>struct</code> types can be costly. To escape the wrath of my warning, I just changed my struct into a <code>static class</code>—this may not be the proper solution to the problem.</li>
+<li>Because <code>Songhay</code> is targeting .NET 2.0, I removed all of the <code>var</code> keywords in the Project. The <code>var</code> keyword came out in .NET 3.0—and I’m still nervous about compatibility with Mono (which is totally irrational). Keeping <code>Songhay</code> at .NET 2.0 is a defensive move against being economically forced into a situation where I have to work in a shop stuck in .NET 2.0—it’s a cold, cold world, baby…</li>
+</ul>
+<p>Yes, <code>Songhay</code> is targeting .NET 2.0. I have another core-dependency project, <code>SonghayCore</code> (named after Microsoft’s <code>System.Core</code>) that will move ahead with the latest RTM of the .NET Framework. I’ve just ran Code Analysis on <code>SonghayCore</code>: 147 warnings—strewth!</p>
+<p>The fresh, clean <code>Songhay</code> Project should be up on CodePlex.com in a few days—likely nestled in my <a href="http://slbiggestbox.codeplex.com/">Silverlight BiggestBox</a>. I have to give <a href="http://www.meetup.com/LA-SLUG/events/50686142/">a presentation</a> on this ‘box’ this month so having a more solid core can’t hurt.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2012-02-09T00:00:00.000Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

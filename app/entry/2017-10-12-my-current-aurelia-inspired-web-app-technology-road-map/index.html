@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>My Current, Aurelia-Inspired, Web-App Technology Road Map - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>My Current, Aurelia-Inspired, Web-App Technology Road Map</h1>
+<p>This is Q4 2017. It has taken me this long to <em>formally</em> explore the Web-app landscape. My personal desire for formality and relatively deep reflection has left <a href="http://songhaysystem.com">my company web site</a> and this Blog stuck in Angular 1.x and outside of ASP.NET Core. From a “time-to-market” point of view this has been a colossal “failure” for 2017. My career as a software developer has been centered around building UI/UX and from my point of view I have little to show that this centering ever existed—let alone raged like a fire for the last 20 years.</p>
+<p>The next phase of my development will be the final attempt to begin to clearly express focus on UI/UX. 2017 was my time to get comfortable with GitHub. I started with “dragging” my legacy load of <a href="https://github.com/BryanWilhite/SonghayCore"><em>core</em> .NET code</a> and then evacuated <a href="https://github.com/BryanWilhite/Songhay.StudioFloor">my WPF work</a> out of CodePlex. My legacy load is significant and still relevant. I do not “waste time” on this work—this legacy stuff <em>still</em> has “day job” written all over it.</p>
+<p>The <a href="https://github.com/BryanWilhite/SonghayCore">SonghayCore project</a> is now ready for the new .NET Standard 2.0 regime. The StudioFloor project is ready and waiting for expansion into <a href="https://www.xamarin.com/">Xamarin</a> and <a href="https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide">UWP</a> XAML technologies.</p>
+<p>Take a peek today at <a href="https://github.com/BryanWilhite?tab=repositories">my GitHub repository activity</a> and you will see two projects with a warm heartbeat: <a href="https://github.com/BryanWilhite/nodejs">nodejs</a> and <a href="https://github.com/BryanWilhite/dotnet-core">dotnet-core</a>. These repositories expose my self-education investments in Node.js and .NET Core (featuring ASP.NET Core). This work has provided me with an opinionated approach to how I plan to do my non-XAML-related UI/UX work.</p>
+<h2>my commitment to Aurelia and angular.io</h2>
+<p>My work on <a href="https://github.com/BryanWilhite/nodejs">nodejs</a> should betray a commitment to <a href="https://github.com/BryanWilhite/nodejs/tree/master/aurelia-official">Aurelia</a> and <a href="https://github.com/BryanWilhite/nodejs/tree/master/angular.io-official">angular.io</a>. The gumbo of technologies that make up Aurelia are then broken into subtopics of study:</p>
+<p><strong>jQuery.</strong> jQuery still plays a role in the current life of Aurelia. It also is needed because of my current commitment to <a href="http://getbootstrap.com/">Bootstrap</a> which might be replaced by <a href="https://semantic-ui.com/">Semantic UI</a>. It must be mentioned that angular.io has no default jQuery dependencies. We can also see (today) that there are 10 <code>jquery-*</code> folders in <a href="https://github.com/BryanWilhite/nodejs">nodejs</a> showing more of my legacy load. I do see the possibility that “vanilla JavaScript” will replace all of this jQuery work.</p>
+<p><strong>karma and jasmine.</strong> The <code>karma-and-jasmine-minimal</code><a href="https://github.com/BryanWilhite/nodejs/tree/master/karma-and-jasmine-minimal">folder</a> is there because <a href="https://karma-runner.github.io/">Karma</a> and <a href="https://jasmine.github.io/">Jasmine</a> are used in Aurelia. It follows that these technologies will be the testing tools of choice for my frontend work. Now there are some limitations with these tools that calls for an investigation of <code>selenium-webdriver</code> [<a href="https://www.npmjs.com/package/selenium-webdriver">package</a>].</p>
+<p><strong>Typescript.</strong> The <code>typescript-minimal</code><a href="https://github.com/BryanWilhite/nodejs/tree/master/typescript-minimal">folder</a> is also a spin-off from my Aurelia investment. This study is based on the assertion that Typescript is the best language to preserve intent for all JavaScript-based applications. There is a possibility that <a href="https://websharper.com/">WebSharper</a> will allow me to confidently replace TypeScript with C#/F#.</p>
+<p><strong>Gulp.</strong> Yes, Aurelia is dependent on <a href="https://gulpjs.com/">Gulp</a> as well. This encourages me to continue my investment in this technology. My <code>gulp-and-css-handling</code><a href="https://github.com/BryanWilhite/nodejs/tree/master/gulp-and-css-handling">folder</a> reinforces this intent.</p>
+<h2>my commitment to ASP.NET Core and Hugo</h2>
+<p><a href="https://gohugo.io/">Hugo</a> is retro-revolution back to static-file web sites. It can be used with <a href="https://www.netlify.com/">Netlify</a> to replace the venerable WordPress. The intention here is to investigate Hugo with view to use this technology as the primary way to present content on the Web. My <code>md-hugo</code><a href="https://github.com/BryanWilhite/nodejs/tree/master/md-hugo">folder</a> is the first step in this direction.</p>
+<p>The SEO story for ASP.NET Core supporting Aurelia or Angular is stellar. My <code>dotnet-spa-services</code><a href="https://github.com/BryanWilhite/dotnet-core/tree/master/dotnet-spa-services">folder</a> was nothing short of a revelation to me, going a long way toward preventing non-Google Web crawlers from ignoring <a href="https://en.wikipedia.org/wiki/Single-page_application">SPA</a> content. This SPA-oriented approach to ASP.NET Core is the <em>second</em> reason why the investment in ASP.NET Core will be deep. The first is the REST-service story in the time-frame of .NET Standard 2.0.</p>
+<h2>my reduced use of Visual Studio and increased use of Visual Studio Code</h2>
+<p>I see the need for full-blown Visual Studio for all of my XAML applications and most of my REST-based services. Everything else will be in cross-platform, shell-oriented workflows under Visual Studio Code. Moreover, the REST solutions will be compatible with Visual Studio and Code.</p>
+<h2>the functional-language bias looming in the background</h2>
+<p>My self-education work in the <code>dotnet-fable-minimal</code><a href="https://github.com/BryanWilhite/dotnet-core/tree/master/dotnet-fable-minimal">folder</a>, the <code>dotnet-giraffe-template</code><a href="https://github.com/BryanWilhite/dotnet-core/tree/master/dotnet-giraffe-template">folder</a> and the <code>elm-minimal</code><a href="https://github.com/BryanWilhite/nodejs/tree/master/elm-minimal">folder</a> indicate my desire to transition some (perhaps most) of my C# investments to F#. The main reasoning for this is to formally control complexity.</p>
+<h2>Q4 2018</h2>
+<p>I actually will consider it failure: finding myself in Q4 2018 having moved not very far from my current location, still presenting Angular 1.x to the Web. The preparation has been quite substantial and the professional introspection quite deep. I am optimistic that, barring tragedy, my next moves on the Web will be quite satisfying.</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2017-10-12T20:09:37.595Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>

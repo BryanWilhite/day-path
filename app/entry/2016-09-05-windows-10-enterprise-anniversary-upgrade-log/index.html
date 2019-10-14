@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="my technical Blog ✒ for my studio" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+        <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+        <base href="http://songhayblog.azurewebsites.net/" />
+
+        <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+        <link rel="alternate" type="application/atom+xml" title="day path" href="/entry/feed.xml" />
+        <link rel="SHORTCUT ICON" href="http://songhayblog.azurewebsites.net/image/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="http://songhayblog.azurewebsites.net/style/styles.min.css" rel="stylesheet" />
+
+        <script src="http://songhayblog.azurewebsites.net/script/index.min.js"></script>
+
+        <title>Windows 10 Enterprise “Anniversary” Upgrade Log - day path</title>
+    </head>
+
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="http://songhayblog.azurewebsites.net/" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="mdc-top-app-bar__title">day path</span>
+                </section>
+                <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    my technical Blog ✒ for my studio
+                </section>
+            </div>
+        </header>
+        <main class="mdc-layout-grid" id="main-content">
+            <section class="entry">
+
+    <h1>Windows 10 Enterprise “Anniversary” Upgrade Log</h1>
+<h2>Manual Install</h2>
+<ul>
+<li>SQL Server 2016 with R Standalone Server</li>
+<li>Office 365</li>
+<li>Visual Studio 2016 Professional (with Blend)</li>
+<li>Microsoft SQL Server Management Studio</li>
+<li>Microsoft Visual Studio Team Foundation Server 2015 Power Tools (there is a Chocolatey package for this, <code>tfs2015powertools</code>, but it does not install PowerShell SnapIn, <code>Microsoft.TeamFoundation.PowerShell</code> by default)</li>
+</ul>
+<h2>PowerShell Package Manager Install</h2>
+<p>The PowerShell script:</p>
+<pre><code class="language-powershell">$providerName = &quot;Chocolatey&quot;
+$provider = Get-PackageProvider -ListAvailable | Where-Object { $_.Name -eq $providerName }
+if($provider -eq $null) { Install-PackageProvider -Name $providerName }
+$a = (
+&quot;7zip.install&quot;,
+&quot;ccleaner&quot;,
+&quot;cloudberryexplorer.azurestorage&quot;,
+&quot;defraggler&quot;,
+&quot;filezilla&quot;,
+&quot;git&quot;,
+&quot;irfanview&quot;,
+&quot;nant&quot;,
+&quot;notepadplusplus&quot;,
+&quot;sysinternals&quot;,
+&quot;winmerge&quot;
+)
+$a | ForEach-Object  { Find-Package -Name $_; Install-Package -Name $_ -ProviderName $providerName }
+</code></pre>
+<p>The <code>winmerge</code> package failed to install:</p>
+<pre><code class="language-powershell">Install-Package : The file or directory is corrupted and unreadable
+At line:1 char:1
++ Install-Package &quot;winmerge&quot;
+</code></pre>
+<p>The <code>cloudberryexplorer.azurestorage</code> package also failed to install with the irresponsibly cryptic:</p>
+<pre><code class="language-console">Install-Package : Process Exited with non-successful exit code cmd.exe : 1
+
+At line:5 char:47
++ ... kage -Name $_; Install-Package -Name $_ -ProviderName $providerName }
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</code></pre>
+<p>After the <code>git</code> (Git for Windows) package is installed, the Git Bash icon will not be available in the Start menu. Find <code>%ProgramFiles%\Git\git-bash.exe</code>, right click to run <strong>Pin to Start</strong> and/or <strong>Pin to taskbar</strong>.</p>
+<p>I did notice that <code>Install-Package</code> supports a <code>-Destination</code> parameter for <em>some</em> providers (not Chocolatey). I would have been great to have this support to avoid installing packages on the C: drive by default.</p>
+<h2>Linux Subsystem Install</h2>
+<p>The <a href="http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/">installation of the Linux subsystem</a> is standard.</p>
+<pre><code class="language-console">sudo apt-get update
+sudo apt-get autoremove
+sudo aptitude safe-upgrade
+sudo apt-get install git
+git config --global user.name &quot;Bryan Wilhite&quot;
+git config --global user.email &quot;rasx@songhaysystem.net&quot;
+sudo apt-get install nodejs
+sudo npm install -g bower
+sudo npm install -g gulp
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo apt-get install ruby
+sudo gem install sass
+history -c &amp;&amp; history -w &amp;&amp; exit
+</code></pre>
+<p>It may not be necessary to <em>manually</em> install these for gulp:</p>
+<pre><code class="language-console">sudo npm install gulp-concat
+sudo npm install gulp-minify-css
+sudo npm install gulp-sass
+sudo npm install map-stream
+sudo npm install vinyl-fs
+</code></pre>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+</section>
+<section class="meta">
+    <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
+</section>
+        </main>
+        <footer>
+            <div class="col-sm-8">
+                <p>
+                    Last Reviewed:
+                    2016-09-06T01:03:17.380Z
+                </p>
+                <p>
+                    Another stone tribal move by <a class="welcome" href="http://songhaysystem.com/">Songhay System</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                    <span class="zocial twitter icon"></span>
+                </a>
+                <a href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                    <span class="zocial rss icon"></span>
+                </a>
+            </div>
+        </footer>
+    </body>
+
+</html>
