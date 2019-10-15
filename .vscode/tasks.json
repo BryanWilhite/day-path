@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "app: npm build",
+            "type": "npm",
+            "script": "build",
+            "path": "app/",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "label": "app: npm install",
+            "type": "npm",
+            "script": "install",
+            "path": "app/",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "label": "app: npm start",
+            "type": "npm",
+            "script": "start",
+            "path": "app/",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        }
+    ]
+}
