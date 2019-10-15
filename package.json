@@ -10,7 +10,7 @@
         "index:concat:js": "npx concat -o ./app/script/index.min.js ./node_modules/@material/top-app-bar/dist/mdc.topAppBar.min.js ./node_modules/@material/list/dist/mdc.list.min.js",
         "index:sass": "npx node-sass ./app/style/index.scss ./app/style/index.css",
         "build": "npm run index:sass && npm run index:concat:css && npm run index:concat:js && npm run index:cleancss",
-        "start": "http-server ."
+        "start": "http-server ./app/index.html"
     },
     "devDependencies": {
         "clean-css": "^4.2.1",
