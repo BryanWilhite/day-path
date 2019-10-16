@@ -1,7 +1,4 @@
-/*
-    Selects styles for Index App
-*/
-// Material.io does not theme anchor elements that are not buttons:
+// material does not theme anchor elements that are not buttons:
 a {
     &.index {
         &:active,
