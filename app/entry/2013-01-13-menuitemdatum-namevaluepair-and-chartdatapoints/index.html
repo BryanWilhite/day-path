@@ -92,10 +92,10 @@
                 </section>
             </div>
         </header>
-        <main class="mdc-layout-grid" id="main-content">
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entry mdc-typography--body1 mdc-top-app-bar--prominent-fixed-adjust">
+    <section class="entry mdc-typography--body1">
 
         <h1>MenuItemDatum, NameValuePair and ChartDataPoints.</h1>
 <p>I developed <code>MenuItemDatum</code>, <code>NameValuePair</code> and <code>ChartDataPoints</code> as common data transfer objects over <acronym title="Windows Communication Foundation">WCF</acronym>-based technologies, including RIA Services. I’m sure this effort to develop ‘common’ objects to be shared among various enterprise solutions is not the first one in the world. I came to this place because of a key limitation in RIA Services (and/or Entity Framework): ‘<a href="http://songhayblog.azurewebsites.net/entry/show/ria-services-and-ef-entities">By default, an EF Entity cannot be a property of another object.</a>’ This limitation alone should inspire many of us to send a relatively large ‘meta’ dataset to the Client to “bootstrap” the application. I usually call this ‘meta’ dataset <code>ClientMetadata</code>.</p>
@@ -124,10 +124,8 @@
 
 
     </section>
-    <section class="meta mdc-typography--caption">
-        <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
-    </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">

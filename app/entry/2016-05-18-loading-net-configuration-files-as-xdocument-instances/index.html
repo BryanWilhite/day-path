@@ -92,10 +92,10 @@
                 </section>
             </div>
         </header>
-        <main class="mdc-layout-grid" id="main-content">
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entry mdc-typography--body1 mdc-top-app-bar--prominent-fixed-adjust">
+    <section class="entry mdc-typography--body1">
 
         <h1>Loading .NET configuration files as XDocument instances</h1>
 <p>There is the general-purpose <code>ConfigurationManager</code> but there is also the HTTP-context-specific <code>WebConfigurationManager</code>. An <a href="http://stackoverflow.com/a/6618933/22944">answer on StackOverflow.com</a> strongly suggests that <code>WebConfigurationManager.OpenWebConfiguration()</code> will be needed to read settings from any other <code>Web.config</code> file than the site default. This is not the case: settings appear in memory hierarchically. So a child Web app has already loaded the settings of its parent (all the way down to <code>machine.config</code>). This fact can explain why all of the <a href="https://msdn.microsoft.com/en-us/library/ms151456(v=vs.110).aspx">MSDN samples</a> for <code>WebConfigurationManager.OpenWebConfiguration()</code> load <code>Web.config</code> from a <em>child</em> web app as child <code>Web.config</code> data would not already be loaded in a parent context.</p>
@@ -114,10 +114,8 @@
 
 
     </section>
-    <section class="meta mdc-typography--caption">
-        <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
-    </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">

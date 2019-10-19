@@ -92,10 +92,10 @@
                 </section>
             </div>
         </header>
-        <main class="mdc-layout-grid" id="main-content">
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entry mdc-typography--body1 mdc-top-app-bar--prominent-fixed-adjust">
+    <section class="entry mdc-typography--body1">
 
         <h1>Unit Testing with MvcRouteTester.Mvc5.2, WebConfigTransformRunner and Nuget.Core</h1>
 <p>After researching this, I understand why there are no articles entitled “Unit Testing with <code>WebConfigTransformRunner</code>.” This <a href="https://github.com/erichexter/WebConfigTransformRunner">NuGet package</a> contains an <code>*.exe</code>: it is not meant to be referenced in Visual Studio as a Class library. To make this matter even more challenging, Phil Haack and his crew have very little documentation on <code>NuGet.Core</code>—and getting Anthony Steele’s MVC Route Tester in play was no walk in park either.</p>
@@ -189,10 +189,8 @@ public static string ShouldGetProjectsFolder(this TestContext context, Type type
 
 
     </section>
-    <section class="meta mdc-typography--caption">
-        <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
-    </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">

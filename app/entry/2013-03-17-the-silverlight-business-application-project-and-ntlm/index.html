@@ -92,10 +92,10 @@
                 </section>
             </div>
         </header>
-        <main class="mdc-layout-grid" id="main-content">
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entry mdc-typography--body1 mdc-top-app-bar--prominent-fixed-adjust">
+    <section class="entry mdc-typography--body1">
 
         <h1>The “Silverlight Business Application” Project and NTLM</h1>
 <p>One very important detail that the classic “<a href="http://msdn.microsoft.com/en-us/library/ee707360(v=vs.91).aspx">Silverlight Business Application</a>” project has to teach us is how to use old-school <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa378749(v=vs.85).aspx">NTLM</a> authentication with Silverlight. This is a well-established but not very versatile/scalable way to authenticate users. In the real world of the corporate enterprise, NTLM is the only way to go. The assumption today is that there are authentication alternatives that Microsoft would encourage such as <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa378747(v=vs.85).aspx">Microsoft Kerberos</a> or maybe <a href="http://msdn.microsoft.com/en-us/library/ff647400.aspx">Active Directory Application Mode (ADAM)</a>. The leading constraint on these Authentication alternatives is what ASP.NET supports out of the box. The other leading constraint would be a requirement that authentication depends on Active Directory as is—no domain-level modification, no LDAP-level customizations—and no secondary set of users to authenticate outside of Active Directory (stored in a database).</p>
@@ -204,10 +204,8 @@ this.ApplicationLifetimeObjects.Add(webContext);
 
 
     </section>
-    <section class="meta mdc-typography--caption">
-        <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
-    </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">

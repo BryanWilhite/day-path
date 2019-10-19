@@ -1732,7 +1732,7 @@ a.index:hover {
 header a.material-icons:active, header a.material-icons:hover, header a.material-icons:link, header a.material-icons:visited {
   color: #006633; }
 
-main .entry {
+main .entry.mdc-typography--body1 {
   background-color: #e0ede7;
   border-radius: 0.5em;
   color: #000;
@@ -1740,18 +1740,18 @@ main .entry {
   max-width: 70em;
   width: 90%;
   padding: 2em; }
-  main .entry > .entry-date {
+  main .entry.mdc-typography--body1 > .entry-date {
     position: relative; }
-    main .entry > .entry-date > span {
+    main .entry.mdc-typography--body1 > .entry-date > span {
       display: inline-block;
       margin: 0 0.5em;
       vertical-align: top; }
-    main .entry > .entry-date div[data-tweet] {
+    main .entry.mdc-typography--body1 > .entry-date div[data-tweet] {
       display: inline-block; }
-  main .entry ::ng-deep .entry-content {
+  main .entry.mdc-typography--body1 ::ng-deep .entry-content {
     padding: 2em;
     padding-top: 3em; }
-    main .entry ::ng-deep .entry-content > .Callout {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Callout {
       background-color: #660b00;
       color: #fff5ee;
       font-size: 2em;
@@ -1759,47 +1759,47 @@ main .entry {
       padding: 0.5em;
       text-align: left;
       max-width: 75%; }
-    main .entry ::ng-deep .entry-content > .Note {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Note {
       background-color: #cf0;
       margin: inherit auto 1em;
       padding: 0.5em;
       text-align: left; }
-      main .entry ::ng-deep .entry-content > .Note > p {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Note > p {
         margin: 0;
         margin: 1em inherit; }
-      main .entry ::ng-deep .entry-content > .Note acronym {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Note acronym {
         cursor: help; }
-    main .entry ::ng-deep .entry-content p {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content p {
       margin-top: 1.5em; }
-    main .entry ::ng-deep .entry-content ul {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content ul {
       list-style-type: square;
       margin-left: 3em;
       margin-top: 1.5em; }
-      main .entry ::ng-deep .entry-content ul li {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content ul li {
         margin-bottom: 0.5em; }
-    main .entry ::ng-deep .entry-content > h2,
-    main .entry ::ng-deep .entry-content > h3,
-    main .entry ::ng-deep .entry-content > h4 {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > h2,
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > h3,
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > h4 {
       margin-top: 1.5em; }
-    main .entry ::ng-deep .entry-content img {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content img {
       max-width: 90%; }
-    main .entry ::ng-deep .entry-content > blockquote,
-    main .entry ::ng-deep .entry-content > .Quote {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > blockquote,
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Quote {
       background-color: #eaeaea;
       border-left: 10px solid #b21300;
       margin: 1.5em auto 1em auto;
       max-width: 75%;
       padding: 0.25em;
       text-align: left; }
-    main .entry ::ng-deep .entry-content > blockquote p,
-    main .entry ::ng-deep .entry-content > .Quote p {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > blockquote p,
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Quote p {
       margin: 1.5em; }
-    main .entry ::ng-deep .entry-content code,
-    main .entry ::ng-deep .entry-content kbd {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content code,
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content kbd {
       background-color: #fdf6e3;
       font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
       font-size: smaller; }
-    main .entry ::ng-deep .entry-content pre {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content pre {
       background-color: #fdf6e3;
       font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
       line-height: 1.5em;
@@ -1807,9 +1807,9 @@ main .entry {
       margin-top: 1.5em;
       overflow: auto;
       padding: 0.75em 1.625em; }
-    main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode code > .sourceLine {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode code > .sourceLine {
       display: block; }
-    main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span {
       /* alert */
       /* background */
       /* base-n */
@@ -1823,53 +1823,53 @@ main .entry {
       /* keyword */
       /* other */
       /* string */ }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.al {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.al {
         color: #cb4b16; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.bg {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.bg {
         color: #fdf6e3; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.bn {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.bn {
         color: #d33682; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.ch {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.ch {
         color: #dc322f; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.co {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.co {
         color: #93a1a1; }
-        main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.co:before {
+        main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.co:before {
           content: "\A"; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.dt {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.dt {
         color: #268bd2; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.dv {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.dv {
         color: #d33682; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.er {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.er {
         color: #d30102; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.fl {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.fl {
         color: #d33682; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.fu {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.fu {
         color: #268bd2; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.kw {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.kw {
         color: #268bd2; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.ot {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.ot {
         color: #a57800; }
-      main .entry ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.st {
+      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.st {
         color: #2aa198; }
-    main .entry ::ng-deep .entry-content sup {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content sup {
       font-size: 1em; }
-    main .entry ::ng-deep .entry-content sup.CleanXhtmlFootnoteReference {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content sup.CleanXhtmlFootnoteReference {
       background-color: #eaeaea; }
-    main .entry ::ng-deep .entry-content > .WordWalkingStickTable {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable {
       border: 2px solid #063;
       border-collapse: collapse;
       margin-left: auto;
       margin-right: auto;
       margin-top: 1.5em;
       width: 90%; }
-    main .entry ::ng-deep .entry-content > .WordWalkingStickTable td {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable td {
       border-top: 1px solid #063; }
-    main .entry ::ng-deep .entry-content > .WordWalkingStickTable th {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable th {
       background-color: #063;
       color: #fff5ee;
       font-weight: 700; }
-    main .entry ::ng-deep .entry-content > .WordWalkingStickTable td,
-    main .entry ::ng-deep .entry-content > .WordWalkingStickTable th {
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable td,
+    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable th {
       padding: 0.25em;
       vertical-align: top; }
 

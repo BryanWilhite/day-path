@@ -92,10 +92,10 @@
                 </section>
             </div>
         </header>
-        <main class="mdc-layout-grid" id="main-content">
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entry mdc-typography--body1 mdc-top-app-bar--prominent-fixed-adjust">
+    <section class="entry mdc-typography--body1">
 
         <h1>Entity Framework and JSON.NET</h1>
 <p>Converting code-first, EF6 Entity models to JSON (with JSON.NET) is more complicated than I expected. First of all, <code>Include()</code> does not behave as I expected (after one level as suggested in “<a href="https://entityframework.codeplex.com/workitem/2256">EF 6</a>” or “.<a href="https://entityframework.codeplex.com/discussions/436875">include with multiple levels</a>”).</p>
@@ -164,10 +164,8 @@ var documentJson = JsonConvert.SerializeObject(rootDocument, documentSettings);
 
 
     </section>
-    <section class="meta mdc-typography--caption">
-        <span class="entry-date"> <strong>incept date:</strong> EEEE, MMMM d, y </span>
-    </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">
