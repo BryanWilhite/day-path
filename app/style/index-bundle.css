@@ -2087,13 +2087,12 @@ svg.svg-sprite {
 svg.svg-sprite:hover {
   fill: #00ee3b; }
 
-main section.entries {
-  margin-top: 4rem; }
-  main section.entries .entry.extract h3 {
-    margin-bottom: 0; }
-  main section.entries .entry.extract p {
-    background-color: #e0ede7;
-    padding: 1rem; }
+main section.entries .entry.extract h3 {
+  margin-bottom: 0; }
+
+main section.entries .entry.extract p {
+  background-color: #e0ede7;
+  padding: 1rem; }
 
 footer p {
   color: #e0ede7; }
