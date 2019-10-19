@@ -1910,5 +1910,8 @@ main section.entries .entry.extract p {
   background-color: #e0ede7;
   padding: 1rem; }
 
+footer > div > div {
+  text-align: center; }
+
 footer p {
   color: #e0ede7; }

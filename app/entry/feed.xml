@@ -2,7 +2,7 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Day Path</title>
-    <subtitle>my technical Blog ✒ for my studio</subtitle>
+    <subtitle>a technical Blog ✒ for my little studio</subtitle>
     <link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" />
     <link href="http://songhayblog.azurewebsites.net/" />
     <id>http://songhayblog.azurewebsites.net/</id>

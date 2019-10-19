@@ -70,6 +70,9 @@ main {
 }
 
 footer {
+    & > div > div {
+        text-align: center;
+    }
     p {
         color: $akyinkyin-light-text;
     }
