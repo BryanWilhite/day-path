@@ -1748,130 +1748,123 @@ main .entry.mdc-typography--body1 {
       vertical-align: top; }
     main .entry.mdc-typography--body1 > .entry-date div[data-tweet] {
       display: inline-block; }
-  main .entry.mdc-typography--body1 ::ng-deep .entry-content {
-    padding: 2em;
-    padding-top: 3em; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Callout {
-      background-color: #660b00;
-      color: #fff5ee;
-      font-size: 2em;
-      margin: inherit auto 1em;
-      padding: 0.5em;
-      text-align: left;
-      max-width: 75%; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Note {
-      background-color: #cf0;
-      margin: inherit auto 1em;
-      padding: 0.5em;
-      text-align: left; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Note > p {
-        margin: 0;
-        margin: 1em inherit; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Note acronym {
-        cursor: help; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content p {
-      margin-top: 1.5em; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content ul {
-      list-style-type: square;
-      margin-left: 3em;
-      margin-top: 1.5em; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content ul li {
-        margin-bottom: 0.5em; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > h2,
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > h3,
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > h4 {
-      margin-top: 1.5em; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content img {
-      max-width: 90%; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > blockquote,
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Quote {
-      background-color: #eaeaea;
-      border-left: 10px solid #b21300;
-      margin: 1.5em auto 1em auto;
-      max-width: 75%;
-      padding: 0.25em;
-      text-align: left; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > blockquote p,
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .Quote p {
-      margin: 1.5em; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content code,
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content kbd {
-      background-color: #fdf6e3;
-      font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
-      font-size: smaller; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content pre {
-      background-color: #fdf6e3;
-      font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
-      line-height: 1.5em;
-      margin-bottom: 1.5em;
-      margin-top: 1.5em;
-      overflow: auto;
-      padding: 0.75em 1.625em; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode code > .sourceLine {
-      display: block; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span {
-      /* alert */
-      /* background */
-      /* base-n */
-      /* char */
-      /* comment */
-      /* data type */
-      /* decimal value */
-      /* error */
-      /* float */
-      /* function */
-      /* keyword */
-      /* other */
-      /* string */ }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.al {
-        color: #cb4b16; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.bg {
-        color: #fdf6e3; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.bn {
-        color: #d33682; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.ch {
-        color: #dc322f; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.co {
-        color: #93a1a1; }
-        main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.co:before {
-          content: "\A"; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.dt {
-        color: #268bd2; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.dv {
-        color: #d33682; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.er {
-        color: #d30102; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.fl {
-        color: #d33682; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.fu {
-        color: #268bd2; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.kw {
-        color: #268bd2; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.ot {
-        color: #a57800; }
-      main .entry.mdc-typography--body1 ::ng-deep .entry-content > div.sourceCode > pre.sourceCode > code.sourceCode > span.st {
-        color: #2aa198; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content sup {
-      font-size: 1em; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content sup.CleanXhtmlFootnoteReference {
-      background-color: #eaeaea; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable {
-      border: 2px solid #063;
-      border-collapse: collapse;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1.5em;
-      width: 90%; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable td {
-      border-top: 1px solid #063; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable th {
-      background-color: #063;
-      color: #fff5ee;
-      font-weight: 700; }
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable td,
-    main .entry.mdc-typography--body1 ::ng-deep .entry-content > .WordWalkingStickTable th {
-      padding: 0.25em;
-      vertical-align: top; }
+  main .entry.mdc-typography--body1 .Callout {
+    background-color: #660b00;
+    color: #fff5ee;
+    font-size: 2em;
+    margin: inherit auto 1em;
+    padding: 0.5em;
+    text-align: left;
+    max-width: 75%; }
+  main .entry.mdc-typography--body1 .Note {
+    background-color: #cf0;
+    margin: inherit auto 1em;
+    padding: 0.5em;
+    text-align: left; }
+    main .entry.mdc-typography--body1 .Note > p {
+      margin: 0;
+      margin: 1em inherit; }
+    main .entry.mdc-typography--body1 .Note acronym {
+      cursor: help; }
+  main .entry.mdc-typography--body1 p {
+    margin-top: 1.5em; }
+  main .entry.mdc-typography--body1 ul {
+    list-style-type: square;
+    margin-left: 3em;
+    margin-top: 1.5em; }
+    main .entry.mdc-typography--body1 ul li {
+      margin-bottom: 0.5em; }
+  main .entry.mdc-typography--body1 img {
+    max-width: 90%; }
+  main .entry.mdc-typography--body1 blockquote,
+  main .entry.mdc-typography--body1 .Quote {
+    background-color: #eaeaea;
+    border-left: 10px solid #b21300;
+    margin: 1.5em auto 1em auto;
+    max-width: 75%;
+    padding: 0.25em;
+    text-align: left; }
+  main .entry.mdc-typography--body1 blockquote p,
+  main .entry.mdc-typography--body1 .Quote p {
+    margin: 1.5em; }
+  main .entry.mdc-typography--body1 code,
+  main .entry.mdc-typography--body1 kbd {
+    background-color: #fdf6e3;
+    font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: smaller; }
+  main .entry.mdc-typography--body1 pre {
+    background-color: #fdf6e3;
+    font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    overflow: auto;
+    padding: 0.75em 1.625em; }
+  main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode code > .sourceLine {
+    display: block; }
+  main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span {
+    /* alert */
+    /* background */
+    /* base-n */
+    /* char */
+    /* comment */
+    /* data type */
+    /* decimal value */
+    /* error */
+    /* float */
+    /* function */
+    /* keyword */
+    /* other */
+    /* string */ }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.al {
+      color: #cb4b16; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.bg {
+      color: #fdf6e3; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.bn {
+      color: #d33682; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.ch {
+      color: #dc322f; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.co {
+      color: #93a1a1; }
+      main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.co:before {
+        content: "\A"; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.dt {
+      color: #268bd2; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.dv {
+      color: #d33682; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.er {
+      color: #d30102; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.fl {
+      color: #d33682; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.fu {
+      color: #268bd2; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.kw {
+      color: #268bd2; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.ot {
+      color: #a57800; }
+    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.st {
+      color: #2aa198; }
+  main .entry.mdc-typography--body1 sup {
+    font-size: 1em; }
+  main .entry.mdc-typography--body1 sup.CleanXhtmlFootnoteReference {
+    background-color: #eaeaea; }
+  main .entry.mdc-typography--body1 .WordWalkingStickTable {
+    border: 2px solid #063;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    width: 90%; }
+  main .entry.mdc-typography--body1 .WordWalkingStickTable td {
+    border-top: 1px solid #063; }
+  main .entry.mdc-typography--body1 .WordWalkingStickTable th {
+    background-color: #063;
+    color: #fff5ee;
+    font-weight: 700; }
+  main .entry.mdc-typography--body1 .WordWalkingStickTable td,
+  main .entry.mdc-typography--body1 .WordWalkingStickTable th {
+    padding: 0.25em;
+    vertical-align: top; }
 
 body {
   margin: 0; }
