@@ -1,9 +1,11 @@
 @import './palette';
 
-$mdc-typography-font-family: unquote('"Segoe UI", Roboto, "Helvetica Neue", sans-serif');
+$mdc-typography-font-family: unquote(
+    '"Segoe UI", Roboto, "Helvetica Neue", sans-serif'
+);
 
 :root {
-    --mdc-theme-background: #{$akyinkyin-background};
+    --mdc-theme-background: #{$greys-background};
     --mdc-theme-primary: #{$akyinkyin-dark-tone};
 }
 

@@ -1,53 +1,76 @@
-@import "@material/typography/mdc-typography";
-@import "@material/layout-grid/mdc-layout-grid";
-@import "@material/top-app-bar/mdc-top-app-bar";
-@import "@material/list/mdc-list";
-@import "@material/icon-button/mdc-icon-button";
+@import '@material/typography/mdc-typography';
+@import '@material/layout-grid/mdc-layout-grid';
+@import '@material/top-app-bar/mdc-top-app-bar';
+@import '@material/list/mdc-list';
+@import '@material/icon-button/mdc-icon-button';
 
-@import "themes/akyinkyin/theme";
+@import 'themes/akyinkyin/theme';
+@import './entry';
+
+body {
+    margin: 0;
+}
 
 a {
-  &.svg-sprite {
-    &:active,
-    &:hover,
-    &:link,
-    &:visited {
-      color: $akyinkyin-base;
-      display: inline-block;
-      margin: 1rem;
-      text-decoration: none;
+    &.svg-sprite {
+        &:active,
+        &:hover,
+        &:link,
+        &:visited {
+            color: $akyinkyin-base;
+            display: inline-block;
+            margin: 1rem;
+            text-decoration: none;
+        }
     }
-  }
 }
 
 svg {
-  &.svg-sprite {
-    fill: currentColor;
-    height: 24px;
-    width: 24px;
-  }
+    &.svg-sprite {
+        fill: currentColor;
+        height: 24px;
+        width: 24px;
+    }
 
-  &.svg-sprite:hover {
-    fill: $akyinkyin-light-tint;
-  }
+    &.svg-sprite:hover {
+        fill: $akyinkyin-light-tint;
+    }
+}
+
+header {
+    .site.logo {
+        color: $akyinkyin-light-tint;
+        font-size: 4.5rem;
+        line-height: 5rem;
+        white-space: nowrap;
+        .prefix {
+            color: $akyinkyin-light-tone;
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        .suffix {
+            color: $greys-dark-tone;
+            font-weight: 1000;
+        }
+    }
 }
 
 main {
-  section.entries {
-    .entry.extract {
-      h3 {
-        margin-bottom: 0;
-      }
-      p {
-        background-color: $akyinkyin-light-text;
-        padding: 1rem;
-      }
+    section.entries {
+        .entry.extract {
+            h3 {
+                margin-bottom: 0;
+            }
+            p {
+                background-color: $akyinkyin-light-text;
+                padding: 1rem;
+            }
+        }
     }
-  }
 }
 
 footer {
-  p {
-    color: $akyinkyin-light-text;
-  }
+    p {
+        color: $akyinkyin-light-text;
+    }
 }
