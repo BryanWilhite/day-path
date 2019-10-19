@@ -1,5 +1,4 @@
 @import './palette';
-@import './index';
 
 $mdc-typography-font-family: unquote('"Segoe UI", Roboto, "Helvetica Neue", sans-serif');
 
@@ -11,3 +10,18 @@ $mdc-typography-font-family: unquote('"Segoe UI", Roboto, "Helvetica Neue", sans
 //     $akyinkyin-accent,
 //     $akyinkyin-warn
 // );
+
+a {
+    &.index {
+        &:active,
+        &:link,
+        &:visited {
+            color: $akyinkyin-light-tint;
+            text-decoration: none;
+        }
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: $akyinkyin-base;
+        }
+    }
+}
