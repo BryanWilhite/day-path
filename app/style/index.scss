@@ -12,8 +12,9 @@ a {
     &:hover,
     &:link,
     &:visited {
-      color: $akyinkyin-light-tint;
+      color: $akyinkyin-base;
       display: inline-block;
+      margin: 1rem;
       text-decoration: none;
     }
   }
@@ -27,6 +28,20 @@ svg {
   }
 
   &.svg-sprite:hover {
-    fill: $akyinkyin-base;
+    fill: $akyinkyin-light-tint;
+  }
+}
+
+main {
+  margin-top: 32rem;
+
+  .entry.extract {
+    h3 {
+      margin-bottom: 0;
+    }
+    p {
+      background-color: $akyinkyin-light-text;
+      padding: 1rem;
+    }
   }
 }

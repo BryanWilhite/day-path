@@ -2,14 +2,10 @@
 
 $mdc-typography-font-family: unquote('"Segoe UI", Roboto, "Helvetica Neue", sans-serif');
 
-// $akyinkyin-primary: mat-palette($mat-akyinkyin-green, 500);
-// $akyinkyin-accent: mat-palette($mat-akyinkyin-green, A200, A100, A400);
-// $akyinkyin-warn: mat-palette($mat-red);
-// $akyinkyin-theme: mat-dark-theme(
-//     $akyinkyin-primary,
-//     $akyinkyin-accent,
-//     $akyinkyin-warn
-// );
+:root {
+    --mdc-theme-background: #{$akyinkyin-background};
+    --mdc-theme-primary: #{$akyinkyin-dark-tone};
+}
 
 a {
     &.index {
