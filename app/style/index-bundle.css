@@ -2231,7 +2231,15 @@ a.index:hover {
   text-decoration: underline;
   text-decoration-color: #006633; }
 
-.svg-sprite {
+a.svg-sprite:active, a.svg-sprite:hover, a.svg-sprite:link, a.svg-sprite:visited {
   color: #00ee3b;
+  display: inline-block;
+  text-decoration: none; }
+
+svg.svg-sprite {
+  fill: currentColor;
   height: 24px;
   width: 24px; }
+
+svg.svg-sprite:hover {
+  fill: #006633; }
