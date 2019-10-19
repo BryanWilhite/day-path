@@ -6,13 +6,14 @@
     "version": "0.0.1",
     "scripts": {
         "index:cleancss": "npx cleancss -o ./app/style/index.min.css ./app/style/index.css",
+        "index:concat:css": "npx concat -o ./app/style/index-bundle.css ./node_modules/normalize.css/normalize.css ./app/style/index.css",
         "index:concat:js": "npx concat -o ./app/script/index.min.js ./node_modules/@material/top-app-bar/dist/mdc.topAppBar.min.js ./node_modules/@material/list/dist/mdc.list.min.js",
         "index:sass": "npx node-sass ./app/style/index.scss ./app/style/index.css --include-path ./node_modules",
-        "build": "npm run index:sass && npm run index:concat:js && npm run index:cleancss",
+        "build": "npm run index:sass && npm run index:concat:css && npm run index:concat:js && npm run index:cleancss",
         "start": "http-server ./app"
     },
     "devDependencies": {
-        "clean-css": "^4.2.1",
+        "clean-css-cli": "^4.3.0",
         "concat": "^1.0.3",
         "node-sass": "^4.12.0"
     },
