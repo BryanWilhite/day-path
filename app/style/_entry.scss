@@ -213,22 +213,23 @@ main {
             margin-right: auto;
             margin-top: 1.5em;
             width: 90%;
-        }
 
-        & .WordWalkingStickTable td {
-            border-top: 1px solid #063;
-        }
-
-        & .WordWalkingStickTable th {
-            background-color: #063;
-            color: #fff5ee;
-            font-weight: 700;
-        }
-
-        & .WordWalkingStickTable td,
-        & .WordWalkingStickTable th {
-            padding: 0.25em;
-            vertical-align: top;
+            & th,
+            td {
+                padding: 0.25em;
+                vertical-align: top;
+                p {
+                    margin: 0.25em;
+                }
+            }
+            th {
+                background-color: #063;
+                color: #fff5ee;
+                font-weight: 700;
+            }
+            td {
+                border-top: 1px solid #063;
+            }
         }
     }
 }

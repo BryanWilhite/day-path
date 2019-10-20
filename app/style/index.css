@@ -1855,16 +1855,19 @@ main .entry.mdc-typography--body1 {
     margin-right: auto;
     margin-top: 1.5em;
     width: 90%; }
-  main .entry.mdc-typography--body1 .WordWalkingStickTable td {
-    border-top: 1px solid #063; }
-  main .entry.mdc-typography--body1 .WordWalkingStickTable th {
-    background-color: #063;
-    color: #fff5ee;
-    font-weight: 700; }
-  main .entry.mdc-typography--body1 .WordWalkingStickTable td,
-  main .entry.mdc-typography--body1 .WordWalkingStickTable th {
-    padding: 0.25em;
-    vertical-align: top; }
+    main .entry.mdc-typography--body1 .WordWalkingStickTable th,
+    main .entry.mdc-typography--body1 .WordWalkingStickTable td {
+      padding: 0.25em;
+      vertical-align: top; }
+      main .entry.mdc-typography--body1 .WordWalkingStickTable th p,
+      main .entry.mdc-typography--body1 .WordWalkingStickTable td p {
+        margin: 0.25em; }
+    main .entry.mdc-typography--body1 .WordWalkingStickTable th {
+      background-color: #063;
+      color: #fff5ee;
+      font-weight: 700; }
+    main .entry.mdc-typography--body1 .WordWalkingStickTable td {
+      border-top: 1px solid #063; }
 
 body {
   margin: 0; }
@@ -1892,6 +1895,9 @@ header .site.logo {
     color: #6eff93;
     font-size: 3rem;
     font-weight: 800; }
+  @media screen and (max-width: 899px) {
+    header .site.logo .infix {
+      display: none; } }
   header .site.logo .suffix {
     color: #858686;
     font-weight: 1000; }
