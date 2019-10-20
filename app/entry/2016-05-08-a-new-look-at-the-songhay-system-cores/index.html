@@ -70,7 +70,7 @@
             <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                     <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
-                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span>Day Path<span class="suffix">_</span></span>
+                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
                 </section>
                 <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                     <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -117,65 +117,47 @@
     <section class="entry mdc-typography--body1">
 
         <h1>A new look at the Songhay System ‘cores’</h1>
-<p>The Songhay System starts with <code>SonghayCore</code> which is the most stable ‘core’ of the Songhay System. <code>SonghayCore</code> will be released on GitHub just to “prove” to myself that this is the case. The next slab is DAR (Data Access Runner) which is built on a ‘core’ set of projects:
-&lt;
-table class=&quot;WordWalkingStickTable&quot;&gt;<tr><td></p>
+<p>The Songhay System starts with <code>SonghayCore</code> which is the most stable ‘core’ of the Songhay System. <code>SonghayCore</code> will be released on GitHub just to “prove” to myself that this is the case. The next slab is DAR (Data Access Runner) which is built on a ‘core’ set of projects:</p>
+<table class="WordWalkingStickTable"><tr><td>
 <p><code>AmazonWebServices</code>
-<code>AmazonWebServices.Tests</code>
-&lt;
-/td&gt;<td></p>
-<p>Stable (small) but stale. This library might possibly be completely replaced by simple HTTP calls.
-&lt;
-/td&gt;</tr><tr><td></p>
-<p>``
-&lt;
-/td&gt;<td></p>
-<p>This is the soon-to-be-not-really-famous <em>Songhay Core</em>. I’ve groomed this code throughout my IT career for over a decade. The plan is to get this to GitHub and distributed in a bunch of NuGet packages.
-&lt;
-/td&gt;</tr><tr><td></p>
-<p><code>Songhay.Shell</code>
-&lt;
-/td&gt;<td></p>
-<p>My personal stash of PowerShell scripts.
-&lt;
-/td&gt;</tr><tr><td></p>
-<p>``
-&lt;
-/td&gt;<td></p>
-<p>I’ve been working on this today and days before today. This is far more stable and conceptually ‘cleaner’ (built around just three concepts: account, container and blob). This <em>might</em> be released on GitHub and NuGet-packaged as well.
-&lt;
-/td&gt;</tr><tr><td></p>
-<p>``
-&lt;
-/td&gt;<td></p>
-<p>This is already released on CodePlex and is quite stable. I would move it to GitHub just for the NuGet support.
-&lt;
-/td&gt;</tr><tr><td></p>
-<p>``
-&lt;
-/td&gt;<td></p>
-<p>These are models for the GenericWeb which is stable (I worked very hard on this last year and maybe the year before that—but is always open for reorganization). My long-time relationship with Entity Framework is here.
-&lt;
-/td&gt;</tr></table></p>
+<code>AmazonWebServices.Tests</code></p>
+</td><td>
+<p>Stable (small) but stale. This library might possibly be completely replaced by simple HTTP calls.</p>
+</td></tr><tr><td>
+<p>``</p>
+</td><td>
+<p>This is the soon-to-be-not-really-famous <em>Songhay Core</em>. I’ve groomed this code throughout my IT career for over a decade. The plan is to get this to GitHub and distributed in a bunch of NuGet packages.</p>
+</td></tr><tr><td>
+<p><code>Songhay.Shell</code></p>
+</td><td>
+<p>My personal stash of PowerShell scripts.</p>
+</td></tr><tr><td>
+<p>``</p>
+</td><td>
+<p>I’ve been working on this today and days before today. This is far more stable and conceptually ‘cleaner’ (built around just three concepts: account, container and blob). This <em>might</em> be released on GitHub and NuGet-packaged as well.</p>
+</td></tr><tr><td>
+<p>``</p>
+</td><td>
+<p>This is already released on CodePlex and is quite stable. I would move it to GitHub just for the NuGet support.</p>
+</td></tr><tr><td>
+<p>``</p>
+</td><td>
+<p>These are models for the GenericWeb which is stable (I worked very hard on this last year and maybe the year before that—but is always open for reorganization). My long-time relationship with Entity Framework is here.</p>
+</td></tr></table>
 <h2>Songhay DAR Activities will work as Azure Web Jobs?</h2>
 <p>I am almost certain that DAR Activities—with little re-factoring—can work as Azure Web Jobs. I’ll need to investigate and experiment. Doing this allows me to back out of Azure Web Jobs in case of vendor ‘betrayal.’ This would prove (only to me) that the Songhay System ‘core’ is designed to be flexible in the cloud and on the Desktop.</p>
 <h2>Songhay Data Services</h2>
-<p>So DAR (eventually) feeds Songhay Data Services—built on ASP.NET Web API hosted on Azure (“App Services”). The ‘core’ of these data services is almost identical to the DAR core except for the following:
-&lt;
-table class=&quot;WordWalkingStickTable&quot;&gt;<tr><td></p>
-<p><code>Songhay.Net.WebClient</code>
-&lt;
-/td&gt;<td></p>
-<p>The <code>async</code> HTTP calls are here (but should be sorted out later—with <code>HttpClient</code> involved).
-&lt;
-/td&gt;</tr><tr><td></p>
+<p>So DAR (eventually) feeds Songhay Data Services—built on ASP.NET Web API hosted on Azure (“App Services”). The ‘core’ of these data services is almost identical to the DAR core except for the following:</p>
+<table class="WordWalkingStickTable"><tr><td>
+<p><code>Songhay.Net.WebClient</code></p>
+</td><td>
+<p>The <code>async</code> HTTP calls are here (but should be sorted out later—with <code>HttpClient</code> involved).</p>
+</td></tr><tr><td>
 <p><code>Songhay.Web</code>
-<code>Songhay.Web.Tests</code>
-&lt;
-/td&gt;<td></p>
-<p>ASP.NET MVC support.
-&lt;
-/td&gt;</tr></table></p>
+<code>Songhay.Web.Tests</code></p>
+</td><td>
+<p>ASP.NET MVC support.</p>
+</td></tr></table>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
 
 

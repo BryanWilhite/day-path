@@ -70,7 +70,7 @@
             <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                     <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
-                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span>Day Path<span class="suffix">_</span></span>
+                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
                 </section>
                 <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                     <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -156,16 +156,15 @@ return segments;
 </ul>
 <p>Note that ELMAH works in <code>HttpContext.Current</code> this may suggest that another logging solution is needed for stuff happening outside of HTTP Context. This implementation detail happens to lead to the next item in my kit…</p>
 <table class="WordWalkingStickTable"><tr><td>
-Related Links:
+<p>Related Links:</p>
 </td></tr><tr><td>
-“[Logging Errors with ELMAH in ASP.NET MVC 3](http://joel.net/logging-errors-with-elmah-in-asp.net-mvc-3--part-1--setup)”
+<p>“<a href="http://joel.net/logging-errors-with-elmah-in-asp.net-mvc-3--part-1--setup">Logging Errors with ELMAH in ASP.NET MVC 3</a>”</p>
 </td><td>
-Introductory article…
+<p>Introductory article…</p>
 </td></tr><tr><td>
-“[How to get ELMAH to work with ASP.NET MVC [HandleError] attribute?](http://stackoverflow.com/questions/766610/how-to-get-elmah-to-work-with-asp-net-mvc-handleerror-attribute)”
+<p>“<a href="http://stackoverflow.com/questions/766610/how-to-get-elmah-to-work-with-asp-net-mvc-handleerror-attribute">How to get ELMAH to work with ASP.NET MVC [HandleError] attribute?</a>”</p>
 </td><td>
-```c#
-protected override void OnException(ExceptionContext filterContext)
+<pre><code class="language-c#">protected override void OnException(ExceptionContext filterContext)
 {
     base.OnException(filterContext);
     if (!filterContext.ExceptionHandled) return;
@@ -173,27 +172,27 @@ protected override void OnException(ExceptionContext filterContext)
     var signal = ErrorSignal.FromContext(httpContext);
     signal.Raise(filterContext.Exception, httpContext);
 }
-```
+</code></pre>
 </td></tr><tr><td>
-“[ASP.NET MVC HandleError Attribute, Custom Error Pages and Logging Exceptions](http://blog.dantup.com/2009/04/aspnet-mvc-handleerror-attribute-custom.html)”
+<p>“<a href="http://blog.dantup.com/2009/04/aspnet-mvc-handleerror-attribute-custom.html">ASP.NET MVC HandleError Attribute, Custom Error Pages and Logging Exceptions</a>”</p>
 </td><td>
-“The `System.Web.Mvc.Controller` class contains a method called `OnException` which is called whenever an exception [occurs] within an action. This does not rely on the `HandleError` attribute being set. If you’re being a good coder and have your own base Controller class you can override this method in one place to handle/log all errors for your site.”
+<p>“The <code>System.Web.Mvc.Controller</code> class contains a method called <code>OnException</code> which is called whenever an exception [occurs] within an action. This does not rely on the <code>HandleError</code> attribute being set. If you’re being a good coder and have your own base Controller class you can override this method in one place to handle/log all errors for your site.”</p>
 </td></tr><tr><td>
-“[ELMAH with Windows Azure Table Storage](http://nuget.org/packages/WindowsAzure.ELMAH.Tables)”
+<p>“<a href="http://nuget.org/packages/WindowsAzure.ELMAH.Tables">ELMAH with Windows Azure Table Storage</a>”</p>
 </td><td>
-Wade Wenger’s NuGet package is awesome! Supporting research below…
+<p>Wade Wenger’s NuGet package is awesome! Supporting research below…</p>
 </td></tr><tr><td>
-“[Extending ELMAH on Windows Azure Table Storage](http://libertycode.org/post/28377288184/extending-elmah-on-windows-azure-table-storage)”
+<p>“<a href="http://libertycode.org/post/28377288184/extending-elmah-on-windows-azure-table-storage">Extending ELMAH on Windows Azure Table Storage</a>”</p>
 </td><td>
-“…This is because the Table Storage Service limits the size of any string value property to 64KB. When you further examine the `ErrorEntity` class, you will find that this is actually quite easy to accomplish with exceptions that have large stack traces. A little examination reveals that the error caught by ELMAH is encoded to an XML string and saved to the `SerializedError` property.”
+<p>“…This is because the Table Storage Service limits the size of any string value property to 64KB. When you further examine the <code>ErrorEntity</code> class, you will find that this is actually quite easy to accomplish with exceptions that have large stack traces. A little examination reveals that the error caught by ELMAH is encoded to an XML string and saved to the <code>SerializedError</code> property.”</p>
 </td></tr><tr><td>
-“[Using ELMAH in Windows Azure with Table Storage](http://www.wadewegner.com/2011/08/using-elmah-in-windows-azure-with-table-storage/)”
+<p>“<a href="http://www.wadewegner.com/2011/08/using-elmah-in-windows-azure-with-table-storage/">Using ELMAH in Windows Azure with Table Storage</a>”</p>
 </td><td>
-“…The great part is that these files are getting serialized into Windows Azure table storage. The benefit of this is you can read them from anywhere—in fact, you don’t have to even deploy the `elmah.axd` handler with your web application! You could run it locally.”
+<p>“…The great part is that these files are getting serialized into Windows Azure table storage. The benefit of this is you can read them from anywhere—in fact, you don’t have to even deploy the <code>elmah.axd</code> handler with your web application! You could run it locally.”</p>
 </td></tr><tr><td>
-“[ElmahR = ELMAH + SignalR](http://www.codeproject.com/Articles/377394/ElmahR-equals-ELMAH-plus-SignalR)”
+<p>“<a href="http://www.codeproject.com/Articles/377394/ElmahR-equals-ELMAH-plus-SignalR">ElmahR = ELMAH + SignalR</a>”</p>
 </td><td>
-Novel… haven’t had the time to try this…
+<p>Novel… haven’t had the time to try this…</p>
 </td></tr></table>
 <h2>Once you commit to Quartz.net then just use Log4Net.</h2>
 <p><a href="https://nuget.org/packages/log4net">Log4Net</a> is one of those solutions from the Java world. This is your ELMAH-like coverage, outside of HTTP context. You get Log4Net by default when you choose another Java-world veteran, <a href="https://nuget.org/packages/Quartz">Quartz.net</a>. I was mistakenly led into using Quartz.net from a Web application domain/pool. But <a href="http://groups.google.com/group/quartznet/browse_thread/thread/da953a9e5820fca7">this quote</a> shows the error of my way:</p>
@@ -230,15 +229,15 @@ Novel… haven’t had the time to try this…
 </blockquote>
 <p>My experience with Debian/Linux package manager culture encourages me to be excited about NuGet packages. And then there is this thing called <a href="http://chocolatey.org/">Chocolat</a>…</p>
 <table class="WordWalkingStickTable"><tr><td>
-Related Links:
+<p>Related Links:</p>
 </td></tr><tr><td>
-“[Deploying ASP.NET MVC to IIS 6](http://blog.stevensanderson.com/2008/07/04/options-for-deploying-aspnet-mvc-to-iis-6/)”
+<p>“<a href="http://blog.stevensanderson.com/2008/07/04/options-for-deploying-aspnet-mvc-to-iis-6/">Deploying ASP.NET MVC to IIS 6</a>”</p>
 </td><td>
-Horrible but not impossible. I prefer “Option 2: Put .aspx in all your route entries’ URL patterns”… I’ve confused myself by forgetting to [enable ASP.NET in IIS](http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/44f16c37-f727-4244-9813-2289e13dadba.mspx?mfr=true) and not giving the `IIS_User` and `NETWORK SERVICE` users proper permissions (see below).
+<p>Horrible but not impossible. I prefer “Option 2: Put .aspx in all your route entries’ URL patterns”… I’ve confused myself by forgetting to <a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/44f16c37-f727-4244-9813-2289e13dadba.mspx?mfr=true">enable ASP.NET in IIS</a> and not giving the <code>IIS_User</code> and <code>NETWORK SERVICE</code> users proper permissions (see below).</p>
 </td></tr><tr><td>
-“[InfoWorker Solutions: IIS6: App-Domain could not be created](http://kjellsj.blogspot.com/2007/09/iis6-app-domain-could-not-be-created.html)”
+<p>“<a href="http://kjellsj.blogspot.com/2007/09/iis6-app-domain-could-not-be-created.html">InfoWorker Solutions: IIS6: App-Domain could not be created</a>”</p>
 </td><td>
-“The cause of the problem is that the identity (e.g. NETWORK SERVICE) of the IIS application pool used to run the web application, needs read access to the application’s `web.config` file to be able to launch the ASP.NET worker process.”
+<p>“The cause of the problem is that the identity (e.g. NETWORK SERVICE) of the IIS application pool used to run the web application, needs read access to the application’s <code>web.config</code> file to be able to launch the ASP.NET worker process.”</p>
 </td></tr></table>
 <h2>ASP.NET MVC: Use <code>HttpContext.Current.IsDebuggingEnabled</code>…</h2>
 <p>“<a href="http://encosia.com/automatically-minify-and-combine-javascript-in-visual-studio/">Automatically minify and combine JavaScript in Visual Studio</a>” by Dave Ward introduced me to the importance of <code>HttpContext.Current.IsDebuggingEnabled</code>:</p>
@@ -262,40 +261,40 @@ Horrible but not impossible. I prefer “Option 2: Put .aspx in all your route e
 </blockquote>
 <p>Today in my ASP.NET MVC projects I have a /Services folder where I expose my RIA Services. I prefer RIA services because I can use them with Silverlight and jQuery. There are UI controls from Telerik and Microsoft that exploit RIA conventions. I cover my RIA issues in detail in “<a href="http://songhayblog.azurewebsites.net/entry/show/ria-services-and-ef-entities">RIA Services and EF Entities</a>” and “<a href="http://songhayblog.azurewebsites.net/entry/show/silverlight-entity-framework-and-ria-services-recipe">Silverlight, Entity Framework and RIA Services Recipe</a>.”</p>
 <table class="WordWalkingStickTable"><tr><td>
-Related Links:
+<p>Related Links:</p>
 </td></tr><tr><td>
-“[Paging with the Silverlight RIA services DomainDataSource](http://msmvps.com/blogs/theproblemsolver/archive/2009/04/27/paging-with-the-silverlight-ria-services-domaindatasource.aspx)”
+<p>“<a href="http://msmvps.com/blogs/theproblemsolver/archive/2009/04/27/paging-with-the-silverlight-ria-services-domaindatasource.aspx">Paging with the Silverlight RIA services DomainDataSource</a>”</p>
 </td><td>
-“…Another thing you can specify is the `LoadSize`. This determines how many rows are loaded with each request and if not set equals the `PageSize`. Setting this to double the `PageSize` will improve the responsiveness of the client application so might be a good idea if the data isn’t too large.”
+<p>“…Another thing you can specify is the <code>LoadSize</code>. This determines how many rows are loaded with each request and if not set equals the <code>PageSize</code>. Setting this to double the <code>PageSize</code> will improve the responsiveness of the client application so might be a good idea if the data isn’t too large.”</p>
 </td></tr><tr><td>
-“[WCF RIA Services Toolkit (August 2011)—And Updated NuGet Packages](http://jeffhandley.com/archive/2011/08/02/ToolkitAugust2011.aspx)”
+<p>“<a href="http://jeffhandley.com/archive/2011/08/02/ToolkitAugust2011.aspx">WCF RIA Services Toolkit (August 2011)—And Updated NuGet Packages</a>”</p>
 </td><td>
-Jeff Handley’s 2011 overview of the RIA NuGet packages…
+<p>Jeff Handley’s 2011 overview of the RIA NuGet packages…</p>
 </td></tr><tr><td>
-“[RIA Services and Validation](http://www.nikhilk.net/RIA-Services-Validation.aspx)”
+<p>“<a href="http://www.nikhilk.net/RIA-Services-Validation.aspx">RIA Services and Validation</a>”</p>
 </td><td>
-Nikhil Kothari’s introduction to RIA validation…
+<p>Nikhil Kothari’s introduction to RIA validation…</p>
 </td></tr><tr><td>
-“[Installing RIA Services on a server](http://blogs.msdn.com/b/deepm/archive/2010/03/15/are-you-a-hoster-and-want-to-support-ria-services.aspx)”
+<p>“<a href="http://blogs.msdn.com/b/deepm/archive/2010/03/15/are-you-a-hoster-and-want-to-support-ria-services.aspx">Installing RIA Services on a server</a>”</p>
 </td><td>
-“…The RIAServices msi now has a command line override, especially for hosters. The msi is now configured to take a ‘Server’ command line parameter that will only check for .NET Framework 4.0. The command line parameter will install all the RIA Services server assemblies. …Here is how to use this option:”
+<p>“…The RIAServices msi now has a command line override, especially for hosters. The msi is now configured to take a ‘Server’ command line parameter that will only check for .NET Framework 4.0. The command line parameter will install all the RIA Services server assemblies. …Here is how to use this option:”</p>
 <ul>
 <li>“Download the RIA Services MSI and save it on your machine”</li>
 <li>“Open up a command prompt and type the following command: <code>msiexec /i RIAServices.msi SERVER=true</code>”</li>
 </ul>
 <p>See also: “<a href="http://blogs.msdn.com/b/saurabh/archive/2010/03/16/ria-services-application-deployment.aspx">Deploying Application built using RIA Services RC</a>”</p>
 </td></tr><tr><td>
-“[RIA Services Inheritence error](http://stackoverflow.com/questions/8247583/ria-services-inheritence-error)”
+<p>“<a href="http://stackoverflow.com/questions/8247583/ria-services-inheritence-error">RIA Services Inheritence error</a>”</p>
 </td><td>
-“Only one complex type in an inheritance hierarchy can be exposed from a domain service.”
+<p>“Only one complex type in an inheritance hierarchy can be exposed from a domain service.”</p>
 </td></tr><tr><td>
-“[RIA Services and multiple/dynamic ‘Include’ strategies](http://stackoverflow.com/questions/2718570/ria-services-and-multiple-dynamic-include-strategies)”
+<p>“<a href="http://stackoverflow.com/questions/2718570/ria-services-and-multiple-dynamic-include-strategies">RIA Services and multiple/dynamic ‘Include’ strategies</a>”</p>
 </td><td>
-“Include in a RIA sense has a different meaning than Include in an EF sense. In EF it means ‘include when retrieving from the database’; in RIA it means ‘include when serializing for the client’.”
+<p>“Include in a RIA sense has a different meaning than Include in an EF sense. In EF it means ‘include when retrieving from the database’; in RIA it means ‘include when serializing for the client’.”</p>
 </td></tr><tr><td>
-“[WCF RIA Services—‘Not Found’ Error Message](http://blogs.objectsharp.com/post/2010/04/13/WCF-RIA-Services-“Not-Found”-Error-Message.aspx)”
+<p>“<a href="http://blogs.objectsharp.com/post/2010/04/13/WCF-RIA-Services-%E2%80%9CNot-Found%E2%80%9D-Error-Message.aspx">WCF RIA Services—‘Not Found’ Error Message</a>”</p>
 </td><td>
-“…needed this because of ‘The exception message is: Unable to load one or more of the requested types. Retrieve the `LoaderExceptions` property for more information’ error.... turns out I was using EF5.x with RIA Services so EF entities could not load with RIA...”
+<p>“…needed this because of ‘The exception message is: Unable to load one or more of the requested types. Retrieve the <code>LoaderExceptions</code> property for more information’ error.... turns out I was using EF5.x with RIA Services so EF entities could not load with RIA...”</p>
 </td></tr></table>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
 

@@ -70,7 +70,7 @@
             <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                     <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
-                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span>Day Path<span class="suffix">_</span></span>
+                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
                 </section>
                 <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                     <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -118,53 +118,52 @@
 
         <h1>Silverlight Page Navigating with MVVM Light Messaging and Songhay NavigationBookmarkData</h1>
 <p>While Silverlight was deep in the cryogenic freezer in Redmond in the Windows-8-summer of 2012, I was working on my minimalist masterpiece, GenericWeb Editor (<a href="http://www.flickr.com/photos/wilhite/7654180068/in/photostream">see screenshot</a>). This editor (an internal tool) replaces the work I sold (by work-for-hire) to UCLA, <a href="http://kintespace.com/rasxlog/?p=1775">dating back to before 2009</a>—when I was not using Silverlight in any serious way. In those days, I was web-page centric—so the Silverlight/WPF concept of the Navigation Page was very welcome. The problem is that, apart from the default “<a href="http://msdn.microsoft.com/en-us/library/cc838245(v=vs.95).aspx">Silverlight Navigation Application</a>,” there is not much guidance in this area.</p>
-<p>My design goals center around this strong point: any Navigation Application has to know about the locations/indicators in its domain. This implies that there are <em>known</em> Navigation locations and <em>unknown</em> locations. There are two types of known indicators: keys and patterns. My intent is to make Navigation data-centric—data-driven… So I’ve made for myself the <code>NavigationBookmarkData</code> class to express this intent. This class defines the following conventions:
-&lt;
-table class=&quot;WordWalkingStickTable&quot;&gt;<tr><td></p>
+<p>My design goals center around this strong point: any Navigation Application has to know about the locations/indicators in its domain. This implies that there are <em>known</em> Navigation locations and <em>unknown</em> locations. There are two types of known indicators: keys and patterns. My intent is to make Navigation data-centric—data-driven… So I’ve made for myself the <code>NavigationBookmarkData</code> class to express this intent. This class defines the following conventions:</p>
+<table class="WordWalkingStickTable"><tr><td>
 <p>Get Data Format</p>
 </td>
 <td>
-A pattern for getting data by a unique identifier: `"#/{0}/{1}"`.
+<p>A pattern for getting data by a unique identifier: <code>&quot;#/{0}/{1}&quot;</code>.</p>
 </td></tr><tr><td>
 <p>New Data Format</p>
 </td>
 <td>
-A pattern for adding data: `"#/{0}/New"`
+<p>A pattern for adding data: <code>&quot;#/{0}/New&quot;</code></p>
 </td></tr><tr><td>
 <p>Delete Confirmation Key</p>
 </td>
 <td>
-A key for the conventional application Delete Confirmation: `"DeleteConfirmation"`
+<p>A key for the conventional application Delete Confirmation: <code>&quot;DeleteConfirmation&quot;</code></p>
 </td></tr><tr><td>
 <p>Entity Association Selection Key</p>
 </td>
 <td>
-A key for the conventional application Entity Association Selection: `"EntityAssociationSelection"`
+<p>A key for the conventional application Entity Association Selection: <code>&quot;EntityAssociationSelection&quot;</code></p>
 </td></tr><tr><td>
 <p>Entity Associations Key</p>
 </td>
 <td>
-A key for the conventional application Entity Associations: `"EntityAssociations"`
+<p>A key for the conventional application Entity Associations: <code>&quot;EntityAssociations&quot;</code></p>
 </td></tr><tr><td>
 <p>Error Message Key</p>
 </td>
 <td>
-A key for the conventional application Error Message : `"ErrorMessage"`
+<p>A key for the conventional application Error Message : <code>&quot;ErrorMessage&quot;</code></p>
 </td></tr><tr><td>
 <p>Index Key</p>
 </td>
 <td>
-A key for the conventional application Index: `"#/"`.
+<p>A key for the conventional application Index: <code>&quot;#/&quot;</code>.</p>
 </td></tr><tr><td>
 <p>Information Message Key</p>
 </td>
 <td>
-A key for the conventional application Information Message : `"InformationMessage"`
+<p>A key for the conventional application Information Message : <code>&quot;InformationMessage&quot;</code></p>
 </td></tr><tr><td>
 <p>Search Key</p>
 </td>
 <td>
-A key for the conventional application Search: `"Search"`
+<p>A key for the conventional application Search: <code>&quot;Search&quot;</code></p>
 </td></tr></table>
 <h2>Using NavigationBookmarkData</h2>
 <p>All Navigation commands are ‘tested’ by <code>NavigationBookmarkData</code> to determine whether the Navigation location exists. Passing <code>NavigationBookmarkData</code> tests means that a Bookmark is found and a call to <code>HtmlPage.Window.NavigateToBookmark(bookmark)</code> can be made. In my early designs, I would have considered a call to <code>NavigateToBookmark</code> as ‘indirect’—why can’t I touch the Navigation Frame directly? Calling out to the <code>HtmlPage.Window</code> is indeed the start of round trip from the internals of the Silverlight application out to the hosting Web browser and then back to the Silverlight application. Why do this? I do this because this design makes “deep linking” in Silverlight possible. This design has only one way to handle Navigation commands: through changing the “hash tag” of the browser location—classic, Web 2.0, single-page-app navigation.</p>
@@ -195,49 +194,49 @@ A key for the conventional application Search: `"Search"`
 <p>“<a href="http://www.silverlightshow.net/items/The-Silverlight-3-Navigation-Framework.aspx">The Silverlight Navigation Framework</a>”</p>
 </td>
 <td>
-Some history from Martin Mihaylov (2009)… There’s a very well-done explanation of `JournalOwnership`: “If you don't want your Frame to integrate with the browser, to use the built-in history journal and to implement your own logic around the go-back and go-forward actions, this property allows you to do so.”
+<p>Some history from Martin Mihaylov (2009)… There’s a very well-done explanation of <code>JournalOwnership</code>: “If you don't want your Frame to integrate with the browser, to use the built-in history journal and to implement your own logic around the go-back and go-forward actions, this property allows you to do so.”</p>
 </td></tr><tr><td>
 <p>“<a href="http://firstfloorsoftware.com/blog/animated-page-navigation-in-sl3/">Animated page navigation in SL3</a>”</p>
 </td>
 <td>
-“While working recently on a navigation application, there was this requirement for animated page transitions. Moving from one page to another must look pretty and if possible should include advanced animations with pages flying in, fading out, etc.”
+<p>“While working recently on a navigation application, there was this requirement for animated page transitions. Moving from one page to another must look pretty and if possible should include advanced animations with pages flying in, fading out, etc.”</p>
 <p>“So I started investigating if and how this was possible with the navigation framework. And the answer is that it is very, very easy and it does not require a single line of code.”</p>
 <p>This solution uses the <code>TransitionalContentControl</code> by the way…</p>
 </td></tr><tr><td>
 <p>“<a href="http://msdn.microsoft.com/en-us/library/system.windows.controls.page.onnavigatedto(v=VS.95).aspx">Page.OnNavigatedTo Method</a>”</p>
 </td>
 <td>
-“Typically, you use the `OnNavigatedTo` method instead of creating an event handler for the Loaded event. The `OnNavigatedTo` method is preferable because it is only called once for each time the page becomes active. The Silverlight framework raises the `Loaded` event each time the element is added to the visual tree, which potentially can happen more than once when activating a page.”
+<p>“Typically, you use the <code>OnNavigatedTo</code> method instead of creating an event handler for the Loaded event. The <code>OnNavigatedTo</code> method is preferable because it is only called once for each time the page becomes active. The Silverlight framework raises the <code>Loaded</code> event each time the element is added to the visual tree, which potentially can happen more than once when activating a page.”</p>
 </td></tr><tr><td>
 <p>“<a href="http://msdn.microsoft.com/en-us/library/system.windows.navigation.navigationservice(v=vs.95).aspx">NavigationService Class</a>”</p>
 </td>
 <td>
-Thanks for asking, yes, I use `NavigationService` in my GenericWeb Editor at the `Page` level: “You use the NavigationService class from within a Silverlight page. It enables you to access the navigation service used by the hosting frame and launch new navigation requests. You can retrieve the navigation service through the NavigationService property of the Page class.”
+<p>Thanks for asking, yes, I use <code>NavigationService</code> in my GenericWeb Editor at the <code>Page</code> level: “You use the NavigationService class from within a Silverlight page. It enables you to access the navigation service used by the hosting frame and launch new navigation requests. You can retrieve the navigation service through the NavigationService property of the Page class.”</p>
 </td></tr><tr><td>
 <p>“<a href="http://dotnetslackers.com/articles/silverlight/The-DataForm-Control-in-Silverlight-3-Revisited.aspx">The DataForm Control in Silverlight 3</a>”</p>
 </td>
 <td>
-This 2009 Dino Esposito is a great overview of this Silverlight Toolkit control. I mention it here because I notice that a `DataForm` control loading in a Navigation Page sometimes appears disabled. I thought that Dino h could show me an event or a property I could set to stop this annoying thing from happening.
+<p>This 2009 Dino Esposito is a great overview of this Silverlight Toolkit control. I mention it here because I notice that a <code>DataForm</code> control loading in a Navigation Page sometimes appears disabled. I thought that Dino h could show me an event or a property I could set to stop this annoying thing from happening.</p>
 </td></tr><tr><td>
 <p>“<a href="http://www.davidpoll.com/2009/07/12/silverlight-3-navigation-navigating-to-pages-in-referenced-assemblies/">Silverlight 3 Navigation: Navigating to Pages in referenced assemblies</a>”</p>
 </td>
 <td>
-“Dividing your pages across multiple assemblies doesn’t have to degrade user experience, and once you’re familiar with the style of URI that the navigation framework expects for such pages, it’s no more complex than standard navigation within your Silverlight application.”
+<p>“Dividing your pages across multiple assemblies doesn’t have to degrade user experience, and once you’re familiar with the style of URI that the navigation framework expects for such pages, it’s no more complex than standard navigation within your Silverlight application.”</p>
 </td></tr><tr><td>
 <p>“<a href="http://forums.silverlight.net/forums/t/91029.aspx">Silverlight 3 Navigation framework with on demand assemblies</a>”</p>
 </td>
 <td>
-“The Silverlight 3 Beta of Navigation does not support on-demand loaded assemblies. You could load data, services, and things like that, but XAML pages must be in the DLLs that are packaged in the XAP for the Frame control to find them.”
+<p>“The Silverlight 3 Beta of Navigation does not support on-demand loaded assemblies. You could load data, services, and things like that, but XAML pages must be in the DLLs that are packaged in the XAP for the Frame control to find them.”</p>
 </td></tr><tr><td>
 <p>“<a href="http://wildermuth.com/2008/04/05/HtmlWindow_Navigate_and_enableHtmlAccess">HtmlWindow.Navigate and enableHtmlAccess</a>”</p>
 </td>
 <td>
-Shawn Wildermuth in 2008: “So the lesson learned here is to use `HtmlPage.IsEnabled` to test to see if your particular host allows access to the HTML of the page (including support for `HtmlWindow.Navigate`).”
+<p>Shawn Wildermuth in 2008: “So the lesson learned here is to use <code>HtmlPage.IsEnabled</code> to test to see if your particular host allows access to the HTML of the page (including support for <code>HtmlWindow.Navigate</code>).”</p>
 </td></tr><tr><td>
 <p>“<a href="http://www.wintellect.com/CS/blogs/rrobinson/archive/2009/02/03/htmlpage-popupwindow-vs-htmlwindow-navigate.aspx">HtmlPage.PopupWindow vs. HtmlWindow.Navigate</a>”</p>
 </td>
 <td>
-This might have changed since Silverlight 2: “…I decided to have another look at `HtmlWindow.Navigate()` which seems to more accurately mirror the behavior that I would expect out of something that purports to wrap `window.open()`. Going this route, we lose the strong typing of the `HtmlPopupWindowOptions`, but in exchange we get exactly what we are expecting when calling `window.open()`.”
+<p>This might have changed since Silverlight 2: “…I decided to have another look at <code>HtmlWindow.Navigate()</code> which seems to more accurately mirror the behavior that I would expect out of something that purports to wrap <code>window.open()</code>. Going this route, we lose the strong typing of the <code>HtmlPopupWindowOptions</code>, but in exchange we get exactly what we are expecting when calling <code>window.open()</code>.”</p>
 </td></tr></table>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
 

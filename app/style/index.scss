@@ -43,11 +43,19 @@ header {
         font-size: 4.5rem;
         line-height: 5rem;
         white-space: nowrap;
+
         .prefix {
             color: $akyinkyin-light-tone;
             font-size: 3rem;
             font-weight: 800;
         }
+
+        @media screen and (max-width: 899px) {
+            .infix {
+                display: none;
+            }
+        }
+
         .suffix {
             color: $greys-dark-tone;
             font-weight: 1000;
