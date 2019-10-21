@@ -119,7 +119,7 @@
         <link href="http://songhayblog.azurewebsites.net/entry/2019-01-16-i-just-published-implementing-search-in-graphql-and-other-tweeted-links/" />
         <updated>2019-01-17T04:26:24.344Z</updated>
         <content type="html">
-            I just published "Implementing Search in GraphQL" showing how to implement text-based searches that are both case-insensitive & full field!              This is a 2 part series, the next will be advanced search using Elasticsearch for things like geo...
+            I just published &#34;Implementing Search in GraphQL&#34; showing how to implement text-based searches that are both case-insensitive &amp; full field!              This is a 2 part series, the next will be advanced search using Elasticsearch for things like geo...
         </content>
     </entry>
 </feed>
