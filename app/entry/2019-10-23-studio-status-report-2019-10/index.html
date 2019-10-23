@@ -14,13 +14,13 @@
 
         <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
         <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
-        <link rel="SHORTCUT ICON" href="./image/favicon.ico" />
+        <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link href="./style/index.min.css" rel="stylesheet" />
+        <link href="../../style/index.min.css" rel="stylesheet" />
 
-        <script src="./script/index.min.js"></script>
+        <script src="../../script/index.min.js"></script>
 
-        <title>Day Path</title>
+        <title>studio status report: 2019-10 - Day Path</title>
     </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -68,7 +68,9 @@
         </svg>
         <header class="mdc-top-app-bar mdc-top-app-bar--prominent">
             <div class="mdc-top-app-bar__row">
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
                 </section>
                 <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                     <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -112,32 +114,43 @@
         <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entries">
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10">studio status report: 2019-10</a></h3>
-            <p>studio status report: 2019-10 month 10 was about re-releasing this Blog My old Blog repo and a new day-path repo finally free me from the mineshaft 🐰🕳 I dug for myself filled with PHP, WordPress, Matt Mullenweg’s old socks and my over-enthusiasm for Ang…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09">studio status report: 2019-09</a></h3>
-            <p>month-9 has been about actually using @songhay/player-video-you-tubeThe NPM package @songhay/player-video-you-tube is installed and compiling into the build for SonghaySystem.com.👏 (BTW: it was editorial error to mention @songhay/index for the last few ...</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-08-24-studio-status-report-2019-08">studio status report: 2019-08</a></h3>
-            <p>month-7 was about moving the kinté space Blog into an 11ty pipeline11ty pipeline for kintespace.com Blog. I am almost certain that end-of-month-8 or early month 9 will see the re-launch of the kintespace.com Blog without WordPress! Success here will make...</p>
-        </div>
-    
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2019-10</h1>
+<h2>month 10 was about re-releasing this Blog</h2>
+<p>My old <code>Blog</code> <a href="https://github.com/BryanWilhite/Blog">repo</a> and a new <code>day-path</code> <a href="https://github.com/BryanWilhite/day-path">repo</a> finally free me from the mineshaft 🐰🕳 I dug for myself filled with PHP, WordPress, <a href="https://en.wikipedia.org/wiki/Matt_Mullenweg">Matt Mullenweg</a>’s old socks and my over-enthusiasm for Angular. I assume that I can live the rest of my life of liberty and freedom using something like <a href="https://twitter.com/zachleat/">Zach Leatherman</a>’s new socks to keep track of myself in public.</p>
+<h2><code>@songhay/index</code> and lunr</h2>
+<p>I am now convinced that <code>@songhay/index</code> should be a user experience for <a href="https://lunrjs.com/">lunr</a>. I am no longer concerned with using third-party search engines that are not exclusively concerned with returning <em>my</em> data. Turning this piece out into the wild from my studio will directly respond to the only reason why folks need to have a database connected to their website: for search.</p>
+<p>Work here might provide an opportunity to finally use <a href="https://angular.io/guide/elements">Angular Elements</a>.</p>
+<h2>sketching out a development schedule (revision 4)</h2>
+<p>Today the studio development schedule looks like this:</p>
+<ul>
+<li><s>get 11ty pipelines running with the FunkyKB</s> ✔</li>
+<li><s>migrate Thunderbird email to new Hyper-V Ubuntu VM</s> ✔</li>
+<li><s>move the kinté space blog to an 11ty pipeline (this has been another emergency <em>for years</em>)</s> ✔</li>
+<li><s>update SonghaySystem.com with my new <code>@songhay/player-video-you-tube</code></s> ✔</li>
+<li><s>convert the Day Path blog to 11ty</s> 💪💡</li>
+<li>use <code>@songhay/index</code> as a side-car app for “Day Path” and “the rasx() context”</li>
+<li>convert Day Path Blog and SonghaySystem.com to HTTPs by default 🔐</li>
+<li>use the learnings from existing npm packages to build <code>@songhay/player-audio-???</code> 📦✨</li>
+<li>set up automated social-media posting with Azure logic apps (and Azure functions orchestration) ☁🤖</li>
+<li>modernize the kinté hits page into a progressive web app 💄✨</li>
+<li>use the learnings of previous work to upgrade and re-release the kinté space 🚀</li>
+</ul>
+<p>@<a href="https://twitter.com/bryanwilhite">BryanWilhite</a></p>
+
+
     </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-6">
                     <p>
-                        a technical Blog ✒ for my little studio
+                        Last Reviewed:
+                        2019-10-23T21:46:27.837Z
                     </p>
                     <p>
                         another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>

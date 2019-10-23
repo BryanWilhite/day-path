@@ -6,7 +6,7 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2019-09-22T18:03:05.623Z</updated>
+    <updated>2019-10-23T21:46:27.837Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
@@ -15,6 +15,18 @@
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
 
     <entry>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <title>studio status report: 2019-10</title>
+        <id>http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10/</id>
+        <link href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10/" />
+        <updated>2019-10-23T21:46:27.837Z</updated>
+        <published>2019-10-23T21:46:27.837Z</published>
+        <content type="html">
+            studio status report: 2019-10 month 10 was about re-releasing this Blog My old Blog repo and a new day-path repo finally free me from the mineshaft 🐰🕳 I dug for myself filled with PHP, WordPress, Matt Mullenweg’s old socks and my over-enthusiasm for Ang…
+        </content>
+    </entry><entry>
         <author>
             <name>Bryan Wilhite</name>
         </author>
@@ -169,18 +181,6 @@
         <published>2019-01-21T20:36:32.219Z</published>
         <content type="html">
             You asked, we answered. MSFT open sources WPF, Windows Forms and Windows UI XAML Library [blogs.windows.com] Microsoft ❤️ OpenSource - the UI toolkits, Windows.Forms and WPF are now open source: [blogs.msdn.microsoft.com] Some big news for developers at ...
-        </content>
-    </entry><entry>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <title>“I just published ‘Implementing Search in GraphQL’&#34;” and other tweeted links…</title>
-        <id>http://songhayblog.azurewebsites.net/entry/2019-01-16-i-just-published-implementing-search-in-graphql-and-other-tweeted-links/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-16-i-just-published-implementing-search-in-graphql-and-other-tweeted-links/" />
-        <updated>2019-01-17T04:26:24.344Z</updated>
-        <published>2019-01-17T04:26:24.344Z</published>
-        <content type="html">
-            I just published &#34;Implementing Search in GraphQL&#34; showing how to implement text-based searches that are both case-insensitive &amp; full field!              This is a 2 part series, the next will be advanced search using Elasticsearch for things like geo...
         </content>
     </entry>
 </feed>
