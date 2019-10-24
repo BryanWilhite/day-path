@@ -20,11 +20,11 @@
         </author>
         <title>studio status report: 2019-10</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10/" />
         <updated>2019-10-23T21:46:27.837Z</updated>
         <published>2019-10-23T21:46:27.837Z</published>
         <content type="html">
-            studio status report: 2019-10 month 10 was about re-releasing this Blog My old Blog repo and a new day-path repo finally free me from the mineshaft 🐰🕳 I dug for myself filled with PHP, WordPress, Matt Mullenweg’s old socks and my over-enthusiasm for Ang…
+            month 10 was about re-releasing this Blog My old Blog repo and a new day-path repo finally free me from the mineshaft 🐰🕳 I dug for myself filled with PHP, WordPress, Matt Mullenweg’s old socks and my over-enthusiasm for Angular. I assume that I can live…
         </content>
     </entry><entry>
         <author>
@@ -32,7 +32,7 @@
         </author>
         <title>studio status report: 2019-09</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09/" />
         <updated>2019-09-22T18:03:05.623Z</updated>
         <published>2019-09-22T18:03:05.623Z</published>
         <content type="html">
@@ -44,7 +44,7 @@
         </author>
         <title>studio status report: 2019-08</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-08-24-studio-status-report-2019-08/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-08-24-studio-status-report-2019-08/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-08-24-studio-status-report-2019-08/" />
         <updated>2019-08-25T04:16:23.113Z</updated>
         <published>2019-08-25T04:16:23.113Z</published>
         <content type="html">
@@ -56,7 +56,7 @@
         </author>
         <title>studio status report: 2019-07</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-07-22-studio-status-report-2019-07/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-07-22-studio-status-report-2019-07/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-07-22-studio-status-report-2019-07/" />
         <updated>2019-07-22T18:54:32.513Z</updated>
         <published>2019-07-22T18:54:32.513Z</published>
         <content type="html">
@@ -68,7 +68,7 @@
         </author>
         <title>flippant remarks about DGML and Visual Studio code visualization</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-07-22-flippant-remarks-about-dgml-and-visual-studio-code-visualization/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-07-22-flippant-remarks-about-dgml-and-visual-studio-code-visualization/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-07-22-flippant-remarks-about-dgml-and-visual-studio-code-visualization/" />
         <updated>2019-07-22T18:51:53.253Z</updated>
         <published>2019-07-22T18:51:53.253Z</published>
         <content type="html">
@@ -80,7 +80,7 @@
         </author>
         <title>studio status report: 2019-06</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-06-06-studio-status-report-2019-06/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-06-06-studio-status-report-2019-06/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-06-06-studio-status-report-2019-06/" />
         <updated>2019-06-06T18:35:09.842Z</updated>
         <published>2019-06-06T18:35:09.842Z</published>
         <content type="html">
@@ -92,7 +92,7 @@
         </author>
         <title>studio status report: 2019-04</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-04-20-studio-status-report-2019-04/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-04-20-studio-status-report-2019-04/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-04-20-studio-status-report-2019-04/" />
         <updated>2019-04-21T03:09:16.128Z</updated>
         <published>2019-04-21T03:09:16.128Z</published>
         <content type="html">
@@ -104,7 +104,7 @@
         </author>
         <title>studio status report: 2019-03</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-03-22-studio-status-report-2019-03/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-03-22-studio-status-report-2019-03/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-03-22-studio-status-report-2019-03/" />
         <updated>2019-03-23T03:10:57.760Z</updated>
         <published>2019-03-23T03:10:57.760Z</published>
         <content type="html">
@@ -116,7 +116,7 @@
         </author>
         <title>flippant remarks about BehaviorSubject</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-02-25-flippant-remarks-about-behaviorsubject/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-02-25-flippant-remarks-about-behaviorsubject/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-02-25-flippant-remarks-about-behaviorsubject/" />
         <updated>2019-02-26T02:57:33.452Z</updated>
         <published>2019-02-26T02:57:33.452Z</published>
         <content type="html">
@@ -128,7 +128,7 @@
         </author>
         <title>studio status report: 2019-02</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-02-25-studio-status-report-2019-02/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-02-25-studio-status-report-2019-02/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-02-25-studio-status-report-2019-02/" />
         <updated>2019-02-26T02:52:45.909Z</updated>
         <published>2019-02-26T02:52:45.909Z</published>
         <content type="html">
@@ -140,7 +140,7 @@
         </author>
         <title>studio status report: 2019-01</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-01-28-studio-status-report-2019-01/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-28-studio-status-report-2019-01/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-01-28-studio-status-report-2019-01/" />
         <updated>2019-01-28T23:01:04.897Z</updated>
         <published>2019-01-28T23:01:04.897Z</published>
         <content type="html">
@@ -152,7 +152,7 @@
         </author>
         <title>“Microsoft Garage releases XAML Studio” and other tweeted links…</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-01-28-microsoft-garage-releases-xaml-studio-and-other-tweeted-links/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-28-microsoft-garage-releases-xaml-studio-and-other-tweeted-links/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-01-28-microsoft-garage-releases-xaml-studio-and-other-tweeted-links/" />
         <updated>2019-01-28T22:39:20.254Z</updated>
         <published>2019-01-28T22:39:20.254Z</published>
         <content type="html">
@@ -164,7 +164,7 @@
         </author>
         <title>“Internet Explorer… Critical security flaw” and other tweeted links…</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-01-25-internet-explorer-critical-security-flaw-and-other-tweeted-links/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-25-internet-explorer-critical-security-flaw-and-other-tweeted-links/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-01-25-internet-explorer-critical-security-flaw-and-other-tweeted-links/" />
         <updated>2019-01-26T01:47:50.956Z</updated>
         <published>2019-01-26T01:47:50.956Z</published>
         <content type="html">
@@ -176,7 +176,7 @@
         </author>
         <title>“You asked, we answered. MSFT open sources WPF, Windows Forms and Windows UI XAML Library” and other tweeted links…</title>
         <id>http://songhayblog.azurewebsites.net/entry/2019-01-21-you-asked-we-answered-msft-open-sources-wpf-windows-forms-and-windows-ui-xaml-library-and-other-tweeted-links/</id>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-21-you-asked-we-answered-msft-open-sources-wpf-windows-forms-and-windows-ui-xaml-library-and-other-tweeted-links/" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-01-21-you-asked-we-answered-msft-open-sources-wpf-windows-forms-and-windows-ui-xaml-library-and-other-tweeted-links/" />
         <updated>2019-01-21T20:36:32.219Z</updated>
         <published>2019-01-21T20:36:32.219Z</published>
         <content type="html">
