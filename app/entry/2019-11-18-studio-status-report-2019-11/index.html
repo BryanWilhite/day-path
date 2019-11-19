@@ -14,13 +14,13 @@
 
         <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
         <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
-        <link rel="SHORTCUT ICON" href="./image/favicon.ico" />
+        <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link href="./style/index.min.css" rel="stylesheet" />
+        <link href="../../style/index.min.css" rel="stylesheet" />
 
-        <script src="./script/index.min.js"></script>
+        <script src="../../script/index.min.js"></script>
 
-        <title>Day Path</title>
+        <title>studio status report: 2019-11 - Day Path</title>
     </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -68,7 +68,9 @@
         </svg>
         <header class="mdc-top-app-bar mdc-top-app-bar--prominent">
             <div class="mdc-top-app-bar__row">
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
                 </section>
                 <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                     <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -112,33 +114,59 @@
         <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entries">
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11">studio status report: 2019-11</a></h3>
-            <p>month 11 is about a day-job 🐰🕳 and the Tweeted Links Builder The day job leads me to lodge some issues, reminding me to revive and research a few things: * https://github.com/BryanWilhite/Blog/issues/15
-https://github.com/BryanWilhite/Blog/issues/20 The…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10">studio status report: 2019-10</a></h3>
-            <p>month 10 was about re-releasing this Blog My old Blog repo and a new day-path repo finally free me from the mineshaft 🐰🕳 I dug for myself filled with PHP, WordPress, Matt Mullenweg’s old socks and my over-enthusiasm for Angular. I assume that I can live…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09">studio status report: 2019-09</a></h3>
-            <p>month-9 has been about actually using @songhay/player-video-you-tubeThe NPM package @songhay/player-video-you-tube is installed and compiling into the build for SonghaySystem.com.👏 (BTW: it was editorial error to mention @songhay/index for the last few ...</p>
-        </div>
-    
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2019-11</h1>
+<h2>month 11 is about a day-job 🐰🕳 and the Tweeted Links Builder</h2>
+<p>The day job leads me to lodge some issues, reminding me to revive and research a few things:</p>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Blog/issues/15">https://github.com/BryanWilhite/Blog/issues/15</a></li>
+<li><a href="https://github.com/BryanWilhite/Blog/issues/20">https://github.com/BryanWilhite/Blog/issues/20</a></li>
+</ul>
+<p>The switch to an 11ty-based, markdown-based world means the Tweeted Links system has to get in line. The next release of <code>Songhay.Dashboard</code> [<a href="https://github.com/BryanWilhite/Songhay.Dashboard">GitHub</a>] will show this move, covered in <a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/60">a GitHub issue</a>.</p>
+<p>In concert, resolution of this <code>Blog</code> repo issue should allow Blogging Tweeted Links to resume in the Studio: <a href="https://github.com/BryanWilhite/Blog/issues/18">https://github.com/BryanWilhite/Blog/issues/18</a>.</p>
+<h2>Feedly Drama</h2>
+<p>My <code>Blog</code> Atom Feed <a href="https://github.com/BryanWilhite/Blog/blob/master/presentation/entry/feed.liquid">template</a> generates <a href="http://www.feedvalidator.org/check.cgi?url=http%3A%2F%2Fsonghayblog.azurewebsites.net%2Fentry%2Ffeed.xml">valid output</a> but will <em>still</em> not function correctly when imported into <a href="https://feedly.com">Feedly</a>. In Feedly, the article links point to the top-level web site instead of the article. As of now, I assume that Feedly’s <a href="https://www.feedly.com/fetcher.html">fetcher</a> is caching a previous, incorrect version(s) of my feed (while somehow showing new entries 😑🤷‍♀️—not very likely).</p>
+<p>Relevant quote from Feedly:</p>
+<blockquote>
+<p>If you have an questions or would like to get early access to the kit, please email publishers@feedly.com with information about what is driving your interest.</p>
+</blockquote>
+<p>Research link: <a href="https://blog.feedly.com/10-ways-to-optimize-your-feed-for-feedly/">https://blog.feedly.com/10-ways-to-optimize-your-feed-for-feedly/</a> 📚</p>
+<h2>Azure WebJobs Drama</h2>
+<p>It helps to remind myself that the <a href="https://docs.microsoft.com/en-us/azure/app-service/webjobs-create">Azure WebJob</a> investments are not even archived (online). There is a test, <code>ShouldZipDeploymentForAzure</code>, in <code>Songhay.Player.Shell.Tests</code> that points to files in a folder that is gone (as far as I know as of this writing). My intent is to move out of Azure WebJobs toward Azure Functions, calling routines in a library designed to run in the <a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities">Songhay System Shell Activities architecture</a> (implementing <code>IActivity</code> [<a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Models/IActivity.cs">GitHub</a>]).</p>
+<p>All of this is important because my original design of the WebJob that updates my YouTube feeds will fail when it runs into problems with a <em>single</em> YouTube channel. This means that one ‘bad’ channel can prevent <em>all</em> channels from being updated. This is really becoming a problem in 2019 as more channels seem to ‘fail’ and as the YouTube API seems to be less reliable.</p>
+<p>I have updated my schedule (below) to make <code>Songhay.Player.Shell.Tests</code> a top priority (which cuts in line ahead of my previous obligations 🙄). This prioritization recognizes my need to update my resume and canonize my day-job learnings around Azure Functions.</p>
+<h2>sketching out a development schedule (revision 5)</h2>
+<p>Today the studio development schedule looks like this:</p>
+<ul>
+<li><s>get 11ty pipelines running with the FunkyKB</s> ✔</li>
+<li><s>migrate Thunderbird email to new Hyper-V Ubuntu VM</s> ✔</li>
+<li><s>move the kinté space blog to an 11ty pipeline (this has been another emergency <em>for years</em>)</s> ✔</li>
+<li><s>update SonghaySystem.com with my new <code>@songhay/player-video-you-tube</code></s> ✔</li>
+<li><s>convert the Day Path blog to 11ty</s> ✔</li>
+<li><s>add markdown support to SonghaySystem.com Tweeted Links Builder</s> ✔</li>
+<li>build out <code>Songhay.Player.Shell</code> and plug into Azure Functions ☁🤖</li>
+<li>use <code>@songhay/index</code> as a side-car app for “Day Path” and “the rasx() context” 🚛📦</li>
+<li>use the learnings from existing npm packages to build <code>@songhay/player-audio-???</code> 📦✨</li>
+<li>set up automated social-media posting with Azure logic apps (and Azure functions orchestration) ☁🤖</li>
+<li>modernize the kinté hits page into a progressive web app 💄✨</li>
+<li>convert Day Path Blog and SonghaySystem.com to HTTPs by default 🔐</li>
+<li>use the learnings of previous work to upgrade and re-release the kinté space 🚀</li>
+</ul>
+<p>@<a href="https://twitter.com/bryanwilhite">BryanWilhite</a></p>
+
+
     </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-6">
                     <p>
-                        a technical Blog ✒ for my little studio
+                        Last Reviewed:
+                        2019-11-19T01:08:12.552Z
                     </p>
                     <p>
                         another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
