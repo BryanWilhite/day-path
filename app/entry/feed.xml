@@ -6,13 +6,28 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2019-10-23T21:46:27.837Z</updated>
+    <updated>2019-11-19T01:08:12.552Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>studio status report: 2019-11</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11</id>
+        <updated>2019-11-19T01:08:12.552Z</updated>
+        <summary>
+            month 11 is about day job 🐰🕳 the Tweeted Links Builder The day job leads me to lodge some issues, reminding me to revive and research a few things: * https://github.com/BryanWilhite/Blog/issues/15
+https://github.com/BryanWilhite/Blog/issues/20 The switc…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2019-11-19T01:08:12.552Z</published>
+    </entry>
     <entry>
         <title>studio status report: 2019-10</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10" />
@@ -194,19 +209,5 @@
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-01-26T01:47:50.956Z</published>
-    </entry>
-    <entry>
-        <title>“You asked, we answered. MSFT open sources WPF, Windows Forms and Windows UI XAML Library” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-21-you-asked-we-answered-msft-open-sources-wpf-windows-forms-and-windows-ui-xaml-library-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-01-21-you-asked-we-answered-msft-open-sources-wpf-windows-forms-and-windows-ui-xaml-library-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-01-21-you-asked-we-answered-msft-open-sources-wpf-windows-forms-and-windows-ui-xaml-library-and-other-tweeted-links</id>
-        <updated>2019-01-21T20:36:32.219Z</updated>
-        <summary>
-            You asked, we answered. MSFT open sources WPF, Windows Forms and Windows UI XAML Library [blogs.windows.com] Microsoft ❤️ OpenSource - the UI toolkits, Windows.Forms and WPF are now open source: [blogs.msdn.microsoft.com] Some big news for developers at ...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-01-21T20:36:32.219Z</published>
     </entry>
 </feed>
