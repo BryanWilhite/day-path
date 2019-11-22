@@ -6,7 +6,7 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2019-11-19T01:08:12.552Z</updated>
+    <updated>2019-11-22T05:58:34.573Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
@@ -14,14 +14,28 @@
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
     <entry>
+        <title>“Why I stopped using NGRX” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2019-11-21-why-i-stopped-using-ngrx-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-11-21-why-i-stopped-using-ngrx-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2019-11-21-why-i-stopped-using-ngrx-and-other-tweeted-links</id>
+        <updated>2019-11-22T05:58:34.573Z</updated>
+        <summary>
+            
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2019-11-22T05:58:34.573Z</published>
+    </entry>
+    <entry>
         <title>studio status report: 2019-11</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11" />
         <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11/index.html" />
         <id>http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11</id>
         <updated>2019-11-19T01:08:12.552Z</updated>
         <summary>
-            month 11 is about day job 🐰🕳 the Tweeted Links Builder The day job leads me to lodge some issues, reminding me to revive and research a few things: * https://github.com/BryanWilhite/Blog/issues/15
-https://github.com/BryanWilhite/Blog/issues/20 The switc…
+            month 11 is about a day-job 🐰🕳 and the Tweeted Links Builder The day job leads me to lodge some issues, reminding me to revive and research a few things: * https://github.com/BryanWilhite/Blog/issues/15
+https://github.com/BryanWilhite/Blog/issues/20 The…
         </summary>
         <author>
             <name>Bryan Wilhite</name>
@@ -195,19 +209,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The switc…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-01-28T22:39:20.254Z</published>
-    </entry>
-    <entry>
-        <title>“Internet Explorer… Critical security flaw” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-25-internet-explorer-critical-security-flaw-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-01-25-internet-explorer-critical-security-flaw-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-01-25-internet-explorer-critical-security-flaw-and-other-tweeted-links</id>
-        <updated>2019-01-26T01:47:50.956Z</updated>
-        <summary>
-            If for whatever reason you are still using Internet Explorer (any version), STOP NOW. Critical security flaw enabling drive-by remote code execution is being actively exploited. Emergency patch is being pushed - but why not move to a better browser? [ars...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-01-26T01:47:50.956Z</published>
     </entry>
 </feed>
