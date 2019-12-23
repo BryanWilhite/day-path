@@ -14,13 +14,13 @@
 
         <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
         <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
-        <link rel="SHORTCUT ICON" href="./image/favicon.ico" />
+        <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link href="./style/index.min.css" rel="stylesheet" />
+        <link href="../../style/index.min.css" rel="stylesheet" />
 
-        <script src="./script/index.min.js"></script>
+        <script src="../../script/index.min.js"></script>
 
-        <title>Day Path</title>
+        <title>studio status report: 2019-12 - Day Path</title>
     </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -68,7 +68,9 @@
         </svg>
         <header class="mdc-top-app-bar mdc-top-app-bar--prominent">
             <div class="mdc-top-app-bar__row">
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+                    <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
                 </section>
                 <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                     <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -112,35 +114,63 @@
         <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-    <section class="entries">
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-12-23-studio-status-report-2019-12">studio status report: 2019-12</a></h3>
-            <p>month 12 is about firmly planting the Songhay System in the serverless cloud game Issue #83 in the Songhay Core represents the final touches on the Activity architecture that is the heart of the Songhay System. Thirteen years ago I made first mention of t…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-11-21-why-i-stopped-using-ngrx-and-other-tweeted-links">“Why I stopped using NGRX” and other tweeted links…</a></h3>
-            <p>Why I stopped using NGRX by the great wizard of none https://link.medium.com/AS542V3uSW
-Would be great if IE adopted css-supports, they're the reason it exists -http://davidwalsh.name/css-supports - http://caniuse.com/#search=@supports
-For the viewport he…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline3"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2019-11-18-studio-status-report-2019-11">studio status report: 2019-11</a></h3>
-            <p>month 11 is about a day-job 🐰🕳 and the Tweeted Links Builder The day job leads me to lodge some issues, reminding me to revive and research a few things: * https://github.com/BryanWilhite/Blog/issues/15
-https://github.com/BryanWilhite/Blog/issues/20 The…</p>
-        </div>
-    
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2019-12</h1>
+<h2>month 12 is about firmly planting the Songhay System in the serverless cloud game</h2>
+<p>Issue <a href="https://github.com/BryanWilhite/SonghayCore/issues/83">#83</a> in the Songhay Core represents the final touches on the <code>Activity</code> architecture that is the heart of the Songhay System. Thirteen years ago I made <a href="http://kintespace.com/rasxlog/entry/2006-05-24-more-technical-misses-by-bryan/">first mention</a> of the Data Activity Runner and only now can I consider this architecture complete. I <em>could</em> argue that the 13-year lag came from waiting for <code>async</code>-<code>await</code> to <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Versions">appear</a> c. 2012 in C# 5 (and, by the way, <code>Task&lt;T&gt;</code> came out in C# 4, 2010) but that would leave at least <em>seven years</em> for me to figure this shit out. No, the real credit goes to <a href="https://www.linkedin.com/in/damaciel/">David Maciel</a> from one of my day jobs. My one little architecture looks nothing like his several <em>architectures</em> but his advice to me (given in less than 15 minutes) changed everything for the better.</p>
+<p>The <code>Activity</code> is now being called every 12 hours to update my curated collection of YouTube channels. This is taking place in the serverless space Microsoft calls <a href="https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?tabs=csharp">Azure Durable Functions</a>. The <em>durable</em> part of Azure Functions builds on top of Azure <a href="https://docs.microsoft.com/en-us/azure/app-service/webjobs-create">WebJobs</a> which I have been using since before 2017 (Magnus Mårtensson <a href="https://www.youtube.com/watch?v=I6YfdTWvhMk">announced</a> general availability in 2014).</p>
+<h2>getting the <code>@songhay/index</code> as a side-car app is not trivial</h2>
+<p>Before <code>@songhay/index</code> as a side-car app is in play, the <code>lunr</code> auto-complete experience has to be established. Before the <code>lunr</code> thing can play, the backend index data needs a pipeline. That’s two rabbit holes! 🕳🐰X2</p>
+<h2>the Songhay Stills API will add progressive image support to the Studio</h2>
+<p>The b-roll Stills API will be the heart of the Songhay Studio online presence. Every image shown by Songhay System should go through this API.</p>
+<table>
+<thead>
+<tr>
+<th>endpoint</th>
+<th>plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/player/v1/stills/{id}/srcset-sizes</code></td>
+<td>Should return some JSON describing all the responsive images of the specified ID.</td>
+</tr>
+<tr>
+<td><code>/api/player/v1/stills/{presentationKey}/frames</code></td>
+<td>Should return some JSON describing all the frames of a presentation. The data should contain a rollup of the equivalent of several srcset-sizes calls.</td>
+</tr>
+</tbody>
+</table>
+<p>💡the data might contain URIs pointing to a CDN or BLOB storage</p>
+<p>🐰🕳the data might contain some kind of guided-view declarations</p>
+<p>So, this is the reason why none of my new Web sites have so few images. This thing needs to be built.</p>
+<h2>sketching out a development schedule (revision 6)</h2>
+<p>Today the studio development schedule looks like this:</p>
+<ul>
+<li><s>build out <code>Songhay.Player.Activities</code> and plug into Azure Functions</s> ✔</li>
+<li>build out <code>Songhay.Social.Activities</code> (automated social-media posting) and plug into Azure Functions 🤖🌩</li>
+<li>add Stills API to <code>Songhay.Player</code> (b-roll player) 🕸🌩</li>
+<li>use <code>@songhay/index</code> as a side-car app for “Day Path” and “the rasx() context” 🚛📦</li>
+<li>use the learnings from existing npm packages to build <code>@songhay/player-audio-???</code> 📦✨</li>
+<li>modernize the kinté hits page into a progressive web app 💄✨</li>
+<li>convert Day Path Blog and SonghaySystem.com to HTTPs by default 🔐</li>
+<li>use the learnings of previous work to upgrade and re-release the kinté space 🚀</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
     </section>
 </div>
+
             </div>
         </main>
         <footer class="mdc-layout-grid mdc-typography--caption">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-6">
                     <p>
-                        a technical Blog ✒ for my little studio
+                        Last Reviewed:
+                        2019-12-23T18:18:27.986Z
                     </p>
                     <p>
                         another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
