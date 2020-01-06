@@ -6,13 +6,29 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2019-12-23T18:18:27.986Z</updated>
+    <updated>2020-01-05T23:50:19.341Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“AngularJS and Jest” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-05-angularjs-and-jest-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-05-angularjs-and-jest-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-05-angularjs-and-jest-and-other-tweeted-links</id>
+        <updated>2020-01-05T23:50:19.341Z</updated>
+        <summary>
+            AngularJS and Jest. Three steps to improve your legacy frontend tests
+https://blog.softwaremill.com/angularjs-and-jest-three-steps-to-improve-your-legacy-frontend-tests-90674c0017e4?gi=f75beabaa831
+This really getting a little too much, React Hooks people…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-05T23:50:19.341Z</published>
+    </entry>
     <entry>
         <title>studio status report: 2019-12</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2019-12-23-studio-status-report-2019-12" />
@@ -197,19 +213,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-02-26T02:52:45.909Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-01</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-01-28-studio-status-report-2019-01" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-01-28-studio-status-report-2019-01/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-01-28-studio-status-report-2019-01</id>
-        <updated>2019-01-28T23:01:04.897Z</updated>
-        <summary>
-            the day job brings some new Angular research topicsDo rxjs observables invoke for every subscriber? The answer to this question (at work) looks like it’s yes which means HttpClient.post() will invoke post() for every subscriber. This default behavior is ...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-01-28T23:01:04.897Z</published>
     </entry>
 </feed>
