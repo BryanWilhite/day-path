@@ -6,13 +6,39 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-05T23:50:19.341Z</updated>
+    <updated>2020-01-07T00:51:13.526Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“The five essentials that will make or break your CSS artworks” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links</id>
+        <updated>2020-01-07T00:51:13.526Z</updated>
+        <summary>
+            The five essentials that will make or break your CSS artworks https://t.co/PowRkkVhBP
+The CSS Working Group agreed this morning on adding many math functions. We now have: - calc()
+min()
+max()
+clamp()
+sin()
+cos()
+tan()
+acos()
+asin()
+atan()
+atan2()
+hypot()…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-07T00:51:13.526Z</published>
+    </entry>
     <entry>
         <title>“AngularJS and Jest” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-05-angularjs-and-jest-and-other-tweeted-links" />
@@ -199,19 +225,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-02-26T02:57:33.452Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-02</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-02-25-studio-status-report-2019-02" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-02-25-studio-status-report-2019-02/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-02-25-studio-status-report-2019-02</id>
-        <updated>2019-02-26T02:52:45.909Z</updated>
-        <summary>
-            One “pure” NPM package and two Angular packagesAfter another miserable, 20-day siege, these are the repositories I have committed to that develop Javascript code reuse in the Songhay Studio: songhay-core [GitHub]songhay-ng-workspace [GitHub]Here is a sele...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-02-26T02:52:45.909Z</published>
     </entry>
 </feed>
