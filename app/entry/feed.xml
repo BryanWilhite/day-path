@@ -28,6 +28,20 @@
         <published>2020-01-10T03:30:51.496Z</published>
     </entry>
     <entry>
+        <title>“Using Custom Route Matching with the Angular Router” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-07-using-custom-route-matching-with-the-angular-router-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-07-using-custom-route-matching-with-the-angular-router-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-07-using-custom-route-matching-with-the-angular-router-and-other-tweeted-links</id>
+        <updated>2020-01-08T06:07:25.738Z</updated>
+        <summary>
+            Using Custom Route Matching with the #Angular Router ✍🏿👀📢 https://link.medium.com/H6B59RCWoV
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-08T06:07:25.738Z</published>
+    </entry>
+    <entry>
         <title>“The five essentials that will make or break your CSS artworks” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links" />
         <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links/index.html" />
@@ -211,19 +225,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-04-21T03:09:16.128Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-03</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-03-22-studio-status-report-2019-03" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-03-22-studio-status-report-2019-03/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-03-22-studio-status-report-2019-03</id>
-        <updated>2019-03-23T03:10:57.76Z</updated>
-        <summary>
-            excited about Songhay System being on NPMThe 20-month siege to obtain the fundamental ability to share/reuse code in Javascript framework developed by one of the wealthiest companies in the world is finally over. Now the Songhay studio can steam ahead wi...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-03-23T03:10:57.76Z</published>
     </entry>
 </feed>
