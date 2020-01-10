@@ -6,7 +6,7 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-08T06:07:25.738Z</updated>
+    <updated>2020-01-10T03:30:51.496Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
@@ -14,18 +14,18 @@
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
     <entry>
-        <title>“Using Custom Route Matching with the Angular Router” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-07-using-custom-route-matching-with-the-angular-router-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-07-using-custom-route-matching-with-the-angular-router-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-07-using-custom-route-matching-with-the-angular-router-and-other-tweeted-links</id>
-        <updated>2020-01-08T06:07:25.738Z</updated>
+        <title>“Watch this INCREDIBLE video of @jensimmons talking about Intrinsic Web Design” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-09-watch-this-incredible-video-of-jensimmons-talking-about-intrinsic-web-design-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-09-watch-this-incredible-video-of-jensimmons-talking-about-intrinsic-web-design-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-09-watch-this-incredible-video-of-jensimmons-talking-about-intrinsic-web-design-and-other-tweeted-links</id>
+        <updated>2020-01-10T03:30:51.496Z</updated>
         <summary>
-            
+            Watch this INCREDIBLE video of @jensimmons talking about Intrinsic Web Design at @aneventapart https://vimeo.com/316326187 if you’re interested in CSS Grid and the new era of web layout. Every time I think I know a lot about Grid, I always learn more from…
         </summary>
         <author>
             <name>Bryan Wilhite</name>
         </author>
-        <published>2020-01-08T06:07:25.738Z</published>
+        <published>2020-01-10T03:30:51.496Z</published>
     </entry>
     <entry>
         <title>“The five essentials that will make or break your CSS artworks” and other tweeted links…</title>
