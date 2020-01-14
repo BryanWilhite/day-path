@@ -6,13 +6,28 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-10T03:30:51.496Z</updated>
+    <updated>2020-01-14T18:24:23.707Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“tsdx: Zero-config CLI for TypeScript package development” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-14-tsdx-zero-config-cli-for-typescript-package-development-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-14-tsdx-zero-config-cli-for-typescript-package-development-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-14-tsdx-zero-config-cli-for-typescript-package-development-and-other-tweeted-links</id>
+        <updated>2020-01-14T18:24:23.707Z</updated>
+        <summary>
+            tsdx: Zero-config CLI for TypeScript package development #javascript ★267 https://github.com/jaredpalmer/tsdx https://twitter.com/GithubTrending/status/1123064673098661888/photo/1
+New CSS video https://www.youtube.com/watch?v=TIx8koZP-Mk &#34;Learn to Integra…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-14T18:24:23.707Z</published>
+    </entry>
     <entry>
         <title>“Watch this INCREDIBLE video of @jensimmons talking about Intrinsic Web Design” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-09-watch-this-incredible-video-of-jensimmons-talking-about-intrinsic-web-design-and-other-tweeted-links" />
@@ -211,19 +226,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-06-06T18:35:09.842Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-04</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-04-20-studio-status-report-2019-04" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-04-20-studio-status-report-2019-04/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-04-20-studio-status-report-2019-04</id>
-        <updated>2019-04-21T03:09:16.128Z</updated>
-        <summary>
-            getting this Index App into songhay-ng-workspaceThis month saw the archiving of angular.io-index-app [GitHub] because it is being moved to songhay-ng-workspace. This was quite a forehead slapping moment and should be reflected in this month’s version of ...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-04-21T03:09:16.128Z</published>
     </entry>
 </feed>
