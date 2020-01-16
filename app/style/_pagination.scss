@@ -35,6 +35,11 @@ main {
 
         ol.pagination {
             padding-top: 4rem;
+
+            li.header {
+                color: $greys-dark-tone;
+                padding-top: 12rem; /* FUNKYKB: this value is large because of this: https://stackoverflow.com/a/13117744/22944 */
+            }
         }
     }
 }

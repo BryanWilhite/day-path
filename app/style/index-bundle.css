@@ -2242,6 +2242,10 @@ main section.entries .pagination .position {
 
 main section.entries ol.pagination {
   padding-top: 4rem; }
+  main section.entries ol.pagination li.header {
+    color: #858686;
+    padding-top: 12rem;
+    /* FUNKYKB: this value is large because of this: https://stackoverflow.com/a/13117744/22944 */ }
 
 body {
   margin: 0; }
