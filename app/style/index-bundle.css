@@ -2219,6 +2219,30 @@ main .entry.mdc-typography--body1 {
     main .entry.mdc-typography--body1 .WordWalkingStickTable td {
       border-top: 1px solid #063; }
 
+main section.entries .mdc-list-item > a:active, main section.entries .mdc-list-item > a:hover, main section.entries .mdc-list-item > a:link, main section.entries .mdc-list-item > a:visited,
+main section.entries .pagination > a:active,
+main section.entries .pagination > a:hover,
+main section.entries .pagination > a:link,
+main section.entries .pagination > a:visited {
+  color: #00ee3b;
+  display: inline-block;
+  margin: 1rem;
+  text-decoration: none; }
+
+main section.entries .pagination > a:hover {
+  background-color: #858686; }
+
+main section.entries .pagination.controls {
+  position: fixed;
+  width: 100%;
+  z-index: 1; }
+
+main section.entries .pagination .position {
+  color: #858686; }
+
+main section.entries ol.pagination {
+  padding-top: 4rem; }
+
 body {
   margin: 0; }
 

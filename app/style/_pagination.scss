@@ -1,0 +1,40 @@
+main {
+    section.entries {
+        .mdc-list-item,
+        .pagination {
+            & > a {
+                &:active,
+                &:hover,
+                &:link,
+                &:visited {
+                    color: $akyinkyin-light-tint;
+                    display: inline-block;
+                    margin: 1rem;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .pagination {
+            & > a {
+                &:hover {
+                    background-color: $greys-dark-tone;
+                }
+            }
+
+            &.controls {
+                position: fixed;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .position {
+                color: $greys-dark-tone;
+            }
+        }
+
+        ol.pagination {
+            padding-top: 4rem;
+        }
+    }
+}

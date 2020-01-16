@@ -21,6 +21,11 @@
             "script": "start",
             "path": "./",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "index:sass",
+            "problemMatcher": []
         }
     ]
 }
