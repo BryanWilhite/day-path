@@ -2240,12 +2240,18 @@ main .entries .pagination.controls {
 main .entries .pagination .position {
   color: #858686; }
 
-main .entries ol.pagination {
-  padding-top: 4rem; }
-  main .entries ol.pagination li.header {
+ul.pagination {
+  padding-top: 4rem;
+  height: 70vh;
+  overflow-y: auto; }
+  ul.pagination li.header {
     color: #858686;
     padding-top: 12rem;
     /* FUNKYKB: this value is large because of this: https://stackoverflow.com/a/13117744/22944 */ }
+  ul.pagination::-webkit-scrollbar {
+    background-color: #858686; }
+  ul.pagination::-webkit-scrollbar-thumb {
+    background-color: #6eff93; }
 
 body {
   margin: 0; }

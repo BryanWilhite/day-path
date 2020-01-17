@@ -32,14 +32,25 @@ main {
                 color: $greys-dark-tone;
             }
         }
-
-        ol.pagination {
-            padding-top: 4rem;
-
-            li.header {
-                color: $greys-dark-tone;
-                padding-top: 12rem; /* FUNKYKB: this value is large because of this: https://stackoverflow.com/a/13117744/22944 */
-            }
-        }
     }
+}
+
+ul.pagination {
+    padding-top: 4rem;
+
+    li.header {
+        color: $greys-dark-tone;
+        padding-top: 12rem; /* FUNKYKB: this value is large because of this: https://stackoverflow.com/a/13117744/22944 */
+    }
+
+    &::-webkit-scrollbar {
+        background-color: $greys-dark-tone;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $akyinkyin-light-tone;
+    }
+
+    height: 70vh;
+    overflow-y: auto;
 }
