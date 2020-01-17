@@ -1869,30 +1869,30 @@ main .entry.mdc-typography--body1 {
     main .entry.mdc-typography--body1 .WordWalkingStickTable td {
       border-top: 1px solid #063; }
 
-main section.entries .mdc-list-item > a:active, main section.entries .mdc-list-item > a:hover, main section.entries .mdc-list-item > a:link, main section.entries .mdc-list-item > a:visited,
-main section.entries .pagination > a:active,
-main section.entries .pagination > a:hover,
-main section.entries .pagination > a:link,
-main section.entries .pagination > a:visited {
+main .entries .mdc-list-item > a:active, main .entries .mdc-list-item > a:hover, main .entries .mdc-list-item > a:link, main .entries .mdc-list-item > a:visited,
+main .entries .pagination > a:active,
+main .entries .pagination > a:hover,
+main .entries .pagination > a:link,
+main .entries .pagination > a:visited {
   color: #00ee3b;
   display: inline-block;
   margin: 1rem;
   text-decoration: none; }
 
-main section.entries .pagination > a:hover {
+main .entries .pagination > a:hover {
   background-color: #858686; }
 
-main section.entries .pagination.controls {
+main .entries .pagination.controls {
   position: fixed;
   width: 100%;
   z-index: 1; }
 
-main section.entries .pagination .position {
+main .entries .pagination .position {
   color: #858686; }
 
-main section.entries ol.pagination {
+main .entries ol.pagination {
   padding-top: 4rem; }
-  main section.entries ol.pagination li.header {
+  main .entries ol.pagination li.header {
     color: #858686;
     padding-top: 12rem;
     /* FUNKYKB: this value is large because of this: https://stackoverflow.com/a/13117744/22944 */ }
