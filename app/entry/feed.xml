@@ -6,13 +6,28 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-14T18:24:23.707Z</updated>
+    <updated>2020-01-21T01:48:21.243Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“Inside Microsoft’s surprise decision to work with Google on its Edge browser” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-20-inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-20-inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-20-inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-and-other-tweeted-links</id>
+        <updated>2020-01-21T01:48:21.243Z</updated>
+        <summary>
+            Inside Microsoft’s surprise decision to work with Google on its Edge browser http://bit.ly/2J1rFQ9 https://twitter.com/TravisBDriver/status/1125432683885154304/photo/1
+A project showcasing Vietnamese typography and @fontofthemonth http://vietnamesetypogra…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-21T01:48:21.243Z</published>
+    </entry>
     <entry>
         <title>“tsdx: Zero-config CLI for TypeScript package development” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-14-tsdx-zero-config-cli-for-typescript-package-development-and-other-tweeted-links" />
@@ -212,19 +227,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-07-22T18:51:53.253Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-06</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-06-06-studio-status-report-2019-06" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-06-06-studio-status-report-2019-06/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-06-06-studio-status-report-2019-06</id>
-        <updated>2019-06-06T18:35:09.842Z</updated>
-        <summary>
-            I missed last month 😒🤷‍️😁month-4 was all about upgrading SonghayCore 🐰🕳I have started using GitHub projects to batch issues together to mark a NuGet release. My first project, version 3.1.3 release, records the miserable but compelling details aroun...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-06-06T18:35:09.842Z</published>
     </entry>
 </feed>
