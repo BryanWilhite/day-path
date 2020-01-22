@@ -6,13 +6,45 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-22T00:58:05.759Z</updated>
+    <updated>2020-01-22T23:32:16.041Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>flippant remarks about my use of design patterns</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-22-flippant-remarks-about-my-use-of-design-patterns" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-22-flippant-remarks-about-my-use-of-design-patterns/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-22-flippant-remarks-about-my-use-of-design-patterns</id>
+        <updated>2020-01-22T23:32:16.041Z</updated>
+        <summary>
+            Seasoned YouTuber Derek Banas has a design patterns series that I think I should watch at least once a year to stay in shape. This exercise should inspire me to answer these very healthy questions: - What design patterns am I using regularly?
+What design �
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-22T23:32:16.041Z</published>
+    </entry>
+    <entry>
+        <title>“overview of Promise combinators Promise.all, Promise.any, Promise.race, Promise.allSettled” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-22-overview-of-promise-combinators-promise-all-promise-any-promise-race-promise-allsettled-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-22-overview-of-promise-combinators-promise-all-promise-any-promise-race-promise-allsettled-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-22-overview-of-promise-combinators-promise-all-promise-any-promise-race-promise-allsettled-and-other-tweeted-links</id>
+        <updated>2020-01-22T23:29:47.848Z</updated>
+        <summary>
+            nice quick overview of Promise combinators
+Promise.all, Promise.any, Promise.race, Promise.allSettled
+https://v8.dev/features/promise-combinators #javascript
+How to get #TypeScript errors and completions in supported editors and on the command line withou…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-22T23:29:47.848Z</published>
+    </entry>
     <entry>
         <title>“Is CSS a programming language?” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-21-is-css-a-programming-language-and-other-tweeted-links" />
@@ -203,33 +235,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-09-22T18:03:05.623Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-08</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-08-24-studio-status-report-2019-08" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-08-24-studio-status-report-2019-08/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-08-24-studio-status-report-2019-08</id>
-        <updated>2019-08-25T04:16:23.113Z</updated>
-        <summary>
-            month-7 was about moving the kinté space Blog into an 11ty pipeline11ty pipeline for kintespace.com Blog. I am almost certain that end-of-month-8 or early month 9 will see the re-launch of the kintespace.com Blog without WordPress! Success here will make...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-08-25T04:16:23.113Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-07</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-07-22-studio-status-report-2019-07" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-07-22-studio-status-report-2019-07/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-07-22-studio-status-report-2019-07</id>
-        <updated>2019-07-22T18:54:32.513Z</updated>
-        <summary>
-            month-6 was about switching to Hyper-V, being 134% behind and 11tyMy studio notes on setting up Ubuntu on Hyper-V boil down to this: Install OS (minimal install) from *.ISO on Generation 2 VM without RemoteFX 3D Video Adapter (with Checkpoints Disabled)Co...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-07-22T18:54:32.513Z</published>
     </entry>
 </feed>
