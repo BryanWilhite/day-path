@@ -6,13 +6,31 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-21T01:48:21.243Z</updated>
+    <updated>2020-01-22T00:58:05.759Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“Is CSS a programming language?” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-21-is-css-a-programming-language-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-21-is-css-a-programming-language-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-21-is-css-a-programming-language-and-other-tweeted-links</id>
+        <updated>2020-01-22T00:58:05.759Z</updated>
+        <summary>
+            Is CSS a programming language? I think @laras126 has the answer
+#css #programming #webdevelopment https://www.youtube.com/watch?v=cCeqH6m_K20&amp;feature=youtu.be
+Great courses to learn stuff: ↬ CSS Animations
+https://css-animations.io/ ↬ Grid Garden
+https://…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-22T00:58:05.759Z</published>
+    </entry>
     <entry>
         <title>“Inside Microsoft’s surprise decision to work with Google on its Edge browser” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-20-inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-and-other-tweeted-links" />
@@ -213,19 +231,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-07-22T18:54:32.513Z</published>
-    </entry>
-    <entry>
-        <title>flippant remarks about DGML and Visual Studio code visualization</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-07-22-flippant-remarks-about-dgml-and-visual-studio-code-visualization" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-07-22-flippant-remarks-about-dgml-and-visual-studio-code-visualization/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-07-22-flippant-remarks-about-dgml-and-visual-studio-code-visualization</id>
-        <updated>2019-07-22T18:51:53.253Z</updated>
-        <summary>
-            In 2008, Cameron Skinner of Microsoft wrote, “Introduction to Directed Graph Markup Language (DGML).” In the comments of this post, Chris Lovett is mentioned as an architect working on DGML and Sadi Khan as a Program Manager. Lovett developed DgmlPowerTo...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-07-22T18:51:53.253Z</published>
     </entry>
 </feed>
