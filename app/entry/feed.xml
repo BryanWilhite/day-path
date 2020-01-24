@@ -6,13 +6,27 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-22T23:32:16.041Z</updated>
+    <updated>2020-01-24T18:49:33.213Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“It’s time to unleash `ngx-template-streams`” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links</id>
+        <updated>2020-01-24T18:49:33.213Z</updated>
+        <summary>
+            📢 ANNOUNCEMENT 📢 It&#39;s time to unleash ngx-template-streams, a library that supercharges your @Angular templates with Observables and lets you define event streams from any DOM event including component outputs. 🎉🔥🙌😱 It&#39;s fully open source! Happy str…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-24T18:49:33.213Z</published>
+    </entry>
     <entry>
         <title>flippant remarks about my use of design patterns</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-22-flippant-remarks-about-my-use-of-design-patterns" />
@@ -221,19 +235,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-10-23T21:46:27.837Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-09</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-09-22-studio-status-report-2019-09</id>
-        <updated>2019-09-22T18:03:05.623Z</updated>
-        <summary>
-            month-9 has been about actually using @songhay/player-video-you-tubeThe NPM package @songhay/player-video-you-tube is installed and compiling into the build for SonghaySystem.com.👏 (BTW: it was editorial error to mention @songhay/index for the last few ...
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-09-22T18:03:05.623Z</published>
     </entry>
 </feed>
