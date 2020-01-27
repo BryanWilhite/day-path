@@ -6,13 +6,28 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-24T18:49:33.213Z</updated>
+    <updated>2020-01-27T19:14:07.798Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“Recapping the Xamarin Developer Summit” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</id>
+        <updated>2020-01-27T19:14:07.798Z</updated>
+        <summary>
+            Recapping the Xamarin Developer Summit by Maddy Leger. #Xamarin #devconference https://devblogs.microsoft.com/xamarin/recapping-xamarin-developer-summit/?_lrsc=842e9325-e980-4870-a930-ef048f5b0323&amp;utm_campaign=elevate&amp;utm_source=twitter&amp;utm_medium=social
+…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-27T19:14:07.798Z</published>
+    </entry>
     <entry>
         <title>“It’s time to unleash `ngx-template-streams`” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links" />
@@ -221,19 +236,5 @@ https://github.com/BryanWilhite/Blog/issues/20 The…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-11-19T01:08:12.552Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-10</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-10-23-studio-status-report-2019-10</id>
-        <updated>2019-10-23T21:46:27.837Z</updated>
-        <summary>
-            month 10 was about re-releasing this Blog My old Blog repo and a new day-path repo finally free me from the mineshaft 🐰🕳 I dug for myself filled with PHP, WordPress, Matt Mullenweg’s old socks and my over-enthusiasm for Angular. I assume that I can live…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-10-23T21:46:27.837Z</published>
     </entry>
 </feed>
