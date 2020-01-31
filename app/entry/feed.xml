@@ -6,13 +6,29 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-29T22:38:53.877Z</updated>
+    <updated>2020-01-31T19:07:22.656Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“The (not so) hidden cost of sharing code between iOS and Android” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links</id>
+        <updated>2020-01-31T19:07:22.656Z</updated>
+        <summary>
+            The (not so) hidden cost of sharing code between iOS and Android https://blogs.dropbox.com/tech/2019/08/the-not-so-hidden-cost-of-sharing-code-between-ios-and-android/
+Some of my favorite learning resources: - @FrontendMasters for long-form content
+@egghe…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-01-31T19:07:22.656Z</published>
+    </entry>
     <entry>
         <title>“`:focus-within` is SO useful” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links" />
@@ -220,21 +236,5 @@ This really getting a little too much, React Hooks people…
             <name>Bryan Wilhite</name>
         </author>
         <published>2019-12-23T18:18:27.986Z</published>
-    </entry>
-    <entry>
-        <title>“Why I stopped using NGRX” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-11-21-why-i-stopped-using-ngrx-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-11-21-why-i-stopped-using-ngrx-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-11-21-why-i-stopped-using-ngrx-and-other-tweeted-links</id>
-        <updated>2019-11-22T05:58:34.573Z</updated>
-        <summary>
-            Why I stopped using NGRX by the great wizard of none https://link.medium.com/AS542V3uSW
-Would be great if IE adopted css-supports, they&#39;re the reason it exists -http://davidwalsh.name/css-supports - http://caniuse.com/#search=@supports
-For the viewport he…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-11-22T05:58:34.573Z</published>
     </entry>
 </feed>
