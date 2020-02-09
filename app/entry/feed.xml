@@ -6,13 +6,43 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-01-31T19:07:22.656Z</updated>
+    <updated>2020-02-09T03:08:05.496Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“11 JavaScript Animation Libraries For 2019” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</id>
+        <updated>2020-02-09T03:08:05.496Z</updated>
+        <summary>
+            11 JavaScript Animation Libraries For 2019 by Jonathan Saring https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59?gi=ed70256906e8
+Really excited about the improved UX around Promises! I forget to await things all the time 😅
+Ann…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-02-09T03:08:05.496Z</published>
+    </entry>
+    <entry>
+        <title>studio status report: 2020-01</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</id>
+        <updated>2020-02-09T03:06:25.321Z</updated>
+        <summary>
+            the first month of 2020 is about achieving desired expressive power with eleventy GitHub issue, “add flat entries/ (index) and groupings by year,” records my progress with generating Blog sites with eleventy: &gt; “Tips for Using Snippets in Your Shopify The…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-02-09T03:06:25.321Z</published>
+    </entry>
     <entry>
         <title>“The (not so) hidden cost of sharing code between iOS and Android” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links" />
@@ -206,35 +236,5 @@ hypot()…
             <name>Bryan Wilhite</name>
         </author>
         <published>2020-01-07T00:51:13.526Z</published>
-    </entry>
-    <entry>
-        <title>“AngularJS and Jest” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-05-angularjs-and-jest-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-05-angularjs-and-jest-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-05-angularjs-and-jest-and-other-tweeted-links</id>
-        <updated>2020-01-05T23:50:19.341Z</updated>
-        <summary>
-            AngularJS and Jest. Three steps to improve your legacy frontend tests
-https://blog.softwaremill.com/angularjs-and-jest-three-steps-to-improve-your-legacy-frontend-tests-90674c0017e4?gi=f75beabaa831
-This really getting a little too much, React Hooks people…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-05T23:50:19.341Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2019-12</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2019-12-23-studio-status-report-2019-12" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2019-12-23-studio-status-report-2019-12/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2019-12-23-studio-status-report-2019-12</id>
-        <updated>2019-12-23T18:18:27.986Z</updated>
-        <summary>
-            month 12 is about firmly planting the Songhay System in the serverless cloud game Issue #83 in the Songhay Core represents the final touches on the Activity architecture that is the heart of the Songhay System. Thirteen years ago I made first mention of t…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2019-12-23T18:18:27.986Z</published>
     </entry>
 </feed>
