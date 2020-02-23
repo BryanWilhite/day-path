@@ -6,13 +6,28 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-02-09T03:08:05.496Z</updated>
+    <updated>2020-02-23T03:03:08.237Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>“Introducing .NET Core Windows Forms Designer Preview 1” and other tweeted links…</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</id>
+        <updated>2020-02-23T03:03:08.237Z</updated>
+        <summary>
+            Introducing .NET Core Windows Forms Designer Preview 1 | .NET Blog #BreakingNews #games #rdt http://dlvr.it/RFHMxT https://twitter.com/GoodVibra/status/1179081053958328320/photo/1
+What’s New in 2019 Volume 3: Xamarin.Forms WPF https://www.syncfusion.com/b…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-02-23T03:03:08.237Z</published>
+    </entry>
     <entry>
         <title>“11 JavaScript Animation Libraries For 2019” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links" />
@@ -210,31 +225,5 @@ New CSS video https://www.youtube.com/watch?v=TIx8koZP-Mk &#34;Learn to Integra�
             <name>Bryan Wilhite</name>
         </author>
         <published>2020-01-08T06:07:25.738Z</published>
-    </entry>
-    <entry>
-        <title>“The five essentials that will make or break your CSS artworks” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-06-the-five-essentials-that-will-make-or-break-your-css-artworks-and-other-tweeted-links</id>
-        <updated>2020-01-07T00:51:13.526Z</updated>
-        <summary>
-            The five essentials that will make or break your CSS artworks https://t.co/PowRkkVhBP
-The CSS Working Group agreed this morning on adding many math functions. We now have: - calc()
-min()
-max()
-clamp()
-sin()
-cos()
-tan()
-acos()
-asin()
-atan()
-atan2()
-hypot()…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-07T00:51:13.526Z</published>
     </entry>
 </feed>
