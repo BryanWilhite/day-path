@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="a technical Blog ✒ for my little studio" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../style/index.min.css" rel="stylesheet" />
+
+    <script src="../../script/index.min.js"></script>
+
+    <title>“React Native Vs. Xamarin Vs. Ionic Vs. Flutter” and other tweeted links… - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>“React Native Vs. Xamarin Vs. Ionic Vs. Flutter” and other tweeted links…</h1>
+<div class="tweet" data-status-id="1123210168039137300">
+<p><a href="https://sg.linkedin.com/in/chooyansheng"><img alt="Jason Choo [grandnexus]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/grandnexus.jpg" /></a>
+React Native Vs. Xamarin Vs. Ionic Vs. Flutter: Which Is Best For Cross-Platform Mobile App Development?
+<a href="https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?utm_source=Facebook&amp;utm_medium=Cross%20platform%20,Group4,%2030-04-2019%20-%20Sachin">https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?utm_source=Facebook&amp;utm_medium=Cross%20platform%20,Group4,%2030-04-2019%20-%20Sachin</a></p>
+</div>
+<div class="tweet" data-status-id="1191816871407833000">
+<p><a href="http://paulomorgado.net/"><img alt="PauloMorgado.NET [PaulomorgadoN]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/PaulomorgadoN.jpg" /></a></p>
+<blockquote>
+<p>Let's look WinUI 3.0 alpha <a href="http://dlvr.it/RHhLtW">http://dlvr.it/RHhLtW</a> <a href="https://twitter.com/PaulomorgadoN/status/1191816871407833088/photo/1">https://twitter.com/PaulomorgadoN/status/1191816871407833088/photo/1</a></p>
+</blockquote>
+</div>
+<div class="tweet" data-status-id="1192586286797713400">
+<p><a href="http://spoti.fi/2l927F7"><img alt="Mark Horns [GoodVibra]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/GoodVibra.jpg" /></a>
+.NET Core with Jupyter Notebooks <a href="https://twitter.com/search?q='%23BreakingNews'">#BreakingNews</a> <a href="https://twitter.com/search?q='%23games'">#games</a> <a href="https://twitter.com/search?q='%23rdt'">#rdt</a> <a href="http://dlvr.it/RHrfTW">http://dlvr.it/RHrfTW</a> <a href="https://twitter.com/GoodVibra/status/1192586286797713411/photo/1">https://twitter.com/GoodVibra/status/1192586286797713411/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1188441283439812600">
+<p><a href="http://www.medium.com/@vekzdran"><img alt="Vedran Mandić [vekzdran]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/vekzdran.jpeg" /></a>
+TypeScript 3.7 adds some fantastic features to decrease the boilerplate code we write, i.e. elvis operator, nullish coalescing and better recursive type definitions, amazing work again!</p>
+<p><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-rc/">https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-rc/</a></p>
+<p><a href="https://twitter.com/search?q='%23javascript'">#javascript</a> <a href="https://twitter.com/search?q='%23js'">#js</a> <a href="https://twitter.com/search?q='%23ts'">#ts</a> <a href="https://twitter.com/search?q='%23typescript'">#typescript</a> <a href="https://twitter.com/search?q='%23jscommunity'">#jscommunity</a> <a href="https://twitter.com/search?q='%23software'">#software</a> <a href="https://twitter.com/search?q='%23news'">#news</a></p>
+</div>
+<div class="tweet" data-status-id="1192492944864923600">
+<p><a href="http://bikeshsrivastava.com/"><img alt="RVS Tech [rvsittech]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/rvsittech.jpg" /></a>
+TypeScript 3.7 is finally here!</p>
+<p>✔ Optional Chaining &amp; Coalescing<br/>
+✔ Assertion Functions<br/>
+✔ .d.ts Emit From .js Files<br/>
+✔ Smarter Control Flow Analysis<br/>
+✔ Flatter Error Messages</p>
+<p>and more! Check out the blog post today! <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-3-7/">https://devblogs.microsoft.com/typescript/announcing-typescript-3-7/</a> <a href="https://twitter.com/typescript/status/1191766259035189249/photo/1">https://twitter.com/typescript/status/1191766259035189249/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1188898541059612700">
+<p><a href="http://news.ycombinator.com/"><img alt="Hacker News YC [newsycbot]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/newsycbot.png" /></a>
+Show HN: I created a portable lightweight replacement for Microsoft HTML Help <a href="https://www.dmitripopov.com/introducing-litehelp/">https://www.dmitripopov.com/introducing-litehelp/</a> (cmts <a href="https://news.ycombinator.com/item?id=21379640">https://news.ycombinator.com/item?id=21379640</a>)</p>
+</div>
+<div class="tweet" data-status-id="1192904944791232500">
+<p><a href="http://joelpomales.com/"><img alt="Joel Pomales ✊🇵🇷🔥 [joelpomales]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/joelpomales.jpg" /></a>
+DNS-over-HTTPS Will Eventually Roll Out in All Major Browsers, Despite ISP Opposition - <a href="https://it.slashdot.org/story/19/11/08/189243/dns-over-https-will-eventually-roll-out-in-all-major-browsers-despite-isp-opposition?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">https://it.slashdot.org/story/19/11/08/189243/dns-over-https-will-eventually-roll-out-in-all-major-browsers-despite-isp-opposition?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</a></p>
+</div>
+<div class="tweet" data-status-id="1188936500110491600">
+<p><a href="https://typex2.wordpress.com/"><img alt="ⓀⒾⒺⓉⒶ [typex20]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/typex20.jpg" /></a>
+Google曰く、DoHを使ってもコンテンツフィルタリングが出来るらしいのだが、どうやって実現するんだろう。。 / “Chromium Blog: Addressing some misconceptions about our plans for improving the security of DNS” <a href="https://b.hatena.ne.jp/-/redirect?code=77502f725e506b4a4d2052727743304377214f725e503059&amp;location_id=4676482638942748674&amp;signature=30d7c9ea69cb8cacb81a92ba35e27849d1426cf1f21cc10e206227da147dcf2b">https://b.hatena.ne.jp/-/redirect?code=77502f725e506b4a4d2052727743304377214f725e503059&amp;location_id=4676482638942748674&amp;signature=30d7c9ea69cb8cacb81a92ba35e27849d1426cf1f21cc10e206227da147dcf2b</a></p>
+</div>
+<div class="tweet" data-status-id="1190744058416816000">
+<p><a href="https://sjoerd.app/"><img alt="Sjoerd Bodbijl [sjoerdapp]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/sjoerdapp.jpg" /></a>
+💯🔛🖥<a href="https://twitter.com/@Microsoft">@Microsoft</a>: Microsoft Reveals New Logo for Microsoft Edge <a href="https://www.thurrott.com/cloud/web-browsers/221226/microsoft-reveals-new-logo-for-microsoft-edge">https://www.thurrott.com/cloud/web-browsers/221226/microsoft-reveals-new-logo-for-microsoft-edge</a> $MSFT <a href="https://twitter.com/search?q='%23Microsoft'">#Microsoft</a> <a href="https://twitter.com/search?q='%23Technology'">#Technology</a> <a href="https://twitter.com/search?q='%23Tech'">#Tech</a> <a href="https://twitter.com/search?q='%23MSFT'">#MSFT</a> <a href="https://twitter.com/search?q='%23digitaltransformation'">#digitaltransformation</a> <a href="https://twitter.com/sjoerdapp/status/1190744058416816134/photo/1">https://twitter.com/sjoerdapp/status/1190744058416816134/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1188126599390154800">
+<p><a href="http://mspoweruser.com/contact/"><img alt="MSPoweruser [mspoweruser]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/mspoweruser.jpg" /></a>
+YouTube is pretty broken in latest Edge Canary Build - <a href="http://bit.ly/2JnDZZF">http://bit.ly/2JnDZZF</a> <a href="https://twitter.com/mspoweruser/status/1188126599390154752/photo/1">https://twitter.com/mspoweruser/status/1188126599390154752/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1188402392284291000">
+<p><a href="http://thisdot.co/labs"><img alt="Tracy Lee | ladyleet [ladyleet]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/ladyleet.jpg" /></a>
+I’m so pissed. <a href="https://twitter.com/@Angular">@Angular</a> Taiwan’s organizer told me just now that he’s cancelled my speaking slot AND that I have NO HOTEL accomodations because I’m not speaking.</p>
+<p>With no comm prior. And I’m already here stranded in a foreign country.</p>
+<p>What. The. Hell. Is. This. Bullshit.</p>
+</div>
+<div class="tweet" data-status-id="1194810035987210200">
+<p><a href="http://saron.io/"><img alt="Saron [saronyitbarek]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/saronyitbarek.jpg" /></a>
+I thought vue would get more love! Did some research and watched a ton of videos on both, and I think I'm gonna start with vue. Seems like a friendlier way to start with front end frameworks. One day I'll work myself up to react 😅 <a href="https://twitter.com/saronyitbarek/status/1194350320815501312">https://twitter.com/saronyitbarek/status/1194350320815501312</a></p>
+</div>
+<div class="tweet" data-status-id="1195196311466700800">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+<a href="https://twitter.com/@saronyitbarek">@saronyitbarek</a> dig this: <a href="https://www.youtube.com/watch?v=iRo18pUs61Q">https://www.youtube.com/watch?v=iRo18pUs61Q</a></p>
+</div>
+<div class="tweet" data-status-id="1187969939728023600">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+&quot;CSS-only horizontally-scrolling cards with snapping&quot; by <a href="https://twitter.com/@allanwhite">@allanwhite</a> <a href="https://twitter.com/search?q='%23DEVcommunity'">#DEVcommunity</a> <a href="https://dev.to/allanwhite/css-only-horizontally-scrolling-cards-with-snapping-pl0">https://dev.to/allanwhite/css-only-horizontally-scrolling-cards-with-snapping-pl0</a></p>
+</div>
+<div class="tweet" data-status-id="1190761711797563400">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+Introducing Microsoft Q&amp;A (Preview) | Microsoft Docs <a href="https://docs.microsoft.com/en-us/teamblog/introducing-microsoft-qanda?WT.mc_id=twitter">https://docs.microsoft.com/en-us/teamblog/introducing-microsoft-qanda?WT.mc_id=twitter</a></p>
+</div>
+<div class="tweet" data-status-id="1190075906603257900">
+<p><a href="http://www.linkedin.com/profile/view?id=27081325&amp;trk=tab_pro"><img alt="Yury Fedorov [FedorovYury]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/FedorovYury.png" /></a>
+<a href="https://twitter.com/search?q='%23Orleans'">#Orleans</a> is a cross-platform framework for building <a href="https://twitter.com/search?q='%23distributed'">#distributed</a> applications with <a href="https://twitter.com/search?q='%23dotnet'">#dotnet</a>. 
+<a href="https://devblogs.microsoft.com/dotnet/orleans-3-0/">https://devblogs.microsoft.com/dotnet/orleans-3-0/</a></p>
+</div>
+<div class="tweet" data-status-id="1187476868037042200">
+<p><a href="https://twitter.com/Azure"><img alt="Microsoft Azure [Azure]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/Azure.jpg" /></a>
+Explore the new release of the unified <a href="https://twitter.com/search?q='%23Azure'">#Azure</a> Data client libraries. Get started and share your feedback: <a href="http://msft.it/6014TrnhA">http://msft.it/6014TrnhA</a> <a href="https://twitter.com/Azure/status/1187476868037042176/photo/1">https://twitter.com/Azure/status/1187476868037042176/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1187553224238088200">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+Mark Russinovich on future of Azure and databases | Data Exposed <a href="https://channel9.msdn.com/Shows/Data-Exposed/Mark-Russinovich-on-future-of-Azure-and-databases--Data-Exposed">https://channel9.msdn.com/Shows/Data-Exposed/Mark-Russinovich-on-future-of-Azure-and-databases--Data-Exposed</a> via <a href="https://twitter.com/@ch9">@ch9</a></p>
+</div>
+<div class="tweet" data-status-id="1186498632758919200">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+Announcing Distributed Application Runtime (Dapr), an open source project to make it easier for every developer to build microservice applications <a href="https://cloudblogs.microsoft.com/opensource/2019/10/16/announcing-dapr-open-source-project-build-microservice-applications/">https://cloudblogs.microsoft.com/opensource/2019/10/16/announcing-dapr-open-source-project-build-microservice-applications/</a></p>
+</div>
+<div class="tweet" data-status-id="1188661710640468000">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+Netflix open-sources Polynote to simplify data science and machine learning workflows <a href="https://venturebeat.com/2019/10/23/netflix-open-sources-polynote-to-simplify-data-science-and-machine-learning-workflows/">https://venturebeat.com/2019/10/23/netflix-open-sources-polynote-to-simplify-data-science-and-machine-learning-workflows/</a> via <a href="https://twitter.com/@VentureBeat">@VentureBeat</a></p>
+</div>
+<div class="tweet" data-status-id="1185224983175282700">
+<p><a href="http://www.writinghighperf.net/"><img alt="Ben Watson [benmwatson]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/benmwatson.jpeg" /></a>
+RecylableMemoryStream v1.3.0, a high-performance, pooled MemoryStream replacement has finally been released! <a href="http://www.philosophicalgeek.com/2019/10/18/announcing-microsoft-io-recyclablememorystream-1-3-0/">http://www.philosophicalgeek.com/2019/10/18/announcing-microsoft-io-recyclablememorystream-1-3-0/</a></p>
+</div>
+<div class="tweet" data-status-id="1153423500042018800">
+<p><a href="https://twitter.com/VisualStudio"><img alt="Visual Studio [VisualStudio]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/VisualStudio.jpg" /></a>
+Learn the basics of creating and reviewing a pull request for <a href="https://twitter.com/search?q='%23VisualStudio'">#VisualStudio</a>, including:</p>
+<ul>
+<li>Creating new pull requests</li>
+<li>Reviewing pull requests</li>
+<li>Providing expressive comments using markdown, emojis, and likes</li>
+<li>and more!</li>
+</ul>
+<p>Read:
+<a href="http://msft.social/ad9HtN">http://msft.social/ad9HtN</a> <a href="https://twitter.com/VisualStudio/status/1153423500042018822/photo/1">https://twitter.com/VisualStudio/status/1153423500042018822/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1191665725456420900">
+<p><a href="https://www.wittywolf.com/"><img alt="Witty Wolf 🐺 [wittywolfstudio]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/wittywolfstudio.jpg" /></a>
+Announcing Visual Studio Online Public Preview | Visual Studio Blog <a href="https://devblogs.microsoft.com/visualstudio/announcing-visual-studio-online-public-preview/">https://devblogs.microsoft.com/visualstudio/announcing-visual-studio-online-public-preview/</a> <a href="https://twitter.com/wittywolfstudio/status/1191665725456420864/photo/1">https://twitter.com/wittywolfstudio/status/1191665725456420864/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1191812828635816000">
+<p><a href="http://blogs.infosupport.com/blogs/hansg"><img alt="Hans Geurtsen [HansGeurtsen]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/HansGeurtsen.jpg" /></a>
+SQL Server 2019 is now generally available - SQL Server Blog - this blog contains some details on the performance records SQL Server 2019 achieved, like process over a trillion rows in under two minutes and the TPC-H world record 30TB. <a href="https://twitter.com/search?q='%23MSIgnite'">#MSIgnite</a>  <a href="https://cloudblogs.microsoft.com/sqlserver/2019/11/04/sql-server-2019-is-now-generally-available/">https://cloudblogs.microsoft.com/sqlserver/2019/11/04/sql-server-2019-is-now-generally-available/</a></p>
+</div>
+<div class="tweet" data-status-id="1188081920120381400">
+<p><a href="https://twitter.com/nelmedia"><img alt="Mike Nelson [nelmedia]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/nelmedia.jpg" /></a>
+Goodbye screens of red error text! Get-Error &amp; ConciseView are EPIC in <a href="https://twitter.com/search?q='%23PowerShell'">#PowerShell</a> v7p5!  <a href="https://devblogs.microsoft.com/powershell/powershell-7-preview-5/">https://devblogs.microsoft.com/powershell/powershell-7-preview-5/</a></p>
+</div>
+<div class="tweet" data-status-id="1190648203055714300">
+<p><a href="https://www.linkedin.com/in/aldoceccarelli"><img alt="Aldo Ceccarelli [aldoceccarelli]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/aldoceccarelli.jpg" /></a>
+<a href="https://twitter.com/search?q='%23Python'">#Python</a> Creator <a href="https://twitter.com/search?q='%23GuidovanRossum'">#GuidovanRossum</a> Retires, Heads To Python Conference <a href="https://developers.slashdot.org/story/19/11/02/044204/python-creator-guido-van-rossum-retires-heads-to-python-conference?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">https://developers.slashdot.org/story/19/11/02/044204/python-creator-guido-van-rossum-retires-heads-to-python-conference?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</a></p>
+</div>
+<div class="tweet" data-status-id="1192855956021010400">
+<p><a href="https://thedigitalnapkin.blogspot.com/"><img alt="Joel Lindsey [JoelLindsey]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/JoelLindsey.jpg" /></a>
+RT wictor: <a href="https://twitter.com/search?q='%23MSIgnite'">#MSIgnite</a> is a wrap for me! Most busy conference for me so far! Had so much fun delivering the sessions,meeting clients, colleagues and friends. My two big takeaways are <a href="https://twitter.com/search?q='%23ProjectCortex'">#ProjectCortex</a> and resource based consent. So excited to take this to Ava… <a href="https://twitter.com/wictor/status/1192850398308122625/photo/1">https://twitter.com/wictor/status/1192850398308122625/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1193488715185901600">
+<p><a href="https://twitter.com/DwaynePhillips"><img alt="DwaynePhillips [DwaynePhillips]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/DwaynePhillips.jpg" /></a>
+AMD releases new 24-core processors aimed at desktop computers. The $749 price tag, however, is a bit much for the machines sold at Best Buy
+<a href="https://hardware.slashdot.org/story/19/11/10/0316208/amd-unveils-the-worlds-most-powerful-desktop-cpus?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">https://hardware.slashdot.org/story/19/11/10/0316208/amd-unveils-the-worlds-most-powerful-desktop-cpus?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</a></p>
+</div>
+<div class="tweet" data-status-id="1191726721860612000">
+<p><a href="http://mspoweruser.com/contact/"><img alt="MSPoweruser [mspoweruser]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/mspoweruser.jpg" /></a>
+Microsoft and Nokia announce a new strategic partnership - <a href="https://mspoweruser.com/microsoft-and-nokia-announce-a-new-strategic-partnership/">https://mspoweruser.com/microsoft-and-nokia-announce-a-new-strategic-partnership/</a> <a href="https://twitter.com/mspoweruser/status/1191726721860612096/photo/1">https://twitter.com/mspoweruser/status/1191726721860612096/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1186024151041171500">
+<p><a href="http://saron.io/"><img alt="Saron [saronyitbarek]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/saronyitbarek.jpg" /></a>
+I was thinking the other day that almost all of my close friends started as work-related contacts. Just a friendly reminder that networking doesn't have to be gross. It can lead to real friendships and good relationships!</p>
+</div>
+<div class="tweet" data-status-id="1193211190136098800">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+<a href="https://twitter.com/@saronyitbarek">@saronyitbarek</a> you have hit upon quite an interesting thing because this has not been my 25+ years California experience at all😇</p>
+<p>i think it's a generational thing💀👽 and an aesthetic capacitance thing😔🕖</p>
+</div>
+<div class="tweet" data-status-id="1191392375559475200">
+<p><a href="http://songhayblog.azurewebsites.net/"><img alt="Bryan D. Wilhite [BryanWilhite]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/BryanWilhite.jpeg" /></a>
+Clyde W. Ford on THINK BLACK: a memoir about the first Black software engineer by Hanselminutes - Fresh Talk and Tech for Developers
+<a href="https://player.fm/series/hanselminutes-fresh-talk-and-tech-for-developers/clyde-w-ford-on-think-black-a-memoir-about-the-first-black-software-engineer">https://player.fm/series/hanselminutes-fresh-talk-and-tech-for-developers/clyde-w-ford-on-think-black-a-memoir-about-the-first-black-software-engineer</a> <a href="https://twitter.com/search?q='%23nowplaying'">#nowplaying</a></p>
+</div>
+<div class="tweet" data-status-id="1194011691694080000">
+<p><a href="http://www.theverge.com/"><img alt="The Verge [verge]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/verge.jpg" /></a>
+Microsoft vows to &quot;honor&quot; California’s sweeping privacy law across entire US <a href="https://www.theverge.com/2019/11/11/20960113/microsoft-ccpa-privacy-law-california-congress-regulation?utm_campaign=theverge&amp;utm_content=chorus&amp;utm_medium=social&amp;utm_source=twitter">https://www.theverge.com/2019/11/11/20960113/microsoft-ccpa-privacy-law-california-congress-regulation?utm_campaign=theverge&amp;utm_content=chorus&amp;utm_medium=social&amp;utm_source=twitter</a> <a href="https://twitter.com/verge/status/1194011691694080001/photo/1">https://twitter.com/verge/status/1194011691694080001/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1187988822962921500">
+<p><a href="https://twitter.com/superfabis"><img alt="Fabis [superfabis]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/superfabis.jpg" /></a>
+Microsoft wins the Pentagon’s $10 billion JEDI cloud contract, beating out Amazon <a href="https://www.theverge.com/2019/10/25/20700698/microsoft-pentagon-contract-jedi-cloud-amazon-details?utm_campaign=theverge&amp;utm_content=chorus&amp;utm_medium=social&amp;utm_source=twitter">https://www.theverge.com/2019/10/25/20700698/microsoft-pentagon-contract-jedi-cloud-amazon-details?utm_campaign=theverge&amp;utm_content=chorus&amp;utm_medium=social&amp;utm_source=twitter</a> <a href="https://twitter.com/verge/status/1187868688583741442/photo/1">https://twitter.com/verge/status/1187868688583741442/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1190599409924497400">
+<p><a href="http://joelpomales.com/"><img alt="Joel Pomales ✊🇵🇷🔥 [joelpomales]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/joelpomales.jpg" /></a>
+Hope you were using a password manager!</p>
+<p>NordVPN Users' Passwords Exposed In Mass Credential-Stuffing Attacks - <a href="https://it.slashdot.org/story/19/11/01/219231/nordvpn-users-passwords-exposed-in-mass-credential-stuffing-attacks?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">https://it.slashdot.org/story/19/11/01/219231/nordvpn-users-passwords-exposed-in-mass-credential-stuffing-attacks?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</a></p>
+</div>
+<div class="tweet" data-status-id="1194959259970097200">
+<p><a href="http://hsbc.com.hk/"><img alt="Alyson //东京黑客/แฮกเกอร์โตเกียว [Alyson__T]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/Alyson__T.png" /></a>
+イイハナシダナー
+まさに「旦那の秘密」の現代版だ
+‘Juice Jacking’ Criminals Use Public USB Chargers to Steal Data | Los Angeles County District Attorney’s Office
+<a href="http://da.co.la.ca.us/community/fraud-alerts/juice-jacking-criminals-use-public-usb-chargers-steal-data">http://da.co.la.ca.us/community/fraud-alerts/juice-jacking-criminals-use-public-usb-chargers-steal-data</a></p>
+</div>
+<div class="tweet" data-status-id="1188933854893097000">
+<p><a href="http://ghosn.pro/"><img alt="Arabian Science [ArabianScience]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/ArabianScience.jpg" /></a>
+Five months after returning rental car, man still has remote control <a href="https://twitter.com/search?q='%23tech'">#tech</a> <a href="https://arstechnica.com/?p=1592603">https://arstechnica.com/?p=1592603</a> <a href="https://twitter.com/ArabianScience/status/1188933854893096970/photo/1">https://twitter.com/ArabianScience/status/1188933854893096970/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1194332800092127200">
+<p><a href="https://twitter.com/techpip"><img alt="TechPip [techpip]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/techpip.jpg" /></a>
+As 5G Rolls Out, Troubling New Security Flaws Emerge <a href="https://tech.slashdot.org/story/19/11/12/1845229/as-5g-rolls-out-troubling-new-security-flaws-emerge?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">https://tech.slashdot.org/story/19/11/12/1845229/as-5g-rolls-out-troubling-new-security-flaws-emerge?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</a></p>
+</div>
+<div class="tweet" data-status-id="1194659458841890800">
+<p><a href="http://www.teamlogicit.com/franklintn204/"><img alt="TeamLogicIT Franklin [TLITFranklin]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/TLITFranklin.jpg" /></a>
+Intel's major chip flaw still hasn't been fixed <a href="http://dlvr.it/RJCXGN">http://dlvr.it/RJCXGN</a> <a href="https://twitter.com/TLITFranklin/status/1194659458841890817/photo/1">https://twitter.com/TLITFranklin/status/1194659458841890817/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1189620556607508500">
+<p><a href="https://www.mcmasterforum.org/lets-collaborate/people/bio/ahmednur-ali"><img alt="Ahmed Ali [MrAhmednurAli]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/MrAhmednurAli.jpg" /></a>
+California’s blackouts reveal health care’s fragile power system. <a href="http://ow.ly/lBkK30pNuRl">http://ow.ly/lBkK30pNuRl</a> <a href="https://twitter.com/search?q='%23HealthPolicy'">#HealthPolicy</a> <a href="https://twitter.com/search?q='%23PolicyBrief20'">#PolicyBrief20</a></p>
+</div>
+<div class="tweet" data-status-id="1188964849692233700">
+<p><a href="http://www.uberfahr.com/"><img alt="überfahr [uberfahr]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/uberfahr.jpg" /></a>
+After Spike in Deaths, New York to Get 250 Miles of Bike Lanes <a href="https://www.nytimes.com/2019/10/28/nyregion/nyc-biking-deaths-lanes.html">https://www.nytimes.com/2019/10/28/nyregion/nyc-biking-deaths-lanes.html</a></p>
+</div>
+<div class="tweet" data-status-id="1192817441438675000">
+<p><a href="https://twitter.com/cyclecollective"><img alt="The Cycle Collective [cyclecollective]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/cyclecollective.jpg" /></a>
+UCI accused of ‘discrimination against women’s cycling’ by Velon <a href="http://dlvr.it/RHtsyW">http://dlvr.it/RHtsyW</a> <a href="https://twitter.com/cyclecollective/status/1192817441438674945/photo/1">https://twitter.com/cyclecollective/status/1192817441438674945/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1190196627841192000">
+<p><a href="http://jsnover.com/"><img alt="Jeffrey Snover [jsnover]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/jsnover.jpg" /></a>
+My Dad passed this week.
+He was one of the world's kind souls and will be greatly missed. <a href="https://twitter.com/jsnover/status/1190196627841191936/photo/1">https://twitter.com/jsnover/status/1190196627841191936/photo/1</a></p>
+</div>
+<div class="tweet" data-status-id="1187719206562910200">
+<p><a href="http://independent.co.uk/"><img alt="The Independent [Independent]" src="https://songhay.blob.core.windows.net:443/shared-social-twitter/Independent.png" /></a>
+Alexandria Ocasio-Cortez grills former Exxon scientists on oil giant's climate change denial <a href="https://twitter.com/Independent/status/1187719206562910209/video/1">https://twitter.com/Independent/status/1187719206562910209/video/1</a></p>
+</div>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2020-03-07T22:39:49.580Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+    </body>
+
+</html>
