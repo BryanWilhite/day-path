@@ -6,13 +6,27 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-03-09T18:00:28.303Z</updated>
+    <updated>2020-03-26T18:00:20.237Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>studio status report: 2020-03</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03</id>
+        <updated>2020-03-26T18:00:20.237Z</updated>
+        <summary>
+            month 3 of 2020 is about a deep dive into re-factoring for the cloud Last month I called this a “O(n) problem” which I now realize is the same thing as saying it is a time complexity problem. This has not been a time complexity problem. It has been more o…
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-03-26T18:00:20.237Z</published>
+    </entry>
     <entry>
         <title>“40 Most Popular Fonts of 2019” and other tweeted links…</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links" />
@@ -211,20 +225,5 @@ https://…
             <name>Bryan Wilhite</name>
         </author>
         <published>2020-01-22T00:58:05.759Z</published>
-    </entry>
-    <entry>
-        <title>“Inside Microsoft’s surprise decision to work with Google on its Edge browser” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-20-inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-20-inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-20-inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-and-other-tweeted-links</id>
-        <updated>2020-01-21T01:48:21.243Z</updated>
-        <summary>
-            Inside Microsoft’s surprise decision to work with Google on its Edge browser http://bit.ly/2J1rFQ9 https://twitter.com/TravisBDriver/status/1125432683885154304/photo/1
-A project showcasing Vietnamese typography and @fontofthemonth http://vietnamesetypogra…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-21T01:48:21.243Z</published>
     </entry>
 </feed>
