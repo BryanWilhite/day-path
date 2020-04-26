@@ -5,17 +5,22 @@
     },
     "version": "0.0.1",
     "scripts": {
-        "index:cleancss": "npx cleancss -o ./app/style/index.min.css ./app/style/index.css",
-        "index:concat:css": "npx concat -o ./app/style/index-bundle.css ./node_modules/normalize.css/normalize.css ./app/style/index.css",
-        "index:concat:js": "npx concat -o ./app/script/index.min.js ./node_modules/@material/top-app-bar/dist/mdc.topAppBar.min.js ./node_modules/@material/list/dist/mdc.list.min.js",
-        "index:sass": "npx node-sass ./app/style/index.scss ./app/style/index.css --include-path ./node_modules",
-        "build": "npm run index:sass && npm run index:concat:css && npm run index:concat:js && npm run index:cleancss",
-        "start": "http-server ./app"
+        "build": "npm run node-sass:transpile && npm run webpack:bundle",
+        "start": "npx webpack-dev-server --content-base ./app --open",
+        "node-sass:transpile": "npx node-sass ./src/scss/index.scss ./src/css/index.css --include-path ./node_modules",
+        "webpack:bundle": "npx webpack"
     },
     "devDependencies": {
-        "clean-css-cli": "^4.3.0",
-        "concat": "^1.0.3",
-        "node-sass": "^4.13.1"
+        "clean-webpack-plugin": "3.0.0",
+        "css-loader": "3.5.1",
+        "html-webpack-plugin": "4.0.4",
+        "mini-css-extract-plugin": "0.9.0",
+        "node-sass": "4.13.1",
+        "optimize-css-assets-webpack-plugin": "5.0.3",
+        "terser-webpack-plugin": "2.3.5",
+        "webpack": "4.42.1",
+        "webpack-cli": "3.3.11",
+        "webpack-dev-server": "3.10.3"
     },
     "dependencies": {
         "@material/icon-button": "^3.2.0",

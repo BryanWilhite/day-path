@@ -2,29 +2,25 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "app: npm build",
+            "label": "npm: build",
             "type": "npm",
+            "group": "build",
             "script": "build",
             "path": "./",
             "problemMatcher": []
         },
         {
-            "label": "app: npm install",
+            "label": "npm: install",
             "type": "npm",
             "script": "install",
             "path": "./",
             "problemMatcher": []
         },
         {
-            "label": "app: npm start",
+            "label": "npm: start",
             "type": "npm",
             "script": "start",
             "path": "./",
-            "problemMatcher": []
-        },
-        {
-            "type": "npm",
-            "script": "index:sass",
             "problemMatcher": []
         }
     ]
