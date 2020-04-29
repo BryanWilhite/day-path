@@ -14,13 +14,13 @@
 
     <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
     <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
-    <link rel="SHORTCUT ICON" href="./image/favicon.ico" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link href="./_bundles/styles.min.css" rel="stylesheet" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
 
-    <script src="./_bundles/scripts.min.js"></script>
+    <script src="../../_bundles/scripts.min.js"></script>
 
-    <title>Day Path</title>
+    <title>studio status report: 2020-04 - Day Path</title>
 </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -68,7 +68,9 @@
 </svg>
 <header class="mdc-top-app-bar mdc-top-app-bar--prominent">
     <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
         </section>
         <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
             <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -111,31 +113,35 @@
 </header>
         <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell--span-8">
-    <section class="entries">
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04">studio status report: 2020-04</a></h3>
-            <p>month 4 of 2020 was about really understanding why the lunr index issue is still open Issue #25 for this Blog is still open. But this is great because I had to formally research the subject of Web Components and finally, finally learn how use webpack dire…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03">studio status report: 2020-03</a></h3>
-            <p>month 3 of 2020 is about a deep dive into re-factoring for the cloud Last month I called this a “O(n) problem” which I now realize is the same thing as saying it is a time complexity problem. This has not been a time complexity problem. It has been more o…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links">“40 Most Popular Fonts of 2019” and other tweeted links…</a></h3>
-            <p>40 Most Popular Fonts of 2019 https://design.tutsplus.com/articles/40-most-popular-fonts-of-2019--cms-34190 https://twitter.com/MediaLoot/status/1206289832907100161/photo/1
-The new @blender_org Blender update is here! Can't wait to take the new features f…</p>
-        </div>
-    
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2020-04</h1>
+<h2>month 4 of 2020 was about really understanding why the lunr index issue is still open</h2>
+<p><a href="https://github.com/BryanWilhite/Blog/issues/25">Issue #25</a> for this Blog is <em>still</em> open. But this is great because I had to <a href="https://github.com/BryanWilhite/nodejs/issues/18">formally research the subject of Web Components</a> and finally, <em>finally</em> learn how use <code>webpack</code> <a href="https://github.com/BryanWilhite/nodejs#webpack-and-rollup-commentary">directly</a> (instead of indirectly through a CLI).</p>
+<p>This marks a return to fundamental: <em>progressive enhancement</em>. This Studio has suffered <em>for years</em> because <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> in the world of the SPA was impossible (which is probably the result of using Angular instead of React or Vue). There were only two extremes: static documents and full-blown SPAs—<em>nothing</em> in between. This kind of suffering is over!</p>
+<h2>my cloud-related work from last month was useful but not quite successful</h2>
+<p><a href="http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03">Last month</a>, I mentioned this:</p>
+<blockquote>
+<p><code>IActivityWithTask&lt;TInput, TOutput&gt;</code> had to be re-factored to support <em>multiple</em>, serverless Activity Function calls</p>
+</blockquote>
+<p>One great side effect of such re-factoring is seeing general improvement of the code without regard to the specific problem. I have to mention this because I deactivated the Azure Durable Functions portion of this work in production and rolled back to Azure WebJobs.</p>
+<p>This was done because all the work done for Durable Functions last month revealed more clearly my lack of understanding of the <em>replay</em> concept in particular and the <a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing">event sourcing pattern</a> in general. My StackOverflow.com <a href="https://stackoverflow.com/questions/60819603/is-it-always-wrong-to-use-an-if-else-structure-inside-a-durable-orchestrat">question related</a> to this lack, has not been answered to my satisfaction.</p>
+<h2>sketching out a development schedule (revision 8)</h2>
+<p>The schedule of the month:</p>
+<ul>
+<li>build lunr index experience 🏗</li>
+<li>use <code>@songhay/index</code> as a side-car app for “Day Path” and “the rasx() context” 🚛📦</li>
+<li>add Stills API to <code>Songhay.Player</code> (b-roll player) 🕸🌩</li>
+<li>use the learnings from existing npm packages to build <code>@songhay/player-audio-???</code> 📦✨</li>
+<li>modernize the kinté hits page into a progressive web app 💄✨</li>
+<li>convert Day Path Blog and SonghaySystem.com to HTTPs by default 🔐</li>
+<li>use the learnings of previous work to upgrade and re-release the kinté space 🚀</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
     </section>
-</div>
-<div class="entries mdc-layout-grid__cell--span-4">
-<nav>
-    <ul class="pagination mdc-list"><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-04">2020-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-03">2020-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-02">2020-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-01">2020-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-12">2019-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-11">2019-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-10">2019-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-09">2019-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-08">2019-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-07">2019-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-06">2019-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-04">2019-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-03">2019-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-02">2019-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-01">2019-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-12">2018-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-11">2018-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-10">2018-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-09">2018-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-08">2018-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-07">2018-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-06">2018-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-03">2018-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-02">2018-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2018-01">2018-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-12">2017-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-11">2017-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-10">2017-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-09">2017-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-08">2017-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-07">2017-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-06">2017-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-05">2017-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-04">2017-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-03">2017-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-02">2017-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-01">2017-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-12">2016-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-11">2016-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-10">2016-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-09">2016-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-08">2016-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-07">2016-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-06">2016-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-05">2016-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-04">2016-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-03">2016-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-02">2016-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-12">2015-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-11">2015-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-10">2015-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-09">2015-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-08">2015-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-07">2015-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-06">2015-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-05">2015-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-04">2015-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-03">2015-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-02">2015-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-01">2015-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-12">2014-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-11">2014-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-10">2014-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-09">2014-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-08">2014-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-07">2014-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-06">2014-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-05">2014-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2014-01">2014-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-12">2013-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-11">2013-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-09">2013-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-08">2013-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-06">2013-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-05">2013-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-04">2013-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-03">2013-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-02">2013-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-01">2013-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-12">2012-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-11">2012-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-10">2012-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-09">2012-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-08">2012-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-07">2012-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-05">2012-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-04">2012-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-03">2012-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-02">2012-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-01">2012-01</a></li></ul>
-</nav>
 </div>
             </div>
         </main>
@@ -143,9 +149,10 @@ The new @blender_org Blender update is here! Can't wait to take the new features
     <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell--span-6">
             <p>
-                a technical Blog ✒ for my little studio
+                Last Reviewed:
+                2020-04-29T16:52:35.482Z
             </p>
-            <p><a class="index" href="./entries/">[index]</a></p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
             <p>
                 another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
             </p>
