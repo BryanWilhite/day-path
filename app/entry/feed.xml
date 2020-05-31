@@ -6,13 +6,27 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-04-29T16:52:35.482Z</updated>
+    <updated>2020-05-31T03:38:08.17Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
     <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <entry>
+        <title>studio status report: 2020-05</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</id>
+        <updated>2020-05-31T03:38:08.17Z</updated>
+        <summary>
+            month 5 of 2020 was about building my first Web Component The lunr index experience should totally depend on a Web Component @songhay/input-autocomplete 📦 [npm], released hours before this writing. The GitHub project contains issues that go into copious �
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-05-31T03:38:08.17Z</published>
+    </entry>
     <entry>
         <title>studio status report: 2020-04</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04" />
@@ -204,22 +218,5 @@ What design �
             <name>Bryan Wilhite</name>
         </author>
         <published>2020-01-22T23:32:16.041Z</published>
-    </entry>
-    <entry>
-        <title>“overview of Promise combinators Promise.all, Promise.any, Promise.race, Promise.allSettled” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-22-overview-of-promise-combinators-promise-all-promise-any-promise-race-promise-allsettled-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-22-overview-of-promise-combinators-promise-all-promise-any-promise-race-promise-allsettled-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-22-overview-of-promise-combinators-promise-all-promise-any-promise-race-promise-allsettled-and-other-tweeted-links</id>
-        <updated>2020-01-22T23:29:47.848Z</updated>
-        <summary>
-            nice quick overview of Promise combinators
-Promise.all, Promise.any, Promise.race, Promise.allSettled
-https://v8.dev/features/promise-combinators #javascript
-How to get #TypeScript errors and completions in supported editors and on the command line withou…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-22T23:29:47.848Z</published>
     </entry>
 </feed>
