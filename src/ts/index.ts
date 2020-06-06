@@ -1,5 +1,6 @@
 import { ajax } from 'rxjs/ajax';
-import { InputAutoComplete } from '@songhay/input-autocomplete';
+import { AutoCompleteSuggestion, InputAutoComplete } from '@songhay/input-autocomplete';
+import * as lunr from 'lunr';
 
 import { LunrIndexEntry } from './lunr-index-entry';
 
@@ -10,7 +11,27 @@ function display(data: LunrIndexEntry[]): void {
     const node = document.querySelector('rx-input-autocomplete');
     const customElement = node as InputAutoComplete;
 
-    console.log({data, node, customElement});
+    const builder = new lunr.Builder();
+    builder.field('extract');
+    builder.field('title');
+    builder.ref('clientId');
+    data.forEach(datum => builder.add(datum));
+
+    const idx = builder.build();
+
+    const search = (text: string) => {
+        const refs = idx.search(text);
+        const results = data.filter(datum => refs.findIndex(r => r.ref === datum.clientId) !== -1);
+        return results.map(result => {
+            const suggestion: AutoCompleteSuggestion = {
+                value: result.clientId,
+                text: result.title
+            };
+            return suggestion;
+        });
+    };
+
+    customElement.suggestionGenerator = (text: string) => Promise.resolve(search(text));
 }
 
 window.addEventListener('DOMContentLoaded', () => {
