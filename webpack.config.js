@@ -60,4 +60,18 @@ module.exports = {
             },
         },
     },
+    devServer: {
+        compress: false,
+        contentBase: path.join(__dirname, 'app'),
+        open: true,
+        overlay: {
+            warnings: true,
+            errors: true
+        },
+        quiet: false,
+        serveIndex: true,
+        stats: 'normal',
+        watchContentBase: true,
+        writeToDisk: true
+    }
 };
