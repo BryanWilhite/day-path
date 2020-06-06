@@ -13,7 +13,10 @@ module.exports = {
             './src/css/index.css',
         ],
         scripts: [
-            './src/js/index.js'
+            './node_modules/@material/top-app-bar/component.js',
+            './node_modules/@material/list/component.js',
+            './node_modules/@songhay/input-autocomplete/lib/input-autocomplete.js',
+            './src/ts/index.ts'
         ]
     },
     plugins: [
@@ -33,8 +36,16 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            }
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ],
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
     },
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
