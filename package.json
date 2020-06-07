@@ -6,9 +6,9 @@
     "version": "0.0.1",
     "scripts": {
         "build": "npm run node-sass:transpile && npm run webpack:bundle",
-        "start": "npx webpack-dev-server",
+        "start": "npx webpack-dev-server --mode=development",
         "node-sass:transpile": "npx node-sass ./src/scss/index.scss ./src/css/index.css --include-path ./node_modules",
-        "webpack:bundle": "npx webpack"
+        "webpack:bundle": "npx webpack --mode=production"
     },
     "devDependencies": {
         "@types/lunr": "2.1.5",

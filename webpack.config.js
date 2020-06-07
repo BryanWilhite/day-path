@@ -60,11 +60,6 @@ module.exports = {
             },
         },
     },
-    performance: {
-        hints: false,
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000
-    },
     devServer: {
         compress: false,
         contentBase: path.join(__dirname, 'app'),
