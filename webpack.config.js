@@ -15,7 +15,7 @@ module.exports = {
         scripts: [
             './node_modules/@material/top-app-bar/component.js',
             './node_modules/@material/list/component.js',
-            './node_modules/@songhay/input-autocomplete/lib/input-autocomplete.js',
+            './node_modules/@songhay/input-autocomplete/lib/index.js',
             './src/ts/index.ts'
         ]
     },
@@ -59,6 +59,11 @@ module.exports = {
                 },
             },
         },
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     },
     devServer: {
         compress: false,
