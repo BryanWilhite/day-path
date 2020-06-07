@@ -8,7 +8,7 @@ const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index.c.
 
 function display(data: LunrIndexEntry[]): void {
 
-    const node = document.querySelector('rx-input-autocomplete');
+    const node = document.querySelector(InputAutoComplete.customElementName);
     const customElement = node as InputAutoComplete;
 
     const builder = new lunr.Builder();
@@ -20,6 +20,8 @@ function display(data: LunrIndexEntry[]): void {
     const idx = builder.build();
 
     const search = (text: string) => {
+        if (!text) { return []; }
+
         const refs = idx.search(text);
         const results = data.filter(datum => refs.findIndex(r => r.ref === datum.clientId) !== -1);
         return results.map(result => {
