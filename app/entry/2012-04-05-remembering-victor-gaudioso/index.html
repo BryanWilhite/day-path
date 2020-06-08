@@ -20,6 +20,16 @@
 
     <script src="../../_bundles/scripts.min.js"></script>
 
+    <style>
+        :root {
+            --input-autocomplete-width: 16em;
+            --input-autocomplete-suggestion-border: none;
+            --input-autocomplete-suggestion-selected-background-color: #e2e2e2;
+            --input-autocomplete-suggestion-selected-border: solid #f00;
+            --input-autocomplete-suggestion-selected-font-weight: bold;
+        }
+    </style>
+
     <title>Remembering Victor Gaudioso - Day Path</title>
 </head>
 
@@ -113,12 +123,10 @@
     <div class="mdc-top-app-bar__row">
         <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
             <rx-input-autocomplete
-                inputId="lunr-input"
-                cssSuggestionAlignment="left"
-                cssSuggestionSelectedContainer="border: solid red;"
-                cssSuggestionSelectedCommand="font-weight: bold;"
-                cssWidth="32em"
-                placeholder="search titles">
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="enter here">
             </rx-input-autocomplete>
         </section>
     </div>
