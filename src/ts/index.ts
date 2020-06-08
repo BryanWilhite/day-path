@@ -10,9 +10,9 @@ function display(data: LunrIndexEntry[]): void {
 
     const node = document.querySelector(InputAutoComplete.customElementName);
     const customElement = node as InputAutoComplete;
-    const lunr = new LunrSearch(data);
+    const service = new LunrSearch(data);
 
-    customElement.suggestionGenerator = (text: string) => Promise.resolve(lunr.search(text));
+    customElement.suggestionGenerator = (text: string) => Promise.resolve(service.search(text));
 }
 
 window.addEventListener('DOMContentLoaded', () => {

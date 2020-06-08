@@ -24,8 +24,7 @@ export class LunrSearch {
 
     getIndexBuilder(indexEntries: LunrIndexEntry[]): lunr.Builder {
         if (!indexEntries || indexEntries.length === 0) {
-            console.error('The expected index entries are not here.');
-            return;
+            throw new Error('The expected index entries are not here.');
         }
 
         const builder = new lunr.Builder();

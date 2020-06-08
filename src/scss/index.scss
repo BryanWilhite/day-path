@@ -8,6 +8,14 @@
 @import './entry';
 @import './pagination';
 
+:root {
+    --input-autocomplete-width: 32em;
+    --input-autocomplete-suggestion-border: none;
+    --input-autocomplete-suggestion-selected-background-color: #e2e2e2;
+    --input-autocomplete-suggestion-selected-border: solid $akyinkyin-light-tint;
+    --input-autocomplete-suggestion-selected-font-weight: bold;
+}
+
 body {
     margin: 0;
 }
