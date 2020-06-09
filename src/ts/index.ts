@@ -1,5 +1,5 @@
 import { ajax } from 'rxjs/ajax';
-import { InputAutoComplete } from '@songhay/input-autocomplete';
+import { AutoCompleteSuggestion, InputAutoComplete } from '@songhay/input-autocomplete';
 
 import { LunrIndexEntry } from './models/lunr-index-entry';
 import { LunrSearch } from './services/lunr-search';
@@ -13,6 +13,22 @@ function display(data: LunrIndexEntry[]): void {
     const service = new LunrSearch(data);
 
     customElement.suggestionGenerator = (text: string) => Promise.resolve(service.search(text));
+
+    customElement.addEventListener('selected', (e) => {
+        const event = e as CustomEvent;
+        if (!e) {
+            console.error('The expected event is not here.');
+            return;
+        }
+
+        const suggestion = event.detail as AutoCompleteSuggestion;
+        if (!suggestion) {
+            console.error('The expected `AutoCompleteSuggestion` is not here.');
+            return;
+        }
+
+        window.location.href = `./entry/${suggestion.value}`;
+    });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
