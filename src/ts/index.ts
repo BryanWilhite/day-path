@@ -18,7 +18,7 @@ function display(data: LunrIndexEntry[]): void {
 
     customElement.addEventListener('selected', (e) => {
         const event = e as CustomEvent;
-        if (!e) {
+        if (!event) {
             console.error('The expected event is not here.');
             return;
         }
