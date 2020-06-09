@@ -2,6 +2,8 @@ import { ajax } from 'rxjs/ajax';
 import { AutoCompleteSuggestion, InputAutoComplete } from '@songhay/input-autocomplete';
 
 import { LunrIndexEntry } from './models/lunr-index-entry';
+
+import { DomUtility } from './services/dom-utility';
 import { LunrSearch } from './services/lunr-search';
 
 const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index.c.json';
@@ -27,7 +29,7 @@ function display(data: LunrIndexEntry[]): void {
             return;
         }
 
-        window.location.href = `./entry/${suggestion.value}`;
+        window.location.href = `${DomUtility.getBaseUri()}/entry/${suggestion.value}`;
     });
 }
 
