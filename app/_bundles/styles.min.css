@@ -1909,6 +1909,9 @@ ul.pagination {
   --input-autocomplete-suggestion-selected-background-color: #e2e2e2;
   --input-autocomplete-suggestion-selected-border: solid $akyinkyin-light-tint;
   --input-autocomplete-suggestion-selected-font-weight: bold; }
+  @media screen and (max-width: 680px) {
+    :root {
+      --input-autocomplete-width: 16em; } }
 
 body {
   margin: 0; }
@@ -1942,6 +1945,10 @@ header .site.logo {
   header .site.logo .suffix {
     color: #858686;
     font-weight: 1000; }
+
+@media screen and (max-width: 1180px) {
+  header .site.links {
+    display: none; } }
 
 header .site.search {
   padding-right: 3rem; }

@@ -13,6 +13,11 @@ $mdc-top-app-bar-prominent-row-height: 96px;
 
 :root {
     --input-autocomplete-width: 32em;
+
+    @media screen and (max-width: 680px) {
+        --input-autocomplete-width: 16em;
+    }
+
     --input-autocomplete-suggestion-border: none;
     --input-autocomplete-suggestion-selected-background-color: #e2e2e2;
     --input-autocomplete-suggestion-selected-border: solid $akyinkyin-light-tint;
@@ -71,6 +76,14 @@ header {
         .suffix {
             color: $greys-dark-tone;
             font-weight: 1000;
+        }
+    }
+
+    .site.links {
+        @media screen and (max-width: 1180px) {
+            & {
+                display: none;
+            }
         }
     }
 
