@@ -65,6 +65,12 @@ main {
             margin-top: 1.5em;
         }
 
+        & p > img:not([style]),
+        & p > a > img:not([style]) {
+            display: block;
+            margin: 0 auto;
+        }
+
         & ul {
             list-style-type: square;
             margin-left: 3em;
