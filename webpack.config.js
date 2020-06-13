@@ -10,6 +10,8 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 module.exports = {
     entry: {
         styles: [
+            './node_modules/prismjs/themes/prism.css',
+            './node_modules/prismjs/themes/prism-tomorrow.css',
             './src/css/index.css',
         ],
         scripts: [

@@ -1791,63 +1791,6 @@ main .entry.mdc-typography--body1 {
   main .entry.mdc-typography--body1 blockquote p,
   main .entry.mdc-typography--body1 .Quote p {
     margin: 1.5em; }
-  main .entry.mdc-typography--body1 code,
-  main .entry.mdc-typography--body1 kbd {
-    background-color: #fdf6e3;
-    font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
-    font-size: smaller; }
-  main .entry.mdc-typography--body1 pre {
-    background-color: #fdf6e3;
-    font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
-    overflow: auto;
-    padding: 0.75em 1.625em; }
-  main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode code > .sourceLine {
-    display: block; }
-  main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span {
-    /* alert */
-    /* background */
-    /* base-n */
-    /* char */
-    /* comment */
-    /* data type */
-    /* decimal value */
-    /* error */
-    /* float */
-    /* function */
-    /* keyword */
-    /* other */
-    /* string */ }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.al {
-      color: #cb4b16; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.bg {
-      color: #fdf6e3; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.bn {
-      color: #d33682; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.ch {
-      color: #dc322f; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.co {
-      color: #93a1a1; }
-      main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.co:before {
-        content: "\A"; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.dt {
-      color: #268bd2; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.dv {
-      color: #d33682; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.er {
-      color: #d30102; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.fl {
-      color: #d33682; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.fu {
-      color: #268bd2; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.kw {
-      color: #268bd2; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.ot {
-      color: #a57800; }
-    main .entry.mdc-typography--body1 div.sourceCode > pre.sourceCode > code.sourceCode > span.st {
-      color: #2aa198; }
   main .entry.mdc-typography--body1 sup {
     font-size: 1em; }
   main .entry.mdc-typography--body1 sup.CleanXhtmlFootnoteReference {
