@@ -14,13 +14,13 @@
 
     <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
     <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
-    <link rel="SHORTCUT ICON" href="./image/favicon.ico" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link href="./_bundles/styles.min.css" rel="stylesheet" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
 
-    <script src="./_bundles/scripts.min.js"></script>
+    <script src="../../_bundles/scripts.min.js"></script>
 
-    <title>Day Path</title>
+    <title>my blogging workflow for 2020 is all about `11ty` (eleventy) - Day Path</title>
 </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -68,7 +68,9 @@
 </svg>
 <header class="mdc-top-app-bar mdc-top-app-bar--prominent">
     <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
         </section>
         <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
             <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -119,30 +121,50 @@
 </header>
         <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell--span-8">
-    <section class="entries">
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy">my blogging workflow for 2020 is all about `11ty` (eleventy)</a></h3>
-            <p>As of this writing, my Blogging workflow looks like this: authoring workflow Above we see the author (me ✍🏾) generating Markdown in one repository and using 11ty.dev (eleventy) to write files in another. These are the authoring repo and the Presentation …</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05">studio status report: 2020-05</a></h3>
-            <p>month 5 of 2020 was about building my first Web Component The lunr index experience should totally depend on a Web Component @songhay/input-autocomplete 📦 [npm], released hours before this writing. The GitHub project contains issues that go into copious �</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04">studio status report: 2020-04</a></h3>
-            <p>month 4 of 2020 was about really understanding why the lunr index issue is still open Issue #25 for this Blog is still open. But this is great because I had to formally research the subject of Web Components and finally, finally learn how use webpack dire…</p>
-        </div>
-    
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>my blogging workflow for 2020 is all about <code>11ty</code> (eleventy)</h1>
+<p>As of this writing, my Blogging workflow looks like this:</p>
+<p><img src="../../image/day-path-2020-06-11-14-56-01.png" alt="authoring workflow"></p>
+<p>Above, we see <em>the author</em> (me ✍🏾) generating Markdown in one repository and using <a href="https://www.11ty.dev/">11ty.dev</a> (eleventy) to write/overwrite files in another. These are the authoring repo and the Presentation repo, respectively. For this Blog post being read (by you) right now:</p>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Blog">https://github.com/BryanWilhite/Blog</a> is the authoring repo</li>
+<li><a href="https://github.com/BryanWilhite/day-path">https://github.com/BryanWilhite/day-path</a> is the Presentation repo</li>
+</ul>
+<p>These are my known reasons why I am using <em>two</em> repositories when you are likely to use one or none:</p>
+<ul>
+<li>the authoring repo depends on a couple of eleventy <code>npm</code> packages, vastly reducing hidden storage costs and increasing portability</li>
+<li><code>git</code> pushes are cheap and plentiful in the authoring repo while a push in the app Presentation repo kicks off automated deployment by design, making-big-and simple automated deployment instead of celebrating the complex.</li>
+</ul>
+<p>Effectively, the authoring repo is a portable collection of word processing documents that can be cloned and pulled all over the place while the Presentation repo depends on over 100MB of <code>npm</code> packages and is concerned with the look and feel of a user interface. This separation mirrors what happens to most WordPress users who <em>perceptually</em> experience two separate web sites to write and view content.</p>
+<p>What’s <em>not</em> so effective is the separation of eleventy templates (<code>*.html</code> and <code>*.liquid</code> files) from the Presentation repo. In the beginning design phase, I have felt they are <em>trapped</em> in the authoring repo when they should live with the Presentation. However, as the visual design settles down, I can look at these things as data (user interface as data) and metadata which works well when we see authoring as <em>managing</em> data as well as producing it.</p>
+<h2>the <code>Songhay.Publications</code> 📦 package</h2>
+<p>Blog publication is a practice of my Studio which is part of a larger Publications enterprise, standing on top of my <code>Songhay.Publications</code> <a href="https://www.nuget.org/packages/Songhay.Publications/">📦 package</a>. The sequence diagram shown above shows the <code>MarkdownEntryActivity</code> managing Markdown files. <code>MarkdownEntryActivity</code> is part of the <code>Songhay.Publications</code> NuGet package.</p>
+<p>The <a href="https://github.com/BryanWilhite/Songhay.Publications/projects/1">GitHub project for the <code>1.0.3</code> release</a> of this package goes into <em>way</em> too much detail about building <code>Songhay.Publications</code>—and, I do look forward to writing more about the automation of Markdown workflows in future.</p>
+<h2>eleventy flows</h2>
+<p>By convention, <code>settings.json</code> data flow to the template type configured for eleventy. Even though most eleventy samples—like <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code></a>—choose <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> from Mozilla, I am currently using <a href="https://shopify.github.io/liquid/">Liquid</a> from Shopify (probably under the influence of <a href="https://jekyllrb.com/">Jekyll</a>).</p>
+<p>Liquid has a <a href="https://shopify.dev/tutorials/develop-theme-templates#snippets">snippets concept</a> that allows me to break down a template into smaller chunks. The following diagram is trying to show <code>settings.json</code> data flowing into several <code>*.liquid</code> snippets:</p>
+<p><img src="../../image/day-path-2020-06-12-14-06-49.png" alt="eleventy  data flow"></p>
+<p>When we first try out eleventy and after we enjoy its <a href="https://www.11ty.dev/docs/resources/#zero-config">zero-config feature</a>, we focus on the <code>.eleventy.js</code> file [📖 <a href="https://www.11ty.dev/docs/config/">docs</a>]. My primary need for for this file was to define <a href="https://www.11ty.dev/docs/collections/">a collection</a> of Markdown files under my conventional <code>entry/</code> directory. The magic of eleventy is its ability to load all of these Markdown files into memory (which feels <a href="https://github.com/11ty/eleventy/issues/695#issuecomment-532896598">not quite scalable</a>) and render HTML in the specified <code>output</code> location:</p>
+<p><img src="../../image/day-path-2020-06-12-14-10-28.png" alt="eleventy collection flow"></p>
+<p>My other conventional directory, <code>entries/</code>, shown above, takes advantage of the <a href="https://www.11ty.dev/docs/data-frontmatter/">front matter</a> in the Markdown entries to render <a href="https://www.11ty.dev/docs/pagination/#paging-a-collection">pagination</a>.</p>
+<h2>Presentation repo flows</h2>
+<p>The Presentation repo depends on over 100MB of <code>npm</code> packages and is concerned with the look and feel of a user interface. We can break these concerns down into distinct ‘flows’:</p>
+<h3>Typescript flow</h3>
+<p><img src="../../image/day-path-2020-06-11-19-59-11.png" alt="Presentation repo Typescript flow"></p>
+<p>The <code>presentation/templates/snippets/head.liquid</code> snippet shown in the eleventy flow diagram above references both <code>scripts.min.js</code> and <code>styles.min.css</code>.</p>
+<h3>Sass flow</h3>
+<p><img src="../../image/day-path-2020-06-11-20-05-03.png" alt="Presentation repo Sass flow"></p>
+<h2>why build all of this?</h2>
+<p><strong>This is a violent departure from WordPress.</strong> …and most of the violence was self-inflicted. The technical motivation away from WordPress was simply because my work has no need for a dedicated database connection. The use of static files as a data source works for me (and is a veiled admission that I Blog alone—there is no team of co-authors writing concurrently). The strategic motivation away from WordPress were its frequent security problems.</p>
+<p><strong>My Markdown front matter is <em>mine</em>.</strong> Many of the alternatives to what I’ve built here <em>must</em> have opinionated front matter. <a href="https://github.com/sielay/eleventy-plugin-blog"><code>eleventy-plugin-blog</code></a> is an example of this. I want flexibility and intra-Studio operability with my front matter and eleventy gives us this by design and by default.</p>
+<p><strong>Building on Typescript and C# is a priority.</strong> What I assume is the leader in this <a href="https://jamstack.org/">Jamstack</a> space, Jekyll, is built on Ruby but eleventy is creature of Node.js—eleventy is all about Javascript—which allows me to use Typescript.</p>
+<p><strong>Using Visual Studio Code as a word processor is <em>not</em> strange to me.</strong> I am such a long-time Microsoft Word user that I have used <a href="https://docs.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office">VBA</a>, followed by <a href="https://docs.microsoft.com/en-us/visualstudio/vsto/office-solutions-development-overview-vsto?view=vs-2019">VSTO</a>. I have tried to use Word in particular and Microsoft Office in general as <em>my</em> publishing platform. This did not work out for me. I currently have more respect for <em>text</em> than the 20<sup>th</sup>-century-based graphical experience of the typical Office offering (this includes Open Source alternatives as well).</p>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
     </section>
-</div>
-<div class="entries mdc-layout-grid__cell--span-4">
-<nav>
-    <ul class="pagination mdc-list"><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-06">2020-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-05">2020-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-04">2020-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-03">2020-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-02">2020-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-01">2020-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-12">2019-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-11">2019-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-10">2019-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-09">2019-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-08">2019-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-07">2019-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-06">2019-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-04">2019-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-03">2019-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-02">2019-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-01">2019-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-12">2018-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-11">2018-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-10">2018-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-09">2018-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-08">2018-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-07">2018-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-06">2018-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-03">2018-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2018-02">2018-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2018-01">2018-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-12">2017-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-11">2017-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-10">2017-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-09">2017-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-08">2017-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-07">2017-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-06">2017-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-05">2017-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-04">2017-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-03">2017-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-02">2017-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-01">2017-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-12">2016-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-11">2016-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-10">2016-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-09">2016-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-08">2016-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-07">2016-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-06">2016-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-05">2016-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-04">2016-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-03">2016-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-02">2016-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-12">2015-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-11">2015-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-10">2015-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-09">2015-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-08">2015-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-07">2015-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-06">2015-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-05">2015-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-04">2015-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-03">2015-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-02">2015-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-01">2015-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-12">2014-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-11">2014-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-10">2014-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-09">2014-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-08">2014-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-07">2014-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-06">2014-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-05">2014-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2014-01">2014-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-12">2013-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-11">2013-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-09">2013-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-08">2013-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-06">2013-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-05">2013-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-04">2013-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-03">2013-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-02">2013-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-01">2013-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-12">2012-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-11">2012-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-10">2012-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-09">2012-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-08">2012-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-07">2012-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-05">2012-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-04">2012-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-03">2012-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-02">2012-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-01">2012-01</a></li></ul>
-</nav>
 </div>
             </div>
         </main>
@@ -150,9 +172,10 @@
     <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell--span-6">
             <p>
-                a technical Blog ✒ for my little studio
+                Last Reviewed:
+                2020-06-11T20:39:15.42Z
             </p>
-            <p><a class="index" href="./entries/">[index]</a></p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
             <p>
                 another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
             </p>

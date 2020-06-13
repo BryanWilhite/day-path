@@ -6,13 +6,27 @@
     <title type="text">Day Path</title>
     <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
 
-    <updated>2020-05-31T03:38:08.17Z</updated>
+    <updated>2020-06-11T20:39:15.42Z</updated>
     <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
 
     <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
     <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
 
-    <generator uri="https://www.11ty.io/" version="0.8.3">eleventy</generator>
+    <generator uri="https://www.11ty.io/" version="0.10.0">eleventy</generator>
+    <entry>
+        <title>my blogging workflow for 2020 is all about `11ty` (eleventy)</title>
+        <link href="http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy" />
+        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy/index.html" />
+        <id>http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</id>
+        <updated>2020-06-11T20:39:15.42Z</updated>
+        <summary>
+            As of this writing, my Blogging workflow looks like this: authoring workflow Above we see the author (me ✍🏾) generating Markdown in one repository and using 11ty.dev (eleventy) to write files in another. These are the authoring repo and the Presentation …
+        </summary>
+        <author>
+            <name>Bryan Wilhite</name>
+        </author>
+        <published>2020-06-11T20:39:15.42Z</published>
+    </entry>
     <entry>
         <title>studio status report: 2020-05</title>
         <link href="http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05" />
@@ -203,20 +217,5 @@ Recent from @davidwalshblog https://davidwalsh.name/css-focus-within A note thou
             <name>Bryan Wilhite</name>
         </author>
         <published>2020-01-24T18:49:33.213Z</published>
-    </entry>
-    <entry>
-        <title>flippant remarks about my use of design patterns</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-22-flippant-remarks-about-my-use-of-design-patterns" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-22-flippant-remarks-about-my-use-of-design-patterns/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-22-flippant-remarks-about-my-use-of-design-patterns</id>
-        <updated>2020-01-22T23:32:16.041Z</updated>
-        <summary>
-            Seasoned YouTuber Derek Banas has a design patterns series that I think I should watch at least once a year to stay in shape. This exercise should inspire me to answer these very healthy questions: - What design patterns am I using regularly?
-What design �
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-22T23:32:16.041Z</published>
     </entry>
 </feed>
