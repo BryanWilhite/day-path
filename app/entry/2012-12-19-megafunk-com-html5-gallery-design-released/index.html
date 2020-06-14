@@ -141,7 +141,7 @@
 <h2>The ‘Ready’ function with jQuery</h2>
 <p>A very powerful concept (for me at the moment) that allows me to break blocks of jQuery into smaller logical groups is the <em>ready</em> concept. Back in the old <acronym title="Asynchronous JavaScript and XML">AJAX</acronym> days, I used the <em>format</em> concept. But with the advent of jQuery, we’re setting events, animations and visual formatting. So I’ve rolled these tasks up (per visual) into <em>ready</em> functions.</p>
 <p>In the case of my gallery, I use <code>readyMegaGallery``()</code>. This is called inside of <code>$(window.document).ready(``)</code> like this:</p>
-<pre><code class="language-javascript">$(window.document).ready(function () {
+<pre><code class="language-js">$(window.document).ready(function () {
     var flow = $('#GalleryContainer');
     ```html
     if (flow.length &gt; 0) {

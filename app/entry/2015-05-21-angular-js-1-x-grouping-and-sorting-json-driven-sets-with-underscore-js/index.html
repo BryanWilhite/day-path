@@ -130,7 +130,7 @@
 </code></pre>
 <p>When I use the variable <code>vm</code>, I am conventionally telling myself (because I’m a Microsoft, <em>MVVM</em> guy) that I am using my Angular <em>View Model</em> in Controller Scope (<code>$scope.vm</code>). Since I would like to follow my conventions, it would make sense to have <code>data-ng-repeat=&quot;i in vm.groups… &quot;</code> but I’ve found that Angular does not see “dotted” objects in <code>ng-repeat</code> (there may be some 1.x release after <code>1.2.6 taco-salsafication</code> that fixes this)—so I have no choice but to use <code>$scope.groups</code>.</p>
 <p>Now, the angular documentation does <em>not</em> talk about how to fill <code>$scope.groups</code>—to me this is an Underscore thing. I use <code>_.chain()</code> (with <code>pairs()</code> and <code>map()</code>) in <code>$scope.vm.setGroups()</code> to fill <code>$scope.groups</code>:</p>
-<pre><code class="language-javascript">setGroups: function() {
+<pre><code class="language-js">setGroups: function() {
     $scope.groups = _($scope.vm.data)
         .chain()
         .groupBy(this.indexGroupingSelected.value)
@@ -152,7 +152,7 @@
     data-ng-options="i as i.label for i in options">
 </select></p>
 <p>Declaring <code>ng-model</code> in a <code>select</code> element binds the currently selected option in <code>$scope.options</code>. Again, I notice that I cannot use <code>$scope.vm.options</code>—I <em>have to</em> use <code>$scope.options</code>. In my Angular Controller, I fill my options like this:</p>
-<pre><code class="language-javascript">$scope.options = [{
+<pre><code class="language-js">$scope.options = [{
     label: 'by Date',
     sortDescending: true,
     value: 'dateGroup'

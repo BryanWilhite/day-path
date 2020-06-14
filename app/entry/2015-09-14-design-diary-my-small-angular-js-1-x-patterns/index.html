@@ -131,13 +131,13 @@
 <script src="https://gist.github.com/BryanWilhite/22c7416b5bba10873546.js"></script>
 <p>What we see in the gist is an Angular service with three methods: <code>cacheData()</code>, <code>getDataFromCache()</code>, and <code>loadIndex()</code>. This service is from an Angular app displays Index data so <code>loadIndex()</code> is called every time the App is loaded—and every time the Index partial View is requested.</p>
 <p>These two lines of code represent the “secret sauce” of this dirt-simple design:</p>
-<pre><code class="language-javascript">var cachedResponse = this.getDataFromCache(uri);
+<pre><code class="language-js">var cachedResponse = this.getDataFromCache(uri);
 return cachedResponse? $q.when(cachedResponse) : $http.get(uri).then(…);
 </code></pre>
 <p>That last line—that ternary operation featuring <code>$q.when()</code> (<a href="https://docs.angularjs.org/api/ng/service/$q">from Angular JS</a>) makes things dirt simple.</p>
 <h2>Using ngView <em>and</em> custom directives</h2>
 <p>I started using <code>ngView</code> to <em>avoid</em> delving into building my own directives. In “<a href="http://songhayblog.azurewebsites.net/">My Angular JS 1.x single-page layout</a>,” I am making myself familiar with the need to use <em>very</em> simple custom directives—typically header and footer directives, wrapping <code>ngView</code>—to give me a little headroom in layout expressiveness. Here’s an example of a header Directive:</p>
-<pre><code class="language-javascript">var doHeaderDirective = function () {
+<pre><code class="language-js">var doHeaderDirective = function () {
     return {
         restrict: &quot;E&quot;,
         scope: false,
@@ -163,7 +163,7 @@ return cachedResponse? $q.when(cachedResponse) : $http.get(uri).then(…);
 <h2>Using Angular UI pagination with Underscore-JS sorting</h2>
 <p>My little <a href="https://gist.github.com/BryanWilhite/5a634fd6ce237d6d0107">gist about paging and sorting</a> shows key fragments of the design, featuring a Pagination Service driven by a Controller that uses <a href="http://underscorejs.org/">Underscore JS</a> to sort the data before passing it to this service. We of course <em>see</em> the pagination through the markup in the partial, <a href="http://angular-ui.github.io/bootstrap/">documented on GitHub</a>.</p>
 <p>The Pagination Service has only one expectation for the data it uses: the data must be an array. The <code>start()</code> method starts pagination and it called from the controller:</p>
-<pre><code class="language-javascript">$scope.clientVM.dataService.loadData(&quot;index-&quot; + indexMetaId).then(function (response) {
+<pre><code class="language-js">$scope.clientVM.dataService.loadData(&quot;index-&quot; + indexMetaId).then(function (response) {
     that.data = _(response.data.ChildDocuments)
         .chain()
         .filter(function (i) {
@@ -190,7 +190,7 @@ return cachedResponse? $q.when(cachedResponse) : $http.get(uri).then(…);
 <pre><code class="language-plaintext">data-ng-repeat=&quot;i in groups | filter:vm.filterGroups
 </code></pre>
 <p>In this particular case, the filter function is part of a View Model that is entirely devoted to filtering:</p>
-<pre><code class="language-javascript">$scope.vm = {
+<pre><code class="language-js">$scope.vm = {
     filterExpression: null,
     filterGroup: function (data) {
         var filterExpression = $scope.vm.filterExpression;

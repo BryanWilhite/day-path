@@ -133,7 +133,7 @@
 <p>We now rely on the order returned by the browser when running for key in myObj. It seems that browsers generally follow the strategy of providing keys in the order in which they were defined, although there are exceptions…If this is not desired, the recommended workaround is to convert your object into an array that is sorted into the order that you prefer before providing it to ngRepeat. You could do this with a filter such as toArrayFilter or implement a $watch on the object yourself.</p>
 </blockquote>
 <p>To me this effectively means that Underscore JS <code>_.groupBy()</code> output is incompatible with Angular JS. So I might have rolled out of bed this morning with the assumption that I can do this:</p>
-<pre><code class="language-javascript">$scope.groups = _($scope.vm.data)
+<pre><code class="language-js">$scope.groups = _($scope.vm.data)
         .groupBy(this.indexGroupingSelected.value);
 
 …when, in fact (after a many, *many* hours of experimenting), I retreat to this:
