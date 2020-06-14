@@ -2,15 +2,25 @@ import { ajax } from 'rxjs/ajax';
 import { AutoCompleteSuggestion, InputAutoComplete } from '@songhay/input-autocomplete';
 
 import Prism from 'prismjs';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-csharp';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-markdown';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-powershell';
+import 'prismjs/components/prism-sql';
+import 'prismjs/components/prism-typescript';
 
 import { LunrIndexEntry } from './models/lunr-index-entry';
 
 import { DomUtility } from './services/dom-utility';
 import { LunrSearch } from './services/lunr-search';
 
+const prismShouldUseWebWorkers = false;
 const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index.c.json';
 
-Prism.highlightAll();
+Prism.highlightAll(prismShouldUseWebWorkers);
 
 function display(data: LunrIndexEntry[]): void {
 
