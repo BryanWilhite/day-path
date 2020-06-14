@@ -1797,7 +1797,8 @@ main .entry.mdc-typography--body1 {
     background-color: #cfc;
     color: navy;
     font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
-    font-size: smaller; }
+    font-size: smaller;
+    font-weight: bold; }
   main .entry.mdc-typography--body1 sup {
     font-size: 1em; }
   main .entry.mdc-typography--body1 sup.CleanXhtmlFootnoteReference {
