@@ -1769,7 +1769,7 @@ main .entry.mdc-typography--body1 {
   main .entry.mdc-typography--body1 p {
     margin-top: 1.5em; }
   main .entry.mdc-typography--body1 p > img:not([style]),
-  main .entry.mdc-typography--body1 p > a > img:not([style]) {
+  main .entry.mdc-typography--body1 p > a:only-child > img:not([style]) {
     display: block;
     margin: 0 auto; }
   main .entry.mdc-typography--body1 ul {
