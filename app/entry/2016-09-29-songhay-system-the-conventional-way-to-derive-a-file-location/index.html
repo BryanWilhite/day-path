@@ -133,7 +133,7 @@
 <li>Verify that the derived location exists.</li>
 </ul>
 <p>Here is a C# sketch:</p>
-<pre><code class="language-c#">traceSource.TraceVerbose(&quot;looking for file: {0}...&quot;, myPath);
+<pre><code class="language-cs">traceSource.TraceVerbose(&quot;looking for file: {0}...&quot;, myPath);
 if (!File.Exists(myPath))
 {
     var dll = Assembly.GetEntryAssembly();

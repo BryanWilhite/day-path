@@ -127,10 +127,10 @@
         <h1>Loading .NET configuration files as XDocument instances</h1>
 <p>There is the general-purpose <code>ConfigurationManager</code> but there is also the HTTP-context-specific <code>WebConfigurationManager</code>. An <a href="http://stackoverflow.com/a/6618933/22944">answer on StackOverflow.com</a> strongly suggests that <code>WebConfigurationManager.OpenWebConfiguration()</code> will be needed to read settings from any other <code>Web.config</code> file than the site default. This is not the case: settings appear in memory hierarchically. So a child Web app has already loaded the settings of its parent (all the way down to <code>machine.config</code>). This fact can explain why all of the <a href="https://msdn.microsoft.com/en-us/library/ms151456(v=vs.110).aspx">MSDN samples</a> for <code>WebConfigurationManager.OpenWebConfiguration()</code> load <code>Web.config</code> from a <em>child</em> web app as child <code>Web.config</code> data would not already be loaded in a parent context.</p>
 <p>Now it <em>is</em> possible to use <code>WebConfigurationManager.OpenWebConfiguration()</code> to load a config file on a remote server. But this operation is technically in the context of Remote Administration and requires enabling this feature in IIS. So this single statement requires a lot of work:</p>
-<pre><code class="language-c#">var config = WebConfigurationManager.OpenWebConfiguration(null, &quot;dev.site.com&quot;, null, &quot;REMOTE.ONE.AD&quot;);
+<pre><code class="language-cs">var config = WebConfigurationManager.OpenWebConfiguration(null, &quot;dev.site.com&quot;, null, &quot;REMOTE.ONE.AD&quot;);
 </code></pre>
 <p>…when all you want to do is this:</p>
-<pre><code class="language-c#">var d = XDocument.Load(@&quot;\\REMOTE.ONE.AD\www\Web.config&quot;);
+<pre><code class="language-cs">var d = XDocument.Load(@&quot;\\REMOTE.ONE.AD\www\Web.config&quot;);
 </code></pre>
 <p>…which loads a remote <code>Web.config</code> file as an <code>XDocument</code> (works fine for development while running Visual Studio as Administrator as long as your account has the file permissions). This statement can be used as a last resort or a fallback when, say, <code>appSettings</code> returns null for a particular key. So your Web app can first look at the settings loaded in memory from any parent <code>Web.config</code> with the option of falling back to an <code>XDocument</code>.</p>
 <p>This <code>XDocument</code> fallback technique looks like a replacement for the <code>file</code> attribute declaration:</p>

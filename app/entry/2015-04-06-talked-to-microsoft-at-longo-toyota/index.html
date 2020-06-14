@@ -129,7 +129,7 @@
 <p>After the standard, “tell me a <em>little</em> bit about yourself” stuff (which I answer with a <em>lot</em> about myself), the interview moved to a <a href="http://collabedit.com/">collabedit.com</a> session where I was asked to remove all the duplicate characters from a string. This felt like the first <em>easy</em> question of a series of questions. But I failed to answer it. I do not blame the noise of air hammers, the PA system blaring, the people walking around me at Longo Toyota. There was <em>no</em> way I was going to come up with this answer on the phone:</p>
 <p>(new string(input.ToCharArray().Distinct().ToArray()))</p>
 <p>This was not the answer told to me by the interviewer. This is not the answer I looked up on the Internet. My experience as a developer tells me that this <em>is</em> the answer. However, on the phone impromptu, I was <em>not</em> going remember that string has a <code>ToCharArray()</code> method and I was <em>not</em> going to remember that LINQ to objects has a <code>Distinct()</code> extension method. In fact, immediately after the interview, I pulled out my computer and wrote this solution in LINQPad within an hour:</p>
-<pre><code class="language-c#">var input = &quot;Microsoft Windows&quot;;
+<pre><code class="language-cs">var input = &quot;Microsoft Windows&quot;;
     input.Dump(&quot;input&quot;);
 
 var placeholder = &quot;*&quot;;

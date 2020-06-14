@@ -132,7 +132,7 @@
 <li>When all items in the array are true the wait is over.</li>
 </ul>
 <p>My scribble looks like this:</p>
-<pre><code class="language-c#">var asyncOperationsList = new bool[] { false, false };
+<pre><code class="language-cs">var asyncOperationsList = new bool[] { false, false };
 var asyncOperationsComplete = new Action(() =&gt;
 {
     if(asyncOperationsList.Count(i =&gt; i) != asyncOperationsList.Count()) return;
@@ -162,7 +162,7 @@ this.AddToAggregateCatalog(
         })));
 </code></pre>
 <p>I then formalized my hack with this limited-edition, commemorative class:</p>
-<pre><code class="language-c#">/// &lt;summary&gt;
+<pre><code class="language-cs">/// &lt;summary&gt;
 /// Defines the grouping and completion-tracking of asynchronous operations.
 /// &lt;/summary&gt;
 /// &lt;remarks&gt;
@@ -199,7 +199,7 @@ public class AsyncOperationGroup
 }
 </code></pre>
 <p>So now my code-smell wafts like this:</p>
-<pre><code class="language-c#">byte numberOfOperations = 2;
+<pre><code class="language-cs">byte numberOfOperations = 2;
 var catalogs = new DeploymentCatalog[numberOfOperations];
 var operations = new AsyncOperationGroup(numberOfOperations,
 () =&gt;

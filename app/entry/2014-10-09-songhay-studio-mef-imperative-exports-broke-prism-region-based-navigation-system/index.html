@@ -126,7 +126,7 @@
 
         <h1>Songhay Studio: MEF imperative Exports broke Prism, Region-based Navigation system</h1>
 <p>The instance of <code>NavigationResult</code> in the “navigation callback” of <code>IRegionManager.RequestNavigate()</code> returned an “object reference not set to an instance of an object” (null reference) exception as Navigation failed “silently.” This exception disappeared after several hours of investigation when imperative Exports were removed:</p>
-<pre><code class="language-c#">#region builders:
+<pre><code class="language-cs">#region builders:
 
 var rflContext = new RegistrationBuilder();
     rflContext

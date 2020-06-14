@@ -134,7 +134,7 @@
 </ol>
 </blockquote>
 <p>This is my answer (written in LINQPad):</p>
-<pre><code class="language-c#">Enumerable
+<pre><code class="language-cs">Enumerable
     .Range(1, 100)
     .Select(i =&gt;
     {
@@ -158,7 +158,7 @@ if(isMultipleOf3() &amp;&amp; isMultipleOf5()) return string.Format(&quot;{0} {1
 </ol>
 </blockquote>
 <p>The first issue is to flatten the tree structure. This can be done with recursion. In C#, we can define an extension method like this:</p>
-<pre><code class="language-c#">public static IEnumerable&lt;TSource&gt; Flatten&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, IEnumerable&lt;TSource&gt;&gt; childGetter)
+<pre><code class="language-cs">public static IEnumerable&lt;TSource&gt; Flatten&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, IEnumerable&lt;TSource&gt;&gt; childGetter)
 {
     if (source == null) return Enumerable.Empty&lt;TSource&gt;();
     var flattenedList = new List&lt;TSource&gt;(source);
@@ -171,7 +171,7 @@ if(isMultipleOf3() &amp;&amp; isMultipleOf5()) return string.Format(&quot;{0} {1
 }
 </code></pre>
 <p>I suppose with a near-infinite tree, we can use <code>Lazy&lt;TSource&gt;</code> instead of just <code>TSource</code> denoted above. <code>TSource</code> is, of course, the type of the tree structure. Let's say <code>TSource</code> is <code>MenuDisplayItemModel</code>:</p>
-<pre><code class="language-c#">var tree = new []
+<pre><code class="language-cs">var tree = new []
 {
     new MenuDisplayItemModel
     {

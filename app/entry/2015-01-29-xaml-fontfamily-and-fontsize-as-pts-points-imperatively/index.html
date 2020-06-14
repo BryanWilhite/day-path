@@ -130,7 +130,7 @@
     FontSize=&quot;96pt&quot;
 </code></pre>
 <p>We can express the above imperatively (or “programmatically”) in C#:</p>
-<pre><code class="language-c#">myInstance.FontFamily = new FontFamily(new Uri(&quot;pack://application:,,,/&quot;, UriKind.Absolute), &quot;/MyApp;component/Resources/Fonts/#MyFont&quot;);
+<pre><code class="language-cs">myInstance.FontFamily = new FontFamily(new Uri(&quot;pack://application:,,,/&quot;, UriKind.Absolute), &quot;/MyApp;component/Resources/Fonts/#MyFont&quot;);
 
 myInstance.FontSize = (double)(new FontSizeConverter()).ConvertFrom(&quot;96pt&quot;);
 </code></pre>

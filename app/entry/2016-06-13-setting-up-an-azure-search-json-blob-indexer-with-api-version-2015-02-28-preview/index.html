@@ -137,7 +137,7 @@
 <p>As of today, it is not possible to use the Azure Portal to generate an <code>azureblob</code> Data Source. It is also not possible to use the Portal to get an Indexer—and, while it <em>is</em> possible to get an Index in the Portal, it will have a default key of <code>id</code> which I cannot change in the UI. So, it’s best to make REST calls—likely the *same *calls made from the Portal.</p>
 <h2>Learn to DELETE and GET a search ‘component’ before generating it…</h2>
 <p>I am not a Test-Driven Development type of guy but I do have opinions and I like to be as clean and neat as possible. All of these quirks drive me to mention the need to <code>DELETE</code> the things I <code>POST</code> to Azure for the need to undo any mistake I might make. So here is my “confusing” way to <code>DELETE</code>:</p>
-<pre><code class="language-c#">[TestCategory(&quot;Integration&quot;)]
+<pre><code class="language-cs">[TestCategory(&quot;Integration&quot;)]
 [TestMethod]
 [TestProperty(&quot;apiBase&quot;, &quot;https://my-azure.search.windows.net&quot;)]
 [TestProperty(&quot;apiKey&quot;, &quot;[copy and paste from Portal]&quot;)]
@@ -171,10 +171,10 @@ public void ShouldDeleteAzureSearchServiceComponent()
 </code></pre>
 <p>…where <code>componentName</code> represents our three ‘components’, <code>datasources</code>, <code>indexers</code> and <code>indexes</code>, and <code>itemName</code> is your name of the ‘component.’</p>
 <p>When we change this line:</p>
-<pre><code class="language-c#">request.Method = &quot;DELETE&quot;;
+<pre><code class="language-cs">request.Method = &quot;DELETE&quot;;
 </code></pre>
 <p>…to this:</p>
-<pre><code class="language-c#">request.Method = &quot;GET&quot;;
+<pre><code class="language-cs">request.Method = &quot;GET&quot;;
 </code></pre>
 <p>Our <code>DELETE</code> changes to a <code>GET</code>—so the URI above can be used for <code>GET</code> operations to verify that our <code>POST</code> operations are working. I am sure, by the way, that <code>PUT</code> is supported here but I did not want to bother Eugene about this (see “<a href="https://msdn.microsoft.com/library/azure/dn798935.aspx">Azure Search Service REST</a>”—this might be of help).</p>
 <h2>POST of a new Azure-Blob Data Source</h2>

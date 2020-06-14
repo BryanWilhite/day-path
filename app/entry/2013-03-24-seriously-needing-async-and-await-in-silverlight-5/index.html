@@ -135,7 +135,7 @@ ClientViewModel.RiaOperations.cs
 </code></pre>
 <p>We can see why this class can be so huge when it concerns itself with the Commands, Events, Messages, Navigation and RIA Operations of an entire application. To answer an imaginary question—yes, I do expect to have other View Models classes, respecting the Single Responsibility Principle (usually these other View Models appear at or below the Page level of the application. When <code>ClientViewModel</code> is considered too big then it’s time to get “fast and fluid” and break the entire application up into smaller apps.</p>
 <p>Inside of <code>ClientViewModel.RiaOperations.cs</code> are a bunch of RIA Services calls. My tendency these days is to centralize <em>all</em> RIA service calls in this file. My service calls are private methods with the prefix <code>DoRiaOperationFor</code>. So for “classic” Silverlight at the beginning of the Visual Studio 2010 timeframe, we would have this:</p>
-<pre><code class="language-c#">void DoRiaOperationForCustomerApproval(IEnumerable&lt;Customer&gt; data)
+<pre><code class="language-cs">void DoRiaOperationForCustomerApproval(IEnumerable&lt;Customer&gt; data)
 {
     var operation = context.DoCustomerApprovals(data);
     operation.Completed += (s, args) =&gt;
@@ -148,7 +148,7 @@ ClientViewModel.RiaOperations.cs
 </code></pre>
 <p>We see that <code>DoRiaOperationForCustomerApproval()</code> approves customers. After the customers are approved, the Customer data is refreshed by <code>DoRiaOperationForCustomerStatus()</code>—the naming here suggests that there must be some kind of “Customer Status” view (where customers can be marked “approved”).</p>
 <p>Since <code>DoRiaOperationForCustomerApproval()</code> is not run in parallel with other operations, we can see that using the Task Parallel Library is not very helpful:</p>
-<pre><code class="language-c#">void DoRiaOperationForCustomerApproval(IEnumerable&lt;Customer&gt; data)
+<pre><code class="language-cs">void DoRiaOperationForCustomerApproval(IEnumerable&lt;Customer&gt; data)
 {
     context.DoCustomerApprovals(data).AsTask()
         .ContinueWith(
@@ -162,7 +162,7 @@ ClientViewModel.RiaOperations.cs
 </code></pre>
 <p>The syntax looks almost the same as the event-based pattern out of the box. But what’s this <code>.AsTask()</code> method? This is an extension method from <a href="http://blogs.msdn.com/b/kylemc/archive/2010/11/02/using-the-visual-studio-async-ctp-with-ria-services.aspx">Kyle McClellan</a> (from the year 2010).</p>
 <p>After installing the NuGet package, <code>Microsoft.CompilerServices.AsyncTargetingPack</code>, I can use Kyle’s extension method to obtain this pattern:</p>
-<pre><code class="language-c#">async void DoRiaOperationForCustomerApproval(IEnumerable&lt;Customer&gt; data)
+<pre><code class="language-cs">async void DoRiaOperationForCustomerApproval(IEnumerable&lt;Customer&gt; data)
 {
     var task = await context.DoCustomerApprovals(data).AsTask();
     //Handle any errors or nulls...

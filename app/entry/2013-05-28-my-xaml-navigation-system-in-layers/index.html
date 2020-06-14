@@ -168,7 +168,7 @@
 <p>Back in 2012, in “<a href="http://songhayblog.azurewebsites.net/entry/show/silverlight-page-navigating-with-mvvm-light-messaging-with-lightnavigationmessage-navigatingcanceleventargs-and-songhay-navigationbookmarkdata">Silverlight Page Navigating with MVVM Light Messaging and Songhay NavigationBookmarkData</a>,” I went into detail about this class definition. <a href="http://pastebin.com/9YN1cwEL">Another PasteBin.com sample</a> for this class is available.</p>
 <h2>Layer 4: Handling <code>NavigatingCancelEventArgs</code></h2>
 <p>It’s the <code>NavigationBookmarkData</code> that can be used to determine whether a Navigation should or should not be cancelled. My <code>ClientViewModel</code> has concerns for Messaging and Navigating. Messaging logic supports the <code>LightNavigationMessage&lt;NavigatingCancelEventArgs&gt;</code> sent by Client <code>UserControl</code>. Navigating logic handles this ‘light-navigation’ message by evaluating it with the <code>NavigationBookmarkData</code>. A rough sketch of the handler illustrates:</p>
-<pre><code class="language-c#">void HandleClientNavigating(LightNavigationMessage&lt;NavigatingCancelEventArgs&gt; message)
+<pre><code class="language-cs">void HandleClientNavigating(LightNavigationMessage&lt;NavigatingCancelEventArgs&gt; message)
 {
     navigationBookmarks.SetBookmarkContext(message.TargetLocation);
     string category = (message.RelativeUriSegments.Length &gt; 1) ?
@@ -185,7 +185,7 @@
 <p>However, when it is clear that the “bookmark” (or the navigation target location) set in context is unknown (<code>if(navigationBookmarks.IsBookmarkUnknown())</code>), then the navigation is cancelled.</p>
 <h2>Layer 5: Actually Doing the Navigation</h2>
 <p>MVVM Commanding is what starts the funky Navigation going through each layer of our onion. The commanding eventually reaches logic that looks like this:</p>
-<pre><code class="language-c#">void DoNavigation(string category, int id)
+<pre><code class="language-cs">void DoNavigation(string category, int id)
 {
     var format = this._bookmarks.GetPatternForGetDataFormat();
     var bookmark = string.Format(format, category, id);
@@ -223,7 +223,7 @@
 <p>“<a href="http://stackoverflow.com/questions/8751787/how-to-i-get-access-navigationservice-in-a-windows-phone-app-without-going-throu">How to I get access NavigationService in a WIndows Phone app without going through a PhoneApplicationPage?</a>”</p>
 </td><td>
 <p>“You can get it from the app’s <code>PhoneApplicationFrame</code>. It will be accessible from anywhere in the app since every Windows Phone app has a Frame.”</p>
-<pre><code class="language-c#">((PhoneApplicationFrame)Application.Current
+<pre><code class="language-cs">((PhoneApplicationFrame)Application.Current
         .RootVisual).Navigate(...);
 </code></pre>
 </td></tr><tr><td>

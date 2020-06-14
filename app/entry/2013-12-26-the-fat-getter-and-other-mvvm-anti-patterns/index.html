@@ -142,7 +142,7 @@ set { throw new NotImplementedException(); }
 <h2>Calls to RaisePropertyChanged()Leaking out of Setters</h2>
 <p>In our terrifying code sample above we can see that <code>MyNumericProperty</code> has a fat getter and essentially no setter. When a programmer new to (or unconcerned with) MVVM runs into this corner, he can get out of this mess by calling <code>RaisePropertyChanged(&quot;MyNumericProperty&quot;)</code> throughout the View Model, outside of the definition of the Property. In my opinion, this effectively makes the mess worse: <em>Do not</em> unintentionally expect the XAML binding subsystem to call a long-running operation in your code.</p>
 <p>My years of experience with building XAML applications saw <em>no</em> need for calling <code>RaisePropertyChanged()</code> outside of its setter. This means that my bind-able properties always look like this:</p>
-<pre><code class="language-c#">public long MyNumericProperty
+<pre><code class="language-cs">public long MyNumericProperty
 {
     get { return this._myNumericProperty; }
     set

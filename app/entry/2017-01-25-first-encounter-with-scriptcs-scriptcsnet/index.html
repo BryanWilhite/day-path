@@ -128,7 +128,7 @@
 <p>One of <a href="https://www.dotnetrocks.com/?show=1110">Glenn Block’s</a> post-MEF, post-Microsoft projects is <a href="http://scriptcs.net/">scriptcs</a>. I am currently using scriptcs as the engine of my epub publication pipeline in an effort to use my C# skills and delay (again) the need for me to learn/use Python.</p>
 <p>scriptcs is useful to me when it just works on Windows <em>and</em> Linux. I understand now that I am asking for a tall order because <em>my</em> Linux world is split between mono and .NET Core (in serious need of .NET Standard compliance) and scriptcs is trying to live in this world.</p>
 <p><strong>The current scriptcs release has no concept of “present working directory.”</strong> Glenn (?) let me know <a href="https://twitter.com/scriptcsnet/status/822746581761859584">via @scriptcsnet</a> that “it’s coming in 0.17.0, avail in our dev branch…” I wrote a workaround that Glenn is <em>not</em> impressed with <code>EnvironmentUtilities.GetScriptFolder()</code>, interrogating command-line arguments:</p>
-<pre><code class="language-c#">using System.IO;
+<pre><code class="language-cs">using System.IO;
 public static class EnvironmentUtilities
 {
     public static void ExitWithError(string errorMessage, int errorNumber=1)
@@ -159,7 +159,7 @@ public static class EnvironmentUtilities
 }
 </code></pre>
 <p><strong>The current scriptcs release cannot handle NuGet 3.x.</strong> Glenn informed me <a href="https://twitter.com/scriptcsnet/status/824083354249105412">via @scriptcsnet</a> that a fix for this should be on the dev branch. This issue exists for me on both Windows and Linux (and I am using the dev branch on Linux.) I have a horrible workaround for this that involves raiding NuGet package folders (under C# projects) for .NET Standard-ish DLLs and shoving them into a <code>\scriptcs-bin</code> folder, allowing me to use the Rosyln-derived <code>#r</code> directive. Here is my ‘loader’ script, chock full of these directives:</p>
-<pre><code class="language-c#">#r &quot;Newtonsoft.Json.dll&quot;
+<pre><code class="language-cs">#r &quot;Newtonsoft.Json.dll&quot;
 #r &quot;System.IO&quot;
 #r &quot;System.Runtime.dll&quot;
 #r &quot;Markdig.dll&quot;
@@ -171,7 +171,7 @@ var pubContext = new PublicationContext(csxRoot);
 pubContext.GenerateChapters();
 </code></pre>
 <p><strong>scriptcs or Rosyln cannot properly parse classes with private members on Linux.</strong> A class as simple as the following will not ‘compile’ (or interpret) properly on Linux:</p>
-<pre><code class="language-c#">public class Foo
+<pre><code class="language-cs">public class Foo
 {
     public string Fubar { get; set; }
     string _foo;
@@ -179,14 +179,14 @@ pubContext.GenerateChapters();
 </code></pre>
 <p>I kept getting an <code>ArgumentOutOfRangeException</code> error message that can easily make one think of a simple runtime array index problem. But the catch is the error throws during initialization/interpretation time (which suggests to me that Rosyln is having trouble parsing something).</p>
 <p>I saw the error go away when I did this:</p>
-<pre><code class="language-c#">public class Foo
+<pre><code class="language-cs">public class Foo
 {
     public string Fubar { get; set; }
     internal string _foo;
 }
 </code></pre>
 <p>but <em>not</em> this:</p>
-<pre><code class="language-c#">public class Foo
+<pre><code class="language-cs">public class Foo
 {
     public string Fubar { get; set; }
     private string _foo;

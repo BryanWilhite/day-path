@@ -134,7 +134,7 @@
 <p>…we don’t expose the subject directly to store clients, instead, we expose an observable… Exposing the subject directly could lead to event soup applications, where events get chained together in a hard to reason way.</p>
 </blockquote>
 <p>To avoid the overhead of managing Bajt’s offering as a package, <a href="https://github.com/jurebajt/rxjs-observable-store/blob/master/src/store.ts">this</a> is the essential:</p>
-<pre><code class="language-typescript">import {Observable, BehaviorSubject} from 'rxjs';
+<pre><code class="language-ts">import {Observable, BehaviorSubject} from 'rxjs';
 
 export class Store&lt;T&gt; {
     state$: Observable&lt;T&gt;;

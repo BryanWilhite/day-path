@@ -131,7 +131,7 @@
 <h2>My Generate-EPUB <code>*.csx</code> script</h2>
 <p>My EPUB pipeline starts with an EPUB “seed” based on the handmade set of files from <a href="http://www.ericmuss-barnes.com/">Eric Muss-Barnes</a>. His video, “<a href="https://www.youtube.com/watch?v=EiUMb7bgYeQ">How to Make an eBook EPUB File</a>,” was an instrumental <em>technical</em> introduction to EPUB, in full view of the real-world publishing market. Since this introduction, I do see <a href="https://github.com/IDPF/epub3-samples">a GitHub repository</a>, from the IDPF, full of EPUB samples. I will explore these samples and look for ways to build upon the Muss-Barnes base.</p>
 <p>My scriptcs approach therefore is a combination of reading and editing the EPUB seed using publication metadata in a JSON file and a collection of XHTML templates. This automation starts with <code>generate-epub.csx</code>, intending to summarize the automation:</p>
-<pre><code class="language-c#">#load &quot;scriptcs-epub-utility.csx&quot;
+<pre><code class="language-cs">#load &quot;scriptcs-epub-utility.csx&quot;
 #load &quot;scriptcs-environment-utility.csx&quot;
 #load &quot;scriptcs-markdown-utility.csx&quot;
 #load &quot;publication-namespaces.csx&quot;

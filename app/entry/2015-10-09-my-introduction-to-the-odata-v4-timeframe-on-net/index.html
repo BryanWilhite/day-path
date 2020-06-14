@@ -131,7 +131,7 @@
 </code></pre>
 <h2>Using OWIN Self-Hosting to test Web API</h2>
 <p>The <code>Microsoft.Owin.SelfHost</code> (with <code>Microsoft.Owin</code>, <code>Microsoft.AspNet.WebApi.Owin</code>, and <code>Owin</code>) Nuget Package gives us an in-memory, tiny server. This means server code can be tested from a .NET web server that is completely independent of IIS or IIS Express. When I attempt to show this new technology to .NET veterans, oftentimes this technology is so radically different (and just too simple) that it’s hard to understand what’s being said! It may be better to show rather than tell. The gist above shows just how simple the standard <a href="http://owin.org/">OWIN</a> implementation is to use:</p>
-<pre><code class="language-c#">var baseAddress = &quot;http://localhost:9000/&quot;;
+<pre><code class="language-cs">var baseAddress = &quot;http://localhost:9000/&quot;;
 var client = new HttpClient();
 try
 {
@@ -158,7 +158,7 @@ finally
 </code></pre>
 <h2>OData EDM model building/routing</h2>
 <p>The single call <code>WebApp.Start&lt;Startup&gt;()</code> our way into OWIN. The class definition <code>Startup</code> has one, conventional method, <code>Configuration()</code>, that handles <code>HttpConfiguration</code> just like the conventional ASP.NET MVC <code>*Config</code> static classes in the <code>App_Start</code> folder. Our OData concerns for <a href="http://chriswoodruff.com/2011/12/04/31-days-of-odata-day-3-odata-entity-data-model/">EDM model</a> building and routing are handled in this <code>Startup.Configuration()</code> method:</p>
-<pre><code class="language-c#">var builder = new ODataConventionModelBuilder();
+<pre><code class="language-cs">var builder = new ODataConventionModelBuilder();
 builder
     .EntitySet&lt;Product&gt;(&quot;Product&quot;)
     .EntityType.DerivesFrom&lt;IProduct&gt;();

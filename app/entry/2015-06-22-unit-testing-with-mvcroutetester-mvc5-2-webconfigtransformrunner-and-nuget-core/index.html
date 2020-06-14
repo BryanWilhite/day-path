@@ -129,7 +129,7 @@
 <p>So let me state the original desire, since the previous paragraph flippantly starts off somewhere in the middle: I want to unit-test XML document transforms (XDT) on my <code>Web.config</code> files and I want to test <em>attribute-based</em> MVC routes. I also want to use Visual Studio Test (<code>vstest.console.exe</code>) projects so automated-testing hipsters can howl at me with derisive laughter.</p>
 <h2>Testing with MvcRouteTester.Mvc5.2</h2>
 <p>Speaking of ease, my <code>ShouldRouteToIndexController()</code> Visual Studio Test method shows that I can test routes with just three lines of code:</p>
-<pre><code class="language-c#">[TestMethod]
+<pre><code class="language-cs">[TestMethod]
 [TestProperty(&quot;jsonPath&quot;, @&quot;Songhay.Blog.Tests\ShouldRouteToIndexController.json&quot;)]
 public void ShouldRouteToIndexController()
 {
@@ -196,7 +196,7 @@ public void ShouldRouteToIndexController()
 </code></pre>
 <p>I am sure that Microsoft have very great reasoning around why Visual Studio prefers to wrap each <code>*.sln</code> file in its own folder by default. But my intent is to share Project <em>source code</em> across multiple projects. Today I am under the impression that the best way to do this is with the folder layout above—so, for example, both solutions, <code>Solution.One</code> and <code>Solution.Two</code>, can easily share <code>Project.Shared</code>.</p>
 <p>This conventional folder layout leads to my last extension method for today, <code>TestContext.ShouldGetProjectsFolder()</code>. It is used in both the tests mentioned in this article. This is a simple wrapper around one of my very old utility-class (or “helper” class) methods <code>FrameworkAssemblyUtility.GetAssemblyDirectory()</code> (a simple wrapper around <code>Path.GetDirectoryName(targetAssembly.Location)</code>):</p>
-<pre><code class="language-c#">/// &lt;summary&gt;
+<pre><code class="language-cs">/// &lt;summary&gt;
 /// Test context extensions: should get projects folder.
 /// &lt;/summary&gt;
 /// &lt;param name=&quot;context&quot;&gt;The context.&lt;/param&gt;

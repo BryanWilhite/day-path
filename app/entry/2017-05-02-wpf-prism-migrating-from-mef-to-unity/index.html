@@ -137,12 +137,12 @@
 <p>By staring at a chart via <a href="https://twitter.com/terrajobst">Immo Landwerth</a> I saved <a href="http://songhayblog.azurewebsites.net/entry/songhay-studio-net-standard-with-songhay-standard-core">in a previous Blog post</a>, I can see that I need to start with .NET Standard 1.4 and look forward to .NET Standard 2.0. Version 1.4 supports the latest version of the Universal Windows Platform (UWP) and the UWP support is still a goal here in the Songhay System. This goal ‘forces’ the Songhay System to move from .NET 4.5.2 to 4.6.1.</p>
 <h2>Migration Step 1: Replace MEF <code>[Export]</code> Attributes for Non-Views with Unity Statements</h2>
 <p>The equivalent of the MEF <code>[Export(IFoo)]</code> declaration for type <code>Foo</code> is this statement:</p>
-<pre><code class="language-c#">this._container.RegisterType&lt;IFoo, Foo&gt;(new ContainerControlledLifetimeManager());
+<pre><code class="language-cs">this._container.RegisterType&lt;IFoo, Foo&gt;(new ContainerControlledLifetimeManager());
 </code></pre>
 <p>It is important to use <code>ContainerControlledLifetimeManager</code> to match the static-ish nature of the <code>[Export]</code> attributes. This step applies to non-views, primarily Prism services and View-Model-first View models.</p>
 <h2>Migration Step 2: Replace MEF <code>[Export]</code> Attributes for Navigation Views with Prism Statement</h2>
 <p>With Unity in play, there is a need to register a view for navigation in <code>IModule.Initialize()</code>:</p>
-<pre><code class="language-c#">this._container.RegisterTypeForNavigation&lt;FooView&gt;();
+<pre><code class="language-cs">this._container.RegisterTypeForNavigation&lt;FooView&gt;();
 </code></pre>
 <h2>Migration Step 3: Use Prism XAML Declarations for View-First Patterns</h2>
 <p>This is this Prism XAML declarations for a View-first scenario:</p>
@@ -156,18 +156,18 @@
 </code></pre>
 <p>My experience informs me that there is no special Prism code needed in the View and the View Model to get this scenario working. This is where Unity has a clear, conventions-based advantage over MEF.</p>
 <p>Now, there was a time when I preferred the C#-equivalent of this XAML declaration (stated in the constructor of the View):</p>
-<pre><code class="language-c#">ViewModelLocator.SetAutoWireViewModel(this, true);
+<pre><code class="language-cs">ViewModelLocator.SetAutoWireViewModel(this, true);
 </code></pre>
 <p>BTW: Brian Lagunas has written <a href="https://github.com/PrismLibrary/Prism-Samples-Wpf/blob/master/9-ChangeConvention/ViewModelLocator/Bootstrapper.cs">a code sample to show how to change the default conventions</a> around <code>ViewModelLocator</code>.</p>
 <h2>Migration Step 4: Use the <code>GetInstance()</code> Anti-Pattern for View-Model-First Scenarios</h2>
 <p>Like an animal, <a href="https://github.com/BryanWilhite/Songhay.Mvvm/blob/master/Songhay.Mvvm/Extensions/IViewExtensions.cs">I have written <code>GetInstance()</code> extension methods</a> intended to be used to a View that needs to find its View Model in the IoC container Microsoft calls <code>ServiceLocator.Current</code>. So, when the View Model (say <code>IFooViewModel</code>) is instanced first I make this statement in the constructor of the View:</p>
-<pre><code class="language-c#">this.GetInstance&lt;IFooViewModel&gt;();
+<pre><code class="language-cs">this.GetInstance&lt;IFooViewModel&gt;();
 </code></pre>
 <p>Sometimes several View models are grouped in the IoC container under one interface (say <code>IEditorViewModel</code>). I can now use <code>nameof</code> to get the right View-Model instance for the right View.</p>
-<pre><code class="language-c#">this.GetInstance&lt;IEditorViewModel&gt;($&quot;{nameof(FooView)}Model&quot;);
+<pre><code class="language-cs">this.GetInstance&lt;IEditorViewModel&gt;($&quot;{nameof(FooView)}Model&quot;);
 </code></pre>
 <p>Or, to reduce performance for the sake of copy-and-paste, I have done this:</p>
-<pre><code class="language-c#">this.GetInstance&lt;IEditorViewModel&gt;($&quot;{this.GetType().Name}Model&quot;);
+<pre><code class="language-cs">this.GetInstance&lt;IEditorViewModel&gt;($&quot;{this.GetType().Name}Model&quot;);
 </code></pre>
 <p>And yes, my <code>GetInstance()</code> extension methods are based on <code>ServiceLocator.Current.GetInstance()</code> which has been considered for years <a href="http://blog.ploeh.dk/2010/02/03/ServiceLocatorisanAnti-Pattern/">an anti-pattern</a>. It has also been considered for years <a href="http://blog.gauffin.org/2012/09/service-locator-is-not-an-anti-pattern/"><em>not</em> an anti-pattern</a>.</p>
 <p>My only concerns are these:</p>

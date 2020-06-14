@@ -127,7 +127,7 @@
         <h1>XamDataGrid: saturation-bombing a race condition</h1>
 <p>Everything I am going to write in this post is based on the assumption that any user interaction related to filtering the <code>XamDataGrid</code> grid will cause the <code>XamDataGrid.RecordManager.FilteredInDataItems</code> to change—but the change is not instantaneous: the change occurs within an unknown period of time. Send me a Tweet with some great news should you consider it known!</p>
 <p>I can use Prism-based messaging to send the “current” <code>FilteredInDataItems</code> payload to the backing View Model for processing—in my squalid case, the ‘processing’ has to do with setting the background color of rows (by setting a View Model Boolean “flag”) based on irregular data (not on regular position). In Prism parlance we “publish” a message (or “event”—which is a questionable term to me), it follows that I have <code>BombFilteredInDataItems()</code> in my view hosting the <code>XamDataGrid</code>:</p>
-<pre><code class="language-c#">void BombFilteredInDataItems(string key)
+<pre><code class="language-cs">void BombFilteredInDataItems(string key)
 {
     Action sendPrismMessage = () =&gt;
     {

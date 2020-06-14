@@ -152,7 +152,7 @@
 <p>Yes, the 11ty-based static web site is the go-to publication format but Microsoft Sway might do well as a replacement for the PDF-based presentations of visual artists (on kintespace.com).</p>
 <p>My renewed interest in Sway was announced <a href="https://twitter.com/BryanWilhite/status/1123661538437390336">in a month-5 tweet</a>.</p>
 <h2>how to download an MP3 file from Azure BLOB Storage with ASP.NET Core 2.2</h2>
-<pre><code class="language-c#">/// &lt;summary&gt;
+<pre><code class="language-cs">/// &lt;summary&gt;
 /// Gets the presentation BLOB for progressive audio.
 /// &lt;/summary&gt;
 /// &lt;param name=&quot;presentationKey&quot;&gt;The presentation key.&lt;/param&gt;
@@ -173,7 +173,7 @@ public async Task&lt;IActionResult&gt; GetPresentationBlobForProgressiveAudio(st
 }
 </code></pre>
 <p>The most important line here is:</p>
-<pre><code class="language-c#">if (result.BlobStream.Position &gt; 0) result.BlobStream.Seek(0, SeekOrigin.Begin);
+<pre><code class="language-cs">if (result.BlobStream.Position &gt; 0) result.BlobStream.Seek(0, SeekOrigin.Begin);
 </code></pre>
 <p>Without this line, a file of 0-bytes will be saved by callers of this API.</p>
 <h2>the wonderful return of Daz3D to regular studio work</h2>

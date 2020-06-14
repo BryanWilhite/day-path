@@ -133,7 +133,7 @@
 &lt;package id=&quot;WindowsAzure.Storage&quot; version=&quot;1.7.0.0&quot; targetFramework=&quot;net45&quot; /&gt;
 </code></pre>
 <p>Because of the versions used above, the ‘old way’ (the “Data Context” way) of working with ATS is in effect. For example, <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx">the old way</a> of retrieving a document:</p>
-<pre><code class="language-c#">var tableClient = account.CreateCloudTableClient();
+<pre><code class="language-cs">var tableClient = account.CreateCloudTableClient();
 
 var context = tableClient.GetDataServiceContext();
     var query = context.CreateQuery&lt;TableStorageDocument&gt;(&quot;TableStorageDocument&quot;);
@@ -144,7 +144,7 @@ var document = query
         .FirstOrDefault();
 </code></pre>
 <p>Here would be the ‘new’ (verbose-but-systematically-honest) way:</p>
-<pre><code class="language-c#">var tableClient = account.CreateCloudTableClient();
+<pre><code class="language-cs">var tableClient = account.CreateCloudTableClient();
 
 var tableReference = tableClient.GetTableReference(&quot;TableStorageDocument&quot;);
     var operation = TableOperation.Retrieve&lt;TableStorageDocument&gt;(partitionKey, rowKey);

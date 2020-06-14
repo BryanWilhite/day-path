@@ -129,16 +129,16 @@
 <p>One unexpected takeaway from these notes is the assertion that we cannot have NTLM authentication without setting up ‘default’ ASP.NET profiles. The <em>defacto</em> default ASP.NET profile is represented by <code>AspNetSqlProfileProvider</code>. This implies that a SQL Server database is <em>required</em> to use NTLM—which seems very strange, encouraging us to look forward to finding out that the above assertion is incorrect.</p>
 <h2>Setting up NTLM Authentication</h2>
 <p>In conventional Silverlight <code>App</code> constructor, state:</p>
-<pre><code class="language-c#">var webContext = new WebContext();
+<pre><code class="language-cs">var webContext = new WebContext();
 webContext.Authentication = new WindowsAuthentication();
 this.ApplicationLifetimeObjects.Add(webContext);
 </code></pre>
 <p>In <code>App.Startup</code>, state:</p>
-<pre><code class="language-c#">WebContext.Current.Authentication.LoadUser(
+<pre><code class="language-cs">WebContext.Current.Authentication.LoadUser(
         operation =&gt; Messenger.Default.Send(operation), null);
 </code></pre>
 <p>The MVVM Light Messenger expects this registration:</p>
-<pre><code class="language-c#">Messenger.Default.Register&lt;LoadUserOperation&gt;(this,
+<pre><code class="language-cs">Messenger.Default.Register&lt;LoadUserOperation&gt;(this,
     operation =&gt;
     {
         if (operation.HasError) return; //TODO: handle LoadUser() error.

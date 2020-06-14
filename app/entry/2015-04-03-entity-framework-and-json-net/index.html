@@ -127,13 +127,13 @@
         <h1>Entity Framework and JSON.NET</h1>
 <p>Converting code-first, EF6 Entity models to JSON (with JSON.NET) is more complicated than I expected. First of all, <code>Include()</code> does not behave as I expected (after one level as suggested in “<a href="https://entityframework.codeplex.com/workitem/2256">EF 6</a>” or “.<a href="https://entityframework.codeplex.com/discussions/436875">include with multiple levels</a>”).</p>
 <p>For me, there was no difference between this:</p>
-<pre><code class="language-c#">var segments = GetContext().Segments
+<pre><code class="language-cs">var segments = GetContext().Segments
         .Include(i =&gt; i.ChildSegments)
         .Where(i =&gt; (i.ParentSegmentId == null) &amp;&amp; i.IsActive.HasValue &amp;&amp; i.IsActive.Value)
         .OrderBy(i =&gt; i.SegmentName);
 </code></pre>
 <p>…and this:</p>
-<pre><code class="language-c#">var segments = GetContext().Segments
+<pre><code class="language-cs">var segments = GetContext().Segments
         .Include(i =&gt; i.ChildSegments)
         .Include(i =&gt; i.ChildSegments)
         .Where(i =&gt; (i.ParentSegmentId == null) &amp;&amp; i.IsActive.HasValue &amp;&amp; i.IsActive.Value)
@@ -141,7 +141,7 @@
 </code></pre>
 <p>I did not bother run SQL Profiler and dissect the SQL but in both cases there were no “grandchild” segments. (By the way, it’s been a few years so I should help to mention that EF6 over SQL Server still does not support the Nullable extension method <code>GetValueOrDefault()</code>. So, for the example above, we see <code>i.IsActive.HasValue &amp;&amp; i.IsActive.Value</code> in place of <code>i.IsActive.GetValueOrDefault()</code>.)</p>
 <p>So my need for these “grandchild” segments suggests (correctly) that my <code>Segment</code> type has a “parent” <code>Segment</code>. This “self-join” can cause JSON.NET to throw a circular-reference exception and/or an out-of-memory exception (as it travels from parent to children—and children of children). Moreover, the <code>Segment</code> has a Documents collection (where each <code>Document</code> has a <code>Segment</code>—faithfully duplicated by JSON.NET until it runs out of memory!) To address these issues I have this:</p>
-<pre><code class="language-c#">var documentSettings = new JsonSerializerSettings
+<pre><code class="language-cs">var documentSettings = new JsonSerializerSettings
 {
     ContractResolver = new InterfaceContractResolver&lt;IDocument&gt;(),
     PreserveReferencesHandling = PreserveReferencesHandling.None,
@@ -149,7 +149,7 @@
 };
 </code></pre>
 <p>What stands out is my <code>InterfaceContractResolver&lt;IDocument&gt;</code>, taking the guidance from Newton-King’s “<a href="http://www.newtonsoft.com/json/help/html/ContractResolver.htm">Serialization using ContractResolver</a>.” I’ve defined this resolver to ‘filter’ my Entity model Document through <code>IDocument</code> (which defines no parent-child relations):</p>
-<pre><code class="language-c#">public class InterfaceContractResolver&lt;TInterface&gt; : DefaultContractResolver where TInterface : class
+<pre><code class="language-cs">public class InterfaceContractResolver&lt;TInterface&gt; : DefaultContractResolver where TInterface : class
 {
     protected override IList&lt;JsonProperty&gt; CreateProperties(Type type, MemberSerialization memberSerialization)
     {
@@ -159,7 +159,7 @@
 }
 </code></pre>
 <p>This looks straight forward when you want to do something like this:</p>
-<pre><code class="language-c#">var rootDocuments = segment.ChildSegments.Select(k =&gt;
+<pre><code class="language-cs">var rootDocuments = segment.ChildSegments.Select(k =&gt;
     {
         var rootDocument = context.Documents
             .Where(l =&gt; l.SegmentId == k.SegmentId)
@@ -173,7 +173,7 @@ var documentJson = JsonConvert.SerializeObject(rootDocument, documentSettings);
     .ToArray();
 </code></pre>
 <p>But what I have here is an array of JSON strings—why did I do that? Well, it turns out that I cannot (it could just be me) configure JSON.NET to handle <code>enumerationOfDocuments</code> in this:</p>
-<pre><code class="language-c#">var json = JsonConvert.SerializeObject(new
+<pre><code class="language-cs">var json = JsonConvert.SerializeObject(new
 {
     SegmentId = segment.SegmentId,
     SegmentName = segment.SegmentName,

@@ -141,7 +141,7 @@
 </ul>
 <p>My flippant remarks above flippantly reveal that there are (at least) three different ways cookies are represented in .NET and cookies are presented as a single, delimited string or as a collection of objects (quite non-straightforward).</p>
 <p>So here in the studio, I had to use cookies, following my own guidance. On the server side I defined <code>ClientCookieWrapper</code>. This class has a public <code>SetCookie()</code> method and a private <code>GetCookie()</code> method. The intent behind these accessors is to say, ‘Use <code>SetCookie()</code> in a service call to update/generate/delete cookies; use <code>GetCookie()</code> to fill in <code>ClientCookieWrapper</code> properties specific to the application domain. Here’s what <code>ClientCookieWrapper.SetCookie()</code> looks like:</p>
-<pre><code class="language-c#">public void SetCookie(string selected)
+<pre><code class="language-cs">public void SetCookie(string selected)
 {
     var cookieValue = this._defaultCookieValue.Replace(&quot;:selected=&quot;, &quot;=&quot;);
     cookieValue = cookieValue.Replace(string.Format(&quot;{0}=&quot;, selected), string.Format(&quot;{0}:selected=&quot;, selected));

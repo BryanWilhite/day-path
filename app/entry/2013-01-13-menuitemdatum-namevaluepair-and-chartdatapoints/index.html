@@ -127,7 +127,7 @@
         <h1>MenuItemDatum, NameValuePair and ChartDataPoints.</h1>
 <p>I developed <code>MenuItemDatum</code>, <code>NameValuePair</code> and <code>ChartDataPoints</code> as common data transfer objects over <acronym title="Windows Communication Foundation">WCF</acronym>-based technologies, including RIA Services. I’m sure this effort to develop ‘common’ objects to be shared among various enterprise solutions is not the first one in the world. I came to this place because of a key limitation in RIA Services (and/or Entity Framework): ‘<a href="http://songhayblog.azurewebsites.net/entry/show/ria-services-and-ef-entities">By default, an EF Entity cannot be a property of another object.</a>’ This limitation alone should inspire many of us to send a relatively large ‘meta’ dataset to the Client to “bootstrap” the application. I usually call this ‘meta’ dataset <code>ClientMetadata</code>.</p>
 <p>Here’s a sample <code>ClientMetadata</code> class:</p>
-<pre><code class="language-c#">public class ClientMetadata
+<pre><code class="language-cs">public class ClientMetadata
 {
     public IEnumerable&lt;NameValuePair&gt; Attributes { get; set; }
     public IEnumerable&lt;MenuItemDatum&gt; MainMenu { get; set; }

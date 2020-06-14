@@ -135,7 +135,7 @@
 </div>
 <p>The way this is done is by building a new <a href="https://github.com/domaindrivendev/Swashbuckle/blob/2ed189b041e0e7849ec59a2fa2c0078e540a8359/Swashbuckle.Core/Swagger/SwaggerDocument.cs#L162"><code>Swashbuckle.Swagger.Schema</code></a> and using it on <code>Response.schema</code> for Swagger <code>produces</code> and <code>Parameter.schema</code> for Swagger <code>consumes</code>. These operations can be tacked on the end of <a href="https://gist.github.com/BryanWilhite/1a0e8c14a5002995aa5eb7984bfa5cd0">the blocks of code we saw earlier</a> in <code>IOperationFilter.Apply()</code>.</p>
 <p>I have centralized this code in extension methods. So, for <code>consumes</code>, I have this extension method:</p>
-<pre><code class="language-c#">public static Parameter WithAbbreviatedSchema(this Parameter parameter)
+<pre><code class="language-cs">public static Parameter WithAbbreviatedSchema(this Parameter parameter)
 {
     if (parameter == null) return null;
     if (parameter.schema == null) return null;
@@ -146,7 +146,7 @@ return parameter;
 }
 </code></pre>
 <p>For <code>produces</code>, I have:</p>
-<pre><code class="language-c#">public static Response WithAbbreviatedSchema(this Response response)
+<pre><code class="language-cs">public static Response WithAbbreviatedSchema(this Response response)
 {
     if (response == null) return null;
     if (response.schema == null) response.schema = new Schema();
@@ -157,7 +157,7 @@ return response;
 }
 </code></pre>
 <p>This simple pattern I am showing leads to, “What the hell is <code>SetAbbreviatedSchema()</code>?” Here is the answer:</p>
-<pre><code class="language-c#">public static void SetAbbreviatedSchema(this Schema schema, bool isConsumingSchema)
+<pre><code class="language-cs">public static void SetAbbreviatedSchema(this Schema schema, bool isConsumingSchema)
 {
     if (schema == null) return;
 
@@ -197,7 +197,7 @@ return response;
 }
 </code></pre>
 <p>All of these extension methods are wonderful but Swashbuckle will ignore all of this work for <code>consumes</code> unless we make sure that <code>Parameter.schema.@ref</code> is set to <code>null</code>. This, for me, leads to a final extension method:</p>
-<pre><code class="language-c#">public static Parameter WitNullSchemaReference(this Parameter parameter)
+<pre><code class="language-cs">public static Parameter WitNullSchemaReference(this Parameter parameter)
 {
     if (parameter == null) return null;
     if (parameter.schema == null) return null;
@@ -206,7 +206,7 @@ return response;
 }
 </code></pre>
 <p>We can now return to the implementation of <code>IOperationFilter</code>, <code>SwaggerContentTypeOperationFilter</code>, from <a href="http://songhayblog.azurewebsites.net/entry/using-swashbuckle-to-support-swaggerfied-xml-production-and-consumption">my previous post</a> with its <code>ApplyConsumption()</code> method:</p>
-<pre><code class="language-c#">static void ApplyConsumption(SwaggerContentTypeAttribute swaggerAttribute, Parameter swaggerParameter)
+<pre><code class="language-cs">static void ApplyConsumption(SwaggerContentTypeAttribute swaggerAttribute, Parameter swaggerParameter)
 {
     switch (swaggerAttribute.Tag)
     {
@@ -217,7 +217,7 @@ return response;
 }
 </code></pre>
 <p>and its <code>ApplyProduction()</code> method:</p>
-<pre><code class="language-c#">static void ApplyProduction(SwaggerContentTypeAttribute swaggerAttribute, Operation operation)
+<pre><code class="language-cs">static void ApplyProduction(SwaggerContentTypeAttribute swaggerAttribute, Operation operation)
 {
     Response okResponse = null;
 
@@ -234,7 +234,7 @@ if (okResponse != null) operation.responses.Add(okResponse.To200Pair());
 }
 </code></pre>
 <p>Now, for the question, “What is going on with that <code>topLevelTitle</code> variable in <code>SetAbbreviatedSchema()</code>?” This question refers to this (shown above):</p>
-<pre><code class="language-c#">var topLevelTitle = isConsumingSchema ? &quot;in:PAYLOAD&quot; : &quot;out:PAYLOAD&quot;;
+<pre><code class="language-cs">var topLevelTitle = isConsumingSchema ? &quot;in:PAYLOAD&quot; : &quot;out:PAYLOAD&quot;;
 </code></pre>
 <p>This line is a hack to get around the current situation with Swagger/Swashbuckle where <code>Schema</code> definitions are considered duplicates when they have the same <code>Schema.title</code>.</p>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>

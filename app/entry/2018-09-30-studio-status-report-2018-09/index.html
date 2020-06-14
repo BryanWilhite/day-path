@@ -148,7 +148,7 @@
 <li>the use of local NPM packages (likely with the <code>songhay-core</code><a href="https://github.com/BryanWilhite/songhay-core">repo</a>) has not been exploited</li>
 </ul>
 <p><code>AppDataService</code> was re-factored, adding the <code>loadJson()</code> method [<a href="https://github.com/BryanWilhite/Songhay.Dashboard/issues/16#issuecomment-418229660">ref</a>] so it can be used like this:</p>
-<pre><code class="language-c#">@Injectable()
+<pre><code class="language-cs">@Injectable()
     export class YouTubePresentationDataServices {
         constructor(client: Http) {
             this.presentationDataService = new AppDataService(client);
