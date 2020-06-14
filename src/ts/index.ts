@@ -2,13 +2,17 @@ import { ajax } from 'rxjs/ajax';
 import { AutoCompleteSuggestion, InputAutoComplete } from '@songhay/input-autocomplete';
 
 import Prism from 'prismjs';
+import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-csharp';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-liquid';
 import 'prismjs/components/prism-markdown';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-powershell';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-shell-session';
 import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-typescript';
 
