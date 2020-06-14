@@ -1791,29 +1791,36 @@ main .entry.mdc-typography--body1 {
   main .entry.mdc-typography--body1 blockquote p,
   main .entry.mdc-typography--body1 .Quote p {
     margin: 1.5em; }
+  main .entry.mdc-typography--body1 code,
+  main .entry.mdc-typography--body1 kbd,
+  main .entry.mdc-typography--body1 pre {
+    background-color: #cfc;
+    color: navy;
+    font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: smaller; }
   main .entry.mdc-typography--body1 sup {
     font-size: 1em; }
   main .entry.mdc-typography--body1 sup.CleanXhtmlFootnoteReference {
     background-color: #eaeaea; }
-  main .entry.mdc-typography--body1 .WordWalkingStickTable {
+  main .entry.mdc-typography--body1 table {
     border: 2px solid #063;
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5em;
     width: 90%; }
-    main .entry.mdc-typography--body1 .WordWalkingStickTable th,
-    main .entry.mdc-typography--body1 .WordWalkingStickTable td {
+    main .entry.mdc-typography--body1 table th,
+    main .entry.mdc-typography--body1 table td {
       padding: 0.25em;
       vertical-align: top; }
-      main .entry.mdc-typography--body1 .WordWalkingStickTable th p,
-      main .entry.mdc-typography--body1 .WordWalkingStickTable td p {
+      main .entry.mdc-typography--body1 table th p,
+      main .entry.mdc-typography--body1 table td p {
         margin: 0.25em; }
-    main .entry.mdc-typography--body1 .WordWalkingStickTable th {
+    main .entry.mdc-typography--body1 table th {
       background-color: #063;
       color: #fff5ee;
       font-weight: 700; }
-    main .entry.mdc-typography--body1 .WordWalkingStickTable td {
+    main .entry.mdc-typography--body1 table td {
       border-top: 1px solid #063; }
 
 main .entries .mdc-list-item > a:active, main .entries .mdc-list-item > a:hover, main .entries .mdc-list-item > a:link, main .entries .mdc-list-item > a:visited,
