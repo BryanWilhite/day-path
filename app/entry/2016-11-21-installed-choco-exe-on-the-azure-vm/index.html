@@ -127,10 +127,10 @@
         <h1>Installed choco.exe on the Azure VM…</h1>
 <p>The internet tells me that <code>choco.exe</code> supports <em>updating</em> packages (while the standard PowerShell <code>PackageManagement</code> from Microsoft—formerly OneGet—does not). So the experiment is around the question, Can I use <code>choco.exe</code> with previously installed OneGet packages from the Chocolatey Provider?</p>
 <p>Install choice:</p>
-<pre><code class="language-console">iwr &lt;https://chocolatey.org/install.ps1&gt; -UseBasicParsing | iex
+<pre><code class="language-powershell">iwr &lt;https://chocolatey.org/install.ps1&gt; -UseBasicParsing | iex
 </code></pre>
 <p>First of all, the install process of <code>choco.exe</code> threatens to move the old packages from <code>C:\Chocolatey</code> to <code>C:\ProgramData\chocolatey</code> as this excerpt from the installation warns:</p>
-<pre><code class="language-console">Creating Chocolatey folders if they do not already exist.
+<pre><code class="language-shell">Creating Chocolatey folders if they do not already exist.
 WARNING: You can safely ignore errors related to missing log files when upgrading from a version of Chocolatey less than 0.9.9.
 'Batch file could not be found' is also safe to ignore.
  'The system cannot find the file specified' - also safe.
@@ -156,10 +156,10 @@ Ensuring chocolatey.nupkg is in the lib folder
 </code></pre>
 <p>Here is the punch line: I never had a <code>C:\Chocolately</code> folder! My machine has a OneGet <code>C:\Packages</code> folder. However, the <code>choco.exe</code> installation appears to have successfully moved all Chocolatey packages from the folder to <code>C:\ProgramData\chocolatey</code>.</p>
 <p>I find this command super-useful:</p>
-<pre><code class="language-console">choco upgrade all -y --whatif
+<pre><code class="language-shell">choco upgrade all -y --whatif
 </code></pre>
 <p>This what-if mode report gives me option to upgrade everything or be a bit extra-careful and upgrade packages one by one. Today, I am seeing this:</p>
-<pre><code class="language-console">Chocolatey can upgrade 10/18 packages. 0 packages failed.
+<pre><code class="language-shell">Chocolatey can upgrade 10/18 packages. 0 packages failed.
 See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
 </code></pre>
 <p>Can upgrade:</p>
@@ -176,10 +176,10 @@ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
 <li>notepadplusplus.install v7.2</li>
 </ul>
 <p>This is the other command that is super-useful:</p>
-<pre><code class="language-console">choco list -localonly –all
+<pre><code class="language-shell">choco list -localonly –all
 </code></pre>
 <p>This displays output like this:</p>
-<pre><code class="language-console">Chocolatey v0.10.3
+<pre><code class="language-shell">Chocolatey v0.10.3
 7zip.install 16.02.0.20160811
 autohotkey.portable 1.1.24.02
 autoit.commandline 3.3.14.2
@@ -207,10 +207,10 @@ sysinternals 2016.08.29
 24 packages installed.
 </code></pre>
 <p>There two things I am seeing in this output. First, I see that the upgrade functionality of <code>choco.exe</code> is not much better than the standard (OneGet) stuff because an update simply stacks a new version of the package next to the old one. This implies that I still have to manually uninstall the old package by version number (unless there is some kind of cool command-line option to avoid this) with this:</p>
-<pre><code class="language-console">choco uninstall git git.install --version 2.10.1
+<pre><code class="language-shell">choco uninstall git git.install --version 2.10.1
 </code></pre>
 <p>The results I am seeing from this command does not make me feel great:</p>
-<pre><code class="language-console">Chocolatey v0.10.3
+<pre><code class="language-shell">Chocolatey v0.10.3
 Uninstalling the following packages:
 git;git.install
 git v2.10.1
@@ -224,7 +224,7 @@ Failures
  Unable to uninstall 'git.install 2.10.1' because 'git 2.10.1' depends on it.I see now that I should have used the `--force` command-line option. To make matters worse, my uninstall command above apparently installed *all* versions of `git`. So I was forced to reinstall `git` to see it listed as a locally-installed package.
 </code></pre>
 <p>Today, Chocolatey is not a sweet experience—especially for any package paired with an <code>*.install</code> package. All of the unpaired packages were uninstalled as expected and this is list of locally installed packages:</p>
-<pre><code class="language-console">Chocolatey v0.10.3
+<pre><code class="language-shell">Chocolatey v0.10.3
 7zip.install 16.02.0.20160811
 autohotkey.portable 1.1.24.02
 autoit.commandline 3.3.14.2
@@ -247,7 +247,7 @@ sysinternals 2016.08.29
 19 packages installed.
 </code></pre>
 <p>Finally, I am assuming for the moment that I need to make sure that there is only <em>one</em> version of these packages <em>at all times</em> to avoid getting another class of errors:</p>
-<pre><code class="language-console">chocolatey-core.extension 1.0
+<pre><code class="language-shell">chocolatey-core.extension 1.0
 chocolatey-fosshub.extension 0.2.0
 chocolatey-uninstall.extension 1.1.0
 mm-choco.extension 0.0.3

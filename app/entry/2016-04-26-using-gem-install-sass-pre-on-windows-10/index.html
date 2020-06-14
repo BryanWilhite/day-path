@@ -128,17 +128,17 @@
 <p>This article is sort of the Windows 10 version of my previous note, “<a href="http://songhayblog.azurewebsites.net/">Using gulp-ruby-sass on an Ubuntu virtual machine with some ‘history’</a>.”</p>
 <p>Install one of the recommended Ruby installers <a href="http://rubyinstaller.org/downloads/">at rubyinstaller.org</a>. As of this writing, the recommendation for me is <a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.4-x64.exe">Ruby 2.2.4 (x64)</a>.</p>
 <p>Use the <strong>Start Command Prompt with Ruby</strong> shortcut and enter the same command as you would on Linux:</p>
-<pre><code class="language-console">gem install sass --pre
+<pre><code class="language-shell">gem install sass --pre
 </code></pre>
 <p>(The <code>--pre</code> option may not be required as time has passed since that ‘previous note’ mentioned above.)</p>
 <p>Click the <strong>Environment Variables…</strong> button under System Properties and append this:</p>
-<pre><code class="language-console">;C:\Ruby22-x64\bin
+<pre><code class="language-plaintext">;C:\Ruby22-x64\bin
 </code></pre>
 <p>Note: you should not have to do this when you check that ‘update path option’ in the ruby installer. This appended path allows us to call sass directly (from the conventional <code>\styles</code> folder), for development:</p>
-<pre><code class="language-console">sass _body.scss styles.css -E utf-8
+<pre><code class="language-shell">sass _body.scss styles.css -E utf-8
 </code></pre>
 <p>…and production:</p>
-<pre><code class="language-console">sass _body.scss styles.min.css --style=compressed -E utf-8
+<pre><code class="language-shell">sass _body.scss styles.min.css --style=compressed -E utf-8
 </code></pre>
 <p>…where <code>_body.scss</code> is the conventional Sass file with <code>@import</code> declarations for ‘child’ <code>.scss</code> files.</p>
 <p>Note the encoding option <code>-E</code> is needed to force UTF-8 output—evidently, <a href="http://blog.pixelastic.com/2014/09/06/compass-utf-8-encoding-on-windows/">a sass-on-Windows issue</a>.</p>

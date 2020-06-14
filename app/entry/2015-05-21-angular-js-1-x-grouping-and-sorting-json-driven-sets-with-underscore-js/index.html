@@ -146,11 +146,12 @@
 </code></pre>
 <p>I need to use <code>pairs()</code> and <code>map()</code>) because the Underscore <code>_.groupBy()</code> function does <em>not</em> return an array; it returns a new object (which is weird to me—but I’m not a JavaScript scientist—see “<a href="http://songhayblog.azurewebsites.net/Entry/Show/underscore-js-grouping">Underscore.js Grouping in Angular JS</a>” for more details). So, <code>pairs()</code> gives me an array that I <code>map()</code> into an object that most compatible with Angular.</p>
 <p>My two code blocks above use <code>$scope.vm.indexGroupingSelected</code>. My use of <em>Selected</em> in the name of this View Model property makes sense when we see this Angular declaration:</p>
-<p><select
+<pre><code class="language-html">&lt;select
     data-ng-change='vm.setGroups()'
-    data-ng-model="vm.indexGroupingSelected"
-    data-ng-options="i as i.label for i in options">
-</select></p>
+    data-ng-model=&quot;vm.indexGroupingSelected&quot;
+    data-ng-options=&quot;i as i.label for i in options&quot;&gt;
+&lt;/select&gt;
+</code></pre>
 <p>Declaring <code>ng-model</code> in a <code>select</code> element binds the currently selected option in <code>$scope.options</code>. Again, I notice that I cannot use <code>$scope.vm.options</code>—I <em>have to</em> use <code>$scope.options</code>. In my Angular Controller, I fill my options like this:</p>
 <pre><code class="language-js">$scope.options = [{
     label: 'by Date',
@@ -162,7 +163,7 @@
     value: 'topic'
 }];
 </code></pre>
-<p>This use of <code>sortDescending</code> in the options is awesome to me. Because the Angular <code>orderBy</code> expression supports not only variables but also “dotting down” objects used as variables my life was made a bit easier. This Angular feature allows me to control sorting data in ascending or descending order *with *data.</p>
+<p>This use of <code>sortDescending</code> in the options is awesome to me. Because the Angular <code>orderBy</code> expression supports not only variables but also “dotting down” objects used as variables my life was made a bit easier. This Angular feature allows me to control sorting data in ascending or descending order <em>with</em> data.</p>
 <p>Check out <a href="http://codepen.io/rasx/pen/XJYJye">the full CodePen</a>:</p>
 <!-- cSpell:disable -->
 <iframe height="265" style="width: 100%;" scrolling="no" title="Songhay Studio: Day Path Index JSON" src="https://codepen.io/rasx/embed/XJYJye?height=265&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">

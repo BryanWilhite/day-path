@@ -143,20 +143,20 @@ if (!File.Exists(myPath))
 if (!File.Exists(myPath)) throw new FileNotFoundException(&quot;The expected file is not here.&quot;);
 </code></pre>
 <p>Where <code>FrameworkAssemblyUtility.GetPathFromAssembly()</code> method is part of my <code>SonghayCore</code> source code <a href="https://github.com/BryanWilhite/SonghayCore/blob/master/Songhay/FrameworkAssemblyUtility.cs">on GitHub</a>. It may help to mention that this utility method supports relative paths like this:</p>
-<pre><code class="language-console">..\..\foo\bar\my-file.json
+<pre><code class="language-plaintext">..\..\foo\bar\my-file.json
 </code></pre>
 <p>…as well as the typical ones like this:</p>
-<pre><code class="language-console">\foo\bar\my-file.json
+<pre><code class="language-plaintext">\foo\bar\my-file.json
 </code></pre>
 <p>…and the ‘properly-formatted’ ones like this:</p>
-<pre><code class="language-console">foo\bar\my-file.json
+<pre><code class="language-plaintext">foo\bar\my-file.json
 </code></pre>
 <p>The parent directory characters (<code>..\</code>) are telling my utility method to move to the parent directory of the targeted assembly.</p>
 <p>Also, should a non-relative path (a <em>rooted</em> path) be passed to <code>FrameworkAssemblyUtility.GetPathFromAssembly()</code>, an exception will be thrown so this will not work:</p>
-<pre><code class="language-console">c:\foo\bar\my-file.json
+<pre><code class="language-plaintext">c:\foo\bar\my-file.json
 </code></pre>
 <p>By the way, I’ve noticed that paths like this actually work in Windows:</p>
-<pre><code class="language-console">c:\foo\bar\..\..\parent\my-file.json
+<pre><code class="language-plaintext">c:\foo\bar\..\..\parent\my-file.json
 </code></pre>
 <p>…as long as there is a folder called <code>\parent</code> <em>two directories</em> above <code>\bar</code>. I assume this must have come to Windows sometime after Windows NT. My code currently does not support this format.</p>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>

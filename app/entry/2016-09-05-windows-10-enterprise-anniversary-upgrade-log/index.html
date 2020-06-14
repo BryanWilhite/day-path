@@ -159,7 +159,7 @@ At line:1 char:1
 + Install-Package &quot;winmerge&quot;
 </code></pre>
 <p>The <code>cloudberryexplorer.azurestorage</code> package also failed to install with the irresponsibly cryptic:</p>
-<pre><code class="language-console">Install-Package : Process Exited with non-successful exit code cmd.exe : 1
+<pre><code class="language-powershell">Install-Package : Process Exited with non-successful exit code cmd.exe : 1
 
 At line:5 char:47
 + ... kage -Name $_; Install-Package -Name $_ -ProviderName $providerName }
@@ -169,7 +169,7 @@ At line:5 char:47
 <p>I did notice that <code>Install-Package</code> supports a <code>-Destination</code> parameter for <em>some</em> providers (not Chocolatey). I would have been great to have this support to avoid installing packages on the C: drive by default.</p>
 <h2>Linux Subsystem Install</h2>
 <p>The <a href="http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/">installation of the Linux subsystem</a> is standard.</p>
-<pre><code class="language-console">sudo apt-get update
+<pre><code class="language-bash">sudo apt-get update
 sudo apt-get autoremove
 sudo aptitude safe-upgrade
 sudo apt-get install git
@@ -184,7 +184,7 @@ sudo gem install sass
 history -c &amp;&amp; history -w &amp;&amp; exit
 </code></pre>
 <p>It may not be necessary to <em>manually</em> install these for gulp:</p>
-<pre><code class="language-console">sudo npm install gulp-concat
+<pre><code class="language-bash">sudo npm install gulp-concat
 sudo npm install gulp-minify-css
 sudo npm install gulp-sass
 sudo npm install map-stream

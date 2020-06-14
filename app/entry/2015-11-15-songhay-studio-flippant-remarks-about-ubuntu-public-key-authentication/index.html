@@ -127,16 +127,16 @@
         <h1>Songhay Studio: flippant remarks about Ubuntu public key authentication</h1>
 <p>The goals of public key authentication include disallowing logging in to a remote server as root and using <code>ssh</code> a public key (with an optional passphrase) instead of server passwords to login (with a user of reduced privileges—with <code>sudo</code> powers).</p>
 <p>The public key comes from your local machine (in <code>.ssh/id_rsa.pub</code>) and is sent to the remote machine with this command:</p>
-<pre><code class="language-console">ssh-copy-id root@555.555.5.55
+<pre><code class="language-bash">ssh-copy-id root@555.555.5.55
 </code></pre>
 <p>Your user with reduced privileges recognizes the key when <code>.ssh/authorized_keys</code> contains the key. To disallow root login (which should be done after testing the reduced-privileges user), find this line in <code>/etc/ssh/sshd_config</code> on the remote server:</p>
-<pre><code class="language-console">PermitRootLogin yes
+<pre><code class="language-plaintext">PermitRootLogin yes
 </code></pre>
 <p>To seal the breach, change this line to:</p>
-<pre><code class="language-console">PermitRootLogin no
+<pre><code class="language-plaintext">PermitRootLogin no
 </code></pre>
 <p>All the work on the remote server should be punctuated with this:</p>
-<pre><code class="language-console">service ssh restart
+<pre><code class="language-bash">service ssh restart
 </code></pre>
 <p>The details of this whole process is covered quite well in “<a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04">Initial Server Setup with Ubuntu 14.04</a>.”</p>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>

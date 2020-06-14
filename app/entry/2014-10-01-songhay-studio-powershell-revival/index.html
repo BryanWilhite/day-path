@@ -128,7 +128,7 @@
 <p><a href="http://www.jsnover.com/index.html">Jeffrey Snover</a> is awesome but my sad reality for a number of years with PowerShell is cognitive load and unload: since I do not use PowerShell regularly enough I tend to forget how write PowerShell in spite of all of its friendly semantic consistency. Bottom line: I’m going to need many PowerShell revivals and I’m going to need to write down what was revived.</p>
 <p>Here’s what I have of late:</p>
 <h2>How to Display Free Memory: <code>(Get-WMIObject Win32_OperatingSystem)|Get-Member|Out-Host –Paging</code></h2>
-<pre><code class="language-console">(Get-WMIObject Win32_OperatingSystem).FreePhysicalMemory.ToString(&quot;#,###,000&quot;)
+<pre><code class="language-powershell">(Get-WMIObject Win32_OperatingSystem).FreePhysicalMemory.ToString(&quot;#,###,000&quot;)
 
 (Get-WMIObject Win32_OperatingSystem).TotalVisibleMemorySize.ToString(&quot;#,###,000&quot;)
 

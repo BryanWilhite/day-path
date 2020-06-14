@@ -131,7 +131,7 @@
 <p>You must have Sass &gt;=3.4.</p>
 </blockquote>
 <p>Of course it took me hours to figure this out (in part because no errors our any output appeared) but I needed to <a href="http://askubuntu.com/questions/92468/how-do-i-update-to-the-latest-version-of-sass/92471?stw=2">run two commands</a> to get <code>gulp-ruby-sass</code> to work properly:</p>
-<pre><code class="language-console">sudo gem uninstall -Iax haml-edge
+<pre><code class="language-bash">sudo gem uninstall -Iax haml-edge
 sudo gem install sass --pre
 </code></pre>
 <p>I’ve saved my <code>gulpfile.js</code> as a GitHub Gist, showing use of <code>gulp-rename</code> and <code>gulp-sourcemaps</code>:</p>

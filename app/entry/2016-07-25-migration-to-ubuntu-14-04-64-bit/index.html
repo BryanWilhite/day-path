@@ -127,23 +127,23 @@
         <h1>Migration to Ubuntu 14.04 64-bit</h1>
 <p>This machine is set up with 14.04 LTS 64-bit on a single 32GB virtual drive. I do not see the need to split into separate disks because of my impatience and my feeling that my Linux ambitions are scaled down a bit.</p>
 <p>These are the initial command line things done:</p>
-<pre><code class="language-console">sudo apt-get install unity-tweak-tool
+<pre><code class="language-bash">sudo apt-get install unity-tweak-tool
 gsettings set org.gnome.desktop.interface cursor-size 48
 gedit ~/.Xresources
 </code></pre>
 <p>The <code>.Xresources</code> file has one line: <code>Xcursor.size: 48</code>. The Unity Tweak Tool allows me to set a global font size in the UI. And, speaking of fonts, I am in need of this:</p>
-<pre><code class="language-console">sudo apt-get install ttf-mscorefonts-installer
+<pre><code class="language-bash">sudo apt-get install ttf-mscorefonts-installer
 </code></pre>
 <p>It’s a Scribus thing.</p>
 <p>The first Unity thing I did was turn <code>/home/myUbuntuUser</code> into a share with the Unity <strong>Local Network Share</strong> dialog. I copied about 80 of files over to the new machine with no issues—but there were permissions issues. In my brutish impatience I ran <code>chmod -R 775</code> which can be a security problem—especially for web site files. I’ll fix this later.</p>
 <p>The Ubuntu Software Center installed: Chromium, Firefox, Thunderbird, Blender, Gimp, Inkscape and Audacity. From the command line I ran <code>thunderbird /profilemanager</code> and <code>firefox /profilemanager</code> to “create” a profile with the existing ones copied over to my conventional data root folder.</p>
 <h2>Server “Mirror” Setup</h2>
 <p>To mirror the A2 Hosting server, I start with these commands:</p>
-<pre><code class="language-console">sudo apt-get install tasksel
+<pre><code class="language-bash">sudo apt-get install tasksel
 sudo tasksel
 </code></pre>
 <p>Then I use <code>tasksel</code> to setup a LAMP server. I then setup <a href="https://codex.wordpress.org/Installing_WordPress">a MySQL database for my WordPress</a> site, starting with <code>mysql --prompt=&quot;\v\\h\\d\_(\U)&gt;&quot; -u root -p</code>. Then <code>apache2</code> is groomed with these:</p>
-<pre><code class="language-console">sudo a2enmod actions
+<pre><code class="language-bash">sudo a2enmod actions
 sudo a2enmod headers
 sudo gedit /etc/apache2/apache2.conf
 sudo gedit /etc/apache2/sites-available/000-default.conf
@@ -155,13 +155,13 @@ sudo service apache2 restart
 <p>However, I do notice that I am able to cut and paste between VMWare Host and Guest. The Guest Desktop is properly resized as well. Moreover, the Unity Desktop can browse the network and find Host network shares. All of these features suggest to me that perhaps VMWare Tools are no longer needed for 64-bit Ubuntu.</p>
 <h2>Mounting the Host with CIFS</h2>
 <p>I am told that the <a href="https://technet.microsoft.com/en-us/library/cc939973.aspx">Common Internet File System</a> (CIFS) is the improvement over the Server Message Block (SMB) protocol. So I need to use this to mount (under <code>/mnt</code>) host shares, following “Mounting Windows Share on Ubuntu 14.04”:</p>
-<pre><code class="language-console">sudo apt-get install cifs-utils
+<pre><code class="language-bash">sudo apt-get install cifs-utils
 sudo mount //Windows10/foo -t cifs -o uid=1000,gid=1000,username=winUser /mnt/foo
 </code></pre>
 <p>I notice that I need to <code>sudo mkdir /mnt/foo</code> first. (Also the user <code>winUser</code> is a “classic” <strong>Computer Management</strong> generated user).</p>
 <h2>Mounting the Guest from my Windows 10 VM</h2>
 <p>“<a href="http://www.digitalcitizen.life/how-access-ubuntu-shared-folders-windows-7">How to Share Folders in Ubuntu &amp; Access them from Windows 7</a>” is a decent introduction to mounting Ubuntu from Windows. I found these shell commands necessary:</p>
-<pre><code class="language-console">apt-get install -y samba samba-common python-glade2 system-config-samba
+<pre><code class="language-bash">apt-get install -y samba samba-common python-glade2 system-config-samba
 sudo apt-get install libpam-smbpass
 </code></pre>
 <p>It is important to not enable anonymous access to your share—say, <code>/foo</code>. So in Windows it will be found at [\UBUNTU\foo](file://ubuntu/foo) after filling in the credentials.</p>
