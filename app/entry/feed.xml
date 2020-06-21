@@ -1,221 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed
-    xmlns="http://www.w3.org/2005/Atom"
-    xml:lang="en-US"
-    xml:base="http://songhayblog.azurewebsites.net/entry/feed.xml">
-    <title type="text">Day Path</title>
-    <subtitle type="text">a technical Blog ✒ for my little studio</subtitle>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="en-US" xml:base="http://songhayblog.azurewebsites.net/entry/feed.xml">
+    <channel>
+        <title>Day Path</title>
+        <description>a technical Blog ✒ for my little studio</description>
 
-    <updated>2020-06-11T20:39:15.42Z</updated>
-    <id>http://songhayblog.azurewebsites.net/entry/feed.xml</id>
-
-    <link rel="alternate" href="http://songhayblog.azurewebsites.net/" />
-    <link rel="self" href="http://songhayblog.azurewebsites.net/entry/feed.xml" />
-
-    <generator uri="https://www.11ty.io/" version="0.10.0">eleventy</generator>
-    <entry>
-        <title>my blogging workflow for 2020 is all about `11ty` (eleventy)</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</id>
-        <updated>2020-06-11T20:39:15.42Z</updated>
-        <summary>
-            As of this writing, my Blogging workflow looks like this: authoring workflow Above we see the author (me ✍🏾) generating Markdown in one repository and using 11ty.dev (eleventy) to write files in another. These are the authoring repo and the Presentation …
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-06-11T20:39:15.42Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2020-05</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</id>
-        <updated>2020-05-31T03:38:08.17Z</updated>
-        <summary>
-            month 5 of 2020 was about building my first Web Component The lunr index experience should totally depend on a Web Component @songhay/input-autocomplete 📦 [npm], released hours before this writing. The GitHub project contains issues that go into copious �
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-05-31T03:38:08.17Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2020-04</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04</id>
-        <updated>2020-04-29T16:52:35.482Z</updated>
-        <summary>
-            month 4 of 2020 was about really understanding why the lunr index issue is still open Issue #25 for this Blog is still open. But this is great because I had to formally research the subject of Web Components and finally, finally learn how use webpack dire…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-04-29T16:52:35.482Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2020-03</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03</id>
-        <updated>2020-03-26T18:00:20.237Z</updated>
-        <summary>
-            month 3 of 2020 is about a deep dive into re-factoring for the cloud Last month I called this a “O(n) problem” which I now realize is the same thing as saying it is a time complexity problem. This has not been a time complexity problem. It has been more o…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-03-26T18:00:20.237Z</published>
-    </entry>
-    <entry>
-        <title>“40 Most Popular Fonts of 2019” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links</id>
-        <updated>2020-03-09T18:00:28.303Z</updated>
-        <summary>
-            40 Most Popular Fonts of 2019 https://design.tutsplus.com/articles/40-most-popular-fonts-of-2019--cms-34190 https://twitter.com/MediaLoot/status/1206289832907100161/photo/1
+        <link>http://songhayblog.azurewebsites.net/</link>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>2020-06-11T20:39:15.42Z</pubDate>
+        <lastBuildDate>Sun Nov 17 2019 11:58:54 GMT-0800 (Pacific Standard Time)</lastBuildDate>
+        <item>
+            <title>my blogging workflow for 2020 is all about `11ty` (eleventy)</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</link>
+            <description>
+                As of this writing, my Blogging workflow looks like this: authoring workflow Above we see the author (me ✍🏾) generating Markdown in one repository and using 11ty.dev (eleventy) to write files in another. These are the authoring repo and the Presentation …
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</guid>
+            <pubDate>2020-06-11T20:39:15.42Z</pubDate>
+        </item>
+        <item>
+            <title>studio status report: 2020-05</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</link>
+            <description>
+                month 5 of 2020 was about building my first Web Component The lunr index experience should totally depend on a Web Component @songhay/input-autocomplete 📦 [npm], released hours before this writing. The GitHub project contains issues that go into copious �
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</guid>
+            <pubDate>2020-05-31T03:38:08.17Z</pubDate>
+        </item>
+        <item>
+            <title>studio status report: 2020-04</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04</link>
+            <description>
+                month 4 of 2020 was about really understanding why the lunr index issue is still open Issue #25 for this Blog is still open. But this is great because I had to formally research the subject of Web Components and finally, finally learn how use webpack dire…
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04</guid>
+            <pubDate>2020-04-29T16:52:35.482Z</pubDate>
+        </item>
+        <item>
+            <title>studio status report: 2020-03</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03</link>
+            <description>
+                month 3 of 2020 is about a deep dive into re-factoring for the cloud Last month I called this a “O(n) problem” which I now realize is the same thing as saying it is a time complexity problem. This has not been a time complexity problem. It has been more o…
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03</guid>
+            <pubDate>2020-03-26T18:00:20.237Z</pubDate>
+        </item>
+        <item>
+            <title>“40 Most Popular Fonts of 2019” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links</link>
+            <description>
+                40 Most Popular Fonts of 2019 https://design.tutsplus.com/articles/40-most-popular-fonts-of-2019--cms-34190 https://twitter.com/MediaLoot/status/1206289832907100161/photo/1
 The new @blender_org Blender update is here! Can&#39;t wait to take the new features f…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-03-09T18:00:28.303Z</published>
-    </entry>
-    <entry>
-        <title>“React Native Vs. Xamarin Vs. Ionic Vs. Flutter” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links</id>
-        <updated>2020-03-07T22:39:49.580Z</updated>
-        <summary>
-            React Native Vs. Xamarin Vs. Ionic Vs. Flutter: Which Is Best For Cross-Platform Mobile App Development?
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links</guid>
+            <pubDate>2020-03-09T18:00:28.303Z</pubDate>
+        </item>
+        <item>
+            <title>“React Native Vs. Xamarin Vs. Ionic Vs. Flutter” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links</link>
+            <description>
+                React Native Vs. Xamarin Vs. Ionic Vs. Flutter: Which Is Best For Cross-Platform Mobile App Development?
 https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?utm_source=Facebook&amp;utm_medium=Cross%20platform%20,Group4,%2030-04-201…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-03-07T22:39:49.580Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2020-02</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02</id>
-        <updated>2020-02-23T17:02:46.406Z</updated>
-        <summary>
-            month 2 of 2020 is about moving sideways into day-job, onboarding drama I pushed a bunch of 2020-02 commits to my LinqPad repo that betray how much I forgot about ASP.NET MVC 5. My need to even care about MVC 5 further betrays the needs of the day job. I …
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-02-23T17:02:46.406Z</published>
-    </entry>
-    <entry>
-        <title>“Introducing .NET Core Windows Forms Designer Preview 1” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</id>
-        <updated>2020-02-23T03:03:08.237Z</updated>
-        <summary>
-            Introducing .NET Core Windows Forms Designer Preview 1 | .NET Blog #BreakingNews #games #rdt http://dlvr.it/RFHMxT https://twitter.com/GoodVibra/status/1179081053958328320/photo/1
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links</guid>
+            <pubDate>2020-03-07T22:39:49.580Z</pubDate>
+        </item>
+        <item>
+            <title>studio status report: 2020-02</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02</link>
+            <description>
+                month 2 of 2020 is about moving sideways into day-job, onboarding drama I pushed a bunch of 2020-02 commits to my LinqPad repo that betray how much I forgot about ASP.NET MVC 5. My need to even care about MVC 5 further betrays the needs of the day job. I …
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02</guid>
+            <pubDate>2020-02-23T17:02:46.406Z</pubDate>
+        </item>
+        <item>
+            <title>“Introducing .NET Core Windows Forms Designer Preview 1” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</link>
+            <description>
+                Introducing .NET Core Windows Forms Designer Preview 1 | .NET Blog #BreakingNews #games #rdt http://dlvr.it/RFHMxT https://twitter.com/GoodVibra/status/1179081053958328320/photo/1
 What’s New in 2019 Volume 3: Xamarin.Forms WPF https://www.syncfusion.com/b…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-02-23T03:03:08.237Z</published>
-    </entry>
-    <entry>
-        <title>“11 JavaScript Animation Libraries For 2019” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</id>
-        <updated>2020-02-09T03:08:05.496Z</updated>
-        <summary>
-            11 JavaScript Animation Libraries For 2019 by Jonathan Saring https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59?gi=ed70256906e8
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</guid>
+            <pubDate>2020-02-23T03:03:08.237Z</pubDate>
+        </item>
+        <item>
+            <title>“11 JavaScript Animation Libraries For 2019” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</link>
+            <description>
+                11 JavaScript Animation Libraries For 2019 by Jonathan Saring https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59?gi=ed70256906e8
 Really excited about the improved UX around Promises! I forget to await things all the time 😅
 Ann…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-02-09T03:08:05.496Z</published>
-    </entry>
-    <entry>
-        <title>studio status report: 2020-01</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</id>
-        <updated>2020-02-09T03:06:25.321Z</updated>
-        <summary>
-            the first month of 2020 is about achieving desired expressive power with eleventy GitHub issue, “add flat entries/ (index) and groupings by year,” records my progress with generating Blog sites with eleventy: &gt; “Tips for Using Snippets in Your Shopify The…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-02-09T03:06:25.321Z</published>
-    </entry>
-    <entry>
-        <title>“The (not so) hidden cost of sharing code between iOS and Android” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links</id>
-        <updated>2020-01-31T19:07:22.656Z</updated>
-        <summary>
-            The (not so) hidden cost of sharing code between iOS and Android https://blogs.dropbox.com/tech/2019/08/the-not-so-hidden-cost-of-sharing-code-between-ios-and-android/
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</guid>
+            <pubDate>2020-02-09T03:08:05.496Z</pubDate>
+        </item>
+        <item>
+            <title>studio status report: 2020-01</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</link>
+            <description>
+                the first month of 2020 is about achieving desired expressive power with eleventy GitHub issue, “add flat entries/ (index) and groupings by year,” records my progress with generating Blog sites with eleventy: &gt; “Tips for Using Snippets in Your Shopify The…
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</guid>
+            <pubDate>2020-02-09T03:06:25.321Z</pubDate>
+        </item>
+        <item>
+            <title>“The (not so) hidden cost of sharing code between iOS and Android” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links</link>
+            <description>
+                The (not so) hidden cost of sharing code between iOS and Android https://blogs.dropbox.com/tech/2019/08/the-not-so-hidden-cost-of-sharing-code-between-ios-and-android/
 Some of my favorite learning resources: - @FrontendMasters for long-form content
 @egghe…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-31T19:07:22.656Z</published>
-    </entry>
-    <entry>
-        <title>“`:focus-within` is SO useful” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links</id>
-        <updated>2020-01-29T22:38:53.877Z</updated>
-        <summary>
-            :focus-within is SO useful. Really great selector.  Our Almanac entry: https://css-tricks.com/almanac/selectors/f/focus-within/
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links</guid>
+            <pubDate>2020-01-31T19:07:22.656Z</pubDate>
+        </item>
+        <item>
+            <title>“`:focus-within` is SO useful” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links</link>
+            <description>
+                :focus-within is SO useful. Really great selector.  Our Almanac entry: https://css-tricks.com/almanac/selectors/f/focus-within/
 Recent from @davidwalshblog https://davidwalsh.name/css-focus-within A note though! Careful not to use in comma-separated selec…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-29T22:38:53.877Z</published>
-    </entry>
-    <entry>
-        <title>“Recapping the Xamarin Developer Summit” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</id>
-        <updated>2020-01-27T19:14:07.798Z</updated>
-        <summary>
-            Recapping the Xamarin Developer Summit by Maddy Leger. #Xamarin #devconference https://devblogs.microsoft.com/xamarin/recapping-xamarin-developer-summit/?_lrsc=842e9325-e980-4870-a930-ef048f5b0323&amp;utm_campaign=elevate&amp;utm_source=twitter&amp;utm_medium=social
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links</guid>
+            <pubDate>2020-01-29T22:38:53.877Z</pubDate>
+        </item>
+        <item>
+            <title>“Recapping the Xamarin Developer Summit” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</link>
+            <description>
+                Recapping the Xamarin Developer Summit by Maddy Leger. #Xamarin #devconference https://devblogs.microsoft.com/xamarin/recapping-xamarin-developer-summit/?_lrsc=842e9325-e980-4870-a930-ef048f5b0323&amp;utm_campaign=elevate&amp;utm_source=twitter&amp;utm_medium=social
 …
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-27T19:14:07.798Z</published>
-    </entry>
-    <entry>
-        <title>“It’s time to unleash `ngx-template-streams`” and other tweeted links…</title>
-        <link href="http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links" />
-        <link rel="alternate" type="text/html" href="http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links/index.html" />
-        <id>http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links</id>
-        <updated>2020-01-24T18:49:33.213Z</updated>
-        <summary>
-            📢 ANNOUNCEMENT 📢 It&#39;s time to unleash ngx-template-streams, a library that supercharges your @Angular templates with Observables and lets you define event streams from any DOM event including component outputs. 🎉🔥🙌😱 It&#39;s fully open source! Happy str…
-        </summary>
-        <author>
-            <name>Bryan Wilhite</name>
-        </author>
-        <published>2020-01-24T18:49:33.213Z</published>
-    </entry>
-</feed>
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</guid>
+            <pubDate>2020-01-27T19:14:07.798Z</pubDate>
+        </item>
+        <item>
+            <title>“It’s time to unleash `ngx-template-streams`” and other tweeted links…</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links</link>
+            <description>
+                📢 ANNOUNCEMENT 📢 It&#39;s time to unleash ngx-template-streams, a library that supercharges your @Angular templates with Observables and lets you define event streams from any DOM event including component outputs. 🎉🔥🙌😱 It&#39;s fully open source! Happy str…
+            </description>
+            <author>
+                <name>Bryan Wilhite</name>
+            </author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links</guid>
+            <pubDate>2020-01-24T18:49:33.213Z</pubDate>
+        </item>
+    </channel>
+</rss>
