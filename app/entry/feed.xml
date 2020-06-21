@@ -5,7 +5,7 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>2020-06-11T20:39:15.42Z</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 11 Jun 2020 13:39:15 -0700</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
         <item>
             <title>my blogging workflow for 2020 is all about `11ty` (eleventy)</title>
@@ -13,7 +13,7 @@
             <description>
                 As of this writing, my Blogging workflow looks like this: authoring workflow Above we see the author (me ✍🏾) generating Markdown in one repository and using 11ty.dev (eleventy) to write files in another. These are the authoring repo and the Presentation …
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</guid>
             <pubDate>Thu, 11 Jun 2020 13:39:15 -0700</pubDate>
         </item>
@@ -23,7 +23,7 @@
             <description>
                 month 5 of 2020 was about building my first Web Component The lunr index experience should totally depend on a Web Component @songhay/input-autocomplete 📦 [npm], released hours before this writing. The GitHub project contains issues that go into copious �
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</guid>
             <pubDate>Sat, 30 May 2020 20:38:08 -0700</pubDate>
         </item>
@@ -33,7 +33,7 @@
             <description>
                 month 4 of 2020 was about really understanding why the lunr index issue is still open Issue #25 for this Blog is still open. But this is great because I had to formally research the subject of Web Components and finally, finally learn how use webpack dire…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04</guid>
             <pubDate>Wed, 29 Apr 2020 09:52:35 -0700</pubDate>
         </item>
@@ -43,7 +43,7 @@
             <description>
                 month 3 of 2020 is about a deep dive into re-factoring for the cloud Last month I called this a “O(n) problem” which I now realize is the same thing as saying it is a time complexity problem. This has not been a time complexity problem. It has been more o…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03</guid>
             <pubDate>Thu, 26 Mar 2020 11:00:20 -0700</pubDate>
         </item>
@@ -54,7 +54,7 @@
                 40 Most Popular Fonts of 2019 https://design.tutsplus.com/articles/40-most-popular-fonts-of-2019--cms-34190 https://twitter.com/MediaLoot/status/1206289832907100161/photo/1
 The new @blender_org Blender update is here! Can&#39;t wait to take the new features f…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links</guid>
             <pubDate>Mon, 09 Mar 2020 11:00:28 -0700</pubDate>
         </item>
@@ -65,7 +65,7 @@ The new @blender_org Blender update is here! Can&#39;t wait to take the new feat
                 React Native Vs. Xamarin Vs. Ionic Vs. Flutter: Which Is Best For Cross-Platform Mobile App Development?
 https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?utm_source=Facebook&amp;utm_medium=Cross%20platform%20,Group4,%2030-04-201…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links</guid>
             <pubDate>Sat, 07 Mar 2020 14:39:49 -0800</pubDate>
         </item>
@@ -75,7 +75,7 @@ https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?
             <description>
                 month 2 of 2020 is about moving sideways into day-job, onboarding drama I pushed a bunch of 2020-02 commits to my LinqPad repo that betray how much I forgot about ASP.NET MVC 5. My need to even care about MVC 5 further betrays the needs of the day job. I …
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02</guid>
             <pubDate>Sun, 23 Feb 2020 09:02:46 -0800</pubDate>
         </item>
@@ -86,7 +86,7 @@ https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?
                 Introducing .NET Core Windows Forms Designer Preview 1 | .NET Blog #BreakingNews #games #rdt http://dlvr.it/RFHMxT https://twitter.com/GoodVibra/status/1179081053958328320/photo/1
 What’s New in 2019 Volume 3: Xamarin.Forms WPF https://www.syncfusion.com/b…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</guid>
             <pubDate>Sat, 22 Feb 2020 19:03:08 -0800</pubDate>
         </item>
@@ -98,7 +98,7 @@ What’s New in 2019 Volume 3: Xamarin.Forms WPF https://www.syncfusion.com/b…
 Really excited about the improved UX around Promises! I forget to await things all the time 😅
 Ann…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</guid>
             <pubDate>Sat, 08 Feb 2020 19:08:05 -0800</pubDate>
         </item>
@@ -108,7 +108,7 @@ Ann…
             <description>
                 the first month of 2020 is about achieving desired expressive power with eleventy GitHub issue, “add flat entries/ (index) and groupings by year,” records my progress with generating Blog sites with eleventy: &gt; “Tips for Using Snippets in Your Shopify The…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</guid>
             <pubDate>Sat, 08 Feb 2020 19:06:25 -0800</pubDate>
         </item>
@@ -120,7 +120,7 @@ Ann…
 Some of my favorite learning resources: - @FrontendMasters for long-form content
 @egghe…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links</guid>
             <pubDate>Fri, 31 Jan 2020 11:07:22 -0800</pubDate>
         </item>
@@ -131,7 +131,7 @@ Some of my favorite learning resources: - @FrontendMasters for long-form content
                 :focus-within is SO useful. Really great selector.  Our Almanac entry: https://css-tricks.com/almanac/selectors/f/focus-within/
 Recent from @davidwalshblog https://davidwalsh.name/css-focus-within A note though! Careful not to use in comma-separated selec…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links</guid>
             <pubDate>Wed, 29 Jan 2020 14:38:53 -0800</pubDate>
         </item>
@@ -142,7 +142,7 @@ Recent from @davidwalshblog https://davidwalsh.name/css-focus-within A note thou
                 Recapping the Xamarin Developer Summit by Maddy Leger. #Xamarin #devconference https://devblogs.microsoft.com/xamarin/recapping-xamarin-developer-summit/?_lrsc=842e9325-e980-4870-a930-ef048f5b0323&amp;utm_campaign=elevate&amp;utm_source=twitter&amp;utm_medium=social
 …
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</guid>
             <pubDate>Mon, 27 Jan 2020 11:14:07 -0800</pubDate>
         </item>
@@ -152,7 +152,7 @@ Recent from @davidwalshblog https://davidwalsh.name/css-focus-within A note thou
             <description>
                 📢 ANNOUNCEMENT 📢 It&#39;s time to unleash ngx-template-streams, a library that supercharges your @Angular templates with Observables and lets you define event streams from any DOM event including component outputs. 🎉🔥🙌😱 It&#39;s fully open source! Happy str…
             </description>
-            <author>bryan.wilhite@gmail.com</author>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links</guid>
             <pubDate>Fri, 24 Jan 2020 10:49:33 -0800</pubDate>
         </item>
