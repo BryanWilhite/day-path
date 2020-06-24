@@ -1791,7 +1791,7 @@ main .entry.mdc-typography--body1 {
   main .entry.mdc-typography--body1 blockquote p,
   main .entry.mdc-typography--body1 .Quote p {
     margin: 1.5em; }
-  main .entry.mdc-typography--body1 code,
+  main .entry.mdc-typography--body1 code:not([class]),
   main .entry.mdc-typography--body1 kbd,
   main .entry.mdc-typography--body1 pre:not([class]) {
     background-color: #cfc;
