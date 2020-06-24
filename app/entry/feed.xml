@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 11 Jun 2020 13:39:15 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 23 Jun 2020 16:15:58 -0700</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2020-06</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06</link>
+            <description>
+                month 6 of 2020 was about recuperation and promotion “A Return to Progressive Enhancement with LitHtml and 11ty (@eleven_ty)” marks my debut into the latest fashion trend of technical blogging from at least three years ago. My Medium.com post speaks for i…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06</guid>
+            <pubDate>Tue, 23 Jun 2020 16:15:58 -0700</pubDate>
+        </item>
         <item>
             <title>my blogging workflow for 2020 is all about `11ty` (eleventy)</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</link>
@@ -145,16 +155,6 @@ Recent from @davidwalshblog https://davidwalsh.name/css-focus-within A note thou
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</guid>
             <pubDate>Mon, 27 Jan 2020 11:14:07 -0800</pubDate>
-        </item>
-        <item>
-            <title>“It’s time to unleash `ngx-template-streams`” and other tweeted links…</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links</link>
-            <description>
-                📢 ANNOUNCEMENT 📢 It&#39;s time to unleash ngx-template-streams, a library that supercharges your @Angular templates with Observables and lets you define event streams from any DOM event including component outputs. 🎉🔥🙌😱 It&#39;s fully open source! Happy str…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-24-it-s-time-to-unleash-ngx-template-streams-and-other-tweeted-links</guid>
-            <pubDate>Fri, 24 Jan 2020 10:49:33 -0800</pubDate>
         </item>
     </channel>
 </rss>

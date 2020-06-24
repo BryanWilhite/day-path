@@ -9,7 +9,14 @@
     <meta name="twitter:site" content="@BryanWilhite" />
     <meta name="twitter:creator" content="@BryanWilhite" />
 
-    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="studio status report: 2020-06" />
+    <meta name="twitter:title" content="studio status report: 2020-06" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 6 of 2020 was about recuperation and promotion “A Return to Progressive Enhancement with LitHtml and 11ty (@eleven_ty)” marks my debut into the latest fashion trend of technical blogging from at least three years ago. My Medium.com post speaks for i…" />
+    <meta property="og:description" content="month 6 of 2020 was about recuperation and promotion “A Return to Progressive Enhancement with LitHtml and 11ty (@eleven_ty)” marks my debut into the latest fashion trend of technical blogging from at least three years ago. My Medium.com post speaks for i…" />
+    <meta name="twitter:description" content="month 6 of 2020 was about recuperation and promotion “A Return to Progressive Enhancement with LitHtml and 11ty (@eleven_ty)” marks my debut into the latest fashion trend of technical blogging from at least three years ago. My Medium.com post speaks for i…" /><meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
@@ -19,13 +26,13 @@
 
     <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
     <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
-    <link rel="SHORTCUT ICON" href="./image/favicon.ico" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link href="./_bundles/styles.min.css" rel="stylesheet" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
 
-    <script src="./_bundles/scripts.min.js"></script>
+    <script src="../../_bundles/scripts.min.js"></script>
 
-    <title>Day Path</title>
+    <title>studio status report: 2020-06 - Day Path</title>
 </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -73,7 +80,9 @@
 </svg>
 <header class="mdc-top-app-bar mdc-top-app-bar--prominent">
     <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
         </section>
         <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
             <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -124,30 +133,54 @@
 </header>
         <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell--span-8">
-    <section class="entries">
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06">studio status report: 2020-06</a></h3>
-            <p>month 6 of 2020 was about recuperation and promotion “A Return to Progressive Enhancement with LitHtml and 11ty (@eleven_ty)” marks my debut into the latest fashion trend of technical blogging from at least three years ago. My Medium.com post speaks for i…</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy">my blogging workflow for 2020 is all about `11ty` (eleventy)</a></h3>
-            <p>As of this writing, my Blogging workflow looks like this: authoring workflow Above we see the author (me ✍🏾) generating Markdown in one repository and using 11ty.dev (eleventy) to write files in another. These are the authoring repo and the Presentation …</p>
-        </div>
-    
-        <div class="entry extract">
-            <h3 class="mdc-typography--headline4"><a class="index" href="http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05">studio status report: 2020-05</a></h3>
-            <p>month 5 of 2020 was about building my first Web Component The lunr index experience should totally depend on a Web Component @songhay/input-autocomplete 📦 [npm], released hours before this writing. The GitHub project contains issues that go into copious �</p>
-        </div>
-    
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2020-06</h1>
+<h2>month 6 of 2020 was about recuperation and promotion</h2>
+<p>“<a href="https://medium.com/@bryan.wilhite/a-return-to-progressive-enhancement-with-lithtml-and-11ty-eleven-ty-e3e7e73fec9d">A Return to Progressive Enhancement with LitHtml and <code>11ty</code> (@eleven_ty)</a>” marks my debut into the latest fashion trend of technical blogging from at least three years ago. My Medium.com post speaks for itself so let’s conserve space here.</p>
+<p>The recuperation part was about moving more of my OneNote content to Joplin and seeing the next little bit of routine development upwards from <code>SonghayCore</code>:</p>
+<ul>
+<li>[ ] release next <code>SonghayCore</code> <a href="https://github.com/BryanWilhite/SonghayCore/projects/17">project</a> 📦🚀</li>
+<li>[ ] upgrade packages dependent on <code>SonghayCore</code> 📦⬆</li>
+<li>[ ] release next <code>Songhay.Publications</code> <a href="https://github.com/BryanWilhite/Songhay.Publications/projects/3">project</a> 📦🚀</li>
+</ul>
+<p>This work is looking forward to upgrading to .NET 3.x.</p>
+<h2>mermaid and basic image support for blogging</h2>
+<p>The rise of Joplin in the Studio has pushed me toward a basic image pipeline for my Visual-Studio-Code-based blogging. The <a href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image">Paste Image extension</a> is key to this new routine:</p>
+<ol>
+<li>compose the <a href="https://mermaid-js.github.io/mermaid/#/flowchart">Mermaid diagram</a> in Joplin</li>
+<li>screen-capture it with the OS</li>
+<li>paste it into the active Markdown document is Visual Studio Code</li>
+</ol>
+<p>These are the Paste Image settings (at the folder level) for this Blog:</p>
+<pre><code class="language-json">    &quot;pasteImage.insertPattern&quot;: &quot;${imageSyntaxPrefix}../presentation/image/${imageFileName}${imageSyntaxSuffix}&quot;,
+    &quot;pasteImage.namePrefix&quot;: &quot;day-path-&quot;,
+    &quot;pasteImage.path&quot;: &quot;${projectRoot}/presentation/image/&quot;
+</code></pre>
+<h2>Studio packages dependent on <code>SonghayCore</code></h2>
+<p><img src="../presentation/image/day-path-2020-06-23-18-22-10.png" alt="Studio packages dependent on "></p>
+<ul>
+<li><code>SonghayCore.MSTest</code> will retire upon the move to .NET Core 3.x</li>
+<li><code>Songhay.DataAccess</code> is in serious need of a revival</li>
+</ul>
+<h2>sketching out a development schedule (revision 9)</h2>
+<p>The schedule of the month:</p>
+<ul>
+<li><s>build lunr index experience</s> 🏗</li>
+<li>use <code>@songhay/index</code> as a side-car app for “Day Path” and “the rasx() context” 🚛📦</li>
+<li>consider upgrading to .NET 3.0</li>
+<li>add Stills API to <code>Songhay.Player</code> (b-roll player) 🕸🌩</li>
+<li>add <a href="https://github.com/BryanWilhite/songhay-web-components/issues/10">proposed content Web component</a></li>
+<li>use the learnings from existing npm packages to build <code>@songhay/player-audio-???</code> 📦✨</li>
+<li>modernize the kinté hits page into a progressive web app 💄✨</li>
+<li>convert Day Path Blog and SonghaySystem.com to HTTPs by default 🔐</li>
+<li>use the learnings of previous work to upgrade and re-release the kinté space 🚀</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
     </section>
-</div>
-<div class="entries mdc-layout-grid__cell--span-4">
-<nav>
-    <ul class="pagination mdc-list"><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-06">2020-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-05">2020-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-04">2020-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-03">2020-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-02">2020-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2020-01">2020-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-12">2019-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-11">2019-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-10">2019-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-09">2019-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-08">2019-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-07">2019-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-06">2019-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-04">2019-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-03">2019-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-02">2019-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2019-01">2019-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-12">2018-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-11">2018-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-10">2018-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-09">2018-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-08">2018-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-07">2018-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/#2018-06">2018-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2018-03">2018-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2018-02">2018-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2018-01">2018-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-12">2017-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-11">2017-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-10">2017-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-09">2017-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-08">2017-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-07">2017-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-06">2017-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-05">2017-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-04">2017-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-03">2017-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-02">2017-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2017-01">2017-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-12">2016-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-11">2016-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/1/#2016-10">2016-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-09">2016-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-08">2016-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-07">2016-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-06">2016-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-05">2016-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-04">2016-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-03">2016-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2016-02">2016-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-12">2015-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-11">2015-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-10">2015-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-09">2015-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/2/#2015-08">2015-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-07">2015-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-06">2015-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-05">2015-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-04">2015-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-03">2015-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-02">2015-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2015-01">2015-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-12">2014-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-11">2014-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-10">2014-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-09">2014-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-08">2014-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-07">2014-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/3/#2014-06">2014-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2014-05">2014-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2014-01">2014-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-12">2013-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-11">2013-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-09">2013-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-08">2013-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-06">2013-06</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-05">2013-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-04">2013-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-03">2013-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-02">2013-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2013-01">2013-01</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-12">2012-12</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-11">2012-11</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-10">2012-10</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-09">2012-09</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-08">2012-08</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-07">2012-07</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-05">2012-05</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-04">2012-04</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-03">2012-03</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-02">2012-02</a></li><li class="mdc-list-item mdc-typography--body1"><a href="entries/4/#2012-01">2012-01</a></li></ul>
-</nav>
 </div>
             </div>
         </main>
@@ -155,9 +188,10 @@
     <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell--span-6">
             <p>
-                a technical Blog ✒ for my little studio
+                Last Reviewed:
+                2020-06-23T23:15:58.41Z
             </p>
-            <p><a class="index" href="./entries/">[index]</a></p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
             <p>
                 another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
             </p>
