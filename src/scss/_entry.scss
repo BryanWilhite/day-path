@@ -102,7 +102,7 @@ main {
 
         & code,
         & kbd,
-        & pre {
+        & pre:not([class]) {
             background-color: #cfc;
             color: navy;
             font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
