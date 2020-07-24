@@ -9,14 +9,14 @@
     <meta name="twitter:site" content="@BryanWilhite" />
     <meta name="twitter:creator" content="@BryanWilhite" />
 
-    <meta property="og:title" content="Silverlight, Entity Framework and RIA Services Recipe" />
-    <meta name="twitter:title" content="Silverlight, Entity Framework and RIA Services Recipe" />
+    <meta property="og:title" content="studio status report: 2020-07" />
+    <meta name="twitter:title" content="studio status report: 2020-07" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2012-03-21-silverlight-entity-framework-and-ria-services-recipe" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2020-07-24-studio-status-report-2020-07" />
     <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
-    <meta name="description" content="Here’s a short list for database-first DbContext with RIA Services: Define and generate the database.Generate the Entities with the database.Generate a Web Project to host the DbContext class and the “Database Domain Service of T” class.Write the DbContex..." />
-    <meta property="og:description" content="Here’s a short list for database-first DbContext with RIA Services: Define and generate the database.Generate the Entities with the database.Generate a Web Project to host the DbContext class and the “Database Domain Service of T” class.Write the DbContex..." />
-    <meta name="twitter:description" content="Here’s a short list for database-first DbContext with RIA Services: Define and generate the database.Generate the Entities with the database.Generate a Web Project to host the DbContext class and the “Database Domain Service of T” class.Write the DbContex..." /><meta name="robots" content="index, follow" />
+    <meta name="description" content="month 7 of 2020 has been about building the lunr experience into the rasx() context The lunr index UX is now a fact of life in the Songhay Studio. The Blog-entry index for the rasx() context is so large that a 1000-entry partition threshold has to added i…" />
+    <meta property="og:description" content="month 7 of 2020 has been about building the lunr experience into the rasx() context The lunr index UX is now a fact of life in the Songhay Studio. The Blog-entry index for the rasx() context is so large that a 1000-entry partition threshold has to added i…" />
+    <meta name="twitter:description" content="month 7 of 2020 has been about building the lunr experience into the rasx() context The lunr index UX is now a fact of life in the Songhay Studio. The Blog-entry index for the rasx() context is so large that a 1000-entry partition threshold has to added i…" /><meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
@@ -32,7 +32,7 @@
 
     <script src="../../_bundles/scripts.min.js"></script>
 
-    <title>Silverlight, Entity Framework and RIA Services Recipe - Day Path</title>
+    <title>studio status report: 2020-07 - Day Path</title>
 </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -136,40 +136,51 @@
                 <div class="mdc-layout-grid__cell--span-12">
     <section class="entry mdc-typography--body1">
 
-        <h1>Silverlight, Entity Framework and RIA Services Recipe</h1>
-<p>Here’s a short list for database-first <code>DbContext</code> with <a href="http://www.silverlight.net/learn/advanced-techniques/wcf-ria-services/get-started-with-wcf-ria-services">RIA Services</a>:</p>
+        <h1>studio status report: 2020-07</h1>
+<h2>month 7 of 2020 has been about building the <code>lunr</code> experience into <em>the rasx() context</em></h2>
+<p>The <code>lunr</code> index UX is now a fact of life in the Songhay Studio. The Blog-entry index for <em>the rasx() context</em> is so large that <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/19">a 1000-entry partition threshold</a> was added in <code>Songhay.Publications</code>. My <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/16#issuecomment-648441162">comment from June</a> should be revised a bit:</p>
 <ul>
-<li>Define and generate the database.</li>
-<li>Generate the Entities with the database.</li>
-<li>Generate a Web Project to host the <code>DbContext</code> class and the “Database Domain Service of T” class.</li>
-<li>Write the <code>DbContext</code> class for the Entities. This had a gotcha for me (see below).</li>
-<li>Write the “Database Domain Service of T” (<code>DbDomainService&lt;T&gt;</code>) for the <code>DbContext</code> class for the Entities.</li>
-<li>Build your client and “wire up” the client with the “Database Domain Service of T” (this step is supposed to be auto-magic).</li>
-<li>Follow <a href="https://twitter.com/">@julielerman</a>!</li>
+<li><code>lunr</code> indices will be partitioned by entry count</li>
+<li>the Shadow-DOM, document-centric <code>lunr</code> experience uses the latest partition only</li>
+<li>the SPA-based experience should load/unload multiple indices, paging through by time and supporting break-out by category/tag</li>
 </ul>
-<p>Yes, my stuff is database-first but my recipe here is based on “<a href="http://jeffhandley.com/archive/2011/06/30/RIAServicesCodeFirst.aspx">RIA Services EF Code First Support</a>” by Jeff Handley.</p>
-<h2>Now, some details…</h2>
-<p><strong>Define and generate the database.</strong> Define a new data source: in my case it’s a SQL Server database. Generate a SQL Server 2008 Database Project. Because I am weird, I run the <strong>Import Database Objects and Settings…</strong> command against an empty database. This gives me a <code>Schema Objects\Schemas\dbo\Tables</code> folder where I write <code>*.table.sql</code> scripts. My intention is to have a data-source level project that is most flexible for the data source. Based on my current level of experience however, I expect to define my tables and users and then let Entity Framework handle the rest.</p>
-<p><strong>Generate the Entities with the database.</strong> Generate a Class Library Project for the Entities. Install Entity Framework 4.1.10715.0 via NuGet like this:    Install-Package EntityFramework –Version 4.1.10715.0This is done to keep the version of EF in line with RIA Services.</p>
-<p><strong>Generate a Web Project to host the</strong><code>DbContext</code><strong>class and the “Database Domain Service of T” class.</strong> Generate an ASP.NET MVC 3 Web Application (<code>*.Web</code>). Install the <code>RIAServices.EntityFramework</code> NuGet package on the <code>*.Web</code> project. Add a folder to this Project called <code>ModelContext</code>—this is where my data access stuff will live—the classes extending <code>DbContext</code>. I currently see no need to move these files to a separate project. Based on scraps of details about ASP.NET MVC 4 and Glenn Block’s Web API, I assume that an MVC Web application will be a serious Web Service provider with multiple endpoints spitting out JSON and XML until the cows come home. This implies that the Silverlight project with a <strong>WCF RIA Services link</strong> pointing at this MVC Web is but one consumer of many.</p>
-<p><strong>Write the</strong><code>DbContext</code><strong>class for the Entities</strong>. In old-school, Provider-Model talk this would be the “provider” for the RIA service. I had a serious problem here that took hours away from my life! I kept getting a “Failed to get the <code>MetadataWorkspace</code> for the <code>DbContext</code> type...” error. The problem was based on <a href="http://stackoverflow.com/questions/7598242/entity-framework-code-first-dbcontext-checks-the-connectionstring-during-compile">this fact</a>:</p>
-<blockquote>
-<p>In order to generate code into your Silverlight project, RIA Services has to inspect your <code>DbContext</code> at build time in order to get the entity types that are available.</p>
-</blockquote>
-<p>Because I failed to specify a connection string linking to a real database, this error hounded!</p>
-<p>Here also is the place to start unit test coverage for data access.
-<a href="http://www.flickr.com/photos/wilhite/7001608941/in/photostream/" title="DbContext Lesson Learned"><img alt="DbContext Lesson Learned" src="http://farm7.staticflickr.com/6050/7001608941_c1f08e17d2_o.png"></a></p>
-<p><strong>Write the “Database Domain Service of T”…</strong> Finally! This is the class that RIA services will use to auto-magically generate code on the client. This code will be the <code>WebContext</code> on the client. <acronym title="Microsoft Developer Network">MSDN</acronym><a href="http://msdn.microsoft.com/en-us/library/ee707361(v=vs.91).aspx">explains</a>:</p>
-<blockquote>
-<p>When you build the solution, RIA Services automatically generates a WebContext class in the client project.</p>
-</blockquote>
-<p>When you attribute a method in this class extending <code>DbDomainService&lt;T&gt;</code> with, say, <code>[Invoke]</code>, it becomes a method that that returns <code>InvokeOperation&lt;T&gt;</code> on the client. Any methods in this class returning <code>IQueryable&lt;T&gt;</code> will translate into <code>LoadOperation&lt;T&gt;</code> on the client.</p>
-<p><strong>Build your client and “wire up” the client…</strong> Generate Silverlight project with a <strong>WCF RIA Services link</strong> pointing at this *<strong>.Web</strong> project.</p>
-<h3>More Links</h3>
+<p>This SPA-based (Angular) experience, the ‘side-car app’ listed below, was pushed down a bit in the development schedule sketch. I expect that adding category/tag support to the entry index—and updating the ‘side-car app’—will not be trivial. A <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/22">task</a> has been added to start addressing this issue.</p>
+<h2>confronting the Stills API</h2>
+<p>My little development schedule is now prioritizing the Stills API. The <code>lunr</code> stuff is big but the still API is <em>huge</em>. Without a backend supporting responsive images in a data-driven way, I will continue to refuse to use images for Web design in this Studio. This refusal prevents me from building a portfolio. Not having a portfolio prevents me from courting entire work-for-hire markets.</p>
+<p>Success here could be so effective that the need for Flickr or a Google Photos (which I do not use) will be profoundly optional. It could also be so ineffective that it is only a small stepping stone toward yet another larger goal (like how to incorporate third-party CDNs into the Studio). <a href="https://www.cloudflare.com/cdn/">Cloudflare</a>? <a href="https://azure.microsoft.com/en-us/services/cdn/">Just Azure</a>?</p>
+<p>What is quite clear is that the Stills API has been needed for quite some time. This little block of HTML that is over five-years old tells the tale:</p>
+<pre><code class="language-html">    &lt;div class=&quot;col-xs-3&quot;&gt;
+        &lt;a class=&quot;hidden-sm hidden-xs&quot; href=&quot;#/index&quot;&gt;
+            &lt;img alt=&quot;the kinté space logo&quot; class=&quot;IndexLogo&quot; src=&quot;images/klogo160.png&quot; width=&quot;160&quot; height=&quot;160&quot; /&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;visible-sm visible-xs&quot; href=&quot;#/index&quot;&gt;
+            &lt;img alt=&quot;the kinté space logo&quot; class=&quot;IndexLogo&quot; src=&quot;images/klogo160.png&quot; width=&quot;64&quot; height=&quot;64&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+</code></pre>
+<p>I assume a Stills API (with <code>srcset</code> and <code>sizes</code>) would eliminate the redundant <code>img</code> declarations above. Eleventy could call the Stills at render time.</p>
+<h2>another big step: bringing <code>webpack</code> to kintespace.com</h2>
+<p>One great side effect of bringing <code>lunr</code> to the kintespace.com repo was the introduction of <code>webpack</code>. Before this introduction, I assumed that <em>multiple</em> <code>webpack</code> config files would be needed for every bundling solution needed for kintespace.com. As of now, there are two bundles needed: one for the main site and one for <em>the rasx() context</em>. I see now that one <code>webpack.config.js</code> file can support <em>both</em> (and more) of these bundles by moving from this:</p>
+<pre><code class="language-javascript">module.exports = { … };
+</code></pre>
+<p>to this:</p>
+<pre><code class="language-javascript">module.exports = [
+    {...sharedConfig,...indexConfig},
+    {...sharedConfig,...rasxlogConfig},
+];
+</code></pre>
+<p>In other words, <code>webpack</code> supports an <em>array</em> of configurations as well as just one configuration [📖<a href="https://webpack.js.org/concepts/targets/#multiple-targets">docs</a>]. This is great news!</p>
+<h2>sketching out a development schedule (revision 10)</h2>
+<p>The schedule of the month:</p>
 <ul>
-<li>“<a href="http://www.silverlight.net/learn/advanced-techniques/wcf-ria-services/get-started-with-wcf-ria-services">Get Started with WCF RIA Services: Silverlight.NET</a>”</li>
-<li>“<a href="http://learnentityframework.com/">Programming Entity Framework</a>”</li>
-<li>“<a href="http://geekswithblogs.net/kgrossnicklaus/archive/2011/01/30/setting-up-a-new-silverlight-4-project-with-wcf-ria.aspx">Setting up a new Silverlight 4 Project with WCF RIA Services</a>”</li>
+<li>add Stills API to <code>Songhay.Player</code> (b-roll player) 🕸🌩</li>
+<li>consider upgrading to .NET 3.0</li>
+<li>use <code>@songhay/index</code> as a side-car app for “Day Path” and “the rasx() context” 🚛📦</li>
+<li>add proposed <a href="https://github.com/BryanWilhite/songhay-web-components/issues/10">content Web component</a></li>
+<li>use the learnings from existing npm packages to build <code>@songhay/player-audio-???</code> 📦✨</li>
+<li>modernize the kinté hits page into a progressive web app 💄✨</li>
+<li>convert Day Path Blog and SonghaySystem.com to HTTPs by default 🔐</li>
+<li>use the learnings of previous work to upgrade and re-release the kinté space 🚀</li>
 </ul>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
 
@@ -183,7 +194,7 @@
         <div class="mdc-layout-grid__cell--span-6">
             <p>
                 Last Reviewed:
-                2012-03-21T19:05:00Z
+                2020-07-24T18:16:45.212Z
             </p>
             <p><a class="index" href="../../entries/">[index]</a></p>
             <p>

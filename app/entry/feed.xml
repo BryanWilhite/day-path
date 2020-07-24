@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 23 Jun 2020 16:15:58 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 24 Jul 2020 11:16:45 -0700</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2020-07</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-07-24-studio-status-report-2020-07</link>
+            <description>
+                month 7 of 2020 has been about building the lunr experience into the rasx() context The lunr index UX is now a fact of life in the Songhay Studio. The Blog-entry index for the rasx() context is so large that a 1000-entry partition threshold has to added i…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-07-24-studio-status-report-2020-07</guid>
+            <pubDate>Fri, 24 Jul 2020 11:16:45 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2020-06</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06</link>
@@ -144,17 +154,6 @@ Recent from @davidwalshblog https://davidwalsh.name/css-focus-within A note thou
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-29-focus-within-is-so-useful-and-other-tweeted-links</guid>
             <pubDate>Wed, 29 Jan 2020 14:38:53 -0800</pubDate>
-        </item>
-        <item>
-            <title>“Recapping the Xamarin Developer Summit” and other tweeted links…</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</link>
-            <description>
-                Recapping the Xamarin Developer Summit by Maddy Leger. #Xamarin #devconference https://devblogs.microsoft.com/xamarin/recapping-xamarin-developer-summit/?_lrsc=842e9325-e980-4870-a930-ef048f5b0323&amp;utm_campaign=elevate&amp;utm_source=twitter&amp;utm_medium=social
-…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-27-recapping-the-xamarin-developer-summit-and-other-tweeted-links</guid>
-            <pubDate>Mon, 27 Jan 2020 11:14:07 -0800</pubDate>
         </item>
     </channel>
 </rss>

@@ -22,7 +22,7 @@ import { DomUtility } from './services/dom-utility';
 import { LunrSearch } from './services/lunr-search';
 
 const prismShouldUseWebWorkers = false;
-const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index.c.json';
+const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index-00.c.json';
 
 Prism.highlightAll(prismShouldUseWebWorkers);
 
