@@ -158,7 +158,7 @@
 <p><code>srcset</code> is a string which identifies one or more image candidate strings, separated using commas (<code>,</code>) each specifying image resources to use under given circumstances. Each image candidate string contains an image URL and an optional width or pixel density descriptor that indicates the conditions under which that candidate should be used instead of the image specified by the <code>src</code> property. —<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset">MDN</a></p>
 </blockquote>
 <p>By reading this reference material, I am inspired to sketch out a <a href="https://en.wikipedia.org/wiki/Data_transfer_object">data transfer object</a> (DTO) for responsive images:</p>
-<p><img src="../presentation/image/day-path-2020-07-31-22-39-28.png" alt="ImageCandidate data transfer object"></p>
+<p><img src="../../image/day-path-2020-07-31-22-39-28.png" alt="ImageCandidate data transfer object"></p>
 <blockquote>
 <p>The <code>srcset</code> property, along with the <code>sizes</code> property, are a crucial component in designing responsive web sites, as they can be used together to make pages that use appropriate images for the rendering situation. —<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset">MDN</a></p>
 </blockquote>
@@ -167,9 +167,9 @@
 <p><code>sizes</code> allows you to specify the layout width of the image for each of a list of media conditions. This provides the ability to automatically select among different images—even images of different orientations or aspect ratios—as the document state changes to match different media conditions. Each condition is specified using the same conditional format used by media queries. —<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes">MDN</a></p>
 </blockquote>
 <p>The DTO for <code>sizes</code> might be this:</p>
-<p><img src="../presentation/image/day-path-2020-07-31-23-28-58.png" alt="ImageSize data transfer object with CssLength"></p>
+<p><img src="../../image/day-path-2020-07-31-23-28-58.png" alt="ImageSize data transfer object with CssLength"></p>
 <p>where <code>CssLength</code> represents <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">CSS length</a>. Or we can avoid struggling with units in a programming paradigm not optimized for it and just use strings (like before in <code>ImageCandidate</code>):</p>
-<p><img src="../presentation/image/day-path-2020-08-04-20-22-46.png" alt="ImageSize data transfer object"></p>
+<p><img src="../../image/day-path-2020-08-04-20-22-46.png" alt="ImageSize data transfer object"></p>
 <h2>when <code>srcset</code> and <code>sizes</code> should be used together</h2>
 <p><a href="https://css-tricks.com/sometimes-sizes-is-quite-important/">Chris Coyier explains</a> that the <code>srcset</code> convention as implemented in browsers will “assume you’re probably going to render [an] image at 100vw wide.” This implies that, by default, the largest image will be rendered in a <code>srcset</code> declaration like this:</p>
 <pre><code class="language-html">&lt;img srcset=&quot;

@@ -1768,6 +1768,7 @@ main .entry.mdc-typography--body1 {
       cursor: help; }
   main .entry.mdc-typography--body1 p {
     margin-top: 1.5em; }
+  main .entry.mdc-typography--body1 iframe,
   main .entry.mdc-typography--body1 p > img:not([style]),
   main .entry.mdc-typography--body1 p > a:only-child > img:not([style]) {
     display: block;
