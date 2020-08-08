@@ -35,7 +35,7 @@
         "@material/typography": "^2.3.0",
         "@songhay/input-autocomplete": "^0.1.2",
         "lunr": "2.3.8",
-        "prismjs": "1.20.0",
+        "prismjs": "1.21.0",
         "normalize.css": "^8.0.1",
         "rxjs": "6.5.5"
     }
