@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 04 Aug 2020 20:32:39 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 21 Aug 2020 21:38:16 -0700</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <item>
+            <title>strongly disagree: final remarks for the Google Candidate Experience Survey</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-08-21-strongly-disagree-final-remarks-for-the-google-candidate-experience-survey</link>
+            <description>
+                Google is a capitalist organization of maximum liberty. It can do whatever it wants until the money runs out—and letting Google-amounts of money run out would be quite insane or an extinction-level event. Google sent me an email invitation to their Google…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-08-21-strongly-disagree-final-remarks-for-the-google-candidate-experience-survey</guid>
+            <pubDate>Fri, 21 Aug 2020 21:38:16 -0700</pubDate>
+        </item>
         <item>
             <title>Flippant Remarks about Responsive Images</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-08-04-flippant-remarks-about-responsive-images</link>
@@ -141,18 +151,6 @@ Ann…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</guid>
             <pubDate>Sat, 08 Feb 2020 19:06:25 -0800</pubDate>
-        </item>
-        <item>
-            <title>“The (not so) hidden cost of sharing code between iOS and Android” and other tweeted links…</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links</link>
-            <description>
-                The (not so) hidden cost of sharing code between iOS and Android https://blogs.dropbox.com/tech/2019/08/the-not-so-hidden-cost-of-sharing-code-between-ios-and-android/
-Some of my favorite learning resources: - @FrontendMasters for long-form content
-@egghe…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-01-31-the-not-so-hidden-cost-of-sharing-code-between-ios-and-android-and-other-tweeted-links</guid>
-            <pubDate>Fri, 31 Jan 2020 11:07:22 -0800</pubDate>
         </item>
     </channel>
 </rss>
