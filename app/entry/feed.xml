@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 21 Aug 2020 21:38:16 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Aug 2020 15:33:04 -0700</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2020-08</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-08-30-studio-status-report-2020-08</link>
+            <description>
+                month 8 of 2020 has been about defining types for the b-roll player stills API, slowly At the beginning of month 8, I published “Flippant Remarks about Responsive Images” where I ask myself, What about all of those DTOs? The Songhay.Player.Models work tha…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-08-30-studio-status-report-2020-08</guid>
+            <pubDate>Sun, 30 Aug 2020 15:33:04 -0700</pubDate>
+        </item>
         <item>
             <title>strongly disagree: final remarks for the Google Candidate Experience Survey</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-08-21-strongly-disagree-final-remarks-for-the-google-candidate-experience-survey</link>
@@ -141,16 +151,6 @@ Ann…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</guid>
             <pubDate>Sat, 08 Feb 2020 19:08:05 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-01</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</link>
-            <description>
-                the first month of 2020 is about achieving desired expressive power with eleventy GitHub issue, “add flat entries/ (index) and groupings by year,” records my progress with generating Blog sites with eleventy: &gt; “Tips for Using Snippets in Your Shopify The…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-studio-status-report-2020-01</guid>
-            <pubDate>Sat, 08 Feb 2020 19:06:25 -0800</pubDate>
         </item>
     </channel>
 </rss>
