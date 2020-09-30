@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Aug 2020 15:33:04 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 29 Sep 2020 09:34:36 -0700</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2020-09</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-09-29-studio-status-report-2020-09</link>
+            <description>
+                month 9 of 2020 was about exploding into the world of Python It is a misunderstanding to assume that the inclusion of Python in my studio is about learning a new programming language for the sake of some kind of polyglot discipline. In my studio, Python i…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-09-29-studio-status-report-2020-09</guid>
+            <pubDate>Tue, 29 Sep 2020 09:34:36 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2020-08</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-08-30-studio-status-report-2020-08</link>
@@ -139,18 +149,6 @@ What’s New in 2019 Volume 3: Xamarin.Forms WPF https://www.syncfusion.com/b…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</guid>
             <pubDate>Sat, 22 Feb 2020 19:03:08 -0800</pubDate>
-        </item>
-        <item>
-            <title>“11 JavaScript Animation Libraries For 2019” and other tweeted links…</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</link>
-            <description>
-                11 JavaScript Animation Libraries For 2019 by Jonathan Saring https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59?gi=ed70256906e8
-Really excited about the improved UX around Promises! I forget to await things all the time 😅
-Ann…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-08-11-javascript-animation-libraries-for-2019-and-other-tweeted-links</guid>
-            <pubDate>Sat, 08 Feb 2020 19:08:05 -0800</pubDate>
         </item>
     </channel>
 </rss>
