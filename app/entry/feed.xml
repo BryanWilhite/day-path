@@ -5,8 +5,28 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 29 Sep 2020 09:34:36 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 30 Oct 2020 17:49:49 -0700</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2020-10</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-10-30-studio-status-report-2020-10</link>
+            <description>
+                month 10 of 2020 was about making Jupyter notes and reviving Node.js-based repositories I spent a lot of time this month documenting things about Studio machines that most pros would memorize. For every studio machine, there is now a notebook about key sh…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-10-30-studio-status-report-2020-10</guid>
+            <pubDate>Fri, 30 Oct 2020 17:49:49 -0700</pubDate>
+        </item>
+        <item>
+            <title>A Return to Progressive Enhancement with LitHtml and `11ty` (@eleven_ty)</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-10-30-a-return-to-progressive-enhancement-with-lithtml-and-11ty-eleven-ty</link>
+            <description>
+                Who is old enough to remember what progressive enhancement is? This term is a relic from the Web 1.0 days, ending about 16 years ago. Web 1.0 will forever be marginalized by the billions made from Web 2.0 and beyond. Post-Web-1.0 is about loading a near-i…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-10-30-a-return-to-progressive-enhancement-with-lithtml-and-11ty-eleven-ty</guid>
+            <pubDate>Fri, 30 Oct 2020 17:47:44 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2020-09</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-09-29-studio-status-report-2020-09</link>
@@ -128,27 +148,6 @@ https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links</guid>
             <pubDate>Sat, 07 Mar 2020 14:39:49 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-02</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02</link>
-            <description>
-                month 2 of 2020 is about moving sideways into day-job, onboarding drama I pushed a bunch of 2020-02 commits to my LinqPad repo that betray how much I forgot about ASP.NET MVC 5. My need to even care about MVC 5 further betrays the needs of the day job. I …
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-23-studio-status-report-2020-02</guid>
-            <pubDate>Sun, 23 Feb 2020 09:02:46 -0800</pubDate>
-        </item>
-        <item>
-            <title>“Introducing .NET Core Windows Forms Designer Preview 1” and other tweeted links…</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</link>
-            <description>
-                Introducing .NET Core Windows Forms Designer Preview 1 | .NET Blog #BreakingNews #games #rdt http://dlvr.it/RFHMxT https://twitter.com/GoodVibra/status/1179081053958328320/photo/1
-What’s New in 2019 Volume 3: Xamarin.Forms WPF https://www.syncfusion.com/b…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-02-22-introducing-net-core-windows-forms-designer-preview-1-and-other-tweeted-links</guid>
-            <pubDate>Sat, 22 Feb 2020 19:03:08 -0800</pubDate>
         </item>
     </channel>
 </rss>
