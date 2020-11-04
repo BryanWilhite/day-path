@@ -7,7 +7,7 @@
     "scripts": {
         "build": "npm run node-sass:transpile && npm run webpack:bundle",
         "start": "npx webpack serve --mode=development",
-        "node-sass:transpile": "npx node-sass ./src/scss/index.scss ./src/css/index.css --include-path ./node_modules",
+        "node-sass:transpile": "npx sass ./src/scss/index.scss ./src/css/index.css --load-path ./node_modules",
         "webpack:bundle": "npx webpack --mode=production"
     },
     "devDependencies": {
@@ -17,7 +17,6 @@
         "css-loader": "^5.0.0",
         "html-webpack-plugin": "^4.5.0",
         "mini-css-extract-plugin": "^1.2.1",
-        "node-sass": "^5.0.0",
         "optimize-css-assets-webpack-plugin": "^5.0.4",
         "terser-webpack-plugin": "^5.0.3",
         "ts-loader": "^8.0.7",
@@ -28,15 +27,16 @@
         "webpack-dev-server": "^3.11.0"
     },
     "dependencies": {
-        "@material/icon-button": "^3.2.0",
-        "@material/layout-grid": "^0.41.0",
-        "@material/list": "^2.3.0",
-        "@material/top-app-bar": "^2.3.0",
-        "@material/typography": "^2.3.0",
+        "@material/icon-button": "^8.0.0",
+        "@material/layout-grid": "^8.0.0",
+        "@material/list": "^8.0.0",
+        "@material/top-app-bar": "^8.0.0",
+        "@material/typography": "^8.0.0",
         "@songhay/input-autocomplete": "^0.1.2",
         "lunr": "^2.3.9",
         "normalize.css": "^8.0.1",
         "prismjs": "^1.22.0",
-        "rxjs": "^6.6.3"
+        "rxjs": "^6.6.3",
+        "sass": "^1.28.0"
     }
 }
