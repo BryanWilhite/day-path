@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 30 Oct 2020 17:49:49 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 28 Nov 2020 19:32:01 -0800</pubDate>
         <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2020-11</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-11-28-studio-status-report-2020-11</link>
+            <description>
+                month 11 of 2020 was about squeezing very little schedule progress between day-job pressures The ‘schedule progress’ (see “development schedule” below) was miniscule but progress toward being modern and professional about Web design and development is sig…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-11-28-studio-status-report-2020-11</guid>
+            <pubDate>Sat, 28 Nov 2020 19:32:01 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2020-10</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-10-30-studio-status-report-2020-10</link>
@@ -137,17 +147,6 @@ The new @blender_org Blender update is here! Can&#39;t wait to take the new feat
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links</guid>
             <pubDate>Mon, 09 Mar 2020 11:00:28 -0700</pubDate>
-        </item>
-        <item>
-            <title>“React Native Vs. Xamarin Vs. Ionic Vs. Flutter” and other tweeted links…</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links</link>
-            <description>
-                React Native Vs. Xamarin Vs. Ionic Vs. Flutter: Which Is Best For Cross-Platform Mobile App Development?
-https://www.apptunix.com/blog/frameworks-cross-platform-mobile-app-development/?utm_source=Facebook&amp;utm_medium=Cross%20platform%20,Group4,%2030-04-201…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-07-react-native-vs-xamarin-vs-ionic-vs-flutter-and-other-tweeted-links</guid>
-            <pubDate>Sat, 07 Mar 2020 14:39:49 -0800</pubDate>
         </item>
     </channel>
 </rss>
