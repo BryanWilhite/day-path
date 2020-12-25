@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 28 Nov 2020 19:32:01 -0800</pubDate>
-        <lastBuildDate>Sun, 17 Nov 2019 11:58:54 -0800</lastBuildDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 24 Dec 2020 18:07:04 -0800</pubDate>
+        <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>Songhay Publications and the Concept of the Index</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2020-12-24-songhay-publications-and-the-concept-of-the-index</link>
+            <description>
+                What you are reading now is a Songhay Publication, this Blog. A Songhay Publication centers around the Document [GitHub]. Several Document instances can be grouped under one or more Segment [GitHub] instances. Further up the hierarchy, a Segment can group…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-12-24-songhay-publications-and-the-concept-of-the-index</guid>
+            <pubDate>Thu, 24 Dec 2020 18:07:04 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2020-11</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-11-28-studio-status-report-2020-11</link>
@@ -136,17 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-26-studio-status-report-2020-03</guid>
             <pubDate>Thu, 26 Mar 2020 11:00:20 -0700</pubDate>
-        </item>
-        <item>
-            <title>“40 Most Popular Fonts of 2019” and other tweeted links…</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links</link>
-            <description>
-                40 Most Popular Fonts of 2019 https://design.tutsplus.com/articles/40-most-popular-fonts-of-2019--cms-34190 https://twitter.com/MediaLoot/status/1206289832907100161/photo/1
-The new @blender_org Blender update is here! Can&#39;t wait to take the new features f…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-03-09-40-most-popular-fonts-of-2019-and-other-tweeted-links</guid>
-            <pubDate>Mon, 09 Mar 2020 11:00:28 -0700</pubDate>
         </item>
     </channel>
 </rss>
