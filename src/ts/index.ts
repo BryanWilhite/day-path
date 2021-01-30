@@ -22,40 +22,48 @@ import { DomUtility } from './services/dom-utility';
 import { LunrSearch } from './services/lunr-search';
 
 const prismShouldUseWebWorkers = false;
-const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index-00.c.json';
 
 Prism.highlightAll(prismShouldUseWebWorkers);
 
-function display(data: LunrIndexEntry[]): void {
+const rasx = {
+    client: {
+        handleContentLoaded: () => {
+            const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index-00.c.json';
 
-    const node = document.querySelector(InputAutoComplete.customElementName);
-    const customElement = node as InputAutoComplete;
-    const service = new LunrSearch(data);
+            const display = (data: LunrIndexEntry[]) => {
 
-    customElement.suggestionGenerator = (text: string) => Promise.resolve(service.search(text));
+                const node = document.querySelector(InputAutoComplete.customElementName);
+                const customElement = node as InputAutoComplete;
+                const service = new LunrSearch(data);
 
-    customElement.addEventListener('selected', (e) => {
-        const event = e as CustomEvent;
-        if (!event) {
-            console.error('The expected event is not here.');
-            return;
+                customElement.suggestionGenerator = (text: string) => Promise.resolve(service.search(text));
+
+                customElement.addEventListener('selected', (e) => {
+                    const event = e as CustomEvent;
+                    if (!event) {
+                        console.error('The expected event is not here.');
+                        return;
+                    }
+
+                    const suggestion = event.detail as AutoCompleteSuggestion;
+                    if (!suggestion) {
+                        console.error('The expected `AutoCompleteSuggestion` is not here.');
+                        return;
+                    }
+
+                    window.location.href = `${DomUtility.getBaseUri()}/entry/${suggestion.value}`;
+                });
+            };
+
+            const data$ = ajax.getJSON<LunrIndexEntry[]>(uri);
+
+            data$.subscribe(
+                appData => display(appData),
+                err => console.error(err)
+            );
         }
+    }
+};
 
-        const suggestion = event.detail as AutoCompleteSuggestion;
-        if (!suggestion) {
-            console.error('The expected `AutoCompleteSuggestion` is not here.');
-            return;
-        }
 
-        window.location.href = `${DomUtility.getBaseUri()}/entry/${suggestion.value}`;
-    });
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    const data$ = ajax.getJSON<LunrIndexEntry[]>(uri);
-
-    data$.subscribe(
-        appData => display(appData),
-        err => console.error(err)
-    );
-});
+window.addEventListener('DOMContentLoaded', () => rasx.client.handleContentLoaded());
