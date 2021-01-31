@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 27 Dec 2020 16:25:10 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 30 Jan 2021 17:34:34 -0800</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-01</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-01-30-studio-status-report-2021-01</link>
+            <description>
+                month 01 of 2021 was about upgrading the core Studio packages to .NET 5.0 Yes, I did it. 🐇🕳 I am wasting too much your/my sweet time but the Studio needed to upgrade to .NET 3.0—and I waited so long that the Studio needed to upgrade to .NET 5.0. The fol…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-01-30-studio-status-report-2021-01</guid>
+            <pubDate>Sat, 30 Jan 2021 17:34:34 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2020-12</title>
             <link>http://songhayblog.azurewebsites.net/entry/2020-12-27-studio-status-report-2020-12</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</guid>
             <pubDate>Sat, 30 May 2020 20:38:08 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-04</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04</link>
-            <description>
-                month 4 of 2020 was about really understanding why the lunr index issue is still open Issue #25 for this Blog is still open. But this is great because I had to formally research the subject of Web Components and finally, finally learn how use webpack dire…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-04-29-studio-status-report-2020-04</guid>
-            <pubDate>Wed, 29 Apr 2020 09:52:35 -0700</pubDate>
         </item>
     </channel>
 </rss>
