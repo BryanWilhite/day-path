@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 30 Jan 2021 17:34:34 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 27 Feb 2021 18:23:03 -0800</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-02</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-02-27-studio-status-report-2021-02</link>
+            <description>
+                month 02 of 2021 was about eleventy (11ty.dev) index layout I have spent months complaining about being stuck on the Stills API. This month is no exception but it is now clear that I am not breaking out the ‘sibling’ work items correctly. My work on the e…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-02-27-studio-status-report-2021-02</guid>
+            <pubDate>Sat, 27 Feb 2021 18:23:03 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-01</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-01-30-studio-status-report-2021-01</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</guid>
             <pubDate>Thu, 11 Jun 2020 13:39:15 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-05</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</link>
-            <description>
-                month 5 of 2020 was about building my first Web Component The lunr index experience should totally depend on a Web Component @songhay/input-autocomplete 📦 [npm], released hours before this writing. The GitHub project contains issues that go into copious �
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-05-30-studio-status-report-2020-05</guid>
-            <pubDate>Sat, 30 May 2020 20:38:08 -0700</pubDate>
         </item>
     </channel>
 </rss>
