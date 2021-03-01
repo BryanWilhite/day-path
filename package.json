@@ -35,7 +35,7 @@
         "@songhay/input-autocomplete": "^0.1.2",
         "lunr": "^2.3.9",
         "normalize.css": "^8.0.1",
-        "prismjs": "^1.22.0",
+        "prismjs": "^1.23.0",
         "rxjs": "^6.6.3",
         "sass": "^1.28.0"
     }
