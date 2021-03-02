@@ -61,6 +61,18 @@ main {
             }
         }
 
+        & h1:not([class]) {
+            @include mdc-typography(headline3);
+        }
+
+        & h2:not([class]) {
+            @include mdc-typography(headline4);
+        }
+
+        & h3:not([class]) {
+            @include mdc-typography(headline5);
+        }
+
         & p {
             margin-top: 1.5em;
         }
