@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 27 Feb 2021 18:23:03 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 30 Mar 2021 19:10:43 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-03</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-03-30-studio-status-report-2021-03</link>
+            <description>
+                month 03 of 2021 was about regrouping around Publications The phrase ‘regrouping around Publications’ is a fluffy cloud of words 🌩 hovering over hard changes: - retiring the private Songhay.GenericWeb repo 🚜🔥 and building out the private Songhay.Public…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-03-30-studio-status-report-2021-03</guid>
+            <pubDate>Tue, 30 Mar 2021 19:10:43 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-02</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-02-27-studio-status-report-2021-02</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06</guid>
             <pubDate>Tue, 23 Jun 2020 16:15:58 -0700</pubDate>
-        </item>
-        <item>
-            <title>my blogging workflow for 2020 is all about `11ty` (eleventy)</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</link>
-            <description>
-                As of this writing, my Blogging workflow looks like this: authoring workflow Above we see the author (me ✍🏾) generating Markdown in one repository and using 11ty.dev (eleventy) to write files in another. These are the authoring repo and the Presentation …
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-06-11-my-blogging-workflow-for-2020-is-all-about-11ty-eleventy</guid>
-            <pubDate>Thu, 11 Jun 2020 13:39:15 -0700</pubDate>
         </item>
     </channel>
 </rss>
