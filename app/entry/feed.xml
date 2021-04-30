@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 30 Mar 2021 19:10:43 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 28 Apr 2021 16:28:20 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-04</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-04-28-studio-status-report-2021-04</link>
+            <description>
+                month 04 of 2021 was about prepping a Core Release and ripping the guts out of Songhay.Player The SonghayCore version 5.1.0 release is almost complete. According to me, this release is mainly about addressing System.Text.Json support but there are other m…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-04-28-studio-status-report-2021-04</guid>
+            <pubDate>Wed, 28 Apr 2021 16:28:20 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-03</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-03-30-studio-status-report-2021-03</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-07-24-studio-status-report-2020-07</guid>
             <pubDate>Fri, 24 Jul 2020 11:16:45 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-06</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06</link>
-            <description>
-                month 6 of 2020 was about recuperation and promotion “A Return to Progressive Enhancement with LitHtml and 11ty (@eleven_ty)” marks my debut into the latest fashion trend of technical blogging from at least three years ago. My Medium.com post speaks for i…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-06-23-studio-status-report-2020-06</guid>
-            <pubDate>Tue, 23 Jun 2020 16:15:58 -0700</pubDate>
         </item>
     </channel>
 </rss>
