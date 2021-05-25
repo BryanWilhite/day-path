@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 28 Apr 2021 16:28:20 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 24 May 2021 11:50:26 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-05</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-05-24-studio-status-report-2021-05</link>
+            <description>
+                month 05 of 2021 was about getting the b-roll player and LiteDB working in the Studio The latest addition to b-roll player technology is a NuGet package called Polly [GitHub] which allows the b-roll player to define formal retry policies with respect to c…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-05-24-studio-status-report-2021-05</guid>
+            <pubDate>Mon, 24 May 2021 11:50:26 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-04</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-04-28-studio-status-report-2021-04</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-08-04-flippant-remarks-about-responsive-images</guid>
             <pubDate>Tue, 04 Aug 2020 20:32:39 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-07</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-07-24-studio-status-report-2020-07</link>
-            <description>
-                month 7 of 2020 has been about building the lunr experience into the rasx() context The lunr index UX is now a fact of life in the Songhay Studio. The Blog-entry index for the rasx() context is so large that a 1000-entry partition threshold has to added i…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-07-24-studio-status-report-2020-07</guid>
-            <pubDate>Fri, 24 Jul 2020 11:16:45 -0700</pubDate>
         </item>
     </channel>
 </rss>
