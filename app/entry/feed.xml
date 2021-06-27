@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 20 Jun 2021 17:58:31 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 26 Jun 2021 16:34:45 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-06</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-06-26-studio-status-report-2021-06</link>
+            <description>
+                month 06 of 2021 was about bringing b-roll Activities to center stage Month 06 saw two releases of SonghayCore 📦, 5.2.0 and 5.2.1. These releases were about absorbing studio-wide patterns mostly from Songhay.Player (the b-roll player), advancing IActivit…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-06-26-studio-status-report-2021-06</guid>
+            <pubDate>Sat, 26 Jun 2021 16:34:45 -0700</pubDate>
+        </item>
         <item>
             <title>the most important thing I have learned as a developer in the last ten years</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-06-20-the-most-important-thing-i-have-learned-as-a-developer-in-the-last-ten-years</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-08-30-studio-status-report-2020-08</guid>
             <pubDate>Sun, 30 Aug 2020 15:33:04 -0700</pubDate>
-        </item>
-        <item>
-            <title>strongly disagree: final remarks for the Google Candidate Experience Survey</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-08-21-strongly-disagree-final-remarks-for-the-google-candidate-experience-survey</link>
-            <description>
-                Google is a capitalist organization of maximum liberty. It can do whatever it wants until the money runs out—and letting Google-amounts of money run out would be quite insane or an extinction-level event. Google sent me an email invitation to their Google…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-08-21-strongly-disagree-final-remarks-for-the-google-candidate-experience-survey</guid>
-            <pubDate>Fri, 21 Aug 2020 21:38:16 -0700</pubDate>
         </item>
     </channel>
 </rss>
