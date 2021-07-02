@@ -57,13 +57,12 @@ const rasx = {
 
             const data$ = ajax.getJSON<LunrIndexEntry[]>(uri);
 
-            data$.subscribe(
-                appData => display(appData),
-                err => console.error(err)
-            );
+            data$.subscribe({
+                next: appData => display(appData),
+                error: err => console.error(err)
+            });
         }
     }
 };
-
 
 window.addEventListener('DOMContentLoaded', () => rasx.client.handleContentLoaded());
