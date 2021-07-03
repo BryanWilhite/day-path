@@ -4,7 +4,7 @@
         "target": "ES2015",
         "module": "ES2015",
         "moduleResolution": "node",
-        "rootDir": "./app/src",
+        "rootDir": "./src/ts",
         "lib": [
             "ES2019",
             "dom",
@@ -27,7 +27,7 @@
         "strict": true,
     },
     "include": [
-        "src/*.ts"
+        "src/ts/*.ts"
     ],
     "exclude": [],
     "references": []
