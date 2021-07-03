@@ -1,3 +1,6 @@
+import '../../node_modules/prismjs/themes/prism-tomorrow.css';
+import '../css/index.css';
+
 import { ajax } from 'rxjs/ajax';
 import { AutoCompleteSuggestion, InputAutoComplete } from '@songhay/input-autocomplete';
 

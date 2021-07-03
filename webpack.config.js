@@ -9,29 +9,24 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: {
-        styles: [
-            './node_modules/prismjs/themes/prism-tomorrow.css',
-            './src/css/index.css',
-        ],
         scripts: [
-            './node_modules/@material/top-app-bar/component.js',
+            './node_modules/@material/icon-button/component.js',
             './node_modules/@material/list/component.js',
-            './node_modules/@songhay/input-autocomplete/lib/index.js',
-            './src/ts/index.ts'
+            './node_modules/@material/top-app-bar/component.js',
+            './src/ts/index.ts',
         ]
     },
     plugins: [
         new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].min.css',
+            filename: 'styles.min.css',
         })
     ],
     output: {
         filename: '[name].min.js',
         path: path.resolve(__dirname, 'app', '_bundles'),
     },
-    mode: 'production',
     module: {
         rules: [
             {
@@ -50,16 +45,6 @@ module.exports = {
     },
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-        splitChunks: {
-            cacheGroups: {
-                styles: {
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true,
-                },
-            },
-        },
     },
     devServer: {
         compress: false,

@@ -6,7 +6,8 @@
     "version": "0.0.1",
     "scripts": {
         "build": "npm run node-sass:transpile && npm run webpack:bundle",
-        "start": "npx webpack serve --mode=development",
+        "start": "npx webpack serve --mode=production",
+        "start:development": "npx webpack serve --mode=development",
         "node-sass:transpile": "npx sass ./src/scss/index.scss ./src/css/index.css --load-path ./node_modules",
         "webpack:bundle": "npx webpack --mode=production"
     },
