@@ -142,7 +142,7 @@
 <p>Some of the confusion comes from legacy <a href="https://docs.microsoft.com/en-us/aspnet/entity-framework">Entity Framework</a> concerns, specifically the use of <code>ICollection&lt;T&gt;</code> and other <em>association</em> properties. When I simplify my life with small-scale use of static JSON files, we can remove our concern for defining associations. Moreover, my small-scale use of Markdown eliminates the need (almost entirely) for <code>Fragment</code>. After all of this removing and eliminating, at least <em>I</em> can understand why I have the core interfaces, <code>ISegment</code> [<a href="https://github.com/BryanWilhite/Songhay.Publications/blob/master/Songhay.Publications/Models/ISegment.cs">GitHub</a>] and <code>IDocument</code> [<a href="https://github.com/BryanWilhite/Songhay.Publications/blob/master/Songhay.Publications/Models/IDocument.cs">GitHub</a>], of Songhay Publications:</p>
 <p><img src="../../image/day-path-2020-12-23-19-39-37.png" alt="Songhay Publications Interfaces"></p>
 <h2>the Web Publication Index</h2>
-<p>Compiling a collection of <code>Segment</code> groups into a file renders an <em>Index</em>. Meanwhile, in the real world, <a href="https://english.stackexchange.com/questions/45555/is-a-table-of-contents-an-index">there is the confusion</a> between a “table of contents” and an <em>Index</em>. As of this writing in the Songhay studio, we avoid this confusion by defining an <em>Index</em> here and looking forward to defining a Keyword Index (which is a real-world index).</p>
+<p>Compiling a collection of <code>ISegment</code> groups into a file renders an <em>Publication Index</em>. Meanwhile, in the real world, <a href="https://english.stackexchange.com/questions/45555/is-a-table-of-contents-an-index">there is the confusion</a> between a “table of contents” and an <em>Index</em>. As of this writing in the Songhay studio, we avoid this confusion by defining an <em>Index</em> here and looking forward to defining a Keyword Index (which is a real-world index).</p>
 <p>All of this fantastic thinking about the Index comes from <a href="https://github.com/BryanWilhite/nodejs/tree/master/responsive-layouts">my work</a> on rendering a Web Publication Index in HTML. I have been working on the visual design of two kinds of Index layouts:</p>
 <ol>
 <li>the Index</li>
@@ -353,7 +353,7 @@
   string extract;
 }
 </code></pre>
-<p>By writing this, I see now that I can replace the <code>LunrIndexEntry</code> <a href="https://github.com/BryanWilhite/day-path/blob/master/src/ts/models/lunr-index-entry.ts">I have defined for this Blog Publication</a> with the more generalized <code>SearchIndexEntry</code>.</p>
+<p>By writing this, I see now that I can replace the <code>LunrIndexEntry</code> <a href="https://github.com/BryanWilhite/day-path/blob/251af3b421424cf8a47af56eed82db9041442a12/src/ts/models/lunr-index-entry.ts">I have defined for this Blog Publication</a> with the more generalized <code>SearchIndexEntry</code>.</p>
 <p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
 
 
