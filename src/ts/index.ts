@@ -22,7 +22,7 @@ import 'prismjs/components/prism-shell-session';
 import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-typescript';
 
-import { LunrIndexEntry } from './models/lunr-index-entry';
+import { SearchIndexEntry } from 'songhay/core/models/search-index-entry';
 
 import { DomUtility } from './services/dom-utility';
 import { LunrSearch } from './services/lunr-search';
@@ -36,7 +36,7 @@ const rasx = {
         handleContentLoaded: () => {
             const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index-00.c.json';
 
-            const display = (data: LunrIndexEntry[]) => {
+            const display = (data: SearchIndexEntry[]) => {
 
                 const node = document.querySelector(InputAutoComplete.customElementName);
                 const customElement = node as InputAutoComplete;
@@ -61,7 +61,7 @@ const rasx = {
                 });
             };
 
-            const data$ = ajax.getJSON<LunrIndexEntry[]>(uri);
+            const data$ = ajax.getJSON<SearchIndexEntry[]>(uri);
 
             data$.subscribe({
                 next: appData => display(appData),

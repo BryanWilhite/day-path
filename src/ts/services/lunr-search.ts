@@ -2,27 +2,27 @@ import * as lunr from 'lunr';
 
 import { AutoCompleteSuggestion } from '@songhay/input-autocomplete';
 
-import { LunrIndexEntry } from '../models/lunr-index-entry';
+import { SearchIndexEntry } from 'songhay/core/models/search-index-entry';
 
 export class LunrSearch {
 
-    indexEntries: LunrIndexEntry[];
+    indexEntries: SearchIndexEntry[];
 
     index: lunr.Index;
 
-    constructor(entries: LunrIndexEntry[]) {
+    constructor(entries: SearchIndexEntry[]) {
         this.indexEntries = entries;
         this.index = this.getIndex(entries);
     }
 
-    getIndex(indexEntries: LunrIndexEntry[]): lunr.Index {
+    getIndex(indexEntries: SearchIndexEntry[]): lunr.Index {
         const builder = this.getIndexBuilder(indexEntries);
         const idx = builder.build();
 
         return idx;
     }
 
-    getIndexBuilder(indexEntries: LunrIndexEntry[]): lunr.Builder {
+    getIndexBuilder(indexEntries: SearchIndexEntry[]): lunr.Builder {
         if (!indexEntries || indexEntries.length === 0) {
             throw new Error('The expected index entries are not here.');
         }
@@ -44,8 +44,8 @@ export class LunrSearch {
         const results = this.indexEntries.filter(datum => refs.findIndex(r => r.ref === datum.clientId) !== -1);
         return results.map(result => {
             const suggestion: AutoCompleteSuggestion = {
-                value: result.clientId,
-                text: result.title
+                value: result.clientId ?? '[not found]',
+                text: result.title ?? '[not found]'
             };
             return suggestion;
         });
