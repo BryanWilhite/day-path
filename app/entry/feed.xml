@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 28 Jun 2021 11:43:12 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 25 Jul 2021 14:08:46 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio-status-report-2021-07</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-07-25-studio-status-report-2021-07</link>
+            <description>
+                month 07 of 2021 was about moving kintespace.com to a new server and day-job drama The hosting service for kintespace.com effectively forced me to take yet another discount and move to a new Ubuntu server. The discount went from a turn-of-the-century ~$50…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-07-25-studio-status-report-2021-07</guid>
+            <pubDate>Sun, 25 Jul 2021 14:08:46 -0700</pubDate>
+        </item>
         <item>
             <title>flippant remarks about the “great resignation” wave</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-06-28-flippant-remarks-about-the-great-resignation-wave</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-10-30-a-return-to-progressive-enhancement-with-lithtml-and-11ty-eleven-ty</guid>
             <pubDate>Fri, 30 Oct 2020 17:47:44 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-09</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-09-29-studio-status-report-2020-09</link>
-            <description>
-                month 9 of 2020 was about exploding into the world of Python It is a misunderstanding to assume that the inclusion of Python in my studio is about learning a new programming language for the sake of some kind of polyglot discipline. In my studio, Python i…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-09-29-studio-status-report-2020-09</guid>
-            <pubDate>Tue, 29 Sep 2020 09:34:36 -0700</pubDate>
         </item>
     </channel>
 </rss>
