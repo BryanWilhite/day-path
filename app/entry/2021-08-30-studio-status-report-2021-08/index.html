@@ -9,14 +9,14 @@
     <meta name="twitter:site" content="@BryanWilhite" />
     <meta name="twitter:creator" content="@BryanWilhite" />
 
-    <meta property="og:title" content="studio status report: 2021-07" />
-    <meta name="twitter:title" content="studio status report: 2021-07" />
+    <meta property="og:title" content="studio status report: 2021-08" />
+    <meta name="twitter:title" content="studio status report: 2021-08" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2021-07-25-studio-status-report-2021-07" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2021-08-30-studio-status-report-2021-08" />
     <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
-    <meta name="description" content="month 07 of 2021 was about moving kintespace.com to a new server and day-job drama The hosting service for kintespace.com effectively forced me to take yet another discount and move to a new Ubuntu server. The discount went from a turn-of-the-century ~$50…" />
-    <meta property="og:description" content="month 07 of 2021 was about moving kintespace.com to a new server and day-job drama The hosting service for kintespace.com effectively forced me to take yet another discount and move to a new Ubuntu server. The discount went from a turn-of-the-century ~$50…" />
-    <meta name="twitter:description" content="month 07 of 2021 was about moving kintespace.com to a new server and day-job drama The hosting service for kintespace.com effectively forced me to take yet another discount and move to a new Ubuntu server. The discount went from a turn-of-the-century ~$50…" /><meta name="robots" content="index, follow" />
+    <meta name="description" content="month 08 of 2021 was about SpecFlow (day job), F# notes and losing hits data for kintespace.com First, the horrible news: my forced migration to a new server for kintespace.com led to the loss of hits data for month 7 and pieces of month 8 (I think). This…" />
+    <meta property="og:description" content="month 08 of 2021 was about SpecFlow (day job), F# notes and losing hits data for kintespace.com First, the horrible news: my forced migration to a new server for kintespace.com led to the loss of hits data for month 7 and pieces of month 8 (I think). This…" />
+    <meta name="twitter:description" content="month 08 of 2021 was about SpecFlow (day job), F# notes and losing hits data for kintespace.com First, the horrible news: my forced migration to a new server for kintespace.com led to the loss of hits data for month 7 and pieces of month 8 (I think). This…" /><meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
@@ -32,7 +32,7 @@
 
     <script src="../../_bundles/scripts.min.js"></script>
 
-    <title>studio status report: 2021-07 - Day Path</title>
+    <title>studio status report: 2021-08 - Day Path</title>
 </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -136,24 +136,57 @@
                 <div class="mdc-layout-grid__cell--span-12">
     <section class="entry mdc-typography--body1">
 
-        <h1>studio status report: 2021-07</h1>
-<h2>month 07 of 2021 was about moving kintespace.com to a new server and day-job drama</h2>
-<p>The hosting service for kintespace.com effectively forced me to take yet another discount and move to a new Ubuntu server. This new discount takes me from a turn-of-the-century ~$50/month to mid-century ~$16/month down to about $9/month today. This forced move was documented for the first time within my ‘modern’ documentation practices, making moves like this less intimidating in future.</p>
-<p>I did not want this move to be the high-point of the month but I had to respond (yet again) to the demands of the day job. These demands were largely around building up a decent SQL-server environment on Ubuntu (my choice of OS), featuring these experiences:</p>
+        <h1>studio status report: 2021-08</h1>
+<h2>month 08 of 2021 was about SpecFlow (day job), F# notes and losing hits data for kintespace.com</h2>
+<p>First, the horrible news: my forced migration to a new server for kintespace.com led to the loss of hits data for month 7 and pieces of month 8 (I think). This came from my incorrect assumption that my provider would automatically set up Apache with a default <code>logrotate</code> configuration, erroring on the side of using up too much disk space.</p>
+<p>By default, a log file is made <code>daily</code> and then rotated every <code>14</code> days or two weeks. I have changed <code>/etc/logrotate.d/apache2</code> to:</p>
 <ul>
-<li>the Jupyter Notebook with a SQL kernel in Azure Data Studio [<a href="https://github.com/Microsoft/azuredatastudio">GitHub</a>] 🤠</li>
-<li>the Jupyter Notebook with a SQL kernel (and <a href="https://github.com/dotnet/interactive">.NET Interactive</a>) in Visual Studio Code 😑</li>
-<li>the Jupyter Notebook with the default Python (importing <code>pymssql</code> or <code>pyodbc</code>) in Visual Studio Code 😶</li>
+<li><code>monthly</code></li>
+<li><code>rotate 24</code></li>
+<li><code>dateext</code> with <code>dateformat -%Y-%m-%d.gz</code></li>
 </ul>
-<p>The best experience in my Studio is the one provided by Azure Data Studio. But I have the following statements/observations:</p>
+<p>The intent is to:</p>
 <ul>
-<li>Microsoft is not (yet?) separating its SQL kernel from Azure Data Studio which makes me think it is hostile to, say, allowing its kernel to be used in the wider Jupyter ecosystem.</li>
-<li>The Microsoft SQL Server presence in the ‘official’ <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">list of Jupyter kernels</a> seems to have vanished completely (or was something of my imagination).</li>
-<li>Running <code>#r &quot;nuget:Microsoft.DotNet.Interactive.SqlServer,*-*&quot;</code> in a C# Jupyter Notebook cell clearly shows Windows-specific packages (e.g. <code>system.windows.extensions</code> or <code>microsoft.win32.systemevents</code>) being installed which suggests to me that these are early days.</li>
+<li>rotate logs monthly</li>
+<li>delete archives after 24 months</li>
 </ul>
-<p>Even though I have no plans to run Microsoft SQL Server in my Studio, I <em>need</em> to be able to have intimate conversations with myself about Microsoft SQL Server within my relatively new documentation system. The need for this conversation space is for the sake of the day job.</p>
-<h2>a new release of <code>Songhay.Publications</code></h2>
-<p>Month 07 saw a new release of <code>Songhay.Publications</code> [<a href="https://www.nuget.org/packages/Songhay.Publications/">NuGet</a> 📦] for reasons surfaced in issue <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/46">#46</a>. This move was largely to eliminate all known barriers in front of generating Publication indices, leading to the first bullet in the list below:</p>
+<p>The change is followed by:</p>
+<pre><code class="language-shell">sudo logrotate -f /etc/logrotate.d/apache2
+</code></pre>
+<p>I have learned that modern Apache uses <code>logrotate</code> on Ubuntu a bit too late.</p>
+<h3>successfully using SpecFlow</h3>
+<p><a href="https://specflow.org/">SpecFlow</a> is a framework for building behavior-driven ordered tests. The order of the tests is mapped to <a href="https://cucumber.io/docs/gherkin/reference/">Gherkin</a> language prose.</p>
+<p>A SpecFlow stack requires NuGet packages like these:</p>
+<pre><code class="language-xml">&lt;ItemGroup&gt;
+  &lt;PackageReference Include=&quot;BoDi&quot; Version=&quot;1.5.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;Cucumber.Messages&quot; Version=&quot;6.0.1&quot; /&gt; 
+  &lt;PackageReference Include=&quot;Gherkin&quot; Version=&quot;6.0.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;Google.Protobuf&quot; Version=&quot;3.7.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;NUnit&quot; Version=&quot;3.11.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;Selenium.Support&quot; Version=&quot;3.141.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;Selenium.WebDriver&quot; Version=&quot;3.141.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;Selenium.WebDriver.ChromeDriver&quot; Version=&quot;92.0.4515.4300&quot; /&gt; 
+  &lt;PackageReference Include=&quot;SpecFlow&quot; Version=&quot;3.7.38&quot; /&gt; 
+  &lt;PackageReference Include=&quot;SpecFlow.NUnit&quot; Version=&quot;3.7.38&quot; /&gt; 
+  &lt;PackageReference Include=&quot;SpecFlow.Tools.MsBuild.Generation&quot; Version=&quot;3.7.38&quot; /&gt; 
+  &lt;PackageReference Include=&quot;System.Reflection.Emit&quot; Version=&quot;4.3.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;System.Reflection.Emit.Lightweight&quot; Version=&quot;4.3.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;System.Threading.Tasks.Extensions&quot; Version=&quot;4.4.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;System.ValueTuple&quot; Version=&quot;4.4.0&quot; /&gt; 
+  &lt;PackageReference Include=&quot;Utf8Json&quot; Version=&quot;1.3.7&quot; /&gt; 
+  &lt;PackageReference Include=&quot;WebDriverManager&quot; Version=&quot;2.11.3&quot; /&gt; 
+&lt;/ItemGroup&gt;
+</code></pre>
+<p>Today, I am not sure whether these packages were installed manually or do the plugins for <a href="https://www.jetbrains.com/rider/">JetBrains Rider</a> and Visual Studio handle this auto-magically. The <a href="https://docs.specflow.org/projects/getting-started/en/latest/">SpecFlow docs</a> might provide the answers and may not require me to do the research myself.</p>
+<p>My takeaway right now is that SpecFlow requires:</p>
+<ul>
+<li>a <code>*.feature</code> file with the Gherkin (a companion code file is auto-generation on compilation)</li>
+<li>a steps <code>*.cs</code> file that is targeted by the content of the <code>*.feature</code> file (each Gherkin line maps to a steps method via attributes)</li>
+<li>optional <code>*Page.cs</code> files that represent reusable Web-page behaviors, making step files easier to read</li>
+</ul>
+<h3>F# notes on the Issac Abraham book</h3>
+<p>I have started <a href="https://github.com/BryanWilhite/jupyter-central/tree/master/get-programming-with-f-sharp">taking notes</a> on Issac Abraham book, <em>Get Programming with F#</em>. This represents a breakthrough in my F# research as the approach of this book is toward C# programmers like myself!</p>
+<p>I think reserving time for this reading is important even though it is competing with the development schedule (below). But this competition is miniscule compared to the monstrous amount of time demanded by the day job of late.</p>
 <h2>sketching out a development schedule (revision 18)</h2>
 <p>The schedule of the month:</p>
 <ul>
@@ -179,7 +212,7 @@
         <div class="mdc-layout-grid__cell--span-6">
             <p>
                 Last Reviewed:
-                2021-07-25T21:08:46.211Z
+                2021-08-30T16:20:32.555Z
             </p>
             <p><a class="index" href="../../entries/">[index]</a></p>
             <p>
