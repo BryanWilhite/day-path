@@ -18,9 +18,14 @@ module.exports = {
     },
     plugins: [
         new webpack.ProgressPlugin(),
-        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles.min.css',
+        }),
+        new CleanWebpackPlugin({
+            dry: true,
+            verbose: true,
+            cleanStaleWebpackAssets: false,
+            protectWebpackAssets: true,
         })
     ],
     output: {
@@ -47,17 +52,19 @@ module.exports = {
         minimizer: [new TerserJSPlugin({}), new CssMinimizerPlugin({})],
     },
     devServer: {
-        compress: false,
-        contentBase: path.join(__dirname, 'app'),
-        open: true,
-        overlay: {
-            warnings: true,
-            errors: true
+        client: {
+            overlay: {
+                warnings: true,
+                errors: true
+            },
         },
-        quiet: false,
-        serveIndex: true,
-        stats: 'normal',
-        watchContentBase: true,
-        writeToDisk: true
+        compress: false,
+        open: true,
+        static: {
+            directory: path.join(__dirname, 'app'),
+            publicPath: '/',
+            serveIndex: true,
+            watch: true
+        }
     }
 };
