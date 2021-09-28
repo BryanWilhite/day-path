@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 30 Aug 2021 09:20:32 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 26 Sep 2021 11:30:21 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-09</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-09-26-studio-status-report-2021-09</link>
+            <description>
+                month 09 of 2021 was about restoring kintespace.com hits data collection and other Studio chores The day job is kicking my ass. Period. My Studio work is broken up into small fragments as my large projects suffer neglect: - kintespace.com: salvaging hits…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-09-26-studio-status-report-2021-09</guid>
+            <pubDate>Sun, 26 Sep 2021 11:30:21 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-08</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-08-30-studio-status-report-2021-08</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-11-28-studio-status-report-2020-11</guid>
             <pubDate>Sat, 28 Nov 2020 19:32:01 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-10</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-10-30-studio-status-report-2020-10</link>
-            <description>
-                month 10 of 2020 was about making Jupyter notes and reviving Node.js-based repositories I spent a lot of time this month documenting things about Studio machines that most pros would memorize. For every studio machine, there is now a notebook about key sh…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-10-30-studio-status-report-2020-10</guid>
-            <pubDate>Fri, 30 Oct 2020 17:49:49 -0700</pubDate>
         </item>
     </channel>
 </rss>
