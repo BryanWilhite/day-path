@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 26 Sep 2021 11:30:21 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 30 Oct 2021 10:10:00 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-10</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-10-30-studio-status-report-2021-10</link>
+            <description>
+                month 10 of 2021 was about using BenchmarkDotNet at the day job The day job is still kicking my ass. However, the beating was more self-inflicted and about adding a second, desired skill to my ridiculously-long resume. It took almost a decade at UCLA to a…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-10-30-studio-status-report-2021-10</guid>
+            <pubDate>Sat, 30 Oct 2021 10:10:00 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-09</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-09-26-studio-status-report-2021-09</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-12-24-songhay-publications-and-the-concept-of-the-index</guid>
             <pubDate>Thu, 24 Dec 2020 18:07:04 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-11</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-11-28-studio-status-report-2020-11</link>
-            <description>
-                month 11 of 2020 was about squeezing very little schedule progress between day-job pressures The ‘schedule progress’ (see “development schedule” below) was miniscule but progress toward being modern and professional about Web design and development is sig…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-11-28-studio-status-report-2020-11</guid>
-            <pubDate>Sat, 28 Nov 2020 19:32:01 -0800</pubDate>
         </item>
     </channel>
 </rss>
