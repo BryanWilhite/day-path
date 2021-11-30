@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 30 Oct 2021 10:10:00 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Nov 2021 10:40:01 -0800</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-11</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-11-28-studio-status-report-2021-11</link>
+            <description>
+                month 11 of 2021 was about discovering why F# is a core Publication language This is my third month of making mention of my public study of F#. For the last two months I assumed that my study of F# would be a background, far-flung-future thing, helping me…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-11-28-studio-status-report-2021-11</guid>
+            <pubDate>Sun, 28 Nov 2021 10:40:01 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-10</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-10-30-studio-status-report-2021-10</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-12-27-studio-status-report-2020-12</guid>
             <pubDate>Sun, 27 Dec 2020 16:25:10 -0800</pubDate>
-        </item>
-        <item>
-            <title>Songhay Publications and the Concept of the Index</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-12-24-songhay-publications-and-the-concept-of-the-index</link>
-            <description>
-                What you are reading now is a Songhay Publication, this Blog. A Songhay Publication centers around the Document [GitHub]. Several Document instances can be grouped under one or more Segment [GitHub] instances. Further up the hierarchy, a Segment can group…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-12-24-songhay-publications-and-the-concept-of-the-index</guid>
-            <pubDate>Thu, 24 Dec 2020 18:07:04 -0800</pubDate>
         </item>
     </channel>
 </rss>
