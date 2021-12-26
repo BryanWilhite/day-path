@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Nov 2021 10:40:01 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 26 Dec 2021 09:52:57 -0800</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2021-12</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2021-12-26-studio-status-report-2021-12</link>
+            <description>
+                month 12 of 2021 was about working the development schedule No new distractions for month 12: most of the non-day-job time was spent on the project associated with new version of SonghaySystem.com. This project of massive change has progressed quite smoot…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-12-26-studio-status-report-2021-12</guid>
+            <pubDate>Sun, 26 Dec 2021 09:52:57 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2021-11</title>
             <link>http://songhayblog.azurewebsites.net/entry/2021-11-28-studio-status-report-2021-11</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-01-30-studio-status-report-2021-01</guid>
             <pubDate>Sat, 30 Jan 2021 17:34:34 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2020-12</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2020-12-27-studio-status-report-2020-12</link>
-            <description>
-                month 12 of 2020 was about the data behind the Index layout I have always been fractal with the rabbit holes 🐇🕳 I may break things but I do not move “fast.” I got “lost” this month in formally thinking about the data I would be using to drive the displa…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2020-12-27-studio-status-report-2020-12</guid>
-            <pubDate>Sun, 27 Dec 2020 16:25:10 -0800</pubDate>
         </item>
     </channel>
 </rss>
