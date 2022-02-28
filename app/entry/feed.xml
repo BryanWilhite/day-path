@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Jan 2022 17:54:14 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 28 Feb 2022 11:12:57 -0800</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-02</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-02-28-studio-status-report-2022-02</link>
+            <description>
+                month 2 of 2022 was about day-job Azure Functions and Studio Blazor For the day-job, I had the privilege of revisiting Azure Functions. Basically, this ‘allowed’ me to write a research/recommendations document based on two Studio READMEs…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-02-28-studio-status-report-2022-02</guid>
+            <pubDate>Mon, 28 Feb 2022 11:12:57 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-01</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-01-30-studio-status-report-2022-01</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-03-30-studio-status-report-2021-03</guid>
             <pubDate>Tue, 30 Mar 2021 19:10:43 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-02</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-02-27-studio-status-report-2021-02</link>
-            <description>
-                month 02 of 2021 was about eleventy (11ty.dev) index layout I have spent months complaining about being stuck on the Stills API. This month is no exception but it is now clear that I am not breaking out the ‘sibling’ work items correctly. My work on the e…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-02-27-studio-status-report-2021-02</guid>
-            <pubDate>Sat, 27 Feb 2021 18:23:03 -0800</pubDate>
         </item>
     </channel>
 </rss>
