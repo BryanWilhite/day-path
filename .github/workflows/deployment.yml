@@ -32,8 +32,8 @@ jobs:
         path: ${{env.DOTNET_ROOT}}/myapp
 
     - name: Deploy to Azure Web App
-      id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
+      id: deploy-to-webapp
       with:
         app-name: 'songhayblog'
         slot-name: 'production'
