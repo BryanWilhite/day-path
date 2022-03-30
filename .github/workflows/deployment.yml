@@ -13,29 +13,29 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: checkout
-      - uses: actions/checkout@v2
+    - name: checkout
+    - uses: actions/checkout@v2
 
-      - name: Upload artifact for deployment jobs
-        uses: actions/upload-artifact@v3
-        with:
-          path: ./app/
+    - name: Upload artifact for deployment jobs
+      uses: actions/upload-artifact@v3
+      with:
+        path: ./app/
 
   deploy:
     runs-on: windows-latest
     needs: build
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: daypath-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      with:
+        name: daypath-app
+        path: ${{env.DOTNET_ROOT}}/myapp
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'songhayblog'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_0c785cc68488443fbe9360fdd6b886dd }}
-          package: ${{env.DOTNET_ROOT}}/myapp
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'songhayblog'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0c785cc68488443fbe9360fdd6b886dd }}
+        package: ${{env.DOTNET_ROOT}}/myapp
