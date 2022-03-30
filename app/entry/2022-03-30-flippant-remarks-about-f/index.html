@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="flippant remarks about F#" />
+    <meta name="twitter:title" content="flippant remarks about F#" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2022-03-30-flippant-remarks-about-f" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="F# is the end. This feels like the kind of programming language for an old Microsoft dog like me, retiring to learn new tricks. Before I go on and probably say something not very smart, let me thank the folks that helped me on my F# journey (in order of a…" />
+    <meta property="og:description" content="F# is the end. This feels like the kind of programming language for an old Microsoft dog like me, retiring to learn new tricks. Before I go on and probably say something not very smart, let me thank the folks that helped me on my F# journey (in order of a…" />
+    <meta name="twitter:description" content="F# is the end. This feels like the kind of programming language for an old Microsoft dog like me, retiring to learn new tricks. Before I go on and probably say something not very smart, let me thank the folks that helped me on my F# journey (in order of a…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>flippant remarks about F# - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>flippant remarks about F#</h1>
+<!-- cSpell:disable -->
+<p><a href="https://www.manning.com/books/get-programming-with-f-sharp" target="_blank"><img alt="Get Programming with F#" src="../../image/get-programming-with-fsharp.png" style="float:right;margin:16px;" /></a></p>
+<!-- cSpell:enable -->
+<p>F# is the end. This feels like the kind of programming language for an old Microsoft dog like me, retiring to learn new tricks. Before I go on and probably say something not very smart, let me thank the folks that helped me on my F# journey (in order of appearance):</p>
+<p><a href="https://www.linkedin.com/in/brianbeckman/">Brian Beckman</a> <a href="https://twitter.com/lorentzframe">@lorentzframe</a>: As early as 2007, I was floored by Brian Beckman’s soundbite, “Compositionality controls complexity.” The word “compositionality” is a polite reference to functional programming <em>style</em> in general and F# in Microsoft particular. This revolutionary statement (<em>revolutionary</em> to me) was made in what should be his famous video, “Brian Beckman: Don’t fear the Monad” [<a href="https://www.youtube.com/watch?v=ZhuHCtR3xq8">YouTube</a>] (in case you are Microsoft employee and an archivist, the original link was <a href="http://channel9.msdn.com/ShowPost.aspx?PostID=358968">http://channel9.msdn.com/ShowPost.aspx?PostID=358968</a>).</p>
+<p><a href="https://www.linkedin.com/in/don-syme-558b58/">Don Syme</a> <a href="https://twitter.com/dsyme">@dsyme</a>: Don Syme [<a href="https://en.wikipedia.org/wiki/Don_Syme">Wikipedia</a>] evangelized his work on F# from the very beginning. Before Microsoft officially recognized the existence of YouTube, Don Syme was in several <a href="https://en.wikipedia.org/wiki/Channel_9_%28Microsoft%29">MSDN Channel 9</a> videos such as a 2016, <em>On .NET</em> episode, “<a href="https://docs.microsoft.com/en-us/shows/on-net/don-syme-on-f">Don Syme on F#</a>.”</p>
+<p><a href="https://www.linkedin.com/in/jessicakerr/">Jessica Kerr</a> <a href="https://twitter.com/jessitron">@jessitron</a>: Jessica Kerr is not an F# evangelist but she is an excellent one for <a href="https://elm-lang.org/">Elm</a>. Her <a href="https://www.youtube.com/watch?v=cgXhMc8M4X4">GOTO 2016 conference talk</a> set the stage for me to meet a flavor of <a href="https://elmish.github.io/">Elmish</a> called <a href="https://fsbolero.io/">Bolero</a>. It took me about five years to figure this out.</p>
+<p><a href="https://www.linkedin.com/in/scott-nimrod-05995413/">Scott Nimrod</a> <a href="https://twitter.com/bizmonger">@bizmonger</a>: Scott’s <a href="https://www.youtube.com/user/Bizmonger">YouTube channel</a> about things-mostly-F# dates back to 2013 and I show up around 2017—and I am sure that Scott is more than a little disappointed that it has taken me over five years to officially get on the F# train! Nevertheless, Scott has been a key figure of my F# journey, introducing me to such folks as <a href="https://www.linkedin.com/in/ody-mbegbu/">Ody Mbegbu</a> <a href="https://twitter.com/odytrice">@odytrice</a>, <a href="https://www.linkedin.com/in/houstonhaynes/">Houston Haynes</a> <a href="https://twitter.com/h3techdev">@h3techdev</a> and Adam Wright <a href="https://twitter.com/awright18">@awright18</a>.</p>
+<p><a href="https://www.linkedin.com/in/isaacabraham/">Isaac Abraham</a> <a href="https://twitter.com/isaac_abraham">@isaac_abraham</a>: Isaac Abraham, his book <a href="https://www.manning.com/books/get-programming-with-f-sharp"><em>Get Programming with F#</em></a>, was the final conk on the head that made the scales fall from my eyes. I was made aware of this book from a recommendation by Houston Haynes in a Twitter Space hosted by Scott Nimrod. Save yourself five years and start with this book!</p>
+<p>With sincere thanks to the people with the names above, let me now get flippant:</p>
+<h2>shut up and start with the <code>|&gt;</code> operator</h2>
+<p>One of the many things Isaac Abraham does well, is let us know that we should not get intimidated by the massive “<a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/">Symbol and operator reference</a>.” We should start with the forward pipeline operator, <code>|&gt;</code>, and see how it works with the last argument of a <a href="https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/currying.html">curried function</a> (keep reading and see below).</p>
+<h2>you are <em>not</em> writing statements in F#</h2>
+<p>In F# you are writing <em>expressions</em>. For the veteran C# developer, this might sound like you would be writing everything as <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-expressions">expression lambdas</a>, making <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/">expression trees</a>. I recommend asking Don Syme about this but to me this sounds right except there is no clunky <code>Expression&lt;TDelegate&gt;</code> syntax (and your expressions can be separated by line breaks and whitespace).</p>
+<p>To really drive home the fact that F# is expression based is the lack of a <code>return</code> keyword (except when you are using <code>async</code> or <code>task</code> blocks [ 📖 <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/async">docs</a>]). The last line of your expression is the <em>return</em> value of an F# function (when you are returning nothing—or what we call <code>void</code> in C#—we return <code>()</code>, the <code>unit</code> [ 📖 <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/unit-type">docs</a>] expression).</p>
+<h2>you “hate” whitespace in Python?</h2>
+<p>Should you “hate” the importance of whitespace in Python then you will “hate” <a href="https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/fsharp-syntax.html">its importance in F#</a>.</p>
+<h2>tuples are first-class citizens in F#</h2>
+<p>My Isaac-Abraham-led <a href="https://github.com/BryanWilhite/jupyter-central/blob/master/get-programming-with-f-sharp/09-shaping-data-with-tuples.ipynb">study of tuples in F#</a> shows me that tuples are <em>fundamental</em> to F#. The use of commas in F# is probably expressing a tuple like the two tuples in this typical, <code>DateTime.TryParse</code> expression:</p>
+<pre><code class="language-fsharp">match DateTime.TryParse dateTimeString with
+| false, _ -&gt; resultError &quot;dc:date&quot;
+| true, dateTime -&gt; Ok dateTime
+</code></pre>
+<p>All .NET <code>TryParse</code> patterns decompose into tuples in F#.</p>
+<h2>F# bends over backwards for .NET APIs</h2>
+<p>That <code>DateTime.TryParse</code> expression above is but one example of how much F# recognizes the existence of .NET. It would be a mistake to assume that F# wants to escape or trivialize the .NET ecosystem. It would be better to assume that F# deviates from .NET when it “has not been invented yet” for the <acronym title="Common Language Runtime">CLR</acronym> [ 📖 <a href="https://docs.microsoft.com/en-us/dotnet/standard/clr">docs</a>]. For example, the <a href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system">Hindley-Milner (HM) type system</a> has not been invented yet for .NET but it is the beating heart of F# (see “many of the recent developments in C# were inspired by F#” below).</p>
+<p>Another great example of this dedication is the foundational <code>Option.ofNullable</code> function [ 📖 <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-optionmodule.html#ofNullable">docs</a>] which supports <code>Nullable&lt;T&gt;</code> [ 📖 <a href="https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1?view=net-6.0">docs</a>].</p>
+<h2>before you resort to interfaces or <code>Func&lt;T&gt;</code>/<code>Action&lt;T&gt;</code> delegates, just pass a function</h2>
+<p>Again, F# bends over backwards for .NET APIs—so it <em>does</em> support interfaces, <code>Func&lt;T&gt;</code> [ 📖 <a href="https://docs.microsoft.com/en-us/dotnet/api/system.func-1?view=net-6.0">docs</a>] and <code>Action&lt;T&gt;</code> [ 📖 <a href="https://docs.microsoft.com/en-us/dotnet/api/system.action-1?view=net-6.0">docs</a>]. But this great support can confuse a novice F# developer (like me).</p>
+<p>For example, the following F# function is not necessary (when this function will only be used by F# expressions):</p>
+<pre><code class="language-fsharp">let sayHello (hf: Func&lt;string&gt;) = hf.Invoke() |&gt; printfn &quot;%s&quot;
+
+Func&lt;string&gt;(fun () -&gt; &quot;hi&quot;) |&gt; sayHello //invocation prints &quot;hi&quot;
+</code></pre>
+<p>We can express an equivalent without <code>Func&lt;string&gt;</code>:</p>
+<pre><code class="language-fsharp">let sayHello (hf: unit -&gt; string) = hf() |&gt; printfn &quot;%s&quot;
+
+(fun () -&gt; &quot;hi&quot;) |&gt; sayHello //invocation prints &quot;hi&quot;
+</code></pre>
+<p>We see that we are passing a <code>unit -&gt; string</code> type into <code>sayHello</code> in the latter example. This use of a type is just as effective as an interface or .NET generic delegates. F# wants us to find ways to express intent with types <em>before</em> resorting to interfaces or classes.</p>
+<h2>F# does <em>not</em> really need LINQ</h2>
+<p>Because I enjoy using <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ</a> in C# so much, I made <a href="https://github.com/BryanWilhite/jupyter-central/blob/master/get-programming-with-f-sharp/15-working-with-collections-in-fsharp.ipynb">an extensive study of why F# does not really need LINQ</a> during my reading of <a href="https://www.manning.com/books/get-programming-with-f-sharp"><em>Get Programming with F#</em></a>.</p>
+<h2>when F# is presented as a DSL tool, I think the HTML mini languages are downplayed</h2>
+<p>According to the great Scott Wlaschin <a href="https://twitter.com/ScottWlaschin">@ScottWlaschin</a>:</p>
+<blockquote>
+<p>Domain-specific languages (DSLs) are well recognized as a technique to create more readable and concise code. The functional approach is very well suited for this.</p>
+<p>—“<a href="https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/conciseness-functions-as-building-blocks.html">F# for Fun and Profit</a>”</p>
+</blockquote>
+<p>In my opinion, libraries like <code>Giraffe.ViewEngine</code> [<a href="https://github.com/giraffe-fsharp/Giraffe.ViewEngine#html-elements-and-attributes">GitHub</a>] should be in <em>every</em> presentation, showing off the DSL features of F#. (Don Syme, by the way, <em>does</em> refer to HTML DSLs when he presents but we need more presenters with more references). When we couple these F# HTML DSLs with Microsoft’s take on <a href="https://en.wikipedia.org/wiki/WebAssembly">WebAssembly</a> which is <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor">Blazor</a>, one (like me) will immediately want to see how F# is married to Blazor. Accordingly, I am currently experimenting with <a href="https://fsbolero.io/">Bolero</a>, a project led by <a href="https://www.linkedin.com/in/tarmil/">Loïc Denuzière</a> <a href="https://twitter.com/Tarmil_">@_Tarmil</a>.</p>
+<p>When we couple these HTML DSLs with an F#-to-JavaScript compiler like <a href="https://fable.io/">Fable</a>, we can get honest with ourselves and admit just how much we are very-seasoned-but-not-very-fond of working in an <code>npm</code>-based JavaScript ecosystem where you have to run <code>npm-check</code> [ 📦 <a href="https://www.npmjs.com/package/npm-check">package</a>] every three weeks.</p>
+<h2>many of the recent developments in C# were inspired by F#</h2>
+<p>Here is an incomplete list of features in C# that <em>clearly</em> ‘come from’ F#:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record">Records</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/pattern-matching">Pattern Matching</a> (but I think C# has more features)</li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/discards">Discards</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">Tuple Deconstruction</a></li>
+</ul>
+<p>F# also has its own take on generics (as well as supporting .NET generics) which is a key ingredient in the F# type inference system, the <a href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system">Hindley-Milner (HM) type system</a>. I explore this while <a href="https://github.com/BryanWilhite/jupyter-central/blob/master/get-programming-with-f-sharp/05-trusting-the-compiler.ipynb">reading</a> Isaac Abraham’s “Trusting the compiler” section of his book, <a href="https://www.manning.com/books/get-programming-with-f-sharp"><em>Get Programming with F#</em></a>.</p>
+<h2>because of over 20 years of object-oriented programming, I incorrectly assumed that polymorphism was confined to OOP</h2>
+<p>While reading Isaac Abraham’s book (mentioned previously), <a href="https://github.com/BryanWilhite/jupyter-central/blob/master/get-programming-with-f-sharp/21-modeling-relationships-in-f-sharp.ipynb">I was led away from the pages</a> and discovered <em>polytypism</em> and the subject of <a href="https://en.wikipedia.org/wiki/Generic_programming#Functional_languages">generic programming</a>. Wow.</p>
+<h2>two words: <em>discriminated unions</em></h2>
+<p>A long-time C-like-language developer in the Microsoft meta-verse would see nothing like the <em>discriminated unions</em> (DUs) of F# unless one delves <a href="https://medium.com/@ahsan.ayaz/understanding-discriminated-unions-in-typescript-1ccc0e053cf5">into Typescript</a>. My notes on F# DUs should drag the typical C# developer through the “muck” or through progressive transformation:</p>
+<ul>
+<li>“<a href="https://github.com/BryanWilhite/jupyter-central/blob/master/get-programming-with-f-sharp/21-modeling-relationships-in-f-sharp.ipynb">Modeling relationships in F#</a>”</li>
+<li>“<a href="https://github.com/BryanWilhite/jupyter-central/blob/master/get-programming-with-f-sharp/23-business-rules-as-code.ipynb">Business rules as code</a>”</li>
+<li><a href="https://github.com/BryanWilhite/jupyter-central/tree/master/funkykb/fsharp/discriminated-unions">even more notes</a> on DUs</li>
+</ul>
+<p>Here is my cryptic-or-stupid sound bite about DUs: <em>Did you ever want to define class hierarchies with regular expressions?</em> We do <em>not</em> use regular expressions with DUs but the syntax might <em>look</em> like it!</p>
+<h2>when you love seeing your C# class files in alphabetical order then F# will pinch at you</h2>
+<p>F# code depends on <em>order</em>. F# modules and their contents must appear <em>in order of dependency</em>. This means an IDE supporting F# development must allow you to drag and drop files in the correct order, edit the <code>*.fsproj</code> directly or, sadly, pinch at you. I dare not dream of an IDE that can use background-compilation magic to <em>automatically</em> reorder <code>*.fs*</code> files for you!</p>
+<p>This limitation on the IDE experience alone may be the reason why folks just cannot switch to F# from working with C# in Visual Studio <em>exclusively</em>. This was relatively easy for me because I spent years with Visual Studio Code which brought me closer to the file system while the flagship, Visual Studio, is designed to ‘hide’ the file system from the beginner programmer in a friendly way.</p>
+<h2>F# will immediately eliminate at least two categories of cross-cutting unit tests</h2>
+<p>Two categories of unit tests will never have to be written for an F# project:</p>
+<ul>
+<li>testing for <code>null</code></li>
+<li>testing for exceptions</li>
+</ul>
+<p>Instead of having these tests cross-cutting everywhere almost randomly, these categories of tests would be implied and confined under a clearly-defined ‘input transformation layer’ which is three words I have just smashed together on the fly while writing this sentence. In other words, F# encourages us to define and confine a ‘layer’ in our application where untrusted input is processed. This layer should be relatively small compared to the rest of the Solution. Untrusted input can be <code>null</code> or throw exceptions and our input transformation code is meant to defend against this with <code>Option</code> and <code>Result</code>. Currently, I am naming a domain-specific function, <code>fromInput</code>, as a convention to express input transformation.</p>
+<p>What is more sophisticated is how we are encouraged to use types in F# to eliminate even <em>more</em> categories of unit tests. Isaac Abraham explores this in his book <a href="https://www.manning.com/books/get-programming-with-f-sharp"><em>Get Programming with F#</em></a>.</p>
+<p>Also, for you lovers of xUnit in the world of C#, check out <a href="http://fsprojects.github.io/FsUnit/">FsUnit</a>. And, as we get intimate with <code>Option</code> and <code>Result</code>, <a href="https://www.linkedin.com/in/ody-mbegbu/">Ody Mbegbu</a> <a href="https://twitter.com/odytrice">@odytrice</a> recommends <code>FsToolkit.ErrorHandling</code> [<a href="https://github.com/demystifyfp/FsToolkit.ErrorHandling">GitHub</a>] which I find extremely helpful.</p>
+<h2>while day-jobbing in C#, lean toward functional style</h2>
+<p>I have spent most of the last 20 years writing in C# but I was naturally biased toward functional style. I used to think this was a personal, almost <em>aesthetic</em> preference until <a href="https://www.linkedin.com/in/brianbeckman/">Brian Beckman</a> <a href="https://twitter.com/lorentzframe">@lorentzframe</a> made me realize that this is also a <em>strategic</em> preference for the sake of professional maintainability and clarity.</p>
+<p>In a typical C# code review, I should be looking for these functional-style corrections:</p>
+<table>
+<thead>
+<tr>
+<th>issue</th>
+<th>recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>‘tall’ methods</td>
+<td>decompose C# methods with too many lines into <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions">local functions</a> or <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">extension methods</a>; the names of these smaller chunks of code might reduce the need for comments</td>
+</tr>
+<tr>
+<td>blocks of code with nested and/or a succession of <code>for</code> loops is hard to read</td>
+<td>consider replacing the <code>for</code> loops with LINQ <code>.Select()</code> methods to ‘pipe’ from one set of data to another</td>
+</tr>
+<tr>
+<td>disruptive or hard-to-read <code>if</code> blocks</td>
+<td>use <a href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/pattern-matching">C# pattern-matching</a> which is heavily influenced by F#</td>
+</tr>
+<tr>
+<td>wide <code>if</code> conditions</td>
+<td>decompose into <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions">local functions</a> or <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">extension methods</a></td>
+</tr>
+<tr>
+<td>a class has ‘too many’ static methods that get in the way of the instance members in terms of readability</td>
+<td>consider separating these static methods into <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">extension methods</a> instead of partial classes</td>
+</tr>
+<tr>
+<td>it is clear that we should return more than one type from a method but defining a class or interface for these types is overkill</td>
+<td>return a <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples#tuple-field-names">tuple with named fields</a> from this C# method</td>
+</tr>
+<tr>
+<td>the team agrees that we should ‘inject an interface into a method’ but defining a formal interface is overkill</td>
+<td>use <code>Func&lt;&gt;</code> or <code>Action&lt;&gt;</code> in the method signature, effectively touching upon the <a href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy Pattern</a> and recognizing the concept of <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher order functions</a></td>
+</tr>
+<tr>
+<td>the team is actually sick of <code>null</code></td>
+<td>consider using a C# <code>Option</code> library, like <a href="https://github.com/nlkl/Optional">Optional</a></td>
+</tr>
+<tr>
+<td>the team is uncomfortable with throwing exceptions deep in the stack and would rather use ‘railways’ to bubble them up with fine/granular control</td>
+<td>consider using a C# implementation of <code>Result&lt;&gt;</code> like what is available in <a href="https://github.com/vkhorikov/CSharpFunctionalExtensions">Functional Extensions for C#</a> which introduces the concept of <a href="https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html">Railway Oriented Programming</a> which is a step above the famous <a href="https://www.red-gate.com/simple-talk/development/dotnet-development/fluent-code-in-c/">“fluent” C# style</a></td>
+</tr>
+<tr>
+<td>a team member is called out for <a href="https://www.arhohuttunen.com/primitive-obsession/">primitive obsession</a></td>
+<td>F# is actually <a href="https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/designing-with-types-single-case-dus.html">designed for primitive obsession</a> but <a href="https://enterprisecraftsmanship.com/posts/functional-c-primitive-obsession/">there are ways to approach it constructively in C#</a></td>
+</tr>
+</tbody>
+</table>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2022-03-30T19:53:02.448Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>

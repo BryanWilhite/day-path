@@ -5,8 +5,28 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 28 Feb 2022 11:12:57 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 30 Mar 2022 12:54:04 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-03</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-03-30-studio-status-report-2022-03</link>
+            <description>
+                month 3 of 2022 was about learning how to use Elmish components and quitting the day-job I did not quit my day job in order to work on the project that I have been working on for the last five months. That would not be a wise financial decision. And there…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-03-30-studio-status-report-2022-03</guid>
+            <pubDate>Wed, 30 Mar 2022 12:54:04 -0700</pubDate>
+        </item>
+        <item>
+            <title>flippant remarks about F#</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-03-30-flippant-remarks-about-f</link>
+            <description>
+                F# is the end. This feels like the kind of programming language for an old Microsoft dog like me, retiring to learn new tricks. Before I go on and probably say something not very smart, let me thank the folks that helped me on my F# journey (in order of a…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-03-30-flippant-remarks-about-f</guid>
+            <pubDate>Wed, 30 Mar 2022 12:53:02 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-02</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-02-28-studio-status-report-2022-02</link>
@@ -126,26 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-05-24-studio-status-report-2021-05</guid>
             <pubDate>Mon, 24 May 2021 11:50:26 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-04</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-04-28-studio-status-report-2021-04</link>
-            <description>
-                month 04 of 2021 was about prepping a Core Release and ripping the guts out of Songhay.Player The SonghayCore version 5.1.0 release is almost complete. According to me, this release is mainly about addressing System.Text.Json support but there are other m…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-04-28-studio-status-report-2021-04</guid>
-            <pubDate>Wed, 28 Apr 2021 16:28:20 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-03</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-03-30-studio-status-report-2021-03</link>
-            <description>
-                month 03 of 2021 was about regrouping around Publications The phrase ‘regrouping around Publications’ is a fluffy cloud of words 🌩 hovering over hard changes: - retiring the private Songhay.GenericWeb repo 🚜🔥 and building out the private Songhay.Public…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-03-30-studio-status-report-2021-03</guid>
-            <pubDate>Tue, 30 Mar 2021 19:10:43 -0700</pubDate>
         </item>
     </channel>
 </rss>
