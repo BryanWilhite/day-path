@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 15 Apr 2022 21:57:45 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 29 Apr 2022 18:04:23 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-04</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-04-29-studio-status-report-2022-04</link>
+            <description>
+                month 4 of 2022 was about the greatest weakness of Blazor and more day-job learnings There are no more known technical blockers in the way of completing the  project associated with new version of SonghaySystem.com. This is great news! However, the unders…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-04-29-studio-status-report-2022-04</guid>
+            <pubDate>Fri, 29 Apr 2022 18:04:23 -0700</pubDate>
+        </item>
         <item>
             <title>flippant remarks about CSS animations</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-04-15-flippant-remarks-about-css-animations</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-06-26-studio-status-report-2021-06</guid>
             <pubDate>Sat, 26 Jun 2021 16:34:45 -0700</pubDate>
-        </item>
-        <item>
-            <title>the most important thing I have learned as a developer in the last ten years</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-06-20-the-most-important-thing-i-have-learned-as-a-developer-in-the-last-ten-years</link>
-            <description>
-                I will truly be very, very blessed to have 10 more years of life on this Earth as a productive software developer. The most important thing I have learned as a developer in the last ten years is not some engineering technique. It is more of a communicatio…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-06-20-the-most-important-thing-i-have-learned-as-a-developer-in-the-last-ten-years</guid>
-            <pubDate>Sun, 20 Jun 2021 17:58:31 -0700</pubDate>
         </item>
     </channel>
 </rss>
