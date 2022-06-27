@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 29 May 2022 11:53:33 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 26 Jun 2022 10:45:41 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-06</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-06-26-studio-status-report-2022-06</link>
+            <description>
+                month 06 of 2022 was about reporting a bug in Bolero, significantly revising the development schedule and consolidating my Validation portfolio My first GitHub Issue lodged to a second party that has escalated to a bug happens to be with Bolero. This came…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-06-26-studio-status-report-2022-06</guid>
+            <pubDate>Sun, 26 Jun 2022 10:45:41 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-05</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-05-29-studio-status-report-2022-05</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-07-25-studio-status-report-2021-07</guid>
             <pubDate>Sun, 25 Jul 2021 14:08:46 -0700</pubDate>
-        </item>
-        <item>
-            <title>flippant remarks about the “great resignation” wave</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-06-28-flippant-remarks-about-the-great-resignation-wave</link>
-            <description>
-                2011 was the year working remotely became a reality for me. It lasted for about four months. That was when I learned about the first caveat around working remotely: some companies allow working remotely solely for financial reasons: they simply cannot aff…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-06-28-flippant-remarks-about-the-great-resignation-wave</guid>
-            <pubDate>Mon, 28 Jun 2021 11:43:12 -0700</pubDate>
         </item>
     </channel>
 </rss>
