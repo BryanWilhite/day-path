@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 26 Jun 2022 10:45:41 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 29 Jul 2022 14:59:12 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-07</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-07-29-studio-status-report-2022-07</link>
+            <description>
+                month 07 of 2022 was about upgrading the Studio to .NET6 Sketching out a development schedule last month there was an item for revision 22 called “upgrade the Studio to .NET 6 📦🔼.” I removed that item for his month because what actually happened was the…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-07-29-studio-status-report-2022-07</guid>
+            <pubDate>Fri, 29 Jul 2022 14:59:12 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-06</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-06-26-studio-status-report-2022-06</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-08-30-studio-status-report-2021-08</guid>
             <pubDate>Mon, 30 Aug 2021 09:20:32 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-07</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-07-25-studio-status-report-2021-07</link>
-            <description>
-                month 07 of 2021 was about moving kintespace.com to a new server and day-job drama The hosting service for kintespace.com effectively forced me to take yet another discount and move to a new Ubuntu server. The discount went from a turn-of-the-century ~$50…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-07-25-studio-status-report-2021-07</guid>
-            <pubDate>Sun, 25 Jul 2021 14:08:46 -0700</pubDate>
         </item>
     </channel>
 </rss>
