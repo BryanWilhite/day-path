@@ -144,24 +144,12 @@
 <p>Before <code>@songhay/index</code> as a side-car app is in play, the <code>lunr</code> auto-complete experience has to be established. Before the <code>lunr</code> thing can play, the backend index data needs a pipeline. That’s two rabbit holes! 🕳🐰X2</p>
 <h2>the Songhay Stills API will add progressive image support to the Studio</h2>
 <p>The b-roll Stills API will be the heart of the Songhay Studio online presence. Every image shown by Songhay System should go through this API.</p>
-<table>
-<thead>
-<tr>
-<th>endpoint</th>
-<th>plan</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>/api/player/v1/stills/{id}/srcset-sizes</code></td>
-<td>Should return some JSON describing all the responsive images of the specified ID.</td>
-</tr>
-<tr>
-<td><code>/api/player/v1/stills/{presentationKey}/frames</code></td>
-<td>Should return some JSON describing all the frames of a presentation. The data should contain a rollup of the equivalent of several srcset-sizes calls.</td>
-</tr>
-</tbody>
-</table>
+<p>endpoint | plan</p>
+<ul>
+<li>| -
+<code>/api/player/v1/stills/{id}/srcset-sizes</code> | Should return some JSON describing all the responsive images of the specified ID.
+<code>/api/player/v1/stills/{presentationKey}/frames</code> | Should return some JSON describing all the frames of a presentation. The data should contain a rollup of the equivalent of several srcset-sizes calls.</li>
+</ul>
 <p>💡the data might contain URIs pointing to a CDN or BLOB storage</p>
 <p>🐰🕳the data might contain some kind of guided-view declarations</p>
 <p>So, this is the reason why none of my new Web sites have so few images. This thing needs to be built.</p>
