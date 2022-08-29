@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 29 Jul 2022 14:59:12 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Aug 2022 12:49:41 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-08</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-08-28-studio-status-report-2022-08</link>
+            <description>
+                month 07 of 2022 was about releasing Songhay.Modules.Publications 📦🚀 and switching to Obsidian The release of Songhay.Modules.Publications [GitHub] is summarized by the README on the repo itself: &gt;The original intent of this project is the support of da…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-08-28-studio-status-report-2022-08</guid>
+            <pubDate>Sun, 28 Aug 2022 12:49:41 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-07</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-07-29-studio-status-report-2022-07</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-09-26-studio-status-report-2021-09</guid>
             <pubDate>Sun, 26 Sep 2021 11:30:21 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-08</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-08-30-studio-status-report-2021-08</link>
-            <description>
-                month 08 of 2021 was about SpecFlow (day job), F# notes and losing hits data for kintespace.com First, the horrible news: my forced migration to a new server for kintespace.com led to the loss of hits data for month 7 and pieces of month 8 (I think). This…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-08-30-studio-status-report-2021-08</guid>
-            <pubDate>Mon, 30 Aug 2021 09:20:32 -0700</pubDate>
         </item>
     </channel>
 </rss>
