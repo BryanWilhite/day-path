@@ -5,13 +5,23 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Aug 2022 12:49:41 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 28 Sep 2022 12:08:44 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-09</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-09-28-studio-status-report-2022-09</link>
+            <description>
+                month 09 of 2022 was about releasing Songhay.Modules.Bolero and Songhay.Player.YouTube My switch to Obsidian last month has led to my use of Excalidraw this month which allows me to draw out the entire Songhay System (in three ragged columns): Excalidraw…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-09-28-studio-status-report-2022-09</guid>
+            <pubDate>Wed, 28 Sep 2022 12:08:44 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-08</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-08-28-studio-status-report-2022-08</link>
             <description>
-                month 07 of 2022 was about releasing Songhay.Modules.Publications 📦🚀 and switching to Obsidian The release of Songhay.Modules.Publications [GitHub] is summarized by the README on the repo itself: &gt;The original intent of this project is the support of da…
+                month 08 of 2022 was about releasing Songhay.Modules.Publications 📦🚀 and switching to Obsidian The release of Songhay.Modules.Publications [GitHub] is summarized by the README on the repo itself: &gt;The original intent of this project is the support of da…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-08-28-studio-status-report-2022-08</guid>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-10-30-studio-status-report-2021-10</guid>
             <pubDate>Sat, 30 Oct 2021 10:10:00 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-09</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-09-26-studio-status-report-2021-09</link>
-            <description>
-                month 09 of 2021 was about restoring kintespace.com hits data collection and other Studio chores The day job is kicking my ass. Period. My Studio work is broken up into small fragments as my large projects suffer neglect: - kintespace.com: salvaging hits…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-09-26-studio-status-report-2021-09</guid>
-            <pubDate>Sun, 26 Sep 2021 11:30:21 -0700</pubDate>
         </item>
     </channel>
 </rss>
