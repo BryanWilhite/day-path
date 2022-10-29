@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 28 Sep 2022 12:08:44 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 29 Oct 2022 12:05:13 -0700</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2022-10</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-10-29-studio-status-report-2022-10</link>
+            <description>
+                month 10 of 2022 was about releasing AzureBlobStorageRestApiUtility and planning to release AzureKeyVaultRestApiUtility The release of AzureBlobStorageRestApiUtility (see issue #149) establishes one of two Azure utilities that are fundamental to the “clou…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-10-29-studio-status-report-2022-10</guid>
+            <pubDate>Sat, 29 Oct 2022 12:05:13 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-09</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-09-28-studio-status-report-2022-09</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-11-28-studio-status-report-2021-11</guid>
             <pubDate>Sun, 28 Nov 2021 10:40:01 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-10</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-10-30-studio-status-report-2021-10</link>
-            <description>
-                month 10 of 2021 was about using BenchmarkDotNet at the day job The day job is still kicking my ass. However, the beating was more self-inflicted and about adding a second, desired skill to my ridiculously-long resume. It took almost a decade at UCLA to a…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-10-30-studio-status-report-2021-10</guid>
-            <pubDate>Sat, 30 Oct 2021 10:10:00 -0700</pubDate>
         </item>
     </channel>
 </rss>
