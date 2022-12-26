@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 30 Nov 2022 15:49:36 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 26 Dec 2022 12:33:11 -0800</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>my state of Ergotron: 2022</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2022-12-26-my-state-of-ergotron-2022</link>
+            <description>
+                Ergotron offers Mobile Workstations mostly for hospital or medical laboratory applications which means safety is key. The safer the product the more expensive it is. This means that mounting an Ergotron arm on a “worksurface” is considered an unsatisfacto…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-12-26-my-state-of-ergotron-2022</guid>
+            <pubDate>Mon, 26 Dec 2022 12:33:11 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-11</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-11-30-studio-status-report-2022-11</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-01-30-studio-status-report-2022-01</guid>
             <pubDate>Sun, 30 Jan 2022 17:54:14 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2021-12</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2021-12-26-studio-status-report-2021-12</link>
-            <description>
-                month 12 of 2021 was about working the development schedule No new distractions for month 12: most of the non-day-job time was spent on the project associated with new version of SonghaySystem.com. This project of massive change has progressed quite smoot…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2021-12-26-studio-status-report-2021-12</guid>
-            <pubDate>Sun, 26 Dec 2021 09:52:57 -0800</pubDate>
         </item>
     </channel>
 </rss>
