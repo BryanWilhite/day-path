@@ -5,8 +5,19 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 30 Dec 2022 12:59:02 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 29 Jan 2023 15:56:22 -0800</pubDate>
         <lastBuildDate>Sat, 05 Dec 2020 13:30:25 -0800</lastBuildDate>
+        <item>
+            <title>studio status report: 2023-01</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-01-29-studio-status-report-2023-01</link>
+            <description>
+                month 01 of 2023 was about slow progress on Songhay.Player.ProgressiveAudio and the new topic of travel The “Songhay.Player.ProgressiveAudio release 6.0.0” project is still underway. There are two, audio-player samples showing this work: 1.
+A third sample…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-01-29-studio-status-report-2023-01</guid>
+            <pubDate>Sun, 29 Jan 2023 15:56:22 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2022-12</title>
             <link>http://songhayblog.azurewebsites.net/entry/2022-12-30-studio-status-report-2022-12</link>
@@ -136,16 +147,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-03-30-flippant-remarks-about-f</guid>
             <pubDate>Wed, 30 Mar 2022 12:53:02 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2022-02</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-02-28-studio-status-report-2022-02</link>
-            <description>
-                month 2 of 2022 was about day-job Azure Functions and Studio Blazor For the day-job, I had the privilege of revisiting Azure Functions. Basically, this ‘allowed’ me to write a research/recommendations document based on two Studio READMEs…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-02-28-studio-status-report-2022-02</guid>
-            <pubDate>Mon, 28 Feb 2022 11:12:57 -0800</pubDate>
         </item>
     </channel>
 </rss>
