@@ -9,7 +9,14 @@
     <meta name="twitter:site" content="@BryanWilhite" />
     <meta name="twitter:creator" content="@BryanWilhite" />
 
-    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="sorting Blazor, Photino, Uno and Avalonia" />
+    <meta name="twitter:title" content="sorting Blazor, Photino, Uno and Avalonia" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2023-03-21-sorting-blazor-photino-uno-and-avalonia" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="This is my first bit of prose officially recognizing that something has happened in the .NET desktop GUI space after the fall of the .NET Framework. There is life after WPF and here is one awakening to a new, cross-platform world. ## Avalonia The Avalonia…" />
+    <meta property="og:description" content="This is my first bit of prose officially recognizing that something has happened in the .NET desktop GUI space after the fall of the .NET Framework. There is life after WPF and here is one awakening to a new, cross-platform world. ## Avalonia The Avalonia…" />
+    <meta name="twitter:description" content="This is my first bit of prose officially recognizing that something has happened in the .NET desktop GUI space after the fall of the .NET Framework. There is life after WPF and here is one awakening to a new, cross-platform world. ## Avalonia The Avalonia…" /><meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
@@ -25,10 +32,11 @@
 
     <script src="../../_bundles/scripts.min.js"></script>
 
-    <title>Day Path</title>
+    <title>sorting Blazor, Photino, Uno and Avalonia - Day Path</title>
 </head>
+
     <body class="mdc-theme--background mdc-typography">
-        <svg style="display:none;">
+<svg style="display:none;">
     <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
         <!-- https://materialdesignicons.com/icon/amazon -->
         <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
@@ -70,9 +78,11 @@
         <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
     </symbol>
 </svg>
-        <header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
     <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
         </section>
         <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
             <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
@@ -124,21 +134,72 @@
         <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell--span-12">
-                    <section class="entries mdc-typography--body1">
-                        <div class="pagination controls mdc-theme--background mdc-typography--headline3"><a class="material-icons" href="/entries/" title="first page">first_page</a>
-                            <a class="material-icons" href="/entries/4/" title="previous page">arrow_back_ios</a><span class="position">6 / 6</span></div>
-                        <ul class="pagination mdc-list">
-                            <li id="2012-01" class="mdc-list-item header mdc-typography--headline4">2012-01</li><li class="mdc-list-item mdc-typography--body1"><a href="../../entry/2012-01-31-aspnet-blog-engines-and-squarespace">ASP.NET Blog Engines (and SquareSpace.com)</a></li>
-                            <li class="mdc-list-item mdc-typography--body1"><a href="../../entry/2012-01-31-songhay-data-access-ready-for-codeplexcom">Songhay Data Access Ready for CodePlex.com!</a></li>
-                            <li class="mdc-list-item mdc-typography--body1"><a href="../../entry/2012-01-31-songhay-data-access-ready-for-codeplex-com">Songhay Data Access Ready for CodePlex.com!</a></li>
-                            </ul>
-                    </section>
-                </div>
+    <section class="entry mdc-typography--body1">
+
+        <h1>sorting Blazor, Photino, Uno and Avalonia</h1>
+<p>This is my first bit of prose officially recognizing that something has happened in the .NET desktop <acronym title="Graphical User Interface">GUI</acronym> space after the fall of the .NET <em>Framework</em>. There is life after <acronym title="Windows Presentation Foundation">WPF</acronym> and here is one awakening to a new, cross-platform world.</p>
+<h2>Avalonia</h2>
+<p>The <a href="https://www.avaloniaui.net/">Avalonia</a> space is about taking the <em>W</em> out of <acronym title="Windows Presentation Foundation">WPF</acronym>. It is a direct replacement of <acronym title="Windows Presentation Foundation">WPF</acronym> —without recognizing the existence of the <a href="https://en.wikipedia.org/wiki/Universal_Windows_Platform">Universal Windows Platform</a>. To choose Avalonia is to embrace a <acronym title="Extensible Application Markup Language">XAML</acronym>-based client for an <em>existing</em> back-end on a <em>classic</em> desktop. My <a href="https://github.com/BryanWilhite/dotnet-core/tree/master/dotnet-avalonia">dabbling</a> with Avalonia shows me it is preserving the classic <acronym title="Model–View–ViewModel">MVVM</acronym> pattern—and it supports F♯!</p>
+<p>The JetBrains folks actually like Avalonia:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=kZCIporjJ70">
+        <img alt="Building Engaging Cross Platform Applications using Rider and Avalonia" src="https://img.youtube.com/vi/kZCIporjJ70/maxresdefault.jpg" width="640" />
+    </a>
+    <p><small>Building Engaging Cross Platform Applications using Rider and Avalonia</small></p>
+</figure>
+<figure>
+    <a href="https://www.youtube.com/watch?v=q6uWPtKw3UQ">
+        <img alt="Getting started with Avalonia and ReactiveUI" src="https://img.youtube.com/vi/q6uWPtKw3UQ/maxresdefault.jpg" width="640" />
+    </a>
+    <p><small>Getting started with Avalonia and ReactiveUI</small></p>
+</figure>
+</div>
+<h2>Photino</h2>
+<p>Once the novelty of releasing &gt;100 MB applications with <a href="https://github.com/ElectronNET">Electron.NET</a> wears off, Photino (<a href="https://www.tryphotino.io">https://www.tryphotino.io</a>) is the fundamental particle we need to have a slimmed-down sub-feature-set of <a href="https://www.electronjs.org/">Electron</a>. The fact that there is a <a href="https://github.com/tryphotino/photino.Blazor">Photino.Blazor</a> project strongly suggests that there can be a Bolero flavor of Photino.</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=LecE0CFpyCc">
+        <img alt="Photino in Six Minutes" src="https://img.youtube.com/vi/LecE0CFpyCc/maxresdefault.jpg" width="640" />
+    </a>
+    <p><small>Photino in Six Minutes</small></p>
+</figure>
+</div>
+<p>Photino is considered by Steve Sanderson the successor of his use of <code>WebWindow</code> (see “<a href="https://blog.stevensanderson.com/2019/11/18/2019-11-18-webwindow-a-cross-platform-webview-for-dotnet-core/">Meet WebWindow, a cross-platform webview library for .NET Core</a>”). This might mean that Loïc “Tarmil” Denuzière will follow up “<a href="https://blog.tarmil.fr/article/2019/11/24/bolero-webwindow">Desktop applications with Bolero and WebWindow</a>” with an entry for Photino. #to-do</p>
+<h2>Uno</h2>
+<p>The <a href="https://platform.uno/">Uno Platform</a> defines <em>cross-platform</em> like how <a href="https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui?view=net-maui-7.0">.NET MAUI</a> defines cross-platform: one solution for <em>mobile</em> platforms <em>first</em> (and maybe some non-Windows, non-Mac desktops later).</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=-s5ur9pTcfs">
+        <img alt="Andres Pineda - Understanding and Developing WebAssembly Apps with Uno Platform" src="https://img.youtube.com/vi/-s5ur9pTcfs/maxresdefault.jpg" width="640" />
+    </a>
+    <p><small>Andres Pineda - Understanding and Developing WebAssembly Apps with Uno Platform</small></p>
+</figure>
+</div>
+<h2>Blazor Hybrid</h2>
+<p>The interesting thing about <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/?view=aspnetcore-7.0">Blazor Hybrid</a> is its hybrid meshing with .NET MAUI <em>and</em> <acronym title="Windows Presentation Foundation">WPF</acronym>. This approach can be regarded as Microsoft taking responsibility for the Windows platform (and its mobile concerns inspired by the iPhone and Samsung) which quietly implies the Linux desktop is left unattended.</p>
+<h2>The .NET Core Podcast  interviews everybody</h2>
+<p><a href="https://dotnetcore.show/">The .NET Core Podcast</a> has a <a href="https://dotnetcore.show/categories/blazor/">whole category of interviews about Blazor</a> and then drills down into:</p>
+<ul>
+<li>“<a href="https://dotnetcore.show/episode-102-photino-with-otto-dobretsberger/">Episode 102 - Photino With Otto Dobretsberger</a>”</li>
+<li>“<a href="https://dotnetcore.show/episode-95-avalonia-ui-with-dan-walmsley/">Episode 95 - Avalonia UI with Dan Walmsley</a>”</li>
+<li>“<a href="https://dotnetcore.show/episode-60-uno-platform-with-jerome-laban/">Episode 60 - Uno Platform With Jérôme Laban</a>”</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+    </section>
+</div>
             </div>
         </main>
-        <footer class="mdc-layout-grid mdc-typography--caption">
+<footer class="mdc-layout-grid mdc-typography--caption">
     <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-6"><p><a class="index" href="../../entries/">[index]</a></p>
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2023-03-22T01:14:27.528Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
             <p>
                 another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
             </p>
