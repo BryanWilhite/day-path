@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 30 Mar 2023 19:27:32 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 29 Apr 2023 19:22:34 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2023-04</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-04-29-studio-status-report-2023-04</link>
+            <description>
+                month 04 of 2023 was about slower progress on Songhay.Player.ProgressiveAudio and some Studio upgrades The “Songhay.Player.ProgressiveAudio release 6.0.0” project is finally looking like it is winding down. The JSON data is now at the surface of the UI an…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-04-29-studio-status-report-2023-04</guid>
+            <pubDate>Sat, 29 Apr 2023 19:22:34 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-03</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-03-30-studio-status-report-2023-03</link>
@@ -137,16 +147,6 @@ A third sample…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-05-29-studio-status-report-2022-05</guid>
             <pubDate>Sun, 29 May 2022 11:53:33 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2022-04</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-04-29-studio-status-report-2022-04</link>
-            <description>
-                month 4 of 2022 was about the greatest weakness of Blazor and more day-job learnings There are no more known technical blockers in the way of completing the  project associated with new version of SonghaySystem.com. This is great news! However, the unders…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-04-29-studio-status-report-2022-04</guid>
-            <pubDate>Fri, 29 Apr 2022 18:04:23 -0700</pubDate>
         </item>
     </channel>
 </rss>
