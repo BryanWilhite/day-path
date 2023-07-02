@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 May 2023 18:31:04 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 02 Jul 2023 10:22:08 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2023-06</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-07-02-studio-status-report-2023-06</link>
+            <description>
+                month 06 of 2023 was about almost finishing the Songhay.Player.ProgressiveAudio project again An examination of the play/pause control and the playlist—introduced to the “Songhay.Player.ProgressiveAudio release 6.0.0” project in month 05—led to the very r…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-07-02-studio-status-report-2023-06</guid>
+            <pubDate>Sun, 02 Jul 2023 10:22:08 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-05</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-05-28-studio-status-report-2023-05</link>
@@ -137,16 +147,6 @@ A third sample…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-07-29-studio-status-report-2022-07</guid>
             <pubDate>Fri, 29 Jul 2022 14:59:12 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2022-06</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-06-26-studio-status-report-2022-06</link>
-            <description>
-                month 06 of 2022 was about reporting a bug in Bolero, significantly revising the development schedule and consolidating my Validation portfolio My first GitHub Issue lodged to a second party that has escalated to a bug happens to be with Bolero. This came…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-06-26-studio-status-report-2022-06</guid>
-            <pubDate>Sun, 26 Jun 2022 10:45:41 -0700</pubDate>
         </item>
     </channel>
 </rss>
