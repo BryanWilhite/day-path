@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 02 Jul 2023 10:22:08 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Jul 2023 10:50:23 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2023-07</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-07-30-studio-status-report-2023-07</link>
+            <description>
+                month 07 of 2023 was about almost finishing the Songhay.Player.ProgressiveAudio project one last time My report for last month did not mention that songhay release 0.3.5 📦🚀 [GitHub] was released in month 06. Mentioning this makes the completion of Songh…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-07-30-studio-status-report-2023-07</guid>
+            <pubDate>Sun, 30 Jul 2023 10:50:23 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-06</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-07-02-studio-status-report-2023-06</link>
@@ -137,16 +147,6 @@ A third sample…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-08-28-studio-status-report-2022-08</guid>
             <pubDate>Sun, 28 Aug 2022 12:49:41 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2022-07</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-07-29-studio-status-report-2022-07</link>
-            <description>
-                month 07 of 2022 was about upgrading the Studio to .NET6 Sketching out a development schedule last month there was an item for revision 22 called “upgrade the Studio to .NET 6 📦🔼.” I removed that item for his month because what actually happened was the…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-07-29-studio-status-report-2022-07</guid>
-            <pubDate>Fri, 29 Jul 2022 14:59:12 -0700</pubDate>
         </item>
     </channel>
 </rss>

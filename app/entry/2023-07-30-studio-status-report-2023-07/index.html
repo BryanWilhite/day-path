@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2023-07" />
+    <meta name="twitter:title" content="studio status report: 2023-07" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2023-07-30-studio-status-report-2023-07" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 07 of 2023 was about almost finishing the Songhay.Player.ProgressiveAudio project one last time My report for last month did not mention that songhay release 0.3.5 📦🚀 [GitHub] was released in month 06. Mentioning this makes the completion of Songh…" />
+    <meta property="og:description" content="month 07 of 2023 was about almost finishing the Songhay.Player.ProgressiveAudio project one last time My report for last month did not mention that songhay release 0.3.5 📦🚀 [GitHub] was released in month 06. Mentioning this makes the completion of Songh…" />
+    <meta name="twitter:description" content="month 07 of 2023 was about almost finishing the Songhay.Player.ProgressiveAudio project one last time My report for last month did not mention that songhay release 0.3.5 📦🚀 [GitHub] was released in month 06. Mentioning this makes the completion of Songh…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2023-07 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2023-07</h1>
+<h2>month 07 of 2023 was about almost finishing the <code>Songhay.Player.ProgressiveAudio</code> project one last time</h2>
+<p><a href="http://songhayblog.azurewebsites.net/entry/2023-07-02-studio-status-report-2023-06">My report for last month</a> did not mention that <code>songhay</code> release <code>0.3.5</code> 📦🚀 [<a href="https://github.com/users/BryanWilhite/projects/19/views/1">GitHub</a>] was released in month 06. Mentioning this makes the completion of <code>Songhay.Modules.Bolero</code> release <code>6.3.0</code> 📦🚀 [<a href="https://github.com/users/BryanWilhite/projects/20/views/1">GitHub</a>] in month 07 line up with an actual plan. The fact that <code>Songhay.Player.ProgressiveAudio</code> release 6.0.0” <a href="https://github.com/users/BryanWilhite/projects/9">[GitHub]</a> is still incomplete makes even me think, Do I have a plan to actually get this done?</p>
+<p>The leading cause of my delays are new discoveries in the Studio. My selected Obsidian notes below should reveal that my relationship with <acronym title="Scalable Vector Graphics">SVG</acronym> has vastly improved. This is a discovery that allows me to take great steps forward. The other kind of Studio discovery makes me take steps backward—and that is what a emergency dependencies release like <code>Songhay.Modules.Bolero</code> release <code>6.3.0</code> 📦🚀 [<a href="https://github.com/users/BryanWilhite/projects/20/views/1">GitHub</a>] represents.</p>
+<h2>selected Obsidian notes</h2>
+<p><img src="../../image/day-path-2023-07-30-11-10-50.png" alt="Obsidian graph view, month 07"></p>
+<h2>[[Songhay Modules Bolero (F♯)]]: yes, it is <em>all</em> working but…</h2>
+<p>…centralizing a <code>[&lt;JSInvokable&gt;]</code> method in a dedicated class like this:</p>
+<p><img src="../../image/day-path-2023-07-30-11-13-38.png" alt=" method in a dedicated class"></p>
+<p>…does <em>not</em> work when we are expecting the state of <code>f</code> to change ‘by reference’ which is why I do not recommend using a type like this even though <a href="https://github.com/fsbolero/Bolero/issues/32#issuecomment-788973275">it has been recommended by others</a>.</p>
+<h2>day job report: flippant remarks about [[Entity Framework]]</h2>
+<ol>
+<li>make the repository connection string <code>internal</code> and visible to relevant test projects</li>
+<li>to avoid going to full-blown <a href="https://learn.microsoft.com/en-us/sql/integration-services/sql-server-integration-services?view=sql-server-ver16">SQL Server Integration Services</a>, use an [[XUnit]] test class (with <code>Skip</code> attributes) to retrieve data in hierarchical entities to be saved as a <acronym title="JavaScript Object Notation">JSON</acronym> ‘tree’ 🌳</li>
+<li>load a <acronym title="JavaScript Object Notation">JSON</acronym> ‘tree’ 🌳 in a test method, hydrate the tree into hierarchical entities and use a LINQ <code>Flatten</code> routine to <code>DELETE</code> any existing data on the target database for an <code>INSERT</code> (this approach should be documented in a [[Jupyter]] notebook #to-do)</li>
+<li>take advantage of <code>DbSet&lt;TEntity&gt;.Add(TEntity)</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbset-1.add?view=efcore-7.0#microsoft-entityframeworkcore-dbset-1-add(-0)">docs</a> ] to auto-generate the <code>INSERT</code> statements needed</li>
+<li>do not use <code>DbSet&lt;TEntity&gt;.Find</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbset-1.find?view=efcore-7.0#microsoft-entityframeworkcore-dbset-1-find(system-object())">docs</a> ] and <code>DbSet&lt;TEntity&gt;.Remove</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbset-1.remove?view=efcore-7.0#microsoft-entityframeworkcore-dbset-1-remove(-0)">docs</a> ] to delete an entity; use <code>RelationalDatabaseFacadeExtensions.ExecuteSqlRaw</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.executesqlraw?view=efcore-7.0">docs</a> ] instead</li>
+</ol>
+<h2>day job report: the minimum needed for [[Songhay Activity]] functionality</h2>
+<p>The following seven files need to be explored in, say, a [[Jupyter]] notebook for the sake of documentation #to-do :</p>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>location</th>
+<th>remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IActivity.cs</code></td>
+<td><a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Abstractions/IActivity.cs">GitHub</a></td>
+<td>synchronous <code>Start</code> based on <code>ProgramArgs</code></td>
+</tr>
+<tr>
+<td><code>IProgramAssemblyInfo.cs</code></td>
+<td><a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Abstractions/IProgramAssemblyInfo.cs">GitHub</a></td>
+<td>interface to assembly metadata</td>
+</tr>
+<tr>
+<td><code>IActivityExtensions.Lazy.cs</code></td>
+<td><a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Extensions/IActivityExtensions.Lazy.cs">GitHub</a></td>
+<td>features the <code>GetActivity</code> method for the ‘Activity Getter’</td>
+</tr>
+<tr>
+<td><code>ProgramArgsExtensions._.cs</code></td>
+<td><a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Extensions/ProgramArgsExtensions._.cs">GitHub</a></td>
+<td>centralizes routines for argument and command-line help text handling</td>
+</tr>
+<tr>
+<td><code>ActivitiesGetter.cs</code></td>
+<td><a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Models/ActivitiesGetter.cs">GitHub</a></td>
+<td>lazy-loads Activities into memory</td>
+</tr>
+<tr>
+<td><code>ProgramArgs.cs</code></td>
+<td><a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Models/ProgramArgs.cs">GitHub</a></td>
+<td>conventional command-line arguments</td>
+</tr>
+<tr>
+<td><code>ProgramAssemblyInfo.cs</code></td>
+<td><a href="https://github.com/BryanWilhite/SonghayCore/blob/master/SonghayCore/Models/ProgramAssemblyInfo.cs">GitHub</a></td>
+<td>conventional assembly information for display text</td>
+</tr>
+</tbody>
+</table>
+<h2>[[F♯]]: a video questioning the awesomeness of <code>Result&lt;,_&gt;</code></h2>
+<figure>
+    <a href="https://www.youtube.com/watch?v=E4dI-zd4Cag">
+        <img alt="In Defense of Exceptions: Throw away your Result (Roman Provazník)" src="https://img.youtube.com/vi/E4dI-zd4Cag/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>In Defense of Exceptions: Throw away your Result (Roman Provazník)</small></p>
+</figure>
+<h2>[[the kinté space]]: [[Twitter]] frame is dead?</h2>
+<p>Is this just temporary or just more of the end❓</p>
+<p><img src="../../image/day-path-2023-07-30-11-18-00.png" alt="[[Twitter]] frame is dead"></p>
+<h2>yes, [[Microsoft Edge]] was broken yesterday…</h2>
+<p>…and today it looks like it was fixed:</p>
+<p><img src="../../image/day-path-2023-07-30-11-19-26.png" alt="[[Microsoft Edge]] was broken yesterday"></p>
+<p>I assume the [[Canonical]] people broke something the [[Microsoft]] people depended on. And, because I blindly update [[Ubuntu]] every day with <code>ucaresystem-core</code>, there was a day or two of inconvenience.</p>
+<h2><acronym title="Scalable Vector Graphics">SVG</acronym> experiments in [[Obsidian]]?</h2>
+<p>The short answer is <em>yes</em>. This is the ‘naïve’ <code>96</code>-<code>24</code> circular button:</p>
+<button style="width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;">
+    <svg width="96" height="96">
+        <polygon fill="orange" points="24,0 96,48 24,96" />
+    </svg>
+</button>
+<pre><code class="language-html">&lt;button style=&quot;width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;&quot;&gt;
+    &lt;svg width=&quot;96&quot; height=&quot;96&quot;&gt;
+        &lt;polygon fill=&quot;orange&quot; points=&quot;24,0 96,48 24,96&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>This is the <code>96</code>-<code>24</code> circular button with an <code>svg.viewBox</code>:</p>
+<button style="width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;">
+    <svg width="96" height="96" viewbox="-40 -50 180 190">
+        <polygon fill="orange" points="24,0 96,48 24,96" />
+    </svg>
+</button>
+<pre><code class="language-html">&lt;button style=&quot;width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;&quot;&gt;
+    &lt;svg width=&quot;96&quot; height=&quot;96&quot; viewbox=&quot;-40 -50 180 190&quot;&gt;
+        &lt;polygon fill=&quot;orange&quot; points=&quot;24,0 96,48 24,96&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>In this design, the <code>viewBox</code> [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox">docs</a> ] is controlling the ‘padding’ around the arrow with respect to the button. These values are eye-balled 👀 where the <code>-40</code> <code>180</code> pair is regarded as pan-width values and the <code>-50</code> <code>190</code>, pedestal-height values. The terms <em>pan</em> and <em>pedestal</em> refer to <a href="https://www.videomaker.com/article/c10/14221-camera-movement-techniques/">cinematic camera moves</a>.</p>
+<p>Now I will try to scale down this <code>96</code> button to a <code>64</code> button:</p>
+<button style="width:64px; height: 64px; border-radius: 64px; border-width: 0; padding: 0;">
+    <svg width="64" height="64" viewbox="-40 -50 180 190">
+        <polygon fill="orange" points="24,0 96,48 24,96" />
+    </svg>
+</button>
+<pre><code class="language-html">&lt;button style=&quot;width:64px; height: 64px; border-radius: 64px; border-width: 0; padding: 0;&quot;&gt;
+    &lt;svg width=&quot;64&quot; height=&quot;64&quot; viewbox=&quot;-40 -50 180 190&quot;&gt;
+        &lt;polygon fill=&quot;orange&quot; points=&quot;24,0 96,48 24,96&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>What about a <code>32</code>:</p>
+<button style="width:32px; height: 32px; border-radius: 32px; border-width: 0; padding: 0;">
+    <svg width="32" height="32" viewbox="-40 -50 180 190">
+        <polygon fill="orange" points="24,0 96,48 24,96" />
+    </svg>
+</button>
+<p>❓</p>
+<pre><code class="language-html">&lt;button style=&quot;width:32px; height: 32px; border-radius: 32px; border-width: 0; padding: 0;&quot;&gt;
+    &lt;svg width=&quot;32&quot; height=&quot;32&quot; viewbox=&quot;-40 -50 180 190&quot;&gt;
+        &lt;polygon fill=&quot;orange&quot; points=&quot;24,0 96,48 24,96&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>This experiment shows that <acronym title="Scalable Vector Graphics">SVG</acronym> <code>polygon.points</code> do <em>not</em> need to be changed when ‘scaling’ because of a <em>single</em> <code>svg.viewBox</code> setting. This is wonderful! However, the scaling strategy described here requires all of these values to be changed to the same quantity:</p>
+<ul>
+<li>button <code>width</code> style</li>
+<li>button <code>height</code> style</li>
+<li>button <code>border-radius</code> style</li>
+<li><code>svg.width</code></li>
+<li><code>svg.height</code></li>
+</ul>
+<h2>more <acronym title="Scalable Vector Graphics">SVG</acronym> experiments in [[Obsidian]]</h2>
+<p>[[2023-07-19#<acronym title="Scalable Vector Graphics">SVG</acronym> experiments in Obsidian ?|Yesterday]], I showed myself how important <code>svg.viewBox</code> is. But I also see that about 5 settings are needed to ‘scale’ an <acronym title="Scalable Vector Graphics">SVG</acronym> inside of  a container like a button.</p>
+<p>However, [[Songhay Dashboard (F♯, C♯)]] is out there in production doing stuff like this:</p>
+<p>![[[Songhay Dashboard (F♯, C♯)]] SVG(../../image/day-path-2023-07-30-11-24-27.png)</p>
+<blockquote>
+<p>[!question]
+Is <code>preserveAspectRatio=&quot;xMidYMid meet&quot;</code> eliminating the need to set <code>svg.width</code> and <code>svg.height</code>?</p>
+</blockquote>
+<p>Let’s start with this:</p>
+<button style="width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;">
+    <svg width="96" height="96" viewbox="-40 -50 180 190">
+        <polygon fill="orange" points="24,0 96,48 24,96" />
+    </svg>
+</button>
+<pre><code class="language-html">&lt;button style=&quot;width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;&quot;&gt;
+    &lt;svg width=&quot;96&quot; height=&quot;96&quot; viewbox=&quot;-40 -50 180 190&quot;&gt;
+        &lt;polygon fill=&quot;orange&quot; points=&quot;24,0 96,48 24,96&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>Now, let’s replace two <code>svg</code> attributes with one <code>preserveAspectRatio=&quot;xMidYMid meet&quot;</code>:</p>
+<button style="width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;">
+    <svg preserveAspectRatio="xMidYMid meet" viewbox="-40 -50 180 190">
+        <polygon fill="orange" points="24,0 96,48 24,96" />
+    </svg>
+</button>
+<pre><code class="language-html">&lt;button style=&quot;width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;&quot;&gt;
+    &lt;svg preserveAspectRatio=&quot;xMidYMid meet&quot; viewbox=&quot;-40 -50 180 190&quot;&gt;
+        &lt;polygon fill=&quot;orange&quot; points=&quot;24,0 96,48 24,96&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>Does this really mean the answer to our question is yes?</p>
+<p>Now, according to the [[Mozilla]] <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio">docs</a> for <code>preserveAspectRatio</code> the setting above, <code>&quot;xMidYMid meet&quot;</code>, is the default—this means we could do this:</p>
+<button style="width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;">
+    <svg viewbox="-40 -50 180 190">
+        <polygon fill="orange" points="24,0 96,48 24,96" />
+    </svg>
+</button>
+<pre><code class="language-html">&lt;button style=&quot;width:96px; height: 96px; border-radius: 96px; border-width: 0; padding: 0;&quot;&gt;
+    &lt;svg viewbox=&quot;-40 -50 180 190&quot;&gt;
+        &lt;polygon fill=&quot;orange&quot; points=&quot;24,0 96,48 24,96&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>So it must be <code>svg.viewBox</code> doing all of the heavy lifting! It follows that the answer to our question is <em>no</em>—but the default <code>preserveAspectRatio</code> helps.</p>
+<p>I think I understand why I have <code>preserveAspectRatio</code> explicitly set in production: I am an old man 👴 that <em>still</em> does not trust modern browsers!</p>
+<p>This experiment shows that only three values need to be changed for my <acronym title="Scalable Vector Graphics">SVG</acronym> scaling recipe:</p>
+<ul>
+<li>button <code>width</code> style</li>
+<li>button <code>height</code> style</li>
+<li>button <code>border-radius</code> style</li>
+</ul>
+<p>The great news is that <em>all</em> of these values are set in <acronym title="Cascading Style Sheets">CSS</acronym>.</p>
+<h2>[[Sara Soueidan]]: back in 2014 I am sure I read Sarah’s introduction to <code>viewPort</code></h2>
+<p>I assume that “<a href="https://www.sarasoueidan.com/blog/svg-coordinate-systems/">Understanding SVG Coordinate Systems and Transformations (Part 1) — The viewport, viewBox, and preserveAspectRatio</a>” was my first introduction to <code>viewBox</code>—but Sarah took on the huge responsibility of introducing <code>viewBox</code> with a “view port” concept associated with <code>svg.width</code> and <code>svg.height</code>. This clearly has been too much responsibility for me! Today I prefer Amelia telling me to “forget” about <code>width</code> and <code>height</code>.</p>
+<blockquote>
+<p>[!info]
+Sarah is trying to tell me everything while Amelia is trying to tell me to start with <code>viewBox</code>.</p>
+</blockquote>
+<p>Now I can ask the <acronym title="Scalable Vector Graphics">SVG</acronym> question of the century:</p>
+<blockquote>
+<p>[!question]
+When will my <acronym title="Scalable Vector Graphics">SVG</acronym>-based designs require custom settings for <code>svg.width</code>, <code>svg.height</code> <em>and</em> <code>svg.viewBox</code> instead of just <code>svg.viewBox</code>? #to-do</p>
+</blockquote>
+<p>Sarah’s <code>viewBox</code> <a href="https://www.sarasoueidan.com/demos/interactive-svg-coordinate-system/">demo</a> needs to be added to the [[Songhay Dashboard (F♯, C♯)]] #to-do</p>
+<p><img src="../../image/day-path-2023-07-30-11-26-19.png" alt="Sarah’s "></p>
+<h2>the word <em>scalable</em> in <acronym title="Scalable Vector Graphics">SVG</acronym> comes with complications</h2>
+<p>Every introduction to <acronym title="Scalable Vector Graphics">SVG</acronym> graphics should come with the [[Amelia Bellamy-Royds]] article, “<a href="https://css-tricks.com/scale-svg/">How to Scale SVG</a>” which directs our attention to the key fundamental:</p>
+<blockquote>
+<p>SVG stands for Scalable Vector Graphics. So, scaling SVG should be easy, right? Isn’t that what the SVG advocates have been saying all along, that SVG looks good at any size? It is, but yet it isn’t. SVG looks great at any scale, but it can scale in so many different ways that getting it to behave just the way you want can be confusing for SVG beginners. It doesn’t help that browsers have only recently started to adopt a standard approach to sizing inline SVG content.</p>
+</blockquote>
+<p>The cultural reason why most technical topics in the English language are not introduced this way is because these observations are emotionally “negative”—like the following:</p>
+<blockquote>
+<p>SVG images, in contrast, can be drawn at any pixel size, so they don’t need a clearly defined height or width. And they won’t always have a clearly defined aspect ratio. You’re going to need to explicitly provide this information (and more) if you want the SVG to scale to fit the dimensions you give it.</p>
+</blockquote>
+<p>Expressing “don’t” and “won’t” feels negative but clarifies for me what has always unpleasantly surprised me about my work with <acronym title="Scalable Vector Graphics">SVG</acronym>. I tend to forget the <em>scaling</em> issues until I can’t. In fact, it has never occurred to me that:</p>
+<blockquote>
+<p>…SVG isn’t (just) an image. SVG is a document.</p>
+</blockquote>
+<p>In the same manner there is a “view port” for the entire <acronym title="HyperText Markup Language">HTML</acronym> document, there must be a  “view port” for every <acronym title="Scalable Vector Graphics">SVG</acronym> visual. And Amelia warns us that <code>svg.height</code> and <code>svg.width</code> are <em>not</em> implicitly defining an aspect ratio like what happens with raster images—more “negativity” that is much needed. Flat out she says:</p>
+<blockquote>
+<p>…forget <code>height</code> and <code>width</code>. You don’t actually want to set the <em>exact</em> height and width anyway, you want the SVG to scale to match the width and/or height you set in the CSS. What you want is to set an <em>aspect ratio</em> for the image, and have the drawing scale to fit. You want a <code>viewBox</code>.</p>
+</blockquote>
+<p>What Amelia is implying here is the key fundamental of <acronym title="Scalable Vector Graphics">SVG</acronym> (expressed in terms of markup):</p>
+<blockquote>
+<p>[!important]
+The <code>svg.viewBox</code> attribute is <em>not</em> optional. It should be regarded as the <em>required</em> way to ‘see’ the visual displayed.</p>
+</blockquote>
+<blockquote>
+<p>The <code>viewBox</code> does many things:</p>
+<ul>
+<li>It defines the aspect ratio of the image.</li>
+<li>It defines how all the lengths and coordinates used inside the SVG should be scaled to fit the total space available.</li>
+<li>It defines the origin of the SVG coordinate system, the point where x=0 and y=0.</li>
+</ul>
+</blockquote>
+<p>Amelia then spends <a href="https://css-tricks.com/scale-svg/">the rest of her 2015 article</a> trying to teach us to get familiar with <code>svg.viewBox</code>.</p>
+<h2>sketching out development projects</h2>
+<p>The current, unfinished public projects on GitHub:</p>
+<ul>
+<li>finish the “<code>Songhay.Player.ProgressiveAudio</code> release 6.0.0” <a href="https://github.com/users/BryanWilhite/projects/9">project</a></li>
+<li>start the “<code>SonghayCore</code> 📦✨ release 6.0.5” <a href="https://github.com/users/BryanWilhite/projects/7">project</a></li>
+</ul>
+<p>The proposed project items:</p>
+<ul>
+<li>replace the Angular app in <code>http://kintespace.com/player.html</code> with a Bolero app 🚜🔥</li>
+<li>add kinté space presentations support to <code>Songhay.Player.YouTube</code> 🔨 🚜✨</li>
+<li>generate Publication indices from LiteDB for <code>Songhay.Publications.KinteSpace</code></li>
+<li>generate a new repo with proposed name, <code>Songhay.Modules.Bolero.Index</code> ✨🚧 and add a GitHub Project</li>
+<li>switch Studio from Material Design to Bulma 💄 ➡️ 💄✨</li>
+</ul>
+<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2023-07-30T17:50:23.081Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
