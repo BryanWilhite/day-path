@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Jul 2023 10:50:23 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 31 Aug 2023 09:29:54 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2023-08</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-08-31-studio-status-report-2023-08</link>
+            <description>
+                month 08 of 2023 was about virtually finishing the Songhay.Player.ProgressiveAudio project I do not need to talk to myself about “the definition of done.” Yes, Songhay.Player.ProgressiveAudio release 6.0.0” [GitHub] is still incomplete but a major blocker…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-08-31-studio-status-report-2023-08</guid>
+            <pubDate>Thu, 31 Aug 2023 09:29:54 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-07</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-07-30-studio-status-report-2023-07</link>
@@ -137,16 +147,6 @@ A third sample…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-09-28-studio-status-report-2022-09</guid>
             <pubDate>Wed, 28 Sep 2022 12:08:44 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2022-08</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-08-28-studio-status-report-2022-08</link>
-            <description>
-                month 08 of 2022 was about releasing Songhay.Modules.Publications 📦🚀 and switching to Obsidian The release of Songhay.Modules.Publications [GitHub] is summarized by the README on the repo itself: &gt;The original intent of this project is the support of da…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-08-28-studio-status-report-2022-08</guid>
-            <pubDate>Sun, 28 Aug 2022 12:49:41 -0700</pubDate>
         </item>
     </channel>
 </rss>
