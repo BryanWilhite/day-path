@@ -159,7 +159,7 @@
 <p>This <code>BombFilteredInDataItems()</code> method contains an action (the actual intent of the method), which is fired twice around a 100ms interval. Do you not see the non-deterministic desperation here? Not the kind of post an “intelligent” developer should share in public, eh?</p>
 <p>So I call this embarrassment ‘saturation bombing a race condition’ as (<code>BombFilteredInDataItems()</code> is in a race with the “current” state of <code>FilteredInDataItems</code>). According to Joe Albhari, stated in his excellent “<a href="http://channel9.msdn.com/Events/TechEd/Australia/2013/DEV422">Becoming a C# Time Lord</a>” talk, 50ms is a “long-running operation” so this saturation bombing around 100ms is on the order of eons of computing time. This is as close to hacking as I would like to get (in the enterprise context). I would prefer that the grid would ‘know’ when its <code>FilteredInDataItems</code> payload is “current” perhaps having a throttled collection-changed event (like <code>ObservableCollection&lt;T&gt;.CollectionChanged</code> but mixed with Reactive Extensions).</p>
 <p>For my sanity, I must introduce the concept of “user idle time” which suggests that this idea of waiting for inactivity is not new (see “<a href="http://stackoverflow.com/questions/1037595/c-sharp-detect-time-of-last-user-interaction-with-the-os">Detect time of last user interaction with the OS</a>”). It should follow that idle time with respect to the user can be reborn as idle time with respect to an Observable Collection.</p>
-<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+<p><a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
 
 
     </section>

@@ -159,7 +159,7 @@
 <p>To me, this XAML binding is very unusual but very useful: <code>Text = &quot;{Binding FieldNames[MyCustomFieldName]}&quot;</code>. This binding declares that there is a property within <code>DataContext</code> called <code>FieldNames</code> with a key called <code>MyCustomFieldName</code>. This <code>FieldNames</code> property is a <code>Dictionary&lt;string, string&gt;</code>.</p>
 <p>I continually have forgotten since the release of <acronym title="Windows Communication Foundation">WCF</acronym> in 2007 that <code>Dictionary&lt;TKey, TValue&gt;</code> cannot be sent over the wire. I assume without being informed that <code>KeyedCollection&lt;TKey, TItem&gt;</code> was developed to address this issue (poorly—<a href="http://msdn.microsoft.com/en-us/library/ms132438.aspx">because</a> “…unlike dictionaries, an element of <code>KeyedCollection&lt;TKey, TItem&gt;</code> is not a key/value pair; instead, the entire element is the value and the key is embedded within the value.”).</p>
 <p>My Band-Aid is to convert a set of <code>NameValuePair</code> into <code>Dictionary&lt;string, string&gt;</code> with an extension method. This is one way to address the problem of RIA Services lack of support for serializing <code>Dictionary&lt;T&gt;</code>. Once we have a Dictionary it can be bound to directly—in <acronym title="Extensible Application Markup Language">XAML</acronym>.</p>
-<p>@<a href="https://twitter.com/BryanWilhite">BryanWilhite</a></p>
+<p><a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
 
 
     </section>

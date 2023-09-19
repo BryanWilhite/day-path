@@ -5,8 +5,22 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 31 Aug 2023 09:29:54 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 18 Sep 2023 18:46:24 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>Blazor 8 with Dan Roth</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-09-18-blazor-8-with-dan-roth</link>
+            <description>
+                This Visual Studio Live! 2023 video calls out the following highlights: - streaming rendering
+apply the @rendermode attribute to Blazor components
+the “Blazor Web App” template
+RazorComponentResult for ASP.NET MVC❓
+will a future version of Blazor replace …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-09-18-blazor-8-with-dan-roth</guid>
+            <pubDate>Mon, 18 Sep 2023 18:46:24 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-08</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-08-31-studio-status-report-2023-08</link>
@@ -137,16 +151,6 @@ A third sample…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-10-29-studio-status-report-2022-10</guid>
             <pubDate>Sat, 29 Oct 2022 12:05:13 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2022-09</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-09-28-studio-status-report-2022-09</link>
-            <description>
-                month 09 of 2022 was about releasing Songhay.Modules.Bolero and Songhay.Player.YouTube My switch to Obsidian last month has led to my use of Excalidraw this month which allows me to draw out the entire Songhay System (in three ragged columns): Excalidraw…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-09-28-studio-status-report-2022-09</guid>
-            <pubDate>Wed, 28 Sep 2022 12:08:44 -0700</pubDate>
         </item>
     </channel>
 </rss>
