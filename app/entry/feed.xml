@@ -5,8 +5,19 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 18 Sep 2023 18:46:24 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 20 Sep 2023 19:34:38 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>Songhay Publications and the Concept of the Index (2021)</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-09-20-songhay-publications-and-the-concept-of-the-index-2021</link>
+            <description>
+                The intent here is to build upon the 2020 version of this subject and move forward toward new definitions and techniques that will work well in my Studio. That 2020 exploration gives us: - the Search Index Entry
+the Publications Index Entry We will see fr…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-09-20-songhay-publications-and-the-concept-of-the-index-2021</guid>
+            <pubDate>Wed, 20 Sep 2023 19:34:38 -0700</pubDate>
+        </item>
         <item>
             <title>Blazor 8 with Dan Roth</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-09-18-blazor-8-with-dan-roth</link>
@@ -141,16 +152,6 @@ A third sample…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-11-30-studio-status-report-2022-11</guid>
             <pubDate>Wed, 30 Nov 2022 15:49:36 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2022-10</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-10-29-studio-status-report-2022-10</link>
-            <description>
-                month 10 of 2022 was about releasing AzureBlobStorageRestApiUtility and planning to release AzureKeyVaultRestApiUtility The release of AzureBlobStorageRestApiUtility (see issue #149) establishes one of two Azure utilities that are fundamental to the “clou…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-10-29-studio-status-report-2022-10</guid>
-            <pubDate>Sat, 29 Oct 2022 12:05:13 -0700</pubDate>
         </item>
     </channel>
 </rss>

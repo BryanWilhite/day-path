@@ -9,26 +9,17 @@
     <meta name="twitter:site" content="@BryanWilhite" />
     <meta name="twitter:creator" content="@BryanWilhite" />
 
-    <meta property="og:title" content="Blazor 8 with Dan Roth" />
-    <meta name="twitter:title" content="Blazor 8 with Dan Roth" />
+    <meta property="og:title" content="Songhay Publications and the Concept of the Index (2021)" />
+    <meta name="twitter:title" content="Songhay Publications and the Concept of the Index (2021)" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2023-09-18-blazor-8-with-dan-roth" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2023-09-20-songhay-publications-and-the-concept-of-the-index-2021" />
     <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
-    <meta name="description" content="This Visual Studio Live! 2023 video calls out the following highlights: - streaming rendering
-apply the @rendermode attribute to Blazor components
-the “Blazor Web App” template
-RazorComponentResult for ASP.NET MVC❓
-will a future version of Blazor replace …" />
-    <meta property="og:description" content="This Visual Studio Live! 2023 video calls out the following highlights: - streaming rendering
-apply the @rendermode attribute to Blazor components
-the “Blazor Web App” template
-RazorComponentResult for ASP.NET MVC❓
-will a future version of Blazor replace …" />
-    <meta name="twitter:description" content="This Visual Studio Live! 2023 video calls out the following highlights: - streaming rendering
-apply the @rendermode attribute to Blazor components
-the “Blazor Web App” template
-RazorComponentResult for ASP.NET MVC❓
-will a future version of Blazor replace …" /><meta name="robots" content="index, follow" />
+    <meta name="description" content="The intent here is to build upon the 2020 version of this subject and move forward toward new definitions and techniques that will work well in my Studio. That 2020 exploration gives us: - the Search Index Entry
+the Publications Index Entry We will see fr…" />
+    <meta property="og:description" content="The intent here is to build upon the 2020 version of this subject and move forward toward new definitions and techniques that will work well in my Studio. That 2020 exploration gives us: - the Search Index Entry
+the Publications Index Entry We will see fr…" />
+    <meta name="twitter:description" content="The intent here is to build upon the 2020 version of this subject and move forward toward new definitions and techniques that will work well in my Studio. That 2020 exploration gives us: - the Search Index Entry
+the Publications Index Entry We will see fr…" /><meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
@@ -44,7 +35,7 @@ will a future version of Blazor replace …" /><meta name="robots" content="inde
 
     <script src="../../_bundles/scripts.min.js"></script>
 
-    <title>Blazor 8 with Dan Roth - Day Path</title>
+    <title>Songhay Publications and the Concept of the Index (2021) - Day Path</title>
 </head>
 
     <body class="mdc-theme--background mdc-typography">
@@ -148,73 +139,115 @@ will a future version of Blazor replace …" /><meta name="robots" content="inde
                 <div class="mdc-layout-grid__cell--span-12">
     <section class="entry mdc-typography--body1">
 
-        <h1>Blazor 8 with Dan Roth</h1>
-<p>This Visual Studio Live! 2023 video calls out the following highlights:</p>
+        <h1>Songhay Publications and the Concept of the Index (2021)</h1>
+<p>The intent here is to build upon <a href="http://songhayblog.azurewebsites.net/entry/2020-12-24-songhay-publications-and-the-concept-of-the-index/">the 2020 version</a> of this subject and move forward toward new definitions and techniques that will work well in my Studio. That 2020 exploration gives us:</p>
 <ul>
-<li>streaming rendering</li>
-<li>apply the <code>@rendermode</code> attribute to Blazor components</li>
-<li>the “Blazor Web App” template</li>
-<li><code>RazorComponentResult</code> for ASP.NET <acronym title="Model View Controller">MVC</acronym>❓</li>
-<li>will a future version of Blazor replace eleventy❓</li>
-<li>Blazor 8 will stop sending <code>*.dll</code> files to the browser</li>
-<li>Blazor sections for parent-child component rendering</li>
+<li>the Search Index Entry</li>
+<li>the Publications Index Entry</li>
 </ul>
-<div style="text-align:center">
-<figure>
-    <a href="https://www.youtube.com/watch?v=QD2-DwuOfKM">
-        <img alt="What's New in Blazor for .NET 8" src="https://img.youtube.com/vi/QD2-DwuOfKM/maxresdefault.jpg" width="480" />
-    </a>
-    <p><small>What's New in Blazor for .NET 8</small></p>
-</figure>
-</div>
-<h2>streaming rendering</h2>
-<p>This feature reduces the need for “web socket” connections by using the main request stream to asynchronously download static <acronym title="HyperText Markup Language">HTML</acronym>:</p>
-<div style="text-align:center">
-<p><img src="../../image/day-path-2023-09-18-18-52-51.png" alt="streaming rendering">
-[📹 <a href="https://youtu.be/QD2-DwuOfKM?t=1039">watch</a> ]</p>
-</div>
-<p>📖 See “<a href="https://chrissainty.com/blazor-in-dotnet-8-server-side-and-streaming-rendering/">Blazor in .NET 8: Server-side and Streaming Rendering</a>.”</p>
-<h2>apply the <code>@rendermode</code> attribute to Blazor components</h2>
-<p>The <code>@rendermode</code> attribute also reduces the need for “web socket” connections by pin-pointing <em>exactly</em> which components  need server connection:</p>
-<div style="text-align:center">
-<p><img src="../../image/day-path-2023-09-18-18-54-40.png" alt="the  attribute">
-[📹 <a href="https://youtu.be/QD2-DwuOfKM?t=1590">watch</a> ]</p>
-</div>
-<h2>the “Blazor Web App” template</h2>
-<p>This new template <s>should eliminate the need for the older server-only or client-only templates</s> replaces the old Blazor Server template as Blazor will be able to “interactively” switch between server and WebAssembly modes:</p>
-<div style="text-align:center">
-<p><img src="../../image/day-path-2023-09-18-18-55-51.png" alt="the “Blazor Web App” template">
-[📹 <a href="https://youtu.be/QD2-DwuOfKM?t=2001">watch</a> ]</p>
-</div>
-<h2><code>RazorComponentResult</code> for ASP.NET <acronym title="Model View Controller">MVC</acronym>❓</h2>
-<p>Clearly Microsoft wants to make progressively iterating to Blazor easier:</p>
-<div style="text-align:center">
-<p><img src="../../image/day-path-2023-09-18-18-57-01.png" alt=" slide">
-[📹 <a href="https://youtu.be/QD2-DwuOfKM?t=2553">watch</a> ]</p>
-</div>
-<p>The older ways of doing this sort of thing are covered in:</p>
+<p>We will see from the sections below that the <em>Search Index Entry</em> is a <code>Document</code> with just one <code>extract</code> property tacked on—and the <em>Publications Index Entry</em> is a way to present a tree-like hierarchy of parent and child <code>Segment</code> data with any related child <code>Document</code> data.</p>
+<h2>Search Index Entry</h2>
+<p>In Typescript, the <code>SearchIndexEntry</code> is just an extension of <code>Document</code>:</p>
+<pre><code class="language-typescript">interface SearchIndexEntry extends Partial&lt;Document&gt; {
+  string extract;
+}
+</code></pre>
+<p>The following table summarizes its usage in the Studio:</p>
+<table>
+<thead>
+<tr>
+<th>repo</th>
+<th>language</th>
+<th>remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>songhay-core</code></td>
+<td>Typescript</td>
+<td>consumed in Day Path and rasx() context Blogs by lunrjs, client-side search UX</td>
+</tr>
+<tr>
+<td><code>Songhay.Publications</code></td>
+<td>C#</td>
+<td><code>Songhay.Publications.Activities.GenerateSearchIndexFrom11tyEntries()</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Publications Index Entry</h2>
+<p>In Typescript, the <code>IndexEntry</code> is an extension of <code>Segment</code>:</p>
+<pre><code class="language-typescript">interface IndexEntry extends Partial&lt;Segment&gt; {
+  segments?: IndexEntry[];
+  documents?: Partial&lt;Document&gt;[];
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>repo</th>
+<th>language</th>
+<th>remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>songhay-core</code></td>
+<td>Typescript</td>
+<td>consumed by Publication Index layouts GitHub](https://github.com/BryanWilhite/nodejs/tree/master/responsive-layouts)]</td>
+</tr>
+<tr>
+<td><code>Songhay.Publications</code></td>
+<td>C#</td>
+<td><code>ISegmentExtensions.ToPublicationIndexEntryJObject()</code></td>
+</tr>
+</tbody>
+</table>
+<p>The information design goal behind this ‘tree-like hierarchy of parent and child <code>Segment</code> data’ is to represent something like a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Site_map">site map</a> of a website. It would define how to break one large segment (the entire website) down into smaller child segments each with their child documents.</p>
+<h2>unifying these Index concepts</h2>
+<p>In Typescript, we can unify these two Index types into a new (proposed) <code>IndexEntry</code> type:</p>
+<pre><code class="language-typescript">interface IndexEntry extends Partial&lt;Segment&gt; {
+  segments?: IndexEntry[];
+  documents?: Partial&lt;SearchIndexEntry&gt;[];
+}
+</code></pre>
+<p>For the sake of naming, I would rename <code>SearchIndexEntry</code> to <code>IndexDocument</code>:</p>
+<pre><code class="language-typescript">interface IndexEntry extends Partial&lt;Segment&gt; {
+  segments?: IndexEntry[];
+  documents?: Partial&lt;IndexDocument&gt;[];
+}
+</code></pre>
+<h2>translating these Typescript definitions into F♯</h2>
+<p>The contemporary goal of this Studio is to maximize the use of F♯ via Blazor/Bolero which means the role Typescript plays should be significantly reduced.</p>
+<p>In the world of F♯, our <code>IndexEntry</code> would look like this:</p>
+<pre><code class="language-fsharp">type IndexEntry() =
+    inherit Segment()
+
+    member val segments = Unchecked.defaultof&lt;IndexEntry[] option&gt; with get, set
+    member val documents= Unchecked.defaultof&lt;(Document * Extract)[] option&gt; with get, set
+</code></pre>
+<p>…where <code>Extract</code> is <code>type Extract = Extract of string</code>.</p>
+<p>We can see that move like this (which includes inheriting from the classic C♯ <code>Segment</code>) makes <code>IndexEntry</code> a bridge 🌉 between the C♯ and F♯ worlds. Such a ‘bridge’ might save me from having to rewrite <em>all</em> the Studio’s C♯ as F♯—which <em>feels</em> like an unwise move in terms of consuming even <em>more</em> of my precious time 👴 at the very least.</p>
+<h2>obtaining the <code>Document</code> extract</h2>
+<p>This new <code>Extract</code> type introduces a very important subject matter: the fate of the C♯ <code>Fragment</code>. So far, according to Studio tradition, we have made mention of the classic C♯-based GenericWeb schema of this Studio: the <code>Segment</code> and the <code>Document</code>. But what about the <code>Fragment</code>❓</p>
+<p>At the turn of the century, I developed the <code>Fragment</code> because my Studio only had ‘formal’ recognition of the <acronym title="Extensible Hypertext Markup Language">XHTML</acronym> document (which is just an aspect of the massive investment in <acronym title="Extensible Markup Language">XML</acronym>, founding this Studio) and the <acronym title="Portable Document Format">PDF</acronym> document. What was missing from this Studio at the turn of the century (for well over a decade) were:</p>
 <ul>
-<li>“<a href="https://www.c-sharpcorner.com/article/how-to-convert-an-mvc-project-into-a-blazor-application-project/">How To Convert An MVC Project Into A Blazor Application Project</a>”</li>
-<li>“<a href="https://www.telerik.com/blogs/migrating-mvc-to-blazor">Migrating from MVC to Blazor</a>”</li>
+<li>the Git repository over the file system</li>
+<li>the cloud 🌩 file system (Azure Storage)</li>
+<li>cross-platform PowerShell</li>
+<li>the markdown document</li>
+<li>the <acronym title="JavaScript Object Notation">JSON</acronym> document</li>
 </ul>
-<h2>wow, will a future version of Blazor replace eleventy❓</h2>
-<p>A future version of Blazor components may “generate static <acronym title="HyperText Markup Language">HTML</acronym> content”:</p>
-<div style="text-align:center">
-<p><img src="../../image/day-path-2023-09-18-18-59-12.png" alt="generate static HTML slide">
-[📹 <a href="https://youtu.be/QD2-DwuOfKM?t=2810">watch</a> ]</p>
-</div>
-<p>See <a href="https://github.com/danroth27/RazorHtmlRendering">https://github.com/danroth27/RazorHtmlRendering</a> and “<a href="https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-8-preview-3/#render-razor-components-outside-of-asp-net-core">Render Razor components outside of ASP.NET Core</a>.”</p>
-<h2>Blazor 8 will stop sending <code>*.dll</code> files to the browser</h2>
-<p>Blazor 8 promises to send a “<a href="https://github.com/dotnet/runtime/issues/80807">a normal binary WebAssembly module</a>” to the browser by default:</p>
-<div style="text-align:center">
-<p><img src="../../image/day-path-2023-09-18-19-01-51.png" alt="Webcil slide">
-[📹 <a href="https://youtu.be/QD2-DwuOfKM?t=3083">watch</a> ]</p>
-</div>
-<h2>Blazor sections for parent-child component rendering</h2>
-<p>Dan demos Blazor sections [📹 <a href="https://youtu.be/QD2-DwuOfKM?t=3436">watch</a> ] which are a direct response a similar feature that has been in <acronym title="Single Page Application">SPA</acronym> apps for years. For more, see “<a href="https://www.telerik.com/blogs/aspnet-8-blazor-sections-fully-explained">ASP.NET 8 Blazor Sections Fully Explained</a>.”</p>
-<div style="text-align:center">
-<p><img src="../../image/day-path-2023-09-18-19-03-15.png" alt="additional enhancements slide"></p>
-</div>
+<p>“Power User” workflows around Git, Azure Storage, PowerShell, markdown and <acronym title="JavaScript Object Notation">JSON</acronym> effectively eliminate the need for the <code>Fragment</code>. For example, yielding an <code>Extract</code> would involve consulting a <code>Document</code> that would point to a markdown document. The markdown document would have <a href="https://en.wikipedia.org/wiki/Book_design#Front_matter">front matter</a> in the form of embedded <acronym title="JavaScript Object Notation">JSON</acronym> (or even <acronym title="YAML Ain’t Markup Language">YAML</acronym>), storing the <code>Extract</code> string.</p>
+<p>This new <a href="https://en.wikipedia.org/wiki/Book_design#Front_matter">front matter</a> concept in markdown is the leading justification for deprecating <code>Fragment</code>. In the old world 👴 of GenericWeb, the <code>Document</code> represented a statically-generated <acronym title="HyperText Markup Language">HTML</acronym> document to be displayed <em>in the near future</em>. In this new world of Songhay Publications, the <code>Document</code> should be a pointer to a <em>real</em> document (or binary file) existing <em>in the present</em> (and this present file can then be used to statically-generate <acronym title="HyperText Markup Language">HTML</acronym> at future publication).</p>
+<p>The original thinking 🧠🐣 behind GenericWeb was to build a poor-man’s version of <a href="https://learn.microsoft.com/en-us/previous-versions/office/developer/server-technologies/dd582938(v=office.11)?redirectedfrom=MSDN">Microsoft Index Server</a> (released in August 1996) that could also personalize <a href="https://en.wikipedia.org/wiki/Web_analytics">Web analytics</a> reporting, based on breaking down a website into user-defined ‘segments.’ GenericWeb, by the way, was ‘sold’ to UCLA Medical Center Computing Services in the late 1990s when I was consultant-turned-employee.</p>
+<h2>does your “Studio” not recognize the NoSQL database?</h2>
+<p>Notice how the section above (“#obtaining the <code>Document</code> extract”) makes no mention of the <a href="https://en.wikipedia.org/wiki/NoSQL">NoSQL database</a>. No MongoDB? No LiteDB? The explanation for this ignorance can only be more ignorance—and it starts with this 💸 ignorant statement: this Studio does not need NoSQL technologies because there is no need to collect arbitrary shapes of data from “customers” all over the world. This Studio is currently focused on read-only-mostly  solutions for <em>publishing</em> which is different from read-write solutions for advertising-based “engagement” 💸</p>
+<p>What is ignorant of this Studio—and also embarrassing for this Studio—is the lack of a solid distributed cache support (like Azure Cache for Redis) and the lack of years of experience with <acronym title="Content Delivery Network">CDN</acronym> products. Working on these world-dominating things have a higher priority than developing a better understanding of NoSQL tech.</p>
+<h2>spending decades building ‘Power User workflows’ means being doomed to loneliness 😐</h2>
+<p>Since the turn of the century, there has been a social-media side to being a software developer. And well before GitHub there was the social engineering required for the many <acronym title="Most Valuable Professional">MVP</acronym> programs sponsored by multi-national corporations.</p>
+<p>The work being done here is rather sprawling, delayed (by years often) and was never popular in the first place. My use of the world <em>sprawling</em> is meant to take the glamour out of the word “interdisciplinary”: the crossing of C♯ and F♯ with a focus on building something like the <a href="https://en.wikipedia.org/wiki/Quark_Publishing_System">Quark Publishing System</a> or maybe something like <a href="https://en.wikipedia.org/wiki/AppleScript">AppleScript</a> entwined around <a href="https://en.wikipedia.org/wiki/Adobe_FrameMaker">Adobe FrameMaker</a> sounds archaic, misplaced and bizarre to most socially adept tech folks.</p>
+<p>Even the promise of introducing more user-friendly <acronym title="Graphical User Interface">GUI</acronym>-based tools (before 2030 😆) will only make my work rise to the level of a modicum of fame around command-line wrappers like <a href="https://en.wikipedia.org/wiki/HandBrake">Handbrake</a> (because that is all I plan to build: command-line wrappers around Songhay Activity assemblies). So, earlier, I got rid of the money 💸and now am ridding myself of fame 👻</p>
+<p>I am just a guy that started writing macros in Microsoft Word and somehow ended up here 👴 building digital tools for a small publishing house: this Studio. That sounds okay to me!</p>
 <p><a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
 
 
@@ -227,7 +260,7 @@ will a future version of Blazor replace …" /><meta name="robots" content="inde
         <div class="mdc-layout-grid__cell--span-6">
             <p>
                 Last Reviewed:
-                2023-09-19T01:46:24.209Z
+                2023-09-21T02:34:38.029Z
             </p>
             <p><a class="index" href="../../entries/">[index]</a></p>
             <p>
