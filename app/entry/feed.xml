@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 27 Sep 2023 09:57:54 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 31 Oct 2023 18:55:02 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2023-10</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-10-31-studio-status-report-2023-10</link>
+            <description>
+                month 10 of 2023 was about finding foundational bugs 🐛 in Songhay.Player.ProgressiveAudio (and finally using Redis Cache) No funny banter this month 😐 Issues #13 and #14 are currently holding up the release of the b-roll audio player. These challenges h…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-10-31-studio-status-report-2023-10</guid>
+            <pubDate>Tue, 31 Oct 2023 18:55:02 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-09</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-09-27-studio-status-report-2023-09</link>
@@ -142,16 +152,6 @@ A third sample…
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-12-30-studio-status-report-2022-12</guid>
             <pubDate>Fri, 30 Dec 2022 12:59:02 -0800</pubDate>
-        </item>
-        <item>
-            <title>my state of Ergotron: 2022</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2022-12-26-my-state-of-ergotron-2022</link>
-            <description>
-                Ergotron offers Mobile Workstations mostly for hospital or medical laboratory applications which means safety is key. The safer the product the more expensive it is. This means that mounting an Ergotron arm on a “worksurface” is considered an unsatisfacto…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2022-12-26-my-state-of-ergotron-2022</guid>
-            <pubDate>Mon, 26 Dec 2022 12:33:11 -0800</pubDate>
         </item>
     </channel>
 </rss>
