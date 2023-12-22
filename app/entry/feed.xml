@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 29 Nov 2023 18:43:13 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 22 Dec 2023 09:59:14 -0800</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>Azure WebJobs in 2023</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2023-12-22-azure-webjobs-in-2023</link>
+            <description>
+                Azure Web Jobs [📖 docs ] remains the ‘last resort’ when running code in the Microsoft cloud 🌩 When Azure Functions [📖 docs ] cannot run your ‘executable’ (likely because it is a tightly-coupled, vertical stack of cross-boundary asynchronous calls that …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-12-22-azure-webjobs-in-2023</guid>
+            <pubDate>Fri, 22 Dec 2023 09:59:14 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-11</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-11-29-studio-status-report-2023-11</link>
@@ -141,17 +151,6 @@ will a future version of Blazor replace …
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-02-25-studio-status-report-2023-02</guid>
             <pubDate>Sat, 25 Feb 2023 13:51:03 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2023-01</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-01-29-studio-status-report-2023-01</link>
-            <description>
-                month 01 of 2023 was about slow progress on Songhay.Player.ProgressiveAudio and the new topic of travel The “Songhay.Player.ProgressiveAudio release 6.0.0” project is still underway. There are two, audio-player samples showing this work: 1.
-A third sample…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-01-29-studio-status-report-2023-01</guid>
-            <pubDate>Sun, 29 Jan 2023 15:56:22 -0800</pubDate>
         </item>
     </channel>
 </rss>
