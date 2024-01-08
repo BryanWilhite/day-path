@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 30 Dec 2023 11:27:11 -0800</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 07 Jan 2024 19:16:47 -0800</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>my Studio feature set for 2024</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</link>
+            <description>
+                Here, in my Studio, a “technical Blog” is simply a series of posts about a set of interests. Traditionally this set of interests is focused and coherent—but oftentimes too broad. I recall sending an email to Carl Franklin last century (before the inventio…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</guid>
+            <pubDate>Sun, 07 Jan 2024 19:16:47 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2023-12</title>
             <link>http://songhayblog.azurewebsites.net/entry/2023-12-30-studio-status-report-2023-12</link>
@@ -141,16 +151,6 @@ will a future version of Blazor replace …
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-03-30-studio-status-report-2023-03</guid>
             <pubDate>Thu, 30 Mar 2023 19:27:32 -0700</pubDate>
-        </item>
-        <item>
-            <title>sorting Blazor, Photino, Uno and Avalonia</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-03-21-sorting-blazor-photino-uno-and-avalonia</link>
-            <description>
-                This is my first bit of prose officially recognizing that something has happened in the .NET desktop GUI space after the fall of the .NET Framework. There is life after WPF and here is one awakening to a new, cross-platform world. ## Avalonia The Avalonia…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-03-21-sorting-blazor-photino-uno-and-avalonia</guid>
-            <pubDate>Tue, 21 Mar 2023 18:14:27 -0700</pubDate>
         </item>
     </channel>
 </rss>
