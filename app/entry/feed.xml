@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Apr 2024 12:48:38 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 02 Jun 2024 18:59:58 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2024-05</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</link>
+            <description>
+                month 05 of 2024 was about not releasing the new YouTube b-roll player on kintespace.com This month-05 report is late because of day-job drama around meeting deadlines. The day-job is back in the foreground as it plays a significant role in an upcoming St…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</guid>
+            <pubDate>Sun, 02 Jun 2024 18:59:58 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2024-04</title>
             <link>http://songhayblog.azurewebsites.net/entry/2024-04-28-studio-status-report-2024-04</link>
@@ -141,16 +151,6 @@ will a future version of Blazor replace …
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-08-31-studio-status-report-2023-08</guid>
             <pubDate>Thu, 31 Aug 2023 09:29:54 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2023-07</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-07-30-studio-status-report-2023-07</link>
-            <description>
-                month 07 of 2023 was about almost finishing the Songhay.Player.ProgressiveAudio project one last time My report for last month did not mention that songhay release 0.3.5 📦🚀 [GitHub] was released in month 06. Mentioning this makes the completion of Songh…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-07-30-studio-status-report-2023-07</guid>
-            <pubDate>Sun, 30 Jul 2023 10:50:23 -0700</pubDate>
         </item>
     </channel>
 </rss>
