@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2024-07" />
+    <meta name="twitter:title" content="studio status report: 2024-07" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 07 of 2024 was about returning to Entity Framework, inclusion of Obsidian in Publications work flow and ‘too many’ other interesting advances The Obsidian graph for this month looks very much like ‘too many’ interesting advances: Obsidian graph for …" />
+    <meta property="og:description" content="month 07 of 2024 was about returning to Entity Framework, inclusion of Obsidian in Publications work flow and ‘too many’ other interesting advances The Obsidian graph for this month looks very much like ‘too many’ interesting advances: Obsidian graph for …" />
+    <meta name="twitter:description" content="month 07 of 2024 was about returning to Entity Framework, inclusion of Obsidian in Publications work flow and ‘too many’ other interesting advances The Obsidian graph for this month looks very much like ‘too many’ interesting advances: Obsidian graph for …" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2024-07 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2024-07</h1>
+<h2>month 07 of 2024 was about returning to Entity Framework, inclusion of Obsidian in Publications work flow and ‘too many’ other interesting advances</h2>
+<p>The Obsidian graph for this month looks very much like ‘too many’ interesting advances:</p>
+<p><img src="../../image/day-path-2024-07-28-13-35-46.png" alt="Obsidian graph for this month"></p>
+<p>I have opened the <code>Songhay.Publications.DataAccess</code> namespace which introduces modern, “code-first” Entity Framework <em>accretive</em> migrations to my Studio. There is a <code>Publications.db</code> SQLite file that will track the Songhay Publications Index for kintespace.com. This is data that will back the Songhay Index Bolero app (<code>Songhay.Modules.Bolero.Index</code>❓) that is proposed below (see “sketching out development projects”). Notes below will go into detail on this (and a full Blog post is proposed).</p>
+<p><code>Songhay.Modules.Bolero</code> version 6.4.1 [📦 <a href="https://www.nuget.org/packages/Songhay.Modules.Bolero/">NuGet</a>] was released this month which contains a far better understanding of how to expose Blazor services to F♯ functions (via the <code>ServiceProviderUtility</code>—see in excerpts below).</p>
+<p>The biggest news (which is jampacked with interesting advances) is represented by a simple PowerShell script whipped up this month: <code>Convert-KinteProse-To-Markdown.ps1</code>. This script actually takes the old XHTML files from kintespace.com and converts them to Obsidian-friendly markdown. Converting HTML to markdown with <code>pandoc</code> was yet another non-trivial effort (I should have notes on this to show below). This conversion process is the first “real” sign that I am actually reviving/rebuilding/upgrading my Publications pipelines in my Studio 👏 I have decided to convert one file at a time and review the prose by hand to ensure some decent level of correctness ⏳ My 2024 article, “<a href="https://songhayblog.azurewebsites.net/entry/2020-12-24-songhay-publications-and-the-concept-of-the-index/">Songhay Publications and the Concept of the Index</a>,” should help to place what I am talking about here in the larger context. This article reminds us of my Publications schema: the <code>Segment</code>, the <code>Document</code> and the <code>Fragment</code>.</p>
+<p><code>Document</code> data shows up as the YAML front matter in the markdown files generated from my <code>Convert-KinteProse-To-Markdown.ps1</code> script. The <code>Fragment</code> concept gets ‘lost’ in the markdown prose. The <code>Segment</code> data takes us back to the Songhay Publications Index. This work is <em>finally</em> underway. More details and better explanation later. It has been a long, miserable journey 👴👣 Here are the selected notes of the month:</p>
+<h2>yes, <code>Songhay.Publications.DataAccess</code> should be moved into the [[Songhay Publications (C♯)]] Solution #to-do</h2>
+<p>Now that a substantial amount of ignorance around [[Entity Framework]] has (finally) been addressed, <code>PublicationsDbContextFactory</code> is what keeps the <code>Songhay.Publications.DataAccess</code> project in the [[Songhay Publications - KinteSpace|Songhay Publications: kinté space]] Solution.</p>
+<p>It all boils down to this relative path, <code>&quot;../../../../db/Publications.db&quot;</code>:</p>
+<p><img src="../../image/day-path-2024-07-28-14-21-33.png" alt="PublicationsDbContextFactory"></p>
+<p>Today, the suggestion is that this relative path to <code>Publications.db</code> should be replaced with an absolute path and stored in a conventional environment variable, say, <code>SONGHAY_PUBLICATIONS_DB_PATH</code>.</p>
+<p>Moreover, this new absolute path should point to a location under the [[Songhay Azure Storage Mirror]] directory (or I could go back to the eldest <code>\dataRoot\publications</code> convention).</p>
+<h2>[[dotnet|.NET]]: C♯13 will overload its <code>params</code>-based array signatures (<code>T[]</code>) with <code>ReadOnlySpan&lt;T&gt;</code></h2>
+<p>This video has the news [📹 <a href="https://youtu.be/O3hx6oPWzX8?t=539">watch</a> ]:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=O3hx6oPWzX8">
+        <img alt="What’s new in C# 13 | BRK186" src="https://img.youtube.com/vi/O3hx6oPWzX8/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>What’s new in C# 13 | BRK186</small></p>
+</figure>
+</div>
+<p>Partner Software Engineer at Microsoft, Steven Toub, proposed this <a href="https://github.com/dotnet/runtime/issues/77873">in 2022</a>.</p>
+<h2>[[Songhay Publications - KinteSpace|Songhay Publications: kinté space]]</h2>
+<h3>the <code>Songhay.Publications.KinteSpace/11ty</code> directory 🚜✨</h3>
+<p>The Publications <code>/11ty</code> directory represents the experiment to combine an [[Obsidian]] vault and an [[eleventy]] generator:</p>
+<p><img src="../../image/day-path-2024-07-28-14-25-01.png" alt="Publications  directory"></p>
+<ul>
+<li>[[eleventy]] will write static <acronym title="HyperText Markup Language">HTML</acronym> to the <code>/app-staging</code> directory</li>
+<li>the [[eleventy]] <code>/_data</code> directory will use static <acronym title="JavaScript Object Notation">JSON</acronym>, generated from a [[SQLite]] database in the <code>/db</code> directory (for now)</li>
+</ul>
+<p>Now, the <code>/shell</code> folder might have ‘limited use’ because of setting up a temporary camp 🏕 under <code>Songhay.Publications.KinteSpace.Tests</code> (mentioned [[2024-07-02#Songhay Publications - KinteSpace Songhay Publications kinté space the next moves will be inside the test project 🔬✨|previously]]).</p>
+<h3>what the <code>/11ty</code> directory looks in [[Obsidian]]</h3>
+<p>Only that <code>rasx57.md</code> ‘draft’ shows up in [[Obsidian]]:</p>
+<p><img src="../../image/day-path-2024-07-28-14-25-59.png" alt=" ‘draft’ in Obsidian"></p>
+<ul>
+<li>[[Obsidian]] might force me to convert <acronym title="JavaScript Object Notation">JSON</acronym> front matter to <acronym title="YAML Ain’t Markup Language">YAML</acronym></li>
+<li>the front matter for [[Markdown]] files under <code>/poetry</code> could get complicated</li>
+<li>[[Markdown]] files under <code>/app</code> will be prose about [[Songhay Publications - KinteSpace|kintespace.com]] itself instead of the literary prose intended for the <code>/prose</code> directory</li>
+<li>the <code>/templates</code> folder might be able to serve double duty for [[eleventy]] and [[Obsidian]]</li>
+</ul>
+<p>Welcome to the publishing business!</p>
+<h2>[[dotnet|.NET]]: there is no <code>System.Yaml</code> namespace built by  [[Microsoft]]</h2>
+<p>Today, I ‘officially’ recognize that something like [[YamlDotNet]] is needed (even though it does not yet support [[dotnet|.NET 8.0]]—but does support <code>netstandard 2.x</code>):</p>
+<p><img src="../../image/day-path-2024-07-28-14-27-45.png" alt="YamlDotNet on GitHub">
+<a href="https://github.com/aaubry/YamlDotNet">https://github.com/aaubry/YamlDotNet</a></p>
+<p>This ‘official’ recognition is important because the editing experience planned for [[Obsidian]] will require saving document front matter as <acronym title="YAML Ain’t Markup Language">YAML</acronym> instead of <acronym title="JavaScript Object Notation">JSON</acronym>.</p>
+<h2>the [[Azure]] Pipelines task reference is full of deploy tasks 😐💡</h2>
+<p>Before this year, I would erroneously assume that the “<a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/?view=azure-pipelines">Azure Pipelines task reference</a>” would exclusively full of build tasks. It’s been a while. Things have changed: there is an entire section dedicated to <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/?view=azure-pipelines#deploy-tasks">deploy tasks</a>.</p>
+<p>This Studio should incorporate the following [[Azure Pipelines]] deploy tasks #to-do (in decreasing level of immediate need):</p>
+<ul>
+<li>Azure Web App (<code>AzureWebApp@1</code>) [📖 <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/azure-web-app-v1?view=azure-pipelines">docs</a> ]</li>
+<li>Azure Functions Deploy (<code>AzureFunctionApp@2</code>) [📖 <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/azure-function-app-v2?view=azure-pipelines">docs</a> ]</li>
+<li>Azure CLI (<code>AzureCLI@2</code>) [📖 <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/azure-cli-v2?view=azure-pipelines">docs</a> ]</li>
+<li>Azure PowerShell (<code>AzurePowerShell@5</code>) [📖 <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/azure-powershell-v5?view=azure-pipelines">docs</a> ]</li>
+</ul>
+<p>The following package tasks should be needed as well:</p>
+<ul>
+<li>npm (<code>Npm@1</code>) [📖 <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/npm-v1?view=azure-pipelines">docs</a> ]</li>
+<li>NuGet (<code>NuGetCommand@2</code>) [📖 <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/nuget-command-v2?view=azure-pipelines">docs</a> ]</li>
+</ul>
+<p>I assert that [[Microsoft]] prioritizes <a href="https://docs.github.com/en/actions">GitHub Actions</a> over [[Azure Pipelines]].</p>
+<h2>[[Entity Framework]]: no, there is no provider for [[Azure Table Storage]]</h2>
+<p>Vickers himself <a href="https://github.com/dotnet/efcore/issues/18737#issuecomment-549471270">answers</a> explicitly in 2019:</p>
+<blockquote>
+<p>We currently have no plans.</p>
+</blockquote>
+<p>“<a href="https://www.cdata.com/kb/tech/azure-ado-codefirst.rst">How to Access Azure Table Data Using Entity Framework</a>” says weird, 1990s shit like:</p>
+<blockquote>
+<p>Add a reference to <code>System.Data.CData.AzureTables.Entities.EF6.dll</code>, located in the lib -&gt; 4.0 subfolder in the installation directory.</p>
+</blockquote>
+<p>The largest <a href="https://learn.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli">list of providers</a> I can find (so far) is the 2024 list from [[Microsoft]]. I am surprised that the list of providers is not larger.</p>
+<h2>[[Finance]]: “How Americans Are Paying For Vacation”</h2>
+<p>Spoiler: it’s loans.</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=frKtMYlcYKo">
+        <img alt="How Americans Are Paying For Vacation" src="https://img.youtube.com/vi/frKtMYlcYKo/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>How Americans Are Paying For Vacation</small></p>
+</figure>
+</div>
+<h2>[[dotnet|.NET]]: when the <code>YamlDotNet</code> folks deserialize <acronym title="YAML Ain’t Markup Language">YAML</acronym>, they are boxing <code>IDictionary&lt;object, object&gt;</code> 🗃😐</h2>
+<p>I am sure there is some really cool and esoteric reason to box <code>IDictionary&lt;object, object&gt;</code> but my <code>YamlUtility.DeserializeYaml</code> make this news explicit:</p>
+<pre><code class="language-csharp">    public static IDictionary&lt;object, object&gt;? DeserializeYaml(string? yaml)
+    {
+        if (string.IsNullOrWhiteSpace(yaml)) return new Dictionary&lt;object, object&gt;();
+
+        IDeserializer deserializer = new DeserializerBuilder().Build();
+        IDictionary&lt;object, object&gt;? yO = deserializer.Deserialize(yaml) as IDictionary&lt;object, object&gt;;
+
+        return yO;
+    }
+</code></pre>
+<p>Now I can write <code>yO</code> like how I have written <code>jO</code>! This makes all the Kenyan supermodels cheer!</p>
+<h2>[[Songhay Publications (C♯)]]: <code>MarkdownEntry.FrontMatter</code> should be of type <code>IDictionary&lt;string, string&gt;</code> ❓</h2>
+<p>The short answer is <em>no</em>. The reasoning behind doing this is to put <code>MarkdownEntry.FrontMatter</code> in a position where it can support <acronym title="JavaScript Object Notation">JSON</acronym> and <acronym title="YAML Ain’t Markup Language">YAML</acronym> front matter. But look closer at this <acronym title="YAML Ain’t Markup Language">YAML</acronym>:</p>
+<pre><code class="language-yaml">documentId: 9336
+title: 'Ezrah Aharone: Africa without African Americans'
+documentShortName: 
+fileName: kp_aharone0.html
+path: ./
+templateId: 9059
+segmentId: 4524
+isRoot: true
+isActive: true
+sortOrdinal: 
+clientId: 2006-08-10-20-03-40-IDAIACBBIDAJACBB-1
+tag: 2011-07-Upgrade
+endDate: 
+inceptDate: 2006-08-10T19:49:39.0000000
+modificationDate: 2011-07-12T16:35:16.6500000
+</code></pre>
+<p>Like <acronym title="JavaScript Object Notation">JSON</acronym>, <acronym title="YAML Ain’t Markup Language">YAML</acronym> is not just a bunch of strings. Like <acronym title="JavaScript Object Notation">JSON</acronym>, it has ‘types.’ <acronym title="YAML Ain’t Markup Language">YAML</acronym> has a <a href="https://yaml.org/spec/1.2-old/spec.html#Schema">schema</a> concept which defines “tags” with names like “Boolean,” “Integer” and “Floating Point”—and these names come from “<a href="https://yaml.org/spec/1.2-old/spec.html#id2803231">JSON Schema</a>”—which appears to be the <acronym title="YAML Ain’t Markup Language">YAML</acronym> way of saying that it is ‘related’ to <acronym title="JavaScript Object Notation">JSON</acronym>.</p>
+<p>Getting back to [[Songhay Publications (C♯)]], the bottom line is that <code>IDictionary&lt;string, object&gt;</code> is in the position to support <acronym title="YAML Ain’t Markup Language">YAML</acronym> and <acronym title="JavaScript Object Notation">JSON</acronym> but I am not attracted to boxing a bunch of stuff in <code>object</code>. This aversion leads me to one conclusion: ‘extend’ <acronym title="YAML Ain’t Markup Language">YAML</acronym> support <em>from</em> the existing <code>JsonObject</code>. These ‘extensions’ would be in, um, extension methods such as:</p>
+<ul>
+<li><code>IReadOnlyCollection&lt;string&gt;.ToFrontMatterLinesAndContentLines</code> and/or <code>FileInfo.ToFrontMatterLinesAndContentLines</code></li>
+<li><code>IReadOnlyCollection&lt;string&gt;.LookLikeJsonFrontMatter</code></li>
+<li><code>IReadOnlyCollection&lt;string&gt;.LookLikeYamlFrontMatter</code></li>
+<li><code>IReadOnlyCollection&lt;string&gt;.ToJsonString</code></li>
+<li><code>IReadOnlyCollection&lt;string&gt;.ToYamlString</code></li>
+<li><code>JsonObject.ToYamlFrontMatter</code> and/or <code>MarkDownEntry.ToYamlFrontMatter</code></li>
+</ul>
+<p>All of the proposed methods above are for <em>reading</em> [[Songhay Publications|Publications]] markdown. The <em>line</em> is the smallest unit of reading markdown. <code>ToFrontMatterLinesAndContentLines</code> revisits what is going on inside <code>MarkdownEntryExtensions.ToMarkdownEntry</code> which currently assumes that <em>all</em> markdown “entries” contain <acronym title="JavaScript Object Notation">JSON</acronym> front matter #to-do</p>
+<p>The challenge with <code>ToJsonString</code> and <code>ToYamlString</code> is dealing with the possible states of a collection of lines representing front matter (<code>FrontMatterLines</code>). These states are:</p>
+<ul>
+<li><acronym title="JavaScript Object Notation">JSON</acronym> lines</li>
+<li><acronym title="YAML Ain’t Markup Language">YAML</acronym> lines</li>
+<li>Unknown lines</li>
+</ul>
+<p>The <code>LookLike*FrontMatter</code> methods will address these possibilities.</p>
+<p>Finally, the <code>ToYamlFrontMatter</code> method is there to  ‘extend’ <acronym title="YAML Ain’t Markup Language">YAML</acronym> support <em>from</em> the existing <code>JsonObject</code>.  Here are more design-related comments about this approach:</p>
+<ul>
+<li>as of this writing, there is no [[dotnet|.NET]] equivalent of <code>JsonElement</code> or <code>JsonObject</code> for <acronym title="YAML Ain’t Markup Language">YAML</acronym>: there is no <code>YamlObject</code> (and in [[YamlDotNet]] the closest definition I can find is the sub-atomic particle, <code>Mark</code> [🔗 <a href="https://github.com/rtlayzell/yaml-dot-net/blob/master/YamlDotNet/Core/Mark.cs">GitHub</a> ])</li>
+<li>because I am “brainwashed” by F♯, I am aware that primitive obsession in C♯ is a “bad” thing: so cramming <acronym title="YAML Ain’t Markup Language">YAML</acronym> in <code>string</code> and building on top it is not going to do it for me—I prefer to define front matter as <code>JsonObject</code> instead of just <code>string</code></li>
+</ul>
+<h2>yes, [[Obsidian]] can be used as a commanding platform</h2>
+<p>Do I write a bunch of Studio desktop apps in, say, [[Avalonia]], to get real work done? The short answer is, <em>not yet</em>. [[Obsidian]] can join [[Visual Studio Code]] as another customizable text editor that effectively serves as a “line of business” application just like a <acronym title="Windows Presentation Foundation">WPF</acronym> application from the turn of the century.</p>
+<p>The <a href="https://github.com/Taitava/obsidian-shellcommands">Shell commands plugin for Obsidian</a> looks like what I am looking for to get going #to-do The authors of this plugin are generous enough to refer to <a href="https://github.com/Taitava/obsidian-shellcommands#benefits-from-other-plugins">similar tools</a> just in case it is not enough:</p>
+<ul>
+<li><a href="https://github.com/Vinzent03/obsidian-advanced-uri">https://github.com/Vinzent03/obsidian-advanced-uri</a></li>
+<li><a href="https://github.com/chetachiezikeuzor/cMenu-Plugin">https://github.com/chetachiezikeuzor/cMenu-Plugin</a> #to-do</li>
+<li><a href="https://github.com/phibr0/obsidian-customizable-sidebar">https://github.com/phibr0/obsidian-customizable-sidebar</a> #to-do</li>
+<li><a href="https://github.com/chhoumann/quickadd">https://github.com/chhoumann/quickadd</a></li>
+<li><a href="https://github.com/konodyuk/obsidian-text-expander">https://github.com/konodyuk/obsidian-text-expander</a> #to-do</li>
+</ul>
+<h2>[[Songhay Publications - KinteSpace|the kinté space]]: “Kids Who Get Smartphones Earlier Become Adults With Worse Mental Health”</h2>
+<blockquote>
+<p>Why would this be? What changed in the early 2010s that could have rapidly reduced the mental health of teens around the world, with a bigger impact on girls? At the <a href="https://jonathanhaidt.substack.com/archive">After Babel Substack</a>, we have <a href="https://jonathanhaidt.substack.com/p/mental-health-liberal-girls">argued</a> that the sudden switch of <a href="https://jonathanhaidt.substack.com/p/do-the-kids-think-theyre-alright">teen social life</a> from <a href="https://jonathanhaidt.substack.com/p/why-some-researchers-think-im-wrong">flip phones</a> (which are designed for communication) to smartphones (which enabled continuous access to social media and much higher levels of phone addiction), is <a href="https://jonathanhaidt.substack.com/p/social-media-mental-illness-epidemic">the major cause</a>, though not the only one. There are unique factors at work in each country, but we know of <a href="https://jonathanhaidt.substack.com/p/academic-pressure-social-media">no alternative</a> that <a href="https://jonathanhaidt.substack.com/p/why-some-researchers-think-im-wrong">can explain</a> the <em>synchronized, gendered, and global decline</em> in teen mental health.</p>
+<p>—“<a href="https://www.afterbabel.com/p/sapien-smartphone-report">Kids Who Get Smartphones Earlier Become Adults With Worse Mental Health</a>”</p>
+</blockquote>
+<h2>[[Songhay Modules Bolero (F♯)]]: the new <code>IServiceProvider</code>-<code>ServiceProviderUtility</code> pattern</h2>
+<p>In our conventional <code>*ProgramComponent</code>, we have two things to express to establish this <code>IServiceProvider</code>-<code>ServiceProviderUtility</code> pattern:</p>
+<p><img src="../../image/day-path-2024-07-28-14-39-08.png" alt="- pattern"></p>
+<ol>
+<li>inject <code>IServiceProvider</code></li>
+<li><code>initialize</code> the exposure of <code>IServiceProvider</code> with <code>ServiceProviderUtility.setBlazorServiceProvider</code></li>
+</ol>
+<p>The <code>initialize</code> function:</p>
+<p><img src="../../image/day-path-2024-07-28-14-40-02.png" alt=" function"></p>
+<p>Line 15 (above) calls <code>setBlazorServiceProvider</code>.</p>
+<p>Once <code>IServiceProvider</code> is initialized, F♯ modules can reference provided services like this:</p>
+<p><img src="../../image/day-path-2024-07-28-14-40-42.png" alt="ProgramComponentUtility"></p>
+<blockquote>
+<p>[!important]
+This approach eliminates the the artificial barrier between <acronym title="Functional Programming">FP</acronym> and <acronym title="Object Oriented Programming">OOP</acronym> when we think of the availability of [[Blazor]] services.</p>
+</blockquote>
+<h2>[[Songhay Player - YouTube (F♯)]]: I got entangled in [[Azure DevOps]] pipelines drama because of a build server not being able to see the code generated for <code>CssScope</code> 👀</h2>
+<p>[[dotnet|.NET]] 2.x being called from <code>DotNetCoreCLI@2</code> <em>could</em> have compiled my ‘modern’ [[dotnet|.NET 6.0]] code. The problem was not solved by rewriting my <acronym title="YAML Ain’t Markup Language">YAML</acronym> scripts (which is still useful in general). The problem was that, again, I forgot about this shit:</p>
+<p><img src="../../image/day-path-2024-07-28-14-44-39.png" alt="CssScopes.fs"></p>
+<p>This code needs to be auto-generated so it can ensure a unique string like <code>&quot;b-ymt7kfc0gq&quot;</code> is generated so the [[Blazor]] <acronym title="Cascading Style Sheets">CSS</acronym> scope will be uniquely identified.</p>
+<p>This failure message from [[Azure DevOps]] (mentioned [[2024-07-17#Songhay Dashboard (F♯, C♯) pipeline test step 👟🔥 fails|earlier]]) was trying to tell me that it could not find the <code>CssScopes.fs</code> file:</p>
+<pre><code class="language-console">D:\a\1\s\Songhay.Dashboard.Client\Components\ContentBlockProgramComponent.fs(98,40): error FS0039: The value, constructor, namespace or type 'ContentBlockProgramComponent' is not defined. [D:\a\1\s\Songhay.Dashboard.Client\Songhay.Dashboard.Client.fsproj]
+</code></pre>
+<blockquote>
+<p>[!important]
+The <code>CssScopes.fs</code> file is supposed to be auto-generated in the conventional <code>obj</code> directory. For some reason beyond my interest to investigate, this file is not being auto-generated on the [[Azure DevOps]] build server.</p>
+</blockquote>
+<p>In fact, I actually question why the [[Bolero]] folks think auto-generating the <code>CssScopes.fs</code> file is default and necessary #to-do  What I am seeing today is that this fine:</p>
+<pre><code class="language-fsharp">override this.CssScope = nameof(ContentBlockProgramComponent)
+</code></pre>
+<p>The default is this shit:</p>
+<pre><code class="language-fsharp">override this.CssScope = CssScopes.ContentBlockProgramComponent
+</code></pre>
+<p>Where <code>CssScopes.ContentBlockProgramComponent</code> is a <code>string</code> set to a random value for uniqueness as shown above.</p>
+<h2>[[Songhay Publications - KinteSpace|the kinté space]]: “Young Adulthood Is No Longer One of Life’s Happiest Times”</h2>
+<blockquote>
+<p>Reduced to simpler terms, the midlife crisis seems to be real: happiness reaches its low point at around age 50,with <a href="https://link.springer.com/article/10.1007/s00148-020-00797-z#:~:text=In%20the%20raw%20US%20data,%2Ddefined%20U%2Dshape%20appears.">peaks at age 30 and after age 70</a>. This finding has been replicated in 146 countries and has held true for data reaching as far back as 1973—and does not just apply to <em>Homo sapiens</em>. Researchers have even identified <a href="https://www.pnas.org/doi/full/10.1073/pnas.1212592109">similar patterns in nonhuman apes</a>.</p>
+<p>—“<a href="https://www.scientificamerican.com/article/young-adulthood-is-no-longer-one-of-lifes-happiest-times/">Young Adulthood Is No Longer One of Life’s Happiest Times</a>”</p>
+</blockquote>
+<h2>[[Microsoft]] never explicitly states that [[Microsoft SQL Server]] <code>LocalDB</code> only runs on [[Windows]] #day-job</h2>
+<p>Documents like these make no mention of this:</p>
+<ul>
+<li>“<a href="https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-overview?view=sql-server-ver16">What is SQL Server on Linux?</a>”</li>
+<li>“[SQL Server Express LocalDB](# SQL Server Express LocalDB)”</li>
+</ul>
+<p>A third-party document like “<a href="https://www.sqlshack.com/install-microsoft-sql-server-express-localdb/">How to install Microsoft SQL Server Express LocalDB</a>” mentions that <code>LocalDB</code> depends on the [[dotnet|.NET]] <em>Framework</em> which implies [[Windows]]:</p>
+<blockquote>
+<p>There are some requirements for installing LocalDB. A user should have <a href="http://www.microsoft.com/en-us/download/details.aspx?id=17851">Microsoft .NET Framework 4</a> and <a href="http://www.microsoft.com/en-us/download/details.aspx?id=27756">Microsoft .NET Framework 4.0.2 Runtime Update (KB2544514)</a>. Depending on the operating system (32-bit or 64-bit Windows version), there are two versions of SqlLocaLDB.MSI: the version that can be installed on 32-bit operating system (<a href="http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SqlLocaLDB.MSI">x86/SqlLocalDB.MSI</a>) and the version which can be installed on 64-bit operating system (<a href="http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SqlLocalDB.MSI">x64/SqlLocalDB.MSI</a>).</p>
+</blockquote>
+<p>A StackOverflow <a href="https://stackoverflow.com/a/75606963/22944">answer</a> says we should use <code>localhost</code> on [[Linux]] to serve the same purpose as <code>LocalDB</code>:</p>
+<blockquote>
+<p>I had to change my connection string to explicitly specify <code>userid</code> and <code>password</code> set <code>Encrypt=false</code>. Also instead of <code>(localdB)</code> I have to use <code>localhost</code> in my connection string See more information <a href="https://github.com/dotnet/SqlClient/issues/1479">here</a></p>
+</blockquote>
+<h2>[[OAuth]]: forget about the [[Twitter]] situation for a moment, Can you authenticate with <em>any</em> service❓</h2>
+<p>My old-man critical thinking 👴🧠 skills kicked in for a moment and left me with the strong suggestion to connect to [[GitHub]] using [[OAuth]]. I thought this would be easy but the complications start with <a href="https://docs.github.com/en/apps/oauth-apps">the official docs</a> using <code>curl</code> exclusively while I have been determined to use [[Python]] which is a compromising step back from [[dotnet|.NET]] (see <a href="https://github.com/BryanWilhite/jupyter-central/blob/main/funkykb/python/oauth2-github.ipynb">https://github.com/BryanWilhite/jupyter-central/blob/main/funkykb/python/oauth2-github.ipynb</a>)</p>
+<h3>what is accomplished so far 👴</h3>
+<ul>
+<li>I have defined <code>songhay-oauth2</code> under <a href="https://github.com/settings/developers">Developer settings</a> in order to have a [[GitHub]]-based security principal✅</li>
+<li>Apparently, the contents of “<a href="https://developer.x.com/en/docs/tutorials/creating-a-twitter-bot-with-python--oauth-2-0--and-v2-of-the-twi">Creating a Twitter bot with Python, OAuth 2.0, and v2 of the Twitter API</a>” is not enough to get me started😐</li>
+<li>I do not need <a href="https://github.com/oauthlib/oauthlib">OAuthLib</a> to get started in [[Python]] (as described in “<a href="https://testdriven.io/blog/oauth-python/">OAuth2 in Python</a>”) ✅</li>
+</ul>
+<p>The python equivalent of <code>curl</code> should be in the <code>requests</code> library [📖 <a href="https://docs.python-requests.org/en/latest/index.html">docs</a> ]. However, <code>requests.post</code> takes an <code>auth=</code> parameter that is shown in the <code>requests</code> <a href="https://docs.python-requests.org/en/latest/user/authentication/#oauth-2-and-openid-connect-authentication">docs</a> but does not go into detail about how to set this parameter for [[OAuth]] 😐 #to-do</p>
+<h2>[[Songhay Publications (C♯)]]: I now understand that [[Entity Framework]] migrations are designed to happen one after another ✅</h2>
+<p>The [[Microsoft]] docs state <a href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli">this</a> clearly:</p>
+<blockquote>
+<p>The migrations feature in EF Core provides a way to incrementally update the database schema to keep it in sync with the application's data model while preserving existing data in the database.</p>
+</blockquote>
+<p>…and this search-engine-selected <a href="https://makolyte.com/ef-core-database-schema-changes/">article</a> from 2024 is even <em>more</em> clear:</p>
+<blockquote>
+<p>When you first <a href="https://makolyte.com/ef-core-how-to-create-a-database-and-a-table/">create the database</a> with EF Core, you create a migration that contains the initial definition of the database. As you make schema changes, you add new migrations and apply them on top of the existing migrations.</p>
+<p>—“<a href="https://makolyte.com/ef-core-database-schema-changes/">EF Core – Database schema changes</a>”</p>
+</blockquote>
+<p>On <code>Songhay13</code>, I had to dig into my command line history with <code>history | grep &quot;dotnet ef&quot;</code> to see that I ran this command first (from the root of the repo):</p>
+<pre><code class="language-console">dotnet ef migrations add PublicationsMigration --project Songhay.Publications.DataAccess/Songhay.Publications.DataAccess.csproj
+</code></pre>
+<p>Now, when any change to <code>PublicationsDbContext</code> is made, I will run something like this:</p>
+<pre><code class="language-shell">$ dotnet ef migrations add PublicationsMigration-2024-07-27 --project Songhay.Publications.DataAccess/Songhay.Publications.DataAcc
+ess.csproj
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+</code></pre>
+<p>Once we have the new migration, we can then <code>update</code> the database with it:</p>
+<pre><code class="language-shell">$ dotnet ef database update --project Songhay.Publications.DataAccess/Songhay.Publications.DataAccess.csproj
+Build started...
+Build succeeded.
+Applying migration '20240728042923_PublicationsMigration-2024-07-27'.
+Done.
+</code></pre>
+<p>This is awesome!</p>
+<h2>sketching out development projects</h2>
+<p>The current, unfinished public projects on GitHub:</p>
+<ul>
+<li>
+<p>replacing the Angular app in <code>http://kintespace.com/player.html</code> with a Bolero app 🚜🔥 depends on:</p>
+<ul>
+<li>completing <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/54">issue #54</a>: move <code>Songhay.Publications.DataAccess</code> out of the kinté space repo 🚜</li>
+<li>generating Publication indices from SQLite for <code>Songhay.Publications.KinteSpace</code></li>
+<li>generating a new repo with proposed name, <code>Songhay.Modules.Bolero.Index</code> ✨🚧 and add a GitHub Project</li>
+</ul>
+</li>
+</ul>
+<p>The proposed project items:</p>
+<ul>
+<li><s>add Entity Framework (over SQLite) features to <code>Songhay.Publications</code></s> this is done ✅</li>
+<li>switch Studio from Material Design to Bulma 💄 ➡️ 💄✨</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2024-07-28T13:27:51.995Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
