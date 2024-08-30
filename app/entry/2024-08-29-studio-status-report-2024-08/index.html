@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2024-08" />
+    <meta name="twitter:title" content="studio status report: 2024-08" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 08 of 2024 was about prepping an Obsidian-based kintespace.com and #day-job Azure success Last month was about deciding and planning to live with the SQLite flavor of Entity Framework with Obsidian-based word processing and Markdown data management.…" />
+    <meta property="og:description" content="month 08 of 2024 was about prepping an Obsidian-based kintespace.com and #day-job Azure success Last month was about deciding and planning to live with the SQLite flavor of Entity Framework with Obsidian-based word processing and Markdown data management.…" />
+    <meta name="twitter:description" content="month 08 of 2024 was about prepping an Obsidian-based kintespace.com and #day-job Azure success Last month was about deciding and planning to live with the SQLite flavor of Entity Framework with Obsidian-based word processing and Markdown data management.…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="http://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2024-08 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2024-08</h1>
+<h2>month 08 of 2024 was about prepping an Obsidian-based kintespace.com and #day-job Azure success</h2>
+<p>Last month was about deciding and planning to live with the SQLite flavor of Entity Framework with Obsidian-based word processing and Markdown data management. This month about actually <em>living</em> that life. And, apart from a serious, personal, family issue, this new life is far the more better.</p>
+<p>The Obsidian graph of my Studio notes shows the biggest light-colored circles of study that match what this month is about:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-08-29-19-50-22.png" alt="Obsidian graph of my Studio notes"></p>
+</div>
+<ul>
+<li>Azure</li>
+<li>Songhay Publications: KinteSpace</li>
+<li>Songhay Activity</li>
+</ul>
+<p>These ‘big three’ should appear in the selected notes below:</p>
+<h3>using <code>div</code> to apply <acronym title="Cascading Style Sheets">CSS</acronym> classes</h3>
+<p>As of this writing, [[Obsidian]] will stop rendering text as [[Markdown]] once an opening <acronym title="HyperText Markup Language">HTML</acronym> tag is encountered:</p>
+<div>
+<p>🍱 This paragraph is treated as raw <acronym title="HyperText Markup Language">HTML</acronym>. This means [[Markdown]] markup is treated as <em>literal</em>.</p>
+</div>
+<h3><acronym title="Cascading Style Sheets">CSS</acronym> grid layout</h3>
+<p><acronym title="Cascading Style Sheets">CSS</acronym> grid layout has the same limitations as those addressed in “[[#using <code>div</code> to apply <acronym title="Cascading Style Sheets">CSS</acronym> classes|using div to apply CSS classes]].”</p>
+<h3>[[Obsidian]] notice blocks and <code>blockquote</code> translation</h3>
+<p>The <code>div</code> problem exposed in “[[#using <code>div</code> to apply <acronym title="Cascading Style Sheets">CSS</acronym> classes|using div to apply CSS classes]]” leads to one solution: <mark>use notice blocks</mark> 😐 By default, the following [[Markdown]]:</p>
+<blockquote>
+<p>[!important]
+Hello world!</p>
+</blockquote>
+<p>…will be translated into <acronym title="HyperText Markup Language">HTML</acronym> as:</p>
+<pre><code class="language-html">&lt;blockquote&gt;
+    &lt;p&gt;[!important] Hello world!&lt;/p&gt;
+&lt;/blockquote&gt;
+</code></pre>
+<p>The bang prefix, <code>[!important]</code>, is a declaration that the <code>blockquote</code> element [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">docs</a> ] is no longer a <code>blockquote</code> element. In this Studio, it should render as:</p>
+<pre><code class="language-html">&lt;div class=&quot;important&quot;&gt;
+    &lt;p&gt; Hello world!&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Can [[eleventy]] handle this and/or should this go into [[Songhay Publications (C♯)]]? #to-do</p>
+<h2>[[Songhay System Studio]]: #day-job disagreements</h2>
+<p>There are two, ‘official’ technical disagreements between my Studio and the management of the current #day-job:</p>
+<ol>
+<li>do not use ordered tests to develop [[Azure WebJobs]] executables</li>
+<li>prefer the use of [[Microsoft SQL Server]] <code>LocalDB</code> files over <acronym title="JavaScript Object Notation">JSON</acronym> snapshots</li>
+</ol>
+<h3>do not use ordered tests to develop [[Azure WebJobs]] executables</h3>
+<p>The legitimate concern for advising against this use of ordered tests is because what can happen when an [[Azure Pipelines]] <acronym title="YAML Ain’t Markup Language">YAML</acronym> script does a wildcard selection of <em>all</em> tests in a solution. These ordered tests can run and potentially cause havoc <mark>when we assume the tests themselves have no defenses against being called</mark> based on environment.</p>
+<p>One way to address this concern is to have some kind of “scratchpad” location on the desktop, that is separate from the enterprise repo, where a bunch of console apps are hanging out. I dislike this approach because this “scratchpad” location is likely not under source control, making the communication of any bright ideas to even a small team not easy. Additionally, the desktop were all these console apps can be lost which could be a tragedy for those of us with bad luck 🚫🍀</p>
+<p>My preference for this use of ordered tests is the closest I have come to “test-driven development” which strongly suggests that these ordered tests should be temporary and wired up to a development environment. These ordered tests are effectively a factory assembly line, helping to build “logic” that will ultimately end up in production code, specifically [[Generic Host|.NET Generic Host]] executables.</p>
+<h3>prefer the use of [[Microsoft SQL Server]] <code>LocalDB</code> files over <acronym title="JavaScript Object Notation">JSON</acronym> snapshots</h3>
+<p>The preference for “mocking” with <code>LocalDB</code> indicates a Windows-centric heritage is at play. My preference for <acronym title="JavaScript Object Notation">JSON</acronym> snapshots is <em>not</em> scalable by default and is simply culturally strange with respect to ‘the state of the art.’</p>
+<h2>[[Songhay Publications (C♯)]]: more chaos—we’re going to need a <code>PublicationLinesUtility</code>🚜✨😐</h2>
+<p>I was going to call it <code>MarkdownUtility</code> but that would really confuse it with the already existing <code>MarkdownEntryUtility</code> [🔗 <a href="https://github.com/BryanWilhite/Songhay.Publications/blob/a80ad94e24d2ccc42962f646647457816714df84/Songhay.Publications/MarkdownEntryUtility.cs">GitHub</a> ]. This concept of <em>Publication Lines</em> is <em>now</em> the smallest unit of the <code>Fragment</code>. Instead of:</p>
+<ul>
+<li>Segment</li>
+<li>Document</li>
+<li>Fragment</li>
+</ul>
+<p>We have (for text-based Publications):</p>
+<ul>
+<li>Segment</li>
+<li>Document</li>
+<li>Lines (<code>Array&lt;string&gt;</code>)
+<ul>
+<li>Front Matter lines (which can refer back to Document)</li>
+<li>Markdown Content lines</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>[!important]
+The first responsibility of <code>PublicationLinesUtility</code> is to capture and centralize the logic used to produce a Document extract.</p>
+</blockquote>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-08-29-20-05-59.png" alt="Obsidian front matter"></p>
+</div>
+<h2>[[Songhay Publications - KinteSpace|the kinté space]]: <code>FileName</code> <code>kp_aharone21.html</code> is assigned to two different documents 😐👴</h2>
+<p>When we view <a href="http://kintespace.com/kp_aharone21.html">http://kintespace.com/kp_aharone21.html</a> we see document <code>13013</code>, “Ezrah Aharone: The Legend of Lincoln Unchained”:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-08-29-20-09-42.png" alt="document "></p>
+</div>
+<blockquote>
+<p>[!error]
+The publisher of [[Songhay Publications - KinteSpace|kintespace.com]] (me) effectively used “Ezrah Aharone: The Legend of Lincoln Unchained” to overwrite document <code>9992</code>, “Ezrah Aharone: The Freedom and Curse to Bear Arms.” According to the [[Songhay Publications Data]], this accident took place on 2015-04-01 11:38:51.533—<mark>almost a decade ago</mark>👴</p>
+</blockquote>
+<p>The original <code>Fragment</code> for <code>9992</code> is preserved in the [[Songhay Azure Storage Mirror]]:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-08-29-20-10-56.png" alt="original  for "></p>
+</div>
+<p>The <code>Fragment</code> for “Ezrah Aharone: The Freedom and Curse to Bear Arms” needs to be ‘appended’ to the end of <code>kp_aharone*.html</code> documents with [[pandoc]] #to-do</p>
+<h2>[[dotnet|.NET]]: the brutal, expensive, #day-job  alternative to logging…</h2>
+<p>…is throwing an exception with detailed information—the same information that you would log. Sometimes installing logging is not readily available because:</p>
+<ul>
+<li>in a <acronym title="Dependency Injection">DI</acronym> situation, injecting <code>ILogger</code> in the constructor of some parent class that was not in the container in the first place might break things when ‘this class is used all over the place’</li>
+<li>passing <code>ILogger</code> in some parent method to multiple child levels of a harrowing call stack can be tedious—and can be even more frustrating when changing a method signature breaks an interface implementation</li>
+</ul>
+<p>So the quick and dirty alternative is something like:</p>
+<pre><code class="language-csharp">try
+{
+//...
+}
+catch
+{
+    throw new DataException($&quot;Hey! {x} casued this!&quot;);
+}
+</code></pre>
+<p>…where <code>x</code> provides the detail that null-reference or sequence-contains-no-elements (<acronym title="Language Integrated Query">LINQ</acronym>) exceptions fail to provide. The <code>try</code>-<code>catch</code> block should be very small—preferably one-line.</p>
+<p>The desire to wrap a line of code like this also comes from not wanting to build out permutations for handling <code>null</code>. Again, in the world of <acronym title="Language Integrated Query">LINQ</acronym>, sometimes returning with <code>.Single()</code> instead of <code>.SingleOrDefault()</code> is ‘easier’ to maintain because the violent throwing of an exception with tons of information is faster to detect than the silent killing that can occur from handling <code>null</code> (without logging).</p>
+<p>Ideally, this quick and dirty programming should be a last resort to deal with code that should be progressively replaced.</p>
+<h2>[[Songhay Publications|Publications]]: <acronym title="Cascading Style Sheets">CSS</acronym> relative colors</h2>
+<p><acronym title="Cascading Style Sheets">CSS</acronym> relative colors [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors">docs</a> ] are explained relatively well by [[Mozilla]]:</p>
+<blockquote>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors">CSS colors module</a> defines <strong>relative color syntax</strong>, which allows a CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"><code>&lt;color&gt;</code></a> value to be defined relative to another color. This is a powerful feature that enables easy creation of complements to existing colors — such as lighter, darker, saturated, semi-transparent, or inverted variants — enabling more effective color palette creation.</p>
+</blockquote>
+<p>This video demos what is going on:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=gPacarD9NuA">
+        <img alt="Relative colors make so many things easier!" src="https://img.youtube.com/vi/gPacarD9NuA/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Relative colors make so many things easier!</small></p>
+</figure>
+</div>
+<h2>[[eleventy]]: the permalink and “cool <acronym title="Universal Resource Identifier">URI</acronym>”</h2>
+<p>Once we understand what <a href="https://www.11ty.dev/docs/templates/">templates</a> are—and how many template ‘languages’ [[eleventy]] supports—then the next important concept to understand is the <em>permalink</em> [📖 <a href="https://www.11ty.dev/docs/permalinks/">docs</a> ].</p>
+<p>By default, when the input is a template, <code>thing.njk</code>, the output is <code>_site/thing/index.html</code> which means a “cool <acronym title="Universal Resource Identifier">URI</acronym>” [📖 <a href="https://www.11ty.dev/docs/permalinks/#cool-uris-dont-change">docs</a> ] can be used: <code>./thing/</code>. One reason why this is “cool”🧊🔗 is because a file extension is missing.</p>
+<p>In this Studio, [[Songhay Publications - KinteSpace|the kinté space]] uses the <code>.html</code> file extension. This means that the [[eleventy]]-based pipeline for [[Songhay Publications - KinteSpace|kintespace.com]] has to work <em>against</em> a fundamental concept in [[eleventy]] 😐 Others on the planet 🌏 have had this same problem. The following links provide hints:</p>
+<ul>
+<li><a href="https://github.com/11ty/eleventy/issues/1072#issuecomment-744076816">https://github.com/11ty/eleventy/issues/1072#issuecomment-744076816</a></li>
+<li><a href="https://stackoverflow.com/a/67678809/22944">https://stackoverflow.com/a/67678809/22944</a></li>
+<li><a href="https://github.com/11ty/eleventy/issues/1199#issuecomment-633230282">https://github.com/11ty/eleventy/issues/1199#issuecomment-633230282</a></li>
+</ul>
+<p>These hints make the following points:</p>
+<ol>
+<li>use the <code>permalink</code> property in an input-folder <acronym title="JavaScript Object Notation">JSON</acronym> file [📖 <a href="https://www.11ty.dev/docs/data-template-dir/">docs</a> ]</li>
+<li>optionally or consecutively, use the <code>permalink</code> property in <acronym title="YAML Ain’t Markup Language">YAML</acronym> front matter on the document level</li>
+<li>be aware of the <code>page</code> variable supplied by [[eleventy]] [📖 <a href="https://www.11ty.dev/docs/data-eleventy-supplied/">docs</a> ], specifically the <code>page.filePathStem</code> property</li>
+<li>filter functions [📖 <a href="https://www.11ty.dev/docs/filters/">docs</a> ] are used to transform the <code>page.filePathStem</code> property</li>
+<li>the <code>_data/eleventyComputed.js</code> global data file [📖 <a href="https://www.11ty.dev/docs/data-computed/">docs</a> ] can be used at the end of the data cascade to calculate the <code>permalink</code> property</li>
+</ol>
+<p>All of these points provide great background information but all we need for the [[Songhay Publications - KinteSpace|kintespace.com]] <code>permalink</code> issue are points <em>3</em> and <em>5</em> which lead to an <code>11ty/_data/eleventyComputed.js</code> with the following content:</p>
+<pre><code class="language-javascript">module.exports = {
+    permalink: (data) =&gt; {
+        return `${data.page.fileSlug}.html`;
+    }
+};
+</code></pre>
+<p>BTW: the <code>.eleventy.js</code> file for [[Songhay Publications - KinteSpace|kintespace.com]] looks like this:</p>
+<pre><code class="language-javascript">module.exports = function (config) {
+    return {
+        dir: {
+            input: '.',
+            output: '../app-staging',
+        },
+        htmlTemplateEngine: 'liquid',
+        markdownTemplateEngine: 'liquid',
+        templateFormats: ['html', 'md', 'css', 'liquid']
+    };
+};
+</code></pre>
+<p>Modern [[eleventy]] expects most developers to <em>not</em> use an <code>.eleventy.js</code> file at all!</p>
+<blockquote>
+<p>Configuration files are optional.</p>
+<p>—<a href="https://www.11ty.dev/docs/config/">https://www.11ty.dev/docs/config/</a></p>
+</blockquote>
+<h2>[[Azure WebJobs]] at the #day-job 🚋✨</h2>
+<p>Today marks the deployment of a console app as a [[Azure WebJobs|WebJob]] at the #day-job This console app is designed under the [[Generic Host|.NET Generic Host]] conventions from [[Microsoft]]. This is a new product from my Studio!</p>
+<p>The [[Generic Host|.NET Generic Host]] console app as a [[Azure WebJobs|WebJob]] serves as a cloud-based replacement for on-premise console apps running on a beefy-but-single server, maintained by on-premise IT staff. This replacement was needed for the #day-job and it has been supplied!</p>
+<p>This #day-job situation shows how [[Azure WebJobs]] and [[Azure Functions]] are <em>actually</em> being used:</p>
+<ul>
+<li>[[Azure Functions]] is being used as a serverless Web <acronym title="Application Programming Interface">API</acronym>.<sup>1</sup></li>
+<li>[[Azure WebJobs]] is being used as a back-office workload platform.</li>
+</ul>
+<hr>
+<p><sup>1</sup> <small>This is one step above using virtual applications ‘underneath’ a beefy Azure App Service.</small></p>
+<p>The development beyond the current situation includes:</p>
+<ul>
+<li>centralizing app settings with [[Azure App Configuration]]</li>
+<li>coordinating/synchronizing on-premise workloads with [[Azure WebJobs|WebJobs]]</li>
+</ul>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/Songhay.DataAccess/pull/13">https://github.com/BryanWilhite/Songhay.DataAccess/pull/13</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>The current, unfinished public projects on GitHub:</p>
+<ul>
+<li>
+<p>replacing the Angular app in <code>http://kintespace.com/player.html</code> with a Bolero app 🚜🔥 depends on:</p>
+<ul>
+<li>completing <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/54">issue #54</a>: move <code>Songhay.Publications.DataAccess</code> out of the kinté space repo 🚜</li>
+<li>generating Publication indices from SQLite for <code>Songhay.Publications.KinteSpace</code></li>
+<li>generating a new repo with proposed name, <code>Songhay.Modules.Bolero.Index</code> ✨🚧 and add a GitHub Project</li>
+</ul>
+</li>
+</ul>
+<p>The proposed project items:</p>
+<ul>
+<li>switch Studio from Material Design to Bulma 💄 ➡️ 💄✨</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2024-08-29T19:00:11.949Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>

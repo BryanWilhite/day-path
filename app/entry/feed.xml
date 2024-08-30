@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Jul 2024 06:27:51 -0700</pubDate>
+        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 29 Aug 2024 12:00:11 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2024-08</title>
+            <link>http://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</link>
+            <description>
+                month 08 of 2024 was about prepping an Obsidian-based kintespace.com and #day-job Azure success Last month was about deciding and planning to live with the SQLite flavor of Entity Framework with Obsidian-based word processing and Markdown data management.…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</guid>
+            <pubDate>Thu, 29 Aug 2024 12:00:11 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2024-07</title>
             <link>http://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07</link>
@@ -136,17 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-09-27-studio-status-report-2023-09</guid>
             <pubDate>Wed, 27 Sep 2023 09:57:54 -0700</pubDate>
-        </item>
-        <item>
-            <title>Songhay Publications and the Concept of the Index (2021)</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-09-20-songhay-publications-and-the-concept-of-the-index-2021</link>
-            <description>
-                The intent here is to build upon the 2020 version of this subject and move forward toward new definitions and techniques that will work well in my Studio. That 2020 exploration gives us: - the Search Index Entry
-the Publications Index Entry We will see fr…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-09-20-songhay-publications-and-the-concept-of-the-index-2021</guid>
-            <pubDate>Wed, 20 Sep 2023 19:34:38 -0700</pubDate>
         </item>
     </channel>
 </rss>
