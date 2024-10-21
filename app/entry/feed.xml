@@ -1,150 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="en-US" xml:base="http://songhayblog.azurewebsites.net/entry/feed.xml">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="en-US" xml:base="https://songhayblog.azurewebsites.net/entry/feed.xml">
     <channel>
         <title>Day Path</title>
         <description>a technical Blog ✒ for my little studio</description>
 
-        <link>http://songhayblog.azurewebsites.net/</link>
-        <atom:link href="http://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 28 Sep 2024 07:49:37 -0700</pubDate>
+        <link>https://songhayblog.azurewebsites.net/</link>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 28 Sep 2024 07:49:37 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
         <item>
             <title>studio status report: 2024-09</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-09-28-studio-status-report-2024-09</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-09-28-studio-status-report-2024-09</link>
             <description>
                 month 09 of 2024 was about the first Songhay.DataAccess release in over three years and completing the migration to markdown for Songhay.Publications.KinteSpace NuGet package Songhay.DataAccess was updated to the .NET 6.0 time-frame this Studio is living …
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-09-28-studio-status-report-2024-09</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-09-28-studio-status-report-2024-09</guid>
             <pubDate>Sat, 28 Sep 2024 07:49:37 -0700</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-08</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</link>
             <description>
                 month 08 of 2024 was about prepping an Obsidian-based kintespace.com and #day-job Azure success Last month was about deciding and planning to live with the SQLite flavor of Entity Framework with Obsidian-based word processing and Markdown data management.…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</guid>
             <pubDate>Thu, 29 Aug 2024 12:00:11 -0700</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-07</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07</link>
             <description>
                 month 07 of 2024 was about returning to Entity Framework, inclusion of Obsidian in Publications work flow and ‘too many’ other interesting advances The Obsidian graph for this month looks very much like ‘too many’ interesting advances: Obsidian graph for …
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07</guid>
             <pubDate>Sun, 28 Jul 2024 06:27:51 -0700</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-06</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-06-26-studio-status-report-2024-06</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-06-26-studio-status-report-2024-06</link>
             <description>
                 month 05 of 2024 was about releasing the new YouTube b-roll player on kintespace.com and restarting work on Songhay Publications The Obsidian graph for this month is even more tangled because I have added Studio topics to the mix:  Obsidian graph for this…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-06-26-studio-status-report-2024-06</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-06-26-studio-status-report-2024-06</guid>
             <pubDate>Wed, 26 Jun 2024 15:40:28 -0700</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-05</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</link>
             <description>
                 month 05 of 2024 was about not releasing the new YouTube b-roll player on kintespace.com This month-05 report is late because of day-job drama around meeting deadlines. The day-job is back in the foreground as it plays a significant role in an upcoming St…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</guid>
             <pubDate>Sun, 02 Jun 2024 18:59:58 -0700</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-04</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-04-28-studio-status-report-2024-04</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-04-28-studio-status-report-2024-04</link>
             <description>
                 month 03 of 2024 was about finally completing Songhay.Player.YouTube release 6.3.1 📦🚀 Songhay.Player.YouTube 6.3.1 was released but it was immediately followed by release 6.3.2 because of a bug 🐛 related to the tabbing experience revealed in the Studio…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-04-28-studio-status-report-2024-04</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-04-28-studio-status-report-2024-04</guid>
             <pubDate>Sun, 28 Apr 2024 12:48:38 -0700</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-03</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-03-30-studio-status-report-2024-03</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-03-30-studio-status-report-2024-03</link>
             <description>
                 month 03 of 2024 was about Songhay.Player.YouTube release 6.3.1 📦🚀 As of this writing, there is only one task left on the Songhay.Player.YouTube project for release 6.3.1. This places the Studio very, very close to replacing the Angular app in…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-03-30-studio-status-report-2024-03</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-03-30-studio-status-report-2024-03</guid>
             <pubDate>Sat, 30 Mar 2024 16:28:12 -0700</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-02</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-02-29-studio-status-report-2024-02</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-02-29-studio-status-report-2024-02</link>
             <description>
                 month 02 of 2024 was about releasing Songhay.Player.YouTube release 6.3.0 📦🚀 It is almost totally awesome that the Songhay.Player.YouTube release 6.3.0 📦🚀 project was completed in month 02. But, as the developer story goes, there is still more shit to…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-02-29-studio-status-report-2024-02</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-02-29-studio-status-report-2024-02</guid>
             <pubDate>Thu, 29 Feb 2024 13:46:43 -0800</pubDate>
         </item>
         <item>
             <title>studio status report: 2024-01</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-01-31-studio-status-report-2024-01</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-01-31-studio-status-report-2024-01</link>
             <description>
                 month 01 of 2024 was about releasing Songhay.Modules.Bolero and SonghayCore The only piece left to complete that other ‘half’ needed to completely replace &lt;http://kintespace.com/player.html&gt; is Songhay.Player.YouTube release 6.3.0 📦🚀…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-01-31-studio-status-report-2024-01</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-01-31-studio-status-report-2024-01</guid>
             <pubDate>Wed, 31 Jan 2024 08:05:03 -0800</pubDate>
         </item>
         <item>
             <title>my Studio feature set for 2024</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</link>
             <description>
                 Here, in my Studio, a “technical Blog” is simply a series of posts about a set of interests. Traditionally this set of interests is focused and coherent—but oftentimes too broad. I recall sending an email to Carl Franklin last century (before the inventio…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</guid>
             <pubDate>Sun, 07 Jan 2024 19:16:47 -0800</pubDate>
         </item>
         <item>
             <title>studio status report: 2023-12</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-12-30-studio-status-report-2023-12</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2023-12-30-studio-status-report-2023-12</link>
             <description>
                 month 12 of 2023 was about releasing Songhay.Modules 6.40 and refreshing knowledge of Azure WebJobs As mentioned last month, the other ‘half’ needed to completely replace &lt;http://kintespace.com/player.html&gt; includes: - Songhay.Modules.Bolero release 6.4.0 […
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-12-30-studio-status-report-2023-12</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2023-12-30-studio-status-report-2023-12</guid>
             <pubDate>Sat, 30 Dec 2023 11:27:11 -0800</pubDate>
         </item>
         <item>
             <title>Azure WebJobs in 2023</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-12-22-azure-webjobs-in-2023</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2023-12-22-azure-webjobs-in-2023</link>
             <description>
                 Azure Web Jobs [📖 docs ] remains the ‘last resort’ when running code in the Microsoft cloud 🌩 When Azure Functions [📖 docs ] cannot run your ‘executable’ (likely because it is a tightly-coupled, vertical stack of cross-boundary asynchronous calls that …
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-12-22-azure-webjobs-in-2023</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2023-12-22-azure-webjobs-in-2023</guid>
             <pubDate>Fri, 22 Dec 2023 09:59:14 -0800</pubDate>
         </item>
         <item>
             <title>studio status report: 2023-11</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-11-29-studio-status-report-2023-11</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2023-11-29-studio-status-report-2023-11</link>
             <description>
                 month 11 of 2023 was about releasing Songhay.Player.ProgressiveAudio and returning to SQL Server Songhay.Player.ProgressiveAudio is released and running on kintespace.com. This release was only ‘half’ of what is needed to completely replace http://kintesp…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-11-29-studio-status-report-2023-11</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2023-11-29-studio-status-report-2023-11</guid>
             <pubDate>Wed, 29 Nov 2023 18:43:13 -0800</pubDate>
         </item>
         <item>
             <title>studio status report: 2023-10</title>
-            <link>http://songhayblog.azurewebsites.net/entry/2023-10-31-studio-status-report-2023-10</link>
+            <link>https://songhayblog.azurewebsites.net/entry/2023-10-31-studio-status-report-2023-10</link>
             <description>
                 month 10 of 2023 was about finding foundational bugs 🐛 in Songhay.Player.ProgressiveAudio (and finally using Redis Cache) No funny banter this month 😐 Issues #13 and #14 are currently holding up the release of the b-roll audio player. These challenges h…
             </description>
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">http://songhayblog.azurewebsites.net/entry/2023-10-31-studio-status-report-2023-10</guid>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2023-10-31-studio-status-report-2023-10</guid>
             <pubDate>Tue, 31 Oct 2023 18:55:02 -0700</pubDate>
         </item>
     </channel>
