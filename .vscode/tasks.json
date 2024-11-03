@@ -2,6 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "bash: deploy_day_path_blog",
+            "command": "bash",
+            "args": [
+                "../Songhay.Shell/linux/AnyShell/sh/deploy_day_path_blog.sh"
+            ],
+            "isBackground": false,
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
             "label": "npm: build",
             "type": "npm",
             "group": "build",
