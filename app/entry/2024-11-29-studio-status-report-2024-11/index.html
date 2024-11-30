@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2024-11" />
+    <meta name="twitter:title" content="studio status report: 2024-11" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2024-11-29-studio-status-report-2024-11" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 11 of 2024 was about updating Typescript fundamentals with Lerna The Obsidian graph for month 11 does not show any sign of the Typescript and Lerna work of the month: Obsidian graph for month 11 Lerna notes are spread out among three days …" />
+    <meta property="og:description" content="month 11 of 2024 was about updating Typescript fundamentals with Lerna The Obsidian graph for month 11 does not show any sign of the Typescript and Lerna work of the month: Obsidian graph for month 11 Lerna notes are spread out among three days …" />
+    <meta name="twitter:description" content="month 11 of 2024 was about updating Typescript fundamentals with Lerna The Obsidian graph for month 11 does not show any sign of the Typescript and Lerna work of the month: Obsidian graph for month 11 Lerna notes are spread out among three days …" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2024-11 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2024-11</h1>
+<h2>month 11 of 2024 was about updating Typescript fundamentals with Lerna</h2>
+<p>The Obsidian graph for month 11 does not show any sign of the Typescript and Lerna work of the month:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-22-49-50.png" alt="Obsidian graph for month 11"></p>
+</div>
+<p>Lerna notes are spread out among three days:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-22-52-48.png" alt="Obsidian graph for month 11, highlighting Lerna"></p>
+</div>
+<p>Typescript notes cover five <em>other</em> days:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-22-55-53.png" alt="Obsidian graph for month 11, highlighting Typescript"></p>
+</div>
+<p>The topics of Lerna and Typescript make eight days of work for the month but selected notes below should show more such work under additional topics:</p>
+<h2>[[Songhay Publications|Publications]]: WASM Audio Decoders #to-do</h2>
+<blockquote>
+<p>WASM Audio Decoders is a collection of Web Assembly audio decoder libraries that are highly optimized for browser use. Each module supports synchronous decoding on the main thread as well as asynchronous (threaded) decoding through a built in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">Web Worker</a> implementation.</p>
+<p>Web Assembly is a binary instruction format for a stack-based virtual machine that allows for near native code execution speed inside of a web browser. In practice, these decoders are just as fast, and in some cases faster, than the browser implementation.</p>
+<p>—<a href="https://github.com/eshaz/wasm-audio-decoders">https://github.com/eshaz/wasm-audio-decoders</a></p>
+</blockquote>
+<h2>[[Songhay Web Components]] <code>npm</code> drama with [[Lit]]</h2>
+<p>After the usual <code>npm-check -u</code>, we have the usual miserable security vulnerability message:</p>
+<pre><code class="language-console">17 vulnerabilities (1 low, 3 moderate, 11 high, 2 critical)
+</code></pre>
+<p>So I take the bait as usual and run:</p>
+<pre><code class="language-shell">$ npm audit fix
+
+added 10 packages, removed 5 packages, changed 35 packages, and audited 1146 packages in 2m
+
+125 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+@koa/cors  &lt;5.0.0
+Severity: high
+Overly permissive origin policy - https://github.com/advisories/GHSA-qxrj-hx23-xp82
+fix available via `npm audit fix --force`
+Will install es-dev-server@1.23.1, which is a breaking change
+node_modules/@koa/cors
+  es-dev-server  &gt;=1.24.1
+  Depends on vulnerable versions of @koa/cors
+  Depends on vulnerable versions of browserslist-useragent
+  Depends on vulnerable versions of useragent
+  node_modules/es-dev-server
+
+useragent  *
+Severity: moderate
+useragent Regular Expression Denial of Service vulnerability - https://github.com/advisories/GHSA-mgfv-m47x-4wqp
+fix available via `npm audit fix --force`
+Will install es-dev-server@1.23.1, which is a breaking change
+node_modules/useragent
+  browserslist-useragent  &lt;=3.1.4
+  Depends on vulnerable versions of useragent
+  node_modules/browserslist-useragent
+
+4 vulnerabilities (2 moderate, 2 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+</code></pre>
+<p>I am supposed to be satisfied with the drop from 11 to 2 high vulnerabilities 😐</p>
+<h2>[[Songhay System Studio]]: “Why the deep learning boom caught almost everyone by surprise”</h2>
+<blockquote>
+<p>Neural networks had delivered some impressive results in the late 1980s and early 1990s. But then progress stalled. By 2008, many researchers had moved on to mathematically elegant approaches such as <a href="https://en.wikipedia.org/wiki/Support_vector_machine">support vector machines</a>.</p>
+<p>I didn’t know it at the time, but a team at Princeton—in the same computer science building where I was attending lectures—was working on a project that would upend the conventional wisdom and demonstrate the power of neural networks. That team, ==led by Prof. Fei-Fei Li==, wasn’t working on a better version of neural networks. They were hardly thinking about neural networks at all.</p>
+<p>Rather, they were creating a new image dataset that would be far larger than any that had come before: 14 million images, each labeled with one of nearly 22,000 categories.</p>
+<p>—“<a href="https://www.understandingai.org/p/why-the-deep-learning-boom-caught">Why the deep learning boom caught almost everyone by surprise</a>”</p>
+</blockquote>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=JgQ1FJ_wow8">
+        <img alt="CHM Live | Fei-Fei Li's AI Journey" src="https://img.youtube.com/vi/JgQ1FJ_wow8/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>CHM Live | Fei-Fei Li's AI Journey</small></p>
+</figure>
+</div>
+<p>Also, see “<a href="https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/">How a stubborn computer scientist accidentally launched the deep learning boom </a>” 📰</p>
+<h2>[[Songhay System Studio]]: “Bad Software Keeps Cyber Security Companies in Business”</h2>
+<blockquote>
+<p>The top two entries, XSS (Cross-Site Scripting) (CWE-79) and SQL injection (CWE-89), are fundamental to web application security and are always covered as part of basic development best practices. Both are common attack vectors and are often included in secure development guidelines like <a href="https://owasp.org/www-project-top-ten/">OWASP’s top security risks</a>.</p>
+<p>—“<a href="https://www.dogesec.com/blog/bad_software_keeps_security_industry_in_business/">Bad Software Keeps Cyber Security Companies in Business</a>”</p>
+</blockquote>
+<h2>[[Songhay Web Components]]: [[Lit]] drama, continued</h2>
+<p>Continuing on from [[2024-11-02#Songhay Web Components <code>npm</code> drama|eight days ago]], we have <code>property</code> and <code>customElement</code> missing from [[Lit]]:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-11-04.png" alt="Typescript code"></p>
+</div>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-11-46.png" alt="Typescript code"></p>
+</div>
+<p>According to <a href="https://lit.dev/docs/releases/upgrade/#removed-re-export-decorators">the latest upgrade guide</a>:</p>
+<blockquote>
+<p>Lit 3.0 <a href="https://lit.dev/docs/components/decorators/#built-in-decorators">built-in decorators</a> are no longer exported by <code>lit-element</code>, and should instead be imported from <code>lit/decorators.js</code>.</p>
+</blockquote>
+<p>This appears to be working at design time:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-12-40.png" alt="Typescript code"></p>
+</div>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-13-13.png" alt="Typescript code"></p>
+</div>
+<h2>[[Songhay Web Components]]: <code>chai</code> drama 😐</h2>
+<p>I do not understand why the past version of me wrote a [[Typescript]] file with a variable called <code>chai</code> without any corresponding <code>import</code> statement:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-14-38.png" alt="Typescript code"></p>
+</div>
+<p>My [[Joplin]] notes make no relevant mention of <code>chai</code> or <code>lerna</code> 😐</p>
+<h2>[[Songhay Web Components]]: the <code>ERR_REQUIRE_ESM</code> drama is really about my <code>*.ts</code> files being interpreted as <code>CommonJS</code> files 😐</h2>
+<p>[[2024-11-10#Songhay Web Components <code>ERR_REQUIRE_ESM</code> drama with Chai and TS-Mocha 😐|Two days ago]], I was non-thinking that [[Chai]] was retro, holding back my [[Typescript]] progress when it was the other way around. The [[Chai]] guy himself (the <em>second</em> most active contributor), <a href="https://github.com/keithamus">Keith Cirkel</a>, <a href="https://github.com/chaijs/chai/issues/1561#issuecomment-1871878274">explains</a>:</p>
+<blockquote>
+<p>To talk about the motivation for this change, especially from the lens of the ecosystem of available build tools: there is a complexity trade off for libraries like Chai to support each of these build tools, and it becomes somewhat of an N*M problem. Standards allow us to target a single syntax to reach the broadest support, and <strong>will be an inevitable shift in the JS ecosystem</strong>, it is just a matter of &quot;when&quot;. Version 5 is chai's &quot;when&quot;. Certainly if we are the first to support ESM it would cause undue friction, but if we were last it would also cause undue friction. Packages like <a href="https://www.npmjs.com/package/@esm-bundle/chai"><code>@esm-bundle/chai</code></a> already exist which demonstrate the friction is there today. There is no time we could have made this change that would satisfy all users. The Chai team is very confident we've made the right decision so support ESM only, and Chai &gt;5 will continue to support only ESM (or whatever module system the EcmaScript standardises) indefinitely.</p>
+</blockquote>
+<p>Before I understood what was going on, I drove myself to “<a href="https://raygun.com/blog/javascript-unit-testing-frameworks/">JavaScript unit testing frameworks in 2024: A comparison</a>” (and found interest in [[StoryBook]] (<a href="https://storybook.js.org/">https://storybook.js.org/</a>) #to-do and [[Puppeteer]]—and found out just how young Microsoft’s [[Playwright]] is). But, eventually, I started paying attention to my root <code>tsconfig.json</code> file:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-18-38.png" alt="tsconfig.json"></p>
+</div>
+<p>My <code>moduleResolution</code> setting [📖 <a href="https://www.typescriptlang.org/tsconfig/#moduleResolution">docs</a> ] is deprecated 😐</p>
+<blockquote>
+<p><code>'node10'</code> (previously called <code>'node'</code>) for Node.js versions older than v10, which only support CommonJS <code>require</code>. You probably won’t need to use <code>node10</code> in modern code.</p>
+</blockquote>
+<p>The docs strongly suggest to me that I should use <code>bundler</code>:</p>
+<blockquote>
+<p><code>'bundler'</code> for use with bundlers. Like <code>node16</code> and <code>nodenext</code>, this mode supports package.json <code>&quot;imports&quot;</code> and <code>&quot;exports&quot;</code>, but unlike the Node.js resolution modes, <code>bundler</code> never requires file extensions on relative paths in imports.</p>
+</blockquote>
+<p>With <code>&quot;moduleResolution&quot;: &quot;Bundler&quot;,</code>, [[TS-Mocha]] fails with:</p>
+<pre><code class="language-console">Exception during run: error TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.
+</code></pre>
+<p>This error continues to show in spite of the following <code>tsconfig.json</code> settings:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-20-02.png" alt="tsconfig.json settings"></p>
+</div>
+<p>But I <em>must</em> remember that [[TS-Mocha]] depends on [[ts-node]] which <em>must</em> be more [[Node.js]] flavored than “bundler” flavored. Let’s try <code>&quot;moduleResolution&quot;: &quot;node16&quot;,</code>:</p>
+<blockquote>
+<p><code>'node16'</code> or <code>'nodenext'</code> for modern versions of Node.js. Node.js v12 and later supports both ECMAScript imports and CommonJS <code>require</code>, which resolve using different algorithms. These <code>moduleResolution</code> values, when combined with the corresponding <a href="https://www.typescriptlang.org/tsconfig/#module"><code>module</code></a> values, picks the right algorithm for each resolution based on whether Node.js will see an <code>import</code> or <code>require</code> in the output JavaScript code.</p>
+</blockquote>
+<p>Moving from the “bundler” world into the [[Node.js]] world, error messages show up in the [[Typescript]] source code:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-21-09.png" alt="Typescript code"></p>
+</div>
+<p>This is the error on line 1:</p>
+<pre><code class="language-console">The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import(&quot;chai&quot;)' call instead.  
+To convert this file to an ECMAScript module, change its file extension to '.mts', or add the field `&quot;type&quot;: &quot;module&quot;` to '/home/rasx/sourceRoot/songhay-web-components/packages/input-autocomplete/package.json'.ts(1479)
+</code></pre>
+<blockquote>
+<p>[!important]
+This error is telling me that my source code is considered “a CommonJS module” 😐👴</p>
+</blockquote>
+<p>The official docs recognizes the <code>.mts</code> file extension:</p>
+<blockquote>
+<p>When the input file extension is <code>.mts</code> or <code>.cts</code>, TypeScript knows to treat that file as an ES module or CJS module, respectively, because Node.js will treat the output <code>.mjs</code> file as an ES module or the output <code>.cjs</code> file as a CJS module. When the input file extension is <code>.ts</code>, TypeScript has to consult the nearest <code>package.json</code> file to determine the module format, because this is what Node.js will do when it encounters the output <code>.js</code> file.</p>
+<p>—“<a href="https://www.typescriptlang.org/docs/handbook/modules/theory.html#module-format-detection">Module format detection</a>”</p>
+</blockquote>
+<blockquote>
+<p>[!important]
+By changing the file extension from <code>.ts</code> to <code>.mts</code>, the second error message on line 3 goes away:</p>
+</blockquote>
+<pre><code class="language-console">Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './autocomplete-suggestions.js'?ts(2835)
+</code></pre>
+<h2>[[Songhay Web Components]]: the horror 🤡 of the situation is centered upon [[TS-Mocha]] being dead 💀</h2>
+<p>My waste of time [[2024-11-12#Songhay Web Components the <code>ERR_REQUIRE_ESM</code> drama is really about my <code>*.ts</code> files being interpreted as <code>CommonJS</code> files 😐|yesterday]] was punctuated with an empty checklist, looking forward to another potentially time-wasting effort. In order to avoid wasting time on that checklist, I recommend wasting more time by looking at [[Mocha]] again in the context of, say, “<a href="https://www.testim.io/blog/mocha-for-typescript-testing/">Mocha for TypeScript Testing: How to Get Started</a>.” My accusation is this:</p>
+<blockquote>
+<p>[!warning]
+[[TS-Mocha]] is abandoned: left for dead 💀</p>
+</blockquote>
+<p>[[TS-Mocha]] is not growing with [[Typescript]]. The error messages from yesterday strongly suggest this (to me). Sadly, I need to go back to my “<code>mocha</code> and Typescript” <a href="https://github.com/BryanWilhite/nodejs/tree/master/mocha-and-typescript">sample</a> and try it again <em>without</em> [[TS-Mocha]] #to-do</p>
+<h2>[[Lerna]]: using <code>lerna exec</code> with <code>--scope</code></h2>
+<p>My “<code>mocha</code> and Typescript” sample [🔗 <a href="https://github.com/BryanWilhite/nodejs/tree/master/mocha-and-typescript">GitHub</a> ] shows how to use <code>lerna exec</code> <em>without</em> <code>--scope</code>:</p>
+<pre><code class="language-json">&quot;ts-mocha:test:test:mocha-getting-started&quot;: &quot;npx ts-mocha -p packages/mocha-getting-started/__tests__/tsconfig.json packages/mocha-getting-started/__tests__/**/*.spec.ts&quot;,
+</code></pre>
+<p>Here is the same command using <code>--scope</code>:</p>
+<pre><code class="language-json">&quot;lerna:test:mocha-getting-started&quot;: &quot;npx lerna exec --scope=@songhay/mocha-getting-started -- ts-mocha -p __tests__/tsconfig.json __tests__/**/*.spec.ts&quot;,
+</code></pre>
+<p>This approach does not make the command shorter but I find it more understandable—and more ‘convertible’ to executing the same command without [[Lerna]].</p>
+<h3><code>http-server</code> can start up in a sub-directory…</h3>
+<p>…the reason why this feature is useful at the moment in this Studio is because it allows the loading of <code>dist</code> assets in the <code>node_modules</code> directory, eliminating the need for bundling with, say, [[webpack]]. Again, in my “<code>mocha</code> and Typescript” sample [🔗 <a href="https://github.com/BryanWilhite/nodejs/tree/master/mocha-and-typescript">GitHub</a> ], we can see an <acronym title="HyperText Markup Language">HTML</acronym> page expecting <code>http-server</code> [🔗 <a href="https://github.com/http-party/http-server">GitHub</a> ] to start up in a sub-directory:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Mocha Tests&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;../../../../node_modules/mocha/mocha.css&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+
+    &lt;script src=&quot;../../../../node_modules/chai/chai.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;../../../../node_modules/mocha/mocha.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script class=&quot;mocha-init&quot;&gt;
+        mocha.setup('bdd');
+        mocha.checkLeaks();
+    &lt;/script&gt;
+    &lt;script src=&quot;getting-started.spec.js&quot;&gt;&lt;/script&gt;
+    &lt;script class=&quot;mocha-exec&quot;&gt;
+      mocha.run();
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The corresponding [[node package manager|npm]] script is:</p>
+<pre><code class="language-plaintext">http-server . -o $npm_package_config_bt/step-1 -c-1
+</code></pre>
+<p>The <code>--help</code> text for the <code>-o</code> option used above reminds us that <code>-o</code> supports a <code>[path]</code> option:</p>
+<pre><code class="language-plaintext">-o [path]    Open browser window after starting the server.
+             Optionally provide a URL path to open the browser window to.
+</code></pre>
+<h2>[[Lerna]]: a couple of new things learned</h2>
+<p>Here are some small signs of progress:</p>
+<h3><code>package.json</code> has a <code>config</code> property for sharing state</h3>
+<p>In short, <code>config</code> [📖 <a href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json#config">docs</a> ] is a state bag 👜 My “<code>mocha</code> and Typescript” sample [🔗 <a href="https://github.com/BryanWilhite/nodejs/tree/master/mocha-and-typescript">GitHub</a> ] shows what is going on:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-28-54.png" alt="package.json"></p>
+</div>
+<p>The conventional prefix for accessing this state bag 👜 is <code>$npm_package_config_*</code>.</p>
+<h2>[[Synology]]: yes, it appears to be possible to upgrade <acronym title="Network Access Storage">NAS</acronym> memory 🐏⬆ 👀 #to-do</h2>
+<p>This video explains that:</p>
+<ul>
+<li>the DS220 has a maximum of 6 GB of <acronym title="Random Access Memory">RAM</acronym> (does the DS220+ change that? <em>No.</em>)</li>
+<li>the memory used is <a href="https://www.amazon.com/gp/product/B07TR767SB?ie=UTF8&amp;linkCode=sl1&amp;tag=astralightproduc&amp;linkId=4ee4827c3eaf793c3568b2959b00b97e&amp;language=en_US&amp;ref_=as_li_ss_tl&amp;th=1">Crucial RAM 8GB DDR4 2666 MHz CL19 Memory for Mac CT8G4S266M</a></li>
+</ul>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=zOJyYsRQNDM">
+        <img alt="Upgrading memory in Synology DS220+ with crucial memory" src="https://img.youtube.com/vi/zOJyYsRQNDM/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Upgrading memory in Synology DS220+ with crucial memory</small></p>
+</figure>
+</div>
+<h2>[[Lerna]]: next move is to use <code>@tsconfig/strictest</code></h2>
+<p>Today I have been made aware of <code>@tsconfig/strictest</code> [🔗 <a href="https://npmjs.com/package/@tsconfig/strictest">npm</a> ] which a part of <a href="https://github.com/tsconfig/bases/tree/main">Centralized Recommendations for TSConfig bases</a> [📖 <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#tsconfig-bases">docs</a> ].</p>
+<h2>[[Songhay Publications]]: the <code>script [type=&quot;module&quot;]</code> attribute</h2>
+<p>My “<code>mocha</code> and Typescript” sample [🔗 <a href="https://github.com/BryanWilhite/nodejs/tree/master/mocha-and-typescript">GitHub</a> ] work led me to this error message while failing to load [[Mocha]] in the browser ([[Firefox]]):</p>
+<pre><code class="language-console">SyntaxError: import declarations may only appear at top level of a module
+</code></pre>
+<blockquote>
+<p>The JavaScript exception &quot;import declarations may only appear at top level of a module&quot; occurs when an import declaration is not at the top level of a module. This might be because the import declaration is nested in other constructs (functions, blocks, etc.), or more often because the current file is not treated as a module.</p>
+<p>—“<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/import_decl_module_top_level">SyntaxError: import declarations may only appear at top level of a module</a>”</p>
+</blockquote>
+<p>Adding <code>type=&quot;module&quot;</code> to the <code>script</code> element causes the file loaded with the <code>src</code> attribute to be treated as a module [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">docs</a> ].</p>
+<p>We see the <code>type</code> attribute [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type">docs</a> ] of <code>script</code> set to <code>module</code> twice:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-11-29-23-35-16.png" alt="HTML markup"></p>
+</div>
+<p>Notice how there is no <code>type</code> attribute declared on line 13. This is because <code>mocha.js</code> has no <code>import</code> or <code>export</code> statements which effectively makes it <em>not</em> a module. It is an <acronym title="Immediately Invoked Function Expression">IIFE</acronym> [📖 <a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">docs</a> ].</p>
+<p>It is important (to me) to mention that using the <code>import</code> statement in JavaScript without any <code>export</code> statements <em>still</em> means that the file containing this <code>import</code> statement is a module:</p>
+<blockquote>
+<p>In order to use the <code>import</code> declaration in a source file, the file must be interpreted by the runtime as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">module</a>. In HTML, this is done by adding <code>type=&quot;module&quot;</code> to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a> tag. Modules are automatically interpreted in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a>.</p>
+<p>—“<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">import</a>”</p>
+</blockquote>
+<h2>[[Songhay Publications]]: the <code>script[type=&quot;importmap&quot;]</code> attribute</h2>
+<p>My “<code>mocha</code> and Typescript” sample [🔗 <a href="https://github.com/BryanWilhite/nodejs/tree/master/mocha-and-typescript">GitHub</a> ] shows that, when writing JavaScript by hand, making a file that will be loaded in the browser, we may resort to this <code>import</code> syntax:</p>
+<pre><code class="language-javascript">import { assert } from '../../../../node_modules/chai/chai.js';
+</code></pre>
+<p>With respect to the browser, the relative path to the <code>chai</code> module is explicitly specified. All of this effort is taken to avoid this catastrophic error message:</p>
+<pre><code class="language-console">TypeError: The specifier “chai” was a bare specifier, but was not remapped to anything. Relative module specifiers must start with “./”, “../” or “/”.
+</code></pre>
+<p>Our <code>chai</code> module is imported with a “bare specifier” when the syntax is like this:</p>
+<pre><code class="language-javascript">import { assert } from 'chai';
+</code></pre>
+<p>This is the very syntax we are used to when writing [[Typescript]]. In fact, the [[Typescript]] will not compile when we try to use <code>import</code> with the “relative module specifiers” shown above.</p>
+<p>Now our <code>TypeError</code> error message has the word “remapped” in it. This suggests that:</p>
+<blockquote>
+<p>[!import]
+An <code>import</code> statement with a <em>bare specifier</em> needs a mapping from this specifier to an absolute or relative location accessible by the browser.</p>
+</blockquote>
+<p>Such mapping is declared in <acronym title="JavaScript Object Notation">JSON</acronym> format in a <code>script</code> element with the <code>type=&quot;importmap&quot;</code> attribute [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap">docs</a> ].</p>
+<blockquote>
+<p>An import map is a JSON object that allows developers to control how the browser resolves module specifiers when importing <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">JavaScript modules</a>. It provides a mapping between the text used as the module specifier in an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import"><code>import</code> statement</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import"><code>import()</code> operator</a>, and the corresponding value that will replace the text when resolving the specifier. The JSON object must conform to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap#import_map_json_representation">Import map JSON representation format</a>.</p>
+</blockquote>
+<p>Our “<code>mocha</code> and Typescript” sample [🔗 <a href="https://github.com/BryanWilhite/nodejs/tree/master/mocha-and-typescript">GitHub</a> ] has an <acronym title="HyperText Markup Language">HTML</acronym> declaration showing how <code>type=&quot;importmap&quot;</code> works:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Mocha Tests&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;../../../../node_modules/mocha/mocha.css&quot; /&gt;
+    &lt;script type=&quot;importmap&quot;&gt;
+      {
+        &quot;imports&quot;: {
+          &quot;chai&quot;: &quot;../../../../node_modules/chai/chai.js&quot;
+        }
+      }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+
+    &lt;script type=&quot;module&quot; src=&quot;../../../../node_modules/chai/chai.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;../../../../node_modules/mocha/mocha.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script class=&quot;mocha-init&quot;&gt;
+        mocha.setup('bdd');
+        mocha.checkLeaks();
+    &lt;/script&gt;
+    &lt;script type=&quot;module&quot; src=&quot;./js/getting-started.spec.js&quot;&gt;&lt;/script&gt;
+    &lt;script class=&quot;mocha-exec&quot;&gt;
+      mocha.run();
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>The current, unfinished public projects on GitHub:</p>
+<ul>
+<li>
+<p>replacing the Angular app in <code>http://kintespace.com/player.html</code> with a Bolero app 🚜🔥 depends on:</p>
+<ul>
+<li>completing <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/54">issue #54</a>: move <code>Songhay.Publications.DataAccess</code> out of the kinté space repo 🚜</li>
+<li>generating Publication indices from SQLite for <code>Songhay.Publications.KinteSpace</code></li>
+<li>generating a new repo with proposed name, <code>Songhay.Modules.Bolero.Index</code> ✨🚧 and add a GitHub Project</li>
+</ul>
+</li>
+</ul>
+<p>The proposed project items:</p>
+<ul>
+<li>switch Studio from Material Design to Bulma 💄 ➡️ 💄✨</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2024-11-29T22:40:29.508Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>

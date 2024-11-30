@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 01 Nov 2024 14:11:44 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 29 Nov 2024 14:40:29 -0800</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2024-11</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2024-11-29-studio-status-report-2024-11</link>
+            <description>
+                month 11 of 2024 was about updating Typescript fundamentals with Lerna The Obsidian graph for month 11 does not show any sign of the Typescript and Lerna work of the month: Obsidian graph for month 11 Lerna notes are spread out among three days …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-11-29-studio-status-report-2024-11</guid>
+            <pubDate>Fri, 29 Nov 2024 14:40:29 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2024-10</title>
             <link>https://songhayblog.azurewebsites.net/entry/2024-11-01-studio-status-report-2024-10</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2023-12-22-azure-webjobs-in-2023</guid>
             <pubDate>Fri, 22 Dec 2023 09:59:14 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2023-11</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2023-11-29-studio-status-report-2023-11</link>
-            <description>
-                month 11 of 2023 was about releasing Songhay.Player.ProgressiveAudio and returning to SQL Server Songhay.Player.ProgressiveAudio is released and running on kintespace.com. This release was only ‘half’ of what is needed to completely replace http://kintesp…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2023-11-29-studio-status-report-2023-11</guid>
-            <pubDate>Wed, 29 Nov 2023 18:43:13 -0800</pubDate>
         </item>
     </channel>
 </rss>
