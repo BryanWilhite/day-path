@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2024-12" />
+    <meta name="twitter:title" content="studio status report: 2024-12" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2024-12-28-studio-status-report-2024-12" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 12 of 2024 was about upgrading the F♯ package stacks to .NET 8.0, upgrading Songhay Web Components to Lit 3.x and getting sick while on #day-job vacation The Obsidian notes for this month should reflect slogging through the unpleasant process of upg…" />
+    <meta property="og:description" content="month 12 of 2024 was about upgrading the F♯ package stacks to .NET 8.0, upgrading Songhay Web Components to Lit 3.x and getting sick while on #day-job vacation The Obsidian notes for this month should reflect slogging through the unpleasant process of upg…" />
+    <meta name="twitter:description" content="month 12 of 2024 was about upgrading the F♯ package stacks to .NET 8.0, upgrading Songhay Web Components to Lit 3.x and getting sick while on #day-job vacation The Obsidian notes for this month should reflect slogging through the unpleasant process of upg…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2024-12 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2024-12</h1>
+<h2>month 12 of 2024 was about upgrading the F♯ package stacks to .NET 8.0, upgrading Songhay Web Components to Lit 3.x and getting sick while on #day-job vacation</h2>
+<p>The Obsidian notes for this month should reflect slogging through the unpleasant process of upgrading Lit for Songhay Web Components [<a href="https://github.com/BryanWilhite/songhay-web-components">GitHub</a>]. This upgrade would go into the JavaScript bundle that would back the new homepage for kintespace.com. The Obsidian Graph View for the month shows how Lit [<a href="https://github.com/lit/lit">GitHub</a>] work pops up to the left of the massive Azure node:</p>
+<p><img src="../../image/day-path-2024-12-28-12-49-20.png" alt="Obsidian Graph View for the month"></p>
+<p><img src="../../image/day-path-2024-12-28-12-49-53.png" alt="Obsidian Graph View for the month with Lit highlighted"></p>
+<p><img src="../../image/day-path-2024-12-28-12-51-14.png" alt="Obsidian Graph View for the month with Songhay Web Components highlighted"></p>
+<p>The graph is <em>not</em> showing any direct relationship between Lit and Songhay Web Components which means there is still a lot for me to learn about data visualization as a way of life. It must also be said that the Obsidian is seeing Lit for the first time this month which is an indicator of poor time management and greed. I think I am promising myself to streamline my interests/investments—which should be shown in the Obsidian graph over time.</p>
+<p>In the mean time, back to slogging through selected Obsidian notes:</p>
+<h2>[[Anaconda]]: “Can I make conda solve this environment faster?”</h2>
+<p>When [[Anaconda|conda]] is hanging, trying to “solve the environment,” one or more of the following may be evident:</p>
+<ul>
+<li>“too many” packages are installed in one environment</li>
+<li>all of the packages are too old, having breaking changes</li>
+<li><code>conda</code> itself is out of date and is encountering breaking changes with ‘sources’</li>
+</ul>
+<p><a href="https://github.com/conda/conda/issues/11919">A GitHub issue shows</a> how tempers flare over this issue 😐</p>
+<h2>[[Songhay Publications]]: “The Curse of Markdown”</h2>
+<p>“<a href="https://codehike.org/blog/the-curse-of-markdown">The Curse of Markdown</a>” complains about how the publishing process is disjointed because of the presence of [[Markdown]]:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-12-28-13-16-24.png" alt="graph"></p>
+</div>
+<p>The author of this prose just happens to be a software developer working on getting rid of this disjointed situation:</p>
+<blockquote>
+<p><strong>Rodrigo Pombo</strong>, a.k.a. <a href="https://x.com/pomber"><strong>@pomber</strong></a>, is a software overengineer working on <a href="https://codehike.org/">Code Hike</a>, an open-source library that bridges the gap between Markdown and React to help developers <strong>create rich technical content for the modern web</strong>.</p>
+</blockquote>
+<h2>[[dotnet|.NET 9.0]]: I am not seeing Kathleen Dollard mention how fast <code>params IReadOnlySpan&lt;T&gt;</code> is compares to the other <code>params</code> collections</h2>
+<p>In “<a href="https://devblogs.microsoft.com/dotnet/csharp13-calling-methods-is-easier-and-faster/">Calling methods is easier and faster with C# 13 params collections</a>,” <code>params IReadOnlySpan&lt;T&gt;</code> is not distinguished at all. One way to look at it is that performance considerations can be left to others—like the lead designer of C♯:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=japXYFS9YPQ">
+        <img alt="What's new in C# 13" src="https://img.youtube.com/vi/japXYFS9YPQ/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>What's new in C# 13</small></p>
+</figure>
+</div>
+<p>This video introduces the <code>OverloadResolutionPriority</code> attribute [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.overloadresolutionpriorityattribute?view=net-9.0">docs</a> ] as described in “<a href="https://www.meziantou.net/understanding-overloadresolutionpriority-attribute-in-csharp-13.htm">Understanding OverloadResolutionPriority attribute in C# 13</a>.”</p>
+<h2>[[Songhay Web Components]]: working with [[Lit]] latest</h2>
+<p>In order for decorators like <code>@property</code> to compile in [[Typescript]], two <code>compilerOptions</code> [📖 <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html#compiler-options">docs</a> ] properties need to be set in <code>tsconfig.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;compilerOptions&quot;: {
+    &quot;experimentalDecorators&quot;: true,
+    &quot;useDefineForClassFields&quot;: false,
+  }
+}
+</code></pre>
+<p>For more details, see “<a href="https://lit.dev/docs/components/decorators/#decorators-typescript">Using decorators with TypeScript</a>” 📖</p>
+<h2>[[Typescript]]: the <code>as</code> keyword is a <em>type assertion</em>—not type casting ⚡🧠</h2>
+<p>In “<a href="https://dev.to/typescriptteatime/typescripts-as-keyword-might-not-be-what-you-think-2bpo">TypeScript's <code>as</code> keyword might not be what you think</a>” we have:</p>
+<blockquote>
+<p>…TypeScript's <code>as MyType</code> only changes <em>compile time</em> behavior. It's like saying to the compiler &quot;Compiler, believe me. This is a <code>MyType</code>. So stop complaining.&quot; Nothing has changed for the resulting JavaScript code after compiling. In other words, we're still completely vulnerable at <em>runtime</em>. That's why TypeScript actually uses the term <em>Type Assertion</em> [instead] of <em>Type Casting</em>.</p>
+</blockquote>
+<blockquote>
+<p>[!important]
+Use the <code>in</code> “type guard” [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in">docs</a> ] to verify that a type assertion is correct.</p>
+</blockquote>
+<blockquote>
+<p>The <code>in</code> keyword in JavaScript and TypeScript checks whether a property exists on an object. In the above example, we use it to check whether the <code>addLemon</code> property exists on the <code>hotBeverage</code> object <em>at compile time and at runtime</em>. If it does, TypeScript know it's a <code>Tea</code> because the other option <code>Coffee</code> does not have an <code>addLemon</code> property. On the other hand, if the object does not have an <code>addLemon</code> property it must be <code>Coffee</code>. Unlike <code>as</code>, since <code>in</code> is a JavaScript keyword it acts at runtime, too.</p>
+</blockquote>
+<h2>[[hardware]]: I have not written a note about [[Clonezilla]] since before 2018 😐</h2>
+<p>I would like to upgrade my [[Linux]] workstation, <code>Songhay13</code>—but I would like to do this <em>after</em> backing up its system files. My investment in [[Clonezilla]] is meant to do this. But this investment is—like many other things in this Studio—<em>neglected</em> 😐</p>
+<h2>[[Songhay Web Components]]: <code>typedocOptions</code> have changed❓</h2>
+<p>Here are the current—apparently old—options in <code>packages/input-autocomplete/tsconfig.json</code>:</p>
+<pre><code class="language-json">    &quot;typedocOptions&quot;: {
+        &quot;entryPoint&quot;: &quot;./src/input-autocomplete.ts&quot;,
+        &quot;exclude&quot;: &quot;**/*.spec.ts&quot;,
+        &quot;excludeExternals&quot;: true,
+        &quot;inputFiles&quot;: &quot;./src&quot;,
+        &quot;mode&quot;: &quot;modules&quot;,
+        &quot;out&quot;: &quot;../../docs/input-autocomplete&quot;,
+        &quot;readme&quot;: &quot;none&quot;,
+        &quot;stripInternal&quot;: true
+    }
+</code></pre>
+<p>The [[Lerna]] script output:</p>
+<pre><code class="language-console">Executing task: npm run lerna:exec:typedoc 
+
+
+&gt; songhay-web-components@1.0.0 lerna:exec:typedoc
+&gt; npx lerna exec -- typedoc
+
+lerna notice cli v8.1.9
+lerna info Executing command in 1 package: &quot;typedoc&quot;
+[error] Unknown option 'entryPoint' You may have meant:
+        entryPoints
+[error] Unknown option 'inputFiles' You may have meant:
+        options
+        outputs
+        out
+        html
+        emit
+        name
+        inlineTags
+        plugin
+        locales
+        theme
+        cname
+        titleLink
+[error] Unknown option 'mode' You may have meant:
+        name
+        out
+        theme
+        cname
+        html
+        json
+        emit
+        readme
+        sort
+        help
+[error] Unknown option 'stripInternal' You may have meant:
+        sourceLinkExternal
+        sort
+        excludeInternal
+        titleLink
+        html
+        json
+        emit
+        name
+        readme
+        help
+[error] Found 4 errors and 0 warnings
+lerna ERR! typedoc exited 1 in '@songhay/input-autocomplete'
+lerna ERR! typedoc exited 1 in '@songhay/input-autocomplete'
+
+ *  The terminal process &quot;/usr/bin/bash '-i', '-c', 'npm run lerna:exec:typedoc'&quot; terminated with exit code: 1.
+</code></pre>
+<h2>[[Songhay Web Components]]: yes, <code>typedocOptions</code> have changed 😐</h2>
+<p>According to the traditional, bad-design foresight of the JavaScript-kiddie world, there are copious breaking changes for <code>typedocOptions</code> [📖 <a href="https://typedoc.org/api/interfaces/Configuration.TypeDocOptions.html">docs</a> ].</p>
+<p>Following up the previously noted state, we need to go from this:</p>
+<pre><code class="language-json">    &quot;typedocOptions&quot;: {
+        &quot;entryPoint&quot;: &quot;./src/input-autocomplete.ts&quot;,
+        &quot;exclude&quot;: &quot;**/*.spec.ts&quot;,
+        &quot;excludeExternals&quot;: true,
+        &quot;inputFiles&quot;: &quot;./src&quot;,
+        &quot;mode&quot;: &quot;modules&quot;,
+        &quot;out&quot;: &quot;../../docs/input-autocomplete&quot;,
+        &quot;readme&quot;: &quot;none&quot;,
+        &quot;stripInternal&quot;: true
+    }
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-json">    &quot;typedocOptions&quot;: {
+        &quot;entryPoints&quot;: [&quot;./src/input-autocomplete.ts&quot;],
+        &quot;exclude&quot;: [&quot;**/*.spec.ts&quot;],
+        &quot;excludeExternals&quot;: true,
+        &quot;out&quot;: &quot;../../docs/input-autocomplete&quot;,
+        &quot;readme&quot;: &quot;none&quot;
+    }
+</code></pre>
+<p>I am guessing (because the docs do not support multiple versions) that <code>inputFiles</code> and <code>mode</code> have been deprecated in favor of reading the rest of the <code>tsconfig.json</code> file (instead of reinventing the wheel 🎡✨). This guess comes from <a href="https://github.com/TypeStrong/TypeDoc/issues/1469#issuecomment-761591092">a GitHub comment</a> that explains what happened to <code>stripInternal</code>:</p>
+<blockquote>
+<p><code>stripInternal</code> is a TypeScript option (<a href="https://www.typescriptlang.org/tsconfig#stripInternal">https://www.typescriptlang.org/tsconfig#stripInternal</a>). In 0.20, TypeDoc dropped support for setting TypeScript options via TypeDoc config files.</p>
+</blockquote>
+<h2>[[Songhay System Studio]]: “The death of the stubborn developer”</h2>
+<blockquote>
+<p>One problem is that the circuit that lets junior developers grow into senior developers is broken or at least damaged. I’m borrowing an apt analogy from <a href="https://www.linkedin.com/in/mattbeane/">Dr. Matt Beane</a>, who describes the <a href="https://videos.itrevolution.com/watch/1023437609">same phenomenon happening with junior surgeons</a> due to the emergence of surgery robots. Very similar situation: The task graph leaf nodes are automated now, so we don’t need (as many) junior contributors.</p>
+<p>…</p>
+<p>I’ve recently talked to two polar-opposite companies — one where the juniors have adopted chop, but the seniors stubbornly refuse, saying it’s a gimmick. And another where the seniors have adopted chop, but the juniors refuse, the reason being that they think it will take their jobs. It’s craziness out there.</p>
+<p>…</p>
+<p>…Chat-Oriented Programming, CHOP for short (or just chop). Chop isn’t just the future, it’s the present. And if you’re not using it, you’re starting to fall behind the ones who are.</p>
+<p>—“<a href="https://sourcegraph.com/blog/the-death-of-the-stubborn-developer">The death of the stubborn developer</a>”</p>
+</blockquote>
+<h2>[[Songhay System Studio]]: first pass at advice for beginner Web developers</h2>
+<p>In response to this potentially fake LinkedIn message:</p>
+<p>Learn by doing—and do this <em>independently</em> of the company you might be working for. That means having your own GitHub repo which should be shown/mentioned during or before interviews. Also, you should use something like <a href="https://codepen.io/">https://codepen.io/</a> and <a href="https://stackblitz.com">https://stackblitz.com</a> to self-teach and self-promote.</p>
+<p>Regardless of your preference for React, use MDN, <a href="https://developer.mozilla.org/en-US/">https://developer.mozilla.org/en-US/</a>, as a neutral reference for “pure” CSS and HTML and start casually reading sites like <a href="https://css-tricks.com/">https://css-tricks.com/</a>.</p>
+<p>In order to invest in a solid understanding of JavaScript for the client and the eventually the server, read <em>JavaScript: The Good Parts: The Good Parts</em> by Douglas Crockford (he also has lectures on YouTube).</p>
+<p>Because I could not find a ‘Douglas Crockford’-like guru for Node.js, I started my own, self-teaching repo, <a href="https://github.com/BryanWilhite/nodejs">https://github.com/BryanWilhite/nodejs</a>. I recommend you do the same.</p>
+<p>Feel free to write me any questions.</p>
+<h2>[[dotnet|.NET]]: for default implementations of <code>ILogger</code>, use the term <em>debug</em> instead of the word <em>verbose</em> #day-job</h2>
+<p>When faced with the potential problem of gigantic logs because of their verbosity for a default [[Generic Host|.NET Generic Host]], consider the following:</p>
+<ul>
+<li>replace <code>ILogger</code> calls to <code>LogInformation</code> with <code>LogDebug</code> calls</li>
+<li>replace <code>ILogger</code> calls to <code>LogWarning</code> with <code>LogDebug(&quot;Warning:…&quot;)</code> calls</li>
+<li>replace <code>ILogger</code> calls to <code>LogError</code> with <code>LogDebug(&quot;Error:…&quot;)</code> calls</li>
+<li>add an overload with a <code>LogLevel</code> argument for any <code>ILogger</code> extension methods in order to support <code>LogDebug</code> (and maybe <code>LogTrace</code>)</li>
+<li>ensure that you have a production-ready <code>appSettings.json</code> file with something like the following:</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;Logging&quot;: {
+    &quot;LogLevel&quot;: {
+      &quot;Default&quot;: &quot;Information&quot;
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>The <code>LogLevel</code> specifies the minimum <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line#log-level">level</a> to log for selected categories. …<code>LogLevel</code> indicates the severity of the log and ranges from 0 to 6:</p>
+<p><code>Trace</code> = 0, <code>Debug</code> = 1, <code>Information</code> = 2, <code>Warning</code> = 3, <code>Error</code> = 4, <code>Critical</code> = 5, and <code>None</code> = 6.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line">Logging in C# and .NET</a>”</p>
+</blockquote>
+<blockquote>
+<p>[!important]
+Dropping a copious amount of <code>LogInformation</code> calls ‘down’ to <code>LogDebug</code> calls, with the <code>appSettings.json</code>, <code>&quot;Logging&quot;</code> setting shown above, ensures that <em>verbosity</em> will be eliminated in harmony with the defaults coming from [[Microsoft]].</p>
+</blockquote>
+<h2>[[Songhay Core (C♯)]]: add an overload, <code>isCommandLineSwitch</code> to <code>HasArg</code> extension method 🔨✨</h2>
+<p>Add <code>isCommandLineSwitch</code> to support args like:</p>
+<ul>
+<li><code>--dry-run=true</code></li>
+<li><code>--dry-run=false</code></li>
+</ul>
+<p>…such that <code>--dry-run=false</code> will make <code>HasArg</code> return <code>false</code> and <code>--dry-run=true</code> will make <code>HasArg</code> return <code>true</code>.</p>
+<p>This change is needed to address the current lack of command-line “switch” support in the <code>CommandLineConfigurationExtensions.AddCommandLine</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.configuration.commandlineconfigurationextensions.addcommandline?view=net-9.0-pp">docs</a> ] extension method.</p>
+<p>There is a [[GitHub]] issue #<a href="https://github.com/dotnet/runtime/issues/36024">36024</a> that has been open since 2019, requesting that command-line “switch” support be added.</p>
+<blockquote>
+<p>[!important]
+[[GitHub]] issue #<a href="https://github.com/BryanWilhite/SonghayCore/issues/177">177</a> has been lodged to effect these changes.</p>
+</blockquote>
+<h2>[[Songhay Publications - KinteSpace|kintespace.com]]: “Sweat and stone: The children powering Nigeria's lithium boom”</h2>
+<blockquote>
+<p>Lithium mining has transformed Pasali over the past decade, creating a hub of illegal operations. Workers, including children, use primitive tools to extract and sort lithium ore. Young miners like 19-year-old Bashir Rabiu, who started working as a child, recall witnessing deadly accidents in the dangerous pits.</p>
+<p>Children like Juliet and her peers can collectively sort up to 10 bags of lithium-rich ore daily, earning around $2.42 to share among themselves. Many, like Juliet, had to drop out of school due to financial constraints. Although education is technically free in government schools, additional fees make it inaccessible for the poorest families.</p>
+<p>—“<a href="https://www.africanews.com/2024/12/12/sweat-and-stone-the-children-powering-nigerias-lithium-boom/">Sweat and stone: The children powering Nigeria's lithium boom</a>”</p>
+</blockquote>
+<h2>[[Windows]]: “Microsoft now allowing Windows 11 on older, incompatible PCs” 😐</h2>
+<blockquote>
+<p>Not even a week ago, <a href="https://www.pcworld.com/article/2545157/microsoft-doubles-down-still-wont-let-older-pcs-run-windows-11.html">Microsoft doubled down</a> on its policy that requires PCs to have TPM 2.0-compatible hardware in order to install Windows 11. But now, in an unexpected and puzzling move, the company is issuing instructions for installing Windows 11 on incompatible PCs.</p>
+<p>You can find those official instructions on <a href="https://support.microsoft.com/en-us/windows/installing-windows-11-on-devices-that-don-t-meet-minimum-system-requirements-0b2dc4a2-5933-4ad4-9c09-ef0a331518f1#:~:text=Die%20Installation%20von%20Windows%2011,vertraut%20sein,%20dass%20Kompatibilit%C3%A4tsprobleme%20auftreten.">this support page</a>. However, Microsoft begins the instructions with a direct warning:</p>
+<blockquote>
+<p>“Installing Windows 11 on a device that doesn’t meet Windows 11 minimum system requirements isn’t recommended. If Windows 11 is installed on ineligible hardware, you should be comfortable assuming the risk of running into compatibility issues.”</p>
+</blockquote>
+<p>The risk alluded to here includes system crashes and the lack of crucial security updates that would otherwise keep the PC safe and protected against malware, hackers, and scammers.</p>
+<p>—“<a href="https://www.msn.com/en-us/technology/hardware-and-devices/microsoft-now-allowing-windows-11-on-older-incompatible-pcs/ar-AA1vy2RL?ocid=BingNewsSerp">Microsoft now allowing Windows 11 on older, incompatible PCs</a>”</p>
+</blockquote>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=Jio-Wq11K80">
+        <img alt="Wait, What?" src="https://img.youtube.com/vi/Jio-Wq11K80/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Wait, What?</small></p>
+</figure>
+</div>
+<h2>modern [[Lit]] does <em>not</em> use shadow <acronym title="Document Object Model">DOM</acronym> <code>style</code> elements by default</h2>
+<p>What is clearly documented by the [[Lit]] folks is the suggestion that using shadow <acronym title="Document Object Model">DOM</acronym> <code>style</code> element impacts performance:</p>
+<blockquote>
+<p>We recommend using the <a href="https://lit.dev/docs/components/styles/#add-styles">static <code>styles</code> class field</a> for optimal performance. However, sometimes you may want to define styles in the Lit template. There are two ways to add scoped styles in the template:</p>
+<ul>
+<li>Add styles using a <a href="https://lit.dev/docs/components/styles/#style-element"><code>&lt;style&gt;</code> element</a>.</li>
+<li>Add styles using an <a href="https://lit.dev/docs/components/styles/#external-stylesheet">external style sheet</a> (not recommended).</li>
+</ul>
+<p>Each of these techniques has its own set of advantages and drawbacks.</p>
+<p>—”<a href="https://lit.dev/docs/components/styles/#styles-in-the-template">Defining scoped styles in the template</a>”</p>
+</blockquote>
+<p>For legacy browser support, [[Lit]] depends on [[ShadyCSS]] [🔗 <a href="https://github.com/webcomponents/polyfills/tree/master/packages/shadycss#limitations">GitHub</a> ] to “simulate ShadowDOM style encapsulation.”</p>
+<h2>[[Songhay Web Components]]: all tests pass (after over four years) 👏</h2>
+<p>Yeesh:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2024-12-28-13-36-29.png" alt="mocha test results"></p>
+</div>
+<p>Instead of “spies” we can take advantage of multicast eventing 🐎🎠:</p>
+<pre><code class="language-typescript">inputElement.addEventListener('focus', _ =&gt; ++countForInputElementFocus);
+inputElement.addEventListener('keyup', _ =&gt; ++countForInputElementKeyUp);
+</code></pre>
+<p>Then we can simple-ass count assertions:</p>
+<pre><code class="language-typescript">expect(countForInputElementFocus).to.be.greaterThan(0);
+</code></pre>
+<p>After this long-ass struggle, it has finally occurred to me that using [[Selenium WebDriver]] instead of [[Mocha]] might be more scalable here. Investigation is needed (see “<a href="https://www.browserstack.com/guide/test-nodejs-selenium-with-mocha">How to Test Selenium Node.JS with Mocha</a>” and “<a href="https://lo-victoria.com/automating-tests-with-selenium-3-integrating-with-mocha">Automating Tests with Selenium #3: Integrating with Mocha</a>”) #to-do</p>
+<h2>[[dotnet|.NET 8.0]]: an <code>8.0.0</code> release of [[Songhay Modules (F♯)]]❓</h2>
+<p>Yes, let’s upgrade the F♯ stack to .NET 8.0. The first thing I look forward to seeing (as noted last year) is [[Blazor]] 8 no longer sending <code>*.dll</code> files to the browser 👏</p>
+<h2>[[Blender]] videos show how awful animation-workflow was/is by celebrating upcoming improvements</h2>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=bUNsEzM0gKc">
+        <img alt="Blender is Changing Animation Forever" src="https://img.youtube.com/vi/bUNsEzM0gKc/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Blender is Changing Animation Forever</small></p>
+</figure>
+</div>
+<p>The [[DillonGoo Studios]] folks are becoming [[Blender]] insiders as contributors to development:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=pVaqeG2t_GA">
+        <img alt="We're changing Blender forever." src="https://img.youtube.com/vi/pVaqeG2t_GA/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>We're changing Blender forever.</small></p>
+</figure>
+</div>
+<h2>[[Songhay Publications|Publications]]: “Four Eras of JavaScript Frameworks”</h2>
+<blockquote>
+<p>So I wanted to do a retrospective, looking back at the last few decades of JavaScript development and at how far we’ve come. I think we can roughly divide it into four main eras:</p>
+<ol>
+<li>The Before Times</li>
+<li>The First Frameworks</li>
+<li>Component-Centric View Layers</li>
+<li>Full-stack Frameworks (<em>← We’re here</em>)</li>
+</ol>
+<p>—“<a href="https://www.pzuraq.com/blog/four-eras-of-javascript-frameworks">Four Eras of JavaScript Frameworks</a>”</p>
+</blockquote>
+<h2>[[Songhay Modules Bolero (F♯)]] upgraded to [[dotnet|.NET 8.0]]</h2>
+<p>The current contents of the <code>Songhay.StudioFloor.Client/bin/Release/net8.0/publish</code> directory is now full of <code>*.wasm</code> files:</p>
+<pre><code class="language-shell">$ tree -P &quot;*.wasm&quot; -- ./publish/
+./publish/
+└── wwwroot
+    ├── css
+    ├── _framework
+    │   ├── Bolero.Html.wasm
+    │   ├── Bolero.wasm
+    │   ├── cs
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── de
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── dotnet.native.wasm
+    │   ├── Elmish.wasm
+    │   ├── es
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── fr
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── FSharp.Core.wasm
+    │   ├── FSharp.SystemTextJson.wasm
+    │   ├── FsToolkit.ErrorHandling.wasm
+    │   ├── it
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── ja
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── ko
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── Microsoft.AspNetCore.Components.wasm
+    │   ├── Microsoft.AspNetCore.Components.WebAssembly.wasm
+    │   ├── Microsoft.AspNetCore.Components.Web.wasm
+    │   ├── Microsoft.Extensions.Configuration.Abstractions.wasm
+    │   ├── Microsoft.Extensions.Configuration.Json.wasm
+    │   ├── Microsoft.Extensions.Configuration.wasm
+    │   ├── Microsoft.Extensions.DependencyInjection.Abstractions.wasm
+    │   ├── Microsoft.Extensions.DependencyInjection.wasm
+    │   ├── Microsoft.Extensions.Logging.Abstractions.wasm
+    │   ├── Microsoft.Extensions.Logging.wasm
+    │   ├── Microsoft.Extensions.Options.wasm
+    │   ├── Microsoft.Extensions.Primitives.wasm
+    │   ├── Microsoft.JSInterop.wasm
+    │   ├── Microsoft.JSInterop.WebAssembly.wasm
+    │   ├── netstandard.wasm
+    │   ├── pl
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── pt-BR
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── ru
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── Songhay.Modules.Bolero.wasm
+    │   ├── Songhay.Modules.wasm
+    │   ├── Songhay.StudioFloor.Client.wasm
+    │   ├── System.Collections.Concurrent.wasm
+    │   ├── System.Collections.NonGeneric.wasm
+    │   ├── System.Collections.wasm
+    │   ├── System.ComponentModel.EventBasedAsync.wasm
+    │   ├── System.ComponentModel.Primitives.wasm
+    │   ├── System.ComponentModel.wasm
+    │   ├── System.Console.wasm
+    │   ├── System.Diagnostics.DiagnosticSource.wasm
+    │   ├── System.Diagnostics.TraceSource.wasm
+    │   ├── System.Linq.Expressions.wasm
+    │   ├── System.Linq.Queryable.wasm
+    │   ├── System.Linq.wasm
+    │   ├── System.Memory.wasm
+    │   ├── System.Net.Http.wasm
+    │   ├── System.Net.Primitives.wasm
+    │   ├── System.Net.Requests.wasm
+    │   ├── System.Net.WebClient.wasm
+    │   ├── System.Private.CoreLib.wasm
+    │   ├── System.Private.Uri.wasm
+    │   ├── System.Private.Xml.wasm
+    │   ├── System.Runtime.InteropServices.JavaScript.wasm
+    │   ├── System.Runtime.Numerics.wasm
+    │   ├── System.Runtime.wasm
+    │   ├── System.Text.Encodings.Web.wasm
+    │   ├── System.Text.Json.wasm
+    │   ├── System.Text.RegularExpressions.wasm
+    │   ├── System.Threading.Tasks.Parallel.wasm
+    │   ├── System.Xml.ReaderWriter.wasm
+    │   ├── tr
+    │   │   └── FSharp.Core.resources.wasm
+    │   ├── zh-Hans
+    │   │   └── FSharp.Core.resources.wasm
+    │   └── zh-Hant
+    │       └── FSharp.Core.resources.wasm
+    └── js
+
+17 directories, 66 files
+</code></pre>
+<h3>related reading</h3>
+<ul>
+<li>“<a href="https://programmingsoup.com/history-of-javascript-frameworks">History of JavaScript Frameworks</a>”</li>
+<li>“<a href="https://codingitwrong.com/2024/01/17/frontend-web-architectures">Frontend Web Architectures</a>”</li>
+<li>“<a href="https://fly.io/blog/js-ecosystem-delightfully-wierd/">The JavaScript Ecosystem is Delightfully Weird</a>”</li>
+</ul>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>The current, unfinished public projects on GitHub:</p>
+<ul>
+<li>
+<p>replacing the Angular app in <code>http://kintespace.com/player.html</code> with a Bolero app 🚜🔥 depends on:</p>
+<ul>
+<li>completing <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/54">issue #54</a>: move <code>Songhay.Publications.DataAccess</code> out of the kinté space repo 🚜</li>
+<li>generating Publication indices from SQLite for <code>Songhay.Publications.KinteSpace</code></li>
+<li>generating a new repo with proposed name, <code>Songhay.Modules.Bolero.Index</code> ✨🚧 and add a GitHub Project</li>
+</ul>
+</li>
+</ul>
+<p>The proposed project items:</p>
+<ul>
+<li>switch Studio from Material Design to Bulma 💄 ➡️ 💄✨</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2024-12-28T12:21:08.476Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
