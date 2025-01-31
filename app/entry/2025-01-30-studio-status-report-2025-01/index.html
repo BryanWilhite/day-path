@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2025-01" />
+    <meta name="twitter:title" content="studio status report: 2025-01" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2025-01-30-studio-status-report-2025-01" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 01 of 2025 was about California wildfire victims and upgrading SonghayCore to .NET 8.0 The selected notes for this month surface the tragic, systematic California wildfires. There is nothing I can write here apart from expressing my sympathy. One fa…" />
+    <meta property="og:description" content="month 01 of 2025 was about California wildfire victims and upgrading SonghayCore to .NET 8.0 The selected notes for this month surface the tragic, systematic California wildfires. There is nothing I can write here apart from expressing my sympathy. One fa…" />
+    <meta name="twitter:description" content="month 01 of 2025 was about California wildfire victims and upgrading SonghayCore to .NET 8.0 The selected notes for this month surface the tragic, systematic California wildfires. There is nothing I can write here apart from expressing my sympathy. One fa…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2025-01 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2025-01</h1>
+<h2>month 01 of 2025 was about California wildfire victims and upgrading <code>SonghayCore</code> to .NET 8.0</h2>
+<p>The selected notes for this month surface the tragic, systematic California wildfires. There is nothing I can write here apart from expressing my sympathy. One family of victims, based in Altadena, lost <em>three</em> houses. This family is that of the excellent woman that provided me my first break into the corporate world of computer programming. I am glad her family and many others is saved alive. This is a much better place to be than those who lost their lives—in addition to losing all of their material possessions, along with a sense of <em>home</em>.</p>
+<p>The Obsidian graph for this month is supposed to be more structured than previous visualizations:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-19-19-06.png" alt="Obsidian graph for this month"></p>
+</div>
+<p>What this tangle of lines is supposed to show you are the largest interests of this Studio at the moment:</p>
+<ul>
+<li>Microsoft</li>
+<li>Azure</li>
+<li>Songhay Publications</li>
+<li><code>dotnet</code></li>
+</ul>
+<p>The day-of-the-month nodes shown in the graph above orbit around these interests, including my <a href="https://github.com/users/BryanWilhite/projects/31">release</a> of <code>SonghayCore</code> for .NET 8.0. For example, Songhay Publications shows that eight days of month 01 was dedicated to this interest:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-19-41-48.png" alt="Obsidian graph for this month, Songhay Publications"></p>
+</div>
+<p>Selected notes below should touch upon these eight days:</p>
+<h2>[[Songhay System Studio]]: the [[Obsidian]] graph view should make dandelion seeds 🌱</h2>
+<p>When [[Obsidian]] topics refer to other topics, a hierarchy is generated and can be visualized like this:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-19-46-40.png" alt="Obsidian graph with dandelions"></p>
+</div>
+<p>The [[dotnet]] and [[Azure]] topics look like dandelion seeds:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-19-47-44.png" alt="dandelion seeds"></p>
+<p><a href="https://garvillo.com/what-is-the-flower-that-you-blow/">https://garvillo.com/what-is-the-flower-that-you-blow/</a></p>
+</div>
+<p>Many, many videos about [[Obsidian]] will show the graph view full of these dandelion structures! My Studio has been (and still is) quite low on this dandelion look. This indicates a lack of organization: a scatter-brain state of low clarity—and, likely, low productivity.</p>
+<h2>[[Markdown]]: MyST Markdown Tools</h2>
+<blockquote>
+<p>MyST is an ecosystem of open-source, community-driven tools designed to revolutionize scientific communication. Our powerful authoring framework supports blogs, online books, scientific papers, reports and journals articles.</p>
+<p>…</p>
+<p>The <code>mystmd</code> command line tool can be used to parse MyST Markdown and Jupyter Notebooks into an AST. This data can be saved as JSON, or rendered to a website (like this one!) or any number of formats including <a href="https://mystmd.org/guide/creating-pdf-documents">PDF &amp; LaTeXLATE​X</a>, <a href="https://mystmd.org/guide/creating-word-documents">Word</a>, <a href="https://mystmd.org/guide/quickstart-myst-documents">React</a>, or <a href="https://mystmd.org/guide/creating-jats-xml">JATS</a>.</p>
+<p>—<a href="https://mystmd.org/guide">https://mystmd.org/guide</a></p>
+</blockquote>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=1BWYLzQd8Ds">
+        <img alt="Write your next paper in MyST Markdown with data, code & Jupyter notebooks" src="https://img.youtube.com/vi/1BWYLzQd8Ds/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Write your next paper in MyST Markdown with data, code & Jupyter notebooks</small></p>
+</figure>
+</div>
+<p>This video starts by emphasizing that MyST has conventional data formats for ease of export:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=wyRmcbWBXs4">
+        <img alt="Franklin Koch MyST Markdown: Using notebooks in scientific publishing workflows | JupyterCon 2023" src="https://img.youtube.com/vi/wyRmcbWBXs4/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Franklin Koch MyST Markdown: Using notebooks in scientific publishing workflows | JupyterCon 2023</small></p>
+</figure>
+<figure>
+    <a href="https://www.youtube.com/watch?v=_Lv_8QWwL8g">
+        <img alt="Sphinx, MyST, and Python Docs in 2022 - Talk Python to Me Ep.354" src="https://img.youtube.com/vi/_Lv_8QWwL8g/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Sphinx, MyST, and Python Docs in 2022 - Talk Python to Me Ep.354</small></p>
+</figure>
+</div>
+<blockquote>
+<p>[!question]
+Can <code>mystmd</code> work effectively in an [[eleventy]] pipeline ❓ #to-do</p>
+</blockquote>
+<h2>[[Songhay Publications|Publications]]: “Next-level frosted glass with <code>backdrop-filter</code>”</h2>
+<blockquote>
+<p>One of my all-time favourite CSS tricks is using <code>backdrop-filter: blur()</code> to create a frosted glass effect. I use it in just about every project I work on, including this blog!</p>
+<p>—“<a href="https://www.joshwcomeau.com/css/backdrop-filter/?from=newsletter">Next-level frosted glass with backdrop-filter</a>”</p>
+</blockquote>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-19-53-06.png" alt="CSS frosted glass"></p>
+</div>
+<h2>[[Finance]]: “Breakingviews: Los Angeles fires expose inflated US home prices”</h2>
+<blockquote>
+<p>New California rules aim to increase coverage, by requiring insurers to underwrite a minimum percentage of policies in dangerous areas, based on their state market share. In exchange, companies can raise premiums to reflect future modeled risk and increased reinsurance costs. Recent approved increases, like Allstate’s <a href="https://www.reuters.com/markets/companies/ALL.N">(ALL.N)</a> 34% last year, are bound to become commonplace.</p>
+<p>This will inevitably hit prices. Assume a typical California home is worth $1 million and insuring it costs $5,000 annually. If the equivalent rent is $70,000, doubling the premium would reduce the house’s value by 7%. Ones in riskier areas face steeper falls, especially if they can’t secure the insurance mortgage lenders require. State Farm cancelled most of its policies in Pacific Palisades last year; ==the median sale price there fell 16%==, according to real estate portal Redfin.</p>
+<p>—“<a href="https://www.reuters.com/breakingviews/los-angeles-fires-expose-inflated-us-home-prices-2025-01-09/">Breakingviews: Los Angeles fires expose inflated US home prices</a>”</p>
+</blockquote>
+<h2>[[hardware]]: “DDR4 vs. DDR5 RAM: What's the Difference?”</h2>
+<blockquote>
+<p>If you’re <a href="https://www.wired.com/story/how-to-build-a-pc/">building a new PC</a>, it’s extremely likely your motherboard will support DDR5, so that’s what you should buy. The only reason you'd need DDR4 memory for a new build is if you're specifically using old parts to keep costs down. It's more likely you'd be hunting for DDR4 because you're upgrading an existing system.</p>
+<p>—“<a href="https://www.wired.com/story/ddr4-vs-ddr5-explainer/">DDR4 vs. DDR5 RAM: What's the Difference?</a>”</p>
+</blockquote>
+<h2>[[Google]]: “Millions of Accounts Vulnerable due to Google’s OAuth Flaw”</h2>
+<blockquote>
+<p>Here’s the problem: <strong>Google’s OAuth login doesn’t protect against someone purchasing a failed startup’s domain and using it to re-create email accounts for former employees.</strong> And while you can’t access old email data, you can use those accounts to log into all the different SaaS products that the organization used.</p>
+<p>—“<a href="https://trufflesecurity.com/blog/millions-at-risk-due-to-google-s-oauth-flaw">Millions of Accounts Vulnerable due to Google’s OAuth Flaw</a>”</p>
+</blockquote>
+<h2>[[Songhay Publications - KinteSpace|kintespace.com]]: “‘Passive House’ Survives Fire in California: How It Avoided Total Destruction, According to Architect”</h2>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-19-56-49.png" alt="Passive House after fire"></p>
+</div>
+<blockquote>
+<p>To qualify officially as a passive house, a home must meet certain criteria set by the <a href="https://www.passivehouse-international.org/">International Passive House Association</a>. The dwelling must consume 86% less energy for heating and 46% less for cooling compared with other code-compliant buildings in the same climate.</p>
+<p>…</p>
+<p>This airtight construction is one of the reasons the house could withstand a blaze.</p>
+<p>As Bloomberg reported, the house does not have eaves, overhangs, or attic vents “to allow sparks to get inside the roof, which is metal, with a fire-resistant underlayment.”</p>
+<p>In addition, Chasen’s fire-proofing choices include “a protected area free of vegetation, fenced off by cast-in-place concrete garden walls.”</p>
+<p>—“<a href="https://www.yahoo.com/lifestyle/passive-house-survives-fire-california-000029045.html">‘Passive House’ Survives Fire in California: How It Avoided Total Destruction, According to Architect</a>”</p>
+</blockquote>
+<h2>[[dotnet|.NET]]: super-deep F♯ article has an interesting take on micro-services</h2>
+<p>This superficial bit of “<a href="https://rm4n0s.github.io/posts/7-the-untouched-goldmine-of-fsharp/">The untouched goldmine of F#</a>” prevents me from actually understanding what the author intends:</p>
+<blockquote>
+<p>The question is: Why companies moved from monolithic to microservices? What do they try to avoid? I have two theories on that.</p>
+<ul>
+<li>My first theory is that they can’t parse properly the errors from huge stack traces from monolithic applications. Moving to microservices, they reduced the stack trace to three or fewer functions so they can handle the error parsing from services like ElasticSearch.</li>
+<li>My second theory is that companies can’t keep old employees around to explain the software architecture of large monolithic applications to newer employees and for that reason, they separate the software into smaller microservices, believing that they will be more explainable.</li>
+</ul>
+<p>But did microservices solve these problems? No, I don’t think so…</p>
+</blockquote>
+<p>This article can also be regarded as an “attack” on [[Go]]—but feels more like objective reasoning why F♯ is superior but will be totally ignored for the sake of [[Google]]-sponsored popularity.</p>
+<h2>[[dotnet|.NET]]: “Liskov Substitution: The Real Meaning of Inheritance”</h2>
+<blockquote>
+<ol>
+<li><strong>Inheritance isn’t always the answer</strong> - prefer composition when behavior differs</li>
+<li><strong>Think in terms of contracts</strong> - subtypes must fulfill the base type’s contract</li>
+<li><strong>Use contract tests</strong> to verify LSP compliance</li>
+<li><strong>Document pre/postconditions</strong> clearly</li>
+<li><strong>Return types matter</strong> - be consistent with null/non-null, exceptions, etc.</li>
+</ol>
+<p>—“<a href="https://cekrem.github.io/posts/liskov-substitution-the-real-meaning-of-inheritance/">Liskov Substitution: The Real Meaning of Inheritance</a>”</p>
+</blockquote>
+<h2>keyed service dependency injection is the leading new feature in [[dotnet|.NET 8.0]]</h2>
+<p>My [[Songhay Core (C♯)]] unit tests now show off the awesomeness of “keyed services” [📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#keyed-services">docs</a> ], starting with the constructor attributes of the service class definition:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-20-06-53.png" alt="unit test classes"></p>
+</div>
+<p>…and ending with the test method, wrangling <code>ServiceCollection</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-20-08-11.png" alt="unit test"></p>
+</div>
+<p>[[Andrew Lock]] reminds us that:</p>
+<blockquote>
+<p>This feature is new to the built-in DI container in .NET 8, but it's been available in other DI containers for a long time. Structuremap, for example, has <a href="https://structuremap.github.io/resolving/get-a-service-by-plugin-type-and-name/">an identical feature called &quot;Named services&quot;</a>, <a href="https://autofac.readthedocs.io/en/latest/advanced/keyed-services.html">as does Autofac</a>.</p>
+<p>—“<a href="https://andrewlock.net/exploring-the-dotnet-8-preview-keyed-services-dependency-injection-support/">Keyed service dependency injection container support</a>”</p>
+</blockquote>
+<h2>[[Songhay Publications|Publications]]: “Relatively New Things You Should Know about HTML Heading Into 2025”</h2>
+<p>The highlights here from [[Chris Coyier]] are <em>new</em> to these notes:</p>
+<blockquote>
+<p>Once you’ve opted in, you can apply styling to elements inside the <code>&lt;select&gt;</code> pretty freely, opening up huge doors to designing that experience.</p>
+<p>…</p>
+<p>Got an area of your site that is meant for searching? Wrap it.</p>
+<p>…</p>
+<p>It used to be that if you wanted a Web Component to use Shadow DOM, the only way to do it was for it to be rendered by JavaScript. This meant that Web Components that wanted or needed to use Shadow DOM had no Server Side Rendering (SSR) story at all. That was a big gap, as all the major UI frameworks have coalesced on the idea that SSR is a good idea for many reasons (performance (perceived and actual), resilience, SEO, hosting options, etc).</p>
+<p>Now we’ve got <a href="https://12daysofweb.dev/2024/declarative-shadow-dom/">Declarative Shadow DOM</a> and the gap has closed.</p>
+<p>…</p>
+<p>You can make an element, and the entire chunk of DOM under it, ignored completely from an interactivity perspective, just by by using the <code>inert</code> attribute. It’s quite powerful.</p>
+<p>…</p>
+<p>We’ve long had <code>hidden</code> as an attribute (even though it’s <a href="https://meowni.ca/hidden.is.a.lie.html">kinda weak</a>). The change here is it taking a value, like <code>hidden=&quot;until-found&quot;</code>. That will hide the element as <code>hidden</code> does, but the content within it will still be findable with on-page text search.</p>
+<p>—“<a href="https://frontendmasters.com/blog/bone-up-html-2025/">Relatively New Things You Should Know about HTML Heading Into 2025</a>”</p>
+</blockquote>
+<h2>[[Finance]]: “Here’s how climate change is reshaping home insurance costs in California — and the rest of the U.S.”</h2>
+<blockquote>
+<p>The rest of the nation also wants to know: Will my insurance premiums be increasing? According to Ruiz, the short answer is no.</p>
+<p>“Homeowners and business owners in one state do not pay insurance premiums based on losses or catastrophes in other states,” she said.</p>
+<p>Because each state has a department of insurance that regulates rates in that region, there are protections in place to prevent that from happening, Ruiz said.</p>
+<p>…</p>
+<p>And yet, even though insurance premiums are subject to extensive regulations at the state level, when insurers cannot adjust rates in highly regulated states, they do compensate by raising rates in less-regulated states — despite protections in place — leading to “a growing disconnect between insurance rates and risk,” according to a <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3762235">2021 paper by economists</a> at Harvard Business School, Columbia Business School and Federal Reserve Board.</p>
+<p>—“<a href="https://www.cnbc.com/2025/01/22/how-climate-change-is-reshaping-home-insurance-costs-in-the-us.html">Here’s how climate change is reshaping home insurance costs in California — and the rest of the U.S.</a>”</p>
+</blockquote>
+<h2>[[Songhay Publications|Publications]]: the best <acronym title="Cascading Style Sheets">CSS</acronym> video I have seen in years</h2>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=kj7WGnUDaI4">
+        <img alt="The Secret Mechanisms of CSS — Web à Québec" src="https://img.youtube.com/vi/kj7WGnUDaI4/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>The Secret Mechanisms of CSS — Web à Québec</small></p>
+</figure>
+</div>
+<p>Think of CSS as a collection of domain-specific languages for each of the layout ‘domains’ (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode">layout modes</a>):</p>
+<ul>
+<li>flow layout</li>
+<li>table layout</li>
+<li>positioned layout</li>
+<li>multi-column layout</li>
+<li>flex layout</li>
+<li>grid layout</li>
+</ul>
+<p>Almost every CSS-related problem should start with the question, What layout mode are we in?</p>
+<h2>[[Songhay Core (C♯)]]: this Studio is abandoning [[Statiq]] because [[docfx]] appears to revived by [[Microsoft]] 😐🎏</h2>
+<p>After having none of my expectations met as <a href="https://www.statiq.dev/guide/docs/specifying-code">I fell around the Statiq docs</a>, <a href="https://github.com/statiqdev/Statiq.Docs/issues/53#issuecomment-1296402605">the following line</a> broke me:</p>
+<blockquote>
+<p>I ended up moving to DocFX so I have no more insight into this.</p>
+</blockquote>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-01-30-20-14-51.png" alt="GitHub screenshot"></p>
+</div>
+<h2>[[Azure Container Apps]]: “Jobs in Azure Container Apps” #day-job</h2>
+<p>Is this the ‘replacement’ for [[Azure WebJobs]]?</p>
+<blockquote>
+<p>Azure Container Apps jobs enable you to run containerized tasks that execute for a finite duration and exit. You can use jobs to perform tasks such as data processing, machine learning, or any scenario where on-demand processing is required.</p>
+<p>Container apps and jobs run in the same <a href="https://learn.microsoft.com/en-us/azure/container-apps/environment">environment</a>, allowing them to share capabilities such as networking and logging.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/azure/container-apps/jobs">Jobs in Azure Container Apps</a>”</p>
+</blockquote>
+<h2>[[Microsoft SQL Server]]: [[Zoran Horvat]] warns us to not use clustered indexes of type <code>uniqueidentifier</code> #day-job</h2>
+<p>Following up my [[2025-01-22#Songhay System Studio the GUID/UUID research I have yet to do to-do|previous note]], this is an <em>excellent</em> video:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=n17U7ntLMt4">
+        <img alt="The Lesson About GUID IDs I Learned the Hard Way" src="https://img.youtube.com/vi/n17U7ntLMt4/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>The Lesson About GUID IDs I Learned the Hard Way</small></p>
+</figure>
+</div>
+<p>This video by <a href="https://github.com/zoran-horvat">Zoran Horvat</a> does a great job with the nuance in the explanation of why it is okay to have a clustered indexes of type <code>uniqueidentifier</code> ==as long as SQL Server is generating all IDs for all time== (he actually shows that GUIDs from the same ‘source’ <em>can</em> be sorted). The moment an external actor sends a GUID to [[Microsoft SQL Server]], the (subtle) problems start.</p>
+<p>The ‘external actor’ can be multiple instances of an asynchronous micro-service. And, by design, the GUIDs should be out of order. To avoid the performance problems described in the video (and as [[2024-11-27#Microsoft SQL Server using <acronym title="Global Unique Identifier">GUID</acronym>s for primary keys is not without caveats (from 12 years ago) day-job|previously noted]] by [[Kimberly Tripp]]), a non-clustered index is needed to store such random GUIDs.</p>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>The current, unfinished public projects on GitHub:</p>
+<ul>
+<li>
+<p>replacing the Angular app in <code>http://kintespace.com/player.html</code> with a Bolero app 🚜🔥 depends on:</p>
+<ul>
+<li>completing <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/54">issue #54</a>: move <code>Songhay.Publications.DataAccess</code> out of the kinté space repo 🚜</li>
+<li>generating Publication indices from SQLite for <code>Songhay.Publications.KinteSpace</code></li>
+<li>generating a new repo with proposed name, <code>Songhay.Modules.Bolero.Index</code> ✨🚧 and add a GitHub Project</li>
+</ul>
+</li>
+</ul>
+<p>The proposed project items:</p>
+<ul>
+<li>switch Studio from Material Design to Bulma 💄 ➡️ 💄✨</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2025-01-30T18:57:40.308Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
