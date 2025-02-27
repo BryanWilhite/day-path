@@ -139,7 +139,9 @@
         <h1>studio status report: 2025-02</h1>
 <h2>month 02 of 2025 was about upgrading <code>Songhay.Publications</code> to .NET 8.0 and working directly on kintespace.com</h2>
 <p>I continue to fiddle and struggle with my Obsidian graph view of the month:</p>
+<div style="text-align:center">
 <p><img src="../../image/day-path-2025-02-26-20-25-28.png" alt="Obsidian graph for this month"></p>
+</div>
 <p>I notice that most of nodes labeled with dates hover around the Songhay Publications topics of this Studio which indicates what should be obvious but is actually novel: this Studio works on Publications. It has taken easily over a decade to achieve the obvious. The release of <code>Songhay.Publications</code> release 8.0.0📦 [<a href="https://github.com/users/BryanWilhite/projects/32">GitHub</a>] (which includes the completion of <a href="https://github.com/BryanWilhite/Songhay.Publications/issues/54">issue #54</a>, struck off below in “sketching out development projects”) represents the last major barrier between me and the obvious.</p>
 <p>Below, in “sketching out development projects,” I have added and struck off the following line:</p>
 <blockquote>
@@ -157,7 +159,9 @@
 </blockquote>
 <h2>[[Songhay Publications - KinteSpace|Songhay Publications: kinté space]]</h2>
 <h3>the results of the upgrade to [[dotnet|.NET 8.0]]</h3>
+<div style="text-align:center">
 <p><img src="../../image/day-path-2025-02-26-21-07-27.png" alt="Songhay Publications - KinteSpace repo"></p>
+</div>
 <p>It is now clear to me that ‘everything’ I have been working on <em>consistently</em> in this Studio for <em>at least</em> the last 15 years comes together in the [[Songhay Publications - KinteSpace|kintespace.com]] repo, namely all of the ‘cores’:</p>
 <ul>
 <li><code>SonghayCore</code> [<a href="https://github.com/BryanWilhite/SonghayCore">GitHub</a>]</li>
@@ -188,6 +192,7 @@
 <p>CRDTs are needed in situations where you want multiple processes to modify the same state without coordinating their writes to that state.</p>
 <p>—“<a href="https://vlcn.io/blog/intro-to-crdts">A Gentle Introduction to CRDTs</a>”</p>
 </blockquote>
+<div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=FG5Varj1Ows">
         <img alt="CRDTs - Stop Worrying About Write Conflicts | Systems Design 0 to 1 with Ex-Google SWE" src="https://img.youtube.com/vi/FG5Varj1Ows/maxresdefault.jpg" width="480" />
@@ -200,6 +205,7 @@
     </a>
     <p><small>Martin Kleppmann — CRDTs: The hard parts</small></p>
 </figure>
+</div>
 <h2>[[dotnet|.NET]] <code>System.Threading.Channels</code></h2>
 <blockquote>
 <p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.threading.channels">System.Threading.Channels</a> namespace provides a set of synchronization data structures for passing data between producers and consumers asynchronously. The library targets .NET Standard and works on all .NET implementations.</p>
@@ -208,20 +214,24 @@
 <p>—“<a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/channels">System.Threading.Channels library</a>”</p>
 </blockquote>
 <p>[[Nick Chapsas]] insists that we should have been using Channels instead of [[MediatR]] and the like:</p>
+<div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=lHC38t1w9Nc">
         <img alt="The Most Underrated .NET Feature You Must Use" src="https://img.youtube.com/vi/lHC38t1w9Nc/maxresdefault.jpg" width="480" />
     </a>
     <p><small>The Most Underrated .NET Feature You Must Use</small></p>
 </figure>
+</div>
 <p>Also, see “<a href="https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/">An Introduction to System.Threading.Channels</a>” #to-do</p>
 <h2>[[dotnet|.NET]]: “4 C# features that you (probably) shouldn't be using”</h2>
+<div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=yzg5-T67FCc">
         <img alt="4 C# features that you (probably) shouldn't be using" src="https://img.youtube.com/vi/yzg5-T67FCc/maxresdefault.jpg" width="480" />
     </a>
     <p><small>4 C# features that you (probably) shouldn't be using</small></p>
 </figure>
+</div>
 <ol>
 <li><code>goto</code> and labels (probably there for translating Bill’s BASIC code) ✅</li>
 <li>lambda-based getter [📹 <a href="https://youtu.be/yzg5-T67FCc?t=284">watch</a> ]  (effectively hides methods that are invoked with every access to the getter)</li>
@@ -273,12 +283,14 @@ The ‘splash’ page can call a service worker to cache the data for the player
 <p>This is pretty much &gt;90% of kintespace.com content.</p>
 <h2>[[dotnet|.NET 6.0]]:  “7 awesome improvements for LINQ in .NET 6”</h2>
 <p>[[Nick Chapsas]] reports from the .NET 6 era:</p>
+<div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=sIXKpyhxHR8">
         <img alt="7 awesome improvements for LINQ in .NET 6" src="https://img.youtube.com/vi/sIXKpyhxHR8/maxresdefault.jpg" width="480" />
     </a>
     <p><small>7 awesome improvements for LINQ in .NET 6</small></p>
 </figure>
+</div>
 <ol>
 <li><code>Enumerable.Chunk&lt;TSource&gt;</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.chunk?view=net-9.0">docs</a> ]</li>
 <li><code>Enumerable.TryGetNonEnumeratedCount&lt;TSource&gt;</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.trygetnonenumeratedcount?view=net-9.0">docs</a> ] [📹 <a href="https://youtu.be/sIXKpyhxHR8?t=200">watch</a> ]</li>
@@ -288,12 +300,14 @@ The ‘splash’ page can call a service worker to cache the data for the player
 <li><code>Take&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Range)</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.take?view=net-9.0#system-linq-enumerable-take-1">docs</a> ] [📹 <a href="https://youtu.be/sIXKpyhxHR8?t=763">watch</a> ] (supports the <code>Range</code> struct [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.range?view=net-9.0">docs</a> ] and <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/ranges#systemrange">its operators</a>)</li>
 </ol>
 <h2>[[NuGet]]: “20 Nuget packages that every .NET developer should be familiar with”</h2>
+<div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=qapJwFY9y2Y">
         <img alt="20 Nuget packages that every .NET developer should be familiar with" src="https://img.youtube.com/vi/qapJwFY9y2Y/maxresdefault.jpg" width="480" />
     </a>
     <p><small>20 Nuget packages that every .NET developer should be familiar with</small></p>
 </figure>
+</div>
 <ol>
 <li>[[xUnit.net]]</li>
 <li>NUnit</li>
@@ -318,7 +332,9 @@ The ‘splash’ page can call a service worker to cache the data for the player
 </ol>
 <h2>[[Songhay Publications - KinteSpace|kintespace.com]]: my cousin, Gozié Ojini, is showing at The Hammer 🎊</h2>
 <p>“<a href="https://hammer.ucla.edu/exhibitions/2025/alice-coltrane-monument-eternal">Alice Coltrane, Monument Eternal</a>”:</p>
+<div style="text-align:center">
 <p><img src="../../image/day-path-2025-02-26-21-21-58.png" alt="Gozié Ojini sculpture"></p>
+</div>
 <p>…also see “<a href="https://www.latimes.com/entertainment-arts/story/2025-02-14/alice-coltrane-hammer-museum-ashram-monument-eternal">Alice Coltrane’s ashram — and her ‘Black radical imagination’ — lives on at the Hammer Museum</a>” 📰</p>
 <h2>[[hardware]]: “Toyota reveals new fuel-cell stack, isn't giving up on hydrogen cars”</h2>
 <blockquote>
@@ -364,12 +380,14 @@ public void IntroductoryTest(int expectedNumber, MyClass sut)
 <p><strong>Invented by Lotanna Igwe-Odunze in 2009 and refined over more than a decade, the Ńdébé script is the first truly usable, writeable, and readable indigenous writing system for the Ìgbò language. It masterfully blends ancient Ìgbò designs with modern practicality, creating a script that celebrates cultural heritage while addressing the challenges of contemporary communication.</strong></p>
 <p>—“<a href="https://www.africandigitalart.com/ndebe-a-modern-writing-system-for-igbo/">Ńdébé: A Modern Writing System for Ìgbò</a>”</p>
 </blockquote>
+<div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=vsV9gI_U184">
         <img alt="Basic Ndebe Script Tutorial" src="https://img.youtube.com/vi/vsV9gI_U184/hqdefault.jpg" width="480" />
     </a>
     <p><small>Basic Ndebe Script Tutorial</small></p>
 </figure>
+</div>
 <h2>[[Songhay System Studio]]: “Nigerians are building affordable alternatives to AWS and Google Cloud”</h2>
 <blockquote>
 <p>Nigerian entrepreneur Fara Ashiru built her fintech platform, Okra, on Amazon Web Services in 2020. She would pay AWS in dollars even as Okra earned in naira because American cloud providers did not accept payments in local currency at the time.</p>
