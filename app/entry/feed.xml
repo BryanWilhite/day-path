@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 30 Jan 2025 10:57:40 -0800</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 26 Feb 2025 12:09:28 -0800</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-02</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-02-26-studio-status-report-2025-02</link>
+            <description>
+                month 02 of 2025 was about upgrading Songhay.Publications to .NET 8.0 and working directly on kintespace.com I continue to fiddle and struggle with my Obsidian graph view of the month: Obsidian graph for this month I notice that most of nodes labeled with…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-02-26-studio-status-report-2025-02</guid>
+            <pubDate>Wed, 26 Feb 2025 12:09:28 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-01</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-01-30-studio-status-report-2025-01</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-01-31-studio-status-report-2024-01</guid>
             <pubDate>Wed, 31 Jan 2024 08:05:03 -0800</pubDate>
-        </item>
-        <item>
-            <title>my Studio feature set for 2024</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</link>
-            <description>
-                Here, in my Studio, a “technical Blog” is simply a series of posts about a set of interests. Traditionally this set of interests is focused and coherent—but oftentimes too broad. I recall sending an email to Carl Franklin last century (before the inventio…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-01-07-my-studio-feature-set-for-2024</guid>
-            <pubDate>Sun, 07 Jan 2024 19:16:47 -0800</pubDate>
         </item>
     </channel>
 </rss>
