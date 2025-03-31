@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 26 Feb 2025 12:09:28 -0800</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Mar 2025 09:28:58 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-03</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-03-30-studio-status-report-2025-03</link>
+            <description>
+                month 03 of 2025 was about another #day-job takeover, serious progress with Azure Functions and AzDO Selected notes for this month should show signs of major #day-job breakthroughs in the study of Azure Functions and the YAML pipelines of Azure DevOps (Az…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-03-30-studio-status-report-2025-03</guid>
+            <pubDate>Sun, 30 Mar 2025 09:28:58 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-02</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-02-26-studio-status-report-2025-02</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-02-29-studio-status-report-2024-02</guid>
             <pubDate>Thu, 29 Feb 2024 13:46:43 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-01</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-01-31-studio-status-report-2024-01</link>
-            <description>
-                month 01 of 2024 was about releasing Songhay.Modules.Bolero and SonghayCore The only piece left to complete that other ‘half’ needed to completely replace &lt;http://kintespace.com/player.html&gt; is Songhay.Player.YouTube release 6.3.0 📦🚀…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-01-31-studio-status-report-2024-01</guid>
-            <pubDate>Wed, 31 Jan 2024 08:05:03 -0800</pubDate>
         </item>
     </channel>
 </rss>
