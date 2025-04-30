@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Mar 2025 09:28:58 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 29 Apr 2025 11:54:28 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-04</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-04-29-studio-status-report-2025-04</link>
+            <description>
+                month 04 of 2025 was about envisioning a road map toward getting the next-generation b-roll player services working Currently, the Studio canvas shows two warnings directly related to player services: Obsidian Studio canvas detail What should emerge from …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-04-29-studio-status-report-2025-04</guid>
+            <pubDate>Tue, 29 Apr 2025 11:54:28 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-03</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-03-30-studio-status-report-2025-03</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-03-30-studio-status-report-2024-03</guid>
             <pubDate>Sat, 30 Mar 2024 16:28:12 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-02</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-02-29-studio-status-report-2024-02</link>
-            <description>
-                month 02 of 2024 was about releasing Songhay.Player.YouTube release 6.3.0 📦🚀 It is almost totally awesome that the Songhay.Player.YouTube release 6.3.0 📦🚀 project was completed in month 02. But, as the developer story goes, there is still more shit to…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-02-29-studio-status-report-2024-02</guid>
-            <pubDate>Thu, 29 Feb 2024 13:46:43 -0800</pubDate>
         </item>
     </channel>
 </rss>
