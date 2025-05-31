@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2025-05" />
+    <meta name="twitter:title" content="studio status report: 2025-05" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2025-05-30-studio-status-report-2025-05" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 05 of 2025 was about discovering the essential ‘boundary-crossing abstractions’ and rewriting Songhay.Player for the last time, really My discovery this month was so important to me that I actually broke the fourth wall and posted my words from my p…" />
+    <meta property="og:description" content="month 05 of 2025 was about discovering the essential ‘boundary-crossing abstractions’ and rewriting Songhay.Player for the last time, really My discovery this month was so important to me that I actually broke the fourth wall and posted my words from my p…" />
+    <meta name="twitter:description" content="month 05 of 2025 was about discovering the essential ‘boundary-crossing abstractions’ and rewriting Songhay.Player for the last time, really My discovery this month was so important to me that I actually broke the fourth wall and posted my words from my p…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2025-05 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2025-05</h1>
+<h2>month 05 of 2025 was about discovering the essential ‘boundary-crossing abstractions’ and rewriting <code>Songhay.Player</code> for the last time, really</h2>
+<p>My discovery this month was so important to me that I actually broke the fourth wall and <a href="https://www.linkedin.com/posts/wilhite_hey-people-it-is-old-guy-manifesto-activity-7332515716329349121-Gd4t?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAADEJ_ABMWbhfBWE7JW6GvOyg5pLa5zVK-Q">posted</a> <em>my words</em> from my personal journal on LinkedIn:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-05-30-21-31-04.png" alt="personal journal entry"></p>
+</div>
+<p>The five abstractions mentioned above (excluding <code>IConfiguration</code> because that abstraction is from Microsoft) will be in the next release of <code>SonghayCore</code> [🔗 <a href="https://github.com/BryanWilhite/SonghayCore">GitHub</a>]. How big is this realization? For the first ime in my life, I can refer to myself as an <em>architect</em> which is a great, sincere feeling because I am not getting any younger 😐🧓</p>
+<p>These new abstractions are temporarily lodging in my b-roll server project <code>Songhay.Player</code>. I am counting 16 days in the Obsidian graph view that were dedicated to Songhay Player (C♯) (<code>Songhay.Player</code>) and these novel abstractions:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-05-30-21-38-42.png" alt="Obsidian graph view"></p>
+</div>
+<p>16 days of <em>epic</em> re-factoring!</p>
+<p>In “sketching out development projects” below there is the following line item:</p>
+<ul>
+<li>replace current b-roll player API with Azure Functions</li>
+</ul>
+<p>The 16 days of epic re-factoring will address this line item, royally. In fact, these 16 days will inform how I build enterprise systems for the rest of my life. Having these new abstractions does <em>not</em> mean I know “everything”—it means I know the essentials, the rock-solid fundamentals. Here is <a href="https://martinfowler.com/eaaCatalog/repository.html">an article from 2003 by Martin Fowler</a> talking about the repository pattern, so I ‘should’ have known this earlier, right? Not really. First of all, there is a difference between the repository pattern and the <em>generic</em> repository pattern. This list of ingredients that inspired me are not hanging low from the proverbial trees:</p>
+<ul>
+<li>the recent release of <em>keyed</em> dependencies from Microsoft [📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#keyed-services">docs</a>] (this lack of keys probably explains why the other, non-Microsoft DI frameworks are still in use)</li>
+<li>being made aware of the <em>generic</em> repository pattern by a kid from the current day job</li>
+<li>my relatively new, healthy lack of respect for integration testing—such massive disrespect is made possible by well-placed, mockable, boundary-crossing abstractions (and new understanding of the role Jupyter Notebooks play)</li>
+<li>the idea of using domain-specific extension methods with a generic (domain-non-specific) repository (this idea came the fastest because of my fondness for extension methods)</li>
+<li>my inexperience, lack of industry role models and lack of critical thinking skills that delayed me seeing why <code>HttpRequestMessage</code> needs to be ‘hidden’ behind an abstraction</li>
+<li>the awkward starts and stops of Microsoft’s Entity Framework teams that eventually developed a <code>DbContext</code> type that not that far removed from a plain-old CLR object (POCO)</li>
+<li>my time wasted being dragged through at least two very, very different Azure Storage SDKs that finally prompted me to employ a REST-based approach to Azure Storage (which then had to be ‘hidden’ behind an abstraction)</li>
+<li>the innovation of generics themselves which did not appear in Java (deformed) much, much later (and Java culture influences .NET people in useful and not-so-useful ways)</li>
+<li>general cognitive load bearing down on me from a myriad of places that have nothing to do with exploring Domain Driven Design</li>
+</ul>
+<p>None of the remarks listed above appeared my notes this month. I may write (or actually <em>speak</em>) about such things later. In the meantime, selections, from my Studio notes for this month, follow:</p>
+<h2>[[Songhay Core (C♯)]]: why can I not de-serialize <code>ProgramMetadataExtensions</code>? 😐</h2>
+<p>It was because I defined <code>ProgramMetadata</code> with read-only properties:</p>
+<pre><code class="language-csharp">public Dictionary&lt;string, DbmsMetadata&gt; DbmsSet { get; } = new();
+</code></pre>
+<p>…de-serialization now works because of this:</p>
+<pre><code class="language-csharp">public Dictionary&lt;string, DbmsMetadata&gt; DbmsSet { get; init; } = new();
+</code></pre>
+<blockquote>
+<p>The <code>init</code> keyword defines an <em>accessor</em> method in a property or indexer. An init-only setter assigns a value to the property or the indexer element <strong>only</strong> during object construction. An <code>init</code> enforces immutability, so that once the object is initialized, it can't be changed. An <code>init</code> accessor enables calling code to use an <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer">object initializer</a> to set the initial value. As a contrast, an <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">automatically implemented property</a> with only a <code>get</code> setter must be initialized by calling a constructor.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/init">The init keyword (C# Reference)</a>”</p>
+</blockquote>
+<h2>[[Azure Functions]]: “Migrate C# apps from the in-process model to the isolated worker model” 😐😲 #day-job</h2>
+<p>I had no idea! I had to be shown this:</p>
+<blockquote>
+<p><a href="https://aka.ms/azure-functions-retirements/in-process-model">Support for the in-process model ends on November 10, 2026</a>. We highly recommend that you migrate your apps to the isolated worker model by following the instructions in this article.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/azure/azure-functions/migrate-dotnet-to-isolated-model?tabs=net8">Migrate C# apps from the in-process model to the isolated worker model</a>”</p>
+</blockquote>
+<p>I would be awesome to find that all I have to do is swap my “<a href="https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-in-process-differences#execution-model-comparison-table">core packages</a>”:</p>
+<p><img src="../../image/day-path-2025-05-30-22-28-56.png" alt="core packages"></p>
+<p><strong>Update:</strong> the bulk of the changes were indeed [[NuGet]] packages with some very weird exceptions:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-05-30-22-29-52.png" alt="step 3"></p>
+<p><img src="../../image/day-path-2025-05-30-22-30-32.png" alt="step 5"></p>
+</div>
+<blockquote>
+<p>[!important]
+The docs fail to mention that, in addition to <code>Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore</code>, the <code>Microsoft.Azure.Functions.Worker.Extensions.Http</code> package is required.</p>
+</blockquote>
+<h2>[[Songhay Player: YouTube]]: yes, this <code>etag</code> thing has been real 😐</h2>
+<p>The <code>Get-CloudYtChannelsList</code> command of the YouTube channel maintenance procedure can be modified to collect upload <code>etag</code> information which can be used to skip unchanged uploads #to-do There are about 630 [[YouTube]] channels under curation. A little over 500 of them are changing weekly.</p>
+<h2>[[dotnet|.NET 8.0]]: yes, “.NET regular expression source generators” will require your class to become <code>partial</code></h2>
+<blockquote>
+<p>.NET 7 introduced a new <code>RegexGenerator</code> source generator. A <em>source generator</em> is a component that plugs into the compiler and augments the compilation unit with additional source code. The .NET SDK (version 7 and later) includes a source generator that recognizes the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.generatedregexattribute">GeneratedRegexAttribute</a> ==attribute on a partial method== that returns <code>Regex</code>. The source generator provides an implementation of that method that contains all the logic for the <code>Regex</code>.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-source-generators">.NET regular expression source generators</a>”</p>
+</blockquote>
+<p>Because this brave new world of <code>RegexGenerator</code> depends on a partial method, the <code>class</code> containing this method must be made partial:</p>
+<blockquote>
+<p>When a method declaration includes a <code>partial</code> modifier, that method is said to be a <em><strong>partial method</strong></em>. Partial methods may only be declared as members of partial types (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/classes#1527-partial-type-declarations">§15.2.7</a>), and are subject to a number of restrictions.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/classes#1569-partial-methods">15.6.9 Partial methods</a>”</p>
+</blockquote>
+<p>I was thrown into this news when I accepted a re-factoring hint from [[JetBrains Rider]] which gave me the <code>GeneratedRegex</code> on line 134:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-05-30-22-34-04.png" alt=" on line 134"></p>
+</div>
+<h2>[[dotnet|.NET 8.0]]: the importance of <code>JsonValue.Create</code> in [[Songhay Publications (C♯)]] 😐🥶</h2>
+<p>I am unable to explain why the unit test, <code>MarkdownEntryExtensionsTests.WithNew11tyFrontMatterAndContentHeaderAndTouch_Test</code>, is now passing. But the change to make things work is this:</p>
+<pre><code class="language-csharp">i.FrontMatter[&quot;modificationDate&quot;] = JsonValue.Create(date);
+</code></pre>
+<p>…which used to be this:</p>
+<pre><code class="language-csharp">i.FrontMatter[&quot;modificationDate&quot;] = date.ToIso8601String();
+</code></pre>
+<p>The old statement caused an exception with the message:</p>
+<pre><code class="language-console">A value of type 'System.String' cannot be converted to a 'System.DateTime'.
+</code></pre>
+<p>…which made me think that Microsoft’s <code>GetValue&lt;T&gt;</code> was fundamentally flawed. Meanwhile, there was hint in [[JetBrains Rider]] that led me to <code>JsonValue.Create</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-05-30-22-36-06.png" alt="JetBrains hint"></p>
+</div>
+<pre><code class="language-console">Implicit conversion of 'date.ToIso8601String()' from 'string' to 'JsonNode?' 
+</code></pre>
+<p>It is very likely that the “implicit conversion” generates a <code>JsonNode</code> of <code>JsonValueKind.String</code> with no ‘understanding’ that this string is a ‘date string.’</p>
+<p>Superficially, <code>JsonValue.Create(date)</code> should be identical to <code>date.ToIso8601String()</code>. In both cases the node is of <code>JsonValueKind.String</code>—in fact, <code>JsonValue.Create(date).GetValueKind()</code> is of <code>JsonValueKind.String</code> 😐 Somebody is hiding the secret sauce from me 🥶</p>
+<p>Okay, here is one more clue:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-05-30-22-37-21.png" alt="clue"></p>
+</div>
+<blockquote>
+<p>[!important]
+My current <code>ToIso8601String()</code> routine needs to be informed by  <code>JsonValue.Create(date)</code> #to-do</p>
+</blockquote>
+<h2>[[Songhay Publications|Publications]]: “Elasticsearch Vs OpenSearch | Comparing Elastic and AWS Search Engines”</h2>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=62u30TO-OsA">
+        <img alt="Elasticsearch Vs OpenSearch | Comparing Elastic and AWS Search Engines" src="https://img.youtube.com/vi/62u30TO-OsA/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Elasticsearch Vs OpenSearch | Comparing Elastic and AWS Search Engines</small></p>
+</figure>
+</div>
+<blockquote>
+<p>The <a href="https://hubs.la/Q03ldHNd0">OpenSearch Software Foundation</a>, the vendor-neutral home for the OpenSearch Project, today announced the general availability of OpenSearch 3.0. This major release delivers a 9.5x performance improvement over OpenSearch 1.3, building on <a href="https://hubs.la/Q03ldJkL0">benchmarking data</a> that showed earlier iterations of OpenSearch operating 1.6x faster than its closest industry competitor.</p>
+<p>—“<a href="https://opensearch.org/blog/opensearch-3-0-enhances-vector-database-performance/">OpenSearch 3.0 Enhances Vector Database Performance, Search Infrastructure and Scalability to Meet AI-driven Demand</a>”</p>
+</blockquote>
+<h2>[[Selenium WebDriver]]: there may not be a need to run Web-driver tests from conventional test projects 😐🧠💡 #day-job</h2>
+<p>When I see a line of code like this:</p>
+<pre><code class="language-csharp">chromeDriver.Navigate().GoToUrl(&quot;https://localhost:7082&quot;);
+</code></pre>
+<p>… the <code>&quot;https://localhost:7082&quot;</code> jumps out at me—it is effectively saying, “I am an external process that can be run from anywhere”—anywhere like a [[Jupyter|Jupyter Notebook]] 💡</p>
+<p>The promise here is a powerful, professional approach to <acronym title="end-to-end">E2E</acronym> testing of Web <acronym title="User Interface">UI</acronym>s 👏</p>
+<blockquote>
+<p>[!error]
+[[Selenium WebDriver|WebDriver]] appears to not support authenticating with the browser first and then running tests! However, Microsoft’s [[Playwright]] appears to support this [📖 <a href="https://playwright.dev/docs/auth">docs</a> ]</p>
+</blockquote>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=JdMkZUePkSE">
+        <img alt="Get started with end-to-end testing: Playwright | Episode 2 - Getting Started" src="https://img.youtube.com/vi/JdMkZUePkSE/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Get started with end-to-end testing: Playwright | Episode 2 - Getting Started</small></p>
+</figure>
+</div>
+<h2>[[Azure Functions]]: when did the <code>[Blob]</code> attribute appear on the scene? 👴😐 #make-blog-post</h2>
+<p>Too many demos and docs highlight <code>[BlobTrigger]</code> [📖 <a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger">docs</a> ] instead of <code>[Blob]</code>—likely because of historical reasons as the former appeared well before the latter. This video from four years ago <em>properly</em> introduces the <code>[Blob]</code> attribute (to me):</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=z5AQdk-43ZI">
+        <img alt="Azure Functions University - Blob Lesson (.NET Core)" src="https://img.youtube.com/vi/z5AQdk-43ZI/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Azure Functions University - Blob Lesson (.NET Core)</small></p>
+</figure>
+</div>
+<h2>[[Songhay Player (C♯)]]: the (obvious) need found for <code>GetPropertyJsonNodeOrNull</code> 😐🤓</h2>
+<p>Today, there remains two #to-do items:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-05-30-22-42-21.png" alt="Rider TODO items view"></p>
+</div>
+<p>The discovery of this need came from seeing (again) the obvious. This will fail:</p>
+<pre><code class="language-csharp">return jObject  
+    .GetPropertyJsonObjectOrNull(&quot;snippet&quot;)  
+    .GetPropertyJsonObjectOrNull(&quot;publishedAt&quot;)?  
+    .GetValue&lt;DateTime&gt;();
+</code></pre>
+<p>…this will not:</p>
+<pre><code class="language-csharp">return jObject  
+    .GetPropertyJsonObjectOrNull(&quot;snippet&quot;)  
+    .GetPropertyJsonNodeOrNull(&quot;publishedAt&quot;, logger)?  
+    .GetValue&lt;DateTime&gt;();
+</code></pre>
+<p>The <code>publishedAt</code> property does <em>not</em> represent an object 😐</p>
+<h2>[[Blender]] has a default (?) color space</h2>
+<p><a href="https://www.color.org/chardata/rgb/BT709.xalter">BT.709</a> is the color space, according to the following video:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=Xf5KSLG0XaQ">
+        <img alt="Blender 4.4 Features in LESS THAN FIVE MINUTES!" src="https://img.youtube.com/vi/Xf5KSLG0XaQ/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Blender 4.4 Features in LESS THAN FIVE MINUTES!</small></p>
+</figure>
+</div>
+<p>…I seem to recall this clearly defined color space being a first.</p>
+<h2>[[dotnet|.NET]]: of course it would be [[Steve Sanderson]] presenting the best lecture on <acronym title="Artificial Intelligence">AI</acronym> I have ever seen 🎊👏</h2>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=Xyios5mdkIM">
+        <img alt="Keynote: The past, present, and future of AI for application developers - Steve Sanderson" src="https://img.youtube.com/vi/Xyios5mdkIM/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Keynote: The past, present, and future of AI for application developers - Steve Sanderson</small></p>
+</figure>
+</div>
+<h2>[[Angular]]: “You're misunderstanding DDD in Angular (and Frontend)”</h2>
+<p>Brutal. Autodidact talking to code camp graduates:</p>
+<blockquote>
+<p>All in all, there's a growing <a href="https://martinfowler.com/bliki/SemanticDiffusion.html?ref=angularspace.com">semantic diffusion</a> within frontend communities about DDD and it's bringing more harm than good (in short, <em>semantic diffusion</em> happens when people use a term without understanding it and, within some time, the meaning gets derailed ☹️).</p>
+<p>…</p>
+<p>DDD is a methodology that's rather easy to cover just the main topics and building blocks (see: <em>DDD at a glance</em> section below). But <strong>it takes many years of hard work</strong> to gather the experience (not just theoretical knowledge) to be able to <strong>use it in practice</strong> for the <strong>benefit of your product</strong>.</p>
+<p>—“<a href="https://www.angularspace.com/youre-misunderstanding-ddd-in-angular-and-frontend/">You're misunderstanding DDD in Angular (and Frontend)</a>”</p>
+</blockquote>
+<h2>[[dotnet|.NET]]: when the output from one test can be the input for another test, do <em>not</em> immediately build an ordered test 😐🧠💡 #dotnet-architecture</h2>
+<p>… Instead chaining one test to another 🔬🔗🔬, we should build <em>decoupled</em> (unit) tests:</p>
+<blockquote>
+<p>[!important]
+The output of one test can be used as hand-curated input ✋🦋 for another test. This curation process should be considered “part of the job”—actually maintaining an app like a professional (instead of an animal). This curation decouples one test from another—and is my explanation as to why [[JetBrains Rider]] does <em>not</em> support ordered tests.</p>
+</blockquote>
+<p>Again, I have to celebrate [[Object Dumper]] which makes this curation process far easier—especially with legacy spaghetti 🍝👴</p>
+<h2>[[Songhay Player (C♯)]]: I think the final piece to the puzzle is <code>IApiRequestStrategy</code> 😐❓ #dotnet-architecture</h2>
+<p>My previous concerns about the removal of <code>Uri</code>-building parameters from <code>I*ApiEndpoint</code> contracts has been addressed with <code>IApiRequestStrategy.GenerateHttpRequestMessage()</code>. This will make centralizing all of the <acronym title="Application Programming Interface">API</acronym> requests possible (perhaps with <code>Dictionary&lt;string, IApiRequestStrategy&gt;</code>?) via some kind of Provider for <acronym title="Dependency Injection">DI</acronym>.</p>
+<p><code>IApiRequestStrategy</code> externalizes the generation of <code>HttpRequestMessage</code> which reduces the uniqueness of all implementations of <code>I*ApiEndpoint</code> contracts—these implementations would be distinguished by <code>ResiliencePipeline</code> going forward which makes them more <acronym title="Dependency Injection">DI</acronym> ‘friendly.’</p>
+<p><code>IApiRequestStrategy</code> has the suffix Strategy because I am under the impression that I am using the <a href="https://refactoring.guru/design-patterns/strategy/csharp/example">Strategy Pattern</a>.</p>
+<h2>[[Songhay Player (C♯)]]: <code>IApiEndpoint</code> and <code>IApiRequestStrategy</code> depend on each other 😐</h2>
+<p>Both of these contracts have one member, respectively:</p>
+<pre><code class="language-csharp">Task&lt;string&gt; DownloadStringAsync(IApiRequestStrategy requestStrategy, string? path);
+</code></pre>
+<pre><code class="language-csharp">HttpRequestMessage GenerateHttpRequestMessage(string? path);
+</code></pre>
+<blockquote>
+<p>[!important]
+<code>IApiEndpoint.DownloadStringAsync</code> passes <code>string? path</code> through to <code>IApiRequestStrategy.GenerateHttpRequestMessage</code>.</p>
+</blockquote>
+<p>This ‘coupling’ is by design—my design—and it feels like a hack. The problem starts with this first question:</p>
+<blockquote>
+<p>[!question]
+What happens when I want my “request strategy” to be based on a <code>Uri</code>?</p>
+</blockquote>
+<p>…which leads to other unpleasant-but-valid questions:</p>
+<ul>
+<li>Are you suggesting that a <code>Uri</code> is <em>not</em> the default “request strategy”?</li>
+<li>Why are no generics involved here?</li>
+<li>What do you mean by pass though?</li>
+</ul>
+<p>I think generics should be involved here:</p>
+<pre><code class="language-csharp">Task&lt;string&gt; DownloadStringAsync&lt;TItem&gt;(IApiRequestStrategy requestStrategy, TItem? requestItem);
+</code></pre>
+<pre><code class="language-csharp">HttpRequestMessage GenerateHttpRequestMessage&lt;TItem&gt;(TItem? requestItem);
+</code></pre>
+<p>Yuck. What kind of name is <code>requestItem</code>?</p>
+<pre><code class="language-csharp">Task&lt;string&gt; DownloadStringAsync&lt;TData&gt;(IApiRequestStrategy requestStrategy, TData? requestData);
+</code></pre>
+<pre><code class="language-csharp">HttpRequestMessage GenerateHttpRequestMessage&lt;TData&gt;(TData? requestData);
+</code></pre>
+<p>…only slightly better.</p>
+<blockquote>
+<p>[!warning]
+The use of generic type arguments in an interface forces the implementer to check for types.</p>
+</blockquote>
+<h2>[[Entity Framework]]: the Generic Async Repository has been around since before 2019…</h2>
+<p>…and it’s time to catch up! “<a href="https://blog.zhaytam.com/2019/03/14/generic-repository-pattern-csharp/">Repository Pattern – Generic Async Repositories in C#</a>” is proof that this idea has been around since before 2019. My motivation for (finally) introducing this idea into my Studio includes:</p>
+<ul>
+<li>the desire to define and centralize CRUD operations for [[Entity Framework|Entity Framework Core]]</li>
+<li>providing the generic repository abstraction, <code>IGenericRepository&lt;T, TKey&gt;</code>, that can be specialized via extension methods for specific applications</li>
+</ul>
+<blockquote>
+<p>[!important]
+The default implementation of <code>IGenericRepository&lt;T, TKey&gt;</code> needs a <code>DbContext</code> in order to construct. <code>DbContext</code> is the base class of <em>all</em> [[Entity Framework|Entity Framework Core]] applications.</p>
+</blockquote>
+<p>I have prepared a new, quick-and-dirty release of [[Songhay Data Access (C♯)]] under <a href="https://github.com/BryanWilhite/Songhay.DataAccess/issues/14">issue #14</a> #to-do to address this ‘discovery’ 😐</p>
+<h2>[[FFmpeg]]: <code>typed-ffmpeg</code> might help me write [[Jupyter|Jupyter Notebooks]] for video processing 😐🎥 #to-do</h2>
+<blockquote>
+<p><strong>typed-ffmpeg</strong> offers a modern, Pythonic interface to FFmpeg, providing extensive support for complex filters with detailed typing and documentation. Inspired by <code>ffmpeg-python</code>, this package enhances functionality by addressing common limitations, such as lack of IDE integration and comprehensive typing, while also introducing new features like JSON serialization of filter graphs and automatic FFmpeg validation.</p>
+<p>—<a href="https://github.com/livingbio/typed-ffmpeg">https://github.com/livingbio/typed-ffmpeg</a></p>
+</blockquote>
+<h2>[[dotnet|.NET]]: that time I asked about the <code>&gt;&gt;</code> operator of F♯ 😐❓</h2>
+<p>This <a href="https://stackoverflow.com/a/71578086/22944">StackOverflow answer</a> pretty much answered my question:</p>
+<p>…this:</p>
+<pre><code class="language-fsharp">PizzaConfigMsg &gt;&gt; dispatch
+</code></pre>
+<p>…is the same as this:</p>
+<pre><code class="language-fsharp">fun pizzaMsg -&gt; pizzaMsg |&gt; PizzaConfigMsg |&gt; dispatch
+</code></pre>
+<blockquote>
+<p>This tells us that the code is converting a value of type <code>PizzaConfigMsg</code> (which I've called <code>pizzaMsg</code> above) to a top-level <code>Message</code> via the <code>Message.PizzaConfigMsg</code> union case, then dispatching the result.</p>
+<p>This style of coding (where function arguments become implicit, rather than explicit) is called &quot;point-free programming&quot;. You can find more information about it <a href="https://blog.jayway.com/2012/05/08/point-free-programming-style-in-f/">here</a>.</p>
+</blockquote>
+<p>The above link does not work as of this writing 😐 Alternatives:</p>
+<ul>
+<li>“<a href="https://eiriktsarpalis.wordpress.com/2017/04/02/programming-in-the-point-free-style/">Programming in the Point-Free Style</a>”</li>
+<li>See “<a href="https://learn.microsoft.com/en-us/dotnet/fsharp/style-guide/conventions#partial-application-and-point-free-programming">Partial application and point-free programming</a>” in “<a href="https://learn.microsoft.com/en-us/dotnet/fsharp/style-guide/conventions">F# coding conventions</a>”</li>
+<li>“<a href="https://dev.to/shimmer/f-tip-4-when-not-to-use-point-free-style-57m3">F# Tip 4: When (not) to use point-free style</a>”</li>
+<li>“<a href="https://en.wikipedia.org/wiki/Tacit_programming">Tacit programming</a>”</li>
+<li>“<a href="https://christianjacobsens.wordpress.com/tag/tacit/">Point-free style in F#</a>”</li>
+</ul>
+<p>I think I need to study the subject of <em>point-free programming</em> in order to get more context 😐 #to-do</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=eXhFH95zzP0">
+        <img alt="37 Point Free" src="https://img.youtube.com/vi/eXhFH95zzP0/hqdefault.jpg" width="480" />
+    </a>
+    <p><small>37 Point Free</small></p>
+</figure>
+<figure>
+    <a href="https://www.youtube.com/watch?v=seVSlKazsNk">
+        <img alt="“Point-Free or Die: Tacit Programming in Haskell and Beyond” by Amar Shah" src="https://img.youtube.com/vi/seVSlKazsNk/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>“Point-Free or Die: Tacit Programming in Haskell and Beyond” by Amar Shah</small></p>
+</figure>
+<figure>
+    <a href="https://www.youtube.com/watch?v=HSTweR77nug">
+        <img alt="Pointless or Pointfree - Damjan Vujnovic" src="https://img.youtube.com/vi/HSTweR77nug/hqdefault.jpg" width="480" />
+    </a>
+    <p><small>Pointless or Pointfree - Damjan Vujnovic</small></p>
+</figure>
+</div>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>Eliminating Angular JS in the Studio is the top priority. Replacing the Angular JS app (<code>http://kintespace.com/player.html</code>) for the kinté space depends on:</p>
+<ul>
+<li>generating a new <code>index.html</code> page with eleventy</li>
+<li>supplementing the index with responsive images</li>
+</ul>
+<p>Proposed future items:</p>
+<ul>
+<li>complete upgrade to .NET 8.0</li>
+<li>replace current b-roll player API with Azure Functions</li>
+<li>switch Studio Publications from Material Design to Bulma 💄 ➡️ 💄✨</li>
+<li>start <code>Songhay.Modules.Bolero.Index</code> project</li>
+<li>generate responsive and social images with AI</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2025-05-30T21:20:48.183Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
