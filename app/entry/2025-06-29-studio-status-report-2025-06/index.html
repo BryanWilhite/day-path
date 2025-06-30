@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2025-06" />
+    <meta name="twitter:title" content="studio status report: 2025-06" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 06 of 2025 was about releasing the b-roll player API Month 06 of 2025 was about releasing the b-roll player API in Microsoft Azure, solidifying the architectural practice of this Studio as this release features: - the premiere use of Microsoft’s Htt…" />
+    <meta property="og:description" content="month 06 of 2025 was about releasing the b-roll player API Month 06 of 2025 was about releasing the b-roll player API in Microsoft Azure, solidifying the architectural practice of this Studio as this release features: - the premiere use of Microsoft’s Htt…" />
+    <meta name="twitter:description" content="month 06 of 2025 was about releasing the b-roll player API Month 06 of 2025 was about releasing the b-roll player API in Microsoft Azure, solidifying the architectural practice of this Studio as this release features: - the premiere use of Microsoft’s Htt…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2025-06 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2025-06</h1>
+<h2>month 06 of 2025 was about releasing the b-roll player <acronym title="Application Programming Interface">API</acronym></h2>
+<p>Month 06 of 2025 was about releasing the b-roll player <acronym title="Application Programming Interface">API</acronym> in Microsoft Azure, solidifying the architectural practice of this Studio as this release features:</p>
+<ul>
+<li>the premiere use of Microsoft’s <code>HttpTriggerAttribute.Route</code> [🔗 <a href="https://github.com/Azure/azure-functions-dotnet-worker/blob/ba0f4dc6e0318af9a493198179dc46a29afb7e57/extensions/Worker.Extensions.Http/src/HttpTriggerAttribute.cs#L59">GitHub</a> ] attribute for endpoints which allows me to match routes already set up on the legacy Player <acronym title="Application Programming Interface">API</acronym></li>
+<li>the premiere use of Microsoft’s keyed <acronym title="Dependency Injection">DI</acronym> which is new to dotnet|.NET 8.0</li>
+<li>the keyed injection of Activities into Functions classes which formally define the ‘tree’ of inputs and outputs of the domain</li>
+<li>the premiere use of the new ‘boundary-crossing’ abstractions of this Studio (e.g. <code>IApiEndpoint</code> [🔗 <a href="https://github.com/BryanWilhite/SonghayCore/blob/main/SonghayCore/Abstractions/IApiEndpoint.cs">GitHub</a> ]) which still find quite revolutionary-but-not-at-all-glamorous at the moment (more detail is in <a href="https://songhayblog.azurewebsites.net/entry/2025-05-30-studio-status-report-2025-05/">last month’s report</a>)</li>
+<li>the premiere use of <code>IConfiguration</code> as a form of input, causing the new Studio convention of <code>*ShellActivity</code> Activities which are concerned with reading command-line input</li>
+</ul>
+<p>This API release allows me to make the claim I made over two months ago true: this Studio is in a ready state to focus on building for the front end. Two months ago <a href="https://songhayblog.azurewebsites.net/entry/2025-04-29-studio-status-report-2025-04/">my notes referenced</a> this Pen: <a href="https://codepen.io/rasx/pen/raNbNwx">https://codepen.io/rasx/pen/raNbNwx</a> This Pen represents the push toward replacing the old-ass Angular JS (and, yes, I mean Angular <em>JS</em>) home splash for kintespace.com with a splash based on eleventy. Ideally, more to come…</p>
+<p>According to the Obsidian Graph View, only five days were spent on the b-roll player API:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-06-29-18-49-55.png" alt="Obsidian Graph View (detail)"></p>
+</div>
+<p>This is down from the ‘epic’ 16 days used up <a href="https://songhayblog.azurewebsites.net/entry/2025-05-30-studio-status-report-2025-05/">last month</a> which is understandable as the front end concerns emerge. Speaking of which, here are the NuGet packages released by this Studio for month 06:</p>
+<ul>
+<li><code>Songhay.Publications</code> 8.0.3 [🔗 <a href="https://www.nuget.org/packages/Songhay.Publications/8.0.3">NuGet</a> ]</li>
+<li><code>SonghayCore</code> 8.0.2 [🔗 <a href="https://www.nuget.org/packages/SonghayCore/8.0.2">NuGet</a> ]</li>
+</ul>
+<p>These releases were needed to support the dependencies of the Player API.</p>
+<p>The following selected notes should show a month of front-end awareness and maybe a little day-job concern:</p>
+<h2>.NET: “Announcing dotnet run app.cs – A simpler way to start with C# and .NET 10”</h2>
+<blockquote>
+<p>[!question]
+Is this is a replacement for C♯ scripting?</p>
+</blockquote>
+<blockquote>
+<p>Until now, executing C# code using the <code>dotnet</code> CLI required a project structure that included a <code>.csproj</code> file. With this new capability, which we call <em>file-based apps</em>, you can run a standalone <code>.cs</code> file directly, much like you would with scripting languages such as Python or JavaScript.</p>
+<p>This lowers the entry barrier to trying out C# and makes the language a much more attractive choice for learning, prototyping, or automation scenarios.</p>
+<p>—“<a href="https://devblogs.microsoft.com/dotnet/announcing-dotnet-run-app/">Announcing dotnet run app.cs – A simpler way to start with C# and .NET 10</a>”</p>
+</blockquote>
+<h2>Microsoft introduces Drasi</h2>
+<p>Mark Russinovich introduces Drasi under “Project RADIUS” [📹 <a href="https://youtu.be/lHBo_lDWFcI?list=PLlrxD0HtieHgFYS4DKbJ_xCYNE94ZLJjj&amp;t=2796">watch</a> ]:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=lHBo_lDWFcI">
+        <img alt="Inside Azure innovations with Mark Russinovich | BRK195" src="https://img.youtube.com/vi/lHBo_lDWFcI/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Inside Azure innovations with Mark Russinovich | BRK195</small></p>
+</figure>
+</div>
+<blockquote>
+<p>Drasi is a new data processing system that simplifies detecting critical events within complex infrastructures and taking immediate action tuned to business objectives. Developers and software architects can leverage its capabilities across event-driven scenarios, whether working on Internet of Things (IoT) integrations, enhancing security protocols, or managing sophisticated applications. The Microsoft Azure Incubations team is excited to announce that Drasi is now available as an open-source project. To learn more and get started with Drasi, visit <a href="https://drasi.io/">drasi.io</a> and the project’s <a href="https://github.com/drasi-project">GitHub repositories.</a></p>
+<p>—“<a href="https://azure.microsoft.com/en-us/blog/drasi-microsofts-newest-open-source-project-simplifies-change-detection-and-reaction-in-complex-systems/?msockid=064e6834a94b6283390a6744a8b0634b">Drasi: Microsoft’s newest open-source project simplifies change detection and reaction in complex systems</a>”</p>
+</blockquote>
+<blockquote>
+<p><a href="https://drasi.io/">Drasi</a>, the open-source Data Change Processing platform, is an exciting new option for building change-driven solutions easily. This article explores how Drasi’s unique capabilities—centered around clearly defined change semantics, the continuous query pattern, and the reaction pattern—provide a more efficient and effective alternative to traditional event-driven implementations. By codifying consistent patterns and reducing complexity, Drasi empowers solution architects and developers to build responsive systems faster with greater precision and less complexity, which makes them less brittle and easier to update as solution requirements change.</p>
+<p>—“<a href="https://techcommunity.microsoft.com/blog/linuxandopensourceblog/optimizing-change-driven-architectures-with-drasi/4404675">Optimizing Change-Driven Architectures with Drasi</a>”</p>
+</blockquote>
+<h2>.NET: <code>json-everything</code> extension method #to-do</h2>
+<p>The <code>IsEquivalentTo</code> method [🔗 <a href="https://github.com/json-everything/json-everything/blob/43edec29bab368bbd53a4938993318612643aae8/src/Json.More/JsonElementExtensions.cs#L24C21-L24C35">link</a> ] is interesting and leads to questions like:</p>
+<ul>
+<li>does it use <code>ToList</code> for performance reasons or just out of habit?</li>
+<li>will it work with <code>ToArray</code>?</li>
+<li>can it be modified to record/store the location/values of the diff?</li>
+</ul>
+<h2>Publications: “Self-hosting your own media considered harmful”</h2>
+<blockquote>
+<p>So along that theme, I've re-uploaded the video to Internet Archive, free for anyone to download and view at their leisure.</p>
+<p>…</p>
+<p>Some in the fediverse ask why I'm not on Peertube. Here's the problem (and it's not insurmountable): <em>right now</em>, there's no easy path towards sustainable content production when the audience for the content is 100x smaller, and the number of patrons/sponsors remains proportionally the same.</p>
+<p>—“<a href="https://www.jeffgeerling.com/blog/2025/self-hosting-your-own-media-considered-harmful">Self-hosting your own media considered harmful</a>”</p>
+</blockquote>
+<h2>Microsoft finally has an answer to Amazon Workspaces 😐</h2>
+<blockquote>
+<p>Microsoft Dev Box gives developers self-service access to ready-to-code cloud workstations called <em>dev boxes</em>. You can configure dev boxes with tools, source code, and prebuilt binaries that are specific to a project, so developers can immediately start work. You can create cloud development environments for your developer teams by using a customized image, or a preconfigured image from Azure Marketplace, complete with Visual Studio already installed.</p>
+<p>If you're a developer, you can use multiple dev boxes in your day-to-day workflows. Access and manage your dev boxes through the developer portal.</p>
+<p>Microsoft Dev Box bridges the gap between development teams and IT, by bringing control of project resources closer to the development team.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/azure/dev-box/overview-what-is-microsoft-dev-box">What is Microsoft Dev Box?</a>”</p>
+</blockquote>
+<h2>Microsoft SQL Server: <code>HierarchyId</code> has been around since 2008 #day-job</h2>
+<blockquote>
+<p>The <a href="https://learn.microsoft.com/en-us/sql/t-sql/data-types/hierarchyid-data-type-method-reference?WT.mc_id=DT-MVP-5003978">hierarchyid</a> type was introduced with SQL Server 2008. This type is used to represent and manipulate hierarchical data. Hierarchical data contain the notion of parent/child but also the notion of order between elements having the same parent. Values ​​of this type are stored in a binary form, for example, <code>0x5AC0</code> or <code>0x58</code>, but in practice, we use character strings of the type <code>'/'</code> for the root or <code>'/1/'</code> for a child of the root node…</p>
+<p>—“<a href="https://www.meziantou.net/sql-server-discovering-the-hierarchyid-data-type.htm">SQL Server - Discovering the HierarchyId data type</a>”</p>
+</blockquote>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-06-29-19-09-33.png" alt="the HierarchyId data type"></p>
+</div>
+<p>Assuming this <code>HierarchyId</code> thing takes off, I’ll need to move into Entity Framework: “<a href="https://riptutorial.com/efcore-sqlserver-hierarchyid/learn/100002/use-hierarchyid">EF Core SQL Server HierarchyID - Use HierarchyId</a>”</p>
+<p>Additional reading: “<a href="https://www.meziantou.net/using-hierarchyid-with-entity-framework-core.htm">Using SQL Server HierarchyId with Entity Framework Core</a>” 📖</p>
+<h2>Finance: tech layoffs from a change in tax law?</h2>
+<blockquote>
+<p>Section 174 of the Internal Revenue Code governs the tax treatment of research and development (R&amp;D) expenditures. For roughly 70 years, American companies could deduct 100% of “qualified research and development spending” in the year they incurred the costs, and this was generally interpreted pretty liberally. Salaries, software, contractor payments… if it contributed to creating or improving a product, it could be deducted “off the top” of a firm’s taxable income. The <a href="https://www.thetaxadviser.com/issues/2024/jun/rights-for-the-research-development-credit-and-sec-174/#:~:text=Originally%20enacted%20in%201954%2C%20Sec,product%20development%20expenses%20under%20Sec.">deduction was</a> originally codified by Section 174 of the IRS Code of 1954, and under the provision, R&amp;D flourished in the U.S. It gave us the dominance of Bell Labs, Microsoft, Apple, Google, Facebook - pretty much all the US technology booms you’ve lived through unless you’re quire venerable.</p>
+<p>—“<a href="https://www.professoraxelrod.com/p/the-tech-job-meltdown">The Tech Job Meltdown</a>”</p>
+</blockquote>
+<h2>Songhay Player (C♯): the thinnest ‘controllers’ ever 😐</h2>
+<p>The following seems so obvious now that it all comes together:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-06-29-19-15-46.png" alt="Azure Functions class"></p>
+</div>
+<p>Here are some initial observations:</p>
+<ul>
+<li>my Activity concept makes a thin ‘controller’ (just two lines of code per endpoint)—and these Activities can also be used in other contexts like the command line (by calling these Activities shown above from a dedicated <code>*ShellActivity</code> class which knows how to read <code>IConfiguration</code> stuff)—or even something as old-fashioned as a Windows Service</li>
+<li>the ‘art form’ around building an Activity class is to not hide long-running operations in massive <code>for</code> loops which would make lowest-cost Azure Functions fall over under the hidden weight</li>
+<li>keyed services via <acronym title="Dependency Injection">DI</acronym> is new to .NET 8.0, making this one of many things we had to wait for from Microsoft</li>
+<li>the fundamental use case for Azure Functions (not particularly celebrated by Microsoft these days) is as a direct (serverless) replacement for ASP.NET Web API</li>
+<li>I am sure David Fowler’s .NET Aspire would have made building this better(?)/faster(?) but, at the moment, I remain ignorant of the benefits (when I somehow have several “micro-services” to deal with instead of <em>one</em> Functions App, I will look forward to .NET Aspire)</li>
+</ul>
+<h2>Publications: “CSS Color Functions”</h2>
+<blockquote>
+<p>sRGB has been a standard color space for the web <a href="https://www.w3.org/Graphics/Color/sRGB.html">since 1996</a>. However, it’s closer to how old computers represented color, rather than how humans understand it, so it had some problems like not being able to capture the full gamut of modern screens. Still, many modern applications and websites use sRGB, so even though it is the “old way” of doing things, it is still widely accepted and used today.</p>
+<p>…</p>
+<p><a href="https://bottosson.github.io/about/">Björn Ottosson</a> created this color space as <a href="https://www.smashingmagazine.com/2024/10/interview-bjorn-ottosson-creator-oklab-color-space/">an “OK” and even better version of the lab color space</a>. It was created to solve <a href="https://www.w3.org/Graphics/Color/Workshop/slides/talk/lilley#limit">the limitations of CIELAB and CIELAB color space</a> like image processing in <code>lab()</code>, such as making an image grayscale, and perceptual uniformity. The two color functions in CSS that correspond to this color space are <code>oklab()</code> and <code>oklch()</code>. #to-do</p>
+<p>—“<a href="https://css-tricks.com/css-color-functions/">CSS Color Functions</a>”</p>
+</blockquote>
+<h2>Publications: my first sign of F♯ people daring to question React 😐⏰</h2>
+<blockquote>
+<p>Fastoch is a virtual DOM for Elmish with minimal dependencies.</p>
+<p>…</p>
+<p>Elmish is a great model to develop robust web applications in F#.</p>
+<p>However, having a dependency on React has three main drawbacks:</p>
+<ul>
+<li>React does more than what is needed by Elmish, and is a bit heavy for the job.</li>
+<li>React must be added using npm as is it not a Fable component.</li>
+<li>React is developed by Facebook which is an awful company lead by a masculinist billionaire CEO.</li>
+</ul>
+<p>—<a href="https://codeberg.org/thinkbeforecoding/Fastoch">https://codeberg.org/thinkbeforecoding/Fastoch</a></p>
+</blockquote>
+<h2>Publications: “AI Photo Upscaling is Getting Worse! Gigapixel vs On1 PhotoRAW vs Luminar Neo”</h2>
+<p>One interesting point made in this video is that older machine-learning based up-scaling (e.g. in Photoshop) is better than the novel <em>generative</em> products:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=x2Jrv_Cw7Vs">
+        <img alt="AI Photo Upscaling is Getting Worse! Gigapixel vs On1 PhotoRAW vs Luminar Neo" src="https://img.youtube.com/vi/x2Jrv_Cw7Vs/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>AI Photo Upscaling is Getting Worse! Gigapixel vs On1 PhotoRAW vs Luminar Neo</small></p>
+</figure>
+</div>
+<h2>Publications: my extensive work on thumbs is dead on Chromium 😐🧐 #to-do</h2>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-06-29-19-24-34.png" alt="homepage"></p>
+</div>
+<https://chrome.dev/carousel/>
+<blockquote>
+<p>This one has snap points for every episode, but only generates markers for the first episode of a season. <code>scroll-marker-group</code> is set to before. <code>scroll-initial-target</code> scrolls to the first unseen item on load.</p>
+</blockquote>
+<h2>Publications: did Dan Cătălin Burzo write the responsive-image article of the century? 😐 #to-do</h2>
+<blockquote>
+<p>But what the HTML Standard is concerned with, and what this article talks about, are the so-called “adaptive images” enabled by the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset"><code>srcset</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes"><code>sizes</code></a> attributes on <code>&lt;img&gt;</code>, and the dedicated <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"><code>&lt;picture&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source"><code>&lt;source&gt;</code></a> elements. These HTML features help the browser pick the most appropriate image <em>content</em> for the current environment.</p>
+<p>—“<a href="https://danburzo.ro/responsive-images-html/">How to think about HTML responsive images</a>”</p>
+</blockquote>
+<h2>Bolero: latest releases seem to all around “Blazor Interactive Render Modes”</h2>
+<blockquote>
+<p><code>IServiceCollection.AddBoleroComponents()</code> to be called instead of <code>IServiceCollection.AddBoleroHost()</code> to use interactive render modes. When that is used, <code>boleroScript</code> will include <code>blazor.web.js</code> instead of <code>blazor.server.js</code> or <code>blazor.webassembly.js</code>.</p>
+<p>—<a href="https://github.com/fsbolero/Bolero/releases">https://github.com/fsbolero/Bolero/releases</a></p>
+</blockquote>
+<h2>Publications: Rachel Andrews is working on some columns stuff 😐🍱</h2>
+<blockquote>
+<p>And, now we’re doing it. <a href="https://drafts.csswg.org/css-multicol-2/#ch">I’m working on the specification</a> (which is in a <em>very</em> draft state right now). There’s also an experimental implementation behind a runtime flag in Chrome Canary, thanks to the work of <a href="https://github.com/mstensho">Morten Stenshorne</a> at Chrome.</p>
+<p>If you want to follow along as we pick through the details, keep an eye on the <a href="https://github.com/w3c/csswg-drafts/issues?q=state%3Aopen%20label%3A%22css-multicol-2%22">css-multicol-2</a> tag.</p>
+<p>—“<a href="https://rachelandrew.co.uk/archives/2025/04/04/css-multicol-block-direction-wrapping/">CSS multicol block direction wrapping</a>”</p>
+</blockquote>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>Eliminating Angular JS in the Studio is the top priority. Replacing the Angular JS app (<code>http://kintespace.com/player.html</code>) for the kinté space depends on:</p>
+<ul>
+<li>generating a new <code>index.html</code> page with eleventy</li>
+<li>supplementing the index with responsive images</li>
+</ul>
+<p>Proposed future items:</p>
+<ul>
+<li>complete upgrade to .NET 8.0</li>
+<li>replace current b-roll player API with Azure Functions</li>
+<li>switch Studio Publications from Material Design to Bulma 💄 ➡️ 💄✨</li>
+<li>start <code>Songhay.Modules.Bolero.Index</code> project</li>
+<li>generate responsive and social images with AI</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2025-06-29T18:43:37.788Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>

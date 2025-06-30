@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 30 May 2025 14:20:48 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 29 Jun 2025 11:43:37 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-06</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06</link>
+            <description>
+                month 06 of 2025 was about releasing the b-roll player API Month 06 of 2025 was about releasing the b-roll player API in Microsoft Azure, solidifying the architectural practice of this Studio as this release features: - the premiere use of Microsoft’s Htt…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06</guid>
+            <pubDate>Sun, 29 Jun 2025 11:43:37 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-05</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-05-30-studio-status-report-2025-05</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</guid>
             <pubDate>Sun, 02 Jun 2024 18:59:58 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-04</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-04-28-studio-status-report-2024-04</link>
-            <description>
-                month 03 of 2024 was about finally completing Songhay.Player.YouTube release 6.3.1 📦🚀 Songhay.Player.YouTube 6.3.1 was released but it was immediately followed by release 6.3.2 because of a bug 🐛 related to the tabbing experience revealed in the Studio…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-04-28-studio-status-report-2024-04</guid>
-            <pubDate>Sun, 28 Apr 2024 12:48:38 -0700</pubDate>
         </item>
     </channel>
 </rss>
