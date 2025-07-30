@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 29 Jun 2025 11:43:37 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 29 Jul 2025 10:53:03 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-07</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-07-29-studio-status-report-2025-07</link>
+            <description>
+                month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API Month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API released last month. In so doing, the following NuGet p…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-07-29-studio-status-report-2025-07</guid>
+            <pubDate>Tue, 29 Jul 2025 10:53:03 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-06</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06</link>
@@ -136,16 +146,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-06-26-studio-status-report-2024-06</guid>
             <pubDate>Wed, 26 Jun 2024 15:40:28 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-05</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</link>
-            <description>
-                month 05 of 2024 was about not releasing the new YouTube b-roll player on kintespace.com This month-05 report is late because of day-job drama around meeting deadlines. The day-job is back in the foreground as it plays a significant role in an upcoming St…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-06-02-studio-status-report-2024-05</guid>
-            <pubDate>Sun, 02 Jun 2024 18:59:58 -0700</pubDate>
         </item>
     </channel>
 </rss>

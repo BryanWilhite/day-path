@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2025-07" />
+    <meta name="twitter:title" content="studio status report: 2025-07" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2025-07-29-studio-status-report-2025-07" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API Month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API released last month. In so doing, the following NuGet p…" />
+    <meta property="og:description" content="month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API Month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API released last month. In so doing, the following NuGet p…" />
+    <meta name="twitter:description" content="month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API Month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API released last month. In so doing, the following NuGet p…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2025-07 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2025-07</h1>
+<h2>month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API</h2>
+<p>Month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player <acronym title="Application Programming Interface">API</acronym> released <a href="https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06/">last month</a>. In so doing, the following NuGet packages were updated:</p>
+<ul>
+<li><code>Songhay.Modules</code> <a href="https://www.nuget.org/packages/Songhay.Modules/8.0.1">8.0.1</a> 📦🚀</li>
+<li><code>Songhay.Modules.Bolero</code> <a href="https://www.nuget.org/packages/Songhay.Modules.Bolero/8.0.3">8.0.3</a> 📦🚀</li>
+<li><code>Songhay.Modules.Publications</code> <a href="https://www.nuget.org/packages/Songhay.Modules.Publications/8.2.0">8.2.0</a> 📦🚀</li>
+</ul>
+<p>The Obsidian graph view sees seven days spent on <code>Songhay.Modules.Bolero</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-07-29-17-56-53.png" alt="Obsidian graph view"></p>
+</div>
+<p>…only two days were taken for <code>Songhay.Modules.Publications</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-07-29-17-57-55.png" alt="Obsidian graph view"></p>
+</div>
+<p>…and the graph view sees nothing for <code>Songhay.Modules</code>; however, GitHub itself (<a href="https://github.com/BryanWilhite/Songhay.Modules/issues/15">#15</a>) shows one day devoted. We have a total of nine days of Studio-work moments which is a four day increase over <a href="https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06/">last month</a>. Selected notes below should provide some color for the work done this month:</p>
+<h2>.NET (F♯): <code>List.choose</code> vs. <code>List.find</code></h2>
+<p>The <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#find">docs</a> show quite clearly that <code>List.find</code> throws an exception while <code>List.choose</code> returns an empty list when the item in the list is not found.</p>
+<p>I have written a unit test for myself so that I do not forget a few things:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-07-29-18-03-25.png" alt="chooseState test"></p>
+</div>
+<ul>
+<li>Lines 18 and 25: auto-generated <code>.Is*</code> properties (new in F♯ 9) [📖 <a href="https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/discriminated-unions#is-properties-on-cases">docs</a> ] might help to make the syntax understandable for beginners</li>
+<li>Lines 32 and 39: a reminder of the <code>function</code> shorthand (see “<a href="https://www.markhneedham.com/blog/2010/02/07/f-function-keyword/">F#: function keyword</a>”)</li>
+<li>Line 43 is the <code>actual</code> start of the test 😐</li>
+</ul>
+<p>When I am feeling spiffy and fastidious, I should move lines 15 through 41 to a Jupyter Notebook #to-do</p>
+<h2>.NET <acronym title="Artificial Intelligence">AI</acronym>: the Intent Integrity Chain 😐⛓</h2>
+<p>Using <acronym title="Artificial Intelligence">AI</acronym> with <acronym title="Test-Driven Development">TDD</acronym> (to make something better than SpecFlow and Cucumber) promises to make machine-generated code far more reliable within the guide rails of a formal specification:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=hUXGR0a9NLs">
+        <img alt="Junie Livestream 6: How to Survive AI with the Intent Integrity Chain by Baruch Sadogursky" src="https://img.youtube.com/vi/hUXGR0a9NLs/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Junie Livestream 6: How to Survive AI with the Intent Integrity Chain by Baruch Sadogursky</small></p>
+</figure>
+</div>
+<h2>Songhay Modules Publications (F♯): the <code>PresentationDocument</code> identifies all possible client-side facing document formats used in this Studio 😐🧠💡</h2>
+<p>It looks like this now:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-07-29-18-07-25.png" alt=" type"></p>
+</div>
+<p>From the Studio-centric perspective, the only format ‘missing’ above is LaTeX and SGML 😐 This <code>PresentationDocument</code> needs to be used in the <code>PresentationPart</code> type:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-07-29-18-54-57.png" alt="the  type"></p>
+</div>
+<p>Staring at <code>PresentationPart</code> might lead to a question like:</p>
+<blockquote>
+<p>[!question]
+Do the concepts behind <code>Pages</code> and <code>Playlist</code> clash/overlap the <code>PresentationDocument</code> concept?</p>
+</blockquote>
+<p>The short answer is <em>no</em>.</p>
+<p>One part of a <code>Presentation</code> can be a <code>PresentationDocument</code> of type <code>Html</code> that loads from the server—and then the client will <em>transform</em> that <code>Html</code> into <code>Pages</code> or a <code>Playlist</code> <em>before</em> rendering for display. A <code>Playlist</code> can be in many different <code>PresentationDocument</code> formats and pagination can be applied to many different <code>PresentationDocument</code> formats.</p>
+<p>Alternatively, a part of a <code>Presentation</code> can be a <code>PresentationDocument</code> of type <code>Html</code> (etc.) that loads from the <em>database</em> server to be processed on the <em>server</em> side to add pagination and/or playlist concepts.</p>
+<h2><code>FsToolkit.ErrorHandling</code> Error <code>FS3343</code></h2>
+<p>Upgrading <code>FsToolkit.ErrorHandling</code> to <code>5.x</code> broke the build:</p>
+<pre><code class="language-console">Error FS3343 : The 'let! ... and! ...' construct may only be used if the computation expression builder defines either a 'Bind4' method or appropriate 'MergeSources' and 'Bind' methods
+</code></pre>
+<p>This must be because of changes to <code>FsToolkit.ErrorHandling.ResultCE.result</code> [🔗 <a href="https://github.com/demystifyfp/FsToolkit.ErrorHandling/blob/master/src/FsToolkit.ErrorHandling/ResultCE.fs">GitHub</a> ] such that this is no longer supported:</p>
+<pre><code class="language-fsharp">result {
+
+    let! id = (useCamelCase, element) ||&gt; Id.fromInput itemType
+    and! name = (useCamelCase, element) ||&gt; Name.fromInput itemType
+    and! displayText =  (useCamelCase, element) ||&gt; displayTextGetter itemType
+    and! resourceIndicator =
+        match resourceIndicatorGetter with
+        | Some getter -&gt; ((useCamelCase, element) ||&gt; getter itemType)
+        | _ -&gt; Ok None
+
+    return
+        {
+            id = id
+            itemName = name.toItemName
+            displayText = displayText
+            resourceIndicator = resourceIndicator
+        }
+}
+</code></pre>
+<p>…my quick fix is to fall back to non-parallelism, causing a performance hit:</p>
+<pre><code class="language-fsharp">result {
+
+    let! id = (useCamelCase, element) ||&gt; Id.fromInput itemType
+    let! name = (useCamelCase, element) ||&gt; Name.fromInput itemType
+    let! displayText =  (useCamelCase, element) ||&gt; displayTextGetter itemType
+    let! resourceIndicator =
+        match resourceIndicatorGetter with
+        | Some getter -&gt; ((useCamelCase, element) ||&gt; getter itemType)
+        | _ -&gt; Ok None
+
+    return
+        {
+            id = id
+            itemName = name.toItemName
+            displayText = displayText
+            resourceIndicator = resourceIndicator
+        }
+}
+</code></pre>
+<p>There appears to be one issue in the <code>FsToolkit.ErrorHandling</code> repo that recognizes my problem here: “<a href="https://github.com/demystifyfp/FsToolkit.ErrorHandling/issues/333">Question: parallel async CE #333</a>”  The following comment sounds ominous:</p>
+<blockquote>
+<p>…<code>and!</code> for the official <code>async</code> CE was rejected.</p>
+<p>—<a href="https://github.com/demystifyfp/FsToolkit.ErrorHandling/issues/333#issuecomment-2969639301">https://github.com/demystifyfp/FsToolkit.ErrorHandling/issues/333#issuecomment-2969639301</a></p>
+</blockquote>
+<p>…where the phrase “was rejected” suggests (to me) that the <code>FsToolkit.ErrorHandling</code> folks were not the cause of this breaking change.</p>
+<h2>ASP.NET feature in .NET 9.0: <code>MapStaticAssets</code> replaces <code>UseStaticFiles</code> ✨ #to-do</h2>
+<blockquote>
+<p>Map Static Assets can replace <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles">UseStaticFiles</a> in most situations. However, Map Static Assets is optimized for serving the assets from known locations in the app at build and publish time. If the app serves assets from other locations, such as disk or embedded resources, <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles">UseStaticFiles</a> should be used.</p>
+<p>Map Static Assets (<a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.staticassetsendpointroutebuilderextensions.mapstaticassets">MapStaticAssets</a>) also replaces calling <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.componentswebassemblyapplicationbuilderextensions.useblazorframeworkfiles">UseBlazorFrameworkFiles</a> in apps that serve Blazor WebAssembly framework files, and explicitly calling <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.componentswebassemblyapplicationbuilderextensions.useblazorframeworkfiles">UseBlazorFrameworkFiles</a> in a Blazor Web App isn't necessary because the API is automatically called when invoking <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.webassemblyrazorcomponentsbuilderextensions.addinteractivewebassemblycomponents">AddInteractiveWebAssemblyComponents</a>.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/fundamentals/static-files?view=aspnetcore-9.0#static-asset-delivery-in-server-side-blazor-apps">Static asset delivery in server-side Blazor apps</a>”</p>
+</blockquote>
+<p>This feature [📹 <a href="https://youtu.be/2xXc1hNwp0o?t=1405">watch</a> ] is highlighted in the following video:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=2xXc1hNwp0o">
+        <img alt="What's New for ASP.NET Core & Blazor in .NET 9" src="https://img.youtube.com/vi/2xXc1hNwp0o/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>What's New for ASP.NET Core & Blazor in .NET 9</small></p>
+</figure>
+</div>
+<h2>Songhay Modules Publications (F♯): addressing #12</h2>
+<p>For <a href="https://github.com/BryanWilhite/Songhay.Modules.Publications/issues/12">#12</a>, I recommend no work be done for this because:</p>
+<p>The <code>Songhay.Modules.Publications</code> package is intended for client-side, WebAssembly usage. It should not duplicate the types in <code>Songhay.Publications</code> which relatively recently saw the addition of the following:</p>
+<ul>
+<li><code>ImageCandidate</code> [🔗 <a href="https://github.com/BryanWilhite/Songhay.Publications/blob/main/Songhay.Publications/Models/ImageCandidate.cs">GitHub</a> ]</li>
+<li><code>ImageSize</code> [🔗 <a href="https://github.com/BryanWilhite/Songhay.Publications/blob/main/Songhay.Publications/Models/ImageSize.cs">GitHub</a> ]</li>
+<li><code>ResponsiveImage</code> [🔗 <a href="https://github.com/BryanWilhite/Songhay.Publications/blob/main/Songhay.Publications/Models/ResponsiveImage.cs">GitHub</a> ]</li>
+</ul>
+<p>I currently assume that these ‘server-side’ types will be reduced to one of the <code>PresentationDocument</code> cases before appearing on the client-side (most likely <acronym title="JavaScript Object Notation">JSON</acronym>, <acronym title="HyperText Markup Language">HTML</acronym> or XHTML). There should be no <em>immediate</em> need to process any type like the types listed above on the Client, specifically the <em>Web</em> Client.</p>
+<h2>Python: Toga is a Python native, OS native GUI toolkit.</h2>
+<p><a href="https://github.com/freakboy3742">Russell Keith-Magee</a>, the leading contributor to <a href="https://github.com/beeware/toga">Toga</a>, presents:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=-HlWDVuZbYU">
+        <img alt="How to build a cross-platform graphical user interface with Python - Russell Keith-Magee" src="https://img.youtube.com/vi/-HlWDVuZbYU/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>How to build a cross-platform graphical user interface with Python - Russell Keith-Magee</small></p>
+</figure>
+</div>
+<h2>Publications: Maximiliano Firtman promotes “vanilla” JavaScript</h2>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=GEbDlvrdSQk">
+        <img alt="Vanilla Web: You Don't Need that Library - Maximiliano Firtman - NDC Oslo 2025" src="https://img.youtube.com/vi/GEbDlvrdSQk/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Vanilla Web: You Don't Need that Library - Maximiliano Firtman - NDC Oslo 2025</small></p>
+</figure>
+</div>
+<h2>Publications: SDUI is an acronym from Netflix</h2>
+<blockquote>
+<p>With the goal of building a flexible, configuration-driven system, we looked to <strong>server-driven UI</strong> (SDUI) as an appealing solution. SDUI is a design approach where the server dictates the structure and content of the UI, allowing for dynamic updates and customization without requiring changes to the client application. Client applications like web, mobile, and TV devices, act as rendering engines for SDUI data. After our teams weighed and vetted all the details, the dust settled and we landed on an approach similar to Command Query Responsibility Segregation (<a href="https://www.geeksforgeeks.org/cqrs-command-query-responsibility-segregation/">CQRS</a>).</p>
+<p>—“<a href="https://netflixtechblog.com/netflix-tudum-architecture-from-cqrs-with-kafka-to-cqrs-with-raw-hollow-86d141b72e52">Netflix Tudum Architecture: from CQRS with Kafka to CQRS with RAW Hollow</a>”</p>
+</blockquote>
+<h2>Rivian: “Yes, Rivian uses Android Automotive OS to build its software experience” 😐💸</h2>
+<p>I am not happy about this:</p>
+<blockquote>
+<p>Google’s Android Automotive software has been <a href="https://9to5google.com/2024/01/22/ford-android-automotive-2024-gallery/">adopted by many carmakers</a> for the EV era, but it tends to vary between different brands. This week Google and Rivian confirmed to <em>9to5Google</em> that the EV-maker uses Android Automotive as the base of its software experience, something that was previously not known.</p>
+<p>Rivian’s operating system powers the software experience on the Rivian R1T and R1S, and will also power the <a href="https://electrek.co/2024/03/07/rivian-r2-electric-suv-unveiling-design-cheaper-price/">upcoming R2 and R3</a>. The platform is specific to the company’s vehicles and controls virtually of the features in the EVs.</p>
+<p>—“<a href="https://9to5google.com/2024/05/17/rivians-software-is-based-on-android-automotive-google-says/">Yes, Rivian uses Android Automotive OS to build its software experience</a>”</p>
+</blockquote>
+<h2>Songhay Modules Bolero (F♯): I am going to use <code>Regex</code> to parse my <acronym title="Universal Resource Identifier">URI</acronym> templates 😐</h2>
+<p>I am looking at what think is the ‘procured’ source code [🔗 <a href="https://github.com/kurrent-io/KurrentDB/blob/cdd53f9c4b1a35503f21117439005c9e621c7983/src/KurrentDB.NETCore.Compatibility/System.UriTemplate/UriTemplate.cs#L20">GitHub</a> ] for <code>UriTemplate</code> [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.uritemplate?view=netframework-4.8.1">docs</a> ] which was not migrated from the full .NET Framework and I am seeing a bunch of <code>while</code> loops and a <code>ConcurrentDictionary&lt;string, string&gt;</code>.</p>
+<p>This Studio uses <code>Tavis.UriTemplates</code> [🔗 <a href="https://github.com/tavis-software/Tavis.UriTemplates">GitHub</a> ] and that source code has dictionaries a <code>foreach</code> loop [🔗 <a href="https://github.com/tavis-software/Tavis.UriTemplates/blob/main/src/UriTemplates/UriTemplate.cs">GitHub</a> ].</p>
+<p>A “pure” F♯ approach might be related to the parsing libraries <a href="https://github.com/fsprojects/awesome-fsharp?tab=readme-ov-file#parsing">listed on Awesome F#</a> but I am too uninformed to see anything there without an explicit example, “parsing” a <acronym title="Universal Resource Identifier">URI</acronym> “template.” My <a href="https://fssnip.net/search/uri">F# Snippets search</a> brought up:</p>
+<blockquote>
+<p>A Uri parser using the Cashel library [1]. This implementation is using ArraySegment as the underlying state, as I'm using it within a server, but it would be trivial to switch it to using a list. Also, note that I am not parsing the Uri into any specific structure, though that, too, would be trivial. For my current purposes, I just needed to validate the Uri. [1] https://github.com/panesofglass/cashel</p>
+<p>—“<a href="https://fssnip.net/2e/title/Uri-Parser">Uri Parser</a>”</p>
+</blockquote>
+<p>…and I am not seeing a thing 😐</p>
+<p>At this time, I can see this:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-07-29-19-22-09.png" alt="Regexer detail"></p>
+</div>
+<p>…which means this expression is the equivalent of all of the looping above: <code>/(\{[^}]+\})/g</code> —I am sure there is a technical reason behind avoiding <code>Regex</code>. I look for ward to finding out about this later ⌛</p>
+<h2>Publications: “Tailwind is the Worst of All Worlds”</h2>
+<blockquote>
+<p>For reasons we'll get into later, Tailwind decided to burst on to the scene and become the default styling solution for all modern web development despite taking each and every one of these problems, exacerbating them, and applying them to places that didn't have them before. Lets see how Tailwind replicates CSS's main paradigms. Remember, inline styles let you control single element styles simply and fairly explicitly: <code>style=&quot;background: red; color: blue;&quot;</code>. Classes let you control multi-element styles simply, with the slight annoyance that it's easy to misspell your class name and spend way too long debugging before realizing it: <code>class=&quot;todo-item&quot;</code>.</p>
+<p>Tailwind exclusively offers inline styles via classes. Classes are single strings separated by spaces, not key-value pairs. So the classes must be something like <code>class=&quot;bg-red txt-blue&quot;</code>. Key and value must be obscured into a plain string, lowering readability and writability. If you misspell one of these plain strings your editor is not going to tell you. You'll just have to find out once you get into the browser. Did you notice that <code>txt-blue</code> is wrong, and it should actually be <code>text-blue</code>? No? Get used to it, you'll make that mistake daily because Tailwind is inconsistent in how it names things.</p>
+<p>—“<a href="https://colton.dev/blog/tailwind-is-the-worst-of-all-worlds/">Tailwind is the Worst of All Worlds</a>”</p>
+</blockquote>
+<h2>Azure: <acronym title="Kusto Query Language">KQL</acronym> queries <em>can</em> be run from .NET workloads 😐🤓 #day-job #to-do</h2>
+<p><code>Microsoft.Azure.Kusto.Data</code> [🔗 <a href="https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data">NuGet</a> ] has been out there since 2019. The following docs serve as an intro:</p>
+<ul>
+<li>“<a href="https://learn.microsoft.com/en-us/kusto/api/get-started/app-set-up?view=azure-data-explorer&amp;tabs=csharp">Set up your development environment to use Kusto client libraries</a>”</li>
+<li>“<a href="https://learn.microsoft.com/en-us/kusto/api/get-started/app-basic-query?view=azure-data-explorer&amp;tabs=csharp">Create an app to run basic queries</a>”</li>
+<li>“<a href="https://learn.microsoft.com/en-us/kusto/query/kql-quick-reference?view=microsoft-fabric">KQL quick reference</a>”</li>
+</ul>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>Eliminating Angular JS in the Studio is the top priority. Replacing the Angular JS app (<code>http://kintespace.com/player.html</code>) for the kinté space depends on:</p>
+<ul>
+<li>generating a new <code>index.html</code> page with eleventy</li>
+<li>supplementing the index with responsive images</li>
+</ul>
+<p>Proposed future items:</p>
+<ul>
+<li>complete upgrade to .NET 8.0</li>
+<li>replace current b-roll player API with Azure Functions</li>
+<li>switch Studio Publications from Material Design to Bulma 💄 ➡️ 💄✨</li>
+<li>start <code>Songhay.Modules.Bolero.Index</code> project</li>
+<li>generate responsive and social images with AI</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2025-07-29T17:53:03.777Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
