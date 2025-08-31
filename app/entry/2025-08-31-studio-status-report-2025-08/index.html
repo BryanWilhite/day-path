@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2025-08" />
+    <meta name="twitter:title" content="studio status report: 2025-08" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2025-08-31-studio-status-report-2025-08" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="month 08 of 2025 was about readying more Studio WebAssembly assets for the new b-roll player API Just like last month, month 08 of 2025 was about readying the Studio [[WebAssembly]] assets for the new b-roll player API released last month. In so doing, th…" />
+    <meta property="og:description" content="month 08 of 2025 was about readying more Studio WebAssembly assets for the new b-roll player API Just like last month, month 08 of 2025 was about readying the Studio [[WebAssembly]] assets for the new b-roll player API released last month. In so doing, th…" />
+    <meta name="twitter:description" content="month 08 of 2025 was about readying more Studio WebAssembly assets for the new b-roll player API Just like last month, month 08 of 2025 was about readying the Studio [[WebAssembly]] assets for the new b-roll player API released last month. In so doing, th…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2025-08 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2025-08</h1>
+<h2>month 08 of 2025 was about readying <em>more</em> Studio WebAssembly assets for the new b-roll player API</h2>
+<p>Just like <a href="https://songhayblog.azurewebsites.net/entry/2025-07-29-studio-status-report-2025-07">last month</a>, month 08 of 2025 was about readying the Studio [[WebAssembly]] assets for the new b-roll player <acronym title="Application Programming Interface">API</acronym> released <a href="https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06/">last month</a>. In so doing, the following [[NuGet]] packages were updated:</p>
+<ul>
+<li><code>Songhay.Modules.Bolero</code> <a href="https://www.nuget.org/packages/Songhay.Modules.Bolero/8.1.0">8.1.0</a> 📦🚀</li>
+<li><code>Songhay.Player.ProgressiveAudio</code> <a href="https://www.nuget.org/packages/Songhay.Player.ProgressiveAudio/8.1.0">8.1.0</a> 📦🚀</li>
+<li><code>Songhay.Player.YouTube</code> <a href="https://www.nuget.org/packages/Songhay.Player.YouTube/8.1.0">8.1.0</a> 📦🚀</li>
+</ul>
+<p>The list above is saying that, over the last two months, I walked up the F♯ stack 🔨🥞 in this Studio:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-15-42-53.png" alt="Mermaid graph of F♯ stack"></p>
+</div>
+<p>The [[Obsidian]] graph view suggests six days spent on <code>Songhay.Modules.Bolero</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-15-44-17.png" alt="Obsidian graph for "></p>
+</div>
+<p>…coupled with five additional days for <code>Songhay.Player.ProgressiveAudio</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-15-45-28.png" alt="Obsidian graph for "></p>
+</div>
+<p>…and we see some days overlap for <code>Songhay.Player.YouTube</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-15-46-21.png" alt="Obsidian graph for "></p>
+</div>
+<p>It looks about half of month 08 was spent on this stack walk 🔨🥞 😐</p>
+<p>Selected notes below should provide some color for the work done this month:</p>
+<h2>kintespace.com: are all these new hits just <acronym title="Artificial Intelligence">AI</acronym> ‘scrapers’? 😐</h2>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-15-49-21.png" alt="detail of kintespace.com analytics visualizations"></p>
+</div>
+<p><a href="https://kintespace.com/khits.html">https://kintespace.com/khits.html</a></p>
+<h2>[[Songhay Modules Publications (F♯)]]: the processing of <code>Presentation.parts</code></h2>
+<p>The <code>Presentation.parts</code> member tells us that a Presentation is made up of <em>parts</em> (of type <code>PresentationPart</code>). However, there are no types in this Studio (yet) that tells us how to ‘assemble’ a Presentation.</p>
+<p>Now, <code>Presentation.cssCustomPropertiesAndValues</code> tells us how to layout something somewhere in a Web app—this is fine for the [[Songhay Player - Progressive Audio (F♯)|b-roll progressive audio player]] because it has <em>one</em> layout ‘surface’ (or ‘page’). What about multi-page presentations? #to-do</p>
+<blockquote>
+<p>[!important]
+The casing of <code>Presentation</code> members do not appear to match conventions (or standards?) #to-do</p>
+</blockquote>
+<h2>[[Steve Sanderson]]: “Preserving State in Server-Side Blazor applications” #to-do</h2>
+<blockquote>
+<p>Generally, using <code>sessionStorage</code> is safer, because it avoids the risk that a user opens multiple tabs and encounters bugs or confusing behavior because the tabs are overwriting each other's state. However if you want the data to be retained if the user closes the entire browser, you'll need to use <code>localStorage</code>.</p>
+<p>—“<a href="https://gist.github.com/SteveSandersonMS/ba16f6bb6934842d78c89ab5314f4b56">Preserving State in Server-Side Blazor applications</a>”</p>
+</blockquote>
+<h2>[[ASP.NET]]: the <code>KestrelServerLimits.MaxRequestBodySize</code> property #day-job #to-do</h2>
+<p>I see that, by default, the size of a request can up to 30MB:</p>
+<blockquote>
+<p>When set to null, the maximum request body size is unlimited. This limit has no effect on upgraded connections which are always unlimited. This can be overridden per-request via <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.features.ihttpmaxrequestbodysizefeature?view=aspnetcore-9.0">IHttpMaxRequestBodySizeFeature</a>. Defaults to 30,000,000 bytes, which is approximately 28.6MB.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize?view=aspnetcore-9.0">KestrelServerLimits.MaxRequestBodySize Property</a>”</p>
+</blockquote>
+<h2>[[Windows]]: “Are they trying to kill Windows 10 intentionally?”</h2>
+<blockquote>
+<p>Well, yes, kind of, but that’s not news. Windows 10 is EOL on October 14, 2025. Consumers can get another year of updates either with cold hard cash or the <a href="https://rewards.bing.com/">insane bing battle pass</a>, but I don’t have much confidence in the quality of those updates.</p>
+<p>At the end of the day, I understand the struggles of working on near-EOL software. You want to do right by your users, but when resources are constrained, tradeoffs must be made. And in this case, focusing on stability is the correct choice.</p>
+<p>—“<a href="https://rozab.dev/blog/emoji-search/">The Windows 10 emoji picker has been broken for a month</a>”</p>
+</blockquote>
+<h2>[[Microsoft SQL Server]]: <code>JSON_CONTAINS</code> is a new <acronym title="JavaScript Object Notation">JSON</acronym> function currently in preview</h2>
+<blockquote>
+<p>Using the <code>JSON_CONTAINS</code> function has the following limitations:</p>
+<ul>
+<li>The <strong>json</strong> type isn't supported as search value.</li>
+<li>The JSON object or array returned from <code>JSON_QUERY</code> isn't supported as search value.</li>
+<li>The path parameter is currently required.</li>
+<li>If the SQL/JSON path points to an array then wildcard is required in the SQL/JSON path expression. Automatic array unwrapping is currently only at the first level.</li>
+</ul>
+<p>—<a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/json-contains-transact-sql?view=sql-server-ver17">JSON_CONTAINS (Transact-SQL)</a></p>
+</blockquote>
+<p>I need to explore the differences between <code>JSON_QUERY</code> and <code>JSON_CONTAINS</code> #to-do</p>
+<h2>[[Songhay Player (C♯)]]: the document order of [[Azure Functions]] method routes matters 😐</h2>
+<p>The route on line 24 and the route on line 70 both have five segments:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-15-57-44.png" alt="Azure Functions class in JetBrains Rider"></p>
+</div>
+<p>However, the route on line 70 has three placeholders while the one on line 24 has only one. Because both of these routes have five segments, the route with fewer placeholders should come first because [[ASP.NET]] should select that route first as expected when the first four segments of the request are <code>video/youtube/playlist/index/</code>; otherwise, when the route on line 70 comes before the one on line 24, the last two segments of our request will be treated as the placeholders <code>{presentationKey}/{subFolder}/</code>. I am confident that this document-order convention is mentioned in official documentation #to-do</p>
+<h2>[[Blazor]]: “Running .NET in the browser without Blazor” #to-do</h2>
+<p>This could be the big one that could eliminate [[Bolero]] entirely:</p>
+<blockquote>
+<p>The templates for building a .NET application that can be run from JavaScript don't ship with the default SDK. They're experimental, so you need to explicitly install them. Which NuGet package to install depends on which version of the templates you want:</p>
+<ul>
+<li>.NET 8: <code>Microsoft.NET.Runtime.WebAssembly.Templates</code></li>
+<li>.NET 9: <code>Microsoft.NET.Runtime.WebAssembly.Templates.net9</code></li>
+<li>.NET 10: <code>Microsoft.NET.Runtime.WebAssembly.Templates.net10</code></li>
+</ul>
+<p>…</p>
+<p>Alternatively you can install the <code>wasm-experimental</code> workload, which includes the templates and also…a bunch of <em>stuff</em> 😅 I'm not really sure what that extra stuff is actually <em>used</em> for though, because as far as I can tell, none of it is required for this 🤷‍♂️</p>
+<p>—“<a href="https://andrewlock.net/running-dotnet-in-the-browser-without-blazor/">Running .NET in the browser without Blazor</a>”</p>
+</blockquote>
+<h2>[[Songhay System Studio]]: “You’re Wrong About Dates — And Your Code is Lying to You”</h2>
+<blockquote>
+<p>But that’s not how humans think. When you say <em>“2023”</em>, you mean the whole year. <em>“March 2024”</em>? The entire month. Even <em>“March 15th”</em> means the full day, not some arbitrary nanosecond.</p>
+<p>We’ve been forced into fake precision that doesn’t match reality. And it’s not harmless — it leads to broken logic, messy hacks, and subtle bugs that only show up in production.</p>
+<p>—“<a href="https://metaduck.com/youre-wrong-about-dates/">You’re Wrong About Dates — And Your Code is Lying to You</a>”</p>
+</blockquote>
+<h2>[[Songhay Modules Bolero (F♯)]]: developing new Studio patterns around <code>Result&lt;_,_&gt;</code> and <code>Option&lt;_&gt;</code> 😐✨</h2>
+<p>The [[Elmish]] <code>model</code> of [[Bolero]] is expected to have types hydrated by boundary-crossing be <code>Option&lt;_&gt;</code> which is clear expression of the uncertainty of data-driven presentation. Yesterday, this fact made me erroneously write expressions like this:</p>
+<pre><code class="language-fsharp">model.restApiMetadataOption |&gt; RestApiMetadata.toApiBase |&gt; Option.isSome
+</code></pre>
+<p>…where <code>RestApiMetadata.toApiBase</code> is:</p>
+<pre><code class="language-fsharp">static member toApiBase (restApiMetadataOption: RestApiMetadata option) =  
+    restApiMetadataOption  
+    |&gt; Option.map(_.GetApiBase())
+</code></pre>
+<p>I erroneously assumed that I would have write members like this over and over again because I failed to see the power in <code>FsToolkit.ErrorHandling</code>:</p>
+<pre><code class="language-fsharp">model.restApiMetadataOption |&gt; Option.map _.GetApiBase() |&gt; Option.isSome
+</code></pre>
+<p>The expression above eliminates the curiosity in seeing whether <em>augmenting</em> <code>Option&lt;RestApiMetadata&gt;</code>  is possible [📖 <a href="https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/type-extensions#optional-type-extensions">docs</a> ] This augmentation would be the equivalent of trying to write a C♯ extension method for, say, <code>IEnumerable&lt;T&gt;</code> with <code>T</code> constrained to a specific type which has always felt wrong.</p>
+<h2>[[Obsidian]] is not trying to be [[Notion]]</h2>
+<blockquote>
+<p>We’re not trying to be Notion. Notion has raised hundreds of millions of dollars. I think it’s amazing, especially on the collaboration side. It has a lot of advantages that make the app better for certain things. We’re just a small team. Our focus is to keep making the tool better and stay small, as long as we’re making enough money to stay afloat.</p>
+<p>—“<a href="https://www.theverge.com/decoder-podcast-with-nilay-patel/760522/obsidian-ceo-steph-ango-kepano-productivity-software-notes-app">How the head of Obsidian went from superfan to CEO</a>”</p>
+</blockquote>
+<h2>kintespace.com: “AI crawlers and fetchers are blowing up websites, with Meta and OpenAI the worst offenders”</h2>
+<blockquote>
+<p>That growing traffic comes from just a select few companies. Meta accounted for more than half of all AI crawler traffic on its own, at 52 percent, followed by Google and OpenAI at 23 percent and 20 percent respectively. This trio then has its hands on a combined 95 percent of all AI crawler traffic. Anthropic, by contrast, accounted for just 3.76 percent of crawler traffic. The Common Crawl Project, which slurps websites to include in a free public dataset designed to prevent duplication of effort and traffic multiplication at the heart of the crawler problem, was a surprisingly-low 0.21 percent.</p>
+<p>—“<a href="https://www.theregister.com/2025/08/21/ai_crawler_traffic/">AI crawlers and fetchers are blowing up websites, with Meta and OpenAI the worst offenders</a>”</p>
+</blockquote>
+<h2>[[dotnet|.NET 10]]: and<code>Microsoft.Testing.Platform</code> #to-do</h2>
+<blockquote>
+<p>Microsoft.Testing.Platform (MTP) is a lightweight and portable alternative to VSTest for running tests in all contexts, including continuous integration (CI) pipelines, CLI, Visual Studio Test Explorer, and VS Code Text Explorer. The Microsoft.Testing.Platform is embedded directly in your test projects, and there’s no other app dependencies.</p>
+<p>…</p>
+<p>.NET 10 introduces native integration with Microsoft.Testing.Platform. To enable it, create a <code>dotnet.config</code> file at your solution or repository root.</p>
+<p>—“<a href="https://devblogs.microsoft.com/dotnet/dotnet-test-with-mtp/">Enhance your CLI testing workflow with the new dotnet test</a>”</p>
+</blockquote>
+<h2>[[Mermaid]]: my first Architecture Diagrams #day-job 😐🌐</h2>
+<p>Do not forget about the importance of the <code>junction</code>:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-16-09-09.png" alt="Mermaid Architecture Diagram"></p>
+</div>
+<ul>
+<li>the <code>title</code> in the Architecture Diagram is not like that of the <a href="https://mermaid.js.org/syntax/flowchart.html">Flowchart</a>; it does not support surrounding “special” characters in quotes—even a hyphen in a title causes a parsing error (years-old, related issues like <a href="https://github.com/mermaid-js/mermaid/issues/6056">#6056</a> remain open 😐)</li>
+<li>icon support from <a href="https://icon-sets.iconify.design/logos/">https://icon-sets.iconify.design/logos/</a> is quite nice; however I fail to understand how to change to a different set [📖 <a href="https://mermaid.js.org/config/icons.html">docs</a> ] in [[Visual Studio Code]] with <a href="https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart">the Mermaid Chart extension</a>.</li>
+</ul>
+<h2>Songhay Publications: kinté space with a brand new understanding of <code>Option.zip</code> and <code>Option.either</code></h2>
+<p>This use of [[FsToolkit.ErrorHandling]] is very novel ✨</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-08-31-16-10-34.png" alt="binding Elmish batch commands with FsToolkit.ErrorHandling in JetBrains Rider"></p>
+</div>
+<p><code>Option.zip</code> returns <code>Some</code> tuple when both options to be zipped are not <code>None</code>. Once that check is out of the way, <code>Option.either</code> does its magic 🪄 The works perfectly with the <code>Cmd.batch</code> pattern from [[Elmish]].</p>
+<p>Lines 158 through 161 could also be translated to an <code>Option.either</code> pattern out of its <code>if</code> expression. I now see that <code>Option.either</code>, at bottom, hides the <code>match</code> syntax and makes binding a value ‘fluent.’</p>
+<h2>[[Songhay System Studio]]: “Why German Strings are Everywhere”</h2>
+<blockquote>
+<p>Strings are conceptually very simple: It’s essentially just a sequence of characters, right? Why, then, does every programming language have <a href="https://en.wikipedia.org/wiki/String_(computer_science)#String_datatypes">their own</a> slightly different string implementation? It turns out that there is a lot more to a string than “just a sequence of characters”…</p>
+<p>We’re no different and built <a href="https://xkcd.com/927/">our own custom string type</a> that is highly optimized for data processing. Even though we didn’t expect it when we first wrote about it in our inaugural <a href="https://db.in.tum.de/~freitag/papers/p29-neumann-cidr20.pdf">Umbra research paper</a>, a lot of new systems adopted our format. They are now implemented in <a href="https://github.com/duckdb/duckdb/blob/main/src/include/duckdb/common/types/string_type.hpp">DuckDB</a>, <a href="https://arrow.apache.org/docs/format/Columnar.html#variable-size-binary-view-layout">Apache Arrow</a>, <a href="https://pola.rs/posts/polars-string-type/">Polars</a>, and <a href="https://15721.courses.cs.cmu.edu/spring2023/slides/23-velox.pdf">Facebook Velox</a>.</p>
+<p>—“<a href="https://cedardb.com/blog/german_strings/">Why German Strings are Everywhere</a>”</p>
+</blockquote>
+<h2>[[Songhay System Studio]]: “Open Source is one person”</h2>
+<blockquote>
+<p>So let’s start with the data. A project exists called <a href="https://ecosyste.ms/">ecosyste.ms</a> that catalogs a lot of open source. Most of it I would guess, but not all. They currently have 11.8 million open source projects in their data. You would be right to think that is a big number. I’m told anything over 15 is a big number, but it probably depends how smart you are, or think you are.</p>
+<p>So what do we mean by one person is open source. What I mean is if we look at all the projects that ecosyste.ms is tracking, how many have a single person maintaining that project? It’s about 7 million. This is also a big number. 7 million open source projects are one person. It’s actually bigger than that, because of the 11.8 million projects ecosyste.ms is tracking, we don’t know how many maintainers 4 million of the projects have.</p>
+<p>—“<a href="https://opensourcesecurity.io/2025/08-oss-one-person/">Open Source is one person</a>”</p>
+</blockquote>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>Eliminating Angular JS in the Studio is the top priority. Replacing the Angular JS app (<code>http://kintespace.com/player.html</code>) for the kinté space depends on:</p>
+<ul>
+<li>generating a new <code>index.html</code> page with eleventy</li>
+<li>supplementing the index with responsive images</li>
+</ul>
+<p>Proposed future items:</p>
+<ul>
+<li>complete upgrade to .NET 8.0</li>
+<li><s>replace current b-roll player API with Azure Functions</s></li>
+<li>switch Studio Publications from Material Design to Bulma 💄 ➡️ 💄✨</li>
+<li>start <code>Songhay.Modules.Bolero.Index</code> project</li>
+<li>generate responsive and social images with AI</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2025-08-31T15:38:35.641Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
