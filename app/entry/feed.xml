@@ -5,8 +5,19 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 31 Aug 2025 08:38:35 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 30 Sep 2025 12:50:55 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-09</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-09-30-studio-status-report-2025-09</link>
+            <description>
+                Month 09 of 2025 was about actually working inside of this sketch: kintespace.com Publications stack This is a very rough rendering of the brand new Publications stack for kintespace.com. The layers of this stack starts with: 1. Markdown with Obsidian
+2. …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-09-30-studio-status-report-2025-09</guid>
+            <pubDate>Tue, 30 Sep 2025 12:50:55 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-08</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-08-31-studio-status-report-2025-08</link>
@@ -136,16 +147,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</guid>
             <pubDate>Thu, 29 Aug 2024 12:00:11 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-07</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07</link>
-            <description>
-                month 07 of 2024 was about returning to Entity Framework, inclusion of Obsidian in Publications work flow and ‘too many’ other interesting advances The Obsidian graph for this month looks very much like ‘too many’ interesting advances: Obsidian graph for …
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-07-28-studio-status-report-2024-07</guid>
-            <pubDate>Sun, 28 Jul 2024 06:27:51 -0700</pubDate>
         </item>
     </channel>
 </rss>
