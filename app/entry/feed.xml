@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 30 Sep 2025 12:50:55 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 30 Oct 2025 13:39:18 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-10</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-10-30-studio-status-report-2025-10</link>
+            <description>
+                I instinctively procrastinated but eventually I had to face it: month 10 of 2025 was about addressing the end of support for Windows 10 in this Studio 😐 I tracked this miserable experience (miserable, largely because I tried too many times to upgrade to …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-10-30-studio-status-report-2025-10</guid>
+            <pubDate>Thu, 30 Oct 2025 13:39:18 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-09</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-09-30-studio-status-report-2025-09</link>
@@ -137,16 +147,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-09-28-studio-status-report-2024-09</guid>
             <pubDate>Sat, 28 Sep 2024 07:49:37 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-08</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</link>
-            <description>
-                month 08 of 2024 was about prepping an Obsidian-based kintespace.com and #day-job Azure success Last month was about deciding and planning to live with the SQLite flavor of Entity Framework with Obsidian-based word processing and Markdown data management.…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-08-29-studio-status-report-2024-08</guid>
-            <pubDate>Thu, 29 Aug 2024 12:00:11 -0700</pubDate>
         </item>
     </channel>
 </rss>

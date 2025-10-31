@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2025-10" />
+    <meta name="twitter:title" content="studio status report: 2025-10" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2025-10-30-studio-status-report-2025-10" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="I instinctively procrastinated but eventually I had to face it: month 10 of 2025 was about addressing the end of support for Windows 10 in this Studio 😐 I tracked this miserable experience (miserable, largely because I tried too many times to upgrade to …" />
+    <meta property="og:description" content="I instinctively procrastinated but eventually I had to face it: month 10 of 2025 was about addressing the end of support for Windows 10 in this Studio 😐 I tracked this miserable experience (miserable, largely because I tried too many times to upgrade to …" />
+    <meta name="twitter:description" content="I instinctively procrastinated but eventually I had to face it: month 10 of 2025 was about addressing the end of support for Windows 10 in this Studio 😐 I tracked this miserable experience (miserable, largely because I tried too many times to upgrade to …" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2025-10 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2025-10</h1>
+<p>I instinctively procrastinated but eventually I had to face it: month 10 of 2025 was about addressing the end of support for Windows 10 in this Studio 😐 I tracked this miserable experience (miserable, largely because I tried too many times to upgrade to Windows 11 on an early <acronym title="Trusted Platform Module">TPM</acronym>-based ASRock motherboard) under the relatively new topic, Songhay System Hardware:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-10-30-20-42-02.png" alt="Obsidian graph for this month"></p>
+</div>
+<p>We see that over half of the month was burned up dealing with the needs of Microsoft. Here is executive summary of my response to the death of Windows 10:</p>
+<ul>
+<li>my ‘Farm Tuff’ wagon desktop PC now runs Ubuntu 24.04 on my old MSI motherboard</li>
+<li>my HP Envy 360 laptop was ‘cloned’ with CloneZilla and upgraded in place, according to the preferences of Microsoft</li>
+</ul>
+<p>Selected notes of the month follow:</p>
+<h2>.NET: “Compliance libraries in .NET” #to-do #day-job</h2>
+<blockquote>
+<p>.NET provides libraries that offer foundational components and abstractions for implementing compliance features, such as data classification and redaction, in .NET applications. These abstractions help developers create and manage data in a standardized way. In this article, you get an overview on the data classification and redaction compliance libraries.</p>
+<p>…</p>
+<p>Data redaction helps protect sensitive information in logs, error messages, or other outputs to comply with privacy rules and protect sensitive data. The <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.compliance.redaction">Microsoft.Extensions.Compliance.Redaction</a> library provides various redactors, such as the <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.compliance.redaction.erasingredactor">ErasingRedactor</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.compliance.redaction.hmacredactor">HmacRedactor</a>. You can configure these redactors and register them using the <code>AddRedaction</code> methods. Additionally, you can create custom redactors and redactor providers to suit your specific needs.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/compliance">Compliance libraries in .NET</a>”</p>
+</blockquote>
+<h2>Sass: use <code>@use</code> instead of <code>@import</code> unless you can’t 😐</h2>
+<blockquote>
+<p>The <code>@use</code> rule is intended to replace the old <a href="https://sass-lang.com/documentation/at-rules/import"><code>@import</code> rule</a>, but it’s intentionally designed to work differently. Here are some major differences between the two:</p>
+<ul>
+<li><code>@use</code> only makes variables, functions, and mixins available within the scope of the current file. It never adds them to the global scope. This makes it easy to figure out where each name your Sass file references comes from, and means you can use shorter names without any risk of collision.</li>
+<li><code>@use</code> only ever loads each file once. ==This ensures you don’t end up accidentally duplicating your dependencies’ CSS many times over.==</li>
+<li><code>@use</code> must appear at the beginning your file, and cannot be nested in style rules. Nested imports can be migrated to <a href="https://sass-lang.com/documentation/breaking-changes/import/#nested-imports">mixin calls or <code>meta.load-css()</code></a>.</li>
+<li>Each <code>@use</code> rule can only have one URL.</li>
+<li><code>@use</code> requires quotes around its URL, even when using the <a href="https://sass-lang.com/documentation/syntax#the-indented-syntax">indented syntax</a>.</li>
+</ul>
+<p>—“<a href="https://sass-lang.com/documentation/at-rules/use/#differences-from-import">Differences From @import</a>”</p>
+</blockquote>
+<p>The following <em>cannot</em> be replaced by <code>@use</code>:</p>
+<pre><code class="language-sass">@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+</code></pre>
+<blockquote>
+<p>The replacement of <code>@import</code> for <code>@use</code>/<code>@forward</code> is specifically so that the Sass version of the import function no longer shares custody with the vanilla CSS version of it.</p>
+<p>In this instance, you're trying to use the vanilla functionality, so <code>@import url('https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap')</code> is the correct syntax to use.</p>
+<p>—<a href="https://stackoverflow.com/a/62938973/22944">StackOverflow answer</a></p>
+</blockquote>
+<h2>Azure Functions: yes, <code>TimerTrigger</code> can be configurable with environment variables 😐👏</h2>
+<pre><code class="language-csharp">[Function(&quot;timerFunction&quot;)]
+public void Run(
+    [TimerTrigger(&quot;%TIMER_SCHEDULE%&quot;, RunOnStartup = true)] TimerInfo myTimer,
+    FunctionContext context
+){//…}
+</code></pre>
+<blockquote>
+<p>The function uses the <code>%TIMER_SCHEDULE%</code> environment variable to determine the execution schedule, making it configurable without code changes.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/samples/azure-samples/functions-quickstart-dotnet-azd-timer/starter-timer-trigger-csharp/">Azure Functions C# Timer Trigger using Azure Developer CLI</a>”</p>
+</blockquote>
+<p>The docs are <em>not</em> clear about this: per the example above, use <code>TIMER_SCHEDULE</code> as the environment variable (the <code>%</code> characters are not to be used in the environment variable name).</p>
+<p>The following is also not clear about naming the environment variable because it if focusing on naming for the <code>TimerTrigger</code>:</p>
+<blockquote>
+<p>You can put the schedule expression in an app setting and set this property to the app setting name wrapped in <strong>%</strong> signs, as <code>%ScheduleAppSetting%</code>.</p>
+<p>—“<a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=python-v2%2Cisolated-process%2Cnodejs-v4&amp;pivots=programming-language-csharp">Timer trigger for Azure Functions</a>”</p>
+</blockquote>
+<h2>Application Insights: “What is OpenTelemetry?”</h2>
+<blockquote>
+<p>A brief explanation of what OpenTelemetry is and isn’t.</p>
+<p>OpenTelemetry is:</p>
+<ul>
+<li>
+<p>An <strong><a href="https://opentelemetry.io/docs/concepts/observability-primer/#what-is-observability">observability</a> framework and toolkit</strong> designed to facilitate the</p>
+</li>
+<li>
+<p><a href="https://opentelemetry.io/docs/concepts/instrumentation">Generation</a></p>
+</li>
+<li>
+<p>Export</p>
+</li>
+<li>
+<p><a href="https://opentelemetry.io/docs/concepts/components/#collector">Collection</a></p>
+</li>
+</ul>
+<p>of <a href="https://opentelemetry.io/docs/concepts/signals/">telemetry data</a> such as <a href="https://opentelemetry.io/docs/concepts/signals/traces/">traces</a>, <a href="https://opentelemetry.io/docs/concepts/signals/metrics/">metrics</a>, and <a href="https://opentelemetry.io/docs/concepts/signals/logs/">logs</a>.</p>
+<ul>
+<li><strong>Open source</strong>, as well as <strong>vendor- and tool-agnostic</strong>, meaning that it can be used with a broad variety of observability backends, including open source tools like <a href="https://www.jaegertracing.io/">Jaeger</a> and <a href="https://prometheus.io/">Prometheus</a>, as well as commercial offerings. OpenTelemetry is <strong>not</strong> an observability backend itself.</li>
+</ul>
+<p>A major goal of OpenTelemetry is to enable easy instrumentation of your applications and systems, regardless of the programming language, infrastructure, and runtime environments used.</p>
+<p>The backend (storage) and the frontend (visualization) of telemetry data are intentionally left to other tools.</p>
+<p>—“<a href="https://opentelemetry.io/docs/what-is-opentelemetry/">What is OpenTelemetry?</a>”</p>
+</blockquote>
+<h2>Publications: “In Praise of RSS and Controlled Feeds of Information”</h2>
+<blockquote>
+<p>The focused, reductive nature of RSS readers means you don’t get the full website experience, but that is arguably for the better in a lot of cases. We already mentioned the lack of suggested articles with engagement bait that could easily draw you in, but another notable omission is the comments section. It is very easy to slip into the comments section at the bottom of an article and spend far too much time reading those. You can still do that in an RSS reader by opening the article in your browser, scrolling down to the comments and diving in. At least in my case, that is a safe amount of friction to prevent me from doing it most of the time. Less is more!</p>
+<p>—“<a href="https://blog.burkert.me/posts/in_praise_of_syndication/">In Praise of RSS and Controlled Feeds of Information</a>”</p>
+</blockquote>
+<h2>Bulma order of Sass 😐</h2>
+<p>The documentation shows us these “CSS Library” categories:</p>
+<ul>
+<li>Elements</li>
+<li>Components</li>
+<li>Form</li>
+<li>Columns</li>
+<li>Grid</li>
+<li>Layout</li>
+</ul>
+<p>…which are followed by <a href="https://bulma.io/documentation/helpers/">CSS Helpers</a>.</p>
+<p>Based on 2025-10-03#Bulma using <code>@forward</code> instead of <code>@use</code> 😐|previous research, the order of <code>@use</code> and <code>@import</code> appears to be:</p>
+<ol>
+<li>Layout (with base styles, typography and themes)</li>
+<li>Elements</li>
+<li>Columns</li>
+<li>Grid</li>
+<li>Components</li>
+<li>Form</li>
+<li>Helpers</li>
+</ol>
+<h2>Songhay Publications Internet Products: the new, fundamental <code>npm</code> scripts 😐🎏</h2>
+<p>Fundamentally, we now see two, conventional bundle scripts:</p>
+<ol>
+<li><code>sass:bundle</code></li>
+<li><code>webpack:bundle</code></li>
+</ol>
+<p>All other scripts are built on top of these two:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-10-30-20-53-46.png" alt="npm scripts"></p>
+</div>
+<p>Welcome, again, to the publishing business!</p>
+<h2>Windows 11 and Rufus</h2>
+<p>This video finally shows me why Rufus is so critical for Windows 11 installation:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=J2pCBrhpdjw">
+        <img alt="Rufus and Windows 11 - 24H2" src="https://img.youtube.com/vi/J2pCBrhpdjw/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Rufus and Windows 11 - 24H2</small></p>
+</figure>
+</div>
+<h2>Songhay System Hardware: Error code: <code>0xc0000428</code> stops upgrade cold 😐🧊</h2>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-10-30-21-02-41.png" alt="0xc0000428 BSOD"></p>
+</div>
+<p>In a lost weekend, I have seen this error message countless times:</p>
+<h2>Songhay System Hardware: this video made me think that the SSD slot next to he graphics card under the heat shield has priority 😐</h2>
+<p>The ASRock motherboard manual shows the ‘hidden’ slot:</p>
+<p><img src="../../image/day-path-2025-10-30-21-05-25.png" alt="ASRock motherboard manual (detail)"></p>
+<p>This video talk about the “top slot,” expansion-card SSD slots and thermal pads:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=zjSn64vh_Vk">
+        <img alt="Don't make these mistakes with your NVMe SSD installation - NVMe tips and tricks" src="https://img.youtube.com/vi/zjSn64vh_Vk/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Don't make these mistakes with your NVMe SSD installation - NVMe tips and tricks</small></p>
+</figure>
+</div>
+<h2>Songhay System Hardware: I am beyond tired of this shit 😐💩</h2>
+<p>Windows 10 refuses to upgrade:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2025-10-30-21-08-09.png" alt="Windows 10 setup dialog"></p>
+</div>
+<pre><code class="language-console">0xC1900101 - 0x20017
+The installation failed in the SAFE_OS phase with an error during BOOT operation
+</code></pre>
+<blockquote>
+<p>0xC1900101 is a frequently observed code which occurs at any stage of the upgrade process; It is also called the generic rollback code, which points to the presence of an incompatible driver. Along with updating the drivers, it is suggested that Windows Setup be run using a minimal set of drivers and startup programs by performing a clean boot before initiating the upgrade process.</p>
+<p>—“<a href="https://www.thewindowsclub.com/installation-failed-in-safe_os-phase-with-an-error-during-boot-operation-0xc1900101-0x20017">0xC1900101 – 0x20017, Installation failed in SAFE_OS phase</a>”</p>
+</blockquote>
+<p>Also, see “<a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/setup-upgrade-and-drivers/windows-setup-log-file-locations">Windows Vista, Windows 7, Windows Server 2008 R2, Windows 8.1, and Windows 10 setup log file locations</a>.”</p>
+<h2>Songhay System Hardware: news flash 🗞⚡ <acronym title="Non-Volatile Memory, Express" >NVMe</acronym> is the replacement for SATA</h2>
+<blockquote>
+<p><strong>NVM Express</strong> (<strong>NVMe</strong>) or <strong>Non-Volatile Memory Host Controller Interface Specification</strong> (<strong>NVMHCIS</strong>) is an <a href="https://en.wikipedia.org/wiki/Open_standard" title="Open standard">open</a>, <a href="https://en.wikipedia.org/wiki/Logical_device" title="Logical device">logical-device</a> <a href="https://en.wikipedia.org/wiki/Interface_(computing)" title="Interface (computing)">interface</a> <a href="https://en.wikipedia.org/wiki/Functional_specification" title="Functional specification">specification</a> for accessing a computer's <a href="https://en.wikipedia.org/wiki/Non-volatile_storage" title="Non-volatile storage">non-volatile storage</a> media usually attached via the <a href="https://en.wikipedia.org/wiki/PCI_Express" title="PCI Express">PCI Express</a> bus. The initial <em>NVM</em> stands for <em><a href="https://en.wikipedia.org/wiki/Non-volatile_memory" title="Non-volatile memory">non-volatile memory</a></em>, which is often NAND <a href="https://en.wikipedia.org/wiki/Flash_memory" title="Flash memory">flash memory</a> that comes in several physical form factors, including <a href="https://en.wikipedia.org/wiki/Solid-state_drive" title="Solid-state drive">solid-state drives</a> (SSDs), PCIe add-in cards, and <a href="https://en.wikipedia.org/wiki/M.2" title="M.2">M.2</a> cards, the successor to <a href="https://en.wikipedia.org/wiki/MSATA" title="MSATA">mSATA</a> cards. NVM Express, as a logical-device interface, has been designed to capitalize on the low <a href="https://en.wikipedia.org/wiki/Hard_disk_drive_performance_characteristics#Access_time" title="Hard disk drive performance characteristics">latency</a> and internal parallelism of solid-state storage devices.</p>
+<p>—<a href="https://en.wikipedia.org/wiki/NVM_Express">https://en.wikipedia.org/wiki/NVM_Express</a></p>
+</blockquote>
+<p>These explain why cable management is so awesome in newer computers:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=zjSn64vh_Vk">
+        <img alt="Don't make these mistakes with your NVMe SSD installation - NVMe tips and tricks" src="https://img.youtube.com/vi/zjSn64vh_Vk/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Don't make these mistakes with your NVMe SSD installation - NVMe tips and tricks</small></p>
+</figure>
+<figure>
+    <a href="https://www.youtube.com/watch?v=r3Jy5dHOj3g">
+        <img alt="SSD vs HDD vs NVMe vs SATA vs mSATA vs M2: Storage Devices EXPLAINED!" src="https://img.youtube.com/vi/r3Jy5dHOj3g/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>SSD vs HDD vs NVMe vs SATA vs mSATA vs M2: Storage Devices EXPLAINED!</small></p>
+</figure>
+</div>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p>Eliminating Angular JS in the Studio is the top priority. Replacing the Angular JS app (<code>http://kintespace.com/player.html</code>) for the kinté space depends on:</p>
+<ul>
+<li>generating a new <code>index.html</code> page with eleventy</li>
+<li>supplementing the index with responsive images</li>
+</ul>
+<p>Proposed future items:</p>
+<ul>
+<li>complete upgrade to .NET 8.0</li>
+<li>switch Studio Publications from Material Design to Bulma 💄 ➡️ 💄✨</li>
+<li>start <code>Songhay.Modules.Bolero.Index</code> project</li>
+<li>generate responsive and social images with AI</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2025-10-30T20:39:18.837Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
