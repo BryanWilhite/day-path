@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 30 Oct 2025 13:39:18 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 29 Nov 2025 09:08:18 -0800</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2025-11</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2025-11-29-studio-status-report-2025-11</link>
+            <description>
+                Month 11 of the imperial year 2025 was, first, about producing this Mermaid visualization based on the chalk scribbles from earlier: Mermaid diagram of the kintespace.com pipeline The second thing done was to start living inside of this visualization: I b…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-11-29-studio-status-report-2025-11</guid>
+            <pubDate>Sat, 29 Nov 2025 09:08:18 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-10</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-10-30-studio-status-report-2025-10</link>
@@ -137,16 +147,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-11-01-studio-status-report-2024-10</guid>
             <pubDate>Fri, 01 Nov 2024 14:11:44 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-09</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-09-28-studio-status-report-2024-09</link>
-            <description>
-                month 09 of 2024 was about the first Songhay.DataAccess release in over three years and completing the migration to markdown for Songhay.Publications.KinteSpace NuGet package Songhay.DataAccess was updated to the .NET 6.0 time-frame this Studio is living …
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-09-28-studio-status-report-2024-09</guid>
-            <pubDate>Sat, 28 Sep 2024 07:49:37 -0700</pubDate>
         </item>
     </channel>
 </rss>
