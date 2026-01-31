@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 30 Dec 2025 13:21:19 -0800</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 31 Jan 2026 03:30:23 -0800</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-01</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-01-31-studio-status-report-2026-01</link>
+            <description>
+                Month 01 of 2026 was about not getting the re-release of kintespace.com almost out the ‘door’—even though well over 90% is done! The month was mostly spent on #day-job drama, including: - a new understanding of DDD aggregates and how Entity Framework supp…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-01-31-studio-status-report-2026-01</guid>
+            <pubDate>Sat, 31 Jan 2026 03:30:23 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2025-12</title>
             <link>https://songhayblog.azurewebsites.net/entry/2025-12-30-studio-status-report-2025-12</link>
@@ -137,16 +147,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-12-28-studio-status-report-2024-12</guid>
             <pubDate>Sat, 28 Dec 2024 04:21:08 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-11</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-11-29-studio-status-report-2024-11</link>
-            <description>
-                month 11 of 2024 was about updating Typescript fundamentals with Lerna The Obsidian graph for month 11 does not show any sign of the Typescript and Lerna work of the month: Obsidian graph for month 11 Lerna notes are spread out among three days …
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-11-29-studio-status-report-2024-11</guid>
-            <pubDate>Fri, 29 Nov 2024 14:40:29 -0800</pubDate>
         </item>
     </channel>
 </rss>

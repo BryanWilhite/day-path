@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2026-01" />
+    <meta name="twitter:title" content="studio status report: 2026-01" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2026-01-31-studio-status-report-2026-01" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="Month 01 of 2026 was about not getting the re-release of kintespace.com almost out the ‘door’—even though well over 90% is done! The month was mostly spent on #day-job drama, including: - a new understanding of DDD aggregates and how Entity Framework supp…" />
+    <meta property="og:description" content="Month 01 of 2026 was about not getting the re-release of kintespace.com almost out the ‘door’—even though well over 90% is done! The month was mostly spent on #day-job drama, including: - a new understanding of DDD aggregates and how Entity Framework supp…" />
+    <meta name="twitter:description" content="Month 01 of 2026 was about not getting the re-release of kintespace.com almost out the ‘door’—even though well over 90% is done! The month was mostly spent on #day-job drama, including: - a new understanding of DDD aggregates and how Entity Framework supp…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2026-01 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2026-01</h1>
+<p>Month 01 of 2026 was about <em>not</em> getting the re-release of kintespace.com almost out the ‘door’—even though well over 90% is done! The month was mostly spent on #day-job drama, including:</p>
+<ul>
+<li>a new understanding of <acronym title="Domain-Driven Design">DDD</acronym> aggregates and how Entity Framework <em>supports</em> them</li>
+<li>the very real possibility that the Application Insights <code>TelemetryClient</code> can be centralized with Azure Functions middle-ware</li>
+</ul>
+<p>…and then more days were used on Studio minutiae like:</p>
+<ul>
+<li>establishing modern, responsive-image conventions for Studio publications (like kintespace.com)</li>
+<li>how Anaconda probably needs to be reinstalled with every <em>minor</em> release of Python</li>
+</ul>
+<p>Let’s see how this vicious surprise attack of new things to learn soaked up days in this Obsidian month:</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2026-01-31-12-14-05.png" alt="Obsidian graph detail, Entity Framework"></p>
+</div>
+<p>…nine days on Entity Framework…</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2026-01-31-12-15-10.png" alt="Obsidian graph detail, Application Insights"></p>
+</div>
+<p>…which overlaps with one day on Application Insights (and Azure Functions)…</p>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2026-01-31-12-16-01.png" alt="Obsidian graph detail, Anaconda"></p>
+</div>
+<p>…but Anaconda adds three more days of not working on Studio Publications. So we have 12 days here of <em>not</em> re-releasing a website. Let’s regard those 12 days as ‘all’ of my ‘free’ time for this month.</p>
+<p>…and here is a punchline: the Anaconda drama was a self-made blocker in front of establishing the new responsive image conventions aforementioned! I could have worked <em>around</em> my Anaconda problems to get kintespace.com out the door; but, in my luxuriant poverty, I refused to do so 😐🧱</p>
+<p>My Studio notes on responsive images start <a href="https://github.com/BryanWilhite/jupyter-central/blob/main/wand-responsive-images/generating-responsive-images.ipynb">in a Jupyter Notebook</a>. And every sucker for Jupyter knows that Jupyter depends on Python—and, in my case, my Studio uses Python via Anaconda. In my little world, no Anaconda means no updated responsive-image document—and no updated responsive image document means the re-release of kintespace.com is blocked.</p>
+<p>Selected Obsidian notes of this month should provide some color:</p>
+<h2>Testcontainers for .NET: #day-job #to-do</h2>
+<blockquote>
+<p>Testcontainers for .NET is a library to support tests with throwaway instances of Docker containers for all compatible .NET Standard versions. The library is built on top of the .NET Docker Remote API and provides a lightweight implementation to support your test environment in all circumstances.</p>
+<p>Choose from existing pre-configured modules and start containers within a second, to support and run your tests. Or create your own container images with Dockerfiles and run your containers and tests immediately afterward.</p>
+<p>—<a href="https://dotnet.testcontainers.org/">https://dotnet.testcontainers.org/</a></p>
+</blockquote>
+<p>The following video is a not-so-great intro to <code>Testcontainers.MsSql</code> [📖 <a href="https://dotnet.testcontainers.org/modules/mssql/">docs</a> ]:</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=K1-n2EoPxiY">
+        <img alt="The Common Entity Framework Mistake You MUST Fix" src="https://img.youtube.com/vi/K1-n2EoPxiY/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>The Common Entity Framework Mistake You MUST Fix</small></p>
+</figure>
+</div>
+<h2>Angular: “Forms with Angular Signals”</h2>
+<blockquote>
+<p>Signal Forms is ==an experimental library== that allows you to manage form state in Angular applications by building on the reactive foundation of signals. With automatic two-way binding, type-safe field access, and schema-based validation, Signal Forms help you create robust forms.</p>
+<p>—“<a href="https://angular.dev/guide/forms/signals/overview">Forms with Angular Signals</a>”</p>
+</blockquote>
+<h2>Entity Framework: does the <code>DatabaseFacade</code> class [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.databasefacade?view=efcore-10.0">docs</a> ] replace Dapper? #to-do #day-job</h2>
+<p>The short answer is, <em>yes</em> 👇</p>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=Egd-BMPCHNc">
+        <img alt="Will This New EF Core Feature Be The End Of Dapper?" src="https://img.youtube.com/vi/Egd-BMPCHNc/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Will This New EF Core Feature Be The End Of Dapper?</small></p>
+</figure>
+<figure>
+    <a href="https://www.youtube.com/watch?v=tBSWhHaFB-c">
+        <img alt="Everything You Need To Know About EF Core 8 Raw SQL Queries" src="https://img.youtube.com/vi/tBSWhHaFB-c/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Everything You Need To Know About EF Core 8 Raw SQL Queries</small></p>
+</figure>
+</div>
+<h2>.NET Facets over AutoMapper? #day-job #to-do</h2>
+<p>!Pasted image 20260106092909.png</p>
+<blockquote>
+<p>Think of a diamond. The whole stone is your domain model, it contains everything about the entity. But when you view it from different angles, you see different <strong>facets</strong>, specific views that show only what matters from that perspective.</p>
+<p>—“<a href="https://tim-maes.com/blog/2025/09/28/facets-in-dotnet-(2)/">Facets in .NET</a>”</p>
+</blockquote>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=kiGG4fUe4RI">
+        <img alt="Stop Mapping in .NET Use Facets Instead" src="https://img.youtube.com/vi/kiGG4fUe4RI/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Stop Mapping in .NET Use Facets Instead</small></p>
+</figure>
+</div>
+<h2>Entity Framework: about four ways to see the generated <acronym title="Structured Query Language">SQL</acronym> #day-job #to-do</h2>
+<ol>
+<li><code>Microsoft.EntityFrameworkCore.Database.Command</code> in <code>appsettings.json</code></li>
+<li><code>ToQueryString()</code> extension method</li>
+<li><code>LogTo()</code> call in <code>Program.cs</code></li>
+<li>Visual Studio debug visualization</li>
+</ol>
+<p>Background reading:</p>
+<ul>
+<li>“<a href="https://code-maze.com/efcore-show-generated-sql-query/">How to Show the Generated SQL Query in EF Core</a>”</li>
+<li>“<a href="https://eamonkeane.dev/3-ways-to-view-sql-generated-by-entity-framework-core-5/">3 Ways to View and Log the SQL Generated by Entity Framework Core 5</a>”</li>
+<li>“<a href="https://www.tekonline.com.au/enabling-detailed-entity-framework-error-logging-for-better-debugging/">Enabling Detailed Entity Framework Error Logging for Better Debugging</a>”</li>
+</ul>
+<h2>Publications: “Why Developers Are Ditching Frameworks for Vanilla JavaScript”</h2>
+<blockquote>
+<p>The problem wasn’t frameworks themselves; <a href="https://thenewstack.io/how-to-build-framework-agnostic-uis-with-web-components/">it was the culture that grew around them</a>. New frameworks emerged monthly, each claiming to fix what the last one broke. Companies refactored entire products just to keep up with the shifting ecosystem. The result? Endless churn, <a href="https://www.atlassian.com/agile/software-development/technical-debt">technical debt disguised as innovation</a>, and developers trapped in a loop of constant relearning.</p>
+<p>In 2025, the realization hit: The web doesn’t need another layer. It needs a reset. And that reset came in the form of Vanilla JavaScript.</p>
+<p>—“<a href="https://thenewstack.io/why-developers-are-ditching-frameworks-for-vanilla-javascript/?utm_source=TrendingTech&amp;utm_medium=email&amp;utm_content=subscriber_id:5595802&amp;utm_campaign=Weekly%20Technology%20Trends%20-%201/9/26">Why Developers Are Ditching Frameworks for Vanilla JavaScript</a>”</p>
+</blockquote>
+<h2>Songhay Player (C♯) and #day-job: can <code>TelemetryClient</code> be moved to middle-ware?</h2>
+<p>Today at the #day-job, I learned about <code>IFunctionsWorkerMiddleware</code> as introduced in “<a href="https://salihcantekin.com/azure-functions-middleware-dotnet-isolated/">Azure Functions – Middleware (dotnet-isolated)</a>.” This leads to the following questions:</p>
+<ul>
+<li>can <code>FunctionContext</code> be passed correctly with the <code>HttpTrigger</code> Azure Functions signature? (Without this, data cannot be passed from the function method to the middle-ware—e.g. <code>context.Items[&quot;MyCustomData&quot;] = &quot;Hello from function!&quot;;</code>)</li>
+<li>does <code>FunctionContext</code> <em>actually</em> contain the function parameters—as explained in a <a href="https://stackoverflow.com/a/73801544/22944">StackOverflow answer</a> (see [📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.functions.worker.bindingcontext.bindingdata?view=azure-dotnet#microsoft-azure-functions-worker-bindingcontext-bindingdata">docs</a> ])?</li>
+</ul>
+<h2>Internet Products: yes, there are responsive-image testing tools—starting with the browser tools 😐📋 #to-do</h2>
+<ul>
+<li>“<a href="https://www.browserstack.com/guide/how-to-test-responsive-images">How to test Responsive Images</a>” (Google Chrome Device Mode and the BrowserStack Responsive Tool)</li>
+<li>TOOLSADAY <a href="https://toolsaday.com/seo/responsive-image-checker">Responsive Image Checker</a></li>
+</ul>
+<h2>.NET C♯: “World's Fastest .NET CSV Parser.” #day-job #to-do 😐</h2>
+<blockquote>
+<p>Modern, minimal, fast, zero allocation, reading and writing of separated values (<code>csv</code>, <code>tsv</code> etc.). Cross-platform, trimmable and AOT/NativeAOT compatible. Featuring an opinionated API design and pragmatic implementation targetted at machine learning use cases.</p>
+<p>—<a href="https://github.com/nietras/Sep">https://github.com/nietras/Sep</a></p>
+</blockquote>
+<h2>mystery solved: KDE Plasma does <em>not</em> use the equivalent of the GNOME “keyring” by default 😐💡✨</h2>
+<blockquote>
+<p>[!important]
+By default, KDE Plasma requires calling <code>ssh-add</code> manually which is tedious but more secure.</p>
+</blockquote>
+<p>This <a href="https://superuser.com/a/819805">SuperUser answer</a> <em>finally</em> reveals what has been going on:</p>
+<blockquote>
+<p>…you might want to just start <a href="https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent"><code>ssh-agent</code> in your <code>.bash_profile</code></a> and eval the output instead of starting a subshell, and then use <code>ssh-add</code> yourself manually once each time you log in.</p>
+<p>Another option would be to use the <a href="https://wiki.archlinux.org/index.php/GNOME_Keyring">GNOME Keyring</a>'s SSH agent emulation instead of using <code>ssh-agent</code>. Unlike <code>ssh-agent</code> that doesn't save your passphrase, the GNOME Keyring will store the passphrase to the key in a keyring so you don't have to add keys manually.</p>
+</blockquote>
+<p>These revelations lead to comparing GNOME Keyring and KWallet KDE Wallet:</p>
+<blockquote>
+<p>Alright, let’s break down what these two are all about. At their core, <strong>GNOME Keyring</strong> and <strong>KWallet</strong> are essentially digital vaults designed to store your sensitive credentials – think usernames, passwords, API keys, and even SSH/GPG keys – in an encrypted format. They act as a central hub, so instead of remembering dozens of complex passwords, you only need to recall one master password.</p>
+<ul>
+<li><strong>GNOME Keyring:</strong> This is the default password manager for the GNOME desktop environment, which is common in distributions like Ubuntu and Fedora. It’s designed to work seamlessly in the background, integrating with applications like NetworkManager for Wi-Fi passwords, web browsers, and other GNOME-native apps.</li>
+<li><strong>KWallet KDE Wallet:</strong> Similarly, KWallet is the go-to password manager for the KDE Plasma desktop environment, prevalent in Kubuntu and many other distributions. It serves the same purpose: securely storing passwords and other secrets, and integrating with KDE applications, browsers, and system services.</li>
+</ul>
+<p>—“<a href="https://www.acciyo.com/gnome-keyring-and-kwallet-your-linux-password-managers-explained/">Gnome Keyring And KWallet: Your Linux Password Managers Explained</a>”</p>
+</blockquote>
+<h2>my biggest Entity Framework talk of 2025 #to-do 😐</h2>
+<div style="text-align:center">
+<figure>
+    <a href="https://www.youtube.com/watch?v=Kx6SOYTtaoU">
+        <img alt="Stop using Entity Framework as a DTO provider! - Chris Klug - Azure Dev Summit 2025" src="https://img.youtube.com/vi/Kx6SOYTtaoU/maxresdefault.jpg" width="480" />
+    </a>
+    <p><small>Stop using Entity Framework as a DTO provider! - Chris Klug - Azure Dev Summit 2025</small></p>
+</figure>
+</div>
+<h3>related reading</h3>
+<ul>
+<li>“<a href="https://bytecrate.dev/table-splitting-ef-core-when-to-use-why-it-hurts/">Table Splitting in EF Core: When to Use It (and Why It Hurts Sometimes)</a>”</li>
+<li>“<a href="https://learn.microsoft.com/en-us/ef/core/modeling/shadow-properties">Shadow and Indexer Properties</a>”</li>
+<li>“<a href="https://learn.microsoft.com/en-us/ef/core/querying/related-data/eager#model-configuration-for-auto-including-navigations">Model configuration for auto-including navigations</a>”</li>
+<li>“<a href="https://learn.microsoft.com/en-us/ef/core/modeling/value-conversions?tabs=data-annotations">Configuring a value converter</a>” (shows the <code>HasConversion</code> method)</li>
+<li>“<a href="https://www.alwaysdeveloping.net/dailydrop/2022/09/06-ef-property/">Dynamic EF operations with <code>EF.Property</code></a>”</li>
+<li>“<a href="https://www.learnentityframeworkcore.com/configuration/fluent-api/hasdiscriminator-method">The Fluent API <code>HasDiscriminator</code> Method</a>”</li>
+<li>“<a href="https://amarozka.dev/ef-core-lazy-loading/">EF Core Lazy Loading Explained &amp; Best Practices (2025)</a>” (because Chris Klug consistently doe not recommend lazy loading)</li>
+</ul>
+<h2>Entity Framework: “the Aggregate pattern is about transactional consistency”</h2>
+<p>Wow, I had no idea that <em>eventual consistency</em> was related to <acronym title="Domain-Driven Design">DDD</acronym>:</p>
+<blockquote>
+<p>First and foremost the Aggregate pattern is about transactional consistency. At the end of a committed database transaction, a single Aggregate should be completely up to date. That means that any business rules regarding data consistency must be met and the persistence store should hold that consistent state, leaving the Aggregate correct and ready to use by the next use case. Figure 1 illustrates two such consistency boundaries, with two different Aggregates.</p>
+<p>…</p>
+<p>The problem that many have with designing Aggregates is that they don’t consider the true business constraints that require data to be transactionally consistent and instead design Aggregates in large clusters as shown in Figure 2. Designing Aggregates in this way is a big mistake if you expect them (1) to be used by many thousands of users, (2) to perform well, and (3) to scale to the demands of the Internet.</p>
+<p>…</p>
+<p>When two or more Aggregates have at least some dependencies on updates, use eventual consistency.</p>
+<p>—“<a href="https://kalele.io/modeling-aggregates-with-ddd-and-entity-framework/">Modeling Aggregates with DDD and Entity Framework</a>”</p>
+</blockquote>
+<p>By the way, this article goes on to show me how an interface can be used to define the <acronym title="Domain-Driven Design">DDD</acronym> ‘business-rule’ members to be implemented by the ‘domain model’ class:</p>
+<blockquote>
+<p>I think you get the idea. We create an interface that we want our client to see and we hide the implementation details inside the implementing class.</p>
+</blockquote>
+<p>However, the article turns <em>against</em> the use of interfaces:</p>
+<blockquote>
+<p>There is really no good reason to create a Separated Interface. It would be very unlikely that we would ever create two or more implementations of <code>IProduct</code> or any of the other interfaces. The best reason we have for creating a Separated Interface is when there could be or are multiple implementations, and is just not going to happen in this Core Domain.</p>
+</blockquote>
+<h2>Anaconda: “<code>CondaEnvironmentError</code>: cannot remove current environment”</h2>
+<blockquote>
+<p>The error &quot;<code>CondaEnvironmentError</code>: cannot remove current environment&quot; occurs for multiple reasons:</p>
+<ol>
+<li>Trying to delete a <code>conda</code> environment that is currently active.</li>
+<li>Using an incorrect command to delete a <code>conda</code> environment.</li>
+<li>Trying to delete the <code>base</code> conda environment which cannot be deleted.</li>
+</ol>
+<p>—“<a href="https://bobbyhadz.com/blog/condaenvironmenterror-cannot-remove-current-environment"><code>CondaEnvironmentError</code>: cannot remove current environment</a>”</p>
+</blockquote>
+<p>There we have the first written evidence (from a third party) that the <code>base</code> environment cannot be deleted.</p>
+<p>…</p>
+<p>The following statements about Anaconda have to be verified ( #to-do ):</p>
+<ul>
+<li>tools like <code>anaconda-navigator</code> <em>always</em> run off the <code>base</code> environment</li>
+<li>environments cannot be upgraded <em>beyond</em> a major release of <code>python</code> (my observed behavior of <code>conda update python</code> [📖 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-python.html#updating-python">docs</a> ])</li>
+<li>the <em>only</em> way to work with the next major release of <code>python</code> (without reinstalling Anaconda entirely) is to generate a new environment (e.g. <code>conda create -n myenv python=3.14</code> [📖 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands">docs</a> ])</li>
+<li>the <code>base</code> environment of Anaconda is ‘trapped’ on the major release of python that was available when it was installed</li>
+</ul>
+<p>When my last bullet point up there is found to be true, then:</p>
+<ul>
+<li>Why should all of these data science packages like Pandas and Jupyter Notebooks be installed in the <code>base</code> environment by default? Is there a way to disable this—or is this one of the reasons why Miniconda exists?</li>
+<li>Do they expect us to use the <code>base</code> environment as some kind of read-only guide for adding packages (manually?) to a new environment that we must generate? Is the <code>base</code> environment the ‘reference environment’?</li>
+</ul>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+<li><a href="https://github.com/BryanWilhite/dotnet-core/pull/67">https://github.com/BryanWilhite/dotnet-core/pull/67</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<ul>
+<li>upgrade <code>SonghayCore</code>, <code>Songhay.Publications</code>, <code>Songhay.DataAccess</code>, etc. to .NET 10 📦🔝</li>
+<li>consider using Lerna to coordinate the two levels of <code>npm</code> scripts 🧠👟</li>
+<li>use a Jupyter Notebook to track finding and changing Amazon links to open source links 📓⚙</li>
+<li>use a Jupyter Notebook to convert flickr links to Publications (responsive image) links 📓⚙</li>
+<li>establish <code>DataAccess</code> logic for Obsidian markdown metadata 🔨✨</li>
+<li>establish <code>DataAccess</code> logic for Index data, including adding and removing Obsidian documents (and Segments) 🔨✨</li>
+<li>package <code>DataAccess</code> logic in <code>*Shell</code> project for <code>npm</code> scripting 🚜✨</li>
+<li>convert rasx() context repo to the relevant conventions shown in the diagram above 🔨🚜</li>
+<li>retire the old <code>kinte-space</code> repo for kintespace.com 🚜🧊</li>
+<li>convert Songhay Day Path Blog repo to the relevant conventions shown in the diagram above 🔨🚜</li>
+<li>re-release Songhay Dashboard by updating its repo to the relevant conventions shown in the diagram above 🔨🚜</li>
+<li>start development of Songhay Publications Index (F♯) experience for WebAssembly 🍱✨</li>
+<li>start development of Songhay Publications - Data Editor to establish a <acronym title="Graphical User Interface">GUI</acronym> for <code>*Shell</code> and provide visualizations and interactions for Publications data 🍱✨</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2026-01-31T11:30:23.416Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
