@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 31 Jan 2026 03:30:23 -0800</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 27 Feb 2026 14:09:01 -0800</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-02</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-02-27-studio-status-report-2026-02</link>
+            <description>
+                Month 02 of 2026 was still about not getting the re-release of kintespace.com almost out the ‘door’—just like last month! But the main reason for this extravagant delay (apart from more #day-job tech drama) was my major discovery of the ‘magazine cover’ l…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-02-27-studio-status-report-2026-02</guid>
+            <pubDate>Fri, 27 Feb 2026 14:09:01 -0800</pubDate>
+        </item>
         <item>
             <title>studio status report: 2026-01</title>
             <link>https://songhayblog.azurewebsites.net/entry/2026-01-31-studio-status-report-2026-01</link>
@@ -137,16 +147,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-01-30-studio-status-report-2025-01</guid>
             <pubDate>Thu, 30 Jan 2025 10:57:40 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2024-12</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2024-12-28-studio-status-report-2024-12</link>
-            <description>
-                month 12 of 2024 was about upgrading the F♯ package stacks to .NET 8.0, upgrading Songhay Web Components to Lit 3.x and getting sick while on #day-job vacation The Obsidian notes for this month should reflect slogging through the unpleasant process of upg…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2024-12-28-studio-status-report-2024-12</guid>
-            <pubDate>Sat, 28 Dec 2024 04:21:08 -0800</pubDate>
         </item>
     </channel>
 </rss>
