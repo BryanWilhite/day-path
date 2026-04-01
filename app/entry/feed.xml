@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 27 Feb 2026 14:09:01 -0800</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 31 Mar 2026 13:02:14 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-03</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-03-31-studio-status-report-2026-03</link>
+            <description>
+                Month 03 of 2026 continued not getting the re-release of kintespace.com almost out the ‘door.’ This delay is well within the realm of inexcusable! Here were my alleged blockers: - At the beginning of this month, I wrote in my notes, ’The time is long over…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-03-31-studio-status-report-2026-03</guid>
+            <pubDate>Tue, 31 Mar 2026 13:02:14 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2026-02</title>
             <link>https://songhayblog.azurewebsites.net/entry/2026-02-27-studio-status-report-2026-02</link>
@@ -137,16 +147,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-02-26-studio-status-report-2025-02</guid>
             <pubDate>Wed, 26 Feb 2025 12:09:28 -0800</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2025-01</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2025-01-30-studio-status-report-2025-01</link>
-            <description>
-                month 01 of 2025 was about California wildfire victims and upgrading SonghayCore to .NET 8.0 The selected notes for this month surface the tragic, systematic California wildfires. There is nothing I can write here apart from expressing my sympathy. One fa…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-01-30-studio-status-report-2025-01</guid>
-            <pubDate>Thu, 30 Jan 2025 10:57:40 -0800</pubDate>
         </item>
     </channel>
 </rss>
