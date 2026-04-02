@@ -139,9 +139,9 @@
         <h1>studio status report: 2026-03</h1>
 <p>Month 03 of 2026 continued <em>not</em> getting the re-release of kintespace.com almost out the ‘door.’ This delay is well within the realm of inexcusable! Here were my alleged blockers:</p>
 <ul>
-<li>At the beginning of this month, I wrote in my notes, ’The time is long overdue to get to know the <code>FormData</code> [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">docs</a> ] interface as a foundational abstraction in [[JavaScript]].’ …and then I took a day writing extensive notes 😐</li>
-<li>I made other new [[Entity Framework]] notes for #day-job and Studio futures, officially recognizing “<a href="https://learn.microsoft.com/en-us/ef/core/modeling/backing-field?tabs=fluent-api#field-only-properties">Field-only properties</a>” for the first time (because this is foundation of building with <acronym title="Entity Framework">EF</acronym> under the influence of <acronym title="Domain-Driven Design">DDD</acronym>).</li>
-<li>I slipped into possibly needing paging rows from [[Microsoft SQL Server]] at the current #day-job, discovering to my embarrassment that <code>OFFSET</code> has been around since SQL Server 2012 (11.x) 😐😲 …more notes for the day there…</li>
+<li>At the beginning of this month, I wrote in my notes, ’The time is long overdue to get to know the <code>FormData</code> [📖 <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">docs</a> ] interface as a foundational abstraction in JavaScript.’ …and then I took a day writing extensive notes 😐</li>
+<li>I made other new Entity Framework notes for #day-job and Studio futures, officially recognizing “<a href="https://learn.microsoft.com/en-us/ef/core/modeling/backing-field?tabs=fluent-api#field-only-properties">Field-only properties</a>” for the first time (because this is foundation of building with <acronym title="Entity Framework">EF</acronym> under the influence of <acronym title="Domain-Driven Design">DDD</acronym>).</li>
+<li>I slipped into possibly needing paging rows from Microsoft SQL Server at the current #day-job, discovering to my embarrassment that <code>OFFSET</code> has been around since SQL Server 2012 (11.x) 😐😲 …more notes for the day there…</li>
 <li>Then (mid-month) I had to start filling out my U.S. tax forms for 2025 🤦</li>
 <li><em>Then</em> I started working (obsessively) on a new <acronym title="pull request">PR</acronym> (<a href="https://github.com/BryanWilhite/SonghayCore/pull/187">Dev/version 10.0.0#187</a>) for the .NET 10 version of <code>SonghayCore</code> ⌛</li>
 </ul>
@@ -154,15 +154,15 @@
 <p><img src="../presentation/../day-path-2026-03-31-20-05-11.png" alt="Obsidian Graph"></p>
 </div>
 <p>Selected notes of month 03 follow:</p>
-<h2>[[Songhay Publications Internet Products|Internet Products]]: the index cards layout has problems</h2>
+<h2>Songhay Publications Internet Products: the index cards layout has problems</h2>
 <div style="text-align:center">
 <p><img src="../presentation/../day-path-2026-03-31-20-12-16.png" alt="the index cards layout"></p>
 </div>
 <ul>
-<li>the cards are too tall above the [[Bulma]] widescreen breakpoint</li>
+<li>the cards are too tall above the Bulma widescreen breakpoint</li>
 <li>there is a ‘flash’ of white space on the bottom of the card image</li>
 </ul>
-<h2>[[Songhay Publications Internet Products|Internet Products]]: the responsive ‘hero’ image layout is functional 😐</h2>
+<h2>Songhay Publications Internet Products: the responsive ‘hero’ image layout is functional 😐</h2>
 <p>The two-cell <acronym title="Cascading Style Sheets">CSS</acronym> grid layout appears to be a success:</p>
 <div style="text-align:center">
 <p><img src="../presentation/../day-path-2026-03-31-20-14-06.png" alt="the responsive ‘hero’ image layout"></p>
@@ -172,7 +172,7 @@
 <li>the <code>grid-area</code> selection applied to both cells of this two-cell grid here is the ‘secret sauce’ that makes <code>img</code> effectively a background image (also, selecting a <code>width</code> of 100% assure that the grid will not “flash” white space on the x-sides)</li>
 <li>the <code>max-height</code> selection of <code>100vh</code> prevents the visuals ‘stacked’ on top of <code>img</code> from falling out of the view port</li>
 </ol>
-<h2>[[Polyglot Notebooks]]: “DEPRECATION ANNOUNCEMENT: Polyglot Notebooks” 😐😠</h2>
+<h2>Polyglot Notebooks: “DEPRECATION ANNOUNCEMENT: Polyglot Notebooks” 😐😠</h2>
 <p>They have not done something like this, so personal to me, since they dropped Microsoft Money:</p>
 <blockquote>
 <p>The Polyglot Notebooks Extension will be deprecated on <strong>March 27th, 2026</strong>.</p>
@@ -194,7 +194,7 @@
 <p>The deprecation has surfaced another long-standing issue, which is that Azure Data Studio (ADS), a fork of VS Code specifically for working with SQL databases, is set for retirement at the end of this month. The main replacement for ADS is meant to be the SQL Server extension for VS Code, but ==Polyglot Notebooks were documented as the recommended replacement for data analysts==, as opposed to developers or DBAs (database administrators).</p>
 <p>—“<a href="https://www.devclass.com/databases/2026/02/14/microsoft-deprecates-polyglot-notebooks-developers-react/4091167">Microsoft deprecates Polyglot Notebooks: Developers react</a>”</p>
 </blockquote>
-<h2>[[Steve Sanderson]] answers the need to specify the hell out of <acronym title="Artificial Intelligence">AI</acronym> 😐</h2>
+<h2>Steve Sanderson answers the need to specify the hell out of <acronym title="Artificial Intelligence">AI</acronym> 😐</h2>
 <div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=L1w6wBxhpgE">
@@ -203,7 +203,7 @@
     <p><small>Keynote: AI-Powered App Development - Steve Sanderson - NDC London 2026</small></p>
 </figure>
 </div>
-<p>Instead of doing something resembling something I saw in a [[JetBrains]] lecture (the “[[2025-07-02#dotnet .NET <acronym title="Artificial Intelligence">AI</acronym> the Intent Integrity Chain 😐⛓|intent integrity chain]]”), Sanderson introduces what the “community” is actually doing: <a href="https://github.com/heilcheng/awesome-agent-skills#what-are-agent-skills">Agent Skills</a>:</p>
+<p>Instead of doing something resembling something I saw in a JetBrains lecture (the “Intent Integrity Chain 😐⛓”), Sanderson introduces what the “community” is actually doing: <a href="https://github.com/heilcheng/awesome-agent-skills#what-are-agent-skills">Agent Skills</a>:</p>
 <blockquote>
 <p>Think of <strong>Agent Skills</strong> as &quot;how-to guides&quot; for AI assistants. Instead of the AI needing to know everything upfront, skills let it learn new abilities on the fly, like giving someone a recipe card instead of making them memorize an entire cookbook.</p>
 </blockquote>
@@ -212,7 +212,7 @@
 <p><img src="../presentation/../day-path-2026-03-31-20-22-14.png" alt="Ralph Wiggum web site"></p>
 </div>
 <https://ralph-wiggum.ai/>
-<h2>[[AuthHero]]: “SPA Authentication: A Complete Guide (2026)”</h2>
+<h2>AuthHero: “SPA Authentication: A Complete Guide (2026)”</h2>
 <p>Here is my introduction to <acronym title="Backend-for-Frontend">BfF</acronym>:</p>
 <blockquote>
 <p>The &quot;best&quot; way to implement authentication depends on a single critical question: <strong>Does your session need to live on one domain, or across many?</strong></p>
@@ -227,7 +227,7 @@
 <li>“<a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends">Backends for Frontends pattern</a>”</li>
 <li>“<a href="https://learn.microsoft.com/en-us/azure/api-management/authentication-authorization-overview">Authentication and authorization to APIs in Azure API Management</a>”</li>
 </ul>
-<h2>[[Dapper]]: “How C# Strings Silently Kill Your SQL Server Indexes in Dapper” #day-job #to-do</h2>
+<h2>Dapper: “How C# Strings Silently Kill Your SQL Server Indexes in Dapper” #day-job #to-do</h2>
 <p><code>nvarchar</code>-to-<code>varchar</code> conversion is effectively a full table scan:</p>
 <blockquote>
 <p>When you pass a C# <code>string</code> through an anonymous object, Dapper maps it to <code>nvarchar(4000)</code>. That’s the default mapping for <code>System.String</code> in ADO.NET — and honestly, it makes sense from a “safe default” perspective. But if your column is <code>varchar</code>, SQL Server has to convert <em>every single value in the column</em> to <code>nvarchar</code> before it can compare. This is called <strong>CONVERT_IMPLICIT</strong>, and it means SQL Server can’t use your index. Full scan. Every time.</p>
@@ -235,17 +235,17 @@
 <p>The fix is almost embarrassingly simple. You just tell Dapper explicitly that the parameter is <code>varchar</code>, not <code>nvarchar</code>. You do this with <code>DynamicParameters</code> and <code>DbType.</code></p>
 <p>—“<a href="https://consultwithgriff.com/dapper-nvarchar-implicit-conversion-performance-trap">How C# Strings Silently Kill Your SQL Server Indexes in Dapper</a>”</p>
 </blockquote>
-<h2>[[Microsoft SQL Server]]: <code>OFFSET</code> has been around since SQL Server 2012 (11.x) and later versions #day-job 😐😲</h2>
-<p>I castigate myself by openly admitting (in these notes) that I was unaware that [[Microsoft SQL Server]] supported “paging” data with <code>OFFSET</code> [📖 <a href="https://learn.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql?view=sql-server-ver17#offset--integer_constant--offset_row_count_expression---row--rows-">docs</a> ] since the 2012 time frame 🤦 I have been unaware of this for over 14 years!</p>
-<p>Previously, I thought MySQL was strangely alone in this functionality among the databases used in my Studio. While MySQL uses <code>LIMIT</code> and <code>OFFSET</code> [📖 <a href="https://dev.mysql.com/doc/refman/8.4/en/select.html">docs</a> ], it appears that SQL Server uses <code>TOP</code> and <code>OFFSET</code>. By the way, speaking of the databases used in my Studio, [[SQLite]] also uses <code>LIMIT</code> and <code>OFFSET</code> [📖 <a href="https://sqlite.org/lang_select.html#limitoffset">docs</a> ].</p>
+<h2>Microsoft SQL Server: <code>OFFSET</code> has been around since SQL Server 2012 (11.x) and later versions #day-job 😐😲</h2>
+<p>I castigate myself by openly admitting (in these notes) that I was unaware that Microsoft SQL Server supported “paging” data with <code>OFFSET</code> [📖 <a href="https://learn.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql?view=sql-server-ver17#offset--integer_constant--offset_row_count_expression---row--rows-">docs</a> ] since the 2012 time frame 🤦 I have been unaware of this for over 14 years!</p>
+<p>Previously, I thought MySQL was strangely alone in this functionality among the databases used in my Studio. While MySQL uses <code>LIMIT</code> and <code>OFFSET</code> [📖 <a href="https://dev.mysql.com/doc/refman/8.4/en/select.html">docs</a> ], it appears that SQL Server uses <code>TOP</code> and <code>OFFSET</code>. By the way, speaking of the databases used in my Studio, SQLite also uses <code>LIMIT</code> and <code>OFFSET</code> [📖 <a href="https://sqlite.org/lang_select.html#limitoffset">docs</a> ].</p>
 <p><strong>Further reading:</strong> “<a href="https://consultwithgriff.com/sql-pagination-count-over-trick">SQL Server Pagination with <code>COUNT(*)</code> <code>OVER()</code> Window Function</a>” 📖</p>
-<h2>[[eleventy]]: “Eleventy v4 will be Build Awesome v4.”—what the hell is this? 😐</h2>
+<h2>eleventy: “Eleventy v4 will be Build Awesome v4.”—what the hell is this? 😐</h2>
 <blockquote>
 <p>First and foremost, it’s very important to recognize how instrumental Font Awesome has been to the progress the Eleventy project has made in the last 18 months — and you can review a lot of those in the <a href="https://www.11ty.dev/blog/review-2025/">Eleventy, 2025 in Review</a> highlights!</p>
 <p>Secondly, ==the name change== is <em>not</em> a clean break for Eleventy — this is a continuation of the open source project under the larger Awesome banner. Eleventy v4 will be Build Awesome v4. I, <a href="https://zachleat.com/">Zach</a>, am still lovingly shepherding the open source project forward, the same as before.</p>
 <p>—“<a href="https://www.11ty.dev/blog/build-awesome/#what-does-build-awesome-mean-for-eleventy">What does Build Awesome mean for Eleventy?</a>”</p>
 </blockquote>
-<h2>stupid [[jQuery]] tricks: selecting the text of an <code>option</code> element instead of its <code>.val()</code> 😐🐕</h2>
+<h2>stupid jQuery tricks: selecting the text of an <code>option</code> element instead of its <code>.val()</code> 😐🐕</h2>
 <p>The following will get the contents of the <code>option.value</code> attribute:</p>
 <pre><code class="language-javascript">const myValue = $('select#my-thing').val();
 </code></pre>
@@ -253,7 +253,7 @@
 <pre><code class="language-javascript">const myThing = $('select#my-thing');
 const myValue = $('option:selected', myThing).text();
 </code></pre>
-<h2>[[RxJS]]: “Advanced RxJS with Ben Lesh | Build IT Better S01E16”</h2>
+<h2>RxJS: “Advanced RxJS with Ben Lesh”</h2>
 <p>The title of this video is misleading:</p>
 <div style="text-align:center">
 <figure>
@@ -263,8 +263,8 @@ const myValue = $('option:selected', myThing).text();
     <p><small>Advanced RxJS with Ben Lesh | Build IT Better S01E16</small></p>
 </figure>
 </div>
-<p>One of the big takeaways from this talk is the large number of [[JavaScript]] libraries that “accidentally” reinvents the Observable.</p>
-<h2>[[Songhay Core (C♯)]]: <code>HtmlUtility</code> re-org 😐🚜</h2>
+<p>One of the big takeaways from this talk is the large number of JavaScript libraries that “accidentally” reinvents the Observable.</p>
+<h2>Songhay Core (C♯): <code>HtmlUtility</code> re-org 😐🚜</h2>
 <p>Here is the new intent:</p>
 <pre><code class="language-tree">.
 ├── Models
@@ -282,8 +282,8 @@ const myValue = $('option:selected', myThing).text();
 <li><code>HtmlUtility.Regex.cs</code> centralizes all HTML-string-related <code>Regex</code> partial methods and pattern getters in one place.</li>
 <li><code>RegexUtility.cs</code> centralizes all ‘simple’-string-related <code>Regex</code> partial methods and pattern getters in one place.</li>
 </ul>
-<h2>[[VSCodium]]: okay, while working on a <em>plain</em> text file…</h2>
-<p>…at the #day-job, I was unable to use the <key>Ctrl + d</key> convention to multi-select instances of the same text because the stupid-ass “co-pilot” shit was in the way (this might have been due to my recent installation of <a href="https://code.visualstudio.com/docs/datascience/data-wrangler">Data Wrangler</a> and its <acronym title="Artificial Intelligence">AI</acronym> hard sell). This disrespect from [[Microsoft]] prompted me to start a [[VSCodium]] install.</p>
+<h2>VSCodium: okay, while working on a <em>plain</em> text file…</h2>
+<p>…at the #day-job, I was unable to use the <key>Ctrl + d</key> convention to multi-select instances of the same text because the stupid-ass “co-pilot” shit was in the way (this might have been due to my recent installation of <a href="https://code.visualstudio.com/docs/datascience/data-wrangler">Data Wrangler</a> and its <acronym title="Artificial Intelligence">AI</acronym> hard sell). This disrespect from Microsoft prompted me to start a VSCodium install.</p>
 <h2>open pull requests on GitHub 🐙🐈</h2>
 <ul>
 <li><a href="https://github.com/BryanWilhite/SonghayCore/pull/187">https://github.com/BryanWilhite/SonghayCore/pull/187</a></li>
