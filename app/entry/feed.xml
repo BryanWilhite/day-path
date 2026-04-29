@@ -5,8 +5,19 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 31 Mar 2026 13:02:14 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 28 Apr 2026 15:05:05 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-04</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-04-28-studio-status-report-2026-04</link>
+            <description>
+                Month 04 of 2026 witnessed the continued lack of the re-release of kintespace.com—still almost out the ‘door.’ This month was dominated by two blockers: 1. an illness that lasted over a seven days
+2. errands and meetings required in response to losing my …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-04-28-studio-status-report-2026-04</guid>
+            <pubDate>Tue, 28 Apr 2026 15:05:05 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2026-03</title>
             <link>https://songhayblog.azurewebsites.net/entry/2026-03-31-studio-status-report-2026-03</link>
@@ -137,16 +148,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-03-30-studio-status-report-2025-03</guid>
             <pubDate>Sun, 30 Mar 2025 09:28:58 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2025-02</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2025-02-26-studio-status-report-2025-02</link>
-            <description>
-                month 02 of 2025 was about upgrading Songhay.Publications to .NET 8.0 and working directly on kintespace.com I continue to fiddle and struggle with my Obsidian graph view of the month: Obsidian graph for this month I notice that most of nodes labeled with…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-02-26-studio-status-report-2025-02</guid>
-            <pubDate>Wed, 26 Feb 2025 12:09:28 -0800</pubDate>
         </item>
     </channel>
 </rss>
