@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 28 Apr 2026 15:05:05 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 30 May 2026 15:28:06 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-05</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-05-30-studio-status-report-2026-05</link>
+            <description>
+                I have not yet released kintespace.com. I am still working on the Index (home 🏠📄): kintespace.com Index page What is left to do (generally—without rabbit holes 🐇🕳) are a few bits: - use a flowing flex layout of ‘visitor thumbs’ in the space visitors s…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-05-30-studio-status-report-2026-05</guid>
+            <pubDate>Sat, 30 May 2026 15:28:06 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2026-04</title>
             <link>https://songhayblog.azurewebsites.net/entry/2026-04-28-studio-status-report-2026-04</link>
@@ -138,16 +148,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-04-29-studio-status-report-2025-04</guid>
             <pubDate>Tue, 29 Apr 2025 11:54:28 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2025-03</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2025-03-30-studio-status-report-2025-03</link>
-            <description>
-                month 03 of 2025 was about another #day-job takeover, serious progress with Azure Functions and AzDO Selected notes for this month should show signs of major #day-job breakthroughs in the study of Azure Functions and the YAML pipelines of Azure DevOps (Az…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-03-30-studio-status-report-2025-03</guid>
-            <pubDate>Sun, 30 Mar 2025 09:28:58 -0700</pubDate>
         </item>
     </channel>
 </rss>
