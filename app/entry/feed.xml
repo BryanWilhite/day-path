@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 30 May 2026 15:28:06 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Jun 2026 07:32:36 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-06</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-06-28-studio-status-report-2026-06</link>
+            <description>
+                I have not yet released kintespace.com—but shortly after I am done writing this report, it should be released to staging for testing. This was the most lengthy, self-imposed task of my entire adult life. …and, sorry capitalism (and sorry me), this “great …
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-06-28-studio-status-report-2026-06</guid>
+            <pubDate>Sun, 28 Jun 2026 07:32:36 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2026-05</title>
             <link>https://songhayblog.azurewebsites.net/entry/2026-05-30-studio-status-report-2026-05</link>
@@ -138,16 +148,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-05-30-studio-status-report-2025-05</guid>
             <pubDate>Fri, 30 May 2025 14:20:48 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2025-04</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2025-04-29-studio-status-report-2025-04</link>
-            <description>
-                month 04 of 2025 was about envisioning a road map toward getting the next-generation b-roll player services working Currently, the Studio canvas shows two warnings directly related to player services: Obsidian Studio canvas detail What should emerge from …
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-04-29-studio-status-report-2025-04</guid>
-            <pubDate>Tue, 29 Apr 2025 11:54:28 -0700</pubDate>
         </item>
     </channel>
 </rss>
