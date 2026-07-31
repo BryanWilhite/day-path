@@ -5,8 +5,18 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 28 Jun 2026 07:32:36 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 30 Jul 2026 15:24:03 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-07</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-07-30-studio-status-report-2026-07</link>
+            <description>
+                Month 07 of 2026 was about releasing kintespace.com, really digging into details of Microsoft’s inflation of cloud rental costs and formally experimenting with Astro. Yes, kintespace.com was finally released on the 10th day of the month–but let’s see whet…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-07-30-studio-status-report-2026-07</guid>
+            <pubDate>Thu, 30 Jul 2026 15:24:03 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2026-06</title>
             <link>https://songhayblog.azurewebsites.net/entry/2026-06-28-studio-status-report-2026-06</link>
@@ -138,16 +148,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-06-29-studio-status-report-2025-06</guid>
             <pubDate>Sun, 29 Jun 2025 11:43:37 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2025-05</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2025-05-30-studio-status-report-2025-05</link>
-            <description>
-                month 05 of 2025 was about discovering the essential ‘boundary-crossing abstractions’ and rewriting Songhay.Player for the last time, really My discovery this month was so important to me that I actually broke the fourth wall and posted my words from my p…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-05-30-studio-status-report-2025-05</guid>
-            <pubDate>Fri, 30 May 2025 14:20:48 -0700</pubDate>
         </item>
     </channel>
 </rss>
