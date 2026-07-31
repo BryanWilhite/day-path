@@ -156,21 +156,21 @@
 <li>the opportunity to declare that contemporary “vanilla” JavaScript can do things that only frameworks and libraries did in the past</li>
 </ol>
 <p>It is unfair and too easy to blame having a #day-job as the sole reason why I am suddenly celebrating all of this personal growth 😐🐰 Perhaps the selected notes below will clarify:</p>
-<h2>[[Sep]]  is now the official <acronym title="Comma-Separated Values">CSV</acronym>-file processor of this Studio</h2>
-<p>Following up [[2026-01-17#dotnet .NET C♯ “World's Fastest .NET CSV Parser.” day-job 😐|my note the beginning of this year]], on my eldest son’s birthday, I can confirm that [[Sep]] exceeds expectations. [[2025-04-30#dotnet .NET parsing a line of <acronym title="Comma-Separated Values">CSV</acronym> with a <code>Regex</code> to-do|I did mention]] that there is a <code>Regex</code> out there for CSV data handling but I don’t have the time or the [[Polyglot Notebooks]] technology to play with that these days 😐</p>
+<h2>Sep  is now the official <acronym title="Comma-Separated Values">CSV</acronym>-file processor of this Studio</h2>
+<p>Following up my note the beginning of this year, on my eldest son’s birthday, I can confirm that Sep exceeds expectations. I did mention that there is a <code>Regex</code> out there for CSV data handling but I don’t have the time or the Polyglot Notebooks technology to play with that these days 😐</p>
 <h3>the importance of the <code>SepReader.Enumerate</code> method</h3>
 <p>When we are first introduced to Sep, we immediately can see that it is designed to load large files with little pressure on memory. However, it may be difficult to see how we can load <em>everything</em> in memory and perform  <acronym title="Language Integrated Query">LINQ</acronym> operations. We can do this with the <code>SepReader.Enumerate</code> method:</p>
 <div style="text-align:center">
 <p><img src="../../image/day-path-2026-07-30-22-44-26.png" alt="code screenshot"></p>
 </div>
-<h2>[[Songhay System Studio]]: “Most rewrites serve the engineer, not the business”</h2>
+<h2>Songhay System Studio: “Most rewrites serve the engineer, not the business”</h2>
 <blockquote>
 <p>The strongest case against a rewrite is not the effort. It is memory. Code that has run in production for years is a written record of every bug someone hit and quietly fixed. The odd conditional, the retry with the suspicious timeout: most of it is scar tissue, and each scar marks an incident you never saw. Joel Spolsky made this point in 2000, calling the full rewrite <a href="https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/">the single worst strategic mistake</a> a software company can make.</p>
 <p>Throw the code away and you throw away the fixes. Then you meet the same bugs again, in production, in front of the same users.</p>
 <p>—“<a href="https://anatoliybabushka.com/blog/when-to-rewrite-working-code.html">Most rewrites serve the engineer, not the business</a>”</p>
 </blockquote>
-<h2>[[Obsidian]] plugin: External File Embed and Link</h2>
-<p>[[Obsidian]] is not designed to support <em>relative</em> linking to any file external to the vault (it will fall back to an absolute <code>file:</code> reference [📖 <a href="https://obsidian.md/help/drag-and-drop#Dragging+from+outside+Obsidian">docs</a> ])—but there’s a plugin for that:</p>
+<h2>Obsidian plugin: External File Embed and Link</h2>
+<p>Obsidian is not designed to support <em>relative</em> linking to any file external to the vault (it will fall back to an absolute <code>file:</code> reference [📖 <a href="https://obsidian.md/help/drag-and-drop#Dragging+from+outside+Obsidian">docs</a> ])—but there’s a plugin for that:</p>
 <blockquote>
 <p>Embed and link local files outside your obsidian vault with relative paths for cross-device and multi-platform compatibility.</p>
 <p>…</p>
@@ -182,31 +182,31 @@
 </ul>
 <p>—<a href="https://github.com/oylbin/obsidian-external-file-embed-and-link">https://github.com/oylbin/obsidian-external-file-embed-and-link</a></p>
 </blockquote>
-<h2>[[Songhay Modules Bolero (F♯)]]: potentially devastating news 😐📰</h2>
-<p>It is possible that the [[Bolero]] project is dying out. It is stuck in the [[dotnet|.NET 8.0]] time-frame:</p>
+<h2>Songhay Modules Bolero (F♯): potentially devastating news 😐📰</h2>
+<p>It is possible that the Bolero project is dying out. It is stuck in the .NET 8.0 time-frame:</p>
 <blockquote>
 <p>Bolero 0.24.39 only ships <code>net6.0</code> and <code>net8.0</code> TFM targets (verified by inspecting the NuGet package under <code>lib/</code>). When the project targets <code>net10.0</code>, NuGet silently falls back to the <code>net8.0</code> build. The net8.0 compiled assemblies use WASM JS interop conventions that are incompatible with the .NET 10 WASM runtime host — specifically, the <code>getI32</code> marshalling function is no longer available in the same way on the <code>dotnet.runtime.js</code> interop surface, causing the <code>TypeError</code> at render time.</p>
 <p>The misleading part is that <code>dotnet build</code> and <code>dotnet publish</code> both complete successfully — the mismatch only manifests at runtime in the browser.</p>
 <p><strong>Workaround:</strong> Revert to <code>net8.0</code> until Bolero publishes packages with a <code>net10.0</code> target.</p>
 <p>—<a href="https://github.com/fsbolero/Bolero/issues/375#issuecomment-4061336805">https://github.com/fsbolero/Bolero/issues/375#issuecomment-4061336805</a></p>
 </blockquote>
-<h2>[[Fun.Blazor]] is the higher-performance alternative to [[Bolero]]</h2>
-<p>When “<a href="https://devblogs.microsoft.com/dotnet/dotnet-8-9-end-of-support/">.NET 8 and .NET 9 will reach End of Support on November 10, 2026</a>” and [[Bolero]] is still not updated for [[dotnet|.NET 10]] then this Studio should have the lavish option of switching the [[b-roll player]] over to something like [[Fun.Blazor]]. Here are the known alternatives to [[Bolero]] in decreasing order of preference:</p>
+<h2>Fun.Blazor is the higher-performance alternative to Bolero</h2>
+<p>When “<a href="https://devblogs.microsoft.com/dotnet/dotnet-8-9-end-of-support/">.NET 8 and .NET 9 will reach End of Support on November 10, 2026</a>” and Bolero is still not updated for .NET 10 then this Studio should have the lavish option of switching the b-roll player over to something like Fun.Blazor. Here are the known alternatives to Bolero in decreasing order of preference:</p>
 <ol>
-<li>[[Fun.Blazor]] (assuming it has all the features of [[Bolero]] 🐰)</li>
-<li>plain [[Blazor]] (requiring a complete rewrite in C♯ 🐰🐰🐰)</li>
-<li>Following up [[2025-08-12#Blazor “Running .NET in the browser without Blazor” to-do]] ❓</li>
-<li>[[Feliz]] (implying that the [[b-roll player]] will be a [[React]] app 🐰🤮)</li>
+<li>Fun.Blazor (assuming it has all the features of Bolero 🐰)</li>
+<li>plain Blazor (requiring a complete rewrite in C♯ 🐰🐰🐰)</li>
+<li>Following up 2025-08-12#Blazor “Running .NET in the browser without Blazor” to-do ❓</li>
+<li>Feliz (implying that the b-roll player will be a React app 🐰🤮)</li>
 </ol>
 <blockquote>
 <p>[!warning]
-[[Fun.Blazor]] is currently <em>not</em> upgraded to [[dotnet|.NET 10]] 😐</p>
+Fun.Blazor is currently <em>not</em> upgraded to .NET 10 😐</p>
 </blockquote>
 <ul>
-<li>[[Fun.Blazor]] is <em>not</em> based on [[Elmish]] by default (this alone could explain the performance advantage [[Fun.Blazor]] has); [[Elmish]] is optional</li>
-<li>[[Fun.Blazor]] also uses <acronym title="Computation Expression">CE</acronym>s</li>
+<li>Fun.Blazor is <em>not</em> based on Elmish by default (this alone could explain the performance advantage Fun.Blazor has); Elmish is optional</li>
+<li>Fun.Blazor also uses <acronym title="Computation Expression">CE</acronym>s</li>
 </ul>
-<h2>[[Songhay Publications|Publications]]: “Claude’s API is notoriously unstable”</h2>
+<h2>Publications: “Claude’s API is notoriously unstable”</h2>
 <div style="text-align:center">
 <p><img src="../../image/day-path-2026-07-30-22-52-24.png" alt="Claude’s API status page"></p>
 </div>
@@ -219,8 +219,8 @@
 <p>There are FOSS projects to circumvent Anthropic’s policies, which allow you to use your Claude subscription instead of an expensive Anthropic API Key</p>
 <p>—“<a href="https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/">Anthropic's Method to Losing Goodwill in a Few Easy Steps</a>”</p>
 </blockquote>
-<h2>[[Songhay Publications Internet Products|Internet Products]]: finalizing [[Songhay Publications - KinteSpace|kintespace.com]] 👏</h2>
-<p>I have finished addressing, supposedly, all of the bits and bobs [[2026-07-07#more bits and bobs|listed yesterday]]:</p>
+<h2>Internet Products: finalizing kintespace.com 👏</h2>
+<p>I have finished addressing, supposedly, all of the bits and bobs listed yesterday:</p>
 <ul>
 <li>[x] deploy to staging and inspect 🚀👓</li>
 </ul>
@@ -230,7 +230,7 @@
 <ol>
 <li>clicking on the Presentation does nothing #to-do—this is <em>not</em> a regression 😐</li>
 <li>the credits button needs to stand out from backgrounds—this <em>is</em> a regression</li>
-<li>the version-numbering of [[Bolero]] is no longer detectable? #to-do</li>
+<li>the version-numbering of Bolero is no longer detectable? #to-do</li>
 </ol>
 <p>The <code>z-order</code> of the “sticky” dropdown needs to be sorted:</p>
 <div style="text-align:center">
@@ -245,8 +245,8 @@
 <li>this “sticky” experience is my finest</li>
 <li>more space is needed between thumbs #to-do</li>
 </ol>
-<h2>[[Songhay System Studio]]: it should be the most important tech documentary 😐</h2>
-<p>Most of the other tech documentaries in my collection are about [[JavaScript]] frameworks:</p>
+<h2>Songhay System Studio: it should be the most important tech documentary 😐</h2>
+<p>Most of the other tech documentaries in my collection are about JavaScript frameworks:</p>
 <div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=lI7tMxzSJ7w">
@@ -255,8 +255,8 @@
     <p><small>The Story of C++: The World's Most Consequential Programming Language</small></p>
 </figure>
 </div>
-<h2>[[webpack]] was to be replaced by [[Snowpack]] but [[Vite]] took the world by storm 😐✨</h2>
-<p>The honorable folks of [[Snowpack]] leave this quite openly on their home page:</p>
+<h2>webpack was to be replaced by Snowpack but Vite took the world by storm 😐✨</h2>
+<p>The honorable folks of Snowpack leave this quite openly on their home page:</p>
 <blockquote>
 <p><strong>Update (April 20, 2022):</strong> Snowpack is no longer actively maintained and is not recommended for new projects.</p>
 <p>Check out <a href="https://vitejs.dev/">Vite</a> for a well-maintained Snowpack alternative.<br>
@@ -275,16 +275,16 @@ See also: <a href="https://esbuild.github.io/">esbuild</a>, <a href="https://par
 </div>
 <ul>
 <li>the effort here was to formally recognize <acronym title="ECMAScript modules">ESM</acronym> as a standard in wide release</li>
-<li>the initial release of [[Vite]] was tied to [[Vue]]</li>
-<li>[[Vite]] 2.0 was a complete rewrite (c. 2020?)</li>
-<li>[[Vite]] uses [[Rollup|rollup.js]] which I regarded as a loser to [[webpack]]—I guess I am wrong 👴</li>
+<li>the initial release of Vite was tied to Vue</li>
+<li>Vite 2.0 was a complete rewrite (c. 2020?)</li>
+<li>Vite uses rollup.js which I regarded as a loser to webpack—I guess I am wrong 👴</li>
 </ul>
 <blockquote>
 <p>[!important]
-First developed by the developer of [[Vue]], <a href="https://github.com/yyx990803">Evan You</a>, [[Vite]] is designed to replace [[webpack]] because it does not scale.</p>
+First developed by the developer of Vue, <a href="https://github.com/yyx990803">Evan You</a>, Vite is designed to replace webpack because it does not scale.</p>
 </blockquote>
-<p>Because this Studio invested in [[WebAssembly]] (and my day jobs have been [[Microsoft]] biased), I have avoided building big-ass [[JavaScript]] monstrosities on top of [[webpack]] that would have led me to—at least to the desire for–something like [[Snowpack]] or [[Vite]].</p>
-<h2>[[Apache]]: it took an IBM guy to compare with [[nginx]] 😐</h2>
+<p>Because this Studio invested in WebAssembly (and my day jobs have been Microsoft biased), I have avoided building big-ass JavaScript monstrosities on top of webpack that would have led me to—at least to the desire for–something like Snowpack or Vite.</p>
+<h2>Apache: it took an IBM guy to compare with nginx 😐</h2>
 <div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=9nyiY-psbMs">
@@ -294,16 +294,16 @@ First developed by the developer of [[Vue]], <a href="https://github.com/yyx9908
 </figure>
 </div>
 <ul>
-<li>[[nginx]] was built with the intention of being faster than [[Apache]]—and it succeeded</li>
-<li>[[nginx]] is more popular for containers</li>
+<li>nginx was built with the intention of being faster than Apache—and it succeeded</li>
+<li>nginx is more popular for containers</li>
 </ul>
-<h2>[[Songhay Publications|Publications]]: “Why 55% of Americans Stopped Posting On Social Media”</h2>
+<h2>Publications: “Why 55% of Americans Stopped Posting On Social Media”</h2>
 <blockquote>
 <p>A <a href="https://blog.incogni.com/digital-fatigue-and-burnout/">new Incogni survey</a> suggests Americans are pulling back from social media, with more than half saying &quot;maintaining an online presence feels like work&quot; and <a href="https://www.pcmag.com/news/death-of-the-status-update-why-55-americans-stopped-posting-social-media">55% reporting they post less than they did five years ago</a>. &quot;The full study concludes that there's been a significant shift in public attitudes toward social media,&quot; reports PCMag. &quot;Where it was once fun and relaxing, it's now growing dark and angsty...&quot; From the report: <em>As the <a href="https://i.pcmag.com/imagery/articles/05jtX24y12N42HIDJ8fPcnG-2.fit_lim.size_1536x.png">chart</a> shows, there's also a clear correlation with age. A full 60% of Gen Z respondents feel the pain of maintaining a social presence. Perhaps they have a niggling hope that they might still be discovered as an influencer? Those of us in the Boomer category are clearly more relaxed about it, with just 38% saying that maintaining a social presence feels like work. The survey quizzed respondents about how they feel when they don't keep up with checking their socials and, by extension, how they'd feel if they just plain quit. They were given choices, both positive (peace, relaxation, and relief) and negative (anxiety, fear of missing out, and discomfort).</em></p>
 <p>—“<a href="https://tech.slashdot.org/story/26/07/13/0548235/why-55-of-americans-stopped-posting-on-social-media">Why 55% of Americans Stopped Posting On Social Media</a>”</p>
 </blockquote>
-<h2>[[Vite]] and [[ASP.NET]]: I am confident that [[Microsoft]] will release project templates based on [[Vite]]… #to-do</h2>
-<p>…meanwhile, we have [[Shawn Wildermuth]]:</p>
+<h2>Vite and ASP.NET: I am confident that Microsoft will release project templates based on Vite… #to-do</h2>
+<p>…meanwhile, we have Shawn Wildermuth:</p>
 <div style="text-align:center">
 <figure>
     <a href="https://www.youtube.com/watch?v=NG3KAng2mAI">
@@ -312,7 +312,7 @@ First developed by the developer of [[Vue]], <a href="https://github.com/yyx9908
     <p><small>Coding Shorts: Using Vite in ASP.NET Core Projects</small></p>
 </figure>
 </div>
-<h2>[[Azure DevOps|AzDO]]: what the hell is all this artifact storage 😧❓</h2>
+<h2>AzDO: what the hell is all this artifact storage 😧❓</h2>
 <div style="text-align:center">
 <p><img src="../../image/day-path-2026-07-30-23-15-29.png" alt="Azure DevOps screenshot"></p>
 <p><img src="../../image/day-path-2026-07-30-23-16-00.png" alt="Azure DevOps screenshot"></p>
@@ -327,7 +327,7 @@ First developed by the developer of [[Vue]], <a href="https://github.com/yyx9908
 <div style="text-align:center">
 <p><img src="../../image/day-path-2026-07-30-23-16-45.png" alt="Azure DevOps screenshot"></p>
 </div>
-<h2>[[Netlify]] “On-demand Builders” deprecated? 😐</h2>
+<h2>Netlify “On-demand Builders” deprecated? 😐</h2>
 <blockquote>
 <p>On-demand Builders are serverless functions used to generate web content as needed that’s automatically cached on Netlify’s Edge CDN. They enable you to build pages for your site when a user visits them for the first time and then cache them at the edge for subsequent visits.</p>
 <p>—“<a href="https://docs.netlify.com/build/configure-builds/on-demand-builders/">On-demand Builders</a>”</p>
@@ -336,7 +336,7 @@ First developed by the developer of [[Vue]], <a href="https://github.com/yyx9908
 <blockquote>
 <p>For better performance and fewer function invocations, consider using <a href="https://docs.netlify.com/build/caching/caching-overview#durable-directive">serverless functions with the <code>durable</code> directive</a> instead of On-demand Builders.</p>
 </blockquote>
-<h2>[[Songhay Publications Internet Products|Internet Products]]: in this Studio it’s official: [[eleventy]] does <em>not</em> work with [[Vite]] correctly 😐😠</h2>
+<h2>Internet Products: in this Studio it’s official: eleventy does <em>not</em> work with Vite correctly 😐😠</h2>
 <p>In addition to over two days of time wasted, the digitized public provides me with two clues:</p>
 <h3>1. a developer of a Vite plugin for eleventy warns us that both Vite and eleventy process <code>*.html</code> files</h3>
 <p>This is a message from a developer from over five years ago (because he has not updated the entire repo in over five years):</p>
@@ -365,7 +365,7 @@ First developed by the developer of [[Vue]], <a href="https://github.com/yyx9908
 <li>add the conventional <code>_data/settings.json</code> file and use the HTML templates to render data from this file</li>
 <li>run <code>npm start</code> and or <code>npm build</code> and the settings data will not be rendered in any output base on HTML templates (also, Vite my try to add its <code>_site</code> directory to your build output 😐)</li>
 </ol>
-<h2>[[Astro]] even talks publicly about a relationship with [[WebAssembly]] 😲</h2>
+<h2>Astro even talks publicly about a relationship with WebAssembly 😲</h2>
 <blockquote>
 <p>Astro supports loading WASM files directly into your application using the browser’s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly"><code>WebAssembly</code></a> API.</p>
 <p>—“<a href="https://docs.astro.build/en/guides/imports/#wasm">WASM</a>”</p>
