@@ -34,7 +34,7 @@ Prism.highlightAll(prismShouldUseWebWorkers);
 const rasx = {
     client: {
         handleContentLoaded: () => {
-            const uri = 'https://songhaystorage.blob.core.windows.net/day-path-blog/index-00.c.json';
+            const uri = 'https://pz-studio-public.b-cdn.net/day-path-blog/index-00.json';
 
             const display = (data: SearchIndexEntry[]) => {
 
