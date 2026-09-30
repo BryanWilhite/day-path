@@ -5,8 +5,21 @@
         <description>a technical Blog ✒ for my little studio</description>
 
         <link>https://songhayblog.azurewebsites.net/</link>
-        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 30 Aug 2026 12:39:34 -0700</pubDate>
+        <atom:link href="https://songhayblog.azurewebsites.net/entry/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 29 Sep 2026 13:37:36 -0700</pubDate>
         <lastBuildDate>Sat, 25 Mar 2023 17:57:17 -0700</lastBuildDate>
+        <item>
+            <title>studio status report: 2026-09</title>
+            <link>https://songhayblog.azurewebsites.net/entry/2026-09-29-studio-status-report-2026-09</link>
+            <description>
+                Month 09 of 2026 was about: - re-releasing SonghaySystem.com
+adding S3 storage support to this Studio
+“containerizing” the smallest Studio workflow
+getting to know dapr The incredible (for me) achievements above required the following NuGet package releas…
+            </description>
+            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
+            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2026-09-29-studio-status-report-2026-09</guid>
+            <pubDate>Tue, 29 Sep 2026 13:37:36 -0700</pubDate>
+        </item>
         <item>
             <title>studio status report: 2026-08</title>
             <link>https://songhayblog.azurewebsites.net/entry/2026-08-30-studio-status-report-2026-08</link>
@@ -138,16 +151,6 @@
             <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
             <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-08-31-studio-status-report-2025-08</guid>
             <pubDate>Sun, 31 Aug 2025 08:38:35 -0700</pubDate>
-        </item>
-        <item>
-            <title>studio status report: 2025-07</title>
-            <link>https://songhayblog.azurewebsites.net/entry/2025-07-29-studio-status-report-2025-07</link>
-            <description>
-                month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API Month 07 of 2025 was about readying the Studio WebAssembly assets for the new b-roll player API released last month. In so doing, the following NuGet p…
-            </description>
-            <author>bryan.wilhite@gmail.com(Bryan Wilhite)</author>
-            <guid isPermaLink="true">https://songhayblog.azurewebsites.net/entry/2025-07-29-studio-status-report-2025-07</guid>
-            <pubDate>Tue, 29 Jul 2025 10:53:03 -0700</pubDate>
         </item>
     </channel>
 </rss>

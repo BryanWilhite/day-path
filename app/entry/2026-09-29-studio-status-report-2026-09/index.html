@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="Day Path" />
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" content="@BryanWilhite" />
+    <meta name="twitter:creator" content="@BryanWilhite" />
+
+    <meta property="og:title" content="studio status report: 2026-09" />
+    <meta name="twitter:title" content="studio status report: 2026-09" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://songhayblog.azurewebsites.net/entry/2026-09-29-studio-status-report-2026-09" />
+    <meta property="og:image" content="https://songhaystorage.blob.core.windows.net/studio-public/songhay_icon.png" />
+    <meta name="description" content="Month 09 of 2026 was about: - re-releasing SonghaySystem.com
+adding S3 storage support to this Studio
+“containerizing” the smallest Studio workflow
+getting to know dapr The incredible (for me) achievements above required the following NuGet package releas…" />
+    <meta property="og:description" content="Month 09 of 2026 was about: - re-releasing SonghaySystem.com
+adding S3 storage support to this Studio
+“containerizing” the smallest Studio workflow
+getting to know dapr The incredible (for me) achievements above required the following NuGet package releas…" />
+    <meta name="twitter:description" content="Month 09 of 2026 was about: - re-releasing SonghaySystem.com
+adding S3 storage support to this Studio
+“containerizing” the smallest Studio workflow
+getting to know dapr The incredible (for me) achievements above required the following NuGet package releas…" /><meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="google-site-verification" content="MyXJp0qYgoTSi472GCarwPFWqvRZAo8khVV_FXV33tI" />
+    <meta name="msvalidate.01" content="9C08B066B4967EBE515E0CC7C146DE30" />
+
+    <base href="./" />
+
+    <link rel="canonical" href="https://songhayblog.azurewebsites.net/" />
+    <link rel="alternate" type="application/atom+xml" title="Day Path" href="/entry/feed.xml" />
+    <link rel="SHORTCUT ICON" href="../../image/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="../../_bundles/styles.min.css" rel="stylesheet" />
+
+    <script src="../../_bundles/scripts.min.js"></script>
+
+    <title>studio status report: 2026-09 - Day Path</title>
+</head>
+
+    <body class="mdc-theme--background mdc-typography">
+<svg style="display:none;">
+    <symbol viewBox="0 0 24 24" id="mdi_amazon_24px">
+        <!-- https://materialdesignicons.com/icon/amazon -->
+        <path d="M15.93,17.09C15.75,17.25 15.5,17.26 15.3,17.15C14.41,16.41 14.25,16.07 13.76,15.36C12.29,16.86 11.25,17.31 9.34,17.31C7.09,17.31 5.33,15.92 5.33,13.14C5.33,10.96 6.5,9.5 8.19,8.76C9.65,8.12 11.68,8 13.23,7.83V7.5C13.23,6.84 13.28,6.09 12.9,5.54C12.58,5.05 11.95,4.84 11.4,4.84C10.38,4.84 9.47,5.37 9.25,6.45C9.2,6.69 9,6.93 8.78,6.94L6.18,6.66C5.96,6.61 5.72,6.44 5.78,6.1C6.38,2.95 9.23,2 11.78,2C13.08,2 14.78,2.35 15.81,3.33C17.11,4.55 17,6.18 17,7.95V12.12C17,13.37 17.5,13.93 18,14.6C18.17,14.85 18.21,15.14 18,15.31L15.94,17.09H15.93M13.23,10.56V10C11.29,10 9.24,10.39 9.24,12.67C9.24,13.83 9.85,14.62 10.87,14.62C11.63,14.62 12.3,14.15 12.73,13.4C13.25,12.47 13.23,11.6 13.23,10.56M20.16,19.54C18,21.14 14.82,22 12.1,22C8.29,22 4.85,20.59 2.25,18.24C2.05,18.06 2.23,17.81 2.5,17.95C5.28,19.58 8.75,20.56 12.33,20.56C14.74,20.56 17.4,20.06 19.84,19.03C20.21,18.87 20.5,19.27 20.16,19.54M21.07,18.5C20.79,18.14 19.22,18.33 18.5,18.42C18.31,18.44 18.28,18.26 18.47,18.12C19.71,17.24 21.76,17.5 22,17.79C22.24,18.09 21.93,20.14 20.76,21.11C20.58,21.27 20.41,21.18 20.5,21C20.76,20.33 21.35,18.86 21.07,18.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_azure_24px">
+        <!-- https://materialdesignicons.com/icon/azure -->
+        <path d="M13.05,4.24L6.56,18.05L2,18L7.09,9.24L13.05,4.24M13.75,5.33L22,19.76H6.74L16.04,18.1L11.17,12.31L13.75,5.33Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_codepen_24px">
+        <!-- https://materialdesignicons.com/icon/codepen -->
+        <path d="M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_github_circle_24px">
+        <!-- https://materialdesignicons.com/icon/github-circle -->
+        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_linkedin_24px">
+        <!-- https://materialdesignicons.com/icon/linkedin -->
+        <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_rss_24px">
+        <!-- https://materialdesignicons.com/icon/rss -->
+        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_stack_overflow_24px">
+        <!-- https://materialdesignicons.com/icon/stack-overflow -->
+        <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_twitter_24px">
+        <!-- https://materialdesignicons.com/icon/twitter -->
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_visual_studio_24px">
+        <!-- https://materialdesignicons.com/icon/visual-studio -->
+        <path d="M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="mdi_youtube_24px">
+        <!-- https://materialdesignicons.com/icon/youtube -->
+        <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+    </symbol>
+</svg>
+<header class="mdc-top-app-bar mdc-top-app-bar--prominent">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="../../" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
+            <span class="site logo mdc-top-app-bar__title"><span class="prefix">&gt;</span><span class="infix">Day Path</span><span class="suffix">_</span></span>
+        </section>
+        <section class="site links mdc-top-app-bar__section mdc-top-app-bar__section">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="Atom feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </section>
+        <section class="site search mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <rx-input-autocomplete
+                inputId="site-search"
+                maxSuggestions="10"
+                minInput="3"
+                placeholder="title search">
+            </rx-input-autocomplete>
+        </section>
+    </div>
+</header>
+        <main class="mdc-layout-grid mdc-top-app-bar--prominent-fixed-adjust" id="main-content">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-12">
+    <section class="entry mdc-typography--body1">
+
+        <h1>studio status report: 2026-09</h1>
+<p>Month 09 of 2026 was about:</p>
+<ul>
+<li>re-releasing SonghaySystem.com</li>
+<li>adding S3 storage support to this Studio</li>
+<li>“containerizing” the smallest Studio workflow</li>
+<li>getting to know dapr</li>
+</ul>
+<p>The incredible (for me) achievements above required the following NuGet package releases of the month:</p>
+<ul>
+<li><code>SonghayCore</code> <a href="https://www.nuget.org/packages/SonghayCore/10.4.2">10.4.2</a></li>
+<li><code>SonghayCore.S3 </code><a href="https://www.nuget.org/packages/SonghayCore.S3/10.1.2">10.1.2</a></li>
+<li><code>SonghayCore.Web</code> <a href="https://www.nuget.org/packages/SonghayCore.Web/10.0.1">10.0.1</a></li>
+</ul>
+<p>Selected Obsidian notes below should provide some detail:</p>
+<h2>today, we should be able to do Songhay Feeds without Aspire… 😐</h2>
+<p>…and without Docker compose—and without rabbit holes 🐇🕳 Really? Really:</p>
+<ul>
+<li>we can concentrate on containerizing a <em>single</em> ASP.NET minimal <acronym title="Application Programming Interface">API</acronym> app</li>
+<li>we can concentrate on adding a custom health check endpoint</li>
+<li>we can concentrate on the “Job Offloading Pattern” <em>exclusively</em></li>
+<li>we can concentrate on securing the endpoints</li>
+</ul>
+<h2>a Songhay Core Web  (C♯) question for Google <acronym title="Artificial Intelligence">AI</acronym></h2>
+<p>…<code>is it okay to build a library project for ASP.NET that is based on Microsoft.NET.Sdk.Web or would this interfere somehow with the main Web project?</code></p>
+<blockquote>
+<p>Using <code>Microsoft.NET.Sdk.Web</code> for a class library project is ==generally <strong>not recommended</strong>== and can lead to unexpected build, publishing, and asset-conflicting issues with your main web project. <a href="https://stackoverflow.com/questions/70753263/publishing-limitations-when-using-microsoft-net-sdk-web-as-library-project">1</a></p>
+<p>Why You Should Avoid <code>Microsoft.NET.Sdk.Web</code> for Libraries</p>
+<ul>
+<li>
+<p><strong>Unintended Outputs and Behaviors:</strong> The Web SDK is explicitly tailored for executable web applications, meaning it expects an entry point and configures specific web targets, static asset handling, and publishing profiles. <a href="https://learn.microsoft.com/en-us/aspnet/core/razor-pages/web-sdk?view=aspnetcore-10.0">1</a>, <a href="https://learn.microsoft.com/en-us/aspnet/core/razor-pages/web-sdk?view=aspnetcore-10.0">2</a></p>
+</li>
+<li>
+<p><strong>Publishing Conflicts:</strong> Developers on <a href="https://stackoverflow.com/questions/70753263/publishing-limitations-when-using-microsoft-net-sdk-web-as-library-project">StackOverflow</a> point out that using the Web SDK on non-executable library projects frequently introduces publishing bugs—such as misbehaving content files, redundant manifest generation, or conflicting <code>wwwroot</code> assets when referenced by a true top-level web host. <a href="https://stackoverflow.com/questions/70753263/publishing-limitations-when-using-microsoft-net-sdk-web-as-library-project">1</a></p>
+</li>
+</ul>
+<p>The Recommended Alternative</p>
+<p>Instead of changing the project SDK, use the standard <code>Microsoft.NET.Sdk</code> and explicitly include the ASP.NET Core framework reference inside your library's <code>.csproj</code> file: <a href="https://stackoverflow.com/questions/75526254/net-6-0-web-sdk-class-library-creation">1</a></p>
+</blockquote>
+<pre><code class="language-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;TargetFramework&gt;net10.0&lt;/TargetFramework&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;FrameworkReference Include=&quot;Microsoft.AspNetCore.App&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+&lt;/Project&gt;
+</code></pre>
+<blockquote>
+<p>This approach gives your class library full access to ASP.NET Core APIs (like controllers, middleware, or filters) without the baggage and interference of the Web application SDK. If your library specifically handles UI components like Razor pages or views, use <code>Microsoft.NET.Sdk.Razor</code> instead. <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries?view=aspnetcore-10.0">1</a>, <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/target-aspnetcore?view=aspnetcore-10.0">2</a>, <a href="https://learn.microsoft.com/en-us/aspnet/core/razor-pages/sdk?view=aspnetcore-10.0">3</a></p>
+</blockquote>
+<h2>Mukesh Murugan: “Health Checks in ASP.NET Core: A Complete Guide (.NET 10)”</h2>
+<blockquote>
+<p>Health checks in ASP.NET Core are HTTP endpoints that report whether your app and its dependencies (database, cache, external APIs) are actually working. You register them with <code>builder.Services.AddHealthChecks()</code> and expose them with <code>app.MapHealthChecks(&quot;/health&quot;)</code>. On .NET 10 the basic setup needs zero extra NuGet packages: it ships in the ASP.NET Core shared framework.</p>
+<p>That is the one-liner answer. But a health endpoint that returns <code>Healthy</code> because the process is running, while the database behind it is on fire, is worse than no health check at all. It tells your load balancer and orchestrator to keep sending traffic to a broken pod. So this guide goes past the one-liner: real database and Redis checks, custom <code>IHealthCheck</code> logic, a proper JSON response, a live dashboard, and the three things most tutorials skip entirely - the liveness/readiness split that can take down a cluster, what your probes actually cost your database, and how to drain traffic before a pod shuts down.</p>
+<p>—“<a href="https://codewithmukesh.com/blog/health-checks-in-aspnet-core/">Health Checks in ASP.NET Core: A Complete Guide (.NET 10)</a>”</p>
+</blockquote>
+<h2>Songhay Feeds: the new <code>ProgramMetadata</code> conventions</h2>
+<div style="text-align:center">
+<p><img src="../../image/day-path-2026-09-29-20-56-29.png" alt="VSCodium screenshot"></p>
+</div>
+<ol>
+<li>The <code>GetProgramMetadataFromEnvironment()</code> method is a new convention for getting <code>ProgramMetadata</code> independently of infrastructure like <code>IConfiguration</code>.</li>
+<li>This is a solution to the problem of uniquely identifying <code>RestApiMetadata</code> for each <acronym title="Application Programming Interface">API</acronym> built in this Studio and then keying it to <code>ApiKeyAuthenticationHandler</code> with a <acronym title="Dependency Injection">DI</acronym> key that does not have to be remembered.</li>
+<li>Even though <code>restApiMetadata</code> is a subset of <code>ProgramMetadata</code> the key for <code>restApiMetadata</code> (<code>&quot;songhay-feeds-api&quot;</code>) should not be known to <code>ApiKeyAuthenticationHandler</code>  in <code>Songhay.Web</code>.</li>
+</ol>
+<h2>a very, very fundamental reason why .NET lost to Go (so far) 😐💡</h2>
+<p>According to Google <acronym title="Artificial Intelligence">AI</acronym>, containers shipping Go are always <em>smaller</em> than .NET equivalents which implies that Microsoft’s non-competitive cloud storage costs (<code>Gen2</code> storage required by default) are suicidal:</p>
+<p>…<code>are containers running a Golang-based API smaller than a .NET AOT API equivalent?</code></p>
+<blockquote>
+<p>Yes, containers running a Golang-based API are generally smaller than an equivalent .NET Native AOT (Ahead-of-Time) API container. <a href="https://www.reddit.com/r/dotnet/comments/14kv253/if_youre_versed_in_both_go_and_c_for_web_api/">1</a></p>
+<p>While .NET Native AOT dramatically shrinks container sizes compared to standard JIT-based .NET runtimes, Go binaries and their base images still hold a distinct size advantage. <a href="https://www.linkedin.com/posts/kenneth-u-777075131_golang-dotnet-backenddevelopment-activity-7461776785731452928-CLeg">1</a>, <a href="https://www.reddit.com/r/dotnet/comments/14kv253/if_youre_versed_in_both_go_and_c_for_web_api/">2</a></p>
+<p>Size Breakdown</p>
+<ul>
+<li><strong>Golang Containers</strong>: A basic Go API compiled statically with flags to strip debugging symbols (<code>-ldflags=&quot;-w -s&quot;</code>) can be placed inside a <code>scratch</code> (empty) or trivial Alpine base image. The final container image is typically <strong>5 MB to 15 MB</strong>. <a href="https://medium.com/code-beyond/dockerizing-golang-apps-a-step-by-step-guide-to-reducing-docker-image-size-306898e7359e">1</a>, <a href="https://dev.to/bhargab/reducing-docker-image-size-a-journey-of-discovery-2cd2">2</a>, <a href="https://libozeng.com/2021-1-7-benchmarking-dotnet-golang.html">3</a></li>
+<li><strong>.NET Native AOT Containers</strong>: A minimal ASP.NET Core API compiled via Native AOT requires a stripped-down base like Microsoft's <code>runtimedeps</code> or Alpine images. Even with aggressive trimming, the native .NET executable and required fundamental system dependencies (like <code>libc</code> and <code>libssl</code>) usually push the final container image to <strong>15 MB to 30 MB</strong> (and often larger depending on the specific NuGet packages used). <a href="https://medium.com/c-sharp-programming/all-the-net-core-opsy-things-37b2e21eabb4">1</a>, <a href="https://dev.to/mfund0/choosing-the-right-net-image-for-your-workloads-2ino">2</a></li>
+</ul>
+<p>Why Go is Smaller</p>
+<ul>
+<li><strong>No Heavy Framework Initialization</strong>: Go's standard library and runtime scheduler compiled into a binary add very little overhead.</li>
+<li><strong>Base Image Flexibility</strong>: Go allows deployments straight onto <code>FROM scratch</code>, meaning zero extra operating system layers.</li>
+<li><strong>Generic Specialization Overhead</strong>: .NET Native AOT duplicates specialized native code for various value-type generics and bundles parts of its internal runtime/garbage collector directly into the compiled output. <a href="https://www.reddit.com/r/dotnet/comments/1b82db4/why_my_executable_bigger_with_net8_aot_than_full/">1</a>, <a href="https://github.com/dev-details/go-lang-docker-image-size-comparison/blob/main/README.md">2</a></li>
+</ul>
+</blockquote>
+<p>BTW: Bing <acronym title="Artificial Intelligence">AI</acronym> answered this question in a similar manner:</p>
+<blockquote>
+<p>Yes — <strong>Go-based APIs in Docker containers are generally much smaller than .NET AOT APIs</strong> for the same workload, due to Go’s static binary nature and minimal runtime.</p>
+<p><strong>Example from direct comparison</strong><br>
+A GitHub project comparing identical microservices in <strong>.NET 7 Minimal API</strong> and <strong>Go</strong> found:</p>
+<ul>
+<li><strong>.NET 7 Minimal API</strong>: ~212 MB Docker image, ~17.8 MB idle RAM</li>
+<li><strong>Go API</strong>: ~6.82 MB Docker image, ~2.7 MB idle RAM <a href="https://www.bing.com/ck/a?!&amp;&amp;p=11d5722a8cba032a56dd3e580d6d5205773a59bb0a684827032f5ec9a52909bbJmltdHM9MTc4ODY1MjgwMA&amp;ptn=3&amp;ver=2&amp;hsh=4&amp;fclid=064e6834-a94b-6283-390a-6744a8b0634b&amp;u=a1aHR0cHM6Ly9naXRodWIuY29tL3NhbXVlbC1wb2lyaWVyL2RvdG5ldC1taW5pbWFsLWFwaS12cy1nb2xhbmctcmVzb3VyY2Utc2l6ZQ&amp;ntb=1"><img src="https://services.bingapis.com/favicon?url=github.com" alt="Github">Github</a></li>
+</ul>
+<p>This shows Go’s image size is <strong>over 30× smaller</strong> than .NET in this case, even without AOT compilation.</p>
+<p><strong>Why Go is smaller</strong></p>
+<ul>
+<li>
+<p><strong>Static binaries</strong>: Go compiles to a single executable with no runtime dependencies, so the final image can be as small as the binary itself <a href="https://www.bing.com/ck/a?!&amp;&amp;p=7835b48e49ccef2e00af482fca733d70f722535324746ab1ecaa8b0221113e71JmltdHM9MTc4ODY1MjgwMA&amp;ptn=3&amp;ver=2&amp;hsh=4&amp;fclid=064e6834-a94b-6283-390a-6744a8b0634b&amp;u=a1aHR0cHM6Ly9kYXNyb290Lm5ldC9wb3N0cy8yMDI2LzAyL2J1aWxkaW5nLW1pbmltYWwtZ28tY29udGFpbmVycy1oaWdoLXRocm91Z2hwdXQtYXBpcy8&amp;ntb=1"><img src="https://services.bingapis.com/favicon?url=dasroot.net" alt="dasroot.net">dasroot.net</a>.</p>
+</li>
+<li>
+<p><strong>Multi-stage builds</strong>: Developers can use Alpine or scratch images in the final stage, copying only the compiled binary and minimal dependencies <a href="https://www.bing.com/ck/a?!&amp;&amp;p=7835b48e49ccef2e00af482fca733d70f722535324746ab1ecaa8b0221113e71JmltdHM9MTc4ODY1MjgwMA&amp;ptn=3&amp;ver=2&amp;hsh=4&amp;fclid=064e6834-a94b-6283-390a-6744a8b0634b&amp;u=a1aHR0cHM6Ly9kYXNyb290Lm5ldC9wb3N0cy8yMDI2LzAyL2J1aWxkaW5nLW1pbmltYWwtZ28tY29udGFpbmVycy1oaWdoLXRocm91Z2hwdXQtYXBpcy8&amp;ntb=1"><img src="https://services.bingapis.com/favicon?url=dasroot.net" alt="dasroot.net">dasroot.net</a>.</p>
+</li>
+<li>
+<p><strong>No managed runtime</strong>: Unlike .NET, which bundles the CLR, JIT, and AOT runtime, Go’s runtime is tiny and optional.</p>
+</li>
+</ul>
+<p><strong>Why .NET AOT is larger</strong></p>
+<ul>
+<li><strong>Runtime overhead</strong>: Even with AOT, .NET still includes the runtime, JIT, and framework libraries.</li>
+<li><strong>Dependency bundling</strong>: AOT compiles the app to native code but still ships the runtime and dependencies.</li>
+<li><strong>Image layers</strong>: .NET images often use larger base images (e.g., <code>mcr.microsoft.com/dotnet/aspnet:latest</code>) compared to minimal Go builders.</li>
+</ul>
+<p><strong>Practical takeaway</strong><br>
+If your goal is to minimize container footprint, Go is the clear winner. For the same API logic, you can achieve <strong>~6–8 MB images</strong> with Go vs <strong>~200 MB+</strong> with .NET AOT. This is especially important for serverless, edge, or constrained environments where image size directly impacts cost and deployment speed.</p>
+<p><strong>Tip</strong>: To maximize Go’s size advantage, use multi-stage builds with Alpine or scratch, strip debug symbols (<code>-ldflags=&quot;-s -w&quot;</code>), and avoid unnecessary dependencies <a href="https://www.bing.com/ck/a?!&amp;&amp;p=7835b48e49ccef2e00af482fca733d70f722535324746ab1ecaa8b0221113e71JmltdHM9MTc4ODY1MjgwMA&amp;ptn=3&amp;ver=2&amp;hsh=4&amp;fclid=064e6834-a94b-6283-390a-6744a8b0634b&amp;u=a1aHR0cHM6Ly9kYXNyb290Lm5ldC9wb3N0cy8yMDI2LzAyL2J1aWxkaW5nLW1pbmltYWwtZ28tY29udGFpbmVycy1oaWdoLXRocm91Z2hwdXQtYXBpcy8&amp;ntb=1"><img src="https://services.bingapis.com/favicon?url=dasroot.net" alt="dasroot.net">dasroot.net</a>.</p>
+</blockquote>
+<h3>related reading</h3>
+<ul>
+<li>“<a href="https://thelinuxcode.com/golang-vs-c-top-differences-for-realworld-engineering-in-2026/">Golang vs C#: Top Differences for Real‑World Engineering in 2026</a>”</li>
+<li>“<a href="https://www.linkedin.com/pulse/technical-evaluation-net-core-vs-go-enterprise-rest-apis-ali-anwar-xms6f/">Technical Evaluation: .NET Core vs. Go for Enterprise REST APIs in the UAE</a>”</li>
+<li>“<a href="https://www.netguru.com/blog/golang-vs-c-sharp">Golang vs C#: Backend Battle - What Top Companies Choose</a>”</li>
+</ul>
+<h2>Songhay Feeds: container MSBuild properties ❄✨ should be associated with project-file assembly ‘credits’</h2>
+<p>Reading “<a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration">Containerize a .NET app reference</a>” I see the following MSBuild properties that should be included (except for the last two):</p>
+<ul>
+<li><code>ContainerImageTag</code> 📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#containerimagetag">docs</a>🔖</li>
+<li><code>ContainerRegistry</code> 📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#containerregistry">docs</a>🔖</li>
+<li><code>ContainerRepository</code> 📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#containerrepository">docs</a>🔖</li>
+<li><code>LocalRegistry</code> 📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#localregistry">docs</a>🔖</li>
+<li><code>ContainerEnvironmentVariable</code> 📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#containerenvironmentvariable">docs</a>🔖</li>
+<li><code>ContainerPort</code> 📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#containerport">docs</a>🔖 (can be replaced by ASP.NET environment variables like <code>HTTP_PORTS</code>)</li>
+<li><code>ContainerLabel</code> 📖 <a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#containerlabel">docs</a>🔖 the compiler did <em>not</em> like the documented <acronym title="Extensible Markup Language">XML</acronym> declaration so this was removed (also, some of these labels are generated automatically; see “<a href="https://learn.microsoft.com/en-us/dotnet/core/containers/publish-configuration#default-container-labels">Default container labels</a>”)</li>
+</ul>
+<pre><code class="language-xml">&lt;PropertyGroup&gt;
+    &lt;AssemblyVersion&gt;10.0.0&lt;/AssemblyVersion&gt;
+
+    &lt;Title&gt;Songhay Feeds API&lt;/Title&gt;
+    &lt;Description&gt;API Host for the Studio syndication feeds aggregator.&lt;/Description&gt;
+    &lt;Authors&gt;Bryan D. Wilhite&lt;/Authors&gt;
+    &lt;Copyright&gt;(c) 2026 Bryan D. Wilhite&lt;/Copyright&gt;
+    &lt;Company&gt;Songhay System&lt;/Company&gt;
+
+    &lt;ContainerImageTag&gt;10.0.0&lt;/ContainerImageTag&gt;
+    &lt;ContainerRepository&gt;BryanWilhite/Songhay.Feeds&lt;/ContainerRepository&gt;
+    &lt;LocalRegistry&gt;Podman&lt;/LocalRegistry&gt;
+&lt;/PropertyGroup&gt;
+
+&lt;ItemGroup&gt;
+    &lt;ContainerEnvironmentVariable Include=&quot;ASPNETCORE_ENVIRONMENT&quot; Value=&quot;Production&quot; /&gt;
+    &lt;ContainerEnvironmentVariable Include=&quot;DOTNET_ENVIRONMENT&quot; Value=&quot;Production&quot; /&gt;
+    &lt;ContainerEnvironmentVariable Include=&quot;HTTP_PORTS&quot; Value=&quot;8080&quot; /&gt;
+    &lt;ContainerEnvironmentVariable Include=&quot;SONGHAY_APP_SETTINGS&quot; Value=&quot;{}&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<h2>Quartz.NET: I am getting <acronym title="ahead of time">AOT</acronym> tree-shaking warnings when building Songhay Feeds 😐</h2>
+<p>Of course I assume these are harmless:</p>
+<pre><code class="language-console">Songhay.Feeds.Api net10.0 linux-x64 succeeded with 9 warning(s) (94.9s) → Songhay.Feeds.Api/bin/Release/net10.0/linux-x64/publish/ ~/sourceRoot/Songhay.Feeds/Songhay.Web/ProgramMetadataUtility.cs(25): Trim analysis warning IL2026: Songhay.Web.ProgramMetadataUtility.GetProgramMetadataFromEnvironment(): Using member 'System.Text.Json.JsonSerializer.Deserialize&lt;ProgramMetadata&gt;(String,JsonSerializerOptions)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved. ~/sourceRoot/Songhay.Feeds/Songhay.Web/ProgramMetadataUtility.cs(25): AOT analysis warning IL3050: Songhay.Web.ProgramMetadataUtility.GetProgramMetadataFromEnvironment(): Using member 'System.Text.Json.JsonSerializer.Deserialize&lt;ProgramMetadata&gt;(String,JsonSerializerOptions)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications. ~/.nuget/packages/quartz/4.0.0/lib/net10.0/Quartz.dll : warning IL2104: Assembly 'Quartz' produced trim warnings. For more information see https://aka.ms/il2104
+    ILC : Trim analysis warning IL2026: Quartz.Configuration.QuartzPropertyBridge.ApplyStringProperties(Object,IServiceProvider,Object,String,String[]): Using member 'Quartz.Configuration.PropertyBinder.SetObjectProperties(Object,NameValueCollection)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. Component properties are set by name on a type Quartz is handed at run time; a component named by a quartz.* configuration key, and the properties that key sets, are not guaranteed to survive trimming.
+    ILC : Trim analysis warning IL2026: Quartz.Impl.AdoJobStore.Common.ConfigurationBasedDbMetadataFactory.GetDbMetadata(String): Using member 'Quartz.Configuration.PropertyBinder.SetObjectProperties(Object,NameValueCollection)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. Component properties are set by name on a type Quartz is handed at run time; a component named by a quartz.* configuration key, and the properties that key sets, are not guaranteed to survive trimming. ~/.nuget/packages/songhaycore.s3/10.0.3/lib/net10.0/SonghayCore.S3.dll : warning IL2104: Assembly 'SonghayCore.S3' produced trim warnings. For more information see https://aka.ms/il2104 ~/.nuget/packages/songhaycore.s3/10.0.3/lib/net10.0/SonghayCore.S3.dll : warning IL3053: Assembly 'SonghayCore.S3' produced AOT analysis warnings.
+    ILC : Trim analysis warning IL2026: Quartz.Util.ValueConverter.ConvertValueIfNecessary(Type,Object): Using member 'Quartz.Util.ValueConverter.ConvertUsingTypeConverter(Type,Object)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. A value whose type does not match the target's is converted through TypeDescriptor, which finds the converter by reflecting over the target type; neither that type nor its converter is guaranteed to survive trimming.
+    ILC : Trim analysis warning IL2026: Quartz.Configuration.SchedulerPluginFactory.ApplyProperties(ISchedulerPlugin,Type,String,NameValueCollection): Using member 'Quartz.Configuration.PropertyBinder.SetObjectProperties(Object,NameValueCollection)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. Component properties are set by name on a type Quartz is handed at run time; a component named by a quartz.* configuration key, and the properties that key sets, are not guaranteed to survive trimming.
+
+Build succeeded with 9 warning(s) in 103.8s
+</code></pre>
+<p>🐰🕳</p>
+<h2>Songhay Core (C♯): #new-branch</h2>
+<p><strong>New branch:</strong> <a href="https://github.com/BryanWilhite/SonghayCore/tree/dev/version-10.2.0">https://github.com/BryanWilhite/SonghayCore/tree/dev/version-10.2.0</a></p>
+<p><acronym title="pull request">PR</acronym>: <a href="https://github.com/BryanWilhite/SonghayCore/pull/207">https://github.com/BryanWilhite/SonghayCore/pull/207</a></p>
+<p>Version <code>10.2.0</code> changes are proposed across:</p>
+<ul>
+<li><code>SonghayCore</code></li>
+<li><code>SonghayCore.S3</code></li>
+<li>adding <code>SonghayCore.Web</code> 🚜✨</li>
+</ul>
+<h3><code>SonghayCore</code> changes</h3>
+<ul>
+<li>add new <code>Storage*</code> models that help to blur the distinction between cloud and local storage operations 🚜✨ <a href="https://github.com/BryanWilhite/SonghayCore/issues/205">issue #205</a> ✅</li>
+<li>add new <code>ProgramFile*</code> Activities designed to ‘impersonate’ corresponding S3 Activities 🚜✨ <a href="https://github.com/BryanWilhite/SonghayCore/issues/206">issue #206</a> ✅</li>
+<li>all asynchronous Activity abstractions should support <code>CancellationToken</code>, <a href="https://github.com/BryanWilhite/SonghayCore/issues/202">issue #202</a> (🚨 breaking change) ✅</li>
+<li>add <code>ValueTask</code> abstractions for Activity interfaces 🚜✨ (added to <a href="https://github.com/BryanWilhite/SonghayCore/issues/202">issue #202</a>) ✅</li>
+<li>remove <code>HttpClientLazy</code> member from <code>HttpRequestMessageExtensions</code>, <a href="https://github.com/BryanWilhite/SonghayCore/issues/204">issue #204</a> (🚨 breaking change)</li>
+</ul>
+<h3><code>SonghayCore.S3</code> changes</h3>
+<ul>
+<li>change existing S3 Activities to use the new <code>Storage*</code> models 🔨  (🚨 breaking change)</li>
+</ul>
+<h3>adding the <code>SonghayCore.Web</code> package</h3>
+<p>In recognition of ASP.NET minimal Web API apps with <acronym title="ahead of time">AOT</acronym> compilation (for containerized apps mostly), we add <code>SonghayCore.Web</code> which brings the following:</p>
+<ul>
+<li>an API-key authentication model and handler</li>
+<li>Health Checks and Health-Check extension methods</li>
+<li>Serialization contexts for select Songhay models</li>
+</ul>
+<h2>S3: why <code>S3Object</code> does not have “create” or last-access times</h2>
+<p>…<code>why does S3Object not have access or creation times?</code></p>
+<p>Google <acronym title="Artificial Intelligence">AI</acronym>:</p>
+<blockquote>
+<p>Amazon S3 objects do not track individual <strong>access times</strong> or <strong>creation times</strong> because ==doing so at massive cloud scale would introduce massive performance bottlenecks and high storage overhead==.</p>
+<p>Why There Is No Access Time</p>
+<ul>
+<li><strong>Performance Overhead:</strong> Tracking every <code>GET</code> or <code>HEAD</code> request means updating metadata for every single read operation. In a distributed, high-throughput system like S3, writing a new timestamp for every read across trillions of objects would slow down read performance and increase latency.</li>
+<li><strong>Scale and Consistency:</strong> S3 is designed for high availability and strong consistency across distributed data centers. Constantly updating read timestamps for reads would generate an immense volume of internal metadata write operations.</li>
+<li><strong>Alternative Solutions:</strong> Instead of real-time tracking, AWS provides <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-inspection.html">S3 Inventory</a>, S3 Storage Class Analysis, and server access logs to help analyze usage patterns asynchronously. <a href="https://stackoverflow.com/questions/19357470/aws-storage-s3-object-go-to-glacier-if-never-accessed-in-the-last-month">1</a>, <a href="https://repost.aws/articles/ARUxLc543iRKGmzjJDcyqF_g/unlocking-efficient-data-lifecycle-management-for-amazon-s3-with-last-access-times">2</a>, <a href="https://aws.amazon.com/blogs/architecture/expiring-amazon-s3-objects-based-on-last-accessed-date-to-decrease-costs/">3</a></li>
+</ul>
+<p>Why There Is No Creation Time (Strictly Speaking)</p>
+<ul>
+<li><strong>Last-Modified as Creation:</strong> S3 <em>does</em> provide a <strong>Last-Modified</strong> timestamp. For a standard, single-operation upload (<code>PUT</code>), the <code>Last-Modified</code> time is effectively the creation time. <a href="https://repost.aws/articles/ARUxLc543iRKGmzjJDcyqF_g/unlocking-efficient-data-lifecycle-management-for-amazon-s3-with-last-access-times">1</a></li>
+<li><strong>Distributed Overwrites:</strong> Because S3 supports overwriting existing object keys (<code>PUT</code> requests with the same name), an object can be updated in place. Maintaining a separate immutable &quot;creation time&quot; alongside &quot;last modified&quot; adds extra metadata overhead that AWS chose to streamline into a single primary timestamp for storage management and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">S3 Lifecycle</a> rules. <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">1</a>, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-lifecycle.html">2</a>, <a href="https://repost.aws/articles/ARUxLc543iRKGmzjJDcyqF_g/unlocking-efficient-data-lifecycle-management-for-amazon-s3-with-last-access-times">3</a></li>
+</ul>
+</blockquote>
+<h2>Google <acronym title="Artificial Intelligence">AI</acronym> appears to have some awesome dapr news 😐📰</h2>
+<p>…<code>can dapr workflows run without a container environment and then be containerized later?</code></p>
+<blockquote>
+<p><strong>Yes, Dapr Workflows can run entirely without a container environment and then be containerized later.</strong></p>
+<p>Because <a href="https://dapr.io/">Dapr</a> decouples your application logic from the underlying hosting infrastructure, your workflow code remains identical whether it runs as a raw local process or inside a production Kubernetes cluster. <a href="https://dapr.io/">1</a>, <a href="https://docs.dapr.io/operations/hosting/kubernetes/kubernetes-production/">2</a></p>
+<p>Phase 1: Running Without Containers (Local Development)</p>
+<p>To run Dapr Workflows without Docker or Podman, you utilize Dapr's <strong>Slim Initialization</strong> mode. This downloads the Dapr runtime directly onto your host machine as standard executables. <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-no-docker/">1</a></p>
+<ul>
+<li><strong>Initialize Dapr in Slim Mode:</strong></li>
+</ul>
+</blockquote>
+<pre><code class="language-bash">dapr init --slim
+</code></pre>
+<blockquote>
+<ul>
+<li>
+<p>This installs the <code>daprd</code> (sidecar) and <code>placement</code> (actor orchestration) binaries directly to your local file system without spinning up any containers. <a href="https://www.bookstack.cn/read/dapr-1.2-en/cdd9c8bdccf56f5d.md">1</a>, <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-no-docker/">2</a></p>
+</li>
+<li>
+<p><strong>Set Up a Local State Store:</strong><br>
+Dapr Workflows are stateful and rely on an underlying Dapr actor state store (such as SQLite, PostgreSQL, or Redis). In slim mode, you must point your component YAML file to a database running natively on your host machine (e.g., a locally installed PostgreSQL or SQLite instance) instead of a Docker container. <a href="https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-architecture/">1</a>, <a href="https://www.bookstack.cn/read/dapr-1.2-en/cdd9c8bdccf56f5d.md">2</a></p>
+</li>
+<li>
+<p><strong>Run Your Workflow:</strong><br>
+Execute your workflow application using the Dapr CLI. Dapr will launch alongside your application as a standard OS process:</p>
+</li>
+</ul>
+</blockquote>
+<pre><code class="language-bash">dapr run --app-id workflow-app --resources-path ./components -- dotnet run
+</code></pre>
+<blockquote>
+<ul>
+<li><a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-overview/">1</a>, <a href="https://docs.diagrid.io/dapr-open-source/">2</a></li>
+</ul>
+<p>Phase 2: Containerizing Later (Production Shift)</p>
+<p>When you are ready to containerize your architecture, <strong>zero changes</strong> are required for your core workflow code. You only shift your configuration and deployment target.
+The migration path involves three straightforward steps:</p>
+<ul>
+<li><strong>Step 1: Package your app.</strong> Wrap your workflow code inside a standard <code>Dockerfile</code> (e.g., targeting Node, .NET, Python, or Go). <a href="https://jettro.dev/learning-dapr-by-building-a-case-management-system-0f44d71109db">1</a></li>
+<li><strong>Step 2: Update component files.</strong> Change your Dapr component YAML files to point from your local development databases to your production-grade cloud databases or containerized state stores. <a href="https://dapr.io/">1</a></li>
+<li><strong>Step 3: Deploy.</strong> Deploy your application container into an environment like Kubernetes. If using Kubernetes, the Dapr Sidecar Injector will automatically inject the <code>daprd</code> container right next to your application container. <a href="https://docs.dapr.io/concepts/dapr-services/sidecar/">1</a>, <a href="https://dapr.io/">2</a></li>
+</ul>
+<p>Critical Considerations for Workflows</p>
+<ul>
+<li><strong>The Placement Service:</strong> Dapr Workflows depend on Dapr Actors behind the scenes. If running without containers, make sure you manually start the local placement binary (<code>dapr-placement</code>) so your workflows can track state and execute reliably. <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-overview/">1</a>, <a href="https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-architecture/">2</a>, <a href="https://www.bookstack.cn/read/dapr-1.2-en/cdd9c8bdccf56f5d.md">3</a></li>
+<li><strong>State Persistence:</strong> When migrating to a containerized environment, ensure your production state store has access to the historical event-sourcing data if you intend to resume inflight workflows seamlessly. <a href="https://www.reddit.com/r/dotnet/comments/13ydqyr/understanding_the_dapr_workflow_engine_and/">1</a></li>
+</ul>
+</blockquote>
+<p>…<code>does dapr have any issues running with podman instead of docker?</code></p>
+<blockquote>
+<p>==<strong>No, Dapr does not have major issues running with Podman</strong>==, as it officially supports it as an alternative container runtime. The core Dapr sidecar runtime (<code>daprd</code>) itself has zero dependencies on Docker; the container runtime is only utilized by the Dapr CLI during local self-hosted initialization to stand up support containers like Redis and Zipkin. <a href="https://github.com/dapr/cli/issues/257">1</a>, <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-overview/">2</a></p>
+<p>However, because Podman operates differently than Docker—primarily around its rootless architecture and networking—there are a few critical nuances and known behaviors you should keep in mind:</p>
+<ol>
+<li>Explicit CLI Flags Required</li>
+</ol>
+<p>The Dapr CLI defaults to Docker. If you try to run a standard initialization, it will fail with a &quot;could not connect to docker&quot; error. You must explicitly tell the CLI to target Podman: <a href="https://github.com/dapr/cli/issues/1185">1</a>, <a href="https://docs.dapr.io/operations/troubleshooting/common_issues/">2</a>, <a href="https://oneuptime.com/blog/post/2026-03-31-dapr-podman/view">3</a>, <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-overview/">4</a></p>
+<ul>
+<li>
+<p><strong>Initialization:</strong> <code>dapr init --container-runtime podman</code></p>
+</li>
+<li>
+<p><strong>Uninstallation:</strong> <code>dapr uninstall --container-runtime podman --all</code> <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-with-podman/">1</a>, <a href="https://v1-14.docs.dapr.io/operations/hosting/self-hosted/self-hosted-with-podman/">2</a></p>
+</li>
+</ul>
+<p><em>(Note: Commands like <code>dapr run</code> and <code>dapr stop</code> interact with local processes rather than the container daemon directly, so they work identically regardless of your container choice.)</em> <a href="https://oneuptime.com/blog/post/2026-03-31-dapr-podman/view">1</a></p>
+<ol start="2">
+<li>Rootless Networking &amp; Localhost Gotchas</li>
+</ol>
+<p>By default, Podman runs in <strong>rootless mode</strong>. This introduces isolated network namespaces, meaning containers do not naturally share a localhost network interface with your host machine. <a href="https://www.reddit.com/r/selfhosted/comments/1wamslb/docker_vs_podman/">1</a>, <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-with-podman/">2</a></p>
+<ul>
+<li>
+<p><strong>The Issue:</strong> Your application running on the host might struggle to talk to the Dapr sidecar, or the sidecar components (like Redis) might not resolve properly if they rely on standard container bridge networking. <a href="https://oneuptime.com/blog/post/2026-03-31-dapr-podman/view">1</a></p>
+</li>
+<li>
+<p><strong>The Fix:</strong> When manually launching Dapr containers or defining component files, you may need to use Podman’s host networking mode (<code>--network=&quot;host&quot;</code>) so that Dapr and your application can share the localhost interface, or explicitly hardcode the container IP addresses in your component YAML files. <a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-with-podman/">1</a>, <a href="https://oneuptime.com/blog/post/2026-03-31-dapr-podman/view">2</a></p>
+</li>
+</ul>
+<ol start="3">
+<li>Docker Socket Emulation</li>
+</ol>
+<p>Some workflows or extension tools expect a classic Docker daemon socket (<code>/var/run/docker.sock</code>). To make Dapr work transparently without configuration errors, you often need to ensure Podman's system service is running and point your <code>DOCKER_HOST</code> environment variable to Podman’s socket. <a href="https://oneuptime.com/blog/post/2026-03-31-dapr-self-hosted-podman/view">1</a>, <a href="https://docs.dapr.io/operations/troubleshooting/common_issues/">2</a></p>
+<ol start="4">
+<li>Podman Compose vs. Docker Compose</li>
+</ol>
+<p>If you utilize multi-service local development files, Podman supports the standard <code>docker-compose.yaml</code> format. However, the community implementation (<code>podman-compose</code>) can occasionally lag behind the official Docker Compose specification on advanced features, which might require manual tweaks if you have highly complex setup configurations. <a href="https://www.reddit.com/r/selfhosted/comments/1wamslb/docker_vs_podman/">1</a>, <a href="https://oneuptime.com/blog/post/2026-03-31-dapr-podman/view">2</a></p>
+</blockquote>
+<h3>related reading</h3>
+<ul>
+<li>“<a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-airgap/">How-To: Run Dapr in an offline or airgap environment</a>”</li>
+<li>“<a href="https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-no-docker/">How-To: Run Dapr in self-hosted mode without Docker</a>”</li>
+</ul>
+<h2>Songhay Core (C♯): issue #204 led to adding <code>Microsoft.Extensions.Http</code> 📦✨</h2>
+<p>The <code>Microsoft.Extensions.Http</code> NuGet <a href="https://www.nuget.org/packages/Microsoft.Extensions.Http">package</a> was needed for <a href="https://github.com/BryanWilhite/SonghayCore/issues/204">issue #204</a> in order to introduce <code>IHttpClientFactory</code> from the <code>System.Net.Http</code> namespace 📖 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.net.http?view=net-11.0-pp">docs</a>🔖 to the Core. In the current manifestation of .NET, <code>IHttpClientFactory</code> is the first abstraction we turn to for obtaining <code>HttpClient</code>:</p>
+<blockquote>
+<p><code>HttpClient</code> instances are meant to be <strong>long-lived</strong>, and reused throughout the lifetime of the application.</p>
+<p>Each instance uses its own <strong>connection pool</strong> for isolation purposes, but also to prevent <strong>port exhaustion</strong>. If a server is under high load, and your application is constantly creating new connections, it could lead to exhausting the available ports. This will cause an exception at runtime, when trying to send a request.</p>
+<p>…</p>
+<p>Instead of managing the <code>HttpClient</code> lifetime yourself, you can use an <strong><code>IHttpClientFactory</code></strong> to create the <code>HttpClient</code> instance.</p>
+<p>Simply call the <code>CreateClient</code> method and use the returned <code>HttpClient</code> instance to send your HTTP requests.</p>
+<p>Why is this a better approach?</p>
+<p>The expensive part of the <code>HttpClient</code> is the actual message handler - <code>HttpMessageHandler</code>. Each <code>HttpMessageHandler</code> has an internal HTTP <strong>connection pool</strong> that can be reused.</p>
+<p>The <code>IHttpClientFactory</code> will <strong>cache</strong> the <code>HttpMessageHandler</code> and reuse it when creating a new <code>HttpClient</code> instance.</p>
+<p>An important note here is that <code>HttpClient</code> instances created by <code>IHttpClientFactory</code> are meant to be <strong>short-lived</strong>.</p>
+<p>—”<a href="https://milanjovanovic.tech/blog/the-right-way-to-use-httpclient-in-dotnet">The Right Way To Use HttpClient In .NET</a>”</p>
+</blockquote>
+<p>What? Why are <code>HttpClient</code> instances <code>IHttpClientFactory</code> short lived while “<code>HttpClient</code> instances are meant to be <strong>long-lived</strong>”? Today I think the answer to this question is we actually need that “HTTP <strong>connection pool</strong>” to be long lived and shared #to-do</p>
+<h2>JavaScript <code>Date</code> method drama 😐📆</h2>
+<p>Reminders:</p>
+<ul>
+<li><code>getUTCMonth()</code> 📖 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMonth">docs</a>🔖 is zero based; I am currently adding one to its output for expected results</li>
+<li><code>getUTCDay()</code> 📖 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDay">docs</a>🔖 is zero based; one will likely want <code>getUTCDate()</code> 📖 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDate">docs</a>🔖 instead</li>
+</ul>
+<h2>Quartz.NET drama: <code>WithDailyTimeIntervalSchedule</code> configuration defaults to every minute 😐❓</h2>
+<blockquote>
+<p>[!important]
+An interval must be specified for <code>WithDailyTimeIntervalSchedule</code> or it will run continually 💸</p>
+</blockquote>
+<p>For Songhay Feeds, see how <code>.WithInterval(1, IntervalUnit.Day)</code> is needed to prevent this expensive behavior:</p>
+<pre><code class="language-csharp">        configurator.WithDailyTimeIntervalSchedule(builder =&gt;
+            builder
+                .OnMondayThroughFriday()
+                .StartingDailyAt(
+                   TimeOnly.Parse(timeOnlyExpression))
+                .WithInterval(24, IntervalUnit.Hour)
+                .WithMisfireInstruction(
+                DailyTimeIntervalTriggerMisfireInstruction.DoNothing));
+</code></pre>
+<blockquote>
+<p>[!warning]
+Quartz.NET will throw a <em>runtime</em> error, revealing that <code>.WithInterval(1, IntervalUnit.Day)</code> does <em>not</em> work for a <em>daily</em> schedule. Instead we can use hour, minute or second intervals 🙁</p>
+</blockquote>
+<p>I guess “daily time <em>interval</em>” was the clue. Quartz.NET issue <a href="https://github.com/quartznet/quartznet/issues/1152">#1152</a> reveals others had the same misunderstanding 😐💸</p>
+<h2>dapr: “An in-depth guide to Dapr workflow patterns in .NET” #to-do 😐</h2>
+<blockquote>
+<p>After covering Dapr workflow basics in the <a href="https://www.diagrid.io/blog/authoring-dapr-workflows-in-dotnet"><strong>previous article</strong></a>, let’s take a look at the different application patterns that can be used with Dapr workflow and .NET. The patterns covered in this post are: chaining, fan-out/fan-in, monitor, and external system interaction.</p>
+<p>…</p>
+<p>All code samples shown in this post are taken from the <a href="https://github.com/diagrid-labs/dapr-workflow-demos"><strong>dapr-workflow-demos</strong></a> GitHub repo…</p>
+<p>—“<a href="https://www.diagrid.io/blog/in-depth-guide-to-dapr-workflow-patterns">An in-depth guide to Dapr workflow patterns in .NET</a>”</p>
+</blockquote>
+<h2>open pull requests on GitHub 🐙🐈</h2>
+<ul>
+<li><a href="https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14">https://github.com/BryanWilhite/Songhay.HelloWorlds.Activities/pull/14</a></li>
+</ul>
+<h2>sketching out development projects</h2>
+<p><img src="../../image/day-path-2026-05-30-22-50-18.png" alt="Mermaid visualization of the eleventy Publication pipeline"></p>
+<ul>
+<li>use a Jupyter Notebook to track finding and changing Amazon links to open source links in the kinté space repo 📓⚙</li>
+<li>use a Jupyter Notebook to convert flickr links to Publications (responsive image) links in the kinté space repo 📓⚙</li>
+<li>convert Songhay Day Path Blog repo to the relevant conventions shown in the diagram above 🔨🚜</li>
+<li><s>re-release SonghaySystem.com in Astro on Netlify</s> 🚀</li>
+<li>start development of Songhay Publications Index (F♯) experience for WebAssembly 🍱✨</li>
+<li>start development of Songhay Publications - Data Editor to establish a <acronym title="Graphical User Interface">GUI</acronym> for <code>*Shell</code> and provide visualizations and interactions for Publications data 🍱✨</li>
+</ul>
+<p>🐙🐈<a href="https://github.com/BryanWilhite/">https://github.com/BryanWilhite/</a></p>
+
+
+    </section>
+</div>
+            </div>
+        </main>
+<footer class="mdc-layout-grid mdc-typography--caption">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-6">
+            <p>
+                Last Reviewed:
+                2026-09-29T20:37:36.518Z
+            </p>
+            <p><a class="index" href="../../entries/">[index]</a></p>
+            <p>
+                another stone tribal move by <a class="index" href="http://songhaysystem.com/">Songhay System</a>
+            </p>
+        </div>
+        <div class="mdc-layout-grid__cell--span-6">
+            <a class="svg-sprite" href="https://portal.azure.com/" target="_blank" title="Microsoft Azure Portal">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_azure_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhay.visualstudio.com/" target="_blank" title="Microsoft Azure DevOps">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_visual_studio_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://twitter.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_twitter_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://www.linkedin.com/in/wilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_linkedin_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="http://stackoverflow.com/users/22944/rasx" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_stack_overflow_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://github.com/BryanWilhite" target="_blank" title="@BryanWilhite">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_github_circle_24px"></use>
+                </svg>
+            </a>
+            <a class="svg-sprite" href="https://songhayblog.azurewebsites.net/entry/feed.xml" target="_blank" title="RSS feed">
+                <svg class="svg-sprite">
+                    <use xlink:href="#mdi_rss_24px"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+</html>
